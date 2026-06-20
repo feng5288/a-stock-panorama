@@ -218,20 +218,8 @@ function checkPassword() {
   if (input === CORRECT_PASSWORD) {
     document.getElementById('password-gate').style.display = 'none';
     document.getElementById('app').style.display = 'block';
-      if (typeof render === 'function') { render(); }
-      return;
     try { sessionStorage.setItem('a-stock-auth', '1'); } catch(e) {}
     if (typeof render === 'function') { render(); }
-  } else {
-  var input = document.getElementById('pw-input').value.trim();
-  var err = document.getElementById('pw-error');
-  if (input === CORRECT_PASSWORD) {
-    document.getElementById('password-gate').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-      if (typeof render === 'function') { render(); }
-      return;
-    // Store in sessionStorage so refresh doesn't ask again
-    try { sessionStorage.setItem('a-stock-auth', '1'); } catch(e) {}
   } else {
     err.style.display = 'block';
     document.getElementById('pw-input').value = '';
@@ -247,14 +235,11 @@ function checkPassword() {
       document.getElementById('app').style.display = 'block';
       if (typeof render === 'function') { render(); }
       return;
-      return;
     }
   } catch(e) {}
   document.getElementById('password-gate').style.display = 'flex';
   document.getElementById('app').style.display = 'none';
 })();
-
-
 
 // ============ CONFIG ============
 
