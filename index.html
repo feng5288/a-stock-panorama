@@ -1,927 +1,515 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>A股投资全景树</title>
-
 <style>
-
 *{margin:0;padding:0;box-sizing:border-box}
-
 body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh}
-
-#app{display:none;max-width:1400px;margin:0 auto;padding:0 20px 40px}
-
+#gate{position:fixed;inset:0;z-index:999;background:#0d1117;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px}
+#gate.hidden{display:none}
+#gate .logo{font-size:48px;margin-bottom:8px}
+#gate h2{font-size:20px;color:#58a6ff;font-weight:600}
+#gate .pw-box{display:flex;gap:8px}
+#gate input{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px 16px;color:#c9d1d9;font-size:14px;width:220px;outline:none;transition:border-color .2s}
+#gate input:focus{border-color:#58a6ff}
+#gate button{background:#238636;color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:14px;cursor:pointer;font-weight:600;transition:all .2s}
+#gate button:hover{background:#2ea043;transform:scale(1.03)}
+#gate .error{color:#f85149;font-size:12px;display:none;margin-top:-8px}
+#gate .hint{font-size:11px;color:#484f58;margin-top:4px}
+#app{max-width:1400px;margin:0 auto;padding:0 20px 40px}
 #topbar{position:sticky;top:0;z-index:100;background:#0d1117;padding:14px 0 10px;border-bottom:1px solid #21262d;margin-bottom:16px}
-
 #topbar .inner{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-
 #topbar h1{font-size:18px;color:#58a6ff;white-space:nowrap}
-
 #topbar .search{flex:1;min-width:180px}
-
 #topbar .search input{width:100%;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px 14px;color:#c9d1d9;font-size:13px;outline:none;transition:border-color .2s}
-
 #topbar .search input:focus{border-color:#58a6ff}
-
 #topbar .search input::placeholder{color:#484f58}
-
 #topbar .info{font-size:11px;color:#8b949e}
-
 #topbar .info .srv{color:#3fb950;margin-left:6px}
-
 #breadcrumb{display:flex;align-items:center;gap:6px;padding:0 0 14px;flex-wrap:wrap}
-
 #breadcrumb .crumb{font-size:12px;padding:4px 12px;border-radius:6px;cursor:pointer;background:#21262d;color:#8b949e;border:1px solid transparent;transition:all .15s}
-
 #breadcrumb .crumb:hover{background:#30363d;color:#c9d1d9;border-color:#484f58}
-
 #breadcrumb .crumb.active{background:#1f6feb22;color:#58a6ff;border-color:#1f6feb44;cursor:default}
-
 #breadcrumb .sep{color:#30363d;font-size:14px}
-
 #breadcrumb .back{font-size:15px;padding:7px 16px;border-radius:8px;cursor:pointer;background:#da363322;color:#f85149;border:1px solid #da363344;transition:all .15s;font-weight:700}
-
 #breadcrumb .back:hover{background:#da363344;transform:scale(1.05)}
-
 #content{margin-top:8px}
-
 .level-title{font-size:13px;color:#8b949e;margin-bottom:14px}
-
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
-
 .card{background:#161b22;border:1px solid #21262d;border-radius:10px;padding:16px 18px;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden}
-
 .card:hover{border-color:#30363d;transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.3)}
-
 .card:active{transform:translateY(0)}
-
 .card .icon{font-size:22px}
-
 .card .name{font-size:15px;font-weight:600;color:#c9d1d9;line-height:1.3}
-
 .card .meta{font-size:11px;color:#484f58;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-
 .card .meta .badge{background:#21262d;padding:2px 8px;border-radius:8px}
-
 .card .multi-tag{font-size:10px;background:#d2a8ff22;color:#d2a8ff;padding:1px 6px;border-radius:6px;margin-left:4px}
-
 .card .arrow{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:18px;color:#30363d;transition:all .2s}
-
 .card:hover .arrow{color:#58a6ff;right:10px}
-
 .card.theme{border-left:3px solid #d2a8ff}
-
 .card.track{border-left:3px solid #8b949e}
-
 .card.sub{border-left:3px solid #484f58}
-
 .card.stock{border-left:3px solid #1f6feb}
-
 .card.stock-a{border-left:4px solid #238636;background:#23863608}
-
 .card.stock-b{border-left:4px solid #1f6feb;background:#1f6feb08}
-
 .card.stock-c{border-left:4px solid #d29922;background:#d2992208}
-
 .card.stock-d{border-left:4px solid #da3633;background:#da363308}
-
 .card.stock-q{border-left:4px solid #6e7681;background:#6e768108}
-
 .empty{text-align:center;padding:60px 20px;color:#484f58}
-
 .empty .eicon{font-size:48px;margin-bottom:12px}
-
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
-
 .modal-overlay.show{opacity:1;pointer-events:auto}
-
 .modal{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;max-width:560px;width:94%;max-height:85vh;overflow-y:auto}
-
 .modal h3{font-size:18px;margin-bottom:4px}
-
 .modal .m-code{font-size:12px;color:#8b949e;margin-bottom:14px}
-
 .modal .m-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;font-size:13px}
-
 .modal .m-label{color:#8b949e}
-
 .modal .m-value{color:#c9d1d9;font-weight:500}
-
 .modal .m-close{float:right;background:none;border:none;color:#8b949e;font-size:20px;cursor:pointer;padding:4px 8px}
-
 .modal .m-close:hover{color:#c9d1d9}
-
 .modal .m-summary{margin-top:12px;font-size:13px;color:#8b949e;line-height:1.6;padding:10px;background:#0d1117;border-radius:8px;border:1px solid #21262d}
-
 .modal .m-path-box{margin-top:14px;padding:12px;background:#0d1117;border:1px solid #30363d;border-radius:8px;font-size:12px}
-
 .modal .m-path-box .ptitle{color:#8b949e;margin-bottom:6px;font-weight:600}
-
 .modal .m-path-box .ppath{color:#58a6ff;font-family:'Cascadia Code','Consolas',monospace;font-size:11px;word-break:break-all;line-height:1.5;background:#161b22;padding:8px 10px;border-radius:4px;margin:4px 0}
-
 .modal .m-path-box .dl-btn{display:inline-block;margin-top:6px;padding:8px 20px;background:#238636;color:#fff;border:none;border-radius:6px;font-size:13px;cursor:pointer;text-decoration:none;font-weight:600;transition:all .15s}
-
 .modal .m-path-box .dl-btn:hover{background:#2ea043;transform:scale(1.03)}
-
 .modal .m-path-box .clip-btn{display:inline-block;margin-top:6px;padding:6px 14px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;border-radius:6px;font-size:12px;cursor:pointer;transition:all .15s;margin-left:8px}
-
 .modal .m-path-box .clip-btn:hover{background:#1f6feb44}
-
 .modal .m-path-box .clip-btn.copied{background:#238636;border-color:#238636;color:#fff}
-
 .modal .m-note-old{font-size:12px;color:#d29922;margin-top:8px;padding:8px 12px;background:#d2992211;border:1px solid #d2992233;border-radius:6px}
-
 .modal .m-locations{margin-top:12px;font-size:12px;color:#8b949e;line-height:1.8}
-
 .modal .m-locations .loc-link{color:#58a6ff;cursor:pointer;text-decoration:underline}
-
 .modal .m-locations .loc-link:hover{color:#79c0ff}
-
 #footer{text-align:center;padding:30px 0 20px;font-size:10px;color:#21262d;border-top:1px solid #161b22;margin-top:20px}
-
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
 .card{animation:fadeIn .25s ease-out}
-
 @media(max-width:768px){.card-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}.card{padding:12px 14px}.card .name{font-size:13px}}
-
-
-#password-gate{position:fixed;inset:0;background:#0d1117;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px}
-#password-gate .gate-box{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:40px 32px;text-align:center;max-width:360px;width:90%}
-#password-gate h2{color:#58a6ff;font-size:22px;margin-bottom:8px}
-#password-gate p{color:#8b949e;font-size:13px;margin-bottom:20px}
-#password-gate input{width:100%;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:10px 14px;color:#c9d1d9;font-size:15px;text-align:center;outline:none;transition:border-color .2s}
-#password-gate input:focus{border-color:#58a6ff}
-#password-gate button{width:100%;margin-top:12px;padding:10px;background:#238636;border:none;border-radius:8px;color:#fff;font-size:15px;cursor:pointer;transition:background .2s}
-#password-gate button:hover{background:#2ea043}
-#password-gate .err{color:#f85149;font-size:12px;margin-top:8px;display:none}
-
 </style>
-
 </head>
-
 <body>
 
-<div id="password-gate">
-<div class="gate-box">
-<h2>🔐 A股投资全景树</h2>
-<p>请输入访问密码查看内容</p>
-<input type="password" id="pw-input" placeholder="输入密码..." autofocus onkeydown="if(event.key==='Enter')checkPassword()">
-<button onclick="checkPassword()">进入</button>
-<div id="pw-error" class="err">密码错误，请重试</div>
+<div id="gate">
+  <div class="logo">🔐</div>
+  <h2>A股投资全景树</h2>
+  <div class="pw-box">
+    <input type="password" id="pw-input" placeholder="请输入访问密码" onkeydown="if(event.key==='Enter')checkPassword()">
+    <button onclick="checkPassword()">进入</button>
+  </div>
+  <div class="error" id="pw-error">密码错误，请重试</div>
+  <div class="hint">默认密码：qclaw2026 · 可在源码中修改 PASSWORD_HASH</div>
 </div>
-</div>
 
-
-
-
-<div id="app">
-
+<div id="app" style="display:none">
 <div id="topbar"><div class="inner">
-
 <h1>🌳 A股投资全景树</h1>
-
 <div class="search"><input type="text" id="search" placeholder="🔍 搜索股票/赛道/概念... | 输入股票名或代码回车定位" onkeydown="onSearchKey(event)" oninput="onSearchInput(this.value)"></div>
-
 <div class="info">📊 <span id="stock-count">87</span>只<span style="margin:0 4px">|</span>📁<span>13赛道</span><span class="srv" id="server-badge" style="display:none">⚡ 本地服务器</span></div>
-
 </div></div>
-
 <div id="breadcrumb"></div>
-
 <div id="content"></div>
-
 <div id="footer">数据来源：NeoData金融API + 公司年报 · 仅供参考不构成投资建议 · 2026-06-20</div>
-
 </div>
-
 <div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
 
-
-
 <script>
-// ============ PASSWORD GATE ============
-var CORRECT_PASSWORD = 'qclaw2026';
-function checkPassword() {
-  var input = document.getElementById('pw-input').value.trim();
-  var err = document.getElementById('pw-error');
-  if (input === CORRECT_PASSWORD) {
-    document.getElementById('password-gate').style.display = 'none';
+// ============ CONFIG ============
+const PASSWORD_HASH = 'bf816ab75d2faf24efc99e6b57bda751d041dbf1e2168a7ccdcac2592578b0f3';
+const IS_SERVER = window.location.protocol === 'http:' || window.location.protocol === 'https:';
+const TREE = {"name": "A股投资全景", "type": "root", "children": [{"name": "🔥 AI算力与基础设施", "type": "theme", "children": [{"name": "液冷/温控", "type": "track", "children": [{"name": "冷板式液冷", "type": "sub", "children": [{"id": "002837", "name": "英维克", "code": "002837", "rating": "B+", "score": 18, "scoreDisplay": "18/30", "summary": "—", "hasReport": true, "reportFile": "英维克.docx", "type": "stock"}, {"id": "603757", "name": "大元泵业", "code": "603757", "rating": "C", "score": 13, "scoreDisplay": "13/30", "summary": "—", "hasReport": true, "reportFile": "大元泵业.docx", "type": "stock"}, {"id": "002272", "name": "川润股份", "code": "002272", "rating": "C", "score": 12, "scoreDisplay": "12/30", "summary": "—", "hasReport": true, "reportFile": "川润股份.docx", "type": "stock"}]}]}, {"name": "AI服务器", "type": "track", "children": [{"name": "服务器PCB/高速背板", "type": "sub", "children": [{"id": "600601", "name": "方正科技", "code": "600601", "rating": "B", "score": 16, "scoreDisplay": "16/30", "summary": "—", "hasReport": true, "reportFile": "方正科技.docx", "type": "stock"}]}, {"name": "服务器电源", "type": "sub", "children": [{"id": "600869", "name": "远东股份", "code": "600869", "rating": "D+", "score": 8, "scoreDisplay": "8/30", "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx", "type": "stock"}, {"id": "002851", "name": "麦格米特", "code": "002851", "rating": "D", "score": 6, "scoreDisplay": "6/30", "summary": "—", "hasReport": true, "reportFile": "麦格米特.docx", "type": "stock"}]}]}, {"name": "光通信/光模块", "type": "track", "children": [{"name": "光纤光缆", "type": "sub", "children": [{"id": "002902", "name": "铭普光磁", "code": "002902", "rating": "D", "score": 2, "scoreDisplay": "2/30", "summary": "投资毒丸:概念炒作PB14x历史最高,基本面持续崩塌净资产仅6.3亿再亏2年归零,0仓位不碰", "hasReport": true, "reportFile": "铭普光磁.docx", "type": "stock"}, {"id": "603042", "name": "华脉科技", "code": "603042", "rating": "?", "score": 3, "scoreDisplay": "3/30", "summary": "坚决回避无投资价值", "hasReport": true, "reportFile": "华脉科技.docx", "type": "stock"}, {"id": "600487", "name": "亨通光电", "code": "600487", "rating": "A-", "score": 22, "scoreDisplay": "22/30", "summary": "持仓观察", "hasReport": true, "reportFile": "亨通光电.docx", "type": "stock"}]}, {"name": "光器件", "type": "sub", "children": [{"id": "002902", "name": "铭普光磁", "code": "002902", "rating": "D", "score": 2, "scoreDisplay": "2/30", "summary": "投资毒丸:概念炒作PB14x历史最高,基本面持续崩塌净资产仅6.3亿再亏2年归零,0仓位不碰", "hasReport": true, "reportFile": "铭普光磁.docx", "type": "stock"}]}]}]}, {"name": "⚡ 半导体全产业链", "type": "theme", "children": [{"name": "半导体材料", "type": "track", "children": [{"name": "硅片/大硅片", "type": "sub", "children": [{"id": "603688", "name": "石英股份", "code": "603688", "rating": "C", "score": 10, "scoreDisplay": "10/30", "summary": "世界级好公司+地狱级贵估值,等待半导体石英季度营收>3亿验证逻辑,或PE<50x(13-15元)再考虑,当前价位无安全边际", "hasReport": true, "reportFile": "石英股份.docx", "type": "stock"}]}, {"name": "光刻胶", "type": "sub", "children": [{"id": "300576", "name": "容大感光", "code": "300576", "rating": "D+", "score": null, "scoreDisplay": "?", "summary": "坚决回避光刻胶概念远大于实质", "hasReport": true, "reportFile": "容大感光.docx", "type": "stock"}, {"id": "603650", "name": "彤程新材", "code": "603650", "rating": "C+", "score": 13, "scoreDisplay": "13/30", "summary": "等PE回落", "hasReport": true, "reportFile": "彤程新材.docx", "type": "stock"}]}]}, {"name": "芯片设计", "type": "track", "children": [{"name": "通信/射频芯片", "type": "sub", "children": [{"id": "603738", "name": "泰晶科技", "code": "603738", "rating": "D+", "score": 8, "scoreDisplay": "8/30", "summary": "4年净利-72%+PE比全球同行贵15倍,ROE仅3%不如定存,等毛利率见底+PE<50x再重新评估", "hasReport": true, "reportFile": "泰晶科技.docx", "type": "stock"}]}]}, {"name": "存储芯片", "type": "track", "children": [{"name": "DRAM", "type": "sub", "children": [{"id": "002213", "name": "大为股份", "code": "002213", "rating": "D", "score": 5, "scoreDisplay": "5/30", "summary": "—", "hasReport": true, "reportFile": "大为股份.docx", "type": "stock"}]}]}, {"name": "功率半导体", "type": "track", "children": [{"name": "SiC碳化硅", "type": "sub", "children": [{"id": "600703", "name": "三安光电", "code": "600703", "rating": "B+", "score": 19, "scoreDisplay": "19/30", "summary": "等毛利率拐点", "hasReport": true, "reportFile": "三安光电.docx", "type": "stock"}, {"id": "600460", "name": "士兰微", "code": "600460", "rating": "B+", "score": 20, "scoreDisplay": "20/30", "summary": "等折旧消化", "hasReport": true, "reportFile": "士兰微.docx", "type": "stock"}]}]}]}, {"name": "🤖 机器人与智能制造", "type": "theme", "children": [{"name": "机器人整机/系统集成", "type": "track", "children": [{"name": "工业机器人", "type": "sub", "children": [{"id": "603283", "name": "赛腾股份", "code": "603283", "rating": "B+", "score": 17, "scoreDisplay": "17/30", "summary": "好赛道贵价格，等待半导体占比提升至30%+或PE回调至25-28x(35-38元)再布局", "hasReport": true, "reportFile": "赛腾股份.docx", "type": "stock"}, {"id": "002747", "name": "埃斯顿", "code": "002747", "rating": "B", "score": null, "scoreDisplay": "?", "summary": "等国产替代加速", "hasReport": true, "reportFile": "埃斯顿.docx", "type": "stock"}, {"id": "002527", "name": "新时达", "code": "002527", "rating": "?", "score": null, "scoreDisplay": "?", "summary": "等海尔整合见效", "hasReport": true, "reportFile": "新时达.docx", "type": "stock"}]}]}]}, {"name": "🚗 新能源智能汽车", "type": "theme", "children": [{"name": "动力电池", "type": "track", "children": [{"name": "固态/半固态电池", "type": "sub", "children": [{"id": "603663", "name": "三祥新材", "code": "603663", "rating": "A", "score": 23, "scoreDisplay": "23/30", "summary": "A级唯一标的，核心关注标的，固态电池+核级锆故事有实质性技术和产能支撑，但PB已在高位", "hasReport": true, "reportFile": "三祥新材.docx", "type": "stock"}, {"id": "603212", "name": "赛伍技术", "code": "603212", "rating": "B+", "score": 19, "scoreDisplay": "19/30", "summary": "平台型材料公司，光伏基本盘稳固，SET半导体材料打开第二增长曲线，越南产能布局", "hasReport": true, "reportFile": "赛伍技术.docx", "type": "stock"}, {"id": "002741", "name": "光华科技", "code": "002741", "rating": "D+", "score": 11, "scoreDisplay": "11/30", "summary": "D+级俱乐部第1名，市值142亿中仅核心业务值36亿(剩余103亿为固态电池概念溢价)，等待PB 2x以下(约8.3元)", "hasReport": true, "reportFile": "光华科技.docx", "type": "stock"}, {"id": "002167", "name": "东方锆业", "code": "002167", "rating": "D+", "score": 8, "scoreDisplay": "8/30", "summary": "财务状况恶化严重，合同负债近乎归零，订单先行指标发出强烈警告信号", "hasReport": true, "reportFile": "东方锆业.docx", "type": "stock"}]}]}, {"name": "热管理", "type": "track", "children": [{"name": "电子膨胀阀/四通阀", "type": "sub", "children": [{"id": "002050", "name": "三花智控", "code": "002050", "rating": "A-", "score": 22, "scoreDisplay": "22/30", "summary": "—", "hasReport": true, "reportFile": "三花智控.docx", "type": "stock"}]}]}, {"name": "轻量化/结构件", "type": "track", "children": [{"name": "铝合金底盘/车身", "type": "sub", "children": [{"id": "002050", "name": "三花智控", "code": "002050", "rating": "A-", "score": 22, "scoreDisplay": "22/30", "summary": "—", "hasReport": true, "reportFile": "三花智控.docx", "type": "stock"}, {"id": "600458", "name": "时代新材", "code": "600458", "rating": "A-", "score": 21, "scoreDisplay": "21/30", "summary": "央企中车旗下平台型新材料公司，风电叶片市占率靠前，轨交减振为全球龙头", "hasReport": true, "reportFile": "时代新材.docx", "type": "stock"}, {"id": "605018", "name": "长华集团", "code": "605018", "rating": "?", "score": null, "scoreDisplay": "?", "summary": "等待汽车周期", "hasReport": true, "reportFile": "长华集团.docx", "type": "stock"}]}]}, {"name": "智能驾驶", "type": "track", "children": [{"name": "域控制器/传感器", "type": "sub", "children": [{"id": "603328", "name": "依顿电子", "code": "603328", "rating": "B+", "score": 17, "scoreDisplay": "17/30", "summary": "汽车电子PCB稳健增长型，适合中长线持有，但行业竞争激烈弹性有限", "hasReport": true, "reportFile": "依顿电子.docx", "type": "stock"}, {"id": "000810", "name": "创维数字", "code": "000810", "rating": "C+", "score": 12, "scoreDisplay": "12/30", "summary": "—", "hasReport": true, "reportFile": "创维数字.docx", "type": "stock"}, {"id": "002138", "name": "顺络电子", "code": "002138", "rating": "B+", "score": null, "scoreDisplay": "?", "summary": "等PE<35x约45元以下", "hasReport": true, "reportFile": "顺络电子.docx", "type": "stock"}]}]}, {"name": "电池材料", "type": "track", "children": [{"name": "复合铜箔/铝箔", "type": "sub", "children": [{"id": "600110", "name": "诺德股份", "code": "600110", "rating": "C", "score": 12, "scoreDisplay": "12/30", "summary": "铜箔周期底部品种,等加工费反弹+季度扭亏信号,当前无买入理由", "hasReport": true, "reportFile": "诺德股份.docx", "type": "stock"}]}, {"name": "正极材料", "type": "sub", "children": [{"id": "002125", "name": "湘潭电化", "code": "002125", "rating": "?", "score": null, "scoreDisplay": "?", "summary": "等待锰酸锂放量", "hasReport": true, "reportFile": "湘潭电化.docx", "type": "stock"}]}]}]}, {"name": "📱 消费电子与终端", "type": "theme", "children": [{"name": "面板/显示", "type": "track", "children": [{"name": "LCD液晶面板", "type": "sub", "children": [{"id": "000100", "name": "TCL科技", "code": "000100", "rating": "B+", "score": 20, "scoreDisplay": "20/30", "summary": "—", "hasReport": true, "reportFile": "TCL科技.docx", "type": "stock"}]}]}, {"name": "手机产业链", "type": "track", "children": [{"name": "FPC/连接器", "type": "sub", "children": [{"id": "603328", "name": "依顿电子", "code": "603328", "rating": "B+", "score": 17, "scoreDisplay": "17/30", "summary": "汽车电子PCB稳健增长型，适合中长线持有，但行业竞争激烈弹性有限", "hasReport": true, "reportFile": "依顿电子.docx", "type": "stock"}]}, {"name": "精密功能件/散热", "type": "sub", "children": [{"id": "002138", "name": "顺络电子", "code": "002138", "rating": "B+", "score": null, "scoreDisplay": "?", "summary": "等PE<35x约45元以下", "hasReport": true, "reportFile": "顺络电子.docx", "type": "stock"}, {"id": "603989", "name": "艾华集团", "code": "603989", "rating": "?", "score": null, "scoreDisplay": "?", "summary": "等PE回归<30x", "hasReport": true, "reportFile": "艾华集团.docx", "type": "stock"}]}]}, {"name": "XR/智能穿戴", "type": "track", "children": [{"name": "智能手表/手环", "type": "sub", "children": [{"id": "605566", "name": "福莱蒽特", "code": "605566", "rating": "C+", "score": 14, "scoreDisplay": "14/30", "summary": "电子皮肤概念为核心看点但商业化路径漫长，染料主业受下游纺织景气度拖累", "hasReport": true, "reportFile": "福莱蒽特.docx", "type": "stock"}]}]}, {"name": "AI PC/智能终端", "type": "track", "children": [{"name": "AI PC OEM/ODM", "type": "sub", "children": [{"id": "000810", "name": "创维数字", "code": "000810", "rating": "C+", "score": 12, "scoreDisplay": "12/30", "summary": "—", "hasReport": true, "reportFile": "创维数字.docx", "type": "stock"}]}]}]}, {"name": "☀️ 新能源发电", "type": "theme", "children": [{"name": "风电", "type": "track", "children": [{"name": "叶片/模具", "type": "sub", "children": [{"id": "600458", "name": "时代新材", "code": "600458", "rating": "A-", "score": 21, "scoreDisplay": "21/30", "summary": "央企中车旗下平台型新材料公司，风电叶片市占率靠前，轨交减振为全球龙头", "hasReport": true, "reportFile": "时代新材.docx", "type": "stock"}, {"id": "605006", "name": "山东玻纤", "code": "605006", "rating": "D", "score": 10, "scoreDisplay": "10/30", "summary": "两年亏损+高负债+现金流为负+速动比<1，多重风险叠加，坚决回避", "hasReport": true, "reportFile": "山东玻纤.docx", "type": "stock"}, {"id": "002669", "name": "康达新材", "code": "002669", "rating": "?", "score": null, "scoreDisplay": "?", "summary": "等军工放量", "hasReport": true, "reportFile": "康达新材.docx", "type": "stock"}]}]}, {"name": "储能", "type": "track", "children": [{"name": "储能电池/电芯", "type": "sub", "children": [{"id": "002534", "name": "西子洁能", "code": "002534", "rating": "A-", "score": 20, "scoreDisplay": "20/30", "summary": "A-级俱乐部成员，基本面极佳（净现金26亿+有息负债清零），但估值已price-in乐观预期，建议14-15元回调后布局", "hasReport": true, "reportFile": "西子洁能.docx", "type": "stock"}, {"id": "600869", "name": "远东股份", "code": "600869", "rating": "D+", "score": 8, "scoreDisplay": "8/30", "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx", "type": "stock"}, {"id": "002733", "name": "雄韬股份", "code": "002733", "rating": "?", "score": null, "scoreDisplay": "?", "summary": "等燃料电池放量", "hasReport": true, "reportFile": "雄韬股份.docx", "type": "stock"}]}]}, {"name": "光伏全链", "type": "track", "children": [{"name": "辅材(胶膜/边框)", "type": "sub", "children": [{"id": "603212", "name": "赛伍技术", "code": "603212", "rating": "B+", "score": 19, "scoreDisplay": "19/30", "summary": "平台型材料公司，光伏基本盘稳固，SET半导体材料打开第二增长曲线，越南产能布局", "hasReport": true, "reportFile": "赛伍技术.docx", "type": "stock"}, {"id": "603330", "name": "天洋新材", "code": "603330", "rating": "D+", "score": 6, "scoreDisplay": "6/30", "summary": "坚决回避", "hasReport": true, "reportFile": "天洋新材.docx", "type": "stock"}]}, {"name": "电池/组件", "type": "sub", "children": [{"id": "603212", "name": "赛伍技术", "code": "603212", "rating": "B+", "score": 19, "scoreDisplay": "19/30", "summary": "平台型材料公司，光伏基本盘稳固，SET半导体材料打开第二增长曲线，越南产能布局", "hasReport": true, "reportFile": "赛伍技术.docx", "type": "stock"}]}]}, {"name": "氢能", "type": "track", "children": [{"name": "氢燃料电池系统", "type": "sub", "children": [{"id": "601678", "name": "滨化股份", "code": "601678", "rating": "D", "score": 10, "scoreDisplay": "10/30", "summary": "有息负债率74%为全分析最高之一，流动性承压，化工品价格低迷周期未见底", "hasReport": true, "reportFile": "滨化股份.docx", "type": "stock"}]}]}]}, {"name": "⚡ 电力电网", "type": "theme", "children": [{"name": "核电", "type": "track", "children": [{"name": "核电设备/主泵", "type": "sub", "children": [{"id": "603663", "name": "三祥新材", "code": "603663", "rating": "A", "score": 23, "scoreDisplay": "23/30", "summary": "A级唯一标的，核心关注标的，固态电池+核级锆故事有实质性技术和产能支撑，但PB已在高位", "hasReport": true, "reportFile": "三祥新材.docx", "type": "stock"}, {"id": "002534", "name": "西子洁能", "code": "002534", "rating": "A-", "score": 20, "scoreDisplay": "20/30", "summary": "A-级俱乐部成员，基本面极佳（净现金26亿+有息负债清零），但估值已price-in乐观预期，建议14-15元回调后布局", "hasReport": true, "reportFile": "西子洁能.docx", "type": "stock"}, {"id": "002167", "name": "东方锆业", "code": "002167", "rating": "D+", "score": 8, "scoreDisplay": "8/30", "summary": "财务状况恶化严重，合同负债近乎归零，订单先行指标发出强烈警告信号", "hasReport": true, "reportFile": "东方锆业.docx", "type": "stock"}, {"id": "600869", "name": "远东股份", "code": "600869", "rating": "D+", "score": 8, "scoreDisplay": "8/30", "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx", "type": "stock"}, {"id": "000922", "name": "佳电股份", "code": "000922", "rating": "C+", "score": null, "scoreDisplay": "?", "summary": "核电泵放量等PE<35x", "hasReport": true, "reportFile": "佳电股份.docx", "type": "stock"}]}]}, {"name": "火电", "type": "track", "children": [{"name": "煤电", "type": "sub", "children": [{"id": "605580", "name": "恒盛能源", "code": "605580", "rating": "D+", "score": 9, "scoreDisplay": "9/30", "summary": "PB 7.32x行业最贵水平，流动比率0.74偿债压力大，园区垄断型业务天花板低", "hasReport": true, "reportFile": "恒盛能源.docx", "type": "stock"}]}]}, {"name": "电网设备", "type": "track", "children": [{"name": "特高压/直流输电", "type": "sub", "children": [{"id": "600869", "name": "远东股份", "code": "600869", "rating": "D+", "score": 8, "scoreDisplay": "8/30", "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx", "type": "stock"}]}]}]}, {"name": "💎 有色金属与新材料", "type": "theme", "children": [{"name": "稀有/战略金属", "type": "track", "children": [{"name": "锆", "type": "sub", "children": [{"id": "603663", "name": "三祥新材", "code": "603663", "rating": "A", "score": 23, "scoreDisplay": "23/30", "summary": "A级唯一标的，核心关注标的，固态电池+核级锆故事有实质性技术和产能支撑，但PB已在高位", "hasReport": true, "reportFile": "三祥新材.docx", "type": "stock"}, {"id": "002167", "name": "东方锆业", "code": "002167", "rating": "D+", "score": 8, "scoreDisplay": "8/30", "summary": "财务状况恶化严重，合同负债近乎归零，订单先行指标发出强烈警告信号", "hasReport": true, "reportFile": "东方锆业.docx", "type": "stock"}]}, {"name": "锂", "type": "sub", "children": [{"id": "601678", "name": "滨化股份", "code": "601678", "rating": "D", "score": 10, "scoreDisplay": "10/30", "summary": "有息负债率74%为全分析最高之一，流动性承压，化工品价格低迷周期未见底", "hasReport": true, "reportFile": "滨化股份.docx", "type": "stock"}, {"id": "603399", "name": "永杉锂业", "code": "603399", "rating": "D-", "score": null, "scoreDisplay": "?", "summary": "坚决回避商品赌场", "hasReport": true, "reportFile": "永杉锂业.docx", "type": "stock"}]}, {"name": "锡", "type": "sub", "children": [{"id": "000960", "name": "锡业股份", "code": "000960", "rating": "B-", "score": 17, "scoreDisplay": "17/30", "summary": "PE<20x布局止损Sn<22万/吨", "hasReport": true, "reportFile": "锡业股份.docx", "type": "stock"}]}, {"name": "锗", "type": "sub", "children": [{"id": "002428", "name": "云南锗业", "code": "002428", "rating": "D", "score": 6, "scoreDisplay": "6/30", "summary": "坚决回避地球上最贵矿股", "hasReport": true, "reportFile": "云南锗业.docx", "type": "stock"}]}, {"name": "钽铌", "type": "sub", "children": [{"id": "000962", "name": "东方钽业", "code": "000962", "rating": "C", "score": null, "scoreDisplay": "?", "summary": "等OCF转正+PE<50x", "hasReport": true, "reportFile": "东方钽业.docx", "type": "stock"}]}]}, {"name": "工业金属", "type": "track", "children": [{"name": "黄金/白银", "type": "sub", "children": [{"id": "603663", "name": "三祥新材", "code": "603663", "rating": "A", "score": 23, "scoreDisplay": "23/30", "summary": "A级唯一标的，核心关注标的，固态电池+核级锆故事有实质性技术和产能支撑，但PB已在高位", "hasReport": true, "reportFile": "三祥新材.docx", "type": "stock"}, {"id": "603995", "name": "甬金股份", "code": "603995", "rating": "B", "score": 17, "scoreDisplay": "17/30", "summary": "高股息防御品种，PE 13.7x估值合理，钛合金第二曲线待验证；PE<12x(18元)可配置", "hasReport": true, "reportFile": "甬金股份.docx", "type": "stock"}, {"id": "601137", "name": "博威合金", "code": "601137", "rating": "D+", "score": 11, "scoreDisplay": "11/30", "summary": "好材料公司被光伏拖垮，等光伏业务剥离/减值完毕/OCF转正后再考虑，坚决回避", "hasReport": true, "reportFile": "博威合金.docx", "type": "stock"}, {"id": "600459", "name": "贵研铂业", "code": "600459", "rating": "C-", "score": null, "scoreDisplay": "?", "summary": "等OCF转正+PE<25x", "hasReport": true, "reportFile": "贵研铂业.docx", "type": "stock"}, {"id": "603045", "name": "福达合金", "code": "603045", "rating": "?", "score": null, "scoreDisplay": "?", "summary": "等半年报验证", "hasReport": true, "reportFile": "福达合金.docx", "type": "stock"}]}, {"name": "铅锌", "type": "sub", "children": [{"id": "600961", "name": "株冶集团", "code": "600961", "rating": "A-", "score": 21, "scoreDisplay": "21/30", "summary": "2026E PE~10x性价比极高，稀贵金属价格持续上涨是核心驱动力，Q2有望延续强趋势", "hasReport": true, "reportFile": "株冶集团.docx", "type": "stock"}]}, {"name": "铜", "type": "sub", "children": [{"id": "002171", "name": "楚江新材", "code": "002171", "rating": "B", "score": 17, "scoreDisplay": "17/30", "summary": "顶立科技（碳纤维热工装备+3D打印粉末）是核心估值溢价来源，铜加工业务周期性强", "hasReport": true, "reportFile": "楚江新材.docx", "type": "stock"}, {"id": "601137", "name": "博威合金", "code": "601137", "rating": "D+", "score": 11, "scoreDisplay": "11/30", "summary": "好材料公司被光伏拖垮，等光伏业务剥离/减值完毕/OCF转正后再考虑，坚决回避", "hasReport": true, "reportFile": "博威合金.docx", "type": "stock"}, {"id": "002203", "name": "海亮股份", "code": "002203", "rating": "D+", "score": 9, "scoreDisplay": "9/30", "summary": "PE55x的铜加工厂没有任何持有理由,即使利润恢复至15亿PE仍>35x,等跌到10元再谈", "hasReport": true, "reportFile": "海亮股份.docx", "type": "stock"}, {"id": "603045", "name": "福达合金", "code": "603045", "rating": "?", "score": null, "scoreDisplay": "?", "summary": "等半年报验证", "hasReport": true, "reportFile": "福达合金.docx", "type": "stock"}]}, {"name": "铝", "type": "sub", "children": [{"id": "603995", "name": "甬金股份", "code": "603995", "rating": "B", "score": 17, "scoreDisplay": "17/30", "summary": "高股息防御品种，PE 13.7x估值合理，钛合金第二曲线待验证；PE<12x(18元)可配置", "hasReport": true, "reportFile": "甬金股份.docx", "type": "stock"}, {"id": "600888", "name": "新疆众合", "code": "600888", "rating": "B", "score": 16, "scoreDisplay": "16/30", "summary": "周期底部低估值价值股，等2026H1验证拐点确认后布局，止损位7.5元", "hasReport": false, "reportFile": "", "type": "stock"}, {"id": "600888", "name": "新疆众和", "code": "600888", "rating": "B", "score": 16, "scoreDisplay": "16/30", "summary": "等待铝价回调", "hasReport": true, "reportFile": "新疆众和.docx", "type": "stock"}]}]}, {"name": "特种化工新材料", "type": "track", "children": [{"name": "高分子材料", "type": "sub", "children": [{"id": "002064", "name": "华峰化学", "code": "002064", "rating": "A-", "score": 22, "scoreDisplay": "22/30", "summary": "A-级俱乐部头部标的，周期低谷OCF强劲证明盈利质量，推荐等待PB 1.3-1.5x(7.2-8.3元)安全边际", "hasReport": true, "reportFile": "华峰化学.docx", "type": "stock"}, {"id": "601233", "name": "桐昆股份", "code": "601233", "rating": "B+", "score": 20, "scoreDisplay": "20/30", "summary": "涤纶长丝板块首选配置标的,Q1利润证明反转已启动,PE<17x可轻仓", "hasReport": true, "reportFile": "桐昆股份.docx", "type": "stock"}, {"id": "002768", "name": "国恩股份", "code": "002768", "rating": "A-", "score": 18, "scoreDisplay": "18/30", "summary": "当前分析最高分A-级之一，PEEK产能1000吨/年为估值加分，港股IPO为催化剂", "hasReport": true, "reportFile": "国恩股份.docx", "type": "stock"}, {"id": "001359", "name": "平安电工", "code": "001359", "rating": "B-", "score": 17, "scoreDisplay": "17/30", "summary": "好公司坏价格=等跌60%再出手", "hasReport": true, "reportFile": "平安电工.docx", "type": "stock"}, {"id": "600596", "name": "新安股份", "code": "600596", "rating": "B", "score": 16, "scoreDisplay": "16/30", "summary": "8万吨草甘膦产能涨价弹性+有机硅最差已过+新能源材料布局，机构目标价14.81元，等待Q2验证", "hasReport": true, "reportFile": "新安股份.docx", "type": "stock"}, {"id": "603225", "name": "新凤鸣", "code": "603225", "rating": "C", "score": 11, "scoreDisplay": "11/30", "summary": "周期股底部观察品种,PE<25x(15元)可轻仓布局,负债率>72%止损,重点跟踪POY价差和长丝开工率", "hasReport": true, "reportFile": "新凤鸣.docx", "type": "stock"}, {"id": "000859", "name": "国风新材", "code": "000859", "rating": "D", "score": 3, "scoreDisplay": "3/30", "summary": "坚决回避", "hasReport": true, "reportFile": "国风新材.docx", "type": "stock"}, {"id": "603725", "name": "天安新材", "code": "603725", "rating": "?", "score": null, "scoreDisplay": "?", "summary": "—", "hasReport": true, "reportFile": "天安新材.docx", "type": "stock"}, {"id": "603276", "name": "恒兴新材", "code": "603276", "rating": "C+", "score": 14, "scoreDisplay": "14/30", "summary": "次新规模小暂不建议", "hasReport": true, "reportFile": "恒兴新材.docx", "type": "stock"}]}, {"name": "有机硅/氟化工", "type": "sub", "children": [{"id": "605020", "name": "永和股份", "code": "605020", "rating": "B+", "score": 22, "scoreDisplay": "22/30", "summary": "配额=印钞许可证,2025年质变年,去杠杆教科书,R32稳在3万+可维持7亿+盈利,最大风险是制冷剂价回落", "hasReport": true, "reportFile": "永和股份.docx", "type": "stock"}, {"id": "600596", "name": "新安股份", "code": "600596", "rating": "B", "score": 16, "scoreDisplay": "16/30", "summary": "8万吨草甘膦产能涨价弹性+有机硅最差已过+新能源材料布局，机构目标价14.81元，等待Q2验证", "hasReport": true, "reportFile": "新安股份.docx", "type": "stock"}, {"id": "601678", "name": "滨化股份", "code": "601678", "rating": "D", "score": 10, "scoreDisplay": "10/30", "summary": "有息负债率74%为全分析最高之一，流动性承压，化工品价格低迷周期未见底", "hasReport": true, "reportFile": "滨化股份.docx", "type": "stock"}, {"id": "603155", "name": "新亚强", "code": "603155", "rating": "D+", "score": 9, "scoreDisplay": "9/30", "summary": "—", "hasReport": true, "reportFile": "新亚强.docx", "type": "stock"}, {"id": "603938", "name": "三孚股份", "code": "603938", "rating": "B", "score": 14, "scoreDisplay": "14/30", "summary": "等待PB<2x信号", "hasReport": true, "reportFile": "三孚股份.docx", "type": "stock"}]}, {"name": "碳纤维/芳纶", "type": "sub", "children": [{"id": "600458", "name": "时代新材", "code": "600458", "rating": "A-", "score": 21, "scoreDisplay": "21/30", "summary": "央企中车旗下平台型新材料公司，风电叶片市占率靠前，轨交减振为全球龙头", "hasReport": true, "reportFile": "时代新材.docx", "type": "stock"}, {"id": "002171", "name": "楚江新材", "code": "002171", "rating": "B", "score": 17, "scoreDisplay": "17/30", "summary": "顶立科技（碳纤维热工装备+3D打印粉末）是核心估值溢价来源，铜加工业务周期性强", "hasReport": true, "reportFile": "楚江新材.docx", "type": "stock"}]}, {"name": "功能性膜材料", "type": "sub", "children": [{"id": "603733", "name": "仙鹤股份", "code": "603733", "rating": "B-", "score": 16, "scoreDisplay": "16/30", "summary": "好公司烂资产负债表,126亿负债赌浆一体化(自供浆率30→80%),成功翻倍失败跌70%,等CapEx下降+FCF转正信号", "hasReport": true, "reportFile": "仙鹤股份.docx", "type": "stock"}, {"id": "002522", "name": "浙江众成", "code": "002522", "rating": "D", "score": 5, "scoreDisplay": "5/30", "summary": "行业衰退期的价值陷阱，全维度崩溃，任何价格均不建议买入", "hasReport": true, "reportFile": "浙江众成.docx", "type": "stock"}]}, {"name": "功能性涂层/胶粘剂", "type": "sub", "children": [{"id": "605566", "name": "福莱蒽特", "code": "605566", "rating": "C+", "score": 14, "scoreDisplay": "14/30", "summary": "电子皮肤概念为核心看点但商业化路径漫长，染料主业受下游纺织景气度拖累", "hasReport": true, "reportFile": "福莱蒽特.docx", "type": "stock"}, {"id": "603681", "name": "永冠新材", "code": "603681", "rating": "C", "score": 11, "scoreDisplay": "11/30", "summary": "行业天花板低(~500亿市场增速3-5%),PE<25x或利润回升至2亿+才考虑", "hasReport": true, "reportFile": "永冠新材.docx", "type": "stock"}, {"id": "603683", "name": "晶华新材", "code": "603683", "rating": "?", "score": null, "scoreDisplay": "?", "summary": "等待行业回暖", "hasReport": true, "reportFile": "晶华新材.docx", "type": "stock"}]}]}, {"name": "稀土永磁", "type": "track", "children": [{"name": "钕铁硼永磁", "type": "sub", "children": [{"id": "000970", "name": "中科三环", "code": "000970", "rating": "C+", "score": 14, "scoreDisplay": "14/30", "summary": "稀土价格周期底部品种,镨钕突破60万+OCF转正+出口恢复是关键信号,逆向布局不宜重仓", "hasReport": true, "reportFile": "中科三环.docx", "type": "stock"}]}]}]}, {"name": "🛡️ 国防军工与航空航天", "type": "theme", "children": [{"name": "军工新材料", "type": "track", "children": [{"name": "碳碳/碳陶复合材料", "type": "sub", "children": [{"id": "002171", "name": "楚江新材", "code": "002171", "rating": "B", "score": 17, "scoreDisplay": "17/30", "summary": "顶立科技（碳纤维热工装备+3D打印粉末）是核心估值溢价来源，铜加工业务周期性强", "hasReport": true, "reportFile": "楚江新材.docx", "type": "stock"}]}]}, {"name": "军工电子", "type": "track", "children": [{"name": "军工连接器/线缆", "type": "sub", "children": [{"id": "600353", "name": "旭光电子", "code": "600353", "rating": "B+", "score": 15, "scoreDisplay": "15/30", "summary": "技术壁垒极高（国内电真空器件龙头+特种陶瓷打破进口垄断），但估值极度昂贵，不适合当前价位买入", "hasReport": true, "reportFile": "旭光电子.docx", "type": "stock"}]}, {"name": "军用芯片/FPGA", "type": "sub", "children": [{"id": "002023", "name": "海特高新", "code": "002023", "rating": "C+", "score": 13, "scoreDisplay": "13/30", "summary": "海威华芯（第三代半导体）连续减值吞噬利润，航空维修基本盘稳定但不足以支撑估值", "hasReport": true, "reportFile": "海特高新.docx", "type": "stock"}]}]}, {"name": "航空装备", "type": "track", "children": [{"name": "航空发动机", "type": "sub", "children": [{"id": "002023", "name": "海特高新", "code": "002023", "rating": "C+", "score": 13, "scoreDisplay": "13/30", "summary": "海威华芯（第三代半导体）连续减值吞噬利润，航空维修基本盘稳定但不足以支撑估值", "hasReport": true, "reportFile": "海特高新.docx", "type": "stock"}]}]}]}, {"name": "🏭 高端装备与工业", "type": "theme", "children": [{"name": "工业母机/机床", "type": "track", "children": [{"name": "激光加工/切割设备", "type": "sub", "children": [{"id": "603337", "name": "杰克科技", "code": "603337", "rating": "B+", "score": 21, "scoreDisplay": "21/30", "summary": "全球缝纫机之王,5.5亿研发砸AI+人形机器人,下有PE15x底+上有科技股重估天花板,等2026增速恢复验证", "hasReport": true, "reportFile": "杰克科技.docx", "type": "stock"}, {"id": "003036", "name": "泰坦股份", "code": "003036", "rating": "D", "score": 4, "scoreDisplay": "4/30", "summary": "D级俱乐部最低分(并列)，有史以来最贵的记录，没有任何基本面支撑，疑似庄股/次新炒作余温", "hasReport": true, "reportFile": "泰坦股份.docx", "type": "stock"}]}]}, {"name": "工程/矿山机械", "type": "track", "children": [{"name": "矿山机械", "type": "sub", "children": [{"id": "603257", "name": "中国瑞林", "code": "603257", "rating": "A-", "score": 19, "scoreDisplay": "19/30", "summary": "工程设计服务罕见零负债标的，海外收入占比48%全球化布局，关注中报验证增速", "hasReport": true, "reportFile": "中国瑞林.docx", "type": "stock"}]}]}, {"name": "轨交装备", "type": "track", "children": [{"name": "轨交扣件/道岔", "type": "sub", "children": [{"id": "603500", "name": "祥和实业", "code": "603500", "rating": "B", "score": 16, "scoreDisplay": "16/30", "summary": "低估值稳健型选项，轨交扣件市占率高+下游铁路投资稳定，但成长性有限", "hasReport": true, "reportFile": "祥和实业.docx", "type": "stock"}, {"id": "002972", "name": "科安达", "code": "002972", "rating": "C", "score": 13, "scoreDisplay": "13/30", "summary": "—", "hasReport": true, "reportFile": "科安达.docx", "type": "stock"}]}]}, {"name": "泵/阀/压缩机", "type": "track", "children": [{"name": "工业泵", "type": "sub", "children": [{"id": "603757", "name": "大元泵业", "code": "603757", "rating": "C", "score": 13, "scoreDisplay": "13/30", "summary": "—", "hasReport": true, "reportFile": "大元泵业.docx", "type": "stock"}]}]}]}, {"name": "💊 医药健康", "type": "theme", "children": [{"name": "CXO/生命科学", "type": "track", "children": [{"name": "CDMO/原料药", "type": "sub", "children": [{"id": "603880", "name": "南卫股份", "code": "603880", "rating": "D-", "score": 3, "scoreDisplay": "3/30", "summary": "—", "hasReport": true, "reportFile": "南卫股份.docx", "type": "stock"}, {"id": "600227", "name": "赤天化", "code": "600227", "rating": "D", "score": 4, "scoreDisplay": "4/30", "summary": "坚决回避", "hasReport": true, "reportFile": "赤天化.docx", "type": "stock"}]}]}]}, {"name": "🛒 消费与服务业", "type": "theme", "children": [{"name": "游戏/传媒", "type": "track", "children": [{"name": "广告/营销", "type": "sub", "children": [{"id": "600226", "name": "亨通股份", "code": "600226", "rating": "D+", "score": 9, "scoreDisplay": "9/30", "summary": "坚决回避", "hasReport": true, "reportFile": "亨通股份.docx", "type": "stock"}, {"id": "603466", "name": "风语筑", "code": "603466", "rating": "?", "score": null, "scoreDisplay": "?", "summary": "等待VR/AR爆发", "hasReport": true, "reportFile": "风语筑.docx", "type": "stock"}]}]}, {"name": "家电/家居", "type": "track", "children": [{"name": "定制家居/软体", "type": "sub", "children": [{"id": "603389", "name": "法狮龙", "code": "603389", "rating": "D+", "score": 9, "scoreDisplay": "9/30", "summary": "坚决回避", "hasReport": true, "reportFile": "法狮龙.docx", "type": "stock"}]}]}]}, {"name": "🏦 金融与地产", "type": "theme", "children": [{"name": "房地产", "type": "track", "children": [{"name": "房地产开发", "type": "sub", "children": [{"id": "600605", "name": "汇通能源", "code": "600605", "rating": "D+", "score": null, "scoreDisplay": "?", "summary": "壳博弈非投资标的", "hasReport": true, "reportFile": "汇通能源.docx", "type": "stock"}, {"id": "600736", "name": "苏州高新", "code": "600736", "rating": "D+", "score": 9, "scoreDisplay": "9/30", "summary": "暂不关注", "hasReport": true, "reportFile": "苏州高新.docx", "type": "stock"}]}]}, {"name": "金融", "type": "track", "children": [{"name": "金融科技/支付", "type": "sub", "children": [{"id": "002141", "name": "贤丰控股", "code": "002141", "rating": "D+", "score": 7, "scoreDisplay": "7/30", "summary": "坚决回避", "hasReport": true, "reportFile": "贤丰控股.docx", "type": "stock"}]}]}]}]};
+
+// ============ PASSWORD ============
+async function sha256(str){
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+async function checkPassword(){
+  const h = await sha256(document.getElementById('pw-input').value);
+  if(h === PASSWORD_HASH){
+    document.getElementById('gate').classList.add('hidden');
     document.getElementById('app').style.display = 'block';
-    try { sessionStorage.setItem('a-stock-auth', '1'); } catch(e) {}
-    if (typeof render === 'function') { render(); }
+    if(IS_SERVER) document.getElementById('server-badge').style.display = 'inline';
+    render();
   } else {
-    err.style.display = 'block';
-    document.getElementById('pw-input').value = '';
-    document.getElementById('pw-input').focus();
+    const e = document.getElementById('pw-error');
+    e.style.display = 'block';
+    setTimeout(function(){ e.style.display = 'none'; }, 2000);
   }
 }
-(function() {
-  try {
-    if (sessionStorage.getItem('a-stock-auth') === '1') {
-      document.getElementById('password-gate').style.display = 'none';
-      document.getElementById('app').style.display = 'block';
-      if (typeof render === 'function') { render(); }
-      return;
-    }
-  } catch(e) {}
-  document.getElementById('password-gate').style.display = 'flex';
-  document.getElementById('app').style.display = 'none';
-})();
 
-// ============ REPORT LOADER ============
-var REPORT_READY = false;
-function loadReports(cb) {
-  if (REPORT_READY) { cb(); return; }
-  var s = document.createElement('script');
-  s.src = 'reports_data.js';
-  s.onload = function() { REPORT_READY = true; cb(); };
-  s.onerror = function() { console.warn('reports_data.js load failed'); REPORT_READY = true; cb(); };
-  document.head.appendChild(s);
-}
-
-
-// ============ CONFIG ============
-
-const IS_SERVER = window.location.protocol === 'http:' || window.location.protocol === 'https:';
-
-const TREE = {"name": "A股投资全景树", "type": "root", "children": [{"id": "ai_semicon", "name": "🔥 AI算力与半导体", "type": "theme", "comment": "AI时代核心赛道，从芯片到服务器全链路", "children": [{"name": "AI服务器与算力基础设施", "type": "track", "children": [{"name": "AI服务器整机", "type": "sub", "children": [{"id": "600601", "name": "方正科技", "code": "600601", "type": "stock", "grade": "B", "score": 16, "summary": "—", "hasReport": true, "reportFile": "方正科技.docx"}, {"id": "600869", "name": "远东股份", "code": "600869", "type": "stock", "grade": "D+", "score": 8, "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx"}, {"id": "002851", "name": "麦格米特", "code": "002851", "type": "stock", "grade": "D", "score": 6, "summary": "—", "hasReport": true, "reportFile": "麦格米特.docx"}]}, {"name": "服务器电源", "type": "sub", "children": [{"id": "600869", "name": "远东股份", "code": "600869", "type": "stock", "grade": "D+", "score": 8, "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx"}, {"id": "002851", "name": "麦格米特", "code": "002851", "type": "stock", "grade": "D", "score": 6, "summary": "—", "hasReport": true, "reportFile": "麦格米特.docx"}]}, {"name": "液冷/温控", "type": "sub", "children": [{"id": "002050", "name": "三花智控", "code": "002050", "type": "stock", "grade": "A-", "score": 22, "summary": "—", "hasReport": true, "reportFile": "三花智控.docx"}, {"id": "002837", "name": "英维克", "code": "002837", "type": "stock", "grade": "B+", "score": 18, "summary": "—", "hasReport": true, "reportFile": "英维克.docx"}, {"id": "603757", "name": "大元泵业", "code": "603757", "type": "stock", "grade": "C", "score": 13, "summary": "—", "hasReport": true, "reportFile": "大元泵业.docx"}, {"id": "002272", "name": "川润股份", "code": "002272", "type": "stock", "grade": "C", "score": 12, "summary": "—", "hasReport": true, "reportFile": "川润股份.docx"}]}, {"name": "高速PCB/连接器", "type": "sub", "children": []}, {"name": "算力芯片/GPU", "type": "sub", "children": [{"id": "603688", "name": "石英股份", "code": "603688", "type": "stock", "grade": "C", "score": 10, "summary": "世界级好公司+地狱级贵估值,等待半导体石英季度营收>3亿验证逻辑,或PE<50x(13-15元)再考虑,当前价位无安全边际", "hasReport": true, "reportFile": "石英股份.docx"}]}, {"name": "HBM/先进存储", "type": "sub", "children": [{"id": "603283", "name": "赛腾股份", "code": "603283", "type": "stock", "grade": "B+", "score": 17, "summary": "好赛道贵价格，等待半导体占比提升至30%+或PE回调至25-28x(35-38元)再布局", "hasReport": true, "reportFile": "赛腾股份.docx"}]}]}, {"name": "半导体材料", "type": "track", "children": [{"name": "光刻胶及辅材", "type": "sub", "children": [{"id": "300576", "name": "容大感光", "code": "300576", "type": "stock", "grade": "D+", "score": 0, "summary": "坚决回避光刻胶概念远大于实质", "hasReport": true, "reportFile": "容大感光.docx"}, {"id": "603650", "name": "彤程新材", "code": "603650", "type": "stock", "grade": "C+", "score": 13, "summary": "等PE回落", "hasReport": true, "reportFile": "彤程新材.docx"}]}, {"name": "电子特气", "type": "sub", "children": []}, {"name": "硅片/衬底", "type": "sub", "children": []}, {"name": "靶材", "type": "sub", "children": []}, {"name": "CMP抛光材料", "type": "sub", "children": []}, {"name": "湿电子化学品", "type": "sub", "children": []}, {"name": "前驱体/ALD材料", "type": "sub", "children": []}, {"name": "封装材料", "type": "sub", "children": [{"id": "601137", "name": "博威合金", "code": "601137", "type": "stock", "grade": "D+", "score": 11, "summary": "好材料公司被光伏拖垮，等光伏业务剥离/减值完毕/OCF转正后再考虑，坚决回避", "hasReport": true, "reportFile": "博威合金.docx"}]}, {"name": "掩模版/光罩", "type": "sub", "children": []}]}, {"name": "半导体设备", "type": "track", "children": [{"name": "刻蚀设备", "type": "sub", "children": []}, {"name": "薄膜沉积设备", "type": "sub", "children": []}, {"name": "清洗设备", "type": "sub", "children": []}, {"name": "检测/量测设备", "type": "sub", "children": []}, {"name": "离子注入设备", "type": "sub", "children": []}, {"name": "涂胶显影设备", "type": "sub", "children": []}, {"name": "CMP设备", "type": "sub", "children": []}, {"name": "零部件/辅助系统", "type": "sub", "children": []}]}, {"name": "IC设计与EDA", "type": "track", "children": [{"name": "存储芯片设计", "type": "sub", "children": [{"id": "002213", "name": "大为股份", "code": "002213", "type": "stock", "grade": "D", "score": 5, "summary": "—", "hasReport": true, "reportFile": "大为股份.docx"}]}, {"name": "MCU微控制器", "type": "sub", "children": []}, {"name": "模拟芯片/电源管理", "type": "sub", "children": []}, {"name": "SoC/AP处理器", "type": "sub", "children": []}, {"name": "FPGA/CPLD", "type": "sub", "children": []}, {"name": "CIS/图像传感器", "type": "sub", "children": []}, {"name": "射频前端/滤波器", "type": "sub", "children": []}, {"name": "接口/时钟/驱动", "type": "sub", "children": []}, {"name": "EDA/IP核", "type": "sub", "children": [{"id": "601678", "name": "滨化股份", "code": "601678", "type": "stock", "grade": "D", "score": 10, "summary": "有息负债率74%为全分析最高之一，流动性承压，化工品价格低迷周期未见底", "hasReport": true, "reportFile": "滨化股份.docx"}]}]}, {"name": "晶圆制造与先进封装", "type": "track", "children": [{"name": "晶圆代工", "type": "sub", "children": []}, {"name": "先进封装(Chiplet/3D)", "type": "sub", "children": [{"id": "603283", "name": "赛腾股份", "code": "603283", "type": "stock", "grade": "B+", "score": 17, "summary": "好赛道贵价格，等待半导体占比提升至30%+或PE回调至25-28x(35-38元)再布局", "hasReport": true, "reportFile": "赛腾股份.docx"}]}, {"name": "封装测试", "type": "sub", "children": []}]}, {"name": "光通信与算力网络", "type": "track", "children": [{"name": "光模块/CPO", "type": "sub", "children": [{"id": "002902", "name": "铭普光磁", "code": "002902", "type": "stock", "grade": "D", "score": 2, "summary": "投资毒丸:概念炒作PB14x历史最高,基本面持续崩塌净资产仅6.3亿再亏2年归零,0仓位不碰", "hasReport": true, "reportFile": "铭普光磁.docx"}]}, {"name": "光芯片/光器件", "type": "sub", "children": []}, {"name": "交换机/路由器", "type": "sub", "children": []}, {"name": "光纤光缆", "type": "sub", "children": [{"id": "600487", "name": "亨通光电", "code": "600487", "type": "stock", "grade": "A-", "score": 22, "summary": "持仓观察", "hasReport": true, "reportFile": "亨通光电.docx"}]}]}]}, {"id": "new_energy", "name": "🔋 新能源", "type": "theme", "comment": "光伏+风电+储能+锂电池+氢能", "children": [{"name": "光伏全产业链", "type": "track", "children": [{"name": "硅料/硅片", "type": "sub", "children": []}, {"name": "电池片/组件", "type": "sub", "children": []}, {"name": "逆变器", "type": "sub", "children": [{"id": "002902", "name": "铭普光磁", "code": "002902", "type": "stock", "grade": "D", "score": 2, "summary": "投资毒丸:概念炒作PB14x历史最高,基本面持续崩塌净资产仅6.3亿再亏2年归零,0仓位不碰", "hasReport": true, "reportFile": "铭普光磁.docx"}]}, {"name": "光伏设备", "type": "sub", "children": []}, {"name": "光伏辅材", "type": "sub", "children": [{"id": "603212", "name": "赛伍技术", "code": "603212", "type": "stock", "grade": "B+", "score": 19, "summary": "平台型材料公司，光伏基本盘稳固，SET半导体材料打开第二增长曲线，越南产能布局", "hasReport": true, "reportFile": "赛伍技术.docx"}, {"id": "603330", "name": "天洋新材", "code": "603330", "type": "stock", "grade": "D+", "score": 6, "summary": "坚决回避", "hasReport": true, "reportFile": "天洋新材.docx"}]}]}, {"name": "风电", "type": "track", "children": [{"name": "风机整机", "type": "sub", "children": []}, {"name": "风电零部件", "type": "sub", "children": [{"id": "600458", "name": "时代新材", "code": "600458", "type": "stock", "grade": "A-", "score": 21, "summary": "央企中车旗下平台型新材料公司，风电叶片市占率靠前，轨交减振为全球龙头", "hasReport": true, "reportFile": "时代新材.docx"}, {"id": "002669", "name": "康达新材", "code": "002669", "type": "stock", "grade": "", "score": 0, "summary": "等军工放量", "hasReport": true, "reportFile": "康达新材.docx"}]}, {"name": "海缆/塔筒", "type": "sub", "children": [{"id": "600869", "name": "远东股份", "code": "600869", "type": "stock", "grade": "D+", "score": 8, "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx"}]}]}, {"name": "储能", "type": "track", "children": [{"name": "储能电池/系统", "type": "sub", "children": []}, {"name": "储能逆变器/PCS", "type": "sub", "children": []}, {"name": "储能温控/消防", "type": "sub", "children": []}]}, {"name": "锂电池产业链", "type": "track", "children": [{"name": "动力电池", "type": "sub", "children": [{"id": "603663", "name": "三祥新材", "code": "603663", "type": "stock", "grade": "A", "score": 23, "summary": "A级唯一标的，核心关注标的，固态电池+核级锆故事有实质性技术和产能支撑，但PB已在高位", "hasReport": true, "reportFile": "三祥新材.docx"}, {"id": "603212", "name": "赛伍技术", "code": "603212", "type": "stock", "grade": "B+", "score": 19, "summary": "平台型材料公司，光伏基本盘稳固，SET半导体材料打开第二增长曲线，越南产能布局", "hasReport": true, "reportFile": "赛伍技术.docx"}, {"id": "002167", "name": "东方锆业", "code": "002167", "type": "stock", "grade": "D+", "score": 8, "summary": "财务状况恶化严重，合同负债近乎归零，订单先行指标发出强烈警告信号", "hasReport": true, "reportFile": "东方锆业.docx"}, {"id": "002733", "name": "雄韬股份", "code": "002733", "type": "stock", "grade": "", "score": 0, "summary": "等燃料电池放量", "hasReport": true, "reportFile": "雄韬股份.docx"}]}, {"name": "锂电正极材料", "type": "sub", "children": []}, {"name": "锂电负极材料", "type": "sub", "children": []}, {"name": "电解液", "type": "sub", "children": [{"id": "601678", "name": "滨化股份", "code": "601678", "type": "stock", "grade": "D", "score": 10, "summary": "有息负债率74%为全分析最高之一，流动性承压，化工品价格低迷周期未见底", "hasReport": true, "reportFile": "滨化股份.docx"}]}, {"name": "隔膜", "type": "sub", "children": []}, {"name": "锂电设备", "type": "sub", "children": []}, {"name": "电池回收", "type": "sub", "children": [{"id": "002741", "name": "光华科技", "code": "002741", "type": "stock", "grade": "D+", "score": 11, "summary": "D+级俱乐部第1名，市值142亿中仅核心业务值36亿(剩余103亿为固态电池概念溢价)，等待PB 2x以下(约8.3元)", "hasReport": true, "reportFile": "光华科技.docx"}]}]}, {"name": "氢能与燃料电池", "type": "track", "children": [{"name": "制氢/储运", "type": "sub", "children": []}, {"name": "燃料电池系统", "type": "sub", "children": [{"id": "002534", "name": "西子洁能", "code": "002534", "type": "stock", "grade": "A-", "score": 20, "summary": "A-级俱乐部成员，基本面极佳（净现金26亿+有息负债清零），但估值已price-in乐观预期，建议14-15元回调后布局", "hasReport": true, "reportFile": "西子洁能.docx"}]}, {"name": "膜电极/双极板", "type": "sub", "children": []}]}]}, {"id": "power_grid", "name": "⚡ 电力电网", "type": "theme", "comment": "发电+输配电+电力电子", "children": [{"name": "传统发电", "type": "track", "children": [{"name": "火力发电", "type": "sub", "children": [{"id": "605580", "name": "恒盛能源", "code": "605580", "type": "stock", "grade": "D+", "score": 9, "summary": "PB 7.32x行业最贵水平，流动比率0.74偿债压力大，园区垄断型业务天花板低", "hasReport": true, "reportFile": "恒盛能源.docx"}]}, {"name": "水力发电", "type": "sub", "children": []}, {"name": "核能发电", "type": "sub", "children": [{"id": "002534", "name": "西子洁能", "code": "002534", "type": "stock", "grade": "A-", "score": 20, "summary": "A-级俱乐部成员，基本面极佳（净现金26亿+有息负债清零），但估值已price-in乐观预期，建议14-15元回调后布局", "hasReport": true, "reportFile": "西子洁能.docx"}, {"id": "002167", "name": "东方锆业", "code": "002167", "type": "stock", "grade": "D+", "score": 8, "summary": "财务状况恶化严重，合同负债近乎归零，订单先行指标发出强烈警告信号", "hasReport": true, "reportFile": "东方锆业.docx"}, {"id": "600869", "name": "远东股份", "code": "600869", "type": "stock", "grade": "D+", "score": 8, "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx"}, {"id": "000922", "name": "佳电股份", "code": "000922", "type": "stock", "grade": "C+", "score": 0, "summary": "核电泵放量等PE<35x", "hasReport": true, "reportFile": "佳电股份.docx"}]}, {"name": "天然气发电", "type": "sub", "children": []}]}, {"name": "电网输配电设备", "type": "track", "children": [{"name": "特高压/直流输电", "type": "sub", "children": [{"id": "600869", "name": "远东股份", "code": "600869", "type": "stock", "grade": "D+", "score": 8, "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx"}]}, {"name": "变压器/电抗器", "type": "sub", "children": []}, {"name": "开关/断路器/GIS", "type": "sub", "children": []}, {"name": "电网自动化/继保", "type": "sub", "children": []}, {"name": "智能电表/AMI", "type": "sub", "children": []}, {"name": "电线电缆", "type": "sub", "children": [{"id": "001359", "name": "平安电工", "code": "001359", "type": "stock", "grade": "B-", "score": 17, "summary": "好公司坏价格=等跌60%再出手", "hasReport": true, "reportFile": "平安电工.docx"}, {"id": "600869", "name": "远东股份", "code": "600869", "type": "stock", "grade": "D+", "score": 8, "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx"}]}]}, {"name": "电力电子与电能质量", "type": "track", "children": [{"name": "功率半导体(IGBT/SiC)", "type": "sub", "children": [{"id": "600353", "name": "旭光电子", "code": "600353", "type": "stock", "grade": "B+", "score": 15, "summary": "技术壁垒极高（国内电真空器件龙头+特种陶瓷打破进口垄断），但估值极度昂贵，不适合当前价位买入", "hasReport": true, "reportFile": "旭光电子.docx"}, {"id": "600703", "name": "三安光电", "code": "600703", "type": "stock", "grade": "B+", "score": 19, "summary": "等毛利率拐点", "hasReport": true, "reportFile": "三安光电.docx"}, {"id": "600460", "name": "士兰微", "code": "600460", "type": "stock", "grade": "B+", "score": 20, "summary": "等折旧消化", "hasReport": true, "reportFile": "士兰微.docx"}]}, {"name": "变频器/软启动", "type": "sub", "children": []}, {"name": "电能质量/SVG/APF", "type": "sub", "children": []}, {"name": "充电桩/换电", "type": "sub", "children": [{"id": "002902", "name": "铭普光磁", "code": "002902", "type": "stock", "grade": "D", "score": 2, "summary": "投资毒丸:概念炒作PB14x历史最高,基本面持续崩塌净资产仅6.3亿再亏2年归零,0仓位不碰", "hasReport": true, "reportFile": "铭普光磁.docx"}]}]}, {"name": "综合能源与虚拟电厂", "type": "track", "children": [{"name": "虚拟电厂/需求响应", "type": "sub", "children": []}, {"name": "微电网/分布式能源", "type": "sub", "children": []}]}]}, {"id": "robot_automation", "name": "🤖 机器人与智能制造", "type": "theme", "comment": "工业机器人+人形机器人+自动化", "children": [{"name": "工业机器人", "type": "track", "children": [{"name": "工业机器人本体", "type": "sub", "children": [{"id": "002747", "name": "埃斯顿", "code": "002747", "type": "stock", "grade": "B", "score": 0, "summary": "等国产替代加速", "hasReport": true, "reportFile": "埃斯顿.docx"}, {"id": "002527", "name": "新时达", "code": "002527", "type": "stock", "grade": "", "score": 0, "summary": "等海尔整合见效", "hasReport": true, "reportFile": "新时达.docx"}]}, {"name": "减速器", "type": "sub", "children": []}, {"name": "伺服系统", "type": "sub", "children": []}, {"name": "机器人控制器", "type": "sub", "children": []}]}, {"name": "人形机器人", "type": "track", "children": [{"name": "人形机器人整机", "type": "sub", "children": [{"id": "603337", "name": "杰克科技", "code": "603337", "type": "stock", "grade": "B+", "score": 21, "summary": "全球缝纫机之王,5.5亿研发砸AI+人形机器人,下有PE15x底+上有科技股重估天花板,等2026增速恢复验证", "hasReport": true, "reportFile": "杰克科技.docx"}, {"id": "002768", "name": "国恩股份", "code": "002768", "type": "stock", "grade": "A-", "score": 18, "summary": "当前分析最高分A-级之一，PEEK产能1000吨/年为估值加分，港股IPO为催化剂", "hasReport": true, "reportFile": "国恩股份.docx"}, {"id": "000970", "name": "中科三环", "code": "000970", "type": "stock", "grade": "C+", "score": 14, "summary": "稀土价格周期底部品种,镨钕突破60万+OCF转正+出口恢复是关键信号,逆向布局不宜重仓", "hasReport": true, "reportFile": "中科三环.docx"}]}, {"name": "灵巧手/执行器", "type": "sub", "children": []}, {"name": "人形机器人传感器", "type": "sub", "children": [{"id": "605566", "name": "福莱蒽特", "code": "605566", "type": "stock", "grade": "C+", "score": 14, "summary": "电子皮肤概念为核心看点但商业化路径漫长，染料主业受下游纺织景气度拖累", "hasReport": true, "reportFile": "福莱蒽特.docx"}]}]}, {"name": "数控机床与刀具", "type": "track", "children": [{"name": "数控机床", "type": "sub", "children": []}, {"name": "数控系统", "type": "sub", "children": []}, {"name": "刀具/磨具", "type": "sub", "children": []}]}, {"name": "工业自动化", "type": "track", "children": [{"name": "PLC/DCS/工控", "type": "sub", "children": [{"id": "003036", "name": "泰坦股份", "code": "003036", "type": "stock", "grade": "D", "score": 4, "summary": "D级俱乐部最低分(并列)，有史以来最贵的记录，没有任何基本面支撑，疑似庄股/次新炒作余温", "hasReport": true, "reportFile": "泰坦股份.docx"}]}, {"name": "机器视觉", "type": "sub", "children": [{"id": "603283", "name": "赛腾股份", "code": "603283", "type": "stock", "grade": "B+", "score": 17, "summary": "好赛道贵价格，等待半导体占比提升至30%+或PE回调至25-28x(35-38元)再布局", "hasReport": true, "reportFile": "赛腾股份.docx"}]}, {"name": "传感器/仪表", "type": "sub", "children": [{"id": "605566", "name": "福莱蒽特", "code": "605566", "type": "stock", "grade": "C+", "score": 14, "summary": "电子皮肤概念为核心看点但商业化路径漫长，染料主业受下游纺织景气度拖累", "hasReport": true, "reportFile": "福莱蒽特.docx"}]}]}, {"name": "激光与3D打印", "type": "track", "children": [{"name": "激光加工设备", "type": "sub", "children": []}, {"name": "3D打印/增材制造", "type": "sub", "children": [{"id": "002171", "name": "楚江新材", "code": "002171", "type": "stock", "grade": "B", "score": 17, "summary": "顶立科技（碳纤维热工装备+3D打印粉末）是核心估值溢价来源，铜加工业务周期性强", "hasReport": true, "reportFile": "楚江新材.docx"}, {"id": "605006", "name": "山东玻纤", "code": "605006", "type": "stock", "grade": "D", "score": 10, "summary": "两年亏损+高负债+现金流为负+速动比<1，多重风险叠加，坚决回避", "hasReport": true, "reportFile": "山东玻纤.docx"}]}]}]}, {"id": "telecom_satellite", "name": "📡 通信与卫星互联网", "type": "theme", "comment": "5G/6G+光通信+卫星", "children": [{"name": "5G/6G移动通信", "type": "track", "children": [{"name": "基站设备", "type": "sub", "children": [{"id": "600110", "name": "诺德股份", "code": "600110", "type": "stock", "grade": "C", "score": 12, "summary": "铜箔周期底部品种,等加工费反弹+季度扭亏信号,当前无买入理由", "hasReport": true, "reportFile": "诺德股份.docx"}, {"id": "002902", "name": "铭普光磁", "code": "002902", "type": "stock", "grade": "D", "score": 2, "summary": "投资毒丸:概念炒作PB14x历史最高,基本面持续崩塌净资产仅6.3亿再亏2年归零,0仓位不碰", "hasReport": true, "reportFile": "铭普光磁.docx"}, {"id": "603042", "name": "华脉科技", "code": "603042", "type": "stock", "grade": "", "score": 3, "summary": "坚决回避无投资价值", "hasReport": true, "reportFile": "华脉科技.docx"}]}, {"name": "天线/滤波器/射频", "type": "sub", "children": []}, {"name": "通信芯片/模组", "type": "sub", "children": []}, {"name": "网络优化/室分", "type": "sub", "children": []}]}, {"name": "光通信", "type": "track", "children": [{"name": "光纤光缆", "type": "sub", "children": []}, {"name": "光模块/光器件", "type": "sub", "children": []}, {"name": "光芯片", "type": "sub", "children": []}]}, {"name": "卫星互联网", "type": "track", "children": [{"name": "卫星制造/零部件", "type": "sub", "children": []}, {"name": "地面设备/终端", "type": "sub", "children": []}, {"name": "卫星运营/遥感应用", "type": "sub", "children": []}]}, {"name": "物联网/WiFi", "type": "track", "children": [{"name": "物联网平台/终端", "type": "sub", "children": []}, {"name": "WiFi/蓝牙/UWB", "type": "sub", "children": []}]}]}, {"id": "smart_auto", "name": "🚗 智能汽车与零部件", "type": "theme", "comment": "整车+智驾+电动化+轻量化", "children": [{"name": "整车制造", "type": "track", "children": [{"name": "乘用车整车", "type": "sub", "children": []}, {"name": "商用车/客车", "type": "sub", "children": []}, {"name": "摩托车/两轮车", "type": "sub", "children": []}]}, {"name": "智能驾驶感知", "type": "track", "children": [{"name": "激光雷达", "type": "sub", "children": []}, {"name": "毫米波雷达", "type": "sub", "children": []}, {"name": "车载摄像头", "type": "sub", "children": []}, {"name": "超声波/融合感知", "type": "sub", "children": []}]}, {"name": "智能驾驶决策与执行", "type": "track", "children": [{"name": "域控制器/智驾芯片", "type": "sub", "children": []}, {"name": "高精地图/定位", "type": "sub", "children": []}, {"name": "线控底盘", "type": "sub", "children": []}]}, {"name": "汽车电子", "type": "track", "children": [{"name": "连接器/线束", "type": "sub", "children": [{"id": "605018", "name": "长华集团", "code": "605018", "type": "stock", "grade": "", "score": 0, "summary": "等待汽车周期", "hasReport": true, "reportFile": "长华集团.docx"}]}, {"name": "车载芯片/MCU", "type": "sub", "children": []}, {"name": "传感器/执行器", "type": "sub", "children": []}, {"name": "车灯/LED模组", "type": "sub", "children": []}]}, {"name": "电动化与热管理", "type": "track", "children": [{"name": "电驱动系统", "type": "sub", "children": []}, {"name": "热管理", "type": "sub", "children": [{"id": "603757", "name": "大元泵业", "code": "603757", "type": "stock", "grade": "C", "score": 13, "summary": "—", "hasReport": true, "reportFile": "大元泵业.docx"}]}, {"name": "车载电源/OBC", "type": "sub", "children": []}]}, {"name": "轻量化与结构件", "type": "track", "children": [{"name": "一体化压铸", "type": "sub", "children": []}, {"name": "铝合金零部件", "type": "sub", "children": []}, {"name": "碳纤维/复合材料", "type": "sub", "children": [{"id": "002171", "name": "楚江新材", "code": "002171", "type": "stock", "grade": "B", "score": 17, "summary": "顶立科技（碳纤维热工装备+3D打印粉末）是核心估值溢价来源，铜加工业务周期性强", "hasReport": true, "reportFile": "楚江新材.docx"}]}]}]}, {"id": "consumer_electronics", "name": "🖥️ 消费电子与面板", "type": "theme", "comment": "手机+面板+PCB+元器件", "children": [{"name": "消费电子终端", "type": "track", "children": [{"name": "智能手机/可穿戴", "type": "sub", "children": [{"id": "605566", "name": "福莱蒽特", "code": "605566", "type": "stock", "grade": "C+", "score": 14, "summary": "电子皮肤概念为核心看点但商业化路径漫长，染料主业受下游纺织景气度拖累", "hasReport": true, "reportFile": "福莱蒽特.docx"}, {"id": "000810", "name": "创维数字", "code": "000810", "type": "stock", "grade": "C+", "score": 12, "summary": "—", "hasReport": true, "reportFile": "创维数字.docx"}, {"id": "603989", "name": "艾华集团", "code": "603989", "type": "stock", "grade": "", "score": 0, "summary": "等PE回归<30x", "hasReport": true, "reportFile": "艾华集团.docx"}]}, {"name": "PC/平板/外设", "type": "sub", "children": [{"id": "000100", "name": "TCL科技", "code": "000100", "type": "stock", "grade": "B+", "score": 20, "summary": "—", "hasReport": true, "reportFile": "TCL科技.docx"}, {"id": "603328", "name": "依顿电子", "code": "603328", "type": "stock", "grade": "B+", "score": 17, "summary": "汽车电子PCB稳健增长型，适合中长线持有，但行业竞争激烈弹性有限", "hasReport": true, "reportFile": "依顿电子.docx"}, {"id": "002741", "name": "光华科技", "code": "002741", "type": "stock", "grade": "D+", "score": 11, "summary": "D+级俱乐部第1名，市值142亿中仅核心业务值36亿(剩余103亿为固态电池概念溢价)，等待PB 2x以下(约8.3元)", "hasReport": true, "reportFile": "光华科技.docx"}, {"id": "002138", "name": "顺络电子", "code": "002138", "type": "stock", "grade": "B+", "score": 0, "summary": "等PE<35x约45元以下", "hasReport": true, "reportFile": "顺络电子.docx"}, {"id": "300576", "name": "容大感光", "code": "300576", "type": "stock", "grade": "D+", "score": 0, "summary": "坚决回避光刻胶概念远大于实质", "hasReport": true, "reportFile": "容大感光.docx"}]}, {"name": "智能家居/家电", "type": "sub", "children": []}]}, {"name": "面板与显示", "type": "track", "children": [{"name": "LCD面板/模组", "type": "sub", "children": []}, {"name": "OLED/MicroLED", "type": "sub", "children": []}, {"name": "LED芯片/封装", "type": "sub", "children": [{"id": "600703", "name": "三安光电", "code": "600703", "type": "stock", "grade": "B+", "score": 19, "summary": "等毛利率拐点", "hasReport": true, "reportFile": "三安光电.docx"}]}]}, {"name": "PCB与IC载板", "type": "track", "children": [{"name": "多层/HDI板", "type": "sub", "children": [{"id": "603328", "name": "依顿电子", "code": "603328", "type": "stock", "grade": "B+", "score": 17, "summary": "汽车电子PCB稳健增长型，适合中长线持有，但行业竞争激烈弹性有限", "hasReport": true, "reportFile": "依顿电子.docx"}, {"id": "600110", "name": "诺德股份", "code": "600110", "type": "stock", "grade": "C", "score": 12, "summary": "铜箔周期底部品种,等加工费反弹+季度扭亏信号,当前无买入理由", "hasReport": true, "reportFile": "诺德股份.docx"}, {"id": "002741", "name": "光华科技", "code": "002741", "type": "stock", "grade": "D+", "score": 11, "summary": "D+级俱乐部第1名，市值142亿中仅核心业务值36亿(剩余103亿为固态电池概念溢价)，等待PB 2x以下(约8.3元)", "hasReport": true, "reportFile": "光华科技.docx"}, {"id": "002138", "name": "顺络电子", "code": "002138", "type": "stock", "grade": "B+", "score": 0, "summary": "等PE<35x约45元以下", "hasReport": true, "reportFile": "顺络电子.docx"}, {"id": "300576", "name": "容大感光", "code": "300576", "type": "stock", "grade": "D+", "score": 0, "summary": "坚决回避光刻胶概念远大于实质", "hasReport": true, "reportFile": "容大感光.docx"}]}, {"name": "IC载板", "type": "sub", "children": []}, {"name": "柔性板/刚挠结合", "type": "sub", "children": []}, {"name": "覆铜板/PCB材料", "type": "sub", "children": []}]}, {"name": "被动元器件", "type": "track", "children": [{"name": "MLCC/电容", "type": "sub", "children": [{"id": "603500", "name": "祥和实业", "code": "603500", "type": "stock", "grade": "B", "score": 16, "summary": "低估值稳健型选项，轨交扣件市占率高+下游铁路投资稳定，但成长性有限", "hasReport": true, "reportFile": "祥和实业.docx"}, {"id": "600888", "name": "新疆众合", "code": "600888", "type": "stock", "grade": "B", "score": 16, "summary": "周期底部低估值价值股，等2026H1验证拐点确认后布局，止损位7.5元", "hasReport": true, "reportFile": "新疆众合.docx"}, {"id": "002138", "name": "顺络电子", "code": "002138", "type": "stock", "grade": "B+", "score": 0, "summary": "等PE<35x约45元以下", "hasReport": true, "reportFile": "顺络电子.docx"}]}, {"name": "电阻/电感", "type": "sub", "children": []}, {"name": "晶振/滤波器", "type": "sub", "children": [{"id": "603738", "name": "泰晶科技", "code": "603738", "type": "stock", "grade": "D+", "score": 8, "summary": "4年净利-72%+PE比全球同行贵15倍,ROE仅3%不如定存,等毛利率见底+PE<50x再重新评估", "hasReport": true, "reportFile": "泰晶科技.docx"}]}]}, {"name": "精密制造/功能件", "type": "track", "children": [{"name": "精密结构件", "type": "sub", "children": []}, {"name": "电磁屏蔽/散热", "type": "sub", "children": [{"id": "601137", "name": "博威合金", "code": "601137", "type": "stock", "grade": "D+", "score": 11, "summary": "好材料公司被光伏拖垮，等光伏业务剥离/减值完毕/OCF转正后再考虑，坚决回避", "hasReport": true, "reportFile": "博威合金.docx"}]}, {"name": "天线/射频连接", "type": "sub", "children": []}]}]}, {"id": "advanced_manufacturing", "name": "🏭 高端制造与军工", "type": "theme", "comment": "航空航天+军工+新材料+高端装备", "children": [{"name": "航空航天", "type": "track", "children": [{"name": "大飞机/航空发动机", "type": "sub", "children": [{"id": "600458", "name": "时代新材", "code": "600458", "type": "stock", "grade": "A-", "score": 21, "summary": "央企中车旗下平台型新材料公司，风电叶片市占率靠前，轨交减振为全球龙头", "hasReport": true, "reportFile": "时代新材.docx"}, {"id": "002023", "name": "海特高新", "code": "002023", "type": "stock", "grade": "C+", "score": 13, "summary": "海威华芯（第三代半导体）连续减值吞噬利润，航空维修基本盘稳定但不足以支撑估值", "hasReport": true, "reportFile": "海特高新.docx"}, {"id": "605006", "name": "山东玻纤", "code": "605006", "type": "stock", "grade": "D", "score": 10, "summary": "两年亏损+高负债+现金流为负+速动比<1，多重风险叠加，坚决回避", "hasReport": true, "reportFile": "山东玻纤.docx"}, {"id": "002669", "name": "康达新材", "code": "002669", "type": "stock", "grade": "", "score": 0, "summary": "等军工放量", "hasReport": true, "reportFile": "康达新材.docx"}]}, {"name": "无人机/低空经济", "type": "sub", "children": [{"id": "002023", "name": "海特高新", "code": "002023", "type": "stock", "grade": "C+", "score": 13, "summary": "海威华芯（第三代半导体）连续减值吞噬利润，航空维修基本盘稳定但不足以支撑估值", "hasReport": true, "reportFile": "海特高新.docx"}]}, {"name": "商业航天/火箭", "type": "sub", "children": []}]}, {"name": "军工信息化与装备", "type": "track", "children": [{"name": "军工电子/雷达", "type": "sub", "children": [{"id": "600353", "name": "旭光电子", "code": "600353", "type": "stock", "grade": "B+", "score": 15, "summary": "技术壁垒极高（国内电真空器件龙头+特种陶瓷打破进口垄断），但估值极度昂贵，不适合当前价位买入", "hasReport": true, "reportFile": "旭光电子.docx"}, {"id": "002023", "name": "海特高新", "code": "002023", "type": "stock", "grade": "C+", "score": 13, "summary": "海威华芯（第三代半导体）连续减值吞噬利润，航空维修基本盘稳定但不足以支撑估值", "hasReport": true, "reportFile": "海特高新.docx"}]}, {"name": "导弹/弹药", "type": "sub", "children": []}, {"name": "军用舰船/水下装备", "type": "sub", "children": []}]}, {"name": "特种/新材料", "type": "track", "children": [{"name": "高温合金/钛合金", "type": "sub", "children": [{"id": "603995", "name": "甬金股份", "code": "603995", "type": "stock", "grade": "B", "score": 17, "summary": "高股息防御品种，PE 13.7x估值合理，钛合金第二曲线待验证；PE<12x(18元)可配置", "hasReport": true, "reportFile": "甬金股份.docx"}]}, {"name": "碳纤维/复合材料", "type": "sub", "children": [{"id": "600458", "name": "时代新材", "code": "600458", "type": "stock", "grade": "A-", "score": 21, "summary": "央企中车旗下平台型新材料公司，风电叶片市占率靠前，轨交减振为全球龙头", "hasReport": true, "reportFile": "时代新材.docx"}, {"id": "002171", "name": "楚江新材", "code": "002171", "type": "stock", "grade": "B", "score": 17, "summary": "顶立科技（碳纤维热工装备+3D打印粉末）是核心估值溢价来源，铜加工业务周期性强", "hasReport": true, "reportFile": "楚江新材.docx"}]}, {"name": "稀土/永磁材料", "type": "sub", "children": [{"id": "000970", "name": "中科三环", "code": "000970", "type": "stock", "grade": "C+", "score": 14, "summary": "稀土价格周期底部品种,镨钕突破60万+OCF转正+出口恢复是关键信号,逆向布局不宜重仓", "hasReport": true, "reportFile": "中科三环.docx"}]}, {"name": "功能性薄膜/涂层", "type": "sub", "children": []}]}, {"name": "工业气体/化工新材料", "type": "track", "children": [{"name": "工业气体", "type": "sub", "children": []}, {"name": "氟化工/制冷剂", "type": "sub", "children": [{"id": "605020", "name": "永和股份", "code": "605020", "type": "stock", "grade": "B+", "score": 22, "summary": "配额=印钞许可证,2025年质变年,去杠杆教科书,R32稳在3万+可维持7亿+盈利,最大风险是制冷剂价回落", "hasReport": true, "reportFile": "永和股份.docx"}]}, {"name": "功能性化学品", "type": "sub", "children": [{"id": "605566", "name": "福莱蒽特", "code": "605566", "type": "stock", "grade": "C+", "score": 14, "summary": "电子皮肤概念为核心看点但商业化路径漫长，染料主业受下游纺织景气度拖累", "hasReport": true, "reportFile": "福莱蒽特.docx"}, {"id": "603681", "name": "永冠新材", "code": "603681", "type": "stock", "grade": "C", "score": 11, "summary": "行业天花板低(~500亿市场增速3-5%),PE<25x或利润回升至2亿+才考虑", "hasReport": true, "reportFile": "永冠新材.docx"}, {"id": "603155", "name": "新亚强", "code": "603155", "type": "stock", "grade": "D+", "score": 9, "summary": "—", "hasReport": true, "reportFile": "新亚强.docx"}, {"id": "002522", "name": "浙江众成", "code": "002522", "type": "stock", "grade": "D", "score": 5, "summary": "行业衰退期的价值陷阱，全维度崩溃，任何价格均不建议买入", "hasReport": true, "reportFile": "浙江众成.docx"}, {"id": "300576", "name": "容大感光", "code": "300576", "type": "stock", "grade": "D+", "score": 0, "summary": "坚决回避光刻胶概念远大于实质", "hasReport": true, "reportFile": "容大感光.docx"}, {"id": "603938", "name": "三孚股份", "code": "603938", "type": "stock", "grade": "B", "score": 14, "summary": "等待PB<2x信号", "hasReport": true, "reportFile": "三孚股份.docx"}, {"id": "000859", "name": "国风新材", "code": "000859", "type": "stock", "grade": "D", "score": 3, "summary": "坚决回避", "hasReport": true, "reportFile": "国风新材.docx"}, {"id": "603725", "name": "天安新材", "code": "603725", "type": "stock", "grade": "", "score": 0, "summary": "—", "hasReport": true, "reportFile": "天安新材.docx"}, {"id": "603276", "name": "恒兴新材", "code": "603276", "type": "stock", "grade": "C+", "score": 14, "summary": "次新规模小暂不建议", "hasReport": true, "reportFile": "恒兴新材.docx"}, {"id": "603683", "name": "晶华新材", "code": "603683", "type": "stock", "grade": "", "score": 0, "summary": "等待行业回暖", "hasReport": true, "reportFile": "晶华新材.docx"}, {"id": "600227", "name": "赤天化", "code": "600227", "type": "stock", "grade": "D", "score": 4, "summary": "坚决回避", "hasReport": true, "reportFile": "赤天化.docx"}]}, {"name": "可降解/生物基材料", "type": "sub", "children": [{"id": "002064", "name": "华峰化学", "code": "002064", "type": "stock", "grade": "A-", "score": 22, "summary": "A-级俱乐部头部标的，周期低谷OCF强劲证明盈利质量，推荐等待PB 1.3-1.5x(7.2-8.3元)安全边际", "hasReport": true, "reportFile": "华峰化学.docx"}]}]}]}, {"id": "pharma_health", "name": "💊 医药健康", "type": "theme", "comment": "创新药+器械+CXO+中药", "children": [{"name": "创新药/生物药", "type": "track", "children": [{"name": "化学创新药", "type": "sub", "children": [{"id": "603880", "name": "南卫股份", "code": "603880", "type": "stock", "grade": "D-", "score": 3, "summary": "—", "hasReport": true, "reportFile": "南卫股份.docx"}]}, {"name": "生物药/抗体", "type": "sub", "children": []}, {"name": "细胞基因治疗", "type": "sub", "children": []}, {"name": "疫苗", "type": "sub", "children": []}]}, {"name": "CXO/研发服务", "type": "track", "children": [{"name": "CRO/临床前", "type": "sub", "children": []}, {"name": "CDMO/生产", "type": "sub", "children": []}]}, {"name": "医疗器械", "type": "track", "children": [{"name": "影像设备", "type": "sub", "children": []}, {"name": "体外诊断/IVD", "type": "sub", "children": []}, {"name": "高值耗材/植入", "type": "sub", "children": []}, {"name": "手术机器人", "type": "sub", "children": []}]}, {"name": "中药/OTC", "type": "track", "children": [{"name": "品牌中药", "type": "sub", "children": []}, {"name": "中药配方颗粒", "type": "sub", "children": []}]}, {"name": "原料药/中间体", "type": "track", "children": [{"name": "特色原料药", "type": "sub", "children": []}, {"name": "医药中间体", "type": "sub", "children": []}]}]}, {"id": "consumer", "name": "🏠 大消费", "type": "theme", "comment": "食品饮料+家电+零售+社服+教育", "children": [{"name": "食品饮料", "type": "track", "children": [{"name": "白酒/啤酒", "type": "sub", "children": []}, {"name": "调味品/预制菜", "type": "sub", "children": [{"id": "603733", "name": "仙鹤股份", "code": "603733", "type": "stock", "grade": "B-", "score": 16, "summary": "好公司烂资产负债表,126亿负债赌浆一体化(自供浆率30→80%),成功翻倍失败跌70%,等CapEx下降+FCF转正信号", "hasReport": true, "reportFile": "仙鹤股份.docx"}]}, {"name": "乳制品/饮料", "type": "sub", "children": []}, {"name": "休闲食品/零食", "type": "sub", "children": []}]}, {"name": "家用电器", "type": "track", "children": [{"name": "白电/空冰洗", "type": "sub", "children": []}, {"name": "小家电/清洁电器", "type": "sub", "children": []}, {"name": "显示/黑电", "type": "sub", "children": []}]}, {"name": "服装/美妆/个护", "type": "track", "children": [{"name": "运动服饰", "type": "sub", "children": []}, {"name": "化妆品/医美", "type": "sub", "children": []}, {"name": "个护/家清", "type": "sub", "children": []}]}, {"name": "零售/电商/社服", "type": "track", "children": [{"name": "线上零售/直播电商", "type": "sub", "children": []}, {"name": "线下零售/连锁", "type": "sub", "children": []}, {"name": "餐饮/酒店/旅游", "type": "sub", "children": []}, {"name": "教育/人服", "type": "sub", "children": [{"id": "002023", "name": "海特高新", "code": "002023", "type": "stock", "grade": "C+", "score": 13, "summary": "海威华芯（第三代半导体）连续减值吞噬利润，航空维修基本盘稳定但不足以支撑估值", "hasReport": true, "reportFile": "海特高新.docx"}]}]}, {"name": "宠物/母婴/银发经济", "type": "track", "children": [{"name": "宠物食品/用品", "type": "sub", "children": []}, {"name": "母婴/童装", "type": "sub", "children": []}]}]}, {"id": "finance_realestate", "name": "💰 金融与地产", "type": "theme", "comment": "银行+券商+保险+房地产", "children": [{"name": "银行业", "type": "track", "children": [{"name": "国有大行/股份行", "type": "sub", "children": []}, {"name": "金融科技/数字银行", "type": "sub", "children": []}]}, {"name": "券商/期货", "type": "track", "children": [{"name": "券商/投行", "type": "sub", "children": []}, {"name": "金融信息/软件", "type": "sub", "children": []}]}, {"name": "保险/多元金融", "type": "track", "children": [{"name": "保险", "type": "sub", "children": []}, {"name": "信托/租赁/AMC", "type": "sub", "children": [{"id": "002141", "name": "贤丰控股", "code": "002141", "type": "stock", "grade": "D+", "score": 7, "summary": "坚决回避", "hasReport": true, "reportFile": "贤丰控股.docx"}]}]}, {"name": "房地产/物业", "type": "track", "children": [{"name": "房地产开发", "type": "sub", "children": [{"id": "600605", "name": "汇通能源", "code": "600605", "type": "stock", "grade": "D+", "score": 0, "summary": "壳博弈非投资标的", "hasReport": true, "reportFile": "汇通能源.docx"}, {"id": "600736", "name": "苏州高新", "code": "600736", "type": "stock", "grade": "D+", "score": 9, "summary": "暂不关注", "hasReport": true, "reportFile": "苏州高新.docx"}]}, {"name": "物业管理", "type": "sub", "children": [{"id": "600736", "name": "苏州高新", "code": "600736", "type": "stock", "grade": "D+", "score": 9, "summary": "暂不关注", "hasReport": true, "reportFile": "苏州高新.docx"}]}, {"name": "房产中介/经纪", "type": "sub", "children": []}]}]}, {"id": "resources", "name": "⛏️ 资源与原材料", "type": "theme", "comment": "有色+煤炭+钢铁+石化+稀土", "children": [{"name": "有色金属", "type": "track", "children": [{"name": "铜", "type": "sub", "children": [{"id": "002171", "name": "楚江新材", "code": "002171", "type": "stock", "grade": "B", "score": 17, "summary": "顶立科技（碳纤维热工装备+3D打印粉末）是核心估值溢价来源，铜加工业务周期性强", "hasReport": true, "reportFile": "楚江新材.docx"}, {"id": "600110", "name": "诺德股份", "code": "600110", "type": "stock", "grade": "C", "score": 12, "summary": "铜箔周期底部品种,等加工费反弹+季度扭亏信号,当前无买入理由", "hasReport": true, "reportFile": "诺德股份.docx"}, {"id": "002203", "name": "海亮股份", "code": "002203", "type": "stock", "grade": "D+", "score": 9, "summary": "PE55x的铜加工厂没有任何持有理由,即使利润恢复至15亿PE仍>35x,等跌到10元再谈", "hasReport": true, "reportFile": "海亮股份.docx"}, {"id": "600888", "name": "新疆众和", "code": "600888", "type": "stock", "grade": "B", "score": 16, "summary": "等待铝价回调", "hasReport": true, "reportFile": "新疆众和.docx"}, {"id": "603045", "name": "福达合金", "code": "603045", "type": "stock", "grade": "", "score": 0, "summary": "等半年报验证", "hasReport": true, "reportFile": "福达合金.docx"}]}, {"name": "铝", "type": "sub", "children": [{"id": "600888", "name": "新疆众合", "code": "600888", "type": "stock", "grade": "B", "score": 16, "summary": "周期底部低估值价值股，等2026H1验证拐点确认后布局，止损位7.5元", "hasReport": true, "reportFile": "新疆众合.docx"}]}, {"name": "黄金/贵金属", "type": "sub", "children": [{"id": "600961", "name": "株冶集团", "code": "600961", "type": "stock", "grade": "A-", "score": 21, "summary": "2026E PE~10x性价比极高，稀贵金属价格持续上涨是核心驱动力，Q2有望延续强趋势", "hasReport": true, "reportFile": "株冶集团.docx"}, {"id": "600459", "name": "贵研铂业", "code": "600459", "type": "stock", "grade": "C-", "score": 0, "summary": "等OCF转正+PE<25x", "hasReport": true, "reportFile": "贵研铂业.docx"}]}, {"name": "锂/钴/镍", "type": "sub", "children": [{"id": "600596", "name": "新安股份", "code": "600596", "type": "stock", "grade": "B", "score": 16, "summary": "8万吨草甘膦产能涨价弹性+有机硅最差已过+新能源材料布局，机构目标价14.81元，等待Q2验证", "hasReport": true, "reportFile": "新安股份.docx"}, {"id": "600110", "name": "诺德股份", "code": "600110", "type": "stock", "grade": "C", "score": 12, "summary": "铜箔周期底部品种,等加工费反弹+季度扭亏信号,当前无买入理由", "hasReport": true, "reportFile": "诺德股份.docx"}, {"id": "002741", "name": "光华科技", "code": "002741", "type": "stock", "grade": "D+", "score": 11, "summary": "D+级俱乐部第1名，市值142亿中仅核心业务值36亿(剩余103亿为固态电池概念溢价)，等待PB 2x以下(约8.3元)", "hasReport": true, "reportFile": "光华科技.docx"}, {"id": "601678", "name": "滨化股份", "code": "601678", "type": "stock", "grade": "D", "score": 10, "summary": "有息负债率74%为全分析最高之一，流动性承压，化工品价格低迷周期未见底", "hasReport": true, "reportFile": "滨化股份.docx"}, {"id": "600869", "name": "远东股份", "code": "600869", "type": "stock", "grade": "D+", "score": 8, "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx"}, {"id": "603399", "name": "永杉锂业", "code": "603399", "type": "stock", "grade": "D-", "score": 0, "summary": "坚决回避商品赌场", "hasReport": true, "reportFile": "永杉锂业.docx"}, {"id": "002125", "name": "湘潭电化", "code": "002125", "type": "stock", "grade": "", "score": 0, "summary": "等待锰酸锂放量", "hasReport": true, "reportFile": "湘潭电化.docx"}]}, {"name": "锆/钛/钨/钼/锑", "type": "sub", "children": [{"id": "603663", "name": "三祥新材", "code": "603663", "type": "stock", "grade": "A", "score": 23, "summary": "A级唯一标的，核心关注标的，固态电池+核级锆故事有实质性技术和产能支撑，但PB已在高位", "hasReport": true, "reportFile": "三祥新材.docx"}, {"id": "600961", "name": "株冶集团", "code": "600961", "type": "stock", "grade": "A-", "score": 21, "summary": "2026E PE~10x性价比极高，稀贵金属价格持续上涨是核心驱动力，Q2有望延续强趋势", "hasReport": true, "reportFile": "株冶集团.docx"}, {"id": "603257", "name": "中国瑞林", "code": "603257", "type": "stock", "grade": "A-", "score": 19, "summary": "工程设计服务罕见零负债标的，海外收入占比48%全球化布局，关注中报验证增速", "hasReport": true, "reportFile": "中国瑞林.docx"}, {"id": "002167", "name": "东方锆业", "code": "002167", "type": "stock", "grade": "D+", "score": 8, "summary": "财务状况恶化严重，合同负债近乎归零，订单先行指标发出强烈警告信号", "hasReport": true, "reportFile": "东方锆业.docx"}, {"id": "603399", "name": "永杉锂业", "code": "603399", "type": "stock", "grade": "D-", "score": 0, "summary": "坚决回避商品赌场", "hasReport": true, "reportFile": "永杉锂业.docx"}, {"id": "000960", "name": "锡业股份", "code": "000960", "type": "stock", "grade": "B-", "score": 17, "summary": "PE<20x布局止损Sn<22万/吨", "hasReport": true, "reportFile": "锡业股份.docx"}, {"id": "002428", "name": "云南锗业", "code": "002428", "type": "stock", "grade": "D", "score": 6, "summary": "坚决回避地球上最贵矿股", "hasReport": true, "reportFile": "云南锗业.docx"}, {"id": "000962", "name": "东方钽业", "code": "000962", "type": "stock", "grade": "C", "score": 0, "summary": "等OCF转正+PE<50x", "hasReport": true, "reportFile": "东方钽业.docx"}]}]}, {"name": "钢铁", "type": "track", "children": [{"name": "普钢/特钢", "type": "sub", "children": [{"id": "603995", "name": "甬金股份", "code": "603995", "type": "stock", "grade": "B", "score": 17, "summary": "高股息防御品种，PE 13.7x估值合理，钛合金第二曲线待验证；PE<12x(18元)可配置", "hasReport": true, "reportFile": "甬金股份.docx"}]}, {"name": "铁矿石/焦煤", "type": "sub", "children": []}]}, {"name": "煤炭/能源", "type": "track", "children": [{"name": "动力煤", "type": "sub", "children": []}, {"name": "焦煤/焦化", "type": "sub", "children": []}]}, {"name": "石油石化", "type": "track", "children": [{"name": "油气开采/油服", "type": "sub", "children": [{"id": "601233", "name": "桐昆股份", "code": "601233", "type": "stock", "grade": "B+", "score": 20, "summary": "涤纶长丝板块首选配置标的,Q1利润证明反转已启动,PE<17x可轻仓", "hasReport": true, "reportFile": "桐昆股份.docx"}]}, {"name": "炼化/石化", "type": "sub", "children": [{"id": "601233", "name": "桐昆股份", "code": "601233", "type": "stock", "grade": "B+", "score": 20, "summary": "涤纶长丝板块首选配置标的,Q1利润证明反转已启动,PE<17x可轻仓", "hasReport": true, "reportFile": "桐昆股份.docx"}, {"id": "603225", "name": "新凤鸣", "code": "603225", "type": "stock", "grade": "C", "score": 11, "summary": "周期股底部观察品种,PE<25x(15元)可轻仓布局,负债率>72%止损,重点跟踪POY价差和长丝开工率", "hasReport": true, "reportFile": "新凤鸣.docx"}]}]}, {"name": "稀土/小金属", "type": "track", "children": [{"name": "稀土开采/分离", "type": "sub", "children": [{"id": "603663", "name": "三祥新材", "code": "603663", "type": "stock", "grade": "A", "score": 23, "summary": "A级唯一标的，核心关注标的，固态电池+核级锆故事有实质性技术和产能支撑，但PB已在高位", "hasReport": true, "reportFile": "三祥新材.docx"}, {"id": "603257", "name": "中国瑞林", "code": "603257", "type": "stock", "grade": "A-", "score": 19, "summary": "工程设计服务罕见零负债标的，海外收入占比48%全球化布局，关注中报验证增速", "hasReport": true, "reportFile": "中国瑞林.docx"}, {"id": "000970", "name": "中科三环", "code": "000970", "type": "stock", "grade": "C+", "score": 14, "summary": "稀土价格周期底部品种,镨钕突破60万+OCF转正+出口恢复是关键信号,逆向布局不宜重仓", "hasReport": true, "reportFile": "中科三环.docx"}, {"id": "002167", "name": "东方锆业", "code": "002167", "type": "stock", "grade": "D+", "score": 8, "summary": "财务状况恶化严重，合同负债近乎归零，订单先行指标发出强烈警告信号", "hasReport": true, "reportFile": "东方锆业.docx"}]}, {"name": "稀土永磁/功能材料", "type": "sub", "children": []}]}]}, {"id": "infrastructure", "name": "🏗️ 基建与建筑建材", "type": "theme", "comment": "基建工程+建材+水泥+交通", "children": [{"name": "基建/工程", "type": "track", "children": [{"name": "建筑央企/工程总包", "type": "sub", "children": [{"id": "603257", "name": "中国瑞林", "code": "603257", "type": "stock", "grade": "A-", "score": 19, "summary": "工程设计服务罕见零负债标的，海外收入占比48%全球化布局，关注中报验证增速", "hasReport": true, "reportFile": "中国瑞林.docx"}, {"id": "605006", "name": "山东玻纤", "code": "605006", "type": "stock", "grade": "D", "score": 10, "summary": "两年亏损+高负债+现金流为负+速动比<1，多重风险叠加，坚决回避", "hasReport": true, "reportFile": "山东玻纤.docx"}]}, {"name": "专业工程/钢构", "type": "sub", "children": []}, {"name": "国际工程/一带一路", "type": "sub", "children": []}]}, {"name": "建材", "type": "track", "children": [{"name": "水泥", "type": "sub", "children": []}, {"name": "玻璃/玻纤", "type": "sub", "children": [{"id": "605006", "name": "山东玻纤", "code": "605006", "type": "stock", "grade": "D", "score": 10, "summary": "两年亏损+高负债+现金流为负+速动比<1，多重风险叠加，坚决回避", "hasReport": true, "reportFile": "山东玻纤.docx"}]}, {"name": "防水/涂料/管材", "type": "sub", "children": [{"id": "603389", "name": "法狮龙", "code": "603389", "type": "stock", "grade": "D+", "score": 9, "summary": "坚决回避", "hasReport": true, "reportFile": "法狮龙.docx"}]}]}, {"name": "交通/港口", "type": "track", "children": [{"name": "公路/铁路/港口", "type": "sub", "children": [{"id": "603500", "name": "祥和实业", "code": "603500", "type": "stock", "grade": "B", "score": 16, "summary": "低估值稳健型选项，轨交扣件市占率高+下游铁路投资稳定，但成长性有限", "hasReport": true, "reportFile": "祥和实业.docx"}, {"id": "002972", "name": "科安达", "code": "002972", "type": "stock", "grade": "C", "score": 13, "summary": "—", "hasReport": true, "reportFile": "科安达.docx"}, {"id": "600869", "name": "远东股份", "code": "600869", "type": "stock", "grade": "D+", "score": 8, "summary": "概念故事丰满但财务现实残酷,80%负债+储能年亏5亿,等净利>3亿再谈投资,当前坚决回避", "hasReport": true, "reportFile": "远东股份.docx"}]}, {"name": "轨道交通", "type": "sub", "children": []}]}]}, {"id": "digital_economy", "name": "🌐 数字经济与软件", "type": "theme", "comment": "云计算+SaaS+信创+数据要素+网安", "children": [{"name": "云计算/AI应用", "type": "track", "children": [{"name": "IaaS/云基础设施", "type": "sub", "children": [{"id": "002534", "name": "西子洁能", "code": "002534", "type": "stock", "grade": "A-", "score": 20, "summary": "A-级俱乐部成员，基本面极佳（净现金26亿+有息负债清零），但估值已price-in乐观预期，建议14-15元回调后布局", "hasReport": true, "reportFile": "西子洁能.docx"}, {"id": "603500", "name": "祥和实业", "code": "603500", "type": "stock", "grade": "B", "score": 16, "summary": "低估值稳健型选项，轨交扣件市占率高+下游铁路投资稳定，但成长性有限", "hasReport": true, "reportFile": "祥和实业.docx"}, {"id": "600888", "name": "新疆众合", "code": "600888", "type": "stock", "grade": "B", "score": 16, "summary": "周期底部低估值价值股，等2026H1验证拐点确认后布局，止损位7.5元", "hasReport": true, "reportFile": "新疆众合.docx"}]}, {"name": "SaaS/应用软件", "type": "sub", "children": []}, {"name": "AI大模型/应用", "type": "sub", "children": []}, {"name": "大数据/数据中台", "type": "sub", "children": []}]}, {"name": "信创/自主可控", "type": "track", "children": [{"name": "信创操作系统/数据库", "type": "sub", "children": [{"id": "603688", "name": "石英股份", "code": "603688", "type": "stock", "grade": "C", "score": 10, "summary": "世界级好公司+地狱级贵估值,等待半导体石英季度营收>3亿验证逻辑,或PE<50x(13-15元)再考虑,当前价位无安全边际", "hasReport": true, "reportFile": "石英股份.docx"}, {"id": "603738", "name": "泰晶科技", "code": "603738", "type": "stock", "grade": "D+", "score": 8, "summary": "4年净利-72%+PE比全球同行贵15倍,ROE仅3%不如定存,等毛利率见底+PE<50x再重新评估", "hasReport": true, "reportFile": "泰晶科技.docx"}]}, {"name": "信创办公/安全", "type": "sub", "children": []}]}, {"name": "网络安全", "type": "track", "children": [{"name": "网络安全/防火墙", "type": "sub", "children": []}, {"name": "密码/数据安全", "type": "sub", "children": []}]}, {"name": "工业软件/垂类应用", "type": "track", "children": [{"name": "工业软件/CAD/CAE", "type": "sub", "children": []}, {"name": "地理信息/GIS", "type": "sub", "children": []}, {"name": "金融IT", "type": "sub", "children": [{"id": "601233", "name": "桐昆股份", "code": "601233", "type": "stock", "grade": "B+", "score": 20, "summary": "涤纶长丝板块首选配置标的,Q1利润证明反转已启动,PE<17x可轻仓", "hasReport": true, "reportFile": "桐昆股份.docx"}, {"id": "603225", "name": "新凤鸣", "code": "603225", "type": "stock", "grade": "C", "score": 11, "summary": "周期股底部观察品种,PE<25x(15元)可轻仓布局,负债率>72%止损,重点跟踪POY价差和长丝开工率", "hasReport": true, "reportFile": "新凤鸣.docx"}]}]}]}, {"id": "other_growth", "name": "🌿 其他成长赛道", "type": "theme", "comment": "游戏+传媒+环保+检测+低空", "children": [{"name": "游戏/传媒", "type": "track", "children": [{"name": "游戏开发/发行", "type": "sub", "children": []}, {"name": "影视/出版/广电", "type": "sub", "children": [{"id": "603466", "name": "风语筑", "code": "603466", "type": "stock", "grade": "", "score": 0, "summary": "等待VR/AR爆发", "hasReport": true, "reportFile": "风语筑.docx"}]}, {"name": "广告/数字营销", "type": "sub", "children": [{"id": "600226", "name": "亨通股份", "code": "600226", "type": "stock", "grade": "D+", "score": 9, "summary": "坚决回避", "hasReport": true, "reportFile": "亨通股份.docx"}]}]}, {"name": "环保/碳中和", "type": "track", "children": [{"name": "水务/固废处理", "type": "sub", "children": [{"id": "605580", "name": "恒盛能源", "code": "605580", "type": "stock", "grade": "D+", "score": 9, "summary": "PB 7.32x行业最贵水平，流动比率0.74偿债压力大，园区垄断型业务天花板低", "hasReport": true, "reportFile": "恒盛能源.docx"}]}, {"name": "大气治理/碳交易", "type": "sub", "children": []}, {"name": "环境监测/检测", "type": "sub", "children": [{"id": "603688", "name": "石英股份", "code": "603688", "type": "stock", "grade": "C", "score": 10, "summary": "世界级好公司+地狱级贵估值,等待半导体石英季度营收>3亿验证逻辑,或PE<50x(13-15元)再考虑,当前价位无安全边际", "hasReport": true, "reportFile": "石英股份.docx"}]}]}, {"name": "低空经济/飞行器", "type": "track", "children": [{"name": "eVTOL/UAM", "type": "sub", "children": []}, {"name": "低空空管/基础设施", "type": "sub", "children": []}]}, {"name": "物流/供应链", "type": "track", "children": [{"name": "快递/快运", "type": "sub", "children": []}, {"name": "供应链/货代", "type": "sub", "children": []}]}]}]};
-
+// ============ NAVIGATION ============
 var navStack = [{node: TREE, idx: -1}];
-
 var stockIndex = {};      // code/name -> stock obj
-
 var stockPaths = {};      // code -> [{theme, track, sub}] locations
-
-
 
 function current(){ return navStack[navStack.length-1]; }
 
-
-
 function buildGlobalIndex(node, theme, track, sub){
-
   if(!node.children) return;
-
   node.children.forEach(function(c){
-
     if(c.type === 'stock'){
-
       var id = c.id || c.code;
-
       stockIndex[id] = c;
-
       stockIndex[c.name] = c;
-
       stockIndex[c.code] = c;
-
       stockPaths.setdefault = function(k,v){ if(!this[k]) this[k]=[]; this[k].push(v); };
-
       if(!stockPaths[id]) stockPaths[id] = [];
-
       stockPaths[id].push({theme: theme, track: track, sub: sub, stock: c});
-
     } else {
-
       var nt = c.type === 'theme' ? c.name : theme;
-
       var nr = c.type === 'track' ? c.name : track;
-
       var ns = c.type === 'sub' ? c.name : sub;
-
       buildGlobalIndex(c, nt, nr, ns);
-
     }
-
   });
-
 }
-
 // Monkey-patch setdefault
-
 if(!Object.prototype.hasOwnProperty.call(stockPaths, 'setdefault')){
-
   Object.defineProperty(Object.prototype, 'setdefault', {
-
     value: function(k,v){ if(!this[k]) this[k]=[]; this[k].push(v); return this[k]; },
-
     configurable: true, writable: true
-
   });
-
 }
-
 buildGlobalIndex(TREE, '', '', '');
 
-
-
 function render(){
-
   var cur = current();
-
   var children = cur.node.children || [];
-
   var bcEl = document.getElementById('breadcrumb');
-
   var ctEl = document.getElementById('content');
-
-
 
   // Breadcrumb
-
   bcEl.innerHTML = '';
-
   if(navStack.length > 1){
-
     var back = document.createElement('span');
-
     back.className = 'back';
-
     back.textContent = '← 返回上级';
-
     back.onclick = function(){ navStack.pop(); render(); };
-
     bcEl.appendChild(back);
-
     var sp = document.createElement('span');
-
     sp.className = 'sep'; sp.textContent = '|';
-
     bcEl.appendChild(sp);
-
   }
-
   for(var i = 0; i < navStack.length; i++){
-
     var s = navStack[i];
-
     if(i > 0){
-
       var sep = document.createElement('span');
-
       sep.className = 'sep'; sep.textContent = '›';
-
       bcEl.appendChild(sep);
-
     }
-
     var cr = document.createElement('span');
-
     cr.className = 'crumb' + (i === navStack.length-1 ? ' active' : '');
-
     cr.textContent = s.node.name;
-
     if(i < navStack.length-1){
-
       (function(idx){ cr.onclick = function(){ navStack = navStack.slice(0, idx+1); render(); }; })(i);
-
     }
-
     bcEl.appendChild(cr);
-
   }
-
-
 
   // Content
-
   ctEl.innerHTML = '';
-
   if(!children || children.length === 0){
-
     ctEl.innerHTML = '<div class="empty"><div class="eicon">📭</div><div class="etext">暂无子分类</div></div>';
-
     return;
-
   }
-
-
 
   var nodeLevel = cur.node.type || 'root';
-
   var labelMap = {root:'大赛道', theme:'子板块', track:'概念细分', sub:'股票'};
-
   var nextMap = {root:'赛道', theme:'子板块', track:'概念'};
-
   var label = labelMap[nodeLevel] || '';
-
   var nextName = nextMap[nodeLevel] || '项';
-
   if(label){
-
     var t = document.createElement('div');
-
     t.className = 'level-title';
-
     t.textContent = label + ' · ' + children.length + ' 个' + nextName;
-
     ctEl.appendChild(t);
-
   }
 
-
-
   var grid = document.createElement('div');
-
   grid.className = 'card-grid';
-
-
 
   // Sort: folders first, then stocks by score desc
-
   var sorted = children.slice().sort(function(a,b){
-
     var aDir = a.type !== 'stock';
-
     var bDir = b.type !== 'stock';
-
     if(aDir !== bDir) return aDir ? -1 : 1;
-
     if(a.type === 'stock'){
-
       var as = a.score === null ? -1 : (a.score || 0);
-
       var bs = b.score === null ? -1 : (b.score || 0);
-
       return bs - as;
-
     }
-
     return 0;
-
   });
-
-
 
   sorted.forEach(function(child){
-
     var card = document.createElement('div');
-
     var isStock = child.type === 'stock';
 
-
-
     if(isStock){
-
-      var r = child.grade || '?';
-
+      var r = child.rating || '?';
       var rc = 'stock-q';
-
       if(r.charAt(0) === 'A') rc = 'stock-a';
-
       else if(r.charAt(0) === 'B') rc = 'stock-b';
-
       else if(r.charAt(0) === 'C') rc = 'stock-c';
-
       else if(r.charAt(0) === 'D') rc = 'stock-d';
 
-
-
       var emoji = {'A':'🟢','B':'🔵','C':'🟡','D':'🔴'}[r.charAt(0)] || '⚪';
-
       var scoreStr = child.score !== null ? child.score + '/30' : '?';
-
       var hasRpt = child.hasReport ? ' 📄' : '';
-
       var multiTag = '';
-
       var stockId = child.id || child.code;
-
       if(stockPaths[stockId] && stockPaths[stockId].length > 1){
-
         multiTag = '<span class="multi-tag">×' + stockPaths[stockId].length + '</span>';
-
       }
-
       card.className = 'card stock ' + rc;
-
       card.innerHTML = '<div class="icon">' + emoji + '</div><div class="name">' + child.name + hasRpt + multiTag + ' <span style="font-size:11px;color:#8b949e">' + child.code + '</span></div><div class="meta"><span class="badge">' + r + '级 ' + scoreStr + '</span></div>';
-
       card.onclick = function(e){ e.stopPropagation(); openStockDetail(child); };
-
     } else {
-
       card.className = 'card ' + child.type;
-
       var iconMap = {theme:'📂', track:'📁', sub:'🏷️'};
-
       var hasCh = (child.children || []).length > 0;
-
       card.innerHTML = '<div class="icon">' + (iconMap[child.type] || '📄') + '</div><div class="name">' + child.name + '</div><div class="meta">' + (hasCh ? '<span class="badge">' + (child.children||[]).length + '个</span>' : '') + '</div><div class="arrow">' + (hasCh ? '→' : '') + '</div>';
-
       if(hasCh){
-
         card.onclick = function(){ navStack.push({node: child, idx: navStack.length}); render(); document.getElementById('search').value = ''; };
-
       }
-
     }
-
     grid.appendChild(card);
-
   });
-
   ctEl.appendChild(grid);
-
 }
-
-
 
 // ============ STOCK DETAIL MODAL ============
-
 function openStockDetail(stock){
   var m = document.getElementById('modal-overlay');
-  var r = stock.grade || '?';
-  var rc = r.charAt(0);
+  // Force inline styles (CSS rules may be dropped by parser)
+  if(!m.hasAttribute('data-style-fixed')){
+    m.setAttribute('data-style-fixed','1');
+    m.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s';
+  }
+  var r = stock.rating || '?';
   var c = '#6e7681';
-  if(rc === 'A') c = '#3fb950';
-  else if(rc === 'B') c = '#58a6ff';
-  else if(rc === 'C') c = '#e3b341';
-  else if(rc === 'D') c = '#f85149';
-
-  var scoreStr = (stock.score !== null && stock.score !== undefined) ? stock.score + '/30' : '?';
-  var summary = stock.summary || '暂无分析摘要';
-
-  var reportSection = '';
-  if(stock.hasReport){
-    reportSection = '<div style="margin-top:20px;padding-top:16px;border-top:1px solid #21262d">' +
-      '<div style="font-size:14px;color:#58a6ff;margin-bottom:12px;font-weight:600">📊 深度分析报告</div>' +
-      '<div id="report-content" style="font-size:13px;color:#c9d1d9;line-height:1.9;max-height:55vh;overflow-y:auto;padding:16px;background:#0d1117;border-radius:8px;border:1px solid #21262d">' +
-      '<p style="color:#8b949e;text-align:center;padding:30px">⏳ 正在加载报告...</p>' +
-      '</div></div>';
-  }
-
-  m.innerHTML = '<div class="modal-box slide-in">' +
-    '<div class="mhead" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">' +
-    '<span><span style="color:' + c + ';font-weight:700;font-size:16px">' + stock.name + '</span> <code style="font-size:12px;color:#8b949e;margin-left:6px">' + stock.code + '</code></span>' +
-    '<button onclick="closeModal()" style="background:none;border:none;color:#8b949e;cursor:pointer;font-size:24px;line-height:1;padding:0 4px">&times;</button>' +
-    '</div>' +
-    '<div style="margin-top:12px">' +
-    '<span style="display:inline-block;padding:5px 14px;border-radius:8px;font-size:14px;font-weight:700;color:' + c + ';background:#' + c.replace('#','') + '22;border:1px solid #' + c.replace('#','') + '44">' + r + ' 级</span> ' +
-    '<span style="margin-left:10px;font-size:14px;color:#8b949e">综合评分 <strong style="color:#c9d1d9">' + scoreStr + '</strong></span>' +
-    '</div>' +
-    '<div style="margin-top:14px;font-size:13px;color:#c9d1d9;line-height:1.8">' + summary + '</div>' +
-    reportSection +
-    '</div>';
-  m.style.display = 'flex';
-
-  if(stock.hasReport && stock.reportFile){
-    loadReports(function(){
-      var rc = document.getElementById('report-content');
-      if(!rc) return;
-      if(typeof REPORTS_DATA !== 'undefined' && REPORTS_DATA[stock.reportFile]){
-        rc.innerHTML = REPORTS_DATA[stock.reportFile];
-      } else {
-        rc.innerHTML = '<p style="color:#8b949e;text-align:center;padding:20px">⚠️ 报告数据暂不可用</p>';
-      }
-    });
-  }
-}
-
-function closeModal(){
-  var m = document.getElementById('modal-overlay');
-  if(m) m.style.display = 'none';
-}
-
-
-// ============ SEARCH: navigate to stock location ============
-
-function onSearchKey(e){
-
-  if(e.key === 'Enter'){
-
-    var q = document.getElementById('search').value.trim();
-
-    if(!q) return;
-
-    // Try exact match first
-
-    var stock = stockIndex[q];
-
-    if(stock){
-
-      navigateToStock(stock.id || stock.code, null);
-
-      document.getElementById('search').value = '';
-
-      return;
-
-    }
-
-    // Fuzzy match
-
-    var ql = q.toLowerCase();
-
-    for(var k in stockIndex){
-
-      if(k.toLowerCase().indexOf(ql) === 0 || k.indexOf(q) >= 0){
-
-        navigateToStock(stockIndex[k].id || stockIndex[k].code, null);
-
-        document.getElementById('search').value = '';
-
-        return;
-
-      }
-
-    }
-
-    filterCards(q);
-
-  }
-
-}
-
-
-
-function onSearchInput(val){
-
-  // Real-time filtering while typing, but only for non-stock matches
-
-  if(!val || val.length < 2){ render(); return; }
-
-  var stock = stockIndex[val];
-
-  if(!stock){
-
-    var ql = val.toLowerCase();
-
-    for(var k in stockIndex){
-
-      if(k.toLowerCase().indexOf(ql) === 0 || k.indexOf(val) >= 0){
-
-        stock = stockIndex[k]; break;
-
-      }
-
-    }
-
-  }
-
-  if(stock){
-
-    // Show stock card inline with "navigate" option
-
-    showSearchPreview(stock, val);
-
-  } else {
-
-    filterCards(val);
-
-  }
-
-}
-
-
-
-function showSearchPreview(stock, q){
-
-  var ctEl = document.getElementById('content');
-
-  ctEl.innerHTML = '<div class="level-title">搜索结果 · 股票匹配</div>';
-
-  var grid = document.createElement('div');
-
-  grid.className = 'card-grid';
-
-
-
-  var r = stock.grade || '?';
-
-  var rc = {'A':'stock-a','B':'stock-b','C':'stock-c','D':'stock-d'}[r.charAt(0)] || 'stock-q';
-
-  var emoji = {'A':'🟢','B':'🔵','C':'🟡','D':'🔴'}[r.charAt(0)] || '⚪';
+  if(r.charAt(0) === 'A') c = '#3fb950';
+  else if(r.charAt(0) === 'B') c = '#58a6ff';
+  else if(r.charAt(0) === 'C') c = '#e3b341';
+  else if(r.charAt(0) === 'D') c = '#f85149';
 
   var scoreStr = stock.score !== null ? stock.score + '/30' : '?';
-
+  var summary = stock.summary || '暂无分析摘要';
+  var reportFile = stock.reportFile || '';
+  var hasRpt = stock.hasReport;
   var stockId = stock.id || stock.code;
 
-  var paths = stockPaths[stockId] || [];
-
-
-
-  paths.forEach(function(p, i){
-
-    var card = document.createElement('div');
-
-    card.className = 'card stock ' + rc;
-
-    var hasRpt = stock.hasReport ? ' 📄' : '';
-
-    var locLabel = i === 0 ? '' : ' (位置' + (i+1) + ')';
-
-    card.innerHTML = '<div class="icon">' + emoji + '</div><div class="name">' + stock.name + hasRpt + locLabel + ' <span style="font-size:11px;color:#8b949e">' + stock.code + '</span></div><div class="meta"><span class="badge">' + r + '级 ' + scoreStr + '</span><span style="font-size:10px;color:#58a6ff">📍 ' + p.theme + ' → ' + p.track + ' → ' + p.sub + '</span></div><div class="arrow">→</div>';
-
-    card.onclick = function(e){
-
-      e.stopPropagation();
-
-      navigateToStock(stockId, p.sub);
-
-      document.getElementById('search').value = '';
-
-    };
-
-    grid.appendChild(card);
-
-  });
-
-  ctEl.appendChild(grid);
-
-}
-
-
-
-function navigateToStock(stockId, preferredSub){
-
-  var paths = stockPaths[stockId] || [];
-
-  if(paths.length === 0) return;
-
-
-
-  // Pick best path: preferredSub match, or first
-
-  var targetPath = paths[0];
-
-  if(preferredSub){
-
-    for(var i = 0; i < paths.length; i++){
-
-      if(paths[i].sub === preferredSub){ targetPath = paths[i]; break; }
-
+  // Report download section
+  var dlHtml = '';
+  if(hasRpt && reportFile){
+    var localPath = 'H:\\QCLAW任务文件\\个股公司分析\\' + reportFile;
+    if(IS_SERVER){
+      // Server: direct download link
+      var dlUrl = '/reports/' + encodeURIComponent(reportFile);
+      dlHtml = '<div class="m-path-box"><div class="ptitle">📥 下载完整分析报告</div><a class="dl-btn" href="' + dlUrl + '" download="' + reportFile + '">下载 ' + reportFile + '</a></div>';
+    } else {
+      // Local file: clipboard approach
+      dlHtml = '<div class="m-path-box"><div class="ptitle">📅 完整分析报告（本地文件）</div><div class="ppath">' + localPath + '</div><button class="clip-btn" onclick="copyPath(this,\'' + localPath.replace(/\\/g,'\\\\') + '\')">📋 复制路径到剪贴板</button><div style="font-size:10px;color:#484f58;margin-top:6px">💡 启动本地服务器可直接下载：<code style="background:#21262d;padding:2px 6px;border-radius:3px">双击 serve.bat</code></div></div>';
     }
-
+  } else {
+    dlHtml = '<div class="m-path-box"><div class="ptitle">📅 完整分析报告</div><div class="ppath" style="color:#484f58">暂无报告文件</div></div>';
   }
 
+  // Show all locations if stock appears in multiple places
+  var locHtml = '';
+  var paths = stockPaths[stockId] || [];
+  if(paths.length > 1){
+    locHtml = '<div class="m-locations">📍 同时归属以下概念：';
+    paths.forEach(function(p){
+      locHtml += '<br>　<a class="loc-link" onclick="navigateToStock(\'' + stockId + '\',\'' + p.sub + '\')">' + p.theme + ' → ' + p.track + ' → ' + p.sub + '</a>';
+    });
+    locHtml += '</div>';
+  }
 
+  // Old template note
+  var noteHtml = '';
+  if(r === '?'){
+    noteHtml = '<div class="m-note-old">⚠️ 此报告生成于早期模板，未包含正式评级，可重新分析补充</div>';
+  }
 
-  // Rebuild nav stack to target location
-
-  navStack = [{node: TREE, idx: -1}];
-
-  var themeNode = TREE.children.find(function(c){ return c.name === targetPath.theme; });
-
-  if(!themeNode) return;
-
-  navStack.push({node: themeNode, idx: 1});
-
-  var trackNode = themeNode.children.find(function(c){ return c.name === targetPath.track; });
-
-  if(!trackNode) return;
-
-  navStack.push({node: trackNode, idx: 2});
-
-  var subNode = trackNode.children.find(function(c){ return c.name === targetPath.sub; });
-
-  if(!subNode) return;
-
-  navStack.push({node: subNode, idx: 3});
-
-  render();
-
+  m.innerHTML = '<div class="modal" onclick="event.stopPropagation()"><button class="m-close" onclick="closeModal()">×</button><h3 style="color:' + c + '">' + stock.name + '</h3><div class="m-code">' + stock.code + '</div><div class="m-row"><span class="m-label">评级</span><span class="m-value" style="color:' + c + '">' + r + '级</span></div><div class="m-row"><span class="m-label">综合评分</span><span class="m-value">' + scoreStr + '</span></div><div class="m-summary">📝 ' + summary + '</div>' + locHtml + noteHtml + dlHtml + '</div>';
+  m.style.opacity = '1';
+  m.style.pointerEvents = 'auto';
 }
 
+function copyPath(btn, path){
+  navigator.clipboard.writeText(path).then(function(){
+    btn.textContent = '✅ 已复制！在文件管理器地址栏粘贴即可';
+    btn.classList.add('copied');
+    setTimeout(function(){ btn.textContent = '📋 复制路径到剪贴板'; btn.classList.remove('copied'); }, 2500);
+  }).catch(function(){ btn.textContent = '❌ 失败，请手动选中上方路径'; });
+}
 
+function closeModal(){ var m=document.getElementById('modal-overlay'); m.style.opacity='0'; m.style.pointerEvents='none'; }
 
-function filterCards(q){
-
-  if(!q){ render(); return; }
-
-  var ql = q.toLowerCase();
-
-  var cur = current();
-
-  var children = cur.node.children || [];
-
-
-
-  var ctEl = document.getElementById('content');
-
-  var filtered = children.filter(function(c){
-
-    if(c.name.toLowerCase().indexOf(ql) >= 0) return true;
-
-    if(c.children && c.children.some(function(s){ return s.name.toLowerCase().indexOf(ql) >= 0 || (s.code||'').indexOf(ql) >= 0; })) return true;
-
-    return false;
-
-  });
-
-
-
-  ctEl.innerHTML = '';
-
-  if(filtered.length === 0){
-
-    ctEl.innerHTML = '<div class="empty"><div class="eicon">🔍</div><div class="etext">未找到匹配 "' + q + '" 的内容</div></div>';
-
-    return;
-
+// ============ SEARCH: navigate to stock location ============
+function onSearchKey(e){
+  if(e.key === 'Enter'){
+    var q = document.getElementById('search').value.trim();
+    if(!q) return;
+    // Try exact match first
+    var stock = stockIndex[q];
+    if(stock){
+      navigateToStock(stock.id || stock.code, null);
+      document.getElementById('search').value = '';
+      return;
+    }
+    // Fuzzy match
+    var ql = q.toLowerCase();
+    for(var k in stockIndex){
+      if(k.toLowerCase().indexOf(ql) === 0 || k.indexOf(q) >= 0){
+        navigateToStock(stockIndex[k].id || stockIndex[k].code, null);
+        document.getElementById('search').value = '';
+        return;
+      }
+    }
+    filterCards(q);
   }
+}
 
-  ctEl.innerHTML = '<div class="level-title">搜索结果：' + filtered.length + ' 项匹配</div>';
+function onSearchInput(val){
+  // Real-time filtering while typing, but only for non-stock matches
+  if(!val || val.length < 2){ render(); return; }
+  var stock = stockIndex[val];
+  if(!stock){
+    var ql = val.toLowerCase();
+    for(var k in stockIndex){
+      if(k.toLowerCase().indexOf(ql) === 0 || k.indexOf(val) >= 0){
+        stock = stockIndex[k]; break;
+      }
+    }
+  }
+  if(stock){
+    // Show stock card inline with "navigate" option
+    showSearchPreview(stock, val);
+  } else {
+    filterCards(val);
+  }
+}
 
+function showSearchPreview(stock, q){
+  var ctEl = document.getElementById('content');
+  ctEl.innerHTML = '<div class="level-title">搜索结果 · 股票匹配</div>';
   var grid = document.createElement('div');
-
   grid.className = 'card-grid';
 
-  filtered.forEach(function(child){
+  var r = stock.rating || '?';
+  var rc = {'A':'stock-a','B':'stock-b','C':'stock-c','D':'stock-d'}[r.charAt(0)] || 'stock-q';
+  var emoji = {'A':'🟢','B':'🔵','C':'🟡','D':'🔴'}[r.charAt(0)] || '⚪';
+  var scoreStr = stock.score !== null ? stock.score + '/30' : '?';
+  var stockId = stock.id || stock.code;
+  var paths = stockPaths[stockId] || [];
 
+  paths.forEach(function(p, i){
     var card = document.createElement('div');
-
-    var isStock = child.type === 'stock';
-
-    if(isStock){
-
-      var r = child.grade || '?';
-
-      var rc = {'A':'stock-a','B':'stock-b','C':'stock-c','D':'stock-d'}[r.charAt(0)] || 'stock-q';
-
-      var emoji = {'A':'🟢','B':'🔵','C':'🟡','D':'🔴'}[r.charAt(0)] || '⚪';
-
-      var scoreStr = child.score !== null ? child.score + '/30' : '?';
-
-      card.className = 'card stock ' + rc;
-
-      card.innerHTML = '<div class="icon">' + emoji + '</div><div class="name">' + highlight(child.name, q) + ' <span style="font-size:11px;color:#8b949e">' + child.code + '</span></div><div class="meta"><span class="badge">' + r + '级 ' + scoreStr + '</span></div>';
-
-      card.onclick = function(e){ e.stopPropagation(); navigateToStock(child.id || child.code, null); };
-
-    } else {
-
-      card.className = 'card ' + child.type;
-
-      var iconMap = {theme:'📂', track:'📁', sub:'🏷️'};
-
-      var h = (child.children || []).length > 0;
-
-      card.innerHTML = '<div class="icon">' + (iconMap[child.type] || '📄') + '</div><div class="name">' + highlight(child.name, q) + '</div><div class="meta">' + (h ? '<span class="badge">' + h + '个</span>' : '') + '</div><div class="arrow">' + (h ? '→' : '') + '</div>';
-
-      if(h){
-
-        card.onclick = function(){ navStack.push({node: child, idx: navStack.length}); render(); document.getElementById('search').value = ''; };
-
-      }
-
-    }
-
+    card.className = 'card stock ' + rc;
+    var hasRpt = stock.hasReport ? ' 📄' : '';
+    var locLabel = i === 0 ? '' : ' (位置' + (i+1) + ')';
+    card.innerHTML = '<div class="icon">' + emoji + '</div><div class="name">' + stock.name + hasRpt + locLabel + ' <span style="font-size:11px;color:#8b949e">' + stock.code + '</span></div><div class="meta"><span class="badge">' + r + '级 ' + scoreStr + '</span><span style="font-size:10px;color:#58a6ff">📍 ' + p.theme + ' → ' + p.track + ' → ' + p.sub + '</span></div><div class="arrow">→</div>';
+    card.onclick = function(e){
+      e.stopPropagation();
+      navigateToStock(stockId, p.sub);
+      document.getElementById('search').value = '';
+    };
     grid.appendChild(card);
-
   });
-
   ctEl.appendChild(grid);
-
 }
 
+function navigateToStock(stockId, preferredSub){
+  var paths = stockPaths[stockId] || [];
+  if(paths.length === 0) return;
 
-
-function highlight(text, q){
-
-  var idx = text.toLowerCase().indexOf(q.toLowerCase());
-
-  if(idx < 0) return text;
-
-  return text.substring(0, idx) + '<span style="color:#e3b341;font-weight:700">' + text.substring(idx, idx+q.length) + '</span>' + text.substring(idx+q.length);
-
-}
-
-
-
-// ============ GLOBAL KEYBOARD ============
-
-document.addEventListener('keydown', function(e){
-
-  if(e.key === 'Backspace' && document.activeElement === document.body && navStack.length > 1){
-
-    navStack.pop(); render(); e.preventDefault();
-
+  // Pick best path: preferredSub match, or first
+  var targetPath = paths[0];
+  if(preferredSub){
+    for(var i = 0; i < paths.length; i++){
+      if(paths[i].sub === preferredSub){ targetPath = paths[i]; break; }
+    }
   }
 
-  if(e.key === 'Escape'){ closeModal(); }
+  // Rebuild nav stack to target location
+  navStack = [{node: TREE, idx: -1}];
+  var themeNode = TREE.children.find(function(c){ return c.name === targetPath.theme; });
+  if(!themeNode) return;
+  navStack.push({node: themeNode, idx: 1});
+  var trackNode = themeNode.children.find(function(c){ return c.name === targetPath.track; });
+  if(!trackNode) return;
+  navStack.push({node: trackNode, idx: 2});
+  var subNode = trackNode.children.find(function(c){ return c.name === targetPath.sub; });
+  if(!subNode) return;
+  navStack.push({node: subNode, idx: 3});
+  render();
+}
 
+function filterCards(q){
+  if(!q){ render(); return; }
+  var ql = q.toLowerCase();
+  var cur = current();
+  var children = cur.node.children || [];
+
+  var ctEl = document.getElementById('content');
+  var filtered = children.filter(function(c){
+    if(c.name.toLowerCase().indexOf(ql) >= 0) return true;
+    if(c.children && c.children.some(function(s){ return s.name.toLowerCase().indexOf(ql) >= 0 || (s.code||'').indexOf(ql) >= 0; })) return true;
+    return false;
+  });
+
+  ctEl.innerHTML = '';
+  if(filtered.length === 0){
+    ctEl.innerHTML = '<div class="empty"><div class="eicon">🔍</div><div class="etext">未找到匹配 "' + q + '" 的内容</div></div>';
+    return;
+  }
+  ctEl.innerHTML = '<div class="level-title">搜索结果：' + filtered.length + ' 项匹配</div>';
+  var grid = document.createElement('div');
+  grid.className = 'card-grid';
+  filtered.forEach(function(child){
+    var card = document.createElement('div');
+    var isStock = child.type === 'stock';
+    if(isStock){
+      var r = child.rating || '?';
+      var rc = {'A':'stock-a','B':'stock-b','C':'stock-c','D':'stock-d'}[r.charAt(0)] || 'stock-q';
+      var emoji = {'A':'🟢','B':'🔵','C':'🟡','D':'🔴'}[r.charAt(0)] || '⚪';
+      var scoreStr = child.score !== null ? child.score + '/30' : '?';
+      card.className = 'card stock ' + rc;
+      card.innerHTML = '<div class="icon">' + emoji + '</div><div class="name">' + highlight(child.name, q) + ' <span style="font-size:11px;color:#8b949e">' + child.code + '</span></div><div class="meta"><span class="badge">' + r + '级 ' + scoreStr + '</span></div>';
+      card.onclick = function(e){ e.stopPropagation(); navigateToStock(child.id || child.code, null); };
+    } else {
+      card.className = 'card ' + child.type;
+      var iconMap = {theme:'📂', track:'📁', sub:'🏷️'};
+      var h = (child.children || []).length > 0;
+      card.innerHTML = '<div class="icon">' + (iconMap[child.type] || '📄') + '</div><div class="name">' + highlight(child.name, q) + '</div><div class="meta">' + (h ? '<span class="badge">' + h + '个</span>' : '') + '</div><div class="arrow">' + (h ? '→' : '') + '</div>';
+      if(h){
+        card.onclick = function(){ navStack.push({node: child, idx: navStack.length}); render(); document.getElementById('search').value = ''; };
+      }
+    }
+    grid.appendChild(card);
+  });
+  ctEl.appendChild(grid);
+}
+
+function highlight(text, q){
+  var idx = text.toLowerCase().indexOf(q.toLowerCase());
+  if(idx < 0) return text;
+  return text.substring(0, idx) + '<span style="color:#e3b341;font-weight:700">' + text.substring(idx, idx+q.length) + '</span>' + text.substring(idx+q.length);
+}
+
+// ============ GLOBAL KEYBOARD ============
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Backspace' && document.activeElement === document.body && navStack.length > 1){
+    navStack.pop(); render(); e.preventDefault();
+  }
+  if(e.key === 'Escape'){ closeModal(); }
 });
 
-
-
 // Init count
-
 document.getElementById('stock-count').textContent = Object.keys(stockIndex).length;
-
-// Init render
-
-render();
-
 </script>
-
 </body>
-
 </html>
-
