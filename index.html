@@ -248,7 +248,6 @@ function loadReports(cb) {
 }
 
 
-
 // ============ CONFIG ============
 
 const IS_SERVER = window.location.protocol === 'http:' || window.location.protocol === 'https:';
@@ -550,7 +549,6 @@ function openStockDetail(stock){
   var scoreStr = (stock.score !== null && stock.score !== undefined) ? stock.score + '/30' : '?';
   var summary = stock.summary || '暂无分析摘要';
 
-  // Report section placeholder
   var reportSection = '';
   if(stock.hasReport){
     reportSection = '<div style="margin-top:20px;padding-top:16px;border-top:1px solid #21262d">' +
@@ -574,7 +572,6 @@ function openStockDetail(stock){
     '</div>';
   m.style.display = 'flex';
 
-  // Load report async
   if(stock.hasReport && stock.reportFile){
     loadReports(function(){
       var rc = document.getElementById('report-content');
