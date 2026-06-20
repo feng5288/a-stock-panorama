@@ -470,7 +470,7 @@ function render(){
 
     if(isStock){
 
-      var r = child.rating || '?';
+      var r = child.grade || '?';
 
       var rc = 'stock-q';
 
@@ -841,7 +841,7 @@ function filterCards(q){
 
     if(isStock){
 
-      var r = child.rating || '?';
+      var r = child.grade || '?';
 
       var rc = {'A':'stock-a','B':'stock-b','C':'stock-c','D':'stock-d'}[r.charAt(0)] || 'stock-q';
 
