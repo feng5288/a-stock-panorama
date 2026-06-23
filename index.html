@@ -140,15 +140,22 @@ function getReportFile(sn){var m=getMeta(sn.name);return(m&&m.reportFile)?m.repo
 function getHeatInfo(code){
  if(!CONCEPT_HEAT||!CONCEPT_HEAT.stocks)return null;
  var v=CONCEPT_HEAT.stocks[code];
- return v?{pct:v.pct||v.heat||0,name:v.concept||v.name||''}:null;
+ if(!v)return null;
+ // Compat: {pct:6.5,name:"xx"} OR {heat:"warm",maxChg:4.5,concepts:["xx"]}
+ var pct=(typeof v.pct==='number')?v.pct:(typeof v.heat==='number'?v.heat:null);
+ var h=v.heat||'';
+ if(typeof h==='string'){if(h==='hot')pct=9;else if(h==='warm')pct=5;else if(h==='cold')pct=2;else pct=pct||0}
+ if(!pct&&v.maxChg)pct=Math.min(v.maxChg,9);
+ var name=v.name||(v.concepts&&v.concepts.length?v.concepts[0]:'热点');
+ return{pct:pct,name:name};
 }
 function heatBadgeHTML(h){
- if(!h||h.pct===undefined)return'';
+ if(!h||h.pct===null||h.pct===undefined||h.pct<=0)return'';
  var e=h.pct>=8?'🔥':h.pct>=5?'✨':'📈';
  return'<span class="heat-badge">'+e+' '+h.name+' H'+h.pct.toFixed(1)+'</span>';
 }
 function heatGlowClass(h){
- if(!h)return'';
+ if(!h||h.pct===null||h.pct===undefined||h.pct<=0)return'';
  if(h.pct>=5)return' stock-hot-a';
  if(h.pct>=3)return' stock-hot-b';
  return' stock-hot-c';
