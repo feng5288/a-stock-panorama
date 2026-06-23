@@ -1,171 +1,108 @@
 {
-  "update_time": "2026-06-22T15:39:11.006398",
-  "trade_date": "2026-06-22",
+  "update_time": "2026-06-23T15:38:11.312209",
+  "trade_date": "2026-06-23",
   "market_summary": {
-    "sh_index": 4163.1,
-    "sz_index": 16372.5,
-    "cy_index": 4359.39,
-    "kc50_index": 1948.93,
-    "volume_trillion": 3.74
+    "sh_index": 4106.25,
+    "sz_index": 15854.2,
+    "cy_index": 4192.19,
+    "kc50_index": 1916.21,
+    "volume_trillion": 3.44
   },
-  "market_note": "沪指+1.78%，深成指+2.13%，创业板+2.52%，科创50+1.96%。成交额3.74万亿创历史第二高，全市场2900+股上涨，151股涨停。大金融/培育钻石/有色锆锑/磷化工集体爆发。",
+  "market_note": "沪指-1.37%，深成指-3.17%，创业板-3.84%，科创50-1.68%。成交额3.44万亿缩量2964亿。全市场2700+股上涨，124股涨停。医药/人形机器人逆势狂飙，稀土/贵金属重挫。",
   "hot_concepts": [
     {
-      "name": "大金融/证券",
-      "heat_pct": 6.0,
-      "source": "证券ETF国泰512880",
-      "note": "广发/长江/中信建投证券涨停，新华保险涨停，证券ETF涨超6%",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "培育钻石",
-      "heat_pct": 5.5,
+      "name": "创新药/CRO",
+      "heat_pct": 6.5,
       "source": "盘面数据",
-      "note": "力量钻石/四方达涨20%封板，黄河旋风涨停",
+      "note": "十余只成分股涨停，新华制药/海南海药/亨迪药业/特一药业涨停，BIO2026催化",
       "matched_stocks_count": 0
     },
     {
-      "name": "有色·锆",
-      "heat_pct": 3.5,
+      "name": "人形机器人",
+      "heat_pct": 4.5,
       "source": "盘面数据",
-      "note": "长裕集团5天4板，爱迪特/东方锆业2连板，凯盛科技3天2板",
-      "matched_stocks_count": 2
+      "note": "方正电机/巨轮智能/和泰机电涨停，英伟达推出物理AI全栈安全系统",
+      "matched_stocks_count": 3
     },
     {
       "name": "磷化工",
       "heat_pct": 3.2,
       "source": "盘面数据",
-      "note": "云天化/六国化工/澄星股份涨停",
+      "note": "六国化工2连板，川发龙蟒/川金诺跟涨，磷酸铁锂价格翻倍",
       "matched_stocks_count": 5
     },
     {
-      "name": "有色·锑",
+      "name": "证券",
       "heat_pct": 2.8,
       "source": "盘面数据",
-      "note": "有色·锑概念走强，与非金属材料/小金属联动上涨",
+      "note": "长江证券2连板，券商板块反复活跃",
       "matched_stocks_count": 0
     },
     {
-      "name": "算力金属",
-      "heat_pct": 3.0,
-      "source": "有色ETF华安512940",
-      "note": "有色ETF涨5.2%，锡/铟等AI算力金属硬缺口逻辑",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "半导体",
-      "heat_pct": 3.0,
-      "source": "科创50指数",
-      "note": "敏芯股份涨超17%，晶升股份/普冉股份涨超13%，科创50涨1.96%",
-      "matched_stocks_count": 17
-    },
-    {
-      "name": "光通信",
-      "heat_pct": 2.8,
-      "source": "盘面数据",
-      "note": "旭光电子12天7板，宿迁联盛9天5板",
-      "matched_stocks_count": 3
-    },
-    {
-      "name": "AI应用",
+      "name": "芯片/功率半导体",
       "heat_pct": 2.5,
       "source": "盘面数据",
-      "note": "天娱数科11天6板",
-      "matched_stocks_count": 1
+      "note": "国民技术/上海贝岭涨停，功率半导体/MCU方向领涨",
+      "matched_stocks_count": 6
     },
     {
-      "name": "PCB/载板",
-      "heat_pct": 2.3,
-      "source": "盘面数据",
-      "note": "宏昌电子9天6板",
-      "matched_stocks_count": 5
-    },
-    {
-      "name": "液冷服务器",
+      "name": "新材料/培育钻石",
       "heat_pct": 2.2,
       "source": "盘面数据",
-      "note": "冰轮环境9天5板",
-      "matched_stocks_count": 7
+      "note": "黄河旋风2连板，新材料概念活跃",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "银行",
+      "heat_pct": 2.0,
+      "source": "盘面数据",
+      "note": "银行板块上涨，资金净流入防御性配置",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "海运/港口",
+      "heat_pct": 1.8,
+      "source": "盘面数据",
+      "note": "海运港口板块上涨",
+      "matched_stocks_count": 0
     }
   ],
   "hot_stocks": [
     {
-      "code": "600601",
-      "name": "方正科技",
-      "rating": "B",
-      "score": 16,
-      "heat_score": 7.5,
-      "matched_concepts": [
-        "半导体",
-        "PCB/载板",
-        "液冷服务器"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "先进封装"
-    },
-    {
-      "code": "603663",
-      "name": "三祥新材",
-      "rating": "A",
-      "score": 23,
-      "heat_score": 6.5,
-      "matched_concepts": [
-        "有色·锆",
-        "半导体"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "稀有/战略金属"
-    },
-    {
-      "code": "002167",
-      "name": "东方锆业",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 6.5,
-      "matched_concepts": [
-        "有色·锆",
-        "半导体"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "稀有/战略金属"
-    },
-    {
-      "code": "002141",
-      "name": "贤丰控股",
-      "rating": "D+",
-      "score": 7,
-      "heat_score": 6.0,
-      "matched_concepts": [
-        "大金融/证券"
-      ],
-      "theme": "🏦 金融与地产",
-      "track": "金融"
-    },
-    {
-      "code": "600869",
-      "name": "远东股份",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 5.2,
-      "matched_concepts": [
-        "半导体",
-        "液冷服务器"
-      ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
-    },
-    {
-      "code": "603328",
-      "name": "依顿电子",
+      "code": "603283",
+      "name": "赛腾股份",
       "rating": "B+",
       "score": 17,
       "heat_score": 4.5,
       "matched_concepts": [
-        "PCB/载板",
-        "液冷服务器"
+        "人形机器人"
       ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
+    },
+    {
+      "code": "002747",
+      "name": "埃斯顿",
+      "rating": "B",
+      "score": null,
+      "heat_score": 4.5,
+      "matched_concepts": [
+        "人形机器人"
+      ],
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
+    },
+    {
+      "code": "002527",
+      "name": "新时达",
+      "rating": "?",
+      "score": null,
+      "heat_score": 4.5,
+      "matched_concepts": [
+        "人形机器人"
+      ],
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
     },
     {
       "code": "605020",
@@ -228,85 +165,25 @@
       "track": "特种化工新材料"
     },
     {
-      "code": "000960",
-      "name": "锡业股份",
-      "rating": "B-",
-      "score": 17,
-      "heat_score": 3.0,
-      "matched_concepts": [
-        "算力金属"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "稀有/战略金属"
-    },
-    {
-      "code": "002428",
-      "name": "云南锗业",
-      "rating": "D",
-      "score": 6,
-      "heat_score": 3.0,
-      "matched_concepts": [
-        "算力金属"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "稀有/战略金属"
-    },
-    {
       "code": "002213",
       "name": "大为股份",
       "rating": "D",
       "score": 5,
-      "heat_score": 3.0,
+      "heat_score": 2.5,
       "matched_concepts": [
-        "半导体"
+        "芯片/功率半导体"
       ],
       "theme": "🔥 AI算力产业链",
       "track": "HBM存储产业链"
-    },
-    {
-      "code": "603688",
-      "name": "石英股份",
-      "rating": "C",
-      "score": 10,
-      "heat_score": 3.0,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "HBM存储产业链"
-    },
-    {
-      "code": "300576",
-      "name": "容大感光",
-      "rating": "D+",
-      "score": null,
-      "heat_score": 3.0,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "先进封装"
-    },
-    {
-      "code": "603650",
-      "name": "彤程新材",
-      "rating": "C+",
-      "score": 13,
-      "heat_score": 3.0,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "先进封装"
     },
     {
       "code": "600703",
       "name": "三安光电",
       "rating": "B+",
       "score": 19,
-      "heat_score": 3.0,
+      "heat_score": 2.5,
       "matched_concepts": [
-        "半导体"
+        "芯片/功率半导体"
       ],
       "theme": "💡 半导体全产业链",
       "track": "半导体材料(卡脖子12大类)"
@@ -316,9 +193,9 @@
       "name": "士兰微",
       "rating": "B+",
       "score": 20,
-      "heat_score": 3.0,
+      "heat_score": 2.5,
       "matched_concepts": [
-        "半导体"
+        "芯片/功率半导体"
       ],
       "theme": "💡 半导体全产业链",
       "track": "半导体材料(卡脖子12大类)"
@@ -328,9 +205,9 @@
       "name": "东方钽业",
       "rating": "C",
       "score": null,
-      "heat_score": 3.0,
+      "heat_score": 2.5,
       "matched_concepts": [
-        "半导体"
+        "芯片/功率半导体"
       ],
       "theme": "💡 半导体全产业链",
       "track": "半导体材料(卡脖子12大类)"
@@ -340,9 +217,9 @@
       "name": "泰晶科技",
       "rating": "D+",
       "score": 8,
-      "heat_score": 3.0,
+      "heat_score": 2.5,
       "matched_concepts": [
-        "半导体"
+        "芯片/功率半导体"
       ],
       "theme": "💡 半导体全产业链",
       "track": "芯片设计"
@@ -352,243 +229,36 @@
       "name": "海特高新",
       "rating": "C+",
       "score": 13,
-      "heat_score": 3.0,
+      "heat_score": 2.5,
       "matched_concepts": [
-        "半导体"
+        "芯片/功率半导体"
       ],
       "theme": "💡 半导体全产业链",
       "track": "功率半导体"
-    },
-    {
-      "code": "002534",
-      "name": "西子洁能",
-      "rating": "A-",
-      "score": 20,
-      "heat_score": 3.0,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
-    },
-    {
-      "code": "000922",
-      "name": "佳电股份",
-      "rating": "C+",
-      "score": null,
-      "heat_score": 3.0,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
-    },
-    {
-      "code": "603337",
-      "name": "杰克科技",
-      "rating": "B+",
-      "score": 21,
-      "heat_score": 3.0,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "🏭 高端装备与工业",
-      "track": "工业母机/机床"
-    },
-    {
-      "code": "003036",
-      "name": "泰坦股份",
-      "rating": "D",
-      "score": 4,
-      "heat_score": 3.0,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "🏭 高端装备与工业",
-      "track": "工业母机/机床"
-    },
-    {
-      "code": "002902",
-      "name": "铭普光磁",
-      "rating": "D",
-      "score": 2,
-      "heat_score": 2.8,
-      "matched_concepts": [
-        "光通信"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "光通信/CPO光互连"
-    },
-    {
-      "code": "600487",
-      "name": "亨通光电",
-      "rating": "A-",
-      "score": 22,
-      "heat_score": 2.8,
-      "matched_concepts": [
-        "光通信"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "光通信/CPO光互连"
-    },
-    {
-      "code": "603042",
-      "name": "华脉科技",
-      "rating": "?",
-      "score": 3,
-      "heat_score": 2.8,
-      "matched_concepts": [
-        "光通信"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "光通信/CPO光互连"
-    },
-    {
-      "code": "000810",
-      "name": "创维数字",
-      "rating": "C+",
-      "score": 12,
-      "heat_score": 2.5,
-      "matched_concepts": [
-        "AI应用"
-      ],
-      "theme": "📱 消费电子与终端",
-      "track": "AI PC/智能终端"
-    },
-    {
-      "code": "600110",
-      "name": "诺德股份",
-      "rating": "C",
-      "score": 12,
-      "heat_score": 2.3,
-      "matched_concepts": [
-        "PCB/载板"
-      ],
-      "theme": "📋 PCB电路板产业链",
-      "track": "覆铜板/CCL"
-    },
-    {
-      "code": "002203",
-      "name": "海亮股份",
-      "rating": "D+",
-      "score": 9,
-      "heat_score": 2.3,
-      "matched_concepts": [
-        "PCB/载板"
-      ],
-      "theme": "📋 PCB电路板产业链",
-      "track": "覆铜板/CCL"
-    },
-    {
-      "code": "601137",
-      "name": "博威合金",
-      "rating": "D+",
-      "score": 11,
-      "heat_score": 2.3,
-      "matched_concepts": [
-        "PCB/载板"
-      ],
-      "theme": "📋 PCB电路板产业链",
-      "track": "覆铜板/CCL"
-    },
-    {
-      "code": "002851",
-      "name": "麦格米特",
-      "rating": "D",
-      "score": 6,
-      "heat_score": 2.2,
-      "matched_concepts": [
-        "液冷服务器"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
-    },
-    {
-      "code": "002837",
-      "name": "英维克",
-      "rating": "B+",
-      "score": 18,
-      "heat_score": 2.2,
-      "matched_concepts": [
-        "液冷服务器"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "液冷/温控"
-    },
-    {
-      "code": "603757",
-      "name": "大元泵业",
-      "rating": "C",
-      "score": 13,
-      "heat_score": 2.2,
-      "matched_concepts": [
-        "液冷服务器"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "液冷/温控"
-    },
-    {
-      "code": "002272",
-      "name": "川润股份",
-      "rating": "C",
-      "score": 12,
-      "heat_score": 2.2,
-      "matched_concepts": [
-        "液冷服务器"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "液冷/温控"
     }
   ],
-  "total_matched_stocks": 37,
-  "updated": "2026-06-22 15:39",
+  "total_matched_stocks": 14,
+  "updated": "2026-06-23 15:38",
   "stocks": {
-    "600601": {
-      "heat": "high",
-      "maxChg": 7.5,
-      "concepts": [
-        "半导体",
-        "PCB/载板",
-        "液冷服务器"
-      ]
-    },
-    "603663": {
-      "heat": "high",
-      "maxChg": 6.5,
-      "concepts": [
-        "有色·锆",
-        "半导体"
-      ]
-    },
-    "002167": {
-      "heat": "high",
-      "maxChg": 6.5,
-      "concepts": [
-        "有色·锆",
-        "半导体"
-      ]
-    },
-    "002141": {
-      "heat": "high",
-      "maxChg": 6.0,
-      "concepts": [
-        "大金融/证券"
-      ]
-    },
-    "600869": {
-      "heat": "high",
-      "maxChg": 5.2,
-      "concepts": [
-        "半导体",
-        "液冷服务器"
-      ]
-    },
-    "603328": {
+    "603283": {
       "heat": "warm",
       "maxChg": 4.5,
       "concepts": [
-        "PCB/载板",
-        "液冷服务器"
+        "人形机器人"
+      ]
+    },
+    "002747": {
+      "heat": "warm",
+      "maxChg": 4.5,
+      "concepts": [
+        "人形机器人"
+      ]
+    },
+    "002527": {
+      "heat": "warm",
+      "maxChg": 4.5,
+      "concepts": [
+        "人形机器人"
       ]
     },
     "605020": {
@@ -626,186 +296,46 @@
         "磷化工"
       ]
     },
-    "000960": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "算力金属"
-      ]
-    },
-    "002428": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "算力金属"
-      ]
-    },
     "002213": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "603688": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "300576": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "603650": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "600703": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "600460": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "000962": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "603738": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "002023": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "002534": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "000922": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "603337": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "003036": {
-      "heat": "warm",
-      "maxChg": 3.0,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "002902": {
-      "heat": "cold",
-      "maxChg": 2.8,
-      "concepts": [
-        "光通信"
-      ]
-    },
-    "600487": {
-      "heat": "cold",
-      "maxChg": 2.8,
-      "concepts": [
-        "光通信"
-      ]
-    },
-    "603042": {
-      "heat": "cold",
-      "maxChg": 2.8,
-      "concepts": [
-        "光通信"
-      ]
-    },
-    "000810": {
       "heat": "cold",
       "maxChg": 2.5,
       "concepts": [
-        "AI应用"
+        "芯片/功率半导体"
       ]
     },
-    "600110": {
+    "600703": {
       "heat": "cold",
-      "maxChg": 2.3,
+      "maxChg": 2.5,
       "concepts": [
-        "PCB/载板"
+        "芯片/功率半导体"
       ]
     },
-    "002203": {
+    "600460": {
       "heat": "cold",
-      "maxChg": 2.3,
+      "maxChg": 2.5,
       "concepts": [
-        "PCB/载板"
+        "芯片/功率半导体"
       ]
     },
-    "601137": {
+    "000962": {
       "heat": "cold",
-      "maxChg": 2.3,
+      "maxChg": 2.5,
       "concepts": [
-        "PCB/载板"
+        "芯片/功率半导体"
       ]
     },
-    "002851": {
+    "603738": {
       "heat": "cold",
-      "maxChg": 2.2,
+      "maxChg": 2.5,
       "concepts": [
-        "液冷服务器"
+        "芯片/功率半导体"
       ]
     },
-    "002837": {
+    "002023": {
       "heat": "cold",
-      "maxChg": 2.2,
+      "maxChg": 2.5,
       "concepts": [
-        "液冷服务器"
-      ]
-    },
-    "603757": {
-      "heat": "cold",
-      "maxChg": 2.2,
-      "concepts": [
-        "液冷服务器"
-      ]
-    },
-    "002272": {
-      "heat": "cold",
-      "maxChg": 2.2,
-      "concepts": [
-        "液冷服务器"
+        "芯片/功率半导体"
       ]
     }
   }
