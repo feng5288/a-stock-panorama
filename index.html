@@ -131,7 +131,8 @@ buildGlobalIndex(TREE,'','','');
 /* --- Meta Helpers --- */
 function getMeta(n){return(typeof STOCK_META!='undefined'&&STOCK_META&&STOCK_META[n])?STOCK_META[n]:null}
 function getRating(sn){var m=getMeta(sn.name);return(m&&m.rating&&m.rating!='?')?m.rating:(sn.rating||'?')}
-function getScoreStr(sn){var m=getMeta(sn.name);var v=(m&&m.score!==null)?m.score:(sn.score!==null?sn.score:null);return v!==null?v+'/30':'?'}
+function fmtRating(r){return r&&r.indexOf('级')>=0?r:r+'级'}
+function getScoreStr(sn){var m=getMeta(sn.name);var v=(m&&typeof m.score==='number')?m.score:(typeof sn.score==='number'?sn.score:null);return v!==null?v+'/30':'?'}
 function getSummary(sn){var m=getMeta(sn.name);return(m&&m.summary)?m.summary:(sn.summary||'暂无分析摘要')}
 function hasReport(sn){var m=getMeta(sn.name);return(m&&m.hasReport)?!0:(sn.hasReport||!1)}
 function getReportFile(sn){var m=getMeta(sn.name);return(m&&m.reportFile)?m.reportFile:(sn.reportFile||'')}
@@ -186,7 +187,7 @@ function openStockDetail(stock){
  var loc='',ps=stockPaths[sid]||[];
  if(ps.length>1){loc='<div class="m-locations">📍 同时归属：';ps.forEach(function(p,i){loc+='<br>  <a class="loc-link" onclick="navigateToStock(\''+sid+'\',\''+p.sub+'\')">'+p.theme+' → '+p.track+' → '+p.sub+'</a>'});loc+='</div>'}
  var note=r==='?'?'<div class="m-note-old">⚠ 此报告生成于早期模板，未包含正式评级</div>':'';
- m.innerHTML='<div class="modal" onclick="event.stopPropagation()"><button class="m-close" onclick="closeModal()">×</button><h3 style="color:'+c+'">'+stock.name+'</h3><div class="m-code">'+stock.code+'</div><div class="m-row"><span class="m-label">评级</span><span class="m-value" style="color:'+c+'">'+r+'级</span></div><div class="m-row"><span class="m-label">综合评分</span><span class="m-value">'+sc+'</span></div><div class="m-summary">📝 '+sum+'</div>'+loc+note+dl+'</div>';
+ m.innerHTML='<div class="modal" onclick="event.stopPropagation()"><button class="m-close" onclick="closeModal()">×</button><h3 style="color:'+c+'">'+stock.name+'</h3><div class="m-code">'+stock.code+'</div><div class="m-row"><span class="m-label">评级</span><span class="m-value" style="color:'+c+'">'+fmtRating(r)+'</span></div><div class="m-row"><span class="m-label">综合评分</span><span class="m-value">'+sc+'</span></div><div class="m-summary">📝 '+sum+'</div>'+loc+note+dl+'</div>';
  m.style.opacity='1';m.style.pointerEvents='auto';
  setTimeout(function(){
   var ifr=document.getElementById('report-iframe');
@@ -231,7 +232,7 @@ function showSearchPreview(stock,q){
  ps.forEach(function(p,i){
   var c=document.createElement('div');c.className='card stock '+rc;
   var ll=i===0?'':' ('+(i+1)+')';
-  c.innerHTML='<div class="icon">'+em+'</div><div class="name">'+stock.name+hr+ll+hb+' <span style="font-size:11px;color:#8b949e">'+stock.code+'</span></div><div class="meta"><span class="badge">'+r+'级 '+sc+'</span><span style="font-size:10px;color:#58a6ff">📍 '+p.theme+' → '+p.track+' → '+p.sub+'</span></div><div class="arrow">→</div>';
+  c.innerHTML='<div class="icon">'+em+'</div><div class="name">'+stock.name+hr+ll+hb+' <span style="font-size:11px;color:#8b949e">'+stock.code+'</span></div><div class="meta"><span class="badge">'+fmtRating(r)+' '+sc+'</span><span style="font-size:10px;color:#58a6ff">📍 '+p.theme+' → '+p.track+' → '+p.sub+'</span></div><div class="arrow">→</div>';
   c.onclick=function(e){e.stopPropagation();navigateToStock(sid,p.sub);document.getElementById('search').value=''};
   g.appendChild(c);
  });
@@ -273,12 +274,12 @@ function filterCards(q){
    var em={'A':'🟢','B':'🔵','C':'🟡','D':'🔴'}[r.charAt(0)]||'⚪';
    var sc=getScoreStr(c),h2=HEAT_MODE===1?getHeatInfo(c.code):null,hb2=HEAT_MODE===1?heatBadgeHTML(h2):'',gl2=HEAT_MODE===1?heatGlowClass(h2):'';
    card.className='card stock '+rc+gl2;
-   card.innerHTML='<div class="icon">'+em+'</div><div class="name">'+hl(c.name,q)+hb2+' <span style="font-size:11px;color:#8b949e">'+c.code+'</span></div><div class="meta"><span class="badge">'+r+'级 '+sc+'</span></div>';
+   card.innerHTML='<div class="icon">'+em+'</div><div class="name">'+hl(c.name,q)+hb2+' <span style="font-size:11px;color:#8b949e">'+c.code+'</span></div><div class="meta"><span class="badge">'+fmtRating(r)+' '+sc+'</span></div>';
    card.onclick=function(e){e.stopPropagation();navigateToStock(c.id||c.code,null)};
   }else{
    card.className='card '+c.type;
-   var im={'theme':'📂','track':'📁','sub':'🏷'},has=(c.children||[]).length>0;
-   card.innerHTML='<div class="icon">'+(im[c.type]||'📄')+'</div><div class="name">'+hl(c.name,q)+'</div><div class="meta">'+(has?'<span class="badge">'+has+'个</span>':'')+'</div><div class="arrow">'+(has?'→':'')+'</div>';
+   var im={'theme':'📂','track':'📁','sub':'🏷'},cnt=(c.children||[]).length,has=cnt>0;
+   card.innerHTML='<div class="icon">'+(im[c.type]||'📄')+'</div><div class="name">'+hl(c.name,q)+'</div><div class="meta">'+(has?'<span class="badge">'+cnt+'个</span>':'')+'</div><div class="arrow">'+(has?'→':'')+'</div>';
    if(has)card.onclick=function(){navStack.push({node:c,idx:navStack.length});render();document.getElementById('search').value=''};
   }
   g.appendChild(card);
@@ -316,19 +317,19 @@ function render(){
    if(stockPaths[sid]&&stockPaths[sid].length>1)mt='<span class="multi-tag">×'+stockPaths[sid].length+'</span>';
    var ht=HEAT_MODE===1?getHeatInfo(c.code):null,hb=HEAT_MODE===1?heatBadgeHTML(ht):'',gl=HEAT_MODE===1?heatGlowClass(ht):'';
    card.className='card stock '+rc+gl;
-   card.innerHTML='<div class="icon">'+em+'</div><div class="name">'+c.name+hr+mt+hb+' <span style="font-size:11px;color:#8b949e">'+c.code+'</span></div><div class="meta"><span class="badge">'+r+'级 '+sc+'</span></div>';
+   card.innerHTML='<div class="icon">'+em+'</div><div class="name">'+c.name+hr+mt+hb+' <span style="font-size:11px;color:#8b949e">'+c.code+'</span></div><div class="meta"><span class="badge">'+fmtRating(r)+' '+sc+'</span></div>';
    card.onclick=function(e){e.stopPropagation();openStockDetail(c)};
   }else{
    card.className='card '+c.type;
-   var im={'theme':'📂','track':'📁','sub':'🏷'},has=(c.children||[]).length>0;
-   card.innerHTML='<div class="icon">'+(im[c.type]||'📄')+'</div><div class="name">'+c.name+'</div><div class="meta">'+(has?'<span class="badge">'+has+'个</span>':'')+'</div><div class="arrow">'+(has?'→':'')+'</div>';
+   var im={'theme':'📂','track':'📁','sub':'🏷'},cnt=(c.children||[]).length,has=cnt>0;
+   card.innerHTML='<div class="icon">'+(im[c.type]||'📄')+'</div><div class="name">'+c.name+'</div><div class="meta">'+(has?'<span class="badge">'+cnt+'个</span>':'')+'</div><div class="arrow">'+(has?'→':'')+'</div>';
    if(has)card.onclick=function(){navStack.push({node:c,idx:navStack.length});render();document.getElementById('search').value=''};
   }
   g.appendChild(card);
  });
  ct.appendChild(g);
 }
-function getScore(sn){var m=getMeta(sn.name);return(m&&m.score!==null)?m.score:(sn.score!==null?sn.score:-1)}
+function getScore(sn){var m=getMeta(sn.name);return(m&&typeof m.score==='number')?m.score:(typeof sn.score==='number'?sn.score:-1)}
 
 /* --- Init --- */
 navStack=[{node:TREE,idx:-1}];
