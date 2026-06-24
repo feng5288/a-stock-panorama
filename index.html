@@ -88,11 +88,11 @@ body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#0d1117;c
 <div id="topbar"><div class="inner">
 <h1>🌳 A股投资全景树</h1>
 <div class="search"><input type="text" id="search" placeholder="🔍 搜索股票/赛道/概念..." onkeydown="onSearchKey(event)" oninput="onSearchInput(this.value)"></div>
-<div class="info"><button id="heat-toggle" onclick="toggleHeatOnly()">🔥 热点</button>|📊 <span id="stock-count">0</span>只|📁 <span id="track-count">14赛道</span></div>
+<div class="info"><button id="heat-toggle" onclick="toggleHeatOnly()">🔥 概念雷达</button>|📊 <span id="stock-count">0</span>只|📁 <span id="track-count">14赛道</span></div>
 </div></div>
 <div id="breadcrumb"></div>
 <div id="content"></div>
-<div id="footer">数据来源：baostock + 腾讯股票API · 仅供参考不构成投资建议 · 2026-06-23</div>
+<div id="footer">数据来源：baostock + 腾讯股票API · 仅供参考不构成投资建议 · 2026-06-24</div>
 </div>
 <div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
 
@@ -162,11 +162,48 @@ function heatGlowClass(h){
  return' stock-hot-c';
 }
 function toggleHeatOnly(){
- HEAT_MODE=HEAT_MODE===0?1:0;
+ HEAT_MODE=1;
  var b=document.getElementById('heat-toggle');
- if(HEAT_MODE===1){b.classList.add('active');b.textContent='🔥 热点 ON'}
- else{b.classList.remove('active');b.textContent='🔥 热点'}
+ b.classList.add('active');
+ b.textContent='🔥 概念雷达';
  render();
+ openConceptRadar();
+}
+function escHTML(v){return String(v==null?'':v).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]})}
+function openConceptRadar(){
+ var m=document.getElementById('modal-overlay');
+ if(!m.hasAttribute('data-style-fixed')){
+  m.setAttribute('data-style-fixed','1');
+  m.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s';
+ }
+ var d=CONCEPT_HEAT, body='';
+ if(!d){
+  body='<div class="m-summary">概念雷达数据正在加载或暂不可用。请稍后刷新页面。</div>';
+ }else{
+  var concepts=d.hot_concepts||[], stocks=d.hot_stocks||[], ms=d.market_summary||{};
+  body+='<div class="m-code">交易日：'+escHTML(d.trade_date||'')+' ｜ 更新：'+escHTML(d.updated||d.update_time||'')+'</div>';
+  body+='<div class="m-summary">'+escHTML(d.market_note||'暂无市场摘要')+'</div>';
+  body+='<div class="m-row"><span class="m-label">沪指</span><span class="m-value">'+escHTML(ms.sh_index||'--')+'</span></div>';
+  body+='<div class="m-row"><span class="m-label">深成指 / 创业板</span><span class="m-value">'+escHTML(ms.sz_index||'--')+' / '+escHTML(ms.cy_index||'--')+'</span></div>';
+  body+='<div class="m-row"><span class="m-label">成交额</span><span class="m-value">'+escHTML(ms.volume_trillion||'--')+' 万亿</span></div>';
+  body+='<h3 style="font-size:15px;margin:16px 0 8px;color:#f0883e">今日热门概念</h3>';
+  if(concepts.length===0){body+='<div class="m-summary">暂无热门概念数据。</div>'}
+  concepts.forEach(function(c){
+   body+='<div class="m-row"><span class="m-label">'+escHTML(c.name)+'</span><span class="m-value">H'+Number(c.heat_pct||0).toFixed(1)+' ｜ 命中 '+escHTML(c.matched_stocks_count||0)+' 只</span></div>';
+   if(c.note)body+='<div style="font-size:12px;color:#8b949e;line-height:1.5;padding:4px 0 8px;border-bottom:1px solid #21262d">'+escHTML(c.note)+'</div>';
+  });
+  body+='<h3 style="font-size:15px;margin:16px 0 8px;color:#58a6ff">池子命中股票 TOP10</h3>';
+  if(stocks.length===0){body+='<div class="m-summary">今日热门概念暂未命中池子股票。</div>'}
+  stocks.slice(0,10).forEach(function(s){
+   var conceptsText=(s.matched_concepts||[]).join(' / ');
+   body+='<div class="m-row" style="gap:12px"><span class="m-label">'+escHTML(s.code)+' '+escHTML(s.name)+'</span><span class="m-value">'+escHTML(s.rating||'?')+' ｜ H'+Number(s.heat_score||0).toFixed(1)+'</span></div>';
+   body+='<div style="font-size:12px;color:#8b949e;line-height:1.5;padding:0 0 8px;border-bottom:1px solid #21262d">'+escHTML(conceptsText)+'</div>';
+  });
+  body+='<div class="m-note-old">提示：打开概念雷达时会同步开启股票卡片热点高亮。数据来自盘后概念输入与网站股票池映射，未命中的概念不会强行配股票。</div>';
+ }
+ m.innerHTML='<div class="modal" onclick="event.stopPropagation()" style="max-width:760px"><button class="m-close" onclick="closeModal()">×</button><h3 style="color:#f0883e">🔥 今日概念雷达</h3>'+body+'</div>';
+ m.style.opacity='1';
+ m.style.pointerEvents='auto';
 }
 
 /* --- Modal --- */
