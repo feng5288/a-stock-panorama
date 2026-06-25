@@ -59,6 +59,13 @@ body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#0d1117;c
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
 .modal-overlay.show{opacity:1;pointer-events:auto}
 .modal{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;max-width:560px;width:94%;max-height:85vh;overflow-y:auto}
+.modal.report-modal{max-width:1120px;width:96vw;max-height:92vh;padding:16px;overflow-y:auto}
+.modal.report-modal h3{font-size:16px;margin-bottom:2px}
+.modal.report-modal .m-code{margin-bottom:8px}
+.modal.report-modal .m-row{padding:4px 0}
+.modal.report-modal .m-summary{max-height:76px;overflow:auto;margin-top:8px;padding:8px}
+.modal.report-modal .m-path-box{margin-top:10px;padding:8px}
+#report-iframe{width:100%;height:min(72vh,760px);border:1px solid #30363d;border-radius:8px;background:#fff;margin-top:6px}
 .modal h3{font-size:18px;margin-bottom:4px}
 .modal .m-code{font-size:12px;color:#8b949e;margin-bottom:14px}
 .modal .m-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #21262d;font-size:13px}
@@ -79,7 +86,7 @@ body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#0d1117;c
 #footer{text-align:center;padding:30px 0 20px;font-size:10px;color:#21262d;border-top:1px solid #161b22;margin-top:20px}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .card{animation:fadeIn .25s ease-out}
-@media(max-width:768px){.card-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}.card{padding:12px 14px}.card .name{font-size:13px}}
+@media(max-width:768px){.card-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}.card{padding:12px 14px}.card .name{font-size:13px}.modal.report-modal{width:98vw;max-height:94vh;padding:10px}#report-iframe{height:70vh}}
 </style>
 </head>
 <body>
@@ -219,12 +226,13 @@ function openStockDetail(stock){
  var dl='';
  if(hr&&rf){
   var hf=rf.replace('.docx','.html'),pu='reports/'+encodeURIComponent(hf);
-  dl='<div class="m-path-box"><div class="ptitle">📄 完整分析报告</div><div id="iframe-err" style="display:none;color:#f85149;font-size:12px;margin:8px 0">⚠ 报告加载失败</div><iframe id="report-iframe" src="'+pu+'" style="width:100%;height:420px;border:1px solid #30363d;border-radius:8px;background:#fff;margin-top:8px" sandbox="allow-same-origin allow-scripts"></iframe></div>';
+  dl='<div class="m-path-box report-frame-box"><div class="ptitle">📄 完整分析报告</div><div id="iframe-err" style="display:none;color:#f85149;font-size:12px;margin:8px 0">⚠ 报告加载失败</div><iframe id="report-iframe" src="'+pu+'" sandbox="allow-same-origin allow-scripts"></iframe></div>';
  }else{dl='<div class="m-path-box"><div class="ptitle">📄 完整分析报告</div><div style="color:#484f58">暂无报告文件</div></div>'}
  var loc='',ps=stockPaths[sid]||[];
  if(ps.length>1){loc='<div class="m-locations">📍 同时归属：';ps.forEach(function(p,i){loc+='<br>  <a class="loc-link" onclick="navigateToStock(\''+sid+'\',\''+p.sub+'\')">'+p.theme+' → '+p.track+' → '+p.sub+'</a>'});loc+='</div>'}
  var note=r==='?'?'<div class="m-note-old">⚠ 此报告生成于早期模板，未包含正式评级</div>':'';
- m.innerHTML='<div class="modal" onclick="event.stopPropagation()"><button class="m-close" onclick="closeModal()">×</button><h3 style="color:'+c+'">'+stock.name+'</h3><div class="m-code">'+stock.code+'</div><div class="m-row"><span class="m-label">评级</span><span class="m-value" style="color:'+c+'">'+fmtRating(r)+'</span></div><div class="m-row"><span class="m-label">综合评分</span><span class="m-value">'+sc+'</span></div><div class="m-summary">📝 '+sum+'</div>'+loc+note+dl+'</div>';
+ var modalClass=(hr&&rf)?'modal report-modal':'modal';
+ m.innerHTML='<div class="'+modalClass+'" onclick="event.stopPropagation()"><button class="m-close" onclick="closeModal()">×</button><h3 style="color:'+c+'">'+stock.name+'</h3><div class="m-code">'+stock.code+'</div><div class="m-row"><span class="m-label">评级</span><span class="m-value" style="color:'+c+'">'+fmtRating(r)+'</span></div><div class="m-row"><span class="m-label">综合评分</span><span class="m-value">'+sc+'</span></div><div class="m-summary">📝 '+sum+'</div>'+loc+note+dl+'</div>';
  m.style.opacity='1';m.style.pointerEvents='auto';
  setTimeout(function(){
   var ifr=document.getElementById('report-iframe');
