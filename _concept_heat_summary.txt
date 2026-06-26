@@ -1,0 +1,39 @@
+Generated: C:\Users\LYDN\a-stock-panorama\concept_heat.json
+Trade date: 2026-06-26
+Hot concepts: 20 | Matched stocks: 12
+
+TOP10 hot stocks:
+  603688 石英股份     H  9.0  C     半导体硅片
+  000962 东方钽业     H  9.0  C     半导体硅片
+  605006 山东玻纤     H  7.0  D     玻纤
+  001359 平安电工     H  7.0  B-    玻纤
+  603738 泰晶科技     H  5.5  D+    存储芯片 | 通信设备
+  002213 大为股份     H  4.5  D     存储芯片
+  002023 海特高新     H  4.5  C+    存储芯片
+  600601 方正科技     H  4.0  B     PCB概念
+  603328 依顿电子     H  4.0  B+    PCB概念
+  000810 创维数字     H  3.5  C+    AI应用
+
+By concept:
+  半导体硅片: 2 stocks
+  玻纤: 2 stocks
+  建材: 0 stocks
+  摩托车: 0 stocks
+  包装: 0 stocks
+  化纤: 0 stocks
+  存储芯片: 3 stocks
+  PCB概念: 2 stocks
+  AI应用: 1 stocks
+  磷化铟: 0 stocks
+  北交所: 0 stocks
+  通信设备: 1 stocks
+  锂矿: 0 stocks
+  光通信: 2 stocks
+  互联网: 0 stocks
+  保险: 0 stocks
+  券商: 0 stocks
+  有色金属: 0 stocks
+  汽车: 0 stocks
+  游戏: 0 stocks
+
+Git push: OK
