@@ -18,7 +18,7 @@ a{color:inherit;text-decoration:none}
 .nav{display:flex;gap:8px;flex-wrap:wrap}
 .nav a,.btn{background:#161b22;border:1px solid #30363d;color:#c9d1d9;border-radius:8px;padding:8px 10px;font-size:12px;cursor:pointer}
 .nav a:hover,.btn:hover,.btn.active{border-color:#58a6ff;color:#fff;background:#1b2736}
-.hero{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:14px;margin:16px 0}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:14px;margin:16px 0;align-items:start}
 .panel{background:#161b22;border:1px solid #242b35;border-radius:8px;padding:14px}
 .intro h1{font-size:28px;line-height:1.2;margin-bottom:8px;color:#f0f6fc}
 .intro p{font-size:14px;color:#9da7b3;max-width:880px}
@@ -53,6 +53,7 @@ a{color:inherit;text-decoration:none}
 .open{align-self:flex-start;border:1px solid #30363d;background:#0f141b;border-radius:8px;padding:6px 9px;font-size:12px;color:#c9d1d9;cursor:pointer}
 .open.enabled{border-color:#58a6ff;color:#fff;background:#10233a}
 .side-list{display:grid;gap:8px;max-height:520px;overflow:auto;padding-right:2px}
+.hero .side-list{max-height:240px}
 .side-item{background:#0f141b;border:1px solid #242b35;border-radius:8px;padding:9px;cursor:pointer}
 .side-item:hover{border-color:#58a6ff}
 .side-item b{display:block;font-size:13px;color:#f0f6fc}.side-item span{font-size:11px;color:#8b949e}
