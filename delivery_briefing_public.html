@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>A股全景树 V2 交付说明</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;background:#f3f6f8;color:#15202b;line-height:1.68}
+    a{color:inherit;text-decoration:none}
+    .top{position:sticky;top:0;z-index:20;background:rgba(247,249,251,.96);border-bottom:1px solid #d9e0e7;backdrop-filter:blur(12px)}
+    .top-inner{max-width:1380px;margin:0 auto;padding:12px 18px;display:flex;justify-content:space-between;gap:14px;align-items:center}
+    .brand h1{font-size:19px}.brand span{display:block;font-size:12px;color:#64717f}
+    .nav{display:flex;gap:8px;flex-wrap:wrap}.nav a,.btn{border:1px solid #cbd5df;background:#fff;border-radius:8px;padding:8px 10px;font-size:13px;color:#263241}
+    .nav a.primary,.btn.primary{background:#163b3f;color:#fff;border-color:#163b3f}
+    main{max-width:1380px;margin:0 auto;padding:20px 18px 34px}
+    .hero{background:#fff;border:1px solid #dce3ea;border-radius:8px;padding:20px;margin-bottom:14px}
+    .hero h2{font-size:30px;line-height:1.25;margin-bottom:8px}.hero p{font-size:15px;color:#536170;max-width:980px}
+    .metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:14px 0}
+    .metric{background:#fff;border:1px solid #dce3ea;border-radius:8px;padding:13px;min-height:84px}.metric b{font-size:26px;display:block;line-height:1}.metric span{display:block;color:#536170;font-size:12px;margin-top:8px}
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:12px}
+    .panel{background:#fff;border:1px solid #dce3ea;border-radius:8px;padding:16px;margin-bottom:12px}
+    .panel h3{font-size:18px;margin-bottom:10px}.panel p,.panel li{font-size:14px;color:#3e4c5a}ul{padding-left:20px}li{margin:7px 0}
+    .script-step{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;border:1px solid #dce3ea;border-radius:8px;padding:10px;margin:8px 0;background:#fbfcfd}
+    .script-step b:first-child{width:28px;height:28px;border-radius:8px;background:#dff2ee;color:#11675e;display:grid;place-items:center;font-size:12px}
+    .script-step strong{display:block;font-size:14px}.script-step span{display:block;font-size:13px;color:#64717f;margin-top:2px}
+    .qa{border-top:1px solid #e2e8ef;padding-top:10px;margin-top:10px}.qa b{display:block;font-size:14px;margin-bottom:4px}.qa p{font-size:13px;color:#536170}
+    .pill-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.pill{border:1px solid #d3dce5;border-radius:999px;background:#f7f9fb;padding:3px 8px;font-size:12px;color:#435160}.ok{border-color:#8cc9b6;color:#12695e;background:#ecf8f5}.warn{border-color:#e4c77c;color:#7b5600;background:#fff8e8}.info{border-color:#a9c6ee;color:#285d9b;background:#f0f6ff}
+    .side .panel{position:relative}.side a{display:block;border:1px solid #dce3ea;border-radius:8px;padding:10px;margin:8px 0;font-size:13px;background:#fbfcfd}
+    @media(max-width:1040px){.layout{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.top-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:680px){.metrics{grid-template-columns:1fr}.hero h2{font-size:24px}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="top-inner"><div class="brand"><h1>A股全景树 V2</h1><span>对外交付说明</span></div><nav class="nav"><a class="" href="index_v2_delivery.html?v=public2">首页</a><a class="" href="concept_radar_public.html?v=radar1">概念雷达</a><a class="" href="report_library_public.html?v=reports1">报告库</a><a class="" href="v2_report_samples_public.html?v=samples1">V2样例</a><a class="primary" href="delivery_briefing_public.html?v=brief1">交付说明</a></nav></div></header>
+  <main>
+    <section class="hero">
+      <h2>这不是一次简单换皮，而是把旧报告库升级成可滚动更新的研究系统。</h2>
+      <p>当前版本已经具备对外演示条件：旧报告完整保留，新分类体系已接入，重点样板已跑通证据链，后续可以按财报披露节奏持续升级。</p>
+      <div class="pill-row"><span class="pill ok">旧报告不删除</span><span class="pill ok">分类V2已接入</span><span class="pill ok">V2样例可展示</span><span class="pill warn">深度报告分批补齐</span></div>
+    </section>
+    <section class="metrics">
+      <div class="metric"><b>1609</b><span>旧报告入口</span></div>
+      <div class="metric"><b>1447</b><span>已映射旧报告</span></div>
+      <div class="metric"><b>160</b><span>已有V2证据</span></div>
+      <div class="metric"><b>32</b><span>P0样板池</span></div>
+      <div class="metric"><b>1330</b><span>P1待升级</span></div>
+      <div class="metric"><b>399</b><span>热点节点</span></div>
+    </section>
+    <div class="layout">
+      <div>
+        <section class="panel">
+          <h3>建议演示顺序</h3>
+          <div class="script-step"><b>1</b><div><strong>打开新版首页</strong><span>先讲旧报告完整保留，新版入口已经把分类、报告、样例和更新机制整合起来。</span></div></div>
+          <div class="script-step"><b>2</b><div><strong>展示概念雷达</strong><span>说明旧分类已经重新映射到分类V2，可以从行业主分类和概念节点看全市场结构。</span></div></div>
+          <div class="script-step"><b>3</b><div><strong>展示1609报告库</strong><span>说明历史报告没有丢，旧内容仍然可访问，网站内容不会断档。</span></div></div>
+          <div class="script-step"><b>4</b><div><strong>展示V2报告样例</strong><span>重点讲净利润前置、合作对象证据、行情强度和旧报告未替换的谨慎口径。</span></div></div>
+          <div class="script-step"><b>5</b><div><strong>展示升级队列和滚动机制</strong><span>说明后续不是一次性硬写1609份，而是按优先级、证据链和财报披露节奏推进。</span></div></div>
+        </section>
+        <section class="panel">
+          <h3>对外核心口径</h3>
+          <ul>
+            <li>第一，旧版报告库已经完整接入，现阶段不会删除或覆盖旧报告。</li>
+            <li>第二，网站的核心升级是分类V2：行业主分类、多概念标签、动态权重，而不是单一旧行业分类。</li>
+            <li>第三，V2报告不是简单重写文本，而是把主营证据、财务前置字段、合作对象证据和行情强度放到统一模板里。</li>
+            <li>第四，新财报会陆续披露，所以后续采用滚动更新，不等待全市场一次性完成。</li>
+            <li>第五，1609家公司会按P0/P1/P2优先级推进，先做重点样板，再逐步扩展。</li>
+          </ul>
+        </section>
+        <section class="panel">
+          <h3>边界说明</h3>
+          <ul>
+            <li>当前是新版网站演示版，不是1609家公司全部完成深度报告的最终版。</li>
+            <li>候选合作对象不会写成确认合作对象，只有公告/年报/公司回答正文明确披露才会进入报告。</li>
+            <li>批次B和批次C目前主要是纠偏底稿和财报等待池，不作为正式V2报告替换旧报告。</li>
+            <li>正式替换旧报告前，需要证据链完整并保留来源。</li>
+          </ul>
+        </section>
+        <section class="panel">
+          <h3>常见问题回答</h3>
+          <div class="qa"><b>为什么不是一次性把1609家公司都换成新报告？</b><p>因为新财报是陆续披露的，而且合作对象、主营证据、概念分类都需要校验。一次性全量重写会浪费资源，也容易把旧错误放大。</p></div>
+          <div class="qa"><b>现在这个版本可以展示什么？</b><p>可以展示新版分类体系、旧报告库承接、V2报告样例、1609升级队列和季度滚动更新机制，已经能说明网站升级方向和落地能力。</p></div>
+          <div class="qa"><b>后续如何持续更新？</b><p>按财报披露和市场热度增量更新。优先处理P0和P1高分公司，先补证据链，再生成V2草稿，最后逐步替换旧报告入口。</p></div>
+        </section>
+      </div>
+      <aside class="side">
+        <section class="panel">
+          <h3>展示入口</h3>
+          <a href="index_v2_delivery.html?v=public2">新版首页</a>
+          <a href="concept_radar_public.html?v=radar1">概念雷达</a>
+          <a href="report_library_public.html?v=reports1">1609报告库</a>
+          <a href="v2_report_samples_public.html?v=samples1">V2报告样例</a>
+          <a href="delivery_briefing_public.html?v=brief1">1609升级队列</a>
+          <a href="delivery_briefing_public.html?v=brief1">季度滚动更新机制</a>
+        </section>
+        <section class="panel">
+          <h3>明天交付建议</h3>
+          <p>先展示新版首页，再按“概念雷达 -> 报告库 -> V2样例 -> 升级队列”的顺序讲。不要先打开内部工作台，除非对方追问细节。</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
