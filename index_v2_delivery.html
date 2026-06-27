@@ -37,6 +37,8 @@ a{color:inherit;text-decoration:none}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
 .tag{font-size:11px;border:1px solid #394451;border-radius:999px;padding:2px 7px;color:#9da7b3;background:#0f141b}
 .tag.hot{color:#ffd36a;border-color:#8a6a1f;background:#332600}
+.tag.level{color:#ffb4ad;border-color:#9b3a33;background:#2a1718}
+.tag.role{color:#d2b8ff;border-color:#6f55a8;background:#211833}
 .concept p{font-size:12px;color:#9da7b3;line-height:1.55}
 .stocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .stock{background:#161b22;border:1px solid #242b35;border-left:4px solid #657487;border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:132px}
@@ -54,6 +56,10 @@ a{color:inherit;text-decoration:none}
 .side-item{background:#0f141b;border:1px solid #242b35;border-radius:8px;padding:9px;cursor:pointer}
 .side-item:hover{border-color:#58a6ff}
 .side-item b{display:block;font-size:13px;color:#f0f6fc}.side-item span{font-size:11px;color:#8b949e}
+.legend{display:grid;gap:7px;margin-top:14px;padding-top:12px;border-top:1px solid #242b35}
+.legend div{display:flex;align-items:center;gap:8px;color:#9da7b3;font-size:12px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;background:#657487}
+.dot.strong{background:#e5534b}.dot.watch{background:#d49a2f}.dot.quality{background:#3e72c8}.dot.legacy{background:#8b949e}.dot.empty{background:#484f58}
 .empty-state{border:1px dashed #394451;border-radius:8px;padding:24px;text-align:center;color:#8b949e}
 .footer-note{margin-top:14px;color:#7d8590;font-size:12px;line-height:1.6}
 @media(max-width:1080px){.hero,.layout{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -94,6 +100,13 @@ a{color:inherit;text-decoration:none}
     <aside class="panel">
       <h3>当前节点</h3>
       <div id="nodeDetail" class="footer-note">请选择一个概念节点。</div>
+      <div class="legend">
+        <div><span class="dot strong"></span>红色：龙头候选或改善较强</div>
+        <div><span class="dot watch"></span>金色：补涨候选或证据待复核</div>
+        <div><span class="dot quality"></span>蓝色：旧资料中评级较高</div>
+        <div><span class="dot legacy"></span>灰色：旧版报告待升级</div>
+        <div><span class="dot empty"></span>深灰：暂未生成报告</div>
+      </div>
     </aside>
   </section>
 </main>
@@ -108,6 +121,15 @@ function childrenOf(id){return id ? (APP_DATA.children[id] || []) : APP_DATA.hot
 function node(id){return APP_DATA.nodes[id]}
 function stocksOf(id){return APP_DATA.node_stocks[id] || []}
 function setSelected(id){selected=id; render()}
+function conceptLevel(id, kids){return !selected ? '主干概念' : kids ? '子概念' : '细分概念'}
+function stockRoleLabel(s){
+  if(s.report_kind === 'none') return '暂未生成';
+  if(s.report_kind === 'legacy') return '旧版待升级';
+  if(s.report_kind === 'v2' && s.grade === 'strong' && (s.weight || 0) >= 0.75) return '龙头候选';
+  if((s.weight || 0) >= 0.65 && s.report_kind !== 'none') return '补涨候选';
+  if(s.report_kind === 'evidence') return '证据待复核';
+  return '观察';
+}
 function renderKpis(){$('kCompanies').textContent=APP_DATA.summary.companies;$('kNodes').textContent=APP_DATA.summary.concept_nodes;$('kV2').textContent=APP_DATA.summary.v2_reports;$('kLegacy').textContent=APP_DATA.summary.legacy_reports}
 function renderHot(){$('hotList').innerHTML=APP_DATA.top_concepts.slice(0,18).map(n=>`<div class="side-item" onclick="setSelected('${n.id}')"><b>${n.name}</b><span>${n.stock_count}家公司 · 权重${n.total_weight}</span></div>`).join('')}
 function renderCrumb(){
@@ -129,7 +151,7 @@ function conceptCard(id, idx){
   const stocks=stocksOf(id).length;
   return `<article class="concept" onclick="setSelected('${id}')">
     <h3><span class="idx">${idx+1}</span>${n.name}</h3>
-    <div class="tags"><span class="tag hot">${n.stock_count}家公司</span><span class="tag">${kids}个子概念</span><span class="tag">权重${n.total_weight}</span></div>
+    <div class="tags"><span class="tag level">${conceptLevel(id,kids)}</span><span class="tag hot">${n.stock_count}家公司</span><span class="tag">${kids}个子概念</span><span class="tag">权重${n.total_weight}</span></div>
     <p>${kids ? '进入后继续查看子概念，直到叶子概念再显示股票。' : '已到最细分概念，点击查看股票和报告。'}</p>
   </article>`
 }
@@ -138,7 +160,7 @@ function stockCard(s){
   return `<article class="stock ${s.grade}">
     <div class="stock-head"><div><h4>${s.name}</h4><small>${s.code} · ${s.primary_industry || '未分类'}</small></div><span class="badge ${clsForReport(s.report_kind)}">${s.report_status}</span></div>
     <div class="facts"><div class="fact"><b>${s.rating}</b>评级</div><div class="fact"><b>${fmt(s.net_profit_yi,'亿')}</b>净利润</div><div class="fact"><b>${fmt(s.yoy,'%')}</b>同比</div></div>
-    <div class="tags"><span class="tag">改善：${s.improvement}</span><span class="tag">权重：${fmt(s.weight)}</span></div>
+    <div class="tags"><span class="tag role">${stockRoleLabel(s)}</span><span class="tag">改善：${s.improvement}</span><span class="tag">权重：${fmt(s.weight)}</span></div>
     ${btn}
   </article>`
 }
