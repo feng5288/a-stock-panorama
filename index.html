@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>A股全景树 V2 演示版</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;background:#f3f6f8;color:#15202b;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .top{position:sticky;top:0;z-index:20;background:rgba(247,249,251,.96);border-bottom:1px solid #d9e0e7;backdrop-filter:blur(12px)}
+    .top-inner{max-width:1480px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .mark{width:34px;height:34px;border-radius:8px;background:#163b3f;display:grid;place-items:center;color:#fff;font-weight:800}
+    .brand h1{font-size:19px;letter-spacing:0}
+    .brand span{display:block;font-size:12px;color:#64717f;margin-top:1px}
+    .nav{display:flex;gap:8px;flex-wrap:wrap}
+    .nav a,.action{border:1px solid #cbd5df;background:#fff;border-radius:8px;padding:8px 10px;font-size:13px;color:#263241}
+    .nav a.primary,.action.primary{background:#163b3f;color:#fff;border-color:#163b3f}
+    main{max-width:1480px;margin:0 auto;padding:20px 18px 34px}
+    .hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(420px,.65fr);gap:18px;align-items:stretch;margin-bottom:18px}
+    .intro{background:#ffffff;border:1px solid #dce3ea;border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;min-height:300px}
+    .eyebrow{font-size:13px;color:#146c63;font-weight:800;margin-bottom:8px}
+    .intro h2{font-size:34px;line-height:1.18;letter-spacing:0;margin-bottom:12px;max-width:920px}
+    .intro p{color:#4f5e6d;font-size:15px;max-width:980px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .action{display:inline-flex;align-items:center;justify-content:center}
+    .status-panel{background:#142025;color:#e8f0f2;border:1px solid #233840;border-radius:8px;padding:18px}
+    .status-panel h3{font-size:16px;margin-bottom:12px}
+    .status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .mini{background:#1d2d33;border:1px solid #31464e;border-radius:8px;padding:10px}
+    .mini b{display:block;font-size:24px;color:#fff}
+    .mini span{font-size:12px;color:#a9bcc3}
+    .metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-bottom:18px}
+    .metric{background:#fff;border:1px solid #dce3ea;border-radius:8px;padding:13px;min-height:92px}
+    .metric b{display:block;font-size:27px;line-height:1;color:#15202b}
+    .metric span{display:block;font-size:13px;color:#536170;margin-top:8px}
+    .metric small{display:block;font-size:11px;color:#84909d;margin-top:3px}
+    .section{margin:18px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:10px}
+    .section-head h2{font-size:21px}
+    .section-head p{font-size:13px;color:#64717f}
+    .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .tile{background:#fff;border:1px solid #dce3ea;border-radius:8px;padding:15px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;border-top-width:4px}
+    .tile.teal{border-top-color:#14917f}.tile.blue{border-top-color:#3e72c8}.tile.red{border-top-color:#c84d42}.tile.amber{border-top-color:#d49a2f}.tile.violet{border-top-color:#7259c7}.tile.gray{border-top-color:#657487}
+    .tile-head{display:flex;justify-content:space-between;gap:10px;align-items:start}
+    .tile h3{font-size:17px}
+    .tile-head span{font-size:12px;color:#64717f;background:#eef2f5;border-radius:999px;padding:3px 8px;white-space:nowrap}
+    .tile p{font-size:13px;color:#536170;margin:10px 0 14px}
+    .tile a{align-self:flex-start;border:1px solid #cbd5df;border-radius:8px;padding:7px 10px;font-size:13px;background:#fff}
+    .two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,.68fr);gap:12px}
+    .panel{background:#fff;border:1px solid #dce3ea;border-radius:8px;padding:16px}
+    .panel h3{font-size:17px;margin-bottom:12px}
+    .bar-row{display:grid;grid-template-columns:150px minmax(0,1fr) 42px;gap:10px;align-items:center;margin:9px 0}
+    .bar-row span{font-size:13px;color:#445362;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .bar{height:9px;background:#e8edf2;border-radius:999px;overflow:hidden}
+    .bar i{display:block;height:100%;background:#14917f;border-radius:999px}
+    .bar-row b{font-size:12px;text-align:right;color:#445362}
+    .steps{display:grid;gap:8px}
+    .step{display:grid;grid-template-columns:42px minmax(0,1fr);gap:9px;border:1px solid #dce3ea;border-radius:8px;padding:9px;background:#fbfcfd}
+    .step strong{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;background:#e8eef3;color:#263241;font-size:12px}
+    .step.done strong{background:#dff2ee;color:#11675e}
+    .step.next strong{background:#fff2d8;color:#8b5e00}
+    .step b{display:block;font-size:13px}
+    .step span{display:block;font-size:12px;color:#64717f;margin-top:2px}
+    .roadmap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    .road{background:#fff;border:1px solid #dce3ea;border-radius:8px;padding:13px}
+    .road b{display:block;font-size:14px;margin-bottom:5px}
+    .road span{font-size:12px;color:#64717f}
+    .internal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    .internal a{background:#fff;border:1px solid #dce3ea;border-radius:8px;padding:11px;font-size:13px;color:#334252}
+    .foot{margin-top:20px;color:#7b8794;font-size:12px;text-align:center}
+    @media(max-width:1120px){.hero,.two-col{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.internal,.roadmap{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:680px){.top-inner{align-items:flex-start;flex-direction:column}.intro h2{font-size:27px}.metrics,.tiles,.internal,.roadmap{grid-template-columns:1fr}.status-grid{grid-template-columns:1fr}.bar-row{grid-template-columns:110px minmax(0,1fr) 34px}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand"><div class="mark">V2</div><div><h1>A股全景树</h1><span>分类V2 · 公司报告 · 财报滚动更新</span></div></div>
+      <nav class="nav">
+        <a class="primary" href="index_v2_delivery.html?v=public2">新版入口</a>
+          <a href="concept_radar_public.html?v=radar1">概念雷达</a>
+          <a href="report_library_public.html?v=reports1">报告库</a>
+        <a href="delivery_briefing_public.html?v=brief1">交付说明</a>
+        <a href="delivery_briefing_public.html?v=brief1">更新进度</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="intro">
+        <div>
+          <div class="eyebrow">新版网站演示版 · 当前可交付</div>
+          <h2>用分类V2重组1609家公司报告，把旧报告库升级成可滚动更新的A股研究系统。</h2>
+          <p>当前版本已经完成旧报告接入、概念树映射、P0样板验证、V2报告样例、1609升级队列和季度滚动更新机制。后续深度报告按优先级和财报披露节奏逐步补齐。</p>
+        </div>
+        <div class="hero-actions">
+          <a class="action primary" href="concept_radar_public.html?v=radar1">进入概念雷达</a>
+          <a class="action" href="v2_report_samples_public.html?v=samples1">查看V2报告样例</a>
+          <a class="action" href="delivery_briefing_public.html?v=brief1">查看交付说明</a>
+          <a class="action" href="delivery_briefing_public.html?v=brief1">查看1609升级队列</a>
+        </div>
+      </div>
+      <aside class="status-panel">
+        <h3>当前交付状态</h3>
+        <div class="status-grid">
+          <div class="mini"><b>1609</b><span>旧报告已接入</span></div>
+          <div class="mini"><b>1447</b><span>旧报告已映射V2</span></div>
+          <div class="mini"><b>32</b><span>P0样板池</span></div>
+          <div class="mini"><b>4</b><span>V2草稿样例</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="metrics">
+      <div class="metric">
+      <b>1609</b>
+      <span>旧报告入口</span>
+      <small>全部保留，不删除</small>
+    </div>
+      <div class="metric">
+      <b>1447</b>
+      <span>V2映射完成</span>
+      <small>新版概念树承接</small>
+    </div>
+      <div class="metric">
+      <b>160</b>
+      <span>已有V2证据</span>
+      <small>可优先升级</small>
+    </div>
+      <div class="metric">
+      <b>32</b>
+      <span>P0样板池</span>
+      <small>已分A/B/C批次</small>
+    </div>
+      <div class="metric">
+      <b>1330</b>
+      <span>P1待升级</span>
+      <small>后续分批处理</small>
+    </div>
+      <div class="metric">
+      <b>399</b>
+      <span>热点节点</span>
+      <small>优先观察</small>
+    </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2>主要功能入口</h2><p>对外展示优先使用这些入口，内部工作台放在页面下方。</p></div></div>
+      <div class="tiles">
+        <article class="tile teal">
+      <div class="tile-head"><h3>分类V2 / 概念雷达</h3><span>核心入口</span></div>
+      <p>行业主分类、多概念标签和动态权重已经接入旧报告映射，可用于浏览全市场结构。</p>
+      <a href="concept_radar_public.html?v=radar1">进入</a>
+    </article>
+        <article class="tile blue">
+      <div class="tile-head"><h3>1609家公司报告库</h3><span>报告资产</span></div>
+      <p>旧报告HTML入口完整保留，同时标记待V2升级状态，保证网站内容不断档。</p>
+      <a href="report_library_public.html?v=reports1">进入</a>
+    </article>
+        <article class="tile red">
+      <div class="tile-head"><h3>V2报告样例</h3><span>样例</span></div>
+      <p>已生成4份证据版草稿，展示新版报告的财务前置、合作对象证据和行情强度字段。</p>
+      <a href="v2_report_samples_public.html?v=samples1">进入</a>
+    </article>
+        <article class="tile teal">
+      <div class="tile-head"><h3>交付说明 / 演示话术</h3><span>说明</span></div>
+      <p>用于明天对外交差时快速说明当前完成范围、演示顺序、可交付边界和后续升级路径。</p>
+      <a href="delivery_briefing_public.html?v=brief1">进入</a>
+    </article>
+        <article class="tile amber">
+      <div class="tile-head"><h3>1609升级队列</h3><span>队列</span></div>
+      <p>按P0/P1/P2、旧分类冲突、热点节点、通用模板等维度排队，避免盲目全量重写。</p>
+      <a href="delivery_briefing_public.html?v=brief1">进入</a>
+    </article>
+        <article class="tile violet">
+      <div class="tile-head"><h3>P0更新总控台</h3><span>进度</span></div>
+      <p>汇总批次A/B/C：A批草稿、B批纠偏、C批等待财报后滚动更新。</p>
+      <a href="delivery_briefing_public.html?v=brief1">进入</a>
+    </article>
+        <article class="tile gray">
+      <div class="tile-head"><h3>季度滚动更新机制</h3><span>机制</span></div>
+      <p>新财报陆续披露后按公司增量更新，不等待全市场一次性完成。</p>
+      <a href="delivery_briefing_public.html?v=brief1">进入</a>
+    </article>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div class="panel">
+        <h3>新版概念树高频节点</h3>
+        <div class="bar-row">
+          <span>新材料化工</span>
+          <div class="bar"><i style="width:100%"></i></div>
+          <b>142</b>
+        </div><div class="bar-row">
+          <span>金属矿产</span>
+          <div class="bar"><i style="width:81%"></i></div>
+          <b>115</b>
+        </div><div class="bar-row">
+          <span>电网设备 / 特高压</span>
+          <div class="bar"><i style="width:72%"></i></div>
+          <b>102</b>
+        </div><div class="bar-row">
+          <span>游戏/内容</span>
+          <div class="bar"><i style="width:69%"></i></div>
+          <b>98</b>
+        </div><div class="bar-row">
+          <span>光通信基础设施</span>
+          <div class="bar"><i style="width:60%"></i></div>
+          <b>85</b>
+        </div><div class="bar-row">
+          <span>精密制造 / 高端设备</span>
+          <div class="bar"><i style="width:47%"></i></div>
+          <b>67</b>
+        </div><div class="bar-row">
+          <span>零售/电商</span>
+          <div class="bar"><i style="width:43%"></i></div>
+          <b>61</b>
+        </div><div class="bar-row">
+          <span>动力电池/储能</span>
+          <div class="bar"><i style="width:35%"></i></div>
+          <b>49</b>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>批量升级流程</h3>
+        <div class="steps"><div class="step done">
+          <strong>S1</strong>
+          <div><b>旧报告索引</b><span>1609家公司旧报告与HTML入口完整保留。</span></div>
+        </div><div class="step done">
+          <strong>S2</strong>
+          <div><b>分类V2映射</b><span>行业主分类 + 多概念标签 + 动态权重。</span></div>
+        </div><div class="step done">
+          <strong>S3</strong>
+          <div><b>轻量质量队列</b><span>P0/P1/P2、旧分类冲突、通用模板、热点节点等分层。</span></div>
+        </div><div class="step done">
+          <strong>S4</strong>
+          <div><b>证据采集</b><span>主营、财务前置、行情强度、合作对象候选入口。</span></div>
+        </div><div class="step done">
+          <strong>S5</strong>
+          <div><b>公告全文解析</b><span>只有公告/年报正文强证据才升级为确认合作对象。</span></div>
+        </div><div class="step next">
+          <strong>S6</strong>
+          <div><b>V2草稿/正式替换</b><span>先草稿，达到证据完整后再考虑正式替换。</span></div>
+        </div><div class="step next">
+          <strong>S7</strong>
+          <div><b>季度滚动更新</b><span>按披露日期增量更新财务字段和报告。</span></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2>后续交付路线</h2><p>先交可用网站，再分批补深度内容。</p></div></div>
+      <div class="roadmap">
+        <div class="road"><b>第一阶段：演示版上线</b><span>新版入口、分类V2、旧报告库、P0样板和升级队列已经可展示。</span></div>
+        <div class="road"><b>第二阶段：重点公司升级</b><span>从P0和P1高分公司开始，补证据链并生成V2报告草稿。</span></div>
+        <div class="road"><b>第三阶段：财报滚动更新</b><span>新财报披露后，按公司更新净利润、同比、改善状态和报告正文。</span></div>
+        <div class="road"><b>第四阶段：正式替换入口</b><span>证据链完整的公司再由V2报告替换旧报告，旧报告继续留档。</span></div>
+      </div>
+    </section>
+
+    <div class="foot">生成时间：2026-06-27 21:25:33 · 本页为新版网站演示入口，旧报告未删除，旧版首页未覆盖。</div>
+  </main>
+</body>
+</html>
