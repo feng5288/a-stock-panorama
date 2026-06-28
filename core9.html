@@ -1,0 +1,152 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A股全景树</title>
+<script src="core9_local_full_demo_v1.js"></script>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #dfe5ef}.top-inner{max-width:1440px;margin:0 auto;padding:14px 22px;display:grid;grid-template-columns:auto minmax(280px,1fr) auto;gap:16px;align-items:center}.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:#111827;letter-spacing:0}.brand-mark{width:34px;height:34px;border-radius:8px;background:#1f6feb;color:#fff;display:grid;place-items:center;font-weight:900}.brand small{display:block;color:#6b7280;font-size:12px;font-weight:600;margin-top:2px}.search input{width:100%;height:40px;border:1px solid #d8e0ec;border-radius:8px;background:#fff;padding:0 13px;outline:none;color:#172033}.search input:focus{border-color:#1f6feb;box-shadow:0 0 0 3px #1f6feb18}.nav{display:flex;gap:8px}.nav a,.ghost-btn{height:36px;border:1px solid #d8e0ec;border-radius:8px;background:#fff;color:#374151;padding:0 11px;display:inline-flex;align-items:center;cursor:pointer}.nav a:hover,.ghost-btn:hover{border-color:#1f6feb;color:#1f6feb}.wrap{max-width:1440px;margin:0 auto;padding:18px 22px 44px}.hero{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:16px;margin-bottom:16px;align-items:start}.hero-main,.surface{background:#fff;border:1px solid #dfe5ef;border-radius:8px;box-shadow:0 12px 28px rgba(15,23,42,.06)}.hero-main{padding:24px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #cfe0ff;background:#eff6ff;color:#1d4ed8;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:800}.hero h1{margin:14px 0 10px;font-size:34px;line-height:1.18;color:#0f172a;letter-spacing:0}.hero p{margin:0;max-width:760px;color:#5d6677;line-height:1.7}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px}.metric{border:1px solid #e5eaf2;border-radius:8px;background:#f8fafc;padding:13px}.metric b{display:block;font-size:25px;line-height:1;color:#111827}.metric span{display:block;margin-top:7px;color:#687386;font-size:12px}.hero-side{padding:16px}.hero-side h2,.side h2{font-size:15px;margin:0 0 12px;color:#111827}.hot-list{display:grid;gap:9px}.hot-item{border:1px solid #e5eaf2;border-radius:8px;background:#f8fafc;padding:9px 10px;cursor:pointer}.hot-item:hover{border-color:#1f6feb;background:#f1f6ff}.hot-item b{display:block;font-size:14px;color:#111827}.hot-item span{display:block;margin-top:4px;font-size:12px;color:#6b7280}.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px}.main{padding:16px}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}.crumb{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:#6b7280;font-size:13px}.crumb button{border:1px solid #d8e0ec;background:#fff;border-radius:8px;padding:6px 9px;cursor:pointer;color:#374151}.crumb button:hover{border-color:#1f6feb;color:#1f6feb}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.card{position:relative;border:1px solid #dfe5ef;border-radius:8px;background:#fff;padding:15px;min-height:148px;overflow:hidden;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;cursor:pointer}.card:hover{transform:translateY(-2px);border-color:#1f6feb;box-shadow:0 16px 30px rgba(31,111,235,.12)}.concept-card:before,.sub-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:#1f6feb}.concept-card:nth-child(2):before{background:#7c3aed}.concept-card:nth-child(3):before{background:#dc2626}.concept-card:nth-child(4):before{background:#0891b2}.concept-card:nth-child(5):before{background:#ea580c}.concept-card:nth-child(6):before{background:#16a34a}.concept-card:nth-child(7):before{background:#2563eb}.concept-card:nth-child(8):before{background:#059669}.concept-card:nth-child(9):before{background:#9333ea}.seq{width:36px;height:36px;border-radius:8px;background:#111827;color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:12px}.card h3{margin:0;color:#111827;font-size:21px;line-height:1.25;letter-spacing:0}.sub-card h3{font-size:18px}.desc{margin:9px 0 0;color:#667085;font-size:13px;line-height:1.55}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.chip{display:inline-flex;align-items:center;border:1px solid #d8e0ec;background:#f8fafc;color:#667085;border-radius:999px;padding:3px 8px;font-size:12px;white-space:nowrap}.chip.blue{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}.chip.red{background:#fef2f2;border-color:#fecaca;color:#b91c1c}.chip.orange{background:#fff7ed;border-color:#fed7aa;color:#c2410c}.chip.green{background:#ecfdf5;border-color:#bbf7d0;color:#047857}.arrow{position:absolute;right:15px;top:16px;color:#98a2b3;font-weight:900}.stocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stock-card{cursor:default;min-height:162px}.stock-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:#94a3b8}.stock-card.leader:before{background:#dc2626}.stock-card.focus:before{background:#ea580c}.stock-card.ready:before{background:#2563eb}.stock-card.legacy:before{background:#64748b}.stock-card.missing:before{background:#a8a29e}.stock-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.stock-head h3{font-size:18px}.code{display:block;margin-top:3px;color:#6b7280;font-size:12px}.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:12px}.fact{background:#f8fafc;border:1px solid #e5eaf2;border-radius:8px;padding:8px;color:#6b7280;font-size:11px}.fact b{display:block;color:#111827;font-size:13px;margin-bottom:2px}.report-link,.muted-link{display:inline-flex;margin-top:12px;border-radius:8px;padding:8px 10px;font-size:12px;font-weight:800}.report-link{background:#111827;color:#fff}.report-link:hover{background:#1f6feb}.muted-link{background:#f1f5f9;color:#64748b;border:1px solid #e2e8f0}.side{padding:16px}.node-detail{color:#5d6677;font-size:13px;line-height:1.75}.legend{border-top:1px solid #e5eaf2;margin-top:14px;padding-top:13px;display:grid;gap:8px}.legend-row{display:flex;align-items:center;gap:9px;color:#667085;font-size:12px}.dot{width:11px;height:11px;border-radius:50%;display:inline-block}.dot.red{background:#dc2626}.dot.orange{background:#ea580c}.dot.blue{background:#2563eb}.dot.gray{background:#64748b}.empty{border:1px dashed #cbd5e1;background:#f8fafc;border-radius:8px;color:#667085;padding:42px;text-align:center}.footer-note{margin-top:16px;color:#7a8496;font-size:12px;line-height:1.65}@media(max-width:1100px){.top-inner{grid-template-columns:1fr}.hero,.layout{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stocks{grid-template-columns:1fr}.nav{overflow:auto}}@media(max-width:700px){.wrap,.top-inner{padding-left:14px;padding-right:14px}.hero h1{font-size:26px}.metrics,.grid{grid-template-columns:1fr}.hero-main{padding:18px}.card{min-height:132px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="top-inner">
+    <div class="brand"><div class="brand-mark">A</div><div>A股全景树<small>核心概念与公司报告入口</small></div></div>
+    <div class="search"><input id="search" placeholder="搜索当前层级：公司、代码或概念，例如 PCB、CPO、液冷、火电"></div>
+    <nav class="nav"><a href="core9.html?v=product3">核心概念</a><a href="v2_report_samples_public.html?v=samples1">深度报告</a><a href="core9_v2_report_batches_plan.html?v=plan1">更新进度</a></nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-main">
+      <span class="eyebrow">1-9 核心概念导航</span>
+      <h1>先从主干概念进入，再看细分赛道和公司报告。</h1>
+      <p>首页按核心概念顺序组织。点击一个主干概念后进入细分概念层，只有进入最细分概念后才显示股票名称、代码、评分和报告入口；已有新版报告优先展示，旧版报告作为兜底。</p>
+      <div class="metrics" id="metrics"></div>
+    </div>
+    <aside class="hero-side surface"><h2>重点公司入口</h2><div class="hot-list" id="hotList"></div></aside>
+  </section>
+  <section class="layout">
+    <section class="main surface">
+      <div class="toolbar"><div class="crumb" id="crumb"></div><button class="ghost-btn" id="homeBtn">返回主干概念</button></div>
+      <div id="mainView"></div>
+    </section>
+    <aside class="side surface">
+      <h2>当前层级</h2>
+      <div class="node-detail" id="nodeDetail"></div>
+      <div class="legend">
+        <div class="legend-row"><span class="dot red"></span>红色：高评分或核心龙头</div>
+        <div class="legend-row"><span class="dot orange"></span>橙色：重点跟踪标的</div>
+        <div class="legend-row"><span class="dot blue"></span>蓝色：已有新版报告</div>
+        <div class="legend-row"><span class="dot gray"></span>灰色：旧版报告或待生成</div>
+      </div>
+      <p class="footer-note">分类会随着新版报告和外部证据补齐继续校准。当前公开页先保证入口清晰、结构可用、报告可打开。</p>
+    </aside>
+  </section>
+</main>
+<script>
+const DATA = typeof CORE9_LOCAL_FULL_DEMO_V1 !== 'undefined' ? CORE9_LOCAL_FULL_DEMO_V1 : {summary:{}, concepts:[], rows:[]};
+const DESCS = {
+  ai_compute:'AI芯片、服务器链、数据中心、算力基础设施和配套环节。',
+  optical_module:'光模块、CPO、光器件、光芯片和高速光互联。',
+  pcb_high_speed:'高速PCB、HDI、封装基板、覆铜板、铜箔、树脂等上游材料。',
+  semiconductor:'半导体设备、芯片设计、功率器件、材料与国产替代。',
+  advanced_packaging:'封装测试、先进封装、Chiplet、封装基板和测试服务。',
+  passive_components:'电容、电感、磁性元件、电子铝箔和被动元器件材料。',
+  comm_optical_infra:'光纤光缆、通信网络、运营商基础设施和光通信设备。',
+  battery_storage:'动力电池、储能系统、锂电材料和电力电子。',
+  power_grid_uhv:'特高压、电网自动化、变压器、线缆和电力设备。'
+};
+const SUBS = {
+  ai_compute:[
+    {name:'AI芯片 / 国产算力芯片', keys:['海光','寒武纪','芯片','GPU']},
+    {name:'AI服务器链', keys:['工业富联','中科曙光','紫光','服务器','曙光']},
+    {name:'数据中心与云基础设施', keys:['数据','云','IDC','软件','机房']},
+    {name:'电源 / 散热 / 连接配套', keys:['电源','散热','液冷','连接','光电','沃尔']}
+  ],
+  optical_module:[
+    {name:'光模块 / CPO', keys:['光模块','CPO','中际','新易盛','光迅','铭普']},
+    {name:'光器件与光芯片', keys:['光器件','光芯片','光迅','铭普','激光']},
+    {name:'高速光通信', keys:['光通信','800G','高速','传输']},
+    {name:'设备与配套材料', keys:['设备','材料','连接','陶瓷']}
+  ],
+  pcb_high_speed:[
+    {name:'高速PCB', keys:['沪电','胜宏','深南','东山','景旺','高速PCB','PCB']},
+    {name:'封装基板 / IC载板', keys:['封装基板','IC载板','深南','兴森','载板']},
+    {name:'覆铜板 / 树脂 / 铜箔', keys:['生益','覆铜板','铜箔','树脂','电子布','玻纤']},
+    {name:'PCB制造与精密组件', keys:['东山','深南','胜宏','景旺','依顿','世运']}
+  ],
+  semiconductor:[
+    {name:'半导体设备', keys:['设备','赛腾','北方','中微','华海清科','测试']},
+    {name:'芯片设计 / 国产替代', keys:['芯片','设计','国产','海光','寒武纪','韦尔']},
+    {name:'功率 / 模拟 / MCU', keys:['功率','模拟','MCU','台基','士兰']},
+    {name:'半导体材料', keys:['材料','光刻胶','电子特气','彤程','三祥','硅片']}
+  ],
+  advanced_packaging:[
+    {name:'封装测试', keys:['长电','通富','华天','封测','封装测试']},
+    {name:'先进封装 / Chiplet', keys:['先进封装','Chiplet','长电','通富']},
+    {name:'封装基板与材料', keys:['基板','材料','雅克','兴森']},
+    {name:'测试设备与服务', keys:['测试','设备','服务']}
+  ],
+  passive_components:[
+    {name:'铝电解电容材料', keys:['新疆众和','电子铝箔','电极箔','铝箔']},
+    {name:'电容器', keys:['电容','江海','艾华','法拉','风华']},
+    {name:'电感 / 磁性元件', keys:['顺络','电感','磁性','磁材']},
+    {name:'电子材料与上游', keys:['材料','元器件','陶瓷','薄膜']}
+  ],
+  comm_optical_infra:[
+    {name:'光纤光缆', keys:['长飞','亨通','光纤','光缆','烽火']},
+    {name:'光通信设备', keys:['光通信','通信设备','中兴','烽火','设备']},
+    {name:'运营商 / IDC', keys:['运营','IDC','数据中心','中国移动','中国电信']},
+    {name:'连接器与配套', keys:['连接器','配套','线缆','模块']}
+  ],
+  battery_storage:[
+    {name:'动力电池', keys:['宁德','比亚迪','动力电池','电池']},
+    {name:'储能系统', keys:['储能','阳光','逆变','PCS']},
+    {name:'锂电材料', keys:['锂','正极','负极','电解液','隔膜','材料']},
+    {name:'电力电子', keys:['电力电子','逆变器','变流器']}
+  ],
+  power_grid_uhv:[
+    {name:'特高压设备', keys:['特高压','平高','许继','国电南瑞']},
+    {name:'变压器 / 开关 / 继保', keys:['变压器','开关','继保','保护','电气']},
+    {name:'电线电缆', keys:['电缆','线缆','起帆','通达','宝胜']},
+    {name:'火电 / 电网运营配套', keys:['火电','电力','能源','运营','发电']}
+  ]
+};
+let view = 'main';
+let currentConcept = null;
+let currentSub = null;
+let query = '';
+const $ = id => document.getElementById(id);
+const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const concepts = () => DATA.concepts.slice().sort((a,b)=>(a.seq||0)-(b.seq||0));
+const conceptById = id => DATA.concepts.find(c => c.concept_id === id);
+const conceptMeta = id => conceptById(id) || {rows:[], counts:{}};
+const textOf = row => [row.name,row.code,row.concept_name,row.current_primary,row.source_type,row.source_decision,row.classification_reason,row.target_landing].filter(Boolean).join(' ');
+const subTextOf = row => [row.name,row.code,row.current_primary,row.source_type,row.source_decision,row.classification_reason,row.next_action,row.batch_reason].filter(Boolean).join(' ');
+function scoredRows(rows){return rows.slice().sort((a,b)=>rowWeight(b)-rowWeight(a) || String(a.code).localeCompare(String(b.code)));}
+function rowWeight(row){return (Number(row.score)||0) + (row.report_priority === 'new_batch001' ? 300 : row.report_priority === 'v2_existing' ? 160 : row.report_priority === 'legacy_fallback' ? 40 : 0);}
+function tier(row){const score = Number(row.score)||0;if(score >= 60) return 'leader';if(score >= 20) return 'focus';if(row.report_priority === 'new_batch001' || row.report_priority === 'v2_existing') return 'ready';if(row.report_priority === 'legacy_fallback' || row.report_priority === 'legacy_data') return 'legacy';return 'missing';}
+function tierLabel(row){const score = Number(row.score)||0;if(score >= 60) return ['红','高评分'];if(score >= 20) return ['橙','重点跟踪'];if(row.report_priority === 'new_batch001' || row.report_priority === 'v2_existing') return ['蓝','新版报告'];if(row.report_priority === 'legacy_fallback' || row.report_priority === 'legacy_data') return ['灰','旧版兜底'];return ['灰','暂未生成'];}
+function reportLabel(row){if(row.report_priority === 'new_batch001') return '新版报告';if(row.report_priority === 'v2_existing') return '已有V2';if(row.report_priority === 'legacy_fallback' || row.report_priority === 'legacy_data') return '旧版报告';return '暂未生成';}
+function matches(row){if(!query) return true;const q = query.toLowerCase();return textOf(row).toLowerCase().includes(q);}
+function subRows(conceptId, sub){const rows = conceptMeta(conceptId).rows || [];const found = rows.filter(row => sub.keys.some(key => subTextOf(row).includes(key))); return scoredRows(found.filter(matches));}
+function renderMetrics(){const s = DATA.summary || {};$('metrics').innerHTML = [
+  ['9','核心概念'],[s.unique_companies || 0,'公司池'],[s.batch001_reports || 0,'新版深度报告'],[s.legacy_fallback || 0,'旧版报告兜底']
+].map(([n,label]) => `<div class="metric"><b>${esc(n)}</b><span>${esc(label)}</span></div>`).join('');}
+function renderHotList(){const rows = scoredRows((DATA.rows || []).filter(r => r.report_priority === 'new_batch001' || Number(r.score) >= 60)).slice(0,4);$('hotList').innerHTML = rows.map(row => `<div class="hot-item" data-concept="${esc(row.concept_id)}"><b>${esc(row.name)} ${esc(row.code)}</b><span>${esc(row.concept_name)} · ${esc(reportLabel(row))}</span></div>`).join('');document.querySelectorAll('.hot-item').forEach(item => item.addEventListener('click', () => openConcept(item.dataset.concept)));}
+function renderCrumb(){let html = `<button data-action="home">1-9 主干概念</button>`;if(currentConcept){const c = conceptById(currentConcept);html += `<button data-concept="${esc(currentConcept)}">${esc((c?.seq || '') + '. ' + (c?.concept_name || ''))}</button>`;}if(currentSub){html += `<button>${esc(currentSub.name)}</button>`;}$('crumb').innerHTML = html;$('crumb').querySelector('[data-action="home"]')?.addEventListener('click', goHome);$('crumb').querySelector('[data-concept]')?.addEventListener('click', event => openConcept(event.currentTarget.dataset.concept));}
+function renderMain(){view='main';currentConcept=null;currentSub=null;renderCrumb();$('nodeDetail').innerHTML = '主干概念按 1-9 顺序展示。这里不直接堆股票，先让访问者理解网站的核心分类框架。';$('mainView').innerHTML = `<div class="grid">${concepts().map(c => {const count = (c.rows || []).length;const ready = (c.counts?.new_batch001 || 0) + (c.counts?.v2_existing || 0);const subs = SUBS[c.concept_id] || [];return `<article class="card concept-card" data-concept="${esc(c.concept_id)}"><div class="seq">${esc(c.seq)}</div><h3>${esc(c.seq)}. ${esc(c.concept_name)}</h3><p class="desc">${esc(DESCS[c.concept_id] || '点击进入细分概念。')}</p><div class="chips"><span class="chip blue">${count} 家公司</span><span class="chip green">${ready} 个新版入口</span><span class="chip">${subs.length} 个细分概念</span></div><div class="arrow">→</div></article>`;}).join('')}</div>`;document.querySelectorAll('.concept-card').forEach(card => card.addEventListener('click', () => openConcept(card.dataset.concept)));}
+function openConcept(id){view='sub';currentConcept=id;currentSub=null;const c = conceptById(id);const subs = SUBS[id] || [];renderCrumb();const ready = (c?.counts?.new_batch001 || 0) + (c?.counts?.v2_existing || 0);$('nodeDetail').innerHTML = `<b>${esc(c?.seq || '')}. ${esc(c?.concept_name || '')}</b><br>${esc(DESCS[id] || '')}<br>当前公司关系：${esc((c?.rows || []).length)} 家；新版报告入口：${esc(ready)} 个。`;$('mainView').innerHTML = `<div class="grid">${subs.map((sub,index) => {const rows = subRows(id, sub);const readyCount = rows.filter(r => r.report_priority === 'new_batch001' || r.report_priority === 'v2_existing').length;return `<article class="card sub-card" data-index="${index}"><div class="seq">${index+1}</div><h3>${esc(index+1)}. ${esc(sub.name)}</h3><p class="desc">进入该细分概念后显示公司、评分颜色和报告入口。</p><div class="chips"><span class="chip blue">${rows.length} 家公司</span><span class="chip green">${readyCount} 个新版入口</span></div><div class="arrow">→</div></article>`;}).join('')}</div>`;document.querySelectorAll('.sub-card').forEach(card => card.addEventListener('click', () => openSub(id, subs[Number(card.dataset.index)])));}
+function openSub(id, sub){view='stocks';currentConcept=id;currentSub=sub;renderCrumb();const rows = subRows(id, sub);$('nodeDetail').innerHTML = `<b>${esc(sub.name)}</b><br>这里是最细分概念层，因此显示股票名称、代码、评分、财务摘要和报告入口。颜色按评分与报告状态区分。`;if(!rows.length){$('mainView').innerHTML = `<div class="empty">当前关键词下暂未匹配到公司，后续会随 V2 报告和证据补充继续校准。</div>`;return;}$('mainView').innerHTML = `<div class="stocks">${rows.map(row => {const [chipColor, chipText] = tierLabel(row);const colorClass = chipColor === '红' ? 'red' : chipColor === '橙' ? 'orange' : chipColor === '蓝' ? 'blue' : '';const netProfit = row.net_profit_yi == null ? '--' : `${row.net_profit_yi} 亿`;const yoy = row.net_profit_yoy_pct == null ? '--' : `${row.net_profit_yoy_pct}%`;return `<article class="card stock-card ${tier(row)}"><div class="stock-head"><div><h3>${esc(row.name)}</h3><span class="code">${esc(row.code)} · ${esc(row.concept_name)}</span></div><span class="chip ${colorClass}">${esc(chipText)}</span></div><div class="facts"><div class="fact"><b>${esc(row.score ?? '--')}</b>评分</div><div class="fact"><b>${esc(netProfit)}</b>净利润</div><div class="fact"><b>${esc(yoy)}</b>同比</div></div><div class="chips"><span class="chip">${esc(row.improvement || '待复核')}</span><span class="chip">${esc(reportLabel(row))}</span></div>${row.local_report_link ? `<a class="report-link" target="_blank" href="${esc(row.local_report_link)}">打开报告</a>` : `<span class="muted-link">暂未生成</span>`}</article>`;}).join('')}</div>`;}
+function goHome(){query='';$('search').value='';renderMain();}
+function rerender(){if(view === 'stocks' && currentConcept && currentSub) openSub(currentConcept,currentSub);else if(view === 'sub' && currentConcept) openConcept(currentConcept);else renderMain();}
+$('search').addEventListener('input', event => {query = event.target.value.trim();rerender();});$('homeBtn').addEventListener('click', goHome);renderMetrics();renderHotList();renderMain();
+</script>
+</body>
+</html>
+
+
+
+
