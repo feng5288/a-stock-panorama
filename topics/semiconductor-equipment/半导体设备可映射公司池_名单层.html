@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>半导体设备可映射公司池（名单层）</title>
+<style>
+:root { --ink:#172129; --muted:#66747c; --bg:#f4f7f8; --panel:#fff; --line:#dce5e9; --deep:#15252d; --teal:#08727c; --blue:#145c9e; --amber:#9b5a00; --red:#a93434; --violet:#654a9b; --shadow:0 8px 24px rgba(20,35,44,.08); }
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:linear-gradient(180deg,#e5edf1,#f7f9fa 260px); letter-spacing:0; }
+a { color:inherit; text-decoration:none; }
+.hero { color:#edf7f7; background:linear-gradient(135deg,#14252d,#1d3c42 58%,#163b36); padding:24px 30px 18px; position:sticky; top:0; z-index:5; box-shadow:0 10px 26px rgba(15,31,38,.22); }
+h1 { margin:0; font-size:27px; line-height:1.2; }
+.sub { margin:8px 0 0; color:#bfd2d7; line-height:1.65; max-width:1120px; }
+.nav { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+.nav a { border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.08); color:#eef7f7; padding:8px 11px; border-radius:6px; font-size:13px; }
+.nav a.active,.nav a:hover { background:rgba(255,255,255,.18); }
+main { padding:22px 30px 36px; }
+.panel { background:#fff; border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); overflow:hidden; margin-bottom:14px; }
+.panel h2 { margin:0; padding:12px 14px; font-size:17px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,#f9fbfc,#edf3f5); }
+.content { padding:14px; }
+.note { color:var(--muted); font-size:13px; line-height:1.72; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+.cols3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:14px; box-shadow:var(--shadow); }
+.card h3 { margin:0 0 8px; font-size:16px; }
+.card p { margin:0; color:#5c6c74; line-height:1.65; font-size:13px; }
+table { width:100%; border-collapse:collapse; font-size:13px; background:#fff; }
+th,td { border-bottom:1px solid #e6edf0; padding:9px 10px; vertical-align:top; text-align:left; line-height:1.55; }
+th { background:#eef4f6; color:#263941; font-weight:760; }
+tr:hover td { background:#fbffff; }
+.level,.pill { display:inline-flex; border-radius:999px; padding:2px 8px; color:#fff; font-size:12px; }
+.s,.core { background:var(--red); } .a,.audit { background:var(--teal); } .b,.noise { background:#687782; } .spread { background:var(--blue); }
+.stage-row { display:grid; grid-template-columns:180px 1fr; gap:12px; margin-bottom:12px; }
+.stage-title { background:#17303a; color:#fff; padding:12px; border-radius:8px; font-weight:800; }
+.node-wrap { display:flex; gap:9px; flex-wrap:wrap; }
+.node-card { width:270px; min-height:145px; padding:11px; border:1px solid var(--line); border-radius:8px; background:#fff; box-shadow:0 3px 12px rgba(20,35,44,.05); }
+.node-card b { display:block; font-size:15px; margin-bottom:7px; }
+.node-card p { margin:7px 0 0; color:#52636c; line-height:1.55; font-size:12px; }
+.search { width:100%; height:38px; border:1px solid var(--line); border-radius:7px; padding:0 12px; margin-bottom:12px; font:inherit; }
+.dock { position:fixed; right:18px; bottom:18px; z-index:20; color:#fff; background:#0d6f78; border:1px solid rgba(255,255,255,.25); padding:10px 13px; border-radius:7px; box-shadow:0 10px 24px rgba(8,74,82,.24); font-weight:700; }
+@media(max-width:900px) { main,.hero { padding-left:15px; padding-right:15px; } .cols3,.stage-row { grid-template-columns:1fr; } .node-card { width:100%; } }
+</style>
+<style id="topic-import-public-style">
+.topic-public-nav{position:sticky;top:0;z-index:20;display:flex;gap:10px;align-items:center;padding:12px 18px;background:rgba(5,9,14,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.12)}
+.topic-public-nav a{display:inline-flex;align-items:center;height:34px;padding:0 12px;border:1px solid rgba(255,255,255,.18);border-radius:8px;color:inherit;text-decoration:none;background:rgba(255,255,255,.06)}
+.topic-risk-note{max-width:1180px;margin:24px auto;padding:12px 14px;border:1px solid rgba(210,153,34,.35);background:rgba(210,153,34,.09);border-radius:8px;color:#e8d7ad;line-height:1.7;font-size:13px}
+</style>
+</head>
+<body>
+<nav class="topic-public-nav"><a href="../../index.html">网站首页</a><a href="./index.html">专题首页</a></nav>
+<section class="hero">
+  <h1>半导体设备可映射公司池（名单层）</h1>
+  <p class="sub">数据截至：2026-06-26（最近A股交易日）；专题整理日期：2026-06-28。仅作研究梳理，不构成投资建议。本页涉及的强弱、等级、观察样本、发酵程度和公司映射均为产业研究标签，不代表事实认定或证券评级。</p>
+  <div class="nav"><a class="" href="半导体设备研究中枢.html">研究中枢</a>
+<a class="" href="半导体设备全产业链详细全图_产业链版.html">全链路图</a>
+<a class="" href="半导体设备关键约束环节总表.html">关键约束</a>
+<a class="" href="半导体设备专题观察合集.html">专项合集</a>
+<a class="" href="半导体设备节点路线信号三维矩阵_产业链版.html">路线信号</a>
+<a class="active" href="半导体设备可映射公司池_名单层.html">公司池</a>
+<a class="" href="半导体设备公司池观察样本排序表.html">观察样本</a></div>
+</section>
+<a class="dock" href="半导体设备研究中枢.html">返回研究中枢</a>
+<main><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、强弱、等级、观察样本和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section><section class='panel'><h2>可映射公司池</h2><div class='content note'>本表仅展示公司与产业节点的映射关系，不构成投资建议。后续可结合公开资料验证证券代码、上市板块和主营结构。</div></section><section class='panel'><div class='content'><input id='search' class='search' placeholder='搜索公司、代码、板块或设备节点'><table id='tbl'><thead><tr><th>公司</th><th>代码</th><th>板块</th><th>设备节点</th><th>映射逻辑</th><th>识别风险</th></tr></thead><tbody><tr><td><b>北方华创</b></td><td>002371.SZ</td><td>主板</td><td>刻蚀/PVD/CVD/清洗/热处理平台型设备</td><td>平台型设备代表公司，覆盖多工艺环节，是国产替代核心样本。</td><td>业务较广，需按设备类型和订单结构拆分。</td></tr><tr><td><b>中微公司</b></td><td>688012.SH</td><td>科创板</td><td>刻蚀/MOCVD/薄膜沉积相关</td><td>刻蚀设备代表公司，客户验证和先进工艺覆盖是核心。</td><td>市场认知高，需关注业绩兑现和估值消化。</td></tr><tr><td><b>拓荆科技</b></td><td>688072.SH</td><td>科创板</td><td>CVD/ALD/薄膜沉积</td><td>薄膜沉积设备核心样本，ALD/CVD平台能力值得重点观察。</td><td>订单兑现和毛利率稳定性需要持续核验。</td></tr><tr><td><b>芯源微</b></td><td>688037.SH</td><td>科创板</td><td>涂胶显影/清洗/先进封装Track</td><td>光刻配套与先进封装设备映射度高。</td><td>需区分前道Track、后道Track和清洗设备结构。</td></tr><tr><td><b>盛美上海</b></td><td>688082.SH</td><td>科创板</td><td>清洗/电镀/先进封装湿法设备</td><td>清洗设备和先进封装湿法设备代表公司。</td><td>海外和国内客户节奏、订单确认需跟踪。</td></tr><tr><td><b>华海清科</b></td><td>688120.SH</td><td>科创板</td><td>CMP设备/减薄/耗材</td><td>CMP国产替代核心样本，设备与耗材联动。</td><td>CMP订单周期和耗材放量节奏需拆分。</td></tr><tr><td><b>中科飞测</b></td><td>688361.SH</td><td>科创板</td><td>量测检测/缺陷检测</td><td>量测检测低国产化方向代表样本。</td><td>技术验证周期长，收入兑现节奏需核验。</td></tr><tr><td><b>精测电子</b></td><td>300567.SZ</td><td>创业板</td><td>半导体量测检测/显示检测</td><td>从显示检测延伸到半导体量测检测，适合观察国产替代扩散。</td><td>业务结构复杂，需要拆分半导体贡献。</td></tr><tr><td><b>长川科技</b></td><td>300604.SZ</td><td>创业板</td><td>测试机/分选机</td><td>后道测试设备代表公司，受国产替代和封测景气影响。</td><td>后道设备与前道设备节奏不同。</td></tr><tr><td><b>华峰测控</b></td><td>688200.SH</td><td>科创板</td><td>模拟/功率/SoC测试机</td><td>测试设备优质样本，关注功率、模拟和SoC平台扩展。</td><td>终端与封测周期影响明显。</td></tr><tr><td><b>万业企业</b></td><td>600641.SH</td><td>主板</td><td>离子注入/设备投资平台</td><td>离子注入方向稀缺映射。</td><td>需核验设备业务收入、客户和利润贡献。</td></tr><tr><td><b>至纯科技</b></td><td>603690.SH</td><td>主板</td><td>湿法清洗/高纯工艺系统</td><td>湿法设备与高纯工艺系统映射。</td><td>业务结构多元，设备纯度需拆分。</td></tr><tr><td><b>富创精密</b></td><td>688409.SH</td><td>科创板</td><td>半导体设备精密零部件</td><td>设备零部件国产化核心样本之一。</td><td>需看设备客户、产品结构和毛利率。</td></tr><tr><td><b>新莱应材</b></td><td>300260.SZ</td><td>创业板</td><td>真空/洁净管阀件</td><td>半导体洁净管阀件和真空系统零部件映射。</td><td>需区分食品医药和半导体业务贡献。</td></tr><tr><td><b>正帆科技</b></td><td>688596.SH</td><td>科创板</td><td>气体化学品供应系统/工艺系统</td><td>晶圆厂气体化学品供应系统方向。</td><td>更偏厂务系统，需区分设备主线。</td></tr><tr><td><b>京仪装备</b></td><td>688652.SH</td><td>科创板</td><td>温控/废气处理/设备子系统</td><td>半导体设备子系统和温控方向。</td><td>上市时间和公开数据较新，需上线前公开资料验证。</td></tr><tr><td><b>江丰电子</b></td><td>300666.SZ</td><td>创业板</td><td>靶材/零部件材料</td><td>PVD靶材与部分设备材料映射。</td><td>更偏材料，不应直接等同设备。</td></tr></tbody></table></div></section><script>bindSearch('search','tbl');</script></main>
+<script>
+function bindSearch(inputId, tableId) {
+  const input = document.getElementById(inputId);
+  const table = document.getElementById(tableId);
+  if (!input || !table) return;
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      tr.style.display = tr.innerText.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+}
+</script>
+</body>
+</html>

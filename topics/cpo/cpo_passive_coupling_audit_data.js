@@ -10,7 +10,7 @@
     "evidenceGrade": "强",
     "officialEvidence": "2025年报披露FAU是光通信核心无源精密光学器件，是高速高密度光互联关键基础部件；AWG相关产品收入5.45亿元、PLC光分路器相关产品0.75亿元；400G/800G光模块用CWDM/LANWDM AWG组件大批量出货，1.6T光模块用AWG芯片及组件小批量出货，800G/1.6T MT-FA批量出货。",
     "earningsSignal": "强：2025年营收21.29亿元同比+98.15%，归母净利3.72亿元同比+473.25%。",
-    "purity": "高：AWG/PLC/FAU/MT-FA都贴近CPO和硅光耦合、MUX/DEMUX卡点。",
+    "purity": "高：AWG/PLC/FAU/MT-FA都贴近CPO和硅光耦合、MUX/DEMUX关键约束。",
     "marketAwareness": "已关注度变化",
     "misprice": "中",
     "judgement": "这条线的核心风向标，非主板样本但需要盯；若7月资金从模块上移到无源器件，它最敏感。",

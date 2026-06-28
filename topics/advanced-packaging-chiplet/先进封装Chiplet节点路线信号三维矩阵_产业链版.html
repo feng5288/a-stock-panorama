@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>先进封装Chiplet节点路线信号三维矩阵（产业链版）</title>
+<style>
+:root { --ink:#172129; --muted:#66747c; --bg:#f4f7f8; --panel:#fff; --line:#dce5e9; --deep:#15252d; --teal:#08727c; --blue:#145c9e; --amber:#9b5a00; --red:#a93434; --violet:#654a9b; --shadow:0 8px 24px rgba(20,35,44,.08); }
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:linear-gradient(180deg,#e5edf1,#f7f9fa 260px); letter-spacing:0; }
+a { color:inherit; text-decoration:none; }
+.hero { color:#edf7f7; background:linear-gradient(135deg,#14252d,#1d3c42 58%,#163b36); padding:24px 30px 18px; position:sticky; top:0; z-index:5; box-shadow:0 10px 26px rgba(15,31,38,.22); }
+h1 { margin:0; font-size:27px; line-height:1.2; }
+.sub { margin:8px 0 0; color:#bfd2d7; line-height:1.65; max-width:1120px; }
+.nav { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+.nav a { border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.08); color:#eef7f7; padding:8px 11px; border-radius:6px; font-size:13px; }
+.nav a.active,.nav a:hover { background:rgba(255,255,255,.18); }
+main { padding:22px 30px 36px; }
+.panel { background:#fff; border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); overflow:hidden; margin-bottom:14px; }
+.panel h2 { margin:0; padding:12px 14px; font-size:17px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,#f9fbfc,#edf3f5); }
+.content { padding:14px; }
+.note { color:var(--muted); font-size:13px; line-height:1.72; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+.cols3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:14px; box-shadow:var(--shadow); }
+.card h3 { margin:0 0 8px; font-size:16px; }
+.card p { margin:0; color:#5c6c74; line-height:1.65; font-size:13px; }
+table { width:100%; border-collapse:collapse; font-size:13px; background:#fff; }
+th,td { border-bottom:1px solid #e6edf0; padding:9px 10px; vertical-align:top; text-align:left; line-height:1.55; }
+th { background:#eef4f6; color:#263941; font-weight:760; }
+tr:hover td { background:#fbffff; }
+.level,.pill { display:inline-flex; border-radius:999px; padding:2px 8px; color:#fff; font-size:12px; }
+.s,.core { background:var(--red); } .a,.audit { background:var(--teal); } .b,.noise { background:#687782; } .spread { background:var(--blue); } .risk { background:var(--amber); }
+.stage-row { display:grid; grid-template-columns:180px 1fr; gap:12px; margin-bottom:12px; }
+.stage-title { background:#17303a; color:#fff; padding:12px; border-radius:8px; font-weight:800; }
+.node-wrap { display:flex; gap:9px; flex-wrap:wrap; }
+.node-card { width:270px; min-height:150px; padding:11px; border:1px solid var(--line); border-radius:8px; background:#fff; box-shadow:0 3px 12px rgba(20,35,44,.05); }
+.node-card b { display:block; font-size:15px; margin-bottom:7px; }
+.node-card p { margin:7px 0 0; color:#52636c; line-height:1.55; font-size:12px; }
+.search { width:100%; height:38px; border:1px solid var(--line); border-radius:7px; padding:0 12px; margin-bottom:12px; font:inherit; }
+.dock { position:fixed; right:18px; bottom:18px; z-index:20; color:#fff; background:#0d6f78; border:1px solid rgba(255,255,255,.25); padding:10px 13px; border-radius:7px; box-shadow:0 10px 24px rgba(8,74,82,.24); font-weight:700; }
+@media(max-width:900px) { main,.hero { padding-left:15px; padding-right:15px; } .cols3,.stage-row { grid-template-columns:1fr; } .node-card { width:100%; } }
+</style>
+<style id="topic-import-public-style">
+.topic-public-nav{position:sticky;top:0;z-index:20;display:flex;gap:10px;align-items:center;padding:12px 18px;background:rgba(5,9,14,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.12)}
+.topic-public-nav a{display:inline-flex;align-items:center;height:34px;padding:0 12px;border:1px solid rgba(255,255,255,.18);border-radius:8px;color:inherit;text-decoration:none;background:rgba(255,255,255,.06)}
+.topic-risk-note{max-width:1180px;margin:24px auto;padding:12px 14px;border:1px solid rgba(210,153,34,.35);background:rgba(210,153,34,.09);border-radius:8px;color:#e8d7ad;line-height:1.7;font-size:13px}
+</style>
+</head>
+<body>
+<nav class="topic-public-nav"><a href="../../index.html">网站首页</a><a href="./index.html">专题首页</a></nav>
+<section class="hero">
+  <h1>先进封装Chiplet节点路线信号三维矩阵（产业链版）</h1>
+  <p class="sub">数据截至：2026-06-26（最近A股交易日）；专题整理日期：2026-06-28。仅作研究梳理，不构成投资建议。本页涉及的强弱、等级、观察样本、发酵程度和公司映射均为产业研究标签，不代表事实认定或证券评级。</p>
+  <div class="nav"><a class="" href="先进封装Chiplet研究中枢.html">研究中枢</a>
+<a class="" href="先进封装Chiplet全产业链详细全图_产业链版.html">全链路图</a>
+<a class="" href="先进封装Chiplet关键约束环节总表.html">关键约束</a>
+<a class="" href="先进封装Chiplet专题观察合集.html">专项合集</a>
+<a class="active" href="先进封装Chiplet节点路线信号三维矩阵_产业链版.html">路线信号</a>
+<a class="" href="先进封装Chiplet可映射公司池_名单层.html">公司池</a>
+<a class="" href="先进封装Chiplet公司池观察样本排序表.html">观察样本</a></div>
+</section>
+<a class="dock" href="先进封装Chiplet研究中枢.html">返回研究中枢</a>
+<main><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、强弱、等级、观察样本和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section><section class='panel'><h2>节点-路线-信号三维矩阵</h2><div class='content'><input class='search' id='mSearch' placeholder='搜索节点、路线、信号'><div class='note' style='margin-bottom:10px'>矩阵用于把产业位置、技术路线和市场信号放到同一框架下观察。</div><table id="mTable"><thead><tr><th>阶段</th><th>节点</th><th>对应路线</th><th>关键外部信号</th><th>重点观察</th></tr></thead><tbody><tr><td>设计与前道接口</td><td>Chiplet架构与Die-to-Die接口</td><td>国产先进封装追赶路线</td><td>CoWoS排产紧张、HBM涨价或长协、ABF载板订单改善</td><td>关注接口生态、IP许可、系统厂商自研ASIC进度。</td></tr><tr><td>设计与前道接口</td><td>Known Good Die良率管理</td><td>测试检测前移路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注晶圆测试、探针卡、数据追溯和KGD流程。</td></tr><tr><td>设计与前道接口</td><td>EDA/封装协同设计</td><td>国产先进封装追赶路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注封装设计服务、仿真软件、设计规则和客户验证。</td></tr><tr><td>设计与前道接口</td><td>先进制程晶圆接口</td><td>国产先进封装追赶路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注先进节点供给、晶圆涨价和高端客户排产。</td></tr><tr><td>晶圆级封装前段</td><td>Bumping/Cu Pillar凸点</td><td>晶圆级封装追赶路线</td><td>CoWoS排产紧张、HBM涨价或长协、ABF载板订单改善</td><td>关注凸点线宽间距、良率、产能稼动和客户认证。</td></tr><tr><td>晶圆级封装前段</td><td>RDL重布线</td><td>晶圆级封装追赶路线</td><td>CoWoS排产紧张、HBM涨价或长协、ABF载板订单改善</td><td>关注微细线宽、介质材料、电镀与显影能力。</td></tr><tr><td>晶圆级封装前段</td><td>TSV硅通孔</td><td>晶圆级封装追赶路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注深硅刻蚀、填孔、翘曲控制和可靠性。</td></tr><tr><td>晶圆级封装前段</td><td>Fan-Out扇出封装</td><td>国产先进封装追赶路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注面板级封装、良率和成本曲线。</td></tr><tr><td>晶圆级封装前段</td><td>Hybrid Bonding混合键合</td><td>晶圆级封装追赶路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注设备、清洗、CMP和量产节点。</td></tr><tr><td>2.5D/3D系统集成</td><td>硅中介层Interposer</td><td>CoWoS/2.5D扩产路线</td><td>CoWoS排产紧张、HBM涨价或长协、ABF载板订单改善</td><td>关注中介层尺寸、良率、TSV能力和晶圆级产能。</td></tr><tr><td>2.5D/3D系统集成</td><td>CoWoS/2.5D封装</td><td>CoWoS/2.5D扩产路线</td><td>CoWoS排产紧张、HBM涨价或长协、ABF载板订单改善</td><td>关注月产能、客户排队、扩产节奏和封测协同。</td></tr><tr><td>2.5D/3D系统集成</td><td>SoIC/3D堆叠</td><td>国产先进封装追赶路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注混合键合、热管理和可靠性验证。</td></tr><tr><td>2.5D/3D系统集成</td><td>HBM堆叠与集成</td><td>CoWoS/2.5D扩产路线</td><td>CoWoS排产紧张、HBM涨价或长协、ABF载板订单改善</td><td>关注HBM代际、良率、内存厂排产和AI服务器拉货。</td></tr><tr><td>2.5D/3D系统集成</td><td>ABF封装基板</td><td>封装基板升级路线</td><td>CoWoS排产紧张、HBM涨价或长协、ABF载板订单改善</td><td>关注ABF载板扩产、良率、客户认证和上游树脂供应。</td></tr><tr><td>关键材料与设备</td><td>临时键合/解键合材料</td><td>材料耗材复购路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注国产导入、客户验证和重复采购。</td></tr><tr><td>关键材料与设备</td><td>底填胶Underfill</td><td>材料耗材复购路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注低翘曲、低CTE、流动性和车规/服务器验证。</td></tr><tr><td>关键材料与设备</td><td>环氧塑封料EMC</td><td>材料耗材复购路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注球形硅微粉、树脂体系和封测客户份额。</td></tr><tr><td>关键材料与设备</td><td>热界面材料与散热</td><td>材料耗材复购路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注液冷、均热板、TIM、石墨/导热垫片。</td></tr><tr><td>关键材料与设备</td><td>电镀/CMP/清洗设备</td><td>国产先进封装追赶路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注设备国产替代、先进封装订单和客户验收。</td></tr><tr><td>关键材料与设备</td><td>X-ray/SAM/AOI检测</td><td>测试检测前移路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注检测分辨率、节拍、AI识别和客户产线导入。</td></tr><tr><td>封装测试与可靠性</td><td>OSAT先进封装产能</td><td>国产先进封装追赶路线</td><td>CoWoS排产紧张、HBM涨价或长协、ABF载板订单改善</td><td>关注资本开支、产线稼动、客户结构和收入占比。</td></tr><tr><td>封装测试与可靠性</td><td>高速ATE测试</td><td>测试检测前移路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注SOC/存储/高速接口测试能力和客户平台。</td></tr><tr><td>封装测试与可靠性</td><td>探针卡与晶圆测试</td><td>测试检测前移路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注MEMS探针、细间距、国产导入和复购。</td></tr><tr><td>封装测试与可靠性</td><td>老化与可靠性验证</td><td>测试检测前移路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注验证设备、实验室能力和大客户认证。</td></tr><tr><td>下游需求与供需信号</td><td>AI GPU/ASIC</td><td>国产先进封装追赶路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注云厂商资本开支、ASIC迭代和GPU交付。</td></tr><tr><td>下游需求与供需信号</td><td>HBM供给周期</td><td>CoWoS/2.5D扩产路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注HBM3E/HBM4、内存厂资本开支和涨价信号。</td></tr><tr><td>下游需求与供需信号</td><td>高速交换芯片</td><td>国产先进封装追赶路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注800G/1.6T交换、CPO联动和高频高速基材。</td></tr><tr><td>下游需求与供需信号</td><td>国产替代导入</td><td>国产先进封装追赶路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注验证通过、批量订单、良率爬坡和收入兑现。</td></tr><tr><td>下游需求与供需信号</td><td>产能扩张与交期</td><td>国产先进封装追赶路线</td><td>客户验证、收入占比、涨幅过热</td><td>关注涨价、长协、扩产、稼动率和中报兑现。</td></tr></tbody></table></div></section><script>bindSearch('mSearch','mTable');</script></main>
+<script>
+function bindSearch(inputId, tableId) {
+  const input = document.getElementById(inputId);
+  const table = document.getElementById(tableId);
+  if (!input || !table) return;
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      tr.style.display = tr.innerText.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+}
+</script>
+</body>
+</html>

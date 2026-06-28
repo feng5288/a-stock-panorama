@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PCB节点百科（产业链版）</title>
+<style>
+:root {
+  --bg:#f4f7f8; --ink:#162127; --muted:#63717a; --panel:#ffffff; --line:#dce5e9;
+  --deep:#15252d; --teal:#08747d; --green:#187044; --blue:#155a9c; --amber:#a26100;
+  --red:#aa3939; --violet:#6550a8; --soft:0 8px 24px rgba(20,35,44,.08);
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:linear-gradient(180deg,#e5edf1,#f7f9fa 260px); letter-spacing:0; }
+a { color:inherit; text-decoration:none; }
+.hero { background:linear-gradient(135deg,#14252d,#1d3c42 58%,#163b36); color:#edf8f8; padding:24px 30px 18px; position:sticky; top:0; z-index:5; box-shadow:0 10px 26px rgba(15,31,38,.22); }
+.hero h1 { margin:0; font-size:26px; line-height:1.2; }
+.meta { margin-top:8px; color:#bdd1d6; font-size:13px; line-height:1.6; }
+.nav { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+.nav a { border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.08); color:#eef7f7; padding:8px 11px; border-radius:6px; font-size:13px; }
+.nav a.active,.nav a:hover { background:rgba(255,255,255,.18); }
+.dock { position:fixed; right:18px; bottom:18px; z-index:20; color:#fff; background:#0d6f78; border:1px solid rgba(255,255,255,.25); padding:10px 13px; border-radius:7px; box-shadow:0 10px 24px rgba(8,74,82,.24); font-weight:700; }
+main { padding:22px 30px 36px; }
+.grid { display:grid; gap:14px; }
+.cols2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.cols3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; box-shadow:var(--soft); overflow:hidden; }
+.panel h2 { margin:0; padding:12px 14px; font-size:17px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,#f9fbfc,#edf3f5); }
+.panel .content { padding:14px; }
+.note { color:var(--muted); font-size:13px; line-height:1.7; }
+.tag { display:inline-flex; align-items:center; min-height:22px; padding:2px 7px; border-radius:999px; border:1px solid var(--line); background:#f7fafb; font-size:12px; color:#41525b; }
+.level-S { color:#fff; background:#9c2f2f; border-color:#9c2f2f; }
+.level-A { color:#fff; background:#0d6f78; border-color:#0d6f78; }
+.level-B { color:#fff; background:#155a9c; border-color:#155a9c; }
+.level-C { color:#fff; background:#687782; border-color:#687782; }
+.level-风险 { color:#fff; background:#8a5b00; border-color:#8a5b00; }
+table { width:100%; border-collapse:collapse; font-size:13px; background:#fff; }
+th,td { border-bottom:1px solid #e6edf0; padding:9px 10px; vertical-align:top; text-align:left; line-height:1.55; }
+th { position:sticky; top:104px; z-index:2; background:#eef4f6; color:#263941; font-weight:760; }
+tr:hover td { background:#fbfefe; }
+.stage-row { display:grid; grid-template-columns:190px 1fr; gap:12px; align-items:start; margin-bottom:12px; }
+.stage-title { background:#17303a; color:#fff; padding:12px; border-radius:8px; font-weight:800; min-height:100%; }
+.node-wrap { display:flex; gap:9px; flex-wrap:wrap; }
+.node-card { width:260px; min-height:142px; padding:11px; border:1px solid var(--line); border-radius:8px; background:#fff; box-shadow:0 3px 12px rgba(20,35,44,.05); }
+.node-card b { display:block; font-size:15px; margin-bottom:7px; }
+.node-card p { margin:7px 0 0; color:#52636c; line-height:1.55; font-size:12px; }
+.route { display:grid; grid-template-columns:170px 1fr; gap:10px; align-items:stretch; }
+.route .year { border-left:5px solid var(--teal); background:#eef8f8; padding:12px; border-radius:8px; font-weight:800; }
+.route .items { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+.route .item { background:#fff; border:1px solid var(--line); border-radius:8px; padding:11px; line-height:1.55; }
+.score { font-weight:800; color:#0d6f78; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:14px; box-shadow:var(--soft); }
+.card h3 { margin:0 0 8px; font-size:16px; }
+.card p { margin:0; color:#5c6c74; line-height:1.65; font-size:13px; }
+.search { width:100%; height:38px; border:1px solid var(--line); border-radius:7px; padding:0 12px; margin-bottom:12px; font:inherit; }
+@media (max-width:900px) {
+  main { padding:16px; }
+  .cols2,.cols3,.route .items { grid-template-columns:1fr; }
+  .stage-row,.route { grid-template-columns:1fr; }
+  .node-card { width:100%; }
+  th { position:static; }
+}
+</style>
+<style id="topic-import-public-style">
+.topic-public-nav{position:sticky;top:0;z-index:20;display:flex;gap:10px;align-items:center;padding:12px 18px;background:rgba(5,9,14,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.12)}
+.topic-public-nav a{display:inline-flex;align-items:center;height:34px;padding:0 12px;border:1px solid rgba(255,255,255,.18);border-radius:8px;color:inherit;text-decoration:none;background:rgba(255,255,255,.06)}
+.topic-risk-note{max-width:1180px;margin:24px auto;padding:12px 14px;border:1px solid rgba(210,153,34,.35);background:rgba(210,153,34,.09);border-radius:8px;color:#e8d7ad;line-height:1.7;font-size:13px}
+</style>
+</head>
+<body>
+<nav class="topic-public-nav"><a href="../../index.html">网站首页</a><a href="./index.html">专题首页</a></nav>
+<section class="hero">
+  <h1>PCB节点百科（产业链版）</h1>
+  <div class="meta">数据截至：2026-06-26（最近A股交易日）；专题整理日期：2026-06-28　|　仅作研究梳理，不构成投资建议</div>
+  <div class="nav"><a class="" href="PCB研究中枢.html">研究中枢</a>
+<a class="" href="PCB全产业链详细全图_产业链版.html">全链路图</a>
+<a class="active" href="PCB节点百科_产业链版.html">节点百科</a>
+<a class="" href="PCB技术路线图_产业链版.html">技术路线</a>
+<a class="" href="PCB供需变化信号库_产业链版.html">供需信号</a>
+<a class="" href="PCB节点路线信号三维矩阵_产业链版.html">三维矩阵</a>
+<a class="" href="PCB可映射公司池_名单层.html">公司池</a>
+<a class="" href="PCB公司池观察样本排序表.html">观察样本</a></div>
+</section>
+<a class="dock" href="PCB研究中枢.html">返回研究中枢</a>
+<main><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、强弱、等级、观察样本和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section><section class='panel'><div class='content note'>本页涉及的强弱、等级、观察样本、发酵程度和公司映射均为产业研究标签，用于组织公开信息和后续公开资料验证，不代表事实认定、证券评级或投资建议。</div></section>
+<section class="panel"><h2>节点百科</h2><div class="content">
+<input id="nodeSearch" class="search" placeholder="搜索节点、阶段、信号或风险点">
+<table id="nodeTable"><thead><tr><th>阶段</th><th>节点</th><th>壁垒</th><th>产业逻辑</th><th>重点观察</th><th>识别风险</th></tr></thead><tbody><tr><td>上游原材料</td><td><b>HVLP/VLP低轮廓铜箔</b></td><td><span class="tag level-S">S</span></td><td>高速信号传输下粗糙度可能影响插入损耗，是AI服务器、交换机高速板向112G/224G演进时绕不开的材料约束。</td><td>关注低轮廓铜箔认证、长单、涨价函、铜价传导和国内替代节奏。</td><td>公开信息常混用普通铜箔和高速铜箔，需区分产品结构。</td></tr>
+<tr><td>上游原材料</td><td><b>电子级玻纤布/超薄布</b></td><td><span class="tag level-S">S</span></td><td>玻纤布影响板材尺寸稳定性、介电性能和薄型化能力，高阶HDI与高速CCL都依赖稳定供应。</td><td>关注电子纱/电子布价格、库存、扩产周期和高端布认证。</td><td>大宗玻纤景气与电子级玻纤布景气可能不同步。</td></tr>
+<tr><td>上游原材料</td><td><b>Low Dk/Df树脂体系</b></td><td><span class="tag level-S">S</span></td><td>低介电常数/低损耗树脂影响高速覆铜板性能上限，属于高频高速材料的底层配方壁垒。</td><td>关注PPO/PPE、改性环氧、碳氢树脂、PTFE/LCP等配方突破与客户认证。</td><td>材料体系复杂，单一树脂供应商不等于具备完整板材能力。</td></tr>
+<tr><td>上游原材料</td><td><b>PPO/PPE/改性环氧</b></td><td><span class="tag level-A">A</span></td><td>用于低损耗、高耐热、高可靠树脂体系，国产化程度和一致性是关键。</td><td>关注树脂配方能力、与铜箔/玻纤布的体系匹配。</td><td>验证周期长，短期业绩弹性需要财报确认。</td></tr>
+<tr><td>上游原材料</td><td><b>PTFE/LCP/PI特种材料</b></td><td><span class="tag level-A">A</span></td><td>用于射频、高频、软板和高可靠场景，是PCB向高频高速和轻薄化延伸的重要材料。</td><td>关注高频板、FPC、软硬结合板客户验证。</td><td>应用分散，不能简单等同AI服务器主线。</td></tr>
+<tr><td>上游原材料</td><td><b>球形硅微粉/低损耗填料</b></td><td><span class="tag level-A">A</span></td><td>填料影响热膨胀、介电损耗和加工稳定性，是高端CCL配方的重要组成。</td><td>关注低α、低损耗、粒径分布和高端客户认证。</td><td>容易被归入泛材料题材，需核实PCB材料占比。</td></tr>
+<tr><td>上游原材料</td><td><b>电子化学品/电镀药水</b></td><td><span class="tag level-A">A</span></td><td>沉铜、电镀、蚀刻等湿制程影响孔金属化和线路良率，高纵横比孔对药水稳定性要求高。</td><td>关注VCP线配套、客户导入、国产替代和耗材价格。</td><td>需区分PCB药水与泛半导体化学品。</td></tr>
+<tr><td>上游原材料</td><td><b>阻焊油墨/感光材料</b></td><td><span class="tag level-B">B</span></td><td>影响线路保护、精细图形和可靠性，在高密度板中重要性提升。</td><td>关注LDI配套、阻焊油墨认证和高端板客户。</td><td>题材弹性可能来自光刻胶联想，需回到PCB实际收入。</td></tr>
+<tr><td>覆铜板/半固化片</td><td><b>高速高频覆铜板</b></td><td><span class="tag level-S">S</span></td><td>PCB性能的核心中间材料，AI服务器和交换机的速率升级会直接推高低损耗板材需求。</td><td>关注高速料号、客户认证、涨价、毛利率修复和海外替代。</td><td>不同等级CCL差异巨大，需看高端产品占比。</td></tr>
+<tr><td>覆铜板/半固化片</td><td><b>FR-4通用覆铜板</b></td><td><span class="tag level-C">C</span></td><td>基础材料盘子大，但技术壁垒和价格弹性弱于高速高频材料。</td><td>作为景气底部修复观察，不作为高壁垒主线核心。</td><td>涨价不等于结构升级。</td></tr>
+<tr><td>覆铜板/半固化片</td><td><b>薄型CCL/RCC</b></td><td><span class="tag level-A">A</span></td><td>HDI、任意层和轻薄化终端依赖薄型材料，工艺一致性要求高。</td><td>关注手机/AI终端修复、HDI产能稼动率。</td><td>需求波动受消费电子周期影响更明显。</td></tr>
+<tr><td>覆铜板/半固化片</td><td><b>BT/ABF载板材料</b></td><td><span class="tag level-S">S</span></td><td>IC载板连接芯片与主板，ABF更接近高性能CPU/GPU/AI芯片封装瓶颈。</td><td>关注ABF载板稼动率、封装厂资本开支、客户认证。</td><td>A股多数公司处于导入或追赶阶段，量产进度要反复验证。</td></tr>
+<tr><td>PCB制造工艺</td><td><b>LDI直接成像</b></td><td><span class="tag level-A">A</span></td><td>精细线路、HDI和高阶板提升对曝光精度和效率要求，LDI是图形转移关键设备。</td><td>关注国产LDI进入头部PCB厂、设备订单和迭代能力。</td><td>设备订单周期和PCB厂资本开支高度相关。</td></tr>
+<tr><td>PCB制造工艺</td><td><b>高精度压合</b></td><td><span class="tag level-S">S</span></td><td>高多层板层数提升后，层间对位、翘曲、CAF可靠性影响良率。</td><td>关注高层数服务器板产能、压合良率、材料匹配。</td><td>外部很难直接看到良率，需要订单、毛利和交期交叉验证。</td></tr>
+<tr><td>PCB制造工艺</td><td><b>机械钻孔/激光钻孔</b></td><td><span class="tag level-S">S</span></td><td>高纵横比孔、微盲孔和任意层互联依赖钻孔精度，是HDI和高多层板核心工序。</td><td>关注钻孔设备、钻针耗材、孔可靠性和产能瓶颈。</td><td>需区分通用钻孔和高阶微孔能力。</td></tr>
+<tr><td>PCB制造工艺</td><td><b>沉铜/电镀/VCP</b></td><td><span class="tag level-S">S</span></td><td>孔金属化和镀铜均匀性影响高纵横比板的可靠性，是良率核心变量。</td><td>关注VCP线、药水体系、孔铜可靠性和客户认证。</td><td>公开信息少，需要从设备采购和产能爬坡侧面验证。</td></tr>
+<tr><td>PCB制造工艺</td><td><b>背钻/控深/阻抗控制</b></td><td><span class="tag level-S">S</span></td><td>高速背板需要降低stub引起的信号反射，背钻和阻抗控制可能影响高速链路质量。</td><td>关注112G/224G、交换机背板、服务器主板认证。</td><td>很多PCB厂都能做背钻，但高速良率和大客户验证差异大。</td></tr>
+<tr><td>PCB制造工艺</td><td><b>AOI/AVI/电测</b></td><td><span class="tag level-A">A</span></td><td>高密度线路缺陷检测和高速电性能测试影响出货质量。</td><td>关注自动化检测升级、测试设备订单和高端板良率。</td><td>检测设备弹性通常滞后于PCB厂扩产。</td></tr>
+<tr><td>高阶PCB产品</td><td><b>AI服务器高多层板</b></td><td><span class="tag level-S">S</span></td><td>GPU服务器主板、加速卡和配套板卡带来高层数、高速材料和高可靠需求，是当前PCB关键主线之一。</td><td>关注AI服务器订单、客户结构、层数、ASP和毛利率。</td><td>热门公司容易被提前定价，需结合涨幅和业绩兑现。</td></tr>
+<tr><td>高阶PCB产品</td><td><b>高速交换机背板</b></td><td><span class="tag level-S">S</span></td><td>800G/1.6T交换机速率升级推高高速背板和线卡PCB性能门槛。</td><td>关注交换机客户、112G/224G SerDes、背板材料等级。</td><td>需区分通信板与AI网络高速板。</td></tr>
+<tr><td>高阶PCB产品</td><td><b>HDI/任意层互联</b></td><td><span class="tag level-A">A</span></td><td>高密度、小型化和终端升级需求下，HDI仍是PCB高阶化重要方向。</td><td>关注AI手机、AI PC、汽车智能化和稼动率修复。</td><td>与AI服务器主线不同，节奏更受消费周期影响。</td></tr>
+<tr><td>高阶PCB产品</td><td><b>IC载板ABF/BT</b></td><td><span class="tag level-S">S</span></td><td>封装基板技术壁垒高、认证周期长，ABF与高性能芯片封装关系密切。</td><td>关注ABF量产、客户认证、封装厂合作和资本开支。</td><td>概念热度高但兑现慢，需严控公开证据级别。</td></tr>
+<tr><td>高阶PCB产品</td><td><b>FPC/软硬结合板</b></td><td><span class="tag level-B">B</span></td><td>消费电子、汽车和可穿戴重要方向，AI硬件端侧创新可能带来增量。</td><td>关注AI终端、MR/AR、汽车电子订单。</td><td>短线弹性常受终端新品节奏影响。</td></tr>
+<tr><td>高阶PCB产品</td><td><b>汽车电子PCB</b></td><td><span class="tag level-A">A</span></td><td>电动化、智能驾驶、域控和高压化提升汽车板用量与可靠性门槛。</td><td>关注汽车客户认证、域控/毫米波雷达/高压板。</td><td>成长稳但增长弹性通常弱于AI服务器。</td></tr>
+<tr><td>高阶PCB产品</td><td><b>光模块/CPO配套PCB</b></td><td><span class="tag level-A">A</span></td><td>光模块和CPO系统仍需要高速板卡、载板和测试板，PCB与光互连升级存在交叉。</td><td>关注800G/1.6T光模块、CPO交换机、低损耗小型化。</td><td>需要区分真正配套订单与泛CPO映射。</td></tr>
+<tr><td>设备与可靠性</td><td><b>激光钻孔设备</b></td><td><span class="tag level-S">S</span></td><td>微盲孔和HDI升级对激光钻孔依赖高，是高密度互联扩产的重要设备。</td><td>关注设备订单、国产化率、头部PCB厂导入。</td><td>设备弹性受资本开支周期影响。</td></tr>
+<tr><td>设备与可靠性</td><td><b>VCP/电镀设备</b></td><td><span class="tag level-A">A</span></td><td>高纵横比孔电镀均匀性和效率影响高阶板产能释放。</td><td>关注设备交付、药水体系协同和扩产项目。</td><td>公开可见度低，需要订单侧验证。</td></tr>
+<tr><td>设备与可靠性</td><td><b>高速信号/可靠性测试</b></td><td><span class="tag level-A">A</span></td><td>高速板从能做走向能稳定交付，测试和可靠性验证是放量前置条件。</td><td>关注阻抗、插损、热循环、CAF、老化测试能力。</td><td>很多测试能力内置于PCB厂，独立设备弹性需具体核验。</td></tr>
+<tr><td>下游需求</td><td><b>AI服务器/GPU加速卡</b></td><td><span class="tag level-S">S</span></td><td>可能带动高多层板、高速材料、背钻、电镀良率和测试需求。</td><td>关注服务器ODM订单、GPU供给、云厂商资本开支。</td><td>产业链订单可能阶段性透支。</td></tr>
+<tr><td>下游需求</td><td><b>800G/1.6T交换机</b></td><td><span class="tag level-S">S</span></td><td>AI集群网络升级推高交换机背板、线卡和高速材料需求。</td><td>关注SerDes速率、交换机新品、光模块节奏。</td><td>技术路线变化会影响材料和板型节奏。</td></tr>
+<tr><td>下游需求</td><td><b>AI PC/AI手机/智能终端</b></td><td><span class="tag level-B">B</span></td><td>端侧AI带动HDI、FPC、软硬结合板需求，但线索清晰度弱于服务器。</td><td>关注终端销量、换机周期和新品结构。</td><td>需求弹性与终端销量高度绑定。</td></tr>
+<tr><td>下游需求</td><td><b>智能汽车/域控/雷达</b></td><td><span class="tag level-A">A</span></td><td>汽车电子长期增加PCB面积与可靠性要求，是稳定成长方向。</td><td>关注智能驾驶渗透、域控制器、毫米波雷达。</td><td>价格年降和认证周期影响利润弹性。</td></tr></tbody></table>
+</div></section>
+<script>bindSearch('nodeSearch','nodeTable');</script>
+</main>
+<script>
+function bindSearch(inputId, tableId) {
+  const input = document.getElementById(inputId);
+  const table = document.getElementById(tableId);
+  if (!input || !table) return;
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      tr.style.display = tr.innerText.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+}
+</script>
+</body>
+</html>

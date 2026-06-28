@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PCB高速交换机背板线专题观察</title>
+<style>
+:root { --ink:#172129; --muted:#66747c; --bg:#f4f7f8; --panel:#fff; --line:#dce5e9; --deep:#15252d; --teal:#08727c; --blue:#145c9e; --amber:#9b5a00; --red:#a93434; --violet:#654a9b; --shadow:0 8px 24px rgba(20,35,44,.08); }
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:linear-gradient(180deg,#e5edf1,#f7f9fa 260px); letter-spacing:0; }
+a { color:inherit; text-decoration:none; }
+.hero { color:#edf7f7; background:linear-gradient(135deg,#14252d,#1d3c42 58%,#163b36); padding:24px 30px 18px; position:sticky; top:0; z-index:5; box-shadow:0 10px 26px rgba(15,31,38,.22); }
+h1 { margin:0; font-size:27px; line-height:1.2; }
+.sub { margin:8px 0 0; color:#bfd2d7; line-height:1.65; max-width:1120px; }
+.nav { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+.nav a { border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.08); color:#eef7f7; padding:8px 11px; border-radius:6px; font-size:13px; }
+.nav a.active,.nav a:hover { background:rgba(255,255,255,.18); }
+main { padding:22px 30px 36px; }
+.panel { background:#fff; border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); overflow:hidden; margin-bottom:14px; }
+.panel h2 { margin:0; padding:12px 14px; font-size:17px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,#f9fbfc,#edf3f5); }
+.content { padding:14px; }
+.note { color:var(--muted); font-size:13px; line-height:1.72; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:14px; box-shadow:var(--shadow); }
+.card h3 { margin:0 0 8px; font-size:16px; }
+.card p { margin:0; color:#5c6c74; line-height:1.65; font-size:13px; }
+table { width:100%; border-collapse:collapse; font-size:13px; background:#fff; }
+th,td { border-bottom:1px solid #e6edf0; padding:9px 10px; vertical-align:top; text-align:left; line-height:1.55; }
+th { background:#eef4f6; color:#263941; font-weight:760; }
+.level { display:inline-flex; border-radius:999px; padding:2px 8px; color:#fff; font-size:12px; }
+.s { background:var(--red); } .a { background:var(--teal); } .b { background:#687782; }
+.dock { position:fixed; right:18px; bottom:18px; z-index:20; color:#fff; background:#0d6f78; border:1px solid rgba(255,255,255,.25); padding:10px 13px; border-radius:7px; box-shadow:0 10px 24px rgba(8,74,82,.24); font-weight:700; }
+@media(max-width:900px) { main,.hero { padding-left:15px; padding-right:15px; } }
+</style>
+<style id="topic-import-public-style">
+.topic-public-nav{position:sticky;top:0;z-index:20;display:flex;gap:10px;align-items:center;padding:12px 18px;background:rgba(5,9,14,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.12)}
+.topic-public-nav a{display:inline-flex;align-items:center;height:34px;padding:0 12px;border:1px solid rgba(255,255,255,.18);border-radius:8px;color:inherit;text-decoration:none;background:rgba(255,255,255,.06)}
+.topic-risk-note{max-width:1180px;margin:24px auto;padding:12px 14px;border:1px solid rgba(210,153,34,.35);background:rgba(210,153,34,.09);border-radius:8px;color:#e8d7ad;line-height:1.7;font-size:13px}
+</style>
+</head>
+<body>
+<nav class="topic-public-nav"><a href="../../index.html">网站首页</a><a href="./index.html">专题首页</a></nav>
+<section class="hero">
+  <h1>PCB高速交换机背板线专题观察</h1>
+  <p class="sub">数据截至：2026-06-26（最近A股交易日）；专题整理日期：2026-06-28。仅作研究梳理，不构成投资建议。本页涉及的强弱、等级、观察样本、发酵程度和公司映射均为产业研究标签，不代表事实认定或证券评级。</p>
+  <div class="nav"><a class="" href="PCB研究中枢.html">研究中枢</a>
+<a class="" href="PCB全产业链详细全图_产业链版.html">全链路图</a>
+<a class="" href="PCB关键约束环节总表.html">关键约束</a>
+<a class="active" href="PCB专题观察合集.html">专项合集</a>
+<a class="" href="PCB可映射公司池_名单层.html">公司池</a>
+<a class="" href="PCB公司池观察样本排序表.html">观察样本</a></div>
+</section>
+<a class="dock" href="PCB研究中枢.html">返回研究中枢</a>
+<main><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、强弱、等级、观察样本和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section>
+<section class="panel"><h2>专项定位</h2><div class="content note">
+<b>核心问题：</b>CPO与PCB的交叉点，是否会从光模块扩散到高速背板和线卡PCB。<br>
+围绕800G/1.6T交换机、112G/224G SerDes链路、背板、线卡、低损耗材料和光模块/CPO交叉需求，观察AI网络升级对PCB的拉动。
+</div></section>
+<section class="panel"><h2>关键节点</h2><div class="content">
+<table><thead><tr><th>节点</th><th>壁垒</th><th>产业逻辑</th><th>重点观察</th></tr></thead><tbody><tr><td><b>高速交换机背板</b></td><td><span class='level s'>S</span></td><td>交换机速率升级推高低损耗材料、层数、背钻和阻抗控制要求。</td><td>交换机客户、速率代际、背板材料等级、产品认证。</td></tr>
+<tr><td><b>线卡PCB</b></td><td><span class='level a'>A</span></td><td>高速端口密度提升带来高速线路与散热挑战。</td><td>端口速率、线卡架构、光模块/CPO路线配合。</td></tr>
+<tr><td><b>112G/224G SerDes链路</b></td><td><span class='level s'>S</span></td><td>高速电链路质量反过来约束PCB设计和材料。</td><td>插损、回损、眼图、背钻、低损耗材料。</td></tr>
+<tr><td><b>高速CCL/低轮廓铜箔</b></td><td><span class='level s'>S</span></td><td>交换机背板对材料损耗非常敏感。</td><td>高速料号、低轮廓铜箔、电子布和树脂配方。</td></tr>
+<tr><td><b>光模块/CPO配套PCB</b></td><td><span class='level a'>A</span></td><td>光互连升级仍需高速板卡和测试板支撑。</td><td>800G/1.6T光模块节奏、CPO交换机验证。</td></tr></tbody></table>
+</div></section>
+<div class="grid">
+  <section class="panel"><h2>有效信号</h2><div class="content note"><ul><li>交换机新品和AI网络资本开支带来高速背板订单。</li><li>PCB公司披露交换机、高速通信或低损耗板订单。</li><li>高速材料与背板PCB公司出现订单和利润同步改善。</li></ul></div></section>
+  <section class="panel"><h2>噪音与误判</h2><div class="content note"><ul><li>把传统通信板等同于AI交换机高速背板。</li><li>只讲CPO概念，不说明与PCB节点的实际关系。</li><li>将光模块公司热度简单传导到所有PCB公司。</li></ul></div></section>
+</div>
+<section class="panel"><h2>A股映射与下一步</h2><div class="content note">
+<b>映射样本：</b>沪电股份、深南电路、胜宏科技、生益科技、华正新材等。<br>
+<b>后续动作：</b>后续应建立“高速交换机PCB路线图”，把交换机代际、材料等级、背板/线卡、相关公司分层。
+</div></section>
+</main>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PCB技术路线图（产业链版）</title>
+<style>
+:root {
+  --bg:#f4f7f8; --ink:#162127; --muted:#63717a; --panel:#ffffff; --line:#dce5e9;
+  --deep:#15252d; --teal:#08747d; --green:#187044; --blue:#155a9c; --amber:#a26100;
+  --red:#aa3939; --violet:#6550a8; --soft:0 8px 24px rgba(20,35,44,.08);
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:linear-gradient(180deg,#e5edf1,#f7f9fa 260px); letter-spacing:0; }
+a { color:inherit; text-decoration:none; }
+.hero { background:linear-gradient(135deg,#14252d,#1d3c42 58%,#163b36); color:#edf8f8; padding:24px 30px 18px; position:sticky; top:0; z-index:5; box-shadow:0 10px 26px rgba(15,31,38,.22); }
+.hero h1 { margin:0; font-size:26px; line-height:1.2; }
+.meta { margin-top:8px; color:#bdd1d6; font-size:13px; line-height:1.6; }
+.nav { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+.nav a { border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.08); color:#eef7f7; padding:8px 11px; border-radius:6px; font-size:13px; }
+.nav a.active,.nav a:hover { background:rgba(255,255,255,.18); }
+.dock { position:fixed; right:18px; bottom:18px; z-index:20; color:#fff; background:#0d6f78; border:1px solid rgba(255,255,255,.25); padding:10px 13px; border-radius:7px; box-shadow:0 10px 24px rgba(8,74,82,.24); font-weight:700; }
+main { padding:22px 30px 36px; }
+.grid { display:grid; gap:14px; }
+.cols2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.cols3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; box-shadow:var(--soft); overflow:hidden; }
+.panel h2 { margin:0; padding:12px 14px; font-size:17px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,#f9fbfc,#edf3f5); }
+.panel .content { padding:14px; }
+.note { color:var(--muted); font-size:13px; line-height:1.7; }
+.tag { display:inline-flex; align-items:center; min-height:22px; padding:2px 7px; border-radius:999px; border:1px solid var(--line); background:#f7fafb; font-size:12px; color:#41525b; }
+.level-S { color:#fff; background:#9c2f2f; border-color:#9c2f2f; }
+.level-A { color:#fff; background:#0d6f78; border-color:#0d6f78; }
+.level-B { color:#fff; background:#155a9c; border-color:#155a9c; }
+.level-C { color:#fff; background:#687782; border-color:#687782; }
+.level-风险 { color:#fff; background:#8a5b00; border-color:#8a5b00; }
+table { width:100%; border-collapse:collapse; font-size:13px; background:#fff; }
+th,td { border-bottom:1px solid #e6edf0; padding:9px 10px; vertical-align:top; text-align:left; line-height:1.55; }
+th { position:sticky; top:104px; z-index:2; background:#eef4f6; color:#263941; font-weight:760; }
+tr:hover td { background:#fbfefe; }
+.stage-row { display:grid; grid-template-columns:190px 1fr; gap:12px; align-items:start; margin-bottom:12px; }
+.stage-title { background:#17303a; color:#fff; padding:12px; border-radius:8px; font-weight:800; min-height:100%; }
+.node-wrap { display:flex; gap:9px; flex-wrap:wrap; }
+.node-card { width:260px; min-height:142px; padding:11px; border:1px solid var(--line); border-radius:8px; background:#fff; box-shadow:0 3px 12px rgba(20,35,44,.05); }
+.node-card b { display:block; font-size:15px; margin-bottom:7px; }
+.node-card p { margin:7px 0 0; color:#52636c; line-height:1.55; font-size:12px; }
+.route { display:grid; grid-template-columns:170px 1fr; gap:10px; align-items:stretch; }
+.route .year { border-left:5px solid var(--teal); background:#eef8f8; padding:12px; border-radius:8px; font-weight:800; }
+.route .items { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+.route .item { background:#fff; border:1px solid var(--line); border-radius:8px; padding:11px; line-height:1.55; }
+.score { font-weight:800; color:#0d6f78; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:14px; box-shadow:var(--soft); }
+.card h3 { margin:0 0 8px; font-size:16px; }
+.card p { margin:0; color:#5c6c74; line-height:1.65; font-size:13px; }
+.search { width:100%; height:38px; border:1px solid var(--line); border-radius:7px; padding:0 12px; margin-bottom:12px; font:inherit; }
+@media (max-width:900px) {
+  main { padding:16px; }
+  .cols2,.cols3,.route .items { grid-template-columns:1fr; }
+  .stage-row,.route { grid-template-columns:1fr; }
+  .node-card { width:100%; }
+  th { position:static; }
+}
+</style>
+<style id="topic-import-public-style">
+.topic-public-nav{position:sticky;top:0;z-index:20;display:flex;gap:10px;align-items:center;padding:12px 18px;background:rgba(5,9,14,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.12)}
+.topic-public-nav a{display:inline-flex;align-items:center;height:34px;padding:0 12px;border:1px solid rgba(255,255,255,.18);border-radius:8px;color:inherit;text-decoration:none;background:rgba(255,255,255,.06)}
+.topic-risk-note{max-width:1180px;margin:24px auto;padding:12px 14px;border:1px solid rgba(210,153,34,.35);background:rgba(210,153,34,.09);border-radius:8px;color:#e8d7ad;line-height:1.7;font-size:13px}
+</style>
+</head>
+<body>
+<nav class="topic-public-nav"><a href="../../index.html">网站首页</a><a href="./index.html">专题首页</a></nav>
+<section class="hero">
+  <h1>PCB技术路线图（产业链版）</h1>
+  <div class="meta">数据截至：2026-06-26（最近A股交易日）；专题整理日期：2026-06-28　|　仅作研究梳理，不构成投资建议</div>
+  <div class="nav"><a class="" href="PCB研究中枢.html">研究中枢</a>
+<a class="" href="PCB全产业链详细全图_产业链版.html">全链路图</a>
+<a class="" href="PCB节点百科_产业链版.html">节点百科</a>
+<a class="active" href="PCB技术路线图_产业链版.html">技术路线</a>
+<a class="" href="PCB供需变化信号库_产业链版.html">供需信号</a>
+<a class="" href="PCB节点路线信号三维矩阵_产业链版.html">三维矩阵</a>
+<a class="" href="PCB可映射公司池_名单层.html">公司池</a>
+<a class="" href="PCB公司池观察样本排序表.html">观察样本</a></div>
+</section>
+<a class="dock" href="PCB研究中枢.html">返回研究中枢</a>
+<main><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、强弱、等级、观察样本和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section><section class='panel'><div class='content note'>本页涉及的强弱、等级、观察样本、发酵程度和公司映射均为产业研究标签，用于组织公开信息和后续公开资料验证，不代表事实认定、证券评级或投资建议。</div></section>
+<section class="panel"><h2>技术路线推演</h2><div class="content note">
+PCB不是单一产品涨价逻辑，而是“速率升级 - 材料升级 - 制程良率 - 产能释放”的连锁反应。
+</div></section>
+<div class="grid" style="margin-top:14px"><div class='route'><div class='year'>2024-2025</div><div class='items'><div class='item'>AI服务器主板层数提升，高速材料从高端客户向更多服务器平台扩散。</div><div class='item'>800G交换机放量，112G高速链路对低损耗材料与背钻提出更高要求。</div><div class='item'>HDI与消费电子进入修复观察期。</div></div></div><div class='route'><div class='year'>2025-2026</div><div class='items'><div class='item'>高速CCL、HVLP/VLP铜箔、电子级玻纤布形成材料涨价和国产替代观察线。</div><div class='item'>AI服务器高多层板进入产能和良率竞争，毛利率兑现成为筛选核心。</div><div class='item'>ABF载板国产化进入客户认证与小批量放量观察阶段。</div></div></div><div class='route'><div class='year'>2026-2027</div><div class='items'><div class='item'>1.6T交换机和224G链路推高高速背板、低损耗材料和测试门槛。</div><div class='item'>先进封装带动ABF/BT载板、封装基板材料和可靠性验证。</div><div class='item'>汽车智能化与端侧AI提供第二曲线，但节奏不同于服务器主线。</div></div></div></div>
+<div style="height:14px"></div>
+<section class="panel"><h2>三条主线</h2><div class="content cards">
+<div class="card"><h3>AI服务器主线</h3><p>高多层板、高速材料、背钻、电镀、测试共同影响交付能力。</p></div>
+<div class="card"><h3>高速材料主线</h3><p>高速高频CCL、HVLP/VLP铜箔、低损耗树脂、电子级玻纤布是材料侧重点。</p></div>
+<div class="card"><h3>封装与终端主线</h3><p>ABF/BT载板、HDI、FPC、汽车板提供中长期扩散方向。</p></div>
+</div></section>
+</main>
+<script>
+function bindSearch(inputId, tableId) {
+  const input = document.getElementById(inputId);
+  const table = document.getElementById(tableId);
+  if (!input || !table) return;
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      tr.style.display = tr.innerText.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+}
+</script>
+</body>
+</html>

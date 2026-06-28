@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>先进封装Chiplet可映射公司池（名单层）</title>
+<style>
+:root { --ink:#172129; --muted:#66747c; --bg:#f4f7f8; --panel:#fff; --line:#dce5e9; --deep:#15252d; --teal:#08727c; --blue:#145c9e; --amber:#9b5a00; --red:#a93434; --violet:#654a9b; --shadow:0 8px 24px rgba(20,35,44,.08); }
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:linear-gradient(180deg,#e5edf1,#f7f9fa 260px); letter-spacing:0; }
+a { color:inherit; text-decoration:none; }
+.hero { color:#edf7f7; background:linear-gradient(135deg,#14252d,#1d3c42 58%,#163b36); padding:24px 30px 18px; position:sticky; top:0; z-index:5; box-shadow:0 10px 26px rgba(15,31,38,.22); }
+h1 { margin:0; font-size:27px; line-height:1.2; }
+.sub { margin:8px 0 0; color:#bfd2d7; line-height:1.65; max-width:1120px; }
+.nav { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+.nav a { border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.08); color:#eef7f7; padding:8px 11px; border-radius:6px; font-size:13px; }
+.nav a.active,.nav a:hover { background:rgba(255,255,255,.18); }
+main { padding:22px 30px 36px; }
+.panel { background:#fff; border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); overflow:hidden; margin-bottom:14px; }
+.panel h2 { margin:0; padding:12px 14px; font-size:17px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,#f9fbfc,#edf3f5); }
+.content { padding:14px; }
+.note { color:var(--muted); font-size:13px; line-height:1.72; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+.cols3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:14px; box-shadow:var(--shadow); }
+.card h3 { margin:0 0 8px; font-size:16px; }
+.card p { margin:0; color:#5c6c74; line-height:1.65; font-size:13px; }
+table { width:100%; border-collapse:collapse; font-size:13px; background:#fff; }
+th,td { border-bottom:1px solid #e6edf0; padding:9px 10px; vertical-align:top; text-align:left; line-height:1.55; }
+th { background:#eef4f6; color:#263941; font-weight:760; }
+tr:hover td { background:#fbffff; }
+.level,.pill { display:inline-flex; border-radius:999px; padding:2px 8px; color:#fff; font-size:12px; }
+.s,.core { background:var(--red); } .a,.audit { background:var(--teal); } .b,.noise { background:#687782; } .spread { background:var(--blue); } .risk { background:var(--amber); }
+.stage-row { display:grid; grid-template-columns:180px 1fr; gap:12px; margin-bottom:12px; }
+.stage-title { background:#17303a; color:#fff; padding:12px; border-radius:8px; font-weight:800; }
+.node-wrap { display:flex; gap:9px; flex-wrap:wrap; }
+.node-card { width:270px; min-height:150px; padding:11px; border:1px solid var(--line); border-radius:8px; background:#fff; box-shadow:0 3px 12px rgba(20,35,44,.05); }
+.node-card b { display:block; font-size:15px; margin-bottom:7px; }
+.node-card p { margin:7px 0 0; color:#52636c; line-height:1.55; font-size:12px; }
+.search { width:100%; height:38px; border:1px solid var(--line); border-radius:7px; padding:0 12px; margin-bottom:12px; font:inherit; }
+.dock { position:fixed; right:18px; bottom:18px; z-index:20; color:#fff; background:#0d6f78; border:1px solid rgba(255,255,255,.25); padding:10px 13px; border-radius:7px; box-shadow:0 10px 24px rgba(8,74,82,.24); font-weight:700; }
+@media(max-width:900px) { main,.hero { padding-left:15px; padding-right:15px; } .cols3,.stage-row { grid-template-columns:1fr; } .node-card { width:100%; } }
+</style>
+<style id="topic-import-public-style">
+.topic-public-nav{position:sticky;top:0;z-index:20;display:flex;gap:10px;align-items:center;padding:12px 18px;background:rgba(5,9,14,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.12)}
+.topic-public-nav a{display:inline-flex;align-items:center;height:34px;padding:0 12px;border:1px solid rgba(255,255,255,.18);border-radius:8px;color:inherit;text-decoration:none;background:rgba(255,255,255,.06)}
+.topic-risk-note{max-width:1180px;margin:24px auto;padding:12px 14px;border:1px solid rgba(210,153,34,.35);background:rgba(210,153,34,.09);border-radius:8px;color:#e8d7ad;line-height:1.7;font-size:13px}
+</style>
+</head>
+<body>
+<nav class="topic-public-nav"><a href="../../index.html">网站首页</a><a href="./index.html">专题首页</a></nav>
+<section class="hero">
+  <h1>先进封装Chiplet可映射公司池（名单层）</h1>
+  <p class="sub">数据截至：2026-06-26（最近A股交易日）；专题整理日期：2026-06-28。仅作研究梳理，不构成投资建议。本页涉及的强弱、等级、观察样本、发酵程度和公司映射均为产业研究标签，不代表事实认定或证券评级。</p>
+  <div class="nav"><a class="" href="先进封装Chiplet研究中枢.html">研究中枢</a>
+<a class="" href="先进封装Chiplet全产业链详细全图_产业链版.html">全链路图</a>
+<a class="" href="先进封装Chiplet关键约束环节总表.html">关键约束</a>
+<a class="" href="先进封装Chiplet专题观察合集.html">专项合集</a>
+<a class="" href="先进封装Chiplet节点路线信号三维矩阵_产业链版.html">路线信号</a>
+<a class="active" href="先进封装Chiplet可映射公司池_名单层.html">公司池</a>
+<a class="" href="先进封装Chiplet公司池观察样本排序表.html">观察样本</a></div>
+</section>
+<a class="dock" href="先进封装Chiplet研究中枢.html">返回研究中枢</a>
+<main><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、强弱、等级、观察样本和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section><section class='panel'><h2>可映射公司池（名单层）</h2><div class='content'><input class='search' id='cSearch' placeholder='搜索公司、代码、节点、上市板块'><div class='note' style='margin-bottom:10px'>本页仅做产业映射，标注上市板块和产业位置，不构成投资建议。</div><table id="cTable"><thead><tr><th>公司</th><th>代码</th><th>上市板块</th><th>产业位置</th><th>对应节点</th><th>研究逻辑</th><th>研究观察样本</th></tr></thead><tbody><tr><td>长电科技</td><td>600584.SH</td><td>主板</td><td>OSAT先进封装、SiP、Fan-Out、Chiplet相关布局</td><td>OSAT先进封装产能</td><td>先进封装承接能力较直观，需跟踪高端封装收入占比和海外客户。</td><td><span class='pill s'>高</span></td></tr><tr><td>通富微电</td><td>002156.SZ</td><td>主板</td><td>AMD等客户封测协同、Chiplet封装与测试</td><td>OSAT先进封装产能</td><td>与高性能计算客户联系紧密，适合观察国产封测承接能力。</td><td><span class='pill s'>高</span></td></tr><tr><td>华天科技</td><td>002185.SZ</td><td>主板</td><td>先进封装、晶圆级封装、存储与系统级封装</td><td>OSAT先进封装产能</td><td>产能布局较广，需拆分高端封装实际收入弹性。</td><td><span class='pill a'>中高</span></td></tr><tr><td>晶方科技</td><td>603005.SH</td><td>主板</td><td>晶圆级封装、TSV、传感器封装</td><td>TSV硅通孔</td><td>TSV与WLP能力具备映射价值，但应用领域需与AI主线区分。</td><td><span class='pill b'>中</span></td></tr><tr><td>深南电路</td><td>002916.SZ</td><td>主板</td><td>封装基板、PCB、电子装联</td><td>ABF封装基板</td><td>IC载板能力突出，需关注高端载板与AI服务器需求传导。</td><td><span class='pill s'>高</span></td></tr><tr><td>兴森科技</td><td>002436.SZ</td><td>主板</td><td>IC载板、封装基板、样板快件</td><td>ABF封装基板</td><td>载板国产化重要样本，需跟踪产能爬坡和客户验证。</td><td><span class='pill s'>高</span></td></tr><tr><td>生益科技</td><td>600183.SH</td><td>主板</td><td>覆铜板、电子材料、高频高速材料</td><td>ABF封装基板</td><td>上游材料映射基板升级，需区分ABF树脂相关能力。</td><td><span class='pill b'>中</span></td></tr><tr><td>华正新材</td><td>603186.SH</td><td>主板</td><td>高频高速材料、覆铜板、封装相关材料</td><td>ABF封装基板</td><td>具备材料扩散观察价值，需核实封装基板链条占比。</td><td><span class='pill b'>中</span></td></tr><tr><td>德邦科技</td><td>688035.SH</td><td>科创板</td><td>电子级胶粘剂、封装材料、底填胶相关</td><td>底填胶Underfill</td><td>材料国产替代弹性较强，需看客户验证和复购。</td><td><span class='pill s'>高</span></td></tr><tr><td>华海诚科</td><td>688535.SH</td><td>科创板</td><td>环氧塑封料、先进封装材料</td><td>环氧塑封料EMC</td><td>EMC材料卡口清晰，重点看高端封装产品等级和客户结构。</td><td><span class='pill s'>高</span></td></tr><tr><td>联瑞新材</td><td>688300.SH</td><td>科创板</td><td>球形硅微粉、功能性填料</td><td>环氧塑封料EMC</td><td>EMC上游关键填料，受先进封装低翘曲和高可靠要求带动。</td><td><span class='pill a'>中高</span></td></tr><tr><td>飞凯材料</td><td>300398.SZ</td><td>创业板</td><td>电子化学品、先进封装材料、光刻配套材料</td><td>临时键合/解键合材料</td><td>材料平台型公司，需验证先进封装材料收入兑现。</td><td><span class='pill a'>中高</span></td></tr><tr><td>雅克科技</td><td>002409.SZ</td><td>主板</td><td>半导体材料、前驱体、电子材料</td><td>材料耗材复购</td><td>材料平台属性强，先进封装直接映射需进一步拆分。</td><td><span class='pill b'>中</span></td></tr><tr><td>北方华创</td><td>002371.SZ</td><td>主板</td><td>刻蚀、沉积、清洗等半导体设备</td><td>电镀/CMP/清洗设备</td><td>设备平台型核心公司，先进封装设备占比需单独确认。</td><td><span class='pill a'>中高</span></td></tr><tr><td>中微公司</td><td>688012.SH</td><td>科创板</td><td>刻蚀设备、MOCVD等</td><td>TSV硅通孔</td><td>深硅刻蚀存在工艺映射，需看先进封装订单证据。</td><td><span class='pill b'>中</span></td></tr><tr><td>芯碁微装</td><td>688630.SH</td><td>科创板</td><td>直写光刻设备、PCB和泛半导体曝光</td><td>RDL重布线</td><td>RDL/载板图形化有映射价值，需区分应用场景。</td><td><span class='pill a'>中高</span></td></tr><tr><td>劲拓股份</td><td>300400.SZ</td><td>创业板</td><td>电子热工、半导体封装设备</td><td>先进封装设备</td><td>设备弹性取决于先进封装订单和验收节奏。</td><td><span class='pill b'>中</span></td></tr><tr><td>光力科技</td><td>300480.SZ</td><td>创业板</td><td>半导体划片、切割及检测相关设备</td><td>先进封装设备</td><td>后道设备映射较清晰，需关注高端封装客户导入。</td><td><span class='pill b'>中</span></td></tr><tr><td>华峰测控</td><td>688200.SH</td><td>科创板</td><td>半导体测试设备</td><td>高速ATE测试</td><td>测试平台国产化核心样本，需看高端SOC/功率/模拟平台拓展。</td><td><span class='pill a'>中高</span></td></tr><tr><td>长川科技</td><td>300604.SZ</td><td>创业板</td><td>测试机、分选机、自动化测试设备</td><td>高速ATE测试</td><td>测试设备国产替代代表，需看先进封装相关订单弹性。</td><td><span class='pill a'>中高</span></td></tr><tr><td>精测电子</td><td>300567.SZ</td><td>创业板</td><td>半导体量测检测、显示检测</td><td>X-ray/SAM/AOI检测</td><td>检测量测映射良率爬坡，需拆分半导体业务占比。</td><td><span class='pill b'>中</span></td></tr><tr><td>和林微纳</td><td>688661.SH</td><td>科创板</td><td>MEMS探针、测试探针</td><td>探针卡与晶圆测试</td><td>KGD和晶圆测试前移带动探针需求，需看高端客户导入。</td><td><span class='pill a'>中高</span></td></tr><tr><td>飞荣达</td><td>300602.SZ</td><td>创业板</td><td>导热、电磁屏蔽和散热材料</td><td>热界面材料与散热</td><td>AI服务器热管理扩散样本，需拆分数据中心收入。</td><td><span class='pill b'>中</span></td></tr><tr><td>中石科技</td><td>300684.SZ</td><td>创业板</td><td>导热材料、石墨散热材料</td><td>热界面材料与散热</td><td>热管理受益于AI功耗上升，需确认服务器链条占比。</td><td><span class='pill b'>中</span></td></tr></tbody></table></div></section><script>bindSearch('cSearch','cTable');</script></main>
+<script>
+function bindSearch(inputId, tableId) {
+  const input = document.getElementById(inputId);
+  const table = document.getElementById(tableId);
+  if (!input || !table) return;
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      tr.style.display = tr.innerText.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+}
+</script>
+</body>
+</html>
