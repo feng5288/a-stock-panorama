@@ -1,1 +1,564 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>首页1-9本地完整演示版</title><script src="core9_local_full_demo_v1.js"></script><style>:root{--ink:#111827;--muted:#667085;--line:#e5e7eb;--bg:#f7f8fb;--red:#b91c1c;--blue:#1d4ed8;--green:#166534;--amber:#9a3412}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif;color:var(--ink)}header{padding:24px 28px;background:#111827;color:white}h1{margin:0 0 8px;font-size:26px}.sub{color:#d1d5db;font-size:13px;line-height:1.6}main{padding:22px 28px 48px}.nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.nav a{background:white;border:1px solid var(--line);border-radius:8px;padding:8px 10px;text-decoration:none;color:#111827;font-size:13px}.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 18px}.metric{background:white;border:1px solid var(--line);border-radius:8px;padding:12px}.metric b{display:block;font-size:22px}.metric span{font-size:12px;color:var(--muted)}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 16px}.toolbar input,.toolbar select{height:34px;border:1px solid var(--line);border-radius:6px;background:white;padding:0 10px}.concept{background:white;border:1px solid var(--line);border-radius:8px;margin-bottom:12px;overflow:hidden}.concept h2{margin:0;padding:14px 16px;background:#f3f4f6;font-size:18px}.stocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;padding:12px}.stock{border:1px solid var(--line);border-radius:8px;padding:10px;background:#fff}.stock b{font-size:14px}.tag{display:inline-flex;border-radius:999px;padding:3px 8px;font-size:12px;background:#f3f4f6;color:#374151}.new{background:#fee2e2;color:#991b1b}.v2{background:#dcfce7;color:#166534}.old{background:#fff7ed;color:#9a3412}.none{background:#f3f4f6;color:#374151}.small{font-size:12px;color:var(--muted);line-height:1.45}table{width:100%;border-collapse:collapse;background:white}th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;font-size:13px;vertical-align:top}th{background:#f3f4f6}.card{background:white;border:1px solid var(--line);border-radius:8px;padding:14px;margin-bottom:12px}</style></head><body><header><h1>首页1-9本地完整演示版</h1><div id="sub" class="sub"></div></header><main><div class="nav"><a href="core9_local_full_demo.html?v=demo1">本地完整演示版</a><a href="core9_v2_report_batch_001_generated.html?v=r1">batch_001报告</a><a href="core9_v2_report_batch_001_qc.html?v=q1">质检</a><a href="core9_v2_report_batches_plan.html?v=plan1">后续批次</a><a href="core9_classification_recalibration_after_batch001.html?v=rec1">分类校准</a></div><div id="app"></div></main><script>function esc(v){return String(v??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]))}function metric(l,v){return '<div class="metric"><b>'+esc(v)+'</b><span>'+esc(l)+'</span></div>'}function cls(p){return p==='new_batch001'?'new':p==='v2_existing'?'v2':(p==='legacy_fallback'||p==='legacy_data')?'old':'none'}function label(p,s){return '<span class="tag '+cls(p)+'">'+esc(s)+'</span>'}const d=CORE9_LOCAL_FULL_DEMO_V1;document.getElementById('sub').textContent=d.purpose+' · '+d.generated_at;const app=document.getElementById('app');function render(){const cid=document.getElementById('concept')?.value||'全部';const q=(document.getElementById('q')?.value||'').trim();let concepts=d.concepts.filter(c=>cid==='全部'||c.concept_id===cid);app.querySelector('#list').innerHTML=concepts.map(c=>{let rows=c.rows.filter(r=>!q||r.code.includes(q)||r.name.includes(q)||r.concept_name.includes(q));if(!rows.length)return'';return '<section class="concept"><h2>'+esc(c.seq)+'. '+esc(c.concept_name)+' <span class="small">新版草稿 '+c.counts.new_batch001+' / 已有新版 '+c.counts.v2_existing+' / 旧版兜底 '+c.counts.legacy_fallback+'</span></h2><div class="stocks">'+rows.map(r=>'<div class="stock"><b>'+esc(r.code)+' '+esc(r.name)+'</b><br>'+label(r.report_priority,r.local_report_status)+'<div class="small">'+esc(r.source_type||'')+' · '+esc(r.source_decision||'')+'</div>'+(r.local_report_link?'<a href="'+esc(r.local_report_link)+'" target="_blank">查看报告</a>':'<span class="small">暂未生成</span>')+'</div>').join('')+'</div></section>';}).join('')}app.innerHTML='<div class="summary">'+metric('概念',d.summary.concepts)+metric('唯一公司',d.summary.unique_companies)+metric('batch_001报告',d.summary.batch001_reports)+metric('质检通过',d.summary.qc_pass)+metric('旧版兜底',d.summary.legacy_fallback)+'</div><div class="toolbar"><select id="concept"><option value="全部">全部概念</option>'+d.concepts.map(c=>'<option value="'+esc(c.concept_id)+'">'+esc(c.seq)+'. '+esc(c.concept_name)+'</option>').join('')+'</select><input id="q" placeholder="搜索代码/名称"></div><div id="list"></div>';document.getElementById('concept').addEventListener('change',render);document.getElementById('q').addEventListener('input',render);render();</script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>A股全景树 - 核心概念V2演示版</title>
+  <script src="core9_local_full_demo_v1.js"></script>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9e0ea;
+      --bg: #f4f6f9;
+      --panel: #ffffff;
+      --red: #b42318;
+      --red-soft: #fee4e2;
+      --blue: #175cd3;
+      --blue-soft: #dbeafe;
+      --green: #067647;
+      --green-soft: #dcfae6;
+      --amber: #b54708;
+      --amber-soft: #fef0c7;
+      --slate: #344054;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 14px;
+    }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      background: #0f172a;
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: #0f172a;
+      font-weight: 900;
+    }
+    .topnav { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+    .topnav a {
+      color: #dbeafe;
+      border: 1px solid rgba(219,234,254,.25);
+      padding: 7px 10px;
+      border-radius: 7px;
+    }
+    .topnav a.primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+    .hero {
+      background: #111827;
+      color: #fff;
+      padding: 26px 28px 20px;
+    }
+    .hero-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(320px, 1fr) minmax(360px, 540px);
+      gap: 28px;
+      align-items: end;
+    }
+    .eyebrow { color: #bfdbfe; font-size: 13px; margin-bottom: 8px; }
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+    .hero-copy {
+      color: #d1d5db;
+      line-height: 1.75;
+      font-size: 15px;
+      margin-top: 12px;
+      max-width: 760px;
+    }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .metric {
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 78px;
+    }
+    .metric b { display: block; font-size: 26px; line-height: 1.1; }
+    .metric span { display: block; margin-top: 6px; color: #cbd5e1; font-size: 12px; }
+    main { max-width: 1440px; margin: 0 auto; padding: 20px 28px 44px; }
+    .control-row {
+      display: grid;
+      grid-template-columns: minmax(240px, 360px) minmax(220px, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    select, input {
+      height: 38px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 7px;
+      padding: 0 12px;
+      color: var(--ink);
+      outline: none;
+    }
+    input { width: 100%; }
+    .legend { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .badge.new { color: var(--red); background: var(--red-soft); }
+    .badge.v2 { color: var(--green); background: var(--green-soft); }
+    .badge.old { color: var(--amber); background: var(--amber-soft); }
+    .badge.none { color: var(--slate); background: #eef2f7; }
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .concept-tile {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      cursor: pointer;
+      min-height: 164px;
+      transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+    }
+    .concept-tile:hover, .concept-tile.active {
+      transform: translateY(-1px);
+      border-color: #94a3b8;
+      box-shadow: 0 10px 28px rgba(15,23,42,.10);
+    }
+    .concept-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .concept-no {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: #0f172a;
+      color: #fff;
+      font-weight: 900;
+      font-size: 19px;
+      flex: 0 0 auto;
+    }
+    .concept-title { min-width: 0; }
+    .concept-title h2 { margin: 0; font-size: 20px; line-height: 1.22; letter-spacing: 0; }
+    .concept-title p { margin: 5px 0 0; color: var(--muted); line-height: 1.5; font-size: 12px; }
+    .progress-line {
+      height: 8px;
+      display: flex;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #edf2f7;
+      margin: 12px 0;
+    }
+    .progress-line i { display: block; height: 100%; }
+    .progress-line .p-new { background: #d92d20; }
+    .progress-line .p-v2 { background: #16a34a; }
+    .progress-line .p-old { background: #f59e0b; }
+    .tile-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .tile-stat b { display: block; font-size: 17px; }
+    .tile-stat span { color: var(--muted); font-size: 11px; }
+    .showcase {
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+    .side-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      position: sticky;
+      top: 14px;
+    }
+    .side-panel h3 { margin: 0 0 10px; font-size: 16px; }
+    .side-list { display: grid; gap: 8px; }
+    .side-item {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 9px;
+      background: #fff;
+    }
+    .side-item b { display: block; font-size: 13px; }
+    .side-item span { display: block; color: var(--muted); font-size: 12px; margin-top: 3px; }
+    .main-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .panel-head {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #fff;
+    }
+    .panel-head h2 { margin: 0; font-size: 22px; }
+    .panel-head p { margin: 4px 0 0; color: var(--muted); line-height: 1.55; }
+    .stock-table { width: 100%; border-collapse: collapse; }
+    .stock-table th, .stock-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+    }
+    .stock-table th {
+      background: #f8fafc;
+      color: #475467;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    .stock-table tr:hover td { background: #fbfdff; }
+    .stock-name b { display: block; font-size: 14px; color: var(--ink); }
+    .stock-name span { color: var(--muted); font-size: 12px; }
+    .score-pill {
+      min-width: 42px;
+      height: 28px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      background: #475467;
+    }
+    .score-pill.high { background: #b42318; }
+    .score-pill.mid { background: #b54708; }
+    .score-pill.low { background: #175cd3; }
+    .report-link {
+      color: #175cd3;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .empty {
+      padding: 42px 16px;
+      color: var(--muted);
+      text-align: center;
+    }
+    @media (max-width: 1080px) {
+      .hero-inner, .showcase { grid-template-columns: 1fr; }
+      .concept-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .side-panel { position: static; }
+    }
+    @media (max-width: 720px) {
+      .topbar { height: auto; padding: 12px 16px; align-items: flex-start; gap: 10px; flex-direction: column; }
+      .topnav { width: 100%; overflow-x: auto; padding-bottom: 2px; }
+      .hero { padding: 22px 16px 18px; }
+      main { padding: 16px; }
+      .hero-metrics, .concept-grid, .control-row { grid-template-columns: 1fr; }
+      .legend { justify-content: flex-start; }
+      .stock-table { min-width: 760px; }
+      .main-panel { overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-mark">A</div>
+      <div>A股全景树</div>
+    </div>
+    <nav class="topnav">
+      <a class="primary" href="core9_local_full_demo.html?v=product1">核心概念V2</a>
+      <a href="core9_v2_report_batch_001_generated.html?v=r1">V2报告</a>
+      <a href="core9_v2_report_batch_001_qc.html?v=q1">质检</a>
+      <a href="core9_v2_report_batches_plan.html?v=plan1">批次计划</a>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">核心概念展示版 · 新版报告优先 · 旧版报告兜底</div>
+        <h1>首页 1-9 核心概念产品化展示</h1>
+        <div class="hero-copy">
+          先展示主干概念，再进入对应公司池。每家公司按报告状态、概念评分和分类来源排序，新版 V2 报告优先打开，没有新版时保留旧版兜底。
+        </div>
+      </div>
+      <div class="hero-metrics" id="heroMetrics"></div>
+    </div>
+  </section>
+
+  <main>
+    <div class="control-row">
+      <select id="conceptSelect"></select>
+      <input id="searchBox" placeholder="搜索代码、公司名称或概念">
+      <div class="legend">
+        <span class="badge new">新版草稿</span>
+        <span class="badge v2">已有新版</span>
+        <span class="badge old">旧版兜底</span>
+        <span class="badge none">暂未生成</span>
+      </div>
+    </div>
+
+    <section class="concept-grid" id="conceptGrid"></section>
+
+    <section class="showcase">
+      <aside class="side-panel">
+        <h3>优先查看</h3>
+        <div class="side-list" id="priorityList"></div>
+      </aside>
+
+      <section class="main-panel">
+        <div class="panel-head">
+          <div>
+            <h2 id="panelTitle"></h2>
+            <p id="panelSub"></p>
+          </div>
+          <span class="badge new" id="panelBadge"></span>
+        </div>
+        <div id="stockList"></div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const data = CORE9_LOCAL_FULL_DEMO_V1;
+    const $ = (id) => document.getElementById(id);
+
+    function esc(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (s) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#39;"
+      }[s]));
+    }
+
+    function statusClass(priority) {
+      if (priority === "new_batch001") return "new";
+      if (priority === "v2_existing") return "v2";
+      if (priority === "legacy_fallback" || priority === "legacy_data") return "old";
+      return "none";
+    }
+
+    function statusLabel(row) {
+      return `<span class="badge ${statusClass(row.report_priority)}">${esc(row.local_report_status)}</span>`;
+    }
+
+    function scoreClass(score) {
+      const n = Number(score || 0);
+      if (n >= 50) return "high";
+      if (n >= 10) return "mid";
+      return "low";
+    }
+
+    function metric(label, value) {
+      return `<div class="metric"><b>${esc(value)}</b><span>${esc(label)}</span></div>`;
+    }
+
+    function reportWeight(row) {
+      if (row.report_priority === "new_batch001") return 4000;
+      if (row.report_priority === "v2_existing") return 3000;
+      if (row.report_priority === "legacy_fallback" || row.report_priority === "legacy_data") return 1000;
+      return 0;
+    }
+
+    function sortedRows(rows) {
+      return [...rows].sort((a, b) => {
+        const aw = reportWeight(a) + Number(a.score || 0);
+        const bw = reportWeight(b) + Number(b.score || 0);
+        return bw - aw || String(a.code).localeCompare(String(b.code));
+      });
+    }
+
+    function conceptDescription(concept) {
+      const total = concept.rows.length;
+      const fresh = concept.counts.new_batch001 + concept.counts.v2_existing;
+      return `${total} 个公司关系，${fresh} 个已有新版或本轮草稿，${concept.counts.legacy_fallback} 个旧版兜底。`;
+    }
+
+    function renderHero() {
+      $("heroMetrics").innerHTML = [
+        metric("核心概念", data.summary.concepts),
+        metric("唯一公司", data.summary.unique_companies),
+        metric("batch_001 V2报告", data.summary.batch001_reports),
+        metric("质检通过", data.summary.qc_pass)
+      ].join("");
+    }
+
+    function renderSelect() {
+      $("conceptSelect").innerHTML = [
+        `<option value="all">全部核心概念</option>`,
+        ...data.concepts.map((c) => `<option value="${esc(c.concept_id)}">${esc(c.seq)}. ${esc(c.concept_name)}</option>`)
+      ].join("");
+    }
+
+    function renderTiles(activeId) {
+      $("conceptGrid").innerHTML = data.concepts.map((c) => {
+        const total = Math.max(c.rows.length, 1);
+        const newPct = Math.round(c.counts.new_batch001 / total * 100);
+        const v2Pct = Math.round(c.counts.v2_existing / total * 100);
+        const oldPct = Math.max(0, 100 - newPct - v2Pct);
+        return `
+          <article class="concept-tile ${activeId === c.concept_id ? "active" : ""}" data-concept="${esc(c.concept_id)}">
+            <div class="concept-head">
+              <div class="concept-no">${esc(c.seq)}</div>
+              <div class="concept-title">
+                <h2>${esc(c.concept_name)}</h2>
+                <p>${esc(conceptDescription(c))}</p>
+              </div>
+            </div>
+            <div class="progress-line">
+              <i class="p-new" style="width:${newPct}%"></i>
+              <i class="p-v2" style="width:${v2Pct}%"></i>
+              <i class="p-old" style="width:${oldPct}%"></i>
+            </div>
+            <div class="tile-stats">
+              <div class="tile-stat"><b>${esc(c.rows.length)}</b><span>公司关系</span></div>
+              <div class="tile-stat"><b>${esc(c.counts.new_batch001)}</b><span>本轮V2</span></div>
+              <div class="tile-stat"><b>${esc(c.counts.v2_existing)}</b><span>已有新版</span></div>
+              <div class="tile-stat"><b>${esc(c.counts.legacy_fallback)}</b><span>旧版兜底</span></div>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      document.querySelectorAll(".concept-tile").forEach((tile) => {
+        tile.addEventListener("click", () => {
+          $("conceptSelect").value = tile.dataset.concept;
+          render();
+          document.querySelector(".showcase").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    }
+
+    function filteredConcepts() {
+      const selected = $("conceptSelect").value;
+      if (selected === "all") return data.concepts;
+      return data.concepts.filter((c) => c.concept_id === selected);
+    }
+
+    function filteredRows(concepts) {
+      const keyword = $("searchBox").value.trim();
+      return sortedRows(concepts.flatMap((c) => c.rows)).filter((row) => {
+        if (!keyword) return true;
+        return String(row.code).includes(keyword)
+          || String(row.name).includes(keyword)
+          || String(row.concept_name).includes(keyword);
+      });
+    }
+
+    function renderPriority(rows) {
+      const priority = rows
+        .filter((r) => r.report_priority === "new_batch001" || r.report_priority === "v2_existing")
+        .slice(0, 8);
+      $("priorityList").innerHTML = priority.length
+        ? priority.map((r) => `
+          <a class="side-item" href="${esc(r.local_report_link || "#")}" target="_blank">
+            <b>${esc(r.code)} ${esc(r.name)}</b>
+            <span>${esc(r.concept_name)} · ${esc(r.local_report_status)}</span>
+          </a>
+        `).join("")
+        : `<div class="side-item"><b>暂无新版报告</b><span>当前筛选下还没有可优先查看的新版报告。</span></div>`;
+    }
+
+    function renderStocks(rows, concepts) {
+      const selected = $("conceptSelect").value;
+      const title = selected === "all"
+        ? "全部核心概念公司池"
+        : `${concepts[0].seq}. ${concepts[0].concept_name}`;
+      $("panelTitle").textContent = title;
+      $("panelSub").textContent = selected === "all"
+        ? "按新版草稿、已有新版、旧版兜底和评分综合排序。"
+        : conceptDescription(concepts[0]);
+      $("panelBadge").textContent = `${rows.length} 条结果`;
+
+      if (!rows.length) {
+        $("stockList").innerHTML = `<div class="empty">没有找到匹配公司。</div>`;
+        return;
+      }
+
+      $("stockList").innerHTML = `
+        <table class="stock-table">
+          <thead>
+            <tr>
+              <th>公司</th>
+              <th>概念</th>
+              <th>评分</th>
+              <th>报告状态</th>
+              <th>分类来源</th>
+              <th>报告入口</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((r) => `
+              <tr>
+                <td class="stock-name"><b>${esc(r.name)}</b><span>${esc(r.code)}</span></td>
+                <td>${esc(r.concept_seq)}. ${esc(r.concept_name)}</td>
+                <td><span class="score-pill ${scoreClass(r.score)}">${esc(r.score ?? 0)}</span></td>
+                <td>${statusLabel(r)}</td>
+                <td><span class="small">${esc(r.source_type || "")}<br>${esc(r.source_decision || "")}</span></td>
+                <td>
+                  ${r.local_report_link
+                    ? `<a class="report-link" href="${esc(r.local_report_link)}" target="_blank">查看报告</a>`
+                    : `<span class="small">暂未生成</span>`}
+                </td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      `;
+    }
+
+    function render() {
+      const concepts = filteredConcepts();
+      const activeId = $("conceptSelect").value === "all" ? "" : $("conceptSelect").value;
+      const rows = filteredRows(concepts);
+      renderTiles(activeId);
+      renderPriority(rows);
+      renderStocks(rows, concepts);
+    }
+
+    renderHero();
+    renderSelect();
+    $("conceptSelect").addEventListener("change", render);
+    $("searchBox").addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>
