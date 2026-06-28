@@ -10,7 +10,7 @@
 </style>
 </head>
 <body>
-<header class="top"><div class="top-inner"><div class="brand"><div class="brand-mark">A</div><div>A股全景树<small>概念池 · 公司报告 · 动态分类</small></div></div><div class="search"><input id="search" placeholder="搜索公司、代码或概念，例如 PCB、MLCC、液冷、光纤、火电"></div><nav class="nav"><a href="core9.html?v=darkpool1">概念首页</a><a href="v2_report_samples_public.html?v=samples1">深度报告</a><a href="core9_v2_report_batches_plan.html?v=plan1">更新进度</a></nav></div></header>
+<header class="top"><div class="top-inner"><div class="brand"><div class="brand-mark">A</div><div>A股全景树<small>概念池 · 公司报告 · 动态分类</small></div></div><div class="search"><input id="search" placeholder="搜索公司、代码或概念，例如 PCB、MLCC、液冷、光纤、火电"></div><nav class="nav"><a href="core9.html?v=embedded_final1">概念首页</a><a href="v2_report_samples_public.html?v=samples1">深度报告</a><a href="core9_v2_report_batches_plan.html?v=plan1">更新进度</a></nav></div></header>
 <main class="wrap">
 <section class="hero"><div class="panel hero-main"><span class="eyebrow">深色产品版</span><h1>先看核心主线，也能直接浏览完整概念池。</h1><p>上方保留 1-9 核心概念主线，下面把 1600+ 公司对应的完整概念池也放出来。已经重点处理的概念优先展示；暂未完成 V2 深度处理的概念先以旧报告和分类标签承接，后续再逐批校准。</p><div class="kpis" id="kpis"></div></div><aside class="panel"><h2 class="section-title">重点公司</h2><div class="side-list" id="hotList"></div></aside></section>
 <section class="layout"><section class="panel"><div class="toolbar"><div class="crumb" id="crumb"></div><button class="btn" id="homeBtn">返回概念首页</button></div><div id="mainView"></div></section><aside class="panel"><h2 class="section-title">当前层级</h2><div class="node-detail" id="nodeDetail"></div><div class="legend"><div><span class="dot red"></span>红色：高评分 / 龙头候选</div><div><span class="dot blue"></span>蓝色：已有新版或重点入口</div><div><span class="dot gold"></span>金色：待补证据或待 V2</div><div><span class="dot gray"></span>灰色：旧报告兜底或普通节点</div></div></aside></section>
@@ -44,3 +44,4 @@ function goHome(){query='';$('search').value='';renderHome()} $('homeBtn').addEv
 </script>
 </body>
 </html>
+
