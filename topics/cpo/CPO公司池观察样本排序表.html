@@ -1,0 +1,834 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPO公司池观察样本排序表</title>
+<style>
+:root { --ink:#172026; --muted:#69757f; --line:#dfe6eb; --bg:#f6f8f9; --panel:#ffffff; --blue:#145c9e; --green:#16704a; --amber:#a45c00; --red:#ad2f2f; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:var(--bg); }
+header { padding:24px 28px 18px; background:#fff; border-bottom:1px solid var(--line); position:sticky; top:0; z-index:5; }
+h1 { margin:0 0 8px; font-size:26px; letter-spacing:0; }
+.subtitle { margin:0; color:var(--muted); line-height:1.55; max-width:1180px; }
+.toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:16px; }
+button,input { height:34px; border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:6px; padding:0 12px; font:inherit; }
+button { cursor:pointer; }
+button.active { background:var(--ink); color:#fff; border-color:var(--ink); }
+.search { min-width:250px; flex:1; max-width:430px; }
+main { padding:18px 28px 36px; }
+.stats { display:grid; grid-template-columns:repeat(7,minmax(110px,1fr)); gap:10px; margin-bottom:16px; }
+.stat { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px 16px; }
+.stat b { display:block; font-size:24px; }
+.stat span { color:var(--muted); font-size:13px; }
+.notice { background:#fff; border:1px solid var(--line); border-left:4px solid var(--blue); padding:12px 14px; border-radius:6px; margin-bottom:16px; color:#38454f; line-height:1.55; }
+.layout { display:grid; grid-template-columns:minmax(360px,520px) 1fr; gap:16px; align-items:start; }
+.card-list { display:flex; flex-direction:column; gap:12px; }
+.company-card { display:grid; grid-template-columns:54px 1fr; background:#fff; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+.rank { background:#eef3f6; display:flex; align-items:center; justify-content:center; font-weight:700; color:#31414d; }
+.card-main { padding:14px; }
+.card-head { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+h3 { margin:0; font-size:18px; }
+.card-head p { margin:4px 0 0; color:var(--muted); font-size:13px; }
+.score { min-width:58px; text-align:right; }
+.score b { display:block; font-size:22px; }
+.score span { color:var(--muted); font-size:12px; }
+.tags { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0; }
+.pill { display:inline-flex; align-items:center; min-height:24px; padding:3px 8px; border-radius:999px; background:#eef2f4; font-size:12px; white-space:nowrap; }
+.level-hot { background:#e5f3ec; color:var(--green); }
+.level-watch { background:#fff1d8; color:var(--amber); }
+.level-low { background:#eef2f4; color:#52616c; }
+.risk-high { background:#fde8e8; color:var(--red); }
+.risk-midhi { background:#fff1d8; color:var(--amber); }
+.risk-mid { background:#e9f0f8; color:var(--blue); }
+.risk-low { background:#e5f3ec; color:var(--green); }
+.node-line { display:grid; grid-template-columns:44px 1fr; gap:6px; font-size:13px; margin:6px 0; line-height:1.45; }
+.metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin:10px 0; }
+.metrics div { background:#f6f8f9; border:1px solid #e8eef2; border-radius:6px; padding:8px 6px; min-height:54px; }
+.metrics span { display:block; color:var(--muted); font-size:11px; }
+.metrics b { font-size:13px; }
+.reason,.evidence { margin:8px 0 0; line-height:1.55; font-size:13px; color:#35434d; }
+.table-panel { background:#fff; border:1px solid var(--line); border-radius:8px; overflow:auto; max-height:calc(100vh - 230px); }
+table { width:100%; border-collapse:collapse; font-size:13px; min-width:1220px; }
+th { position:sticky; top:0; background:#f0f4f6; z-index:1; text-align:left; color:#2d3c46; }
+th,td { border-bottom:1px solid #e8eef2; padding:9px 10px; vertical-align:top; }
+td.name { font-weight:700; }
+td.name small { display:block; color:var(--muted); font-weight:400; margin-top:2px; }
+.risk-text { min-width:230px; color:#374650; }
+.hidden { display:none!important; }
+footer { padding:18px 28px 28px; color:var(--muted); font-size:13px; }
+@media (max-width:980px) { header,main,footer { padding-left:14px; padding-right:14px; } .stats { grid-template-columns:repeat(2,1fr); } .layout { grid-template-columns:1fr; } .table-panel { max-height:none; } .metrics { grid-template-columns:repeat(2,1fr); } }
+</style>
+
+<style id="cpo-visual-polish">
+:root{letter-spacing:0!important}
+body{letter-spacing:0!important}
+main{padding-top:14px!important;padding-bottom:28px!important}
+header:not(.cpo-public-top),.hero{box-shadow:0 8px 24px rgba(0,0,0,.14)!important}
+.topbar{padding:10px 16px!important;gap:10px!important}
+h1{font-size:clamp(22px,3vw,36px)!important;line-height:1.12!important}
+h2{font-size:18px!important;margin-bottom:10px!important}
+h3{font-size:15px!important}
+.subtitle,.sub,header p{line-height:1.5!important;font-size:13px!important;margin-top:6px!important}
+.panel,.card,.metric,.chain-wrap,aside,.table-section,.node-card,.stage{border-radius:8px!important}
+.panel{margin-bottom:10px!important}.panel h2{padding:9px 12px!important}.content{padding:10px!important}
+.grid,.cards,.score-strip{gap:9px!important}.card{min-height:auto!important;padding:10px!important}.card h3{margin-bottom:6px!important}.card p,.desc{line-height:1.45!important}
+.stage{min-height:170px!important;padding:10px!important}.stage h3{min-height:auto!important}.node-card{min-height:92px!important;padding:9px!important}
+.chain{padding:12px!important;gap:8px!important}.chain-wrap{max-height:70vh!important}
+.score-strip{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))!important;margin-bottom:10px!important}.metric{min-height:58px!important;padding:9px!important}.metric .value{font-size:18px!important}
+.layout{gap:12px!important}.detail-body{gap:8px!important;padding:11px!important}.field{padding-bottom:7px!important}.detail-head{padding:12px!important}.detail-title{font-size:17px!important}
+table{font-size:12px!important}th,td{padding:7px 8px!important;line-height:1.42!important}
+.risk-note{max-width:1240px!important;margin:12px auto!important;padding:9px 11px!important}
+.cpo-public-top{position:sticky;top:0;z-index:9999;background:rgba(8,13,18,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.22);padding:8px 14px;display:flex;gap:8px;align-items:center;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+.cpo-public-top__title{color:#eef7fb;font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cpo-public-top__links{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.cpo-public-top a{height:28px;line-height:26px;border:1px solid rgba(255,255,255,.18);border-radius:7px;padding:0 9px;color:#d8edf2;background:rgba(255,255,255,.06);text-decoration:none;font-size:12px}
+.cpo-public-top a:hover{border-color:#61d7c8;color:#fff}
+@media(max-width:900px){main{padding:12px!important}.stage{min-height:auto!important}.topbar{grid-template-columns:1fr!important}.cpo-public-top{align-items:flex-start;flex-direction:column}.cpo-public-top__links{justify-content:flex-start}}
+</style>
+</head>
+<body>
+<header class="cpo-public-top"><div class="cpo-public-top__title">CPO公司池观察样本排序表</div><nav class="cpo-public-top__links"><a href="../../core9_local_review.html?v=cpo">网站首页</a><a href="./index.html?v=visual2">CPO中枢</a><a href="./CPO全产业链详细全图_无公司版.html?v=visual2">产业链图</a><a href="./CPO关键约束环节总表.html?v=visual2">关键约束</a><a href="./CPO公司资料池.html?v=visual2">公司资料</a></nav></header>
+<header>
+  <h1>CPO公司池观察样本排序表</h1>
+  <p class="subtitle">研究口径：先按产业卡位、信号强度、阶段涨幅/高位风险做排序，用来影响下一轮证据链核验顺序。行情截至 2026-06-26；上市板块只做事实标注。</p>
+  <div class="toolbar" id="toolbar">
+    <input class="search" id="search" placeholder="搜索公司、代码、节点或信号">
+    <button class="active" data-filter="level" data-value="全部">全部观察顺序</button>
+    <button data-filter="level" data-value="重点观察">重点观察</button>
+    <button data-filter="level" data-value="重点观察">重点观察</button>
+    <button data-filter="board" data-value="主板">主板</button>
+    <button data-filter="board" data-value="创业板">创业板</button>
+    <button data-filter="board" data-value="科创板">科创板</button>
+    <button data-filter="route" data-value="光源线">光源线</button>
+    <button data-filter="route" data-value="硅光PIC线">硅光PIC线</button>
+    <button data-filter="route" data-value="无源耦合线">无源耦合线</button>
+    <button data-filter="route" data-value="封装PCB线">封装PCB线</button>
+  </div>
+</header>
+<main><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、相关度、阶段标签、观察顺序和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section>
+  <section class="stats"><div class="stat"><b>34</b><span>公司池样本</span></div><div class="stat"><b>17</b><span>重点观察</span></div><div class="stat"><b>6</b><span>重点观察</span></div><div class="stat"><b>11</b><span>补充观察</span></div><div class="stat"><b>17</b><span>主板</span></div><div class="stat"><b>9</b><span>创业板</span></div><div class="stat"><b>8</b><span>科创板</span></div></section>
+  <div class="notice">财务/中报字段当前统一列为待核验：这张表先解决“谁值得先查”，不把缺失财务数据当成确定观察摘要。阶段涨幅风险用于提醒是否已被市场明显定价。</div>
+  <section class="layout">
+    <div class="card-list" id="cards">
+<article class="company-card" data-level="重点观察" data-board="创业板" data-route="无源耦合线" data-search="天孚通信 300394.SZ FAU/无源光器件/耦合 耦合设备 无源耦合线">
+  <div class="rank">#1</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>天孚通信</h3><p>300394.SZ · 创业板 · 无源耦合线</p></div>
+      <div class="score"><b>100.1</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-mid">中</span></div>
+    <div class="node-line"><b>节点</b>FAU/无源光器件/耦合</div>
+    <div class="node-line"><b>信号</b>耦合设备</div>
+    <div class="metrics"><div><span>20日</span><b>-28.9%</b></div><div><span>60日</span><b>0.1%</b></div><div><span>120日</span><b>43.1%</b></div><div><span>距120日高点</span><b>-36.1%</b></div></div>
+    <p class="reason">产业卡位在FAU/无源光器件/耦合，主信号为耦合设备；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验无源光路器件、耦合工艺/设备、良率关键约束、客户认证和扩产节奏。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="科创板" data-route="无源耦合线" data-search="腾景科技 688195.SH 精密光学/微光学 耦合设备 无源耦合线">
+  <div class="rank">#2</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>腾景科技</h3><p>688195.SH · 科创板 · 无源耦合线</p></div>
+      <div class="score"><b>100.1</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-mid">中</span></div>
+    <div class="node-line"><b>节点</b>精密光学/微光学</div>
+    <div class="node-line"><b>信号</b>耦合设备</div>
+    <div class="metrics"><div><span>20日</span><b>-45.1%</b></div><div><span>60日</span><b>-36.2%</b></div><div><span>120日</span><b>4.2%</b></div><div><span>距120日高点</span><b>-52.8%</b></div></div>
+    <p class="reason">产业卡位在精密光学/微光学，主信号为耦合设备；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验无源光路器件、耦合工艺/设备、良率关键约束、客户认证和扩产节奏。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="科创板" data-route="光源线" data-search="炬光科技 688167.SH 激光光学/微光学 光源紧张 光源线">
+  <div class="rank">#3</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>炬光科技</h3><p>688167.SH · 科创板 · 光源线</p></div>
+      <div class="score"><b>98.5</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-midhi">中高</span></div>
+    <div class="node-line"><b>节点</b>激光光学/微光学</div>
+    <div class="node-line"><b>信号</b>光源紧张</div>
+    <div class="metrics"><div><span>20日</span><b>-24.6%</b></div><div><span>60日</span><b>1.3%</b></div><div><span>120日</span><b>96.7%</b></div><div><span>距120日高点</span><b>-32.0%</b></div></div>
+    <p class="reason">产业卡位在激光光学/微光学，主信号为光源紧张；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="主板" data-route="光源线" data-search="华工科技 000988.SZ 光引擎/光模块/光源相关 架构迁移 光源线">
+  <div class="rank">#4</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>华工科技</h3><p>000988.SZ · 主板 · 光源线</p></div>
+      <div class="score"><b>96.5</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">核心候选</span><span class="pill">P1</span><span class="pill risk-midhi">中高</span></div>
+    <div class="node-line"><b>节点</b>光引擎/光模块/光源相关</div>
+    <div class="node-line"><b>信号</b>架构迁移</div>
+    <div class="metrics"><div><span>20日</span><b>-2.8%</b></div><div><span>60日</span><b>47.0%</b></div><div><span>120日</span><b>101.5%</b></div><div><span>距120日高点</span><b>-9.4%</b></div></div>
+    <p class="reason">产业卡位在光引擎/光模块/光源相关，主信号为架构迁移；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="主板" data-route="光源线" data-search="光迅科技 002281.SZ 光源/光芯片/光器件 光源紧张 光源线">
+  <div class="rank">#5</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>光迅科技</h3><p>002281.SZ · 主板 · 光源线</p></div>
+      <div class="score"><b>95.5</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">核心候选</span><span class="pill">P1</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>光源/光芯片/光器件</div>
+    <div class="node-line"><b>信号</b>光源紧张</div>
+    <div class="metrics"><div><span>20日</span><b>11.8%</b></div><div><span>60日</span><b>184.4%</b></div><div><span>120日</span><b>239.8%</b></div><div><span>距120日高点</span><b>-12.9%</b></div></div>
+    <p class="reason">产业卡位在光源/光芯片/光器件，主信号为光源紧张；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="科创板" data-route="光源线" data-search="源杰科技 688498.SH 激光器芯片/光源 光源紧张 光源线">
+  <div class="rank">#6</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>源杰科技</h3><p>688498.SH · 科创板 · 光源线</p></div>
+      <div class="score"><b>95.5</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>激光器芯片/光源</div>
+    <div class="node-line"><b>信号</b>光源紧张</div>
+    <div class="metrics"><div><span>20日</span><b>55.6%</b></div><div><span>60日</span><b>61.5%</b></div><div><span>120日</span><b>176.5%</b></div><div><span>距120日高点</span><b>-5.2%</b></div></div>
+    <p class="reason">产业卡位在激光器芯片/光源，主信号为光源紧张；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="科创板" data-route="光源线" data-search="长光华芯 688048.SH 半导体激光芯片 光源紧张 光源线">
+  <div class="rank">#7</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>长光华芯</h3><p>688048.SH · 科创板 · 光源线</p></div>
+      <div class="score"><b>95.5</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>半导体激光芯片</div>
+    <div class="node-line"><b>信号</b>光源紧张</div>
+    <div class="metrics"><div><span>20日</span><b>0.1%</b></div><div><span>60日</span><b>72.3%</b></div><div><span>120日</span><b>176.9%</b></div><div><span>距120日高点</span><b>-11.6%</b></div></div>
+    <p class="reason">产业卡位在半导体激光芯片，主信号为光源紧张；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="主板" data-route="成品系统线" data-search="铭普光磁 002902.SZ 光模块/磁性元件/通信器件 速率升级 成品系统线">
+  <div class="rank">#8</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>铭普光磁</h3><p>002902.SZ · 主板 · 成品系统线</p></div>
+      <div class="score"><b>95.3</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">核心候选</span><span class="pill">P1</span><span class="pill risk-low">中低</span></div>
+    <div class="node-line"><b>节点</b>光模块/磁性元件/通信器件</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>-14.3%</b></div><div><span>60日</span><b>7.2%</b></div><div><span>120日</span><b>31.9%</b></div><div><span>距120日高点</span><b>-25.0%</b></div></div>
+    <p class="reason">产业卡位在光模块/磁性元件/通信器件，主信号为速率升级；当前定价状态为中低：不在阶段高位，但需要右侧放量确认。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="创业板" data-route="硅光PIC线" data-search="光库科技 300620.SZ 光器件/铌酸锂相关 调制关键约束 硅光PIC线">
+  <div class="rank">#9</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>光库科技</h3><p>300620.SZ · 创业板 · 硅光PIC线</p></div>
+      <div class="score"><b>94.8</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-midhi">中高</span></div>
+    <div class="node-line"><b>节点</b>光器件/铌酸锂相关</div>
+    <div class="node-line"><b>信号</b>调制关键约束</div>
+    <div class="metrics"><div><span>20日</span><b>23.7%</b></div><div><span>60日</span><b>86.4%</b></div><div><span>120日</span><b>124.4%</b></div><div><span>距120日高点</span><b>-10.7%</b></div></div>
+    <p class="reason">产业卡位在光器件/铌酸锂相关，主信号为调制关键约束；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验硅光PIC平台进度、调制器/探测器良率、客户导入节奏和是否从样品走向批量。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="创业板" data-route="成品系统线" data-search="新易盛 300502.SZ 高速光模块 速率升级 成品系统线">
+  <div class="rank">#10</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>新易盛</h3><p>300502.SZ · 创业板 · 成品系统线</p></div>
+      <div class="score"><b>93.3</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-mid">中</span></div>
+    <div class="node-line"><b>节点</b>高速光模块</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>-21.2%</b></div><div><span>60日</span><b>26.5%</b></div><div><span>120日</span><b>23.6%</b></div><div><span>距120日高点</span><b>-28.0%</b></div></div>
+    <p class="reason">产业卡位在高速光模块，主信号为速率升级；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="科创板" data-route="成品系统线" data-search="德科立 688205.SH 光模块/光器件 速率升级 成品系统线">
+  <div class="rank">#11</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>德科立</h3><p>688205.SH · 科创板 · 成品系统线</p></div>
+      <div class="score"><b>93.3</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-mid">中</span></div>
+    <div class="node-line"><b>节点</b>光模块/光器件</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>-15.5%</b></div><div><span>60日</span><b>2.4%</b></div><div><span>120日</span><b>33.2%</b></div><div><span>距120日高点</span><b>-29.0%</b></div></div>
+    <p class="reason">产业卡位在光模块/光器件，主信号为速率升级；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="创业板" data-route="成品系统线" data-search="联特科技 301205.SZ 光模块 速率升级 成品系统线">
+  <div class="rank">#12</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>联特科技</h3><p>301205.SZ · 创业板 · 成品系统线</p></div>
+      <div class="score"><b>92.3</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-mid">中</span></div>
+    <div class="node-line"><b>节点</b>光模块</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>7.9%</b></div><div><span>60日</span><b>42.3%</b></div><div><span>120日</span><b>69.5%</b></div><div><span>距120日高点</span><b>-12.5%</b></div></div>
+    <p class="reason">产业卡位在光模块，主信号为速率升级；当前定价状态为中：价格未明显过热，但仍需核验趋势质量。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="创业板" data-route="无源耦合线" data-search="太辰光 300570.SZ 光纤连接器/无源器件 耦合设备 无源耦合线">
+  <div class="rank">#13</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>太辰光</h3><p>300570.SZ · 创业板 · 无源耦合线</p></div>
+      <div class="score"><b>91.1</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>光纤连接器/无源器件</div>
+    <div class="node-line"><b>信号</b>耦合设备</div>
+    <div class="metrics"><div><span>20日</span><b>37.4%</b></div><div><span>60日</span><b>97.9%</b></div><div><span>120日</span><b>97.1%</b></div><div><span>距120日高点</span><b>-16.7%</b></div></div>
+    <p class="reason">产业卡位在光纤连接器/无源器件，主信号为耦合设备；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验无源光路器件、耦合工艺/设备、良率关键约束、客户认证和扩产节奏。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="创业板" data-route="无源耦合线" data-search="长芯博创 300548.SZ 光模块/无源光器件 无源光路 无源耦合线">
+  <div class="rank">#14</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>长芯博创</h3><p>300548.SZ · 创业板 · 无源耦合线</p></div>
+      <div class="score"><b>91.1</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-midhi">中高</span></div>
+    <div class="node-line"><b>节点</b>光模块/无源光器件</div>
+    <div class="node-line"><b>信号</b>无源光路</div>
+    <div class="metrics"><div><span>20日</span><b>9.4%</b></div><div><span>60日</span><b>74.3%</b></div><div><span>120日</span><b>68.9%</b></div><div><span>距120日高点</span><b>-11.9%</b></div></div>
+    <p class="reason">产业卡位在光模块/无源光器件，主信号为无源光路；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验无源光路器件、耦合工艺/设备、良率关键约束、客户认证和扩产节奏。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="科创板" data-route="光源线" data-search="仕佳光子 688313.SH AWG/PLC/光芯片 无源光路 光源线">
+  <div class="rank">#15</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>仕佳光子</h3><p>688313.SH · 科创板 · 光源线</p></div>
+      <div class="score"><b>90.5</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>AWG/PLC/光芯片</div>
+    <div class="node-line"><b>信号</b>无源光路</div>
+    <div class="metrics"><div><span>20日</span><b>9.7%</b></div><div><span>60日</span><b>102.8%</b></div><div><span>120日</span><b>86.6%</b></div><div><span>距120日高点</span><b>-11.6%</b></div></div>
+    <p class="reason">产业卡位在AWG/PLC/光芯片，主信号为无源光路；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="创业板" data-route="其他支撑线" data-search="兆龙互连 300913.SZ 高速互连线缆 速率升级 其他支撑线">
+  <div class="rank">#16</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>兆龙互连</h3><p>300913.SZ · 创业板 · 其他支撑线</p></div>
+      <div class="score"><b>88.9</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P1</span><span class="pill risk-mid">中</span></div>
+    <div class="node-line"><b>节点</b>高速互连线缆</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>-2.2%</b></div><div><span>60日</span><b>5.8%</b></div><div><span>120日</span><b>-8.8%</b></div><div><span>距120日高点</span><b>-20.2%</b></div></div>
+    <p class="reason">产业卡位在高速互连线缆，主信号为速率升级；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="创业板" data-route="无源耦合线" data-search="罗博特科 300757.SZ 自动化设备/光电子扩展 耦合设备 无源耦合线">
+  <div class="rank">#17</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>罗博特科</h3><p>300757.SZ · 创业板 · 无源耦合线</p></div>
+      <div class="score"><b>88.1</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-hot">重点观察</span><span class="pill">产业风向标</span><span class="pill">P1</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>自动化设备/光电子扩展</div>
+    <div class="node-line"><b>信号</b>耦合设备</div>
+    <div class="metrics"><div><span>20日</span><b>-9.6%</b></div><div><span>60日</span><b>46.1%</b></div><div><span>120日</span><b>157.7%</b></div><div><span>距120日高点</span><b>-14.5%</b></div></div>
+    <p class="reason">产业卡位在自动化设备/光电子扩展，主信号为耦合设备；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验无源光路器件、耦合工艺/设备、良率关键约束、客户认证和扩产节奏。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="主板" data-route="硅光PIC线" data-search="剑桥科技 603083.SH 高速光模块/光引擎 速率升级 硅光PIC线">
+  <div class="rank">#18</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>剑桥科技</h3><p>603083.SH · 主板 · 硅光PIC线</p></div>
+      <div class="score"><b>87.8</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-watch">重点观察</span><span class="pill">核心候选</span><span class="pill">P1</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>高速光模块/光引擎</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>21.1%</b></div><div><span>60日</span><b>135.3%</b></div><div><span>120日</span><b>104.5%</b></div><div><span>距120日高点</span><b>-6.2%</b></div></div>
+    <p class="reason">产业卡位在高速光模块/光引擎，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验硅光PIC平台进度、调制器/探测器良率、客户导入节奏和是否从样品走向批量。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="创业板" data-route="硅光PIC线" data-search="中际旭创 300308.SZ 高速光模块/光引擎 速率升级 硅光PIC线">
+  <div class="rank">#19</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>中际旭创</h3><p>300308.SZ · 创业板 · 硅光PIC线</p></div>
+      <div class="score"><b>87.8</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-watch">重点观察</span><span class="pill">产业风向标</span><span class="pill">P0</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>高速光模块/光引擎</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>4.7%</b></div><div><span>60日</span><b>109.7%</b></div><div><span>120日</span><b>101.9%</b></div><div><span>距120日高点</span><b>-9.3%</b></div></div>
+    <p class="reason">产业卡位在高速光模块/光引擎，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验硅光PIC平台进度、调制器/探测器良率、客户导入节奏和是否从样品走向批量。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="科创板" data-route="测试验证线" data-search="精智达 688627.SH 测试设备/检测设备 测试可靠性 测试验证线">
+  <div class="rank">#20</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>精智达</h3><p>688627.SH · 科创板 · 测试验证线</p></div>
+      <div class="score"><b>81.7</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-watch">重点观察</span><span class="pill">产业风向标</span><span class="pill">P1</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>测试设备/检测设备</div>
+    <div class="node-line"><b>信号</b>测试可靠性</div>
+    <div class="metrics"><div><span>20日</span><b>65.1%</b></div><div><span>60日</span><b>170.8%</b></div><div><span>120日</span><b>154.7%</b></div><div><span>距120日高点</span><b>0.0%</b></div></div>
+    <p class="reason">产业卡位在测试设备/检测设备，主信号为测试可靠性；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验高速测试设备、老化/可靠性验证、客户资本开支和订单确认。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="科创板" data-route="其他支撑线" data-search="长盈通 688143.SH 特种光纤/光器件材料 速率升级 其他支撑线">
+  <div class="rank">#21</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>长盈通</h3><p>688143.SH · 科创板 · 其他支撑线</p></div>
+      <div class="score"><b>79.9</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-watch">重点观察</span><span class="pill">产业风向标</span><span class="pill">P1</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>特种光纤/光器件材料</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>41.0%</b></div><div><span>60日</span><b>343.7%</b></div><div><span>120日</span><b>363.4%</b></div><div><span>距120日高点</span><b>-10.7%</b></div></div>
+    <p class="reason">产业卡位在特种光纤/光器件材料，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="主板" data-route="成品系统线" data-search="共进股份 603118.SH 通信设备/模块配套 架构迁移 成品系统线">
+  <div class="rank">#22</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>共进股份</h3><p>603118.SH · 主板 · 成品系统线</p></div>
+      <div class="score"><b>79.3</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-watch">重点观察</span><span class="pill">扩展候选</span><span class="pill">P2</span><span class="pill risk-low">中低</span></div>
+    <div class="node-line"><b>节点</b>通信设备/模块配套</div>
+    <div class="node-line"><b>信号</b>架构迁移</div>
+    <div class="metrics"><div><span>20日</span><b>-13.1%</b></div><div><span>60日</span><b>-10.9%</b></div><div><span>120日</span><b>2.6%</b></div><div><span>距120日高点</span><b>-34.2%</b></div></div>
+    <p class="reason">产业卡位在通信设备/模块配套，主信号为架构迁移；当前定价状态为中低：不在阶段高位，但需要右侧放量确认。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。</p>
+  </div>
+</article>
+<article class="company-card" data-level="重点观察" data-board="主板" data-route="成品系统线" data-search="中兴通讯 000063.SZ 通信设备/系统平台 架构迁移 成品系统线">
+  <div class="rank">#23</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>中兴通讯</h3><p>000063.SZ · 主板 · 成品系统线</p></div>
+      <div class="score"><b>77.3</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-watch">重点观察</span><span class="pill">扩展候选</span><span class="pill">P2</span><span class="pill risk-mid">中</span></div>
+    <div class="node-line"><b>节点</b>通信设备/系统平台</div>
+    <div class="node-line"><b>信号</b>架构迁移</div>
+    <div class="metrics"><div><span>20日</span><b>-6.9%</b></div><div><span>60日</span><b>9.1%</b></div><div><span>120日</span><b>-4.1%</b></div><div><span>距120日高点</span><b>-16.0%</b></div></div>
+    <p class="reason">产业卡位在通信设备/系统平台，主信号为架构迁移；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。</p>
+  </div>
+</article>
+<article class="company-card" data-level="补充观察" data-board="主板" data-route="封装PCB线" data-search="沪电股份 002463.SZ 高速PCB/AI服务器PCB 速率升级 封装PCB线">
+  <div class="rank">#24</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>沪电股份</h3><p>002463.SZ · 主板 · 封装PCB线</p></div>
+      <div class="score"><b>75.7</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-low">补充观察</span><span class="pill">扩展候选</span><span class="pill">P2</span><span class="pill risk-midhi">中高</span></div>
+    <div class="node-line"><b>节点</b>高速PCB/AI服务器PCB</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>10.7%</b></div><div><span>60日</span><b>82.6%</b></div><div><span>120日</span><b>106.2%</b></div><div><span>距120日高点</span><b>-5.0%</b></div></div>
+    <p class="reason">产业卡位在高速PCB/AI服务器PCB，主信号为速率升级；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验高速PCB/封装基板材料、良率、AI交换机和光模块客户拉货信号。</p>
+  </div>
+</article>
+<article class="company-card" data-level="补充观察" data-board="主板" data-route="封装PCB线" data-search="深南电路 002916.SZ 高速PCB/封装基板 速率升级 封装PCB线">
+  <div class="rank">#25</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>深南电路</h3><p>002916.SZ · 主板 · 封装PCB线</p></div>
+      <div class="score"><b>75.7</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-low">补充观察</span><span class="pill">扩展候选</span><span class="pill">P2</span><span class="pill risk-midhi">中高</span></div>
+    <div class="node-line"><b>节点</b>高速PCB/封装基板</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>8.8%</b></div><div><span>60日</span><b>85.9%</b></div><div><span>120日</span><b>93.0%</b></div><div><span>距120日高点</span><b>-5.2%</b></div></div>
+    <p class="reason">产业卡位在高速PCB/封装基板，主信号为速率升级；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验高速PCB/封装基板材料、良率、AI交换机和光模块客户拉货信号。</p>
+  </div>
+</article>
+<article class="company-card" data-level="补充观察" data-board="主板" data-route="封装PCB线" data-search="沃格光电 603773.SH 玻璃/光电基板/封装材料 封装基板 封装PCB线">
+  <div class="rank">#26</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>沃格光电</h3><p>603773.SH · 主板 · 封装PCB线</p></div>
+      <div class="score"><b>72.7</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-low">补充观察</span><span class="pill">扩展候选</span><span class="pill">P2</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>玻璃/光电基板/封装材料</div>
+    <div class="node-line"><b>信号</b>封装基板</div>
+    <div class="metrics"><div><span>20日</span><b>61.8%</b></div><div><span>60日</span><b>402.8%</b></div><div><span>120日</span><b>456.8%</b></div><div><span>距120日高点</span><b>0.0%</b></div></div>
+    <p class="reason">产业卡位在玻璃/光电基板/封装材料，主信号为封装基板；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验高速PCB/封装基板材料、良率、AI交换机和光模块客户拉货信号。</p>
+  </div>
+</article>
+<article class="company-card" data-level="补充观察" data-board="主板" data-route="封装PCB线" data-search="东山精密 002384.SZ PCB/电子制造/光电配套 速率升级 封装PCB线">
+  <div class="rank">#27</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>东山精密</h3><p>002384.SZ · 主板 · 封装PCB线</p></div>
+      <div class="score"><b>72.7</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-low">补充观察</span><span class="pill">扩展候选</span><span class="pill">P2</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>PCB/电子制造/光电配套</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>18.9%</b></div><div><span>60日</span><b>153.6%</b></div><div><span>120日</span><b>220.2%</b></div><div><span>距120日高点</span><b>-5.6%</b></div></div>
+    <p class="reason">产业卡位在PCB/电子制造/光电配套，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验高速PCB/封装基板材料、良率、AI交换机和光模块客户拉货信号。</p>
+  </div>
+</article>
+<article class="company-card" data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="特发信息 000070.SZ 光通信/光纤光缆/模块配套 速率升级 其他支撑线">
+  <div class="rank">#28</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>特发信息</h3><p>000070.SZ · 主板 · 其他支撑线</p></div>
+      <div class="score"><b>70.9</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-low">补充观察</span><span class="pill">扩展候选</span><span class="pill">P2</span><span class="pill risk-midhi">中高</span></div>
+    <div class="node-line"><b>节点</b>光通信/光纤光缆/模块配套</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>24.9%</b></div><div><span>60日</span><b>42.2%</b></div><div><span>120日</span><b>81.7%</b></div><div><span>距120日高点</span><b>-12.0%</b></div></div>
+    <p class="reason">产业卡位在光通信/光纤光缆/模块配套，主信号为速率升级；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。</p>
+  </div>
+</article>
+<article class="company-card" data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="华脉科技 603042.SH 通信网络/光通信配套 速率升级 其他支撑线">
+  <div class="rank">#29</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>华脉科技</h3><p>603042.SH · 主板 · 其他支撑线</p></div>
+      <div class="score"><b>70.9</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-low">补充观察</span><span class="pill">扩展候选</span><span class="pill">P3</span><span class="pill risk-mid">中</span></div>
+    <div class="node-line"><b>节点</b>通信网络/光通信配套</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>-24.1%</b></div><div><span>60日</span><b>-27.5%</b></div><div><span>120日</span><b>-17.2%</b></div><div><span>距120日高点</span><b>-37.7%</b></div></div>
+    <p class="reason">产业卡位在通信网络/光通信配套，主信号为速率升级；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。</p>
+  </div>
+</article>
+<article class="company-card" data-level="补充观察" data-board="主板" data-route="成品系统线" data-search="烽火通信 600498.SH 光通信系统/光模块 速率升级 成品系统线">
+  <div class="rank">#30</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>烽火通信</h3><p>600498.SH · 主板 · 成品系统线</p></div>
+      <div class="score"><b>69.3</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-low">补充观察</span><span class="pill">扩展候选</span><span class="pill">P2</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>光通信系统/光模块</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>50.2%</b></div><div><span>60日</span><b>65.8%</b></div><div><span>120日</span><b>178.2%</b></div><div><span>距120日高点</span><b>-10.0%</b></div></div>
+    <p class="reason">产业卡位在光通信系统/光模块，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。</p>
+  </div>
+</article>
+<article class="company-card" data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="永鼎股份 600105.SH 光通信/光纤光缆 速率升级 其他支撑线">
+  <div class="rank">#31</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>永鼎股份</h3><p>600105.SH · 主板 · 其他支撑线</p></div>
+      <div class="score"><b>61.9</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-low">补充观察</span><span class="pill">扩展候选</span><span class="pill">P3</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>光通信/光纤光缆</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>35.4%</b></div><div><span>60日</span><b>157.2%</b></div><div><span>120日</span><b>209.7%</b></div><div><span>距120日高点</span><b>-9.9%</b></div></div>
+    <p class="reason">产业卡位在光通信/光纤光缆，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。</p>
+  </div>
+</article>
+<article class="company-card" data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="亨通光电 600487.SH 光纤光缆/光通信 速率升级 其他支撑线">
+  <div class="rank">#32</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>亨通光电</h3><p>600487.SH · 主板 · 其他支撑线</p></div>
+      <div class="score"><b>61.9</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-low">补充观察</span><span class="pill">扩展候选</span><span class="pill">P3</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>光纤光缆/光通信</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>57.2%</b></div><div><span>60日</span><b>126.4%</b></div><div><span>120日</span><b>322.8%</b></div><div><span>距120日高点</span><b>-9.9%</b></div></div>
+    <p class="reason">产业卡位在光纤光缆/光通信，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。</p>
+  </div>
+</article>
+<article class="company-card" data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="长飞光纤 601869.SH 光纤光缆/光通信材料 速率升级 其他支撑线">
+  <div class="rank">#33</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>长飞光纤</h3><p>601869.SH · 主板 · 其他支撑线</p></div>
+      <div class="score"><b>61.9</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-low">补充观察</span><span class="pill">扩展候选</span><span class="pill">P3</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>光纤光缆/光通信材料</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>46.5%</b></div><div><span>60日</span><b>98.0%</b></div><div><span>120日</span><b>330.7%</b></div><div><span>距120日高点</span><b>-6.4%</b></div></div>
+    <p class="reason">产业卡位在光纤光缆/光通信材料，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。</p>
+  </div>
+</article>
+<article class="company-card" data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="中天科技 600522.SH 光通信/线缆材料 速率升级 其他支撑线">
+  <div class="rank">#34</div>
+  <div class="card-main">
+    <div class="card-head">
+      <div><h3>中天科技</h3><p>600522.SH · 主板 · 其他支撑线</p></div>
+      <div class="score"><b>61.9</b><span>总分</span></div>
+    </div>
+    <div class="tags"><span class="pill level-low">补充观察</span><span class="pill">扩展候选</span><span class="pill">P3</span><span class="pill risk-high">高</span></div>
+    <div class="node-line"><b>节点</b>光通信/线缆材料</div>
+    <div class="node-line"><b>信号</b>速率升级</div>
+    <div class="metrics"><div><span>20日</span><b>51.3%</b></div><div><span>60日</span><b>126.6%</b></div><div><span>120日</span><b>222.4%</b></div><div><span>距120日高点</span><b>-10.0%</b></div></div>
+    <p class="reason">产业卡位在光通信/线缆材料，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。</p>
+    <p class="evidence"><b>下一步证据：</b>核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。</p>
+  </div>
+</article></div>
+    <div class="table-panel"><table id="table"><thead><tr><th>排名</th><th>公司</th><th>板块</th><th>研究观察顺序</th><th>总分</th><th>路线</th><th>产业节点</th><th>主信号</th><th>20日</th><th>60日</th><th>120日</th><th>距120日高点</th><th>定价风险</th></tr></thead><tbody>
+<tr data-level="重点观察" data-board="创业板" data-route="无源耦合线" data-search="天孚通信 300394.SZ FAU/无源光器件/耦合 耦合设备 无源耦合线">
+  <td>1</td><td class="name">天孚通信<small>300394.SZ</small></td><td>创业板</td><td><span class="pill level-hot">重点观察</span></td><td>100.1</td><td>无源耦合线</td><td>FAU/无源光器件/耦合</td><td>耦合设备</td><td>-28.9%</td><td>0.1%</td><td>43.1%</td><td>-36.1%</td><td class="risk-text">中：离高点有距离，等待产业证据与走势共振</td>
+</tr>
+<tr data-level="重点观察" data-board="科创板" data-route="无源耦合线" data-search="腾景科技 688195.SH 精密光学/微光学 耦合设备 无源耦合线">
+  <td>2</td><td class="name">腾景科技<small>688195.SH</small></td><td>科创板</td><td><span class="pill level-hot">重点观察</span></td><td>100.1</td><td>无源耦合线</td><td>精密光学/微光学</td><td>耦合设备</td><td>-45.1%</td><td>-36.2%</td><td>4.2%</td><td>-52.8%</td><td class="risk-text">中：离高点有距离，等待产业证据与走势共振</td>
+</tr>
+<tr data-level="重点观察" data-board="科创板" data-route="光源线" data-search="炬光科技 688167.SH 激光光学/微光学 光源紧张 光源线">
+  <td>3</td><td class="name">炬光科技<small>688167.SH</small></td><td>科创板</td><td><span class="pill level-hot">重点观察</span></td><td>98.5</td><td>光源线</td><td>激光光学/微光学</td><td>光源紧张</td><td>-24.6%</td><td>1.3%</td><td>96.7%</td><td>-32.0%</td><td class="risk-text">中高：关注度较高，避免仅凭主题追逐</td>
+</tr>
+<tr data-level="重点观察" data-board="主板" data-route="光源线" data-search="华工科技 000988.SZ 光引擎/光模块/光源相关 架构迁移 光源线">
+  <td>4</td><td class="name">华工科技<small>000988.SZ</small></td><td>主板</td><td><span class="pill level-hot">重点观察</span></td><td>96.5</td><td>光源线</td><td>光引擎/光模块/光源相关</td><td>架构迁移</td><td>-2.8%</td><td>47.0%</td><td>101.5%</td><td>-9.4%</td><td class="risk-text">中高：关注度较高，避免仅凭主题追逐</td>
+</tr>
+<tr data-level="重点观察" data-board="主板" data-route="光源线" data-search="光迅科技 002281.SZ 光源/光芯片/光器件 光源紧张 光源线">
+  <td>5</td><td class="name">光迅科技<small>002281.SZ</small></td><td>主板</td><td><span class="pill level-hot">重点观察</span></td><td>95.5</td><td>光源线</td><td>光源/光芯片/光器件</td><td>光源紧张</td><td>11.8%</td><td>184.4%</td><td>239.8%</td><td>-12.9%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="重点观察" data-board="科创板" data-route="光源线" data-search="源杰科技 688498.SH 激光器芯片/光源 光源紧张 光源线">
+  <td>6</td><td class="name">源杰科技<small>688498.SH</small></td><td>科创板</td><td><span class="pill level-hot">重点观察</span></td><td>95.5</td><td>光源线</td><td>激光器芯片/光源</td><td>光源紧张</td><td>55.6%</td><td>61.5%</td><td>176.5%</td><td>-5.2%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="重点观察" data-board="科创板" data-route="光源线" data-search="长光华芯 688048.SH 半导体激光芯片 光源紧张 光源线">
+  <td>7</td><td class="name">长光华芯<small>688048.SH</small></td><td>科创板</td><td><span class="pill level-hot">重点观察</span></td><td>95.5</td><td>光源线</td><td>半导体激光芯片</td><td>光源紧张</td><td>0.1%</td><td>72.3%</td><td>176.9%</td><td>-11.6%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="重点观察" data-board="主板" data-route="成品系统线" data-search="铭普光磁 002902.SZ 光模块/磁性元件/通信器件 速率升级 成品系统线">
+  <td>8</td><td class="name">铭普光磁<small>002902.SZ</small></td><td>主板</td><td><span class="pill level-hot">重点观察</span></td><td>95.3</td><td>成品系统线</td><td>光模块/磁性元件/通信器件</td><td>速率升级</td><td>-14.3%</td><td>7.2%</td><td>31.9%</td><td>-25.0%</td><td class="risk-text">中低：不在阶段高位，但需要右侧放量确认</td>
+</tr>
+<tr data-level="重点观察" data-board="创业板" data-route="硅光PIC线" data-search="光库科技 300620.SZ 光器件/铌酸锂相关 调制关键约束 硅光PIC线">
+  <td>9</td><td class="name">光库科技<small>300620.SZ</small></td><td>创业板</td><td><span class="pill level-hot">重点观察</span></td><td>94.8</td><td>硅光PIC线</td><td>光器件/铌酸锂相关</td><td>调制关键约束</td><td>23.7%</td><td>86.4%</td><td>124.4%</td><td>-10.7%</td><td class="risk-text">中高：关注度较高，避免仅凭主题追逐</td>
+</tr>
+<tr data-level="重点观察" data-board="创业板" data-route="成品系统线" data-search="新易盛 300502.SZ 高速光模块 速率升级 成品系统线">
+  <td>10</td><td class="name">新易盛<small>300502.SZ</small></td><td>创业板</td><td><span class="pill level-hot">重点观察</span></td><td>93.3</td><td>成品系统线</td><td>高速光模块</td><td>速率升级</td><td>-21.2%</td><td>26.5%</td><td>23.6%</td><td>-28.0%</td><td class="risk-text">中：离高点有距离，等待产业证据与走势共振</td>
+</tr>
+<tr data-level="重点观察" data-board="科创板" data-route="成品系统线" data-search="德科立 688205.SH 光模块/光器件 速率升级 成品系统线">
+  <td>11</td><td class="name">德科立<small>688205.SH</small></td><td>科创板</td><td><span class="pill level-hot">重点观察</span></td><td>93.3</td><td>成品系统线</td><td>光模块/光器件</td><td>速率升级</td><td>-15.5%</td><td>2.4%</td><td>33.2%</td><td>-29.0%</td><td class="risk-text">中：离高点有距离，等待产业证据与走势共振</td>
+</tr>
+<tr data-level="重点观察" data-board="创业板" data-route="成品系统线" data-search="联特科技 301205.SZ 光模块 速率升级 成品系统线">
+  <td>12</td><td class="name">联特科技<small>301205.SZ</small></td><td>创业板</td><td><span class="pill level-hot">重点观察</span></td><td>92.3</td><td>成品系统线</td><td>光模块</td><td>速率升级</td><td>7.9%</td><td>42.3%</td><td>69.5%</td><td>-12.5%</td><td class="risk-text">中：价格未明显过热，但仍需核验趋势质量</td>
+</tr>
+<tr data-level="重点观察" data-board="创业板" data-route="无源耦合线" data-search="太辰光 300570.SZ 光纤连接器/无源器件 耦合设备 无源耦合线">
+  <td>13</td><td class="name">太辰光<small>300570.SZ</small></td><td>创业板</td><td><span class="pill level-hot">重点观察</span></td><td>91.1</td><td>无源耦合线</td><td>光纤连接器/无源器件</td><td>耦合设备</td><td>37.4%</td><td>97.9%</td><td>97.1%</td><td>-16.7%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="重点观察" data-board="创业板" data-route="无源耦合线" data-search="长芯博创 300548.SZ 光模块/无源光器件 无源光路 无源耦合线">
+  <td>14</td><td class="name">长芯博创<small>300548.SZ</small></td><td>创业板</td><td><span class="pill level-hot">重点观察</span></td><td>91.1</td><td>无源耦合线</td><td>光模块/无源光器件</td><td>无源光路</td><td>9.4%</td><td>74.3%</td><td>68.9%</td><td>-11.9%</td><td class="risk-text">中高：关注度较高，避免仅凭主题追逐</td>
+</tr>
+<tr data-level="重点观察" data-board="科创板" data-route="光源线" data-search="仕佳光子 688313.SH AWG/PLC/光芯片 无源光路 光源线">
+  <td>15</td><td class="name">仕佳光子<small>688313.SH</small></td><td>科创板</td><td><span class="pill level-hot">重点观察</span></td><td>90.5</td><td>光源线</td><td>AWG/PLC/光芯片</td><td>无源光路</td><td>9.7%</td><td>102.8%</td><td>86.6%</td><td>-11.6%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="重点观察" data-board="创业板" data-route="其他支撑线" data-search="兆龙互连 300913.SZ 高速互连线缆 速率升级 其他支撑线">
+  <td>16</td><td class="name">兆龙互连<small>300913.SZ</small></td><td>创业板</td><td><span class="pill level-hot">重点观察</span></td><td>88.9</td><td>其他支撑线</td><td>高速互连线缆</td><td>速率升级</td><td>-2.2%</td><td>5.8%</td><td>-8.8%</td><td>-20.2%</td><td class="risk-text">中：离高点有距离，等待产业证据与走势共振</td>
+</tr>
+<tr data-level="重点观察" data-board="创业板" data-route="无源耦合线" data-search="罗博特科 300757.SZ 自动化设备/光电子扩展 耦合设备 无源耦合线">
+  <td>17</td><td class="name">罗博特科<small>300757.SZ</small></td><td>创业板</td><td><span class="pill level-hot">重点观察</span></td><td>88.1</td><td>无源耦合线</td><td>自动化设备/光电子扩展</td><td>耦合设备</td><td>-9.6%</td><td>46.1%</td><td>157.7%</td><td>-14.5%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="重点观察" data-board="主板" data-route="硅光PIC线" data-search="剑桥科技 603083.SH 高速光模块/光引擎 速率升级 硅光PIC线">
+  <td>18</td><td class="name">剑桥科技<small>603083.SH</small></td><td>主板</td><td><span class="pill level-watch">重点观察</span></td><td>87.8</td><td>硅光PIC线</td><td>高速光模块/光引擎</td><td>速率升级</td><td>21.1%</td><td>135.3%</td><td>104.5%</td><td>-6.2%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="重点观察" data-board="创业板" data-route="硅光PIC线" data-search="中际旭创 300308.SZ 高速光模块/光引擎 速率升级 硅光PIC线">
+  <td>19</td><td class="name">中际旭创<small>300308.SZ</small></td><td>创业板</td><td><span class="pill level-watch">重点观察</span></td><td>87.8</td><td>硅光PIC线</td><td>高速光模块/光引擎</td><td>速率升级</td><td>4.7%</td><td>109.7%</td><td>101.9%</td><td>-9.3%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="重点观察" data-board="科创板" data-route="测试验证线" data-search="精智达 688627.SH 测试设备/检测设备 测试可靠性 测试验证线">
+  <td>20</td><td class="name">精智达<small>688627.SH</small></td><td>科创板</td><td><span class="pill level-watch">重点观察</span></td><td>81.7</td><td>测试验证线</td><td>测试设备/检测设备</td><td>测试可靠性</td><td>65.1%</td><td>170.8%</td><td>154.7%</td><td>0.0%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="重点观察" data-board="科创板" data-route="其他支撑线" data-search="长盈通 688143.SH 特种光纤/光器件材料 速率升级 其他支撑线">
+  <td>21</td><td class="name">长盈通<small>688143.SH</small></td><td>科创板</td><td><span class="pill level-watch">重点观察</span></td><td>79.9</td><td>其他支撑线</td><td>特种光纤/光器件材料</td><td>速率升级</td><td>41.0%</td><td>343.7%</td><td>363.4%</td><td>-10.7%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="重点观察" data-board="主板" data-route="成品系统线" data-search="共进股份 603118.SH 通信设备/模块配套 架构迁移 成品系统线">
+  <td>22</td><td class="name">共进股份<small>603118.SH</small></td><td>主板</td><td><span class="pill level-watch">重点观察</span></td><td>79.3</td><td>成品系统线</td><td>通信设备/模块配套</td><td>架构迁移</td><td>-13.1%</td><td>-10.9%</td><td>2.6%</td><td>-34.2%</td><td class="risk-text">中低：不在阶段高位，但需要右侧放量确认</td>
+</tr>
+<tr data-level="重点观察" data-board="主板" data-route="成品系统线" data-search="中兴通讯 000063.SZ 通信设备/系统平台 架构迁移 成品系统线">
+  <td>23</td><td class="name">中兴通讯<small>000063.SZ</small></td><td>主板</td><td><span class="pill level-watch">重点观察</span></td><td>77.3</td><td>成品系统线</td><td>通信设备/系统平台</td><td>架构迁移</td><td>-6.9%</td><td>9.1%</td><td>-4.1%</td><td>-16.0%</td><td class="risk-text">中：离高点有距离，等待产业证据与走势共振</td>
+</tr>
+<tr data-level="补充观察" data-board="主板" data-route="封装PCB线" data-search="沪电股份 002463.SZ 高速PCB/AI服务器PCB 速率升级 封装PCB线">
+  <td>24</td><td class="name">沪电股份<small>002463.SZ</small></td><td>主板</td><td><span class="pill level-low">补充观察</span></td><td>75.7</td><td>封装PCB线</td><td>高速PCB/AI服务器PCB</td><td>速率升级</td><td>10.7%</td><td>82.6%</td><td>106.2%</td><td>-5.0%</td><td class="risk-text">中高：关注度较高，避免仅凭主题追逐</td>
+</tr>
+<tr data-level="补充观察" data-board="主板" data-route="封装PCB线" data-search="深南电路 002916.SZ 高速PCB/封装基板 速率升级 封装PCB线">
+  <td>25</td><td class="name">深南电路<small>002916.SZ</small></td><td>主板</td><td><span class="pill level-low">补充观察</span></td><td>75.7</td><td>封装PCB线</td><td>高速PCB/封装基板</td><td>速率升级</td><td>8.8%</td><td>85.9%</td><td>93.0%</td><td>-5.2%</td><td class="risk-text">中高：关注度较高，避免仅凭主题追逐</td>
+</tr>
+<tr data-level="补充观察" data-board="主板" data-route="封装PCB线" data-search="沃格光电 603773.SH 玻璃/光电基板/封装材料 封装基板 封装PCB线">
+  <td>26</td><td class="name">沃格光电<small>603773.SH</small></td><td>主板</td><td><span class="pill level-low">补充观察</span></td><td>72.7</td><td>封装PCB线</td><td>玻璃/光电基板/封装材料</td><td>封装基板</td><td>61.8%</td><td>402.8%</td><td>456.8%</td><td>0.0%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="补充观察" data-board="主板" data-route="封装PCB线" data-search="东山精密 002384.SZ PCB/电子制造/光电配套 速率升级 封装PCB线">
+  <td>27</td><td class="name">东山精密<small>002384.SZ</small></td><td>主板</td><td><span class="pill level-low">补充观察</span></td><td>72.7</td><td>封装PCB线</td><td>PCB/电子制造/光电配套</td><td>速率升级</td><td>18.9%</td><td>153.6%</td><td>220.2%</td><td>-5.6%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="特发信息 000070.SZ 光通信/光纤光缆/模块配套 速率升级 其他支撑线">
+  <td>28</td><td class="name">特发信息<small>000070.SZ</small></td><td>主板</td><td><span class="pill level-low">补充观察</span></td><td>70.9</td><td>其他支撑线</td><td>光通信/光纤光缆/模块配套</td><td>速率升级</td><td>24.9%</td><td>42.2%</td><td>81.7%</td><td>-12.0%</td><td class="risk-text">中高：关注度较高，避免仅凭主题追逐</td>
+</tr>
+<tr data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="华脉科技 603042.SH 通信网络/光通信配套 速率升级 其他支撑线">
+  <td>29</td><td class="name">华脉科技<small>603042.SH</small></td><td>主板</td><td><span class="pill level-low">补充观察</span></td><td>70.9</td><td>其他支撑线</td><td>通信网络/光通信配套</td><td>速率升级</td><td>-24.1%</td><td>-27.5%</td><td>-17.2%</td><td>-37.7%</td><td class="risk-text">中：离高点有距离，等待产业证据与走势共振</td>
+</tr>
+<tr data-level="补充观察" data-board="主板" data-route="成品系统线" data-search="烽火通信 600498.SH 光通信系统/光模块 速率升级 成品系统线">
+  <td>30</td><td class="name">烽火通信<small>600498.SH</small></td><td>主板</td><td><span class="pill level-low">补充观察</span></td><td>69.3</td><td>成品系统线</td><td>光通信系统/光模块</td><td>速率升级</td><td>50.2%</td><td>65.8%</td><td>178.2%</td><td>-10.0%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="永鼎股份 600105.SH 光通信/光纤光缆 速率升级 其他支撑线">
+  <td>31</td><td class="name">永鼎股份<small>600105.SH</small></td><td>主板</td><td><span class="pill level-low">补充观察</span></td><td>61.9</td><td>其他支撑线</td><td>光通信/光纤光缆</td><td>速率升级</td><td>35.4%</td><td>157.2%</td><td>209.7%</td><td>-9.9%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="亨通光电 600487.SH 光纤光缆/光通信 速率升级 其他支撑线">
+  <td>32</td><td class="name">亨通光电<small>600487.SH</small></td><td>主板</td><td><span class="pill level-low">补充观察</span></td><td>61.9</td><td>其他支撑线</td><td>光纤光缆/光通信</td><td>速率升级</td><td>57.2%</td><td>126.4%</td><td>322.8%</td><td>-9.9%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="长飞光纤 601869.SH 光纤光缆/光通信材料 速率升级 其他支撑线">
+  <td>33</td><td class="name">长飞光纤<small>601869.SH</small></td><td>主板</td><td><span class="pill level-low">补充观察</span></td><td>61.9</td><td>其他支撑线</td><td>光纤光缆/光通信材料</td><td>速率升级</td><td>46.5%</td><td>98.0%</td><td>330.7%</td><td>-6.4%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr>
+<tr data-level="补充观察" data-board="主板" data-route="其他支撑线" data-search="中天科技 600522.SH 光通信/线缆材料 速率升级 其他支撑线">
+  <td>34</td><td class="name">中天科技<small>600522.SH</small></td><td>主板</td><td><span class="pill level-low">补充观察</span></td><td>61.9</td><td>其他支撑线</td><td>光通信/线缆材料</td><td>速率升级</td><td>51.3%</td><td>126.6%</td><td>222.4%</td><td>-10.0%</td><td class="risk-text">阶段涨幅大，优先看回撤后的承接和业绩验证</td>
+</tr></tbody></table></div>
+  </section>
+</main>
+<footer>资料文件：06_CPO专题/CPO公司池观察样本排序表.csv、06_CPO专题/CPO公司池观察样本排序表.md、08_可视化/CPO公司池观察样本排序表.html</footer>
+<script>
+const data = [{"排名": 1, "公司名称": "天孚通信", "证券代码": "300394.SZ", "上市板块": "创业板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 100.1, "产业卡位分": 53.1, "信号强度分": 24, "市场定价分": 13, "路线筛选": "无源耦合线", "产业节点": "FAU/无源光器件/耦合", "技术路线": "耦合路线", "主信号组": "耦合设备", "初步角色": "无源光器件与耦合风向标", "最新收盘价": 318.0, "单日涨跌幅": -7.0094, "20日涨幅": -28.948074001251236, "60日涨幅": 0.12594458438286438, "120日涨幅": 43.062803671045536, "距120日高点": -36.06498049780852, "总市值_亿元": 3468.823818, "PE_TTM": 159.7169, "PB": 58.0083, "换手率": 4.428, "市场定价风险": "中：离高点有距离，等待产业证据与走势共振", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在FAU/无源光器件/耦合，主信号为耦合设备；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验无源光路器件、耦合工艺/设备、良率关键约束、客户认证和扩产节奏。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-mid", "单日涨跌幅_显示": "-7.0%", "20日涨幅_显示": "-28.9%", "60日涨幅_显示": "0.1%", "120日涨幅_显示": "43.1%", "距120日高点_显示": "-36.1%", "总分_显示": "100.1", "产业卡位分_显示": "53.1", "信号强度分_显示": "24.0", "市场定价分_显示": "13.0", "总市值_亿元_显示": "3468.8", "PE_TTM_显示": "159.7", "PB_显示": "58.0", "换手率_显示": "4.4", "最新收盘价_显示": "318.0"}, {"排名": 2, "公司名称": "腾景科技", "证券代码": "688195.SH", "上市板块": "科创板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 100.1, "产业卡位分": 53.1, "信号强度分": 24, "市场定价分": 13, "路线筛选": "无源耦合线", "产业节点": "精密光学/微光学", "技术路线": "耦合/WDM无源", "主信号组": "耦合设备", "初步角色": "微光学风向标", "最新收盘价": 187.6, "单日涨跌幅": -8.0843, "20日涨幅": -45.05301388319373, "60日涨幅": -36.1904761904762, "120日涨幅": 4.222222222222216, "距120日高点": -52.75868147364711, "总市值_亿元": 339.72484, "PE_TTM": 471.7342, "PB": 33.3756, "换手率": 5.1398, "市场定价风险": "中：离高点有距离，等待产业证据与走势共振", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在精密光学/微光学，主信号为耦合设备；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验无源光路器件、耦合工艺/设备、良率关键约束、客户认证和扩产节奏。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-mid", "单日涨跌幅_显示": "-8.1%", "20日涨幅_显示": "-45.1%", "60日涨幅_显示": "-36.2%", "120日涨幅_显示": "4.2%", "距120日高点_显示": "-52.8%", "总分_显示": "100.1", "产业卡位分_显示": "53.1", "信号强度分_显示": "24.0", "市场定价分_显示": "13.0", "总市值_亿元_显示": "339.7", "PE_TTM_显示": "471.7", "PB_显示": "33.4", "换手率_显示": "5.1", "最新收盘价_显示": "187.6"}, {"排名": 3, "公司名称": "炬光科技", "证券代码": "688167.SH", "上市板块": "科创板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 98.5, "产业卡位分": 54.5, "信号强度分": 27, "市场定价分": 7, "路线筛选": "光源线", "产业节点": "激光光学/微光学", "技术路线": "光源路线/耦合路线", "主信号组": "光源紧张", "初步角色": "光源与微光学风向标", "最新收盘价": 351.32, "单日涨跌幅": -6.9795, "20日涨幅": -24.583547999313073, "60日涨幅": 1.338410061151496, "120日涨幅": 96.68570148919493, "距120日高点": -32.006967292432755, "总市值_亿元": 457.2043348, "PE_TTM": NaN, "PB": 20.4454, "换手率": 5.0465, "市场定价风险": "中高：关注度较高，避免仅凭主题追逐", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在激光光学/微光学，主信号为光源紧张；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-midhi", "单日涨跌幅_显示": "-7.0%", "20日涨幅_显示": "-24.6%", "60日涨幅_显示": "1.3%", "120日涨幅_显示": "96.7%", "距120日高点_显示": "-32.0%", "总分_显示": "98.5", "产业卡位分_显示": "54.5", "信号强度分_显示": "27.0", "市场定价分_显示": "7.0", "总市值_亿元_显示": "457.2", "PE_TTM_显示": "NA", "PB_显示": "20.4", "换手率_显示": "5.0", "最新收盘价_显示": "351.3"}, {"排名": 4, "公司名称": "华工科技", "证券代码": "000988.SZ", "上市板块": "主板", "名单层分类": "核心候选", "观察顺序": "P1", "研究观察顺序": "重点观察", "总分": 96.5, "产业卡位分": 54.5, "信号强度分": 25, "市场定价分": 7, "路线筛选": "光源线", "产业节点": "光引擎/光模块/光源相关", "技术路线": "系统架构/CPO", "主信号组": "架构迁移", "初步角色": "光通信器件与模块平台", "最新收盘价": 160.94, "单日涨跌幅": -7.2819, "20日涨幅": -2.831612630562097, "60日涨幅": 46.97716894977169, "120日涨幅": 101.52767342849987, "距120日高点": -9.355111236271485, "总市值_亿元": 1618.25620632, "PE_TTM": 95.2278, "PB": 13.8461, "换手率": 6.6462, "市场定价风险": "中高：关注度较高，避免仅凭主题追逐", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光引擎/光模块/光源相关，主信号为架构迁移；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-midhi", "单日涨跌幅_显示": "-7.3%", "20日涨幅_显示": "-2.8%", "60日涨幅_显示": "47.0%", "120日涨幅_显示": "101.5%", "距120日高点_显示": "-9.4%", "总分_显示": "96.5", "产业卡位分_显示": "54.5", "信号强度分_显示": "25.0", "市场定价分_显示": "7.0", "总市值_亿元_显示": "1618.3", "PE_TTM_显示": "95.2", "PB_显示": "13.8", "换手率_显示": "6.6", "最新收盘价_显示": "160.9"}, {"排名": 5, "公司名称": "光迅科技", "证券代码": "002281.SZ", "上市板块": "主板", "名单层分类": "核心候选", "观察顺序": "P1", "研究观察顺序": "重点观察", "总分": 95.5, "产业卡位分": 54.5, "信号强度分": 27, "市场定价分": 4, "路线筛选": "光源线", "产业节点": "光源/光芯片/光器件", "技术路线": "光源路线/PIC平台", "主信号组": "光源紧张", "初步角色": "光通信器件与芯片平台", "最新收盘价": 240.34, "单日涨跌幅": -8.0777, "20日涨幅": 11.838064215914379, "60日涨幅": 184.4260355029586, "120日涨幅": 239.75120158326266, "距120日高点": -12.945523036800921, "总市值_亿元": 1988.9698123300002, "PE_TTM": 191.9733, "PB": 19.235, "换手率": 7.0701, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光源/光芯片/光器件，主信号为光源紧张；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-high", "单日涨跌幅_显示": "-8.1%", "20日涨幅_显示": "11.8%", "60日涨幅_显示": "184.4%", "120日涨幅_显示": "239.8%", "距120日高点_显示": "-12.9%", "总分_显示": "95.5", "产业卡位分_显示": "54.5", "信号强度分_显示": "27.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "1989.0", "PE_TTM_显示": "192.0", "PB_显示": "19.2", "换手率_显示": "7.1", "最新收盘价_显示": "240.3"}, {"排名": 6, "公司名称": "源杰科技", "证券代码": "688498.SH", "上市板块": "科创板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 95.5, "产业卡位分": 54.5, "信号强度分": 27, "市场定价分": 4, "路线筛选": "光源线", "产业节点": "激光器芯片/光源", "技术路线": "光源路线", "主信号组": "光源紧张", "初步角色": "光源芯片风向标", "最新收盘价": 1776.91, "单日涨跌幅": -5.2315, "20日涨幅": 55.57180129226567, "60日涨幅": 61.521120615211224, "120日涨幅": 176.5231329463577, "距120日高点": -5.2314666666666625, "总市值_亿元": 2212.25828073, "PE_TTM": 621.3409, "PB": 87.6235, "换手率": 3.9563, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在激光器芯片/光源，主信号为光源紧张；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-high", "单日涨跌幅_显示": "-5.2%", "20日涨幅_显示": "55.6%", "60日涨幅_显示": "61.5%", "120日涨幅_显示": "176.5%", "距120日高点_显示": "-5.2%", "总分_显示": "95.5", "产业卡位分_显示": "54.5", "信号强度分_显示": "27.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "2212.3", "PE_TTM_显示": "621.3", "PB_显示": "87.6", "换手率_显示": "4.0", "最新收盘价_显示": "1776.9"}, {"排名": 7, "公司名称": "长光华芯", "证券代码": "688048.SH", "上市板块": "科创板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 95.5, "产业卡位分": 54.5, "信号强度分": 27, "市场定价分": 4, "路线筛选": "光源线", "产业节点": "半导体激光芯片", "技术路线": "光源路线", "主信号组": "光源紧张", "初步角色": "光源芯片风向标", "最新收盘价": 396.0, "单日涨跌幅": -10.3667, "20日涨幅": 0.10617321401487079, "60日涨幅": 72.28627365673266, "120日涨幅": 176.9230769230769, "距120日高点": -11.626869002454809, "总市值_亿元": 698.068404, "PE_TTM": 2068.7803, "PB": 23.1632, "换手率": 7.5254, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在半导体激光芯片，主信号为光源紧张；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-high", "单日涨跌幅_显示": "-10.4%", "20日涨幅_显示": "0.1%", "60日涨幅_显示": "72.3%", "120日涨幅_显示": "176.9%", "距120日高点_显示": "-11.6%", "总分_显示": "95.5", "产业卡位分_显示": "54.5", "信号强度分_显示": "27.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "698.1", "PE_TTM_显示": "2068.8", "PB_显示": "23.2", "换手率_显示": "7.5", "最新收盘价_显示": "396.0"}, {"排名": 8, "公司名称": "铭普光磁", "证券代码": "002902.SZ", "上市板块": "主板", "名单层分类": "核心候选", "观察顺序": "P1", "研究观察顺序": "重点观察", "总分": 95.3, "产业卡位分": 50.3, "信号强度分": 20, "市场定价分": 15, "路线筛选": "成品系统线", "产业节点": "光模块/磁性元件/通信器件", "技术路线": "电互连/系统架构", "主信号组": "速率升级", "初步角色": "通信器件与模块配套", "最新收盘价": 29.95, "单日涨跌幅": -1.1877, "20日涨幅": -14.306151645207443, "60日涨幅": 7.193987115246947, "120日涨幅": 31.93832599118942, "距120日高点": -25.031289111389242, "总市值_亿元": 70.3851955, "PE_TTM": NaN, "PB": 11.5987, "换手率": 16.2125, "市场定价风险": "中低：不在阶段高位，但需要右侧放量确认", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光模块/磁性元件/通信器件，主信号为速率升级；当前定价状态为中低：不在阶段高位，但需要右侧放量确认。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-low", "单日涨跌幅_显示": "-1.2%", "20日涨幅_显示": "-14.3%", "60日涨幅_显示": "7.2%", "120日涨幅_显示": "31.9%", "距120日高点_显示": "-25.0%", "总分_显示": "95.3", "产业卡位分_显示": "50.3", "信号强度分_显示": "20.0", "市场定价分_显示": "15.0", "总市值_亿元_显示": "70.4", "PE_TTM_显示": "NA", "PB_显示": "11.6", "换手率_显示": "16.2", "最新收盘价_显示": "29.9"}, {"排名": 9, "公司名称": "光库科技", "证券代码": "300620.SZ", "上市板块": "创业板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 94.8, "产业卡位分": 53.8, "信号强度分": 24, "市场定价分": 7, "路线筛选": "硅光PIC线", "产业节点": "光器件/铌酸锂相关", "技术路线": "调制器路线/WDM无源", "主信号组": "调制关键约束", "初步角色": "高端光器件风向标", "最新收盘价": 362.43, "单日涨跌幅": -8.3523, "20日涨幅": 23.700467592750595, "60日涨幅": 86.36807733840696, "120日涨幅": 124.41486068111453, "距120日高点": -10.73152709359606, "总市值_亿元": 903.10524858, "PE_TTM": 428.8971, "PB": 40.963, "换手率": 5.7798, "市场定价风险": "中高：关注度较高，避免仅凭主题追逐", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光器件/铌酸锂相关，主信号为调制关键约束；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验硅光PIC平台进度、调制器/探测器良率、客户导入节奏和是否从样品走向批量。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-midhi", "单日涨跌幅_显示": "-8.4%", "20日涨幅_显示": "23.7%", "60日涨幅_显示": "86.4%", "120日涨幅_显示": "124.4%", "距120日高点_显示": "-10.7%", "总分_显示": "94.8", "产业卡位分_显示": "53.8", "信号强度分_显示": "24.0", "市场定价分_显示": "7.0", "总市值_亿元_显示": "903.1", "PE_TTM_显示": "428.9", "PB_显示": "41.0", "换手率_显示": "5.8", "最新收盘价_显示": "362.4"}, {"排名": 10, "公司名称": "新易盛", "证券代码": "300502.SZ", "上市板块": "创业板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 93.3, "产业卡位分": 50.3, "信号强度分": 20, "市场定价分": 13, "路线筛选": "成品系统线", "产业节点": "高速光模块", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "高速光模块风向标", "最新收盘价": 566.0, "单日涨跌幅": -7.2876, "20日涨幅": -21.20722777514826, "60日涨幅": 26.50588945262733, "120日涨幅": 23.580786026200883, "距120日高点": -27.965077062095123, "总市值_亿元": 7891.492921999999, "PE_TTM": 73.4802, "PB": 38.7243, "换手率": 4.9251, "市场定价风险": "中：离高点有距离，等待产业证据与走势共振", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在高速光模块，主信号为速率升级；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-mid", "单日涨跌幅_显示": "-7.3%", "20日涨幅_显示": "-21.2%", "60日涨幅_显示": "26.5%", "120日涨幅_显示": "23.6%", "距120日高点_显示": "-28.0%", "总分_显示": "93.3", "产业卡位分_显示": "50.3", "信号强度分_显示": "20.0", "市场定价分_显示": "13.0", "总市值_亿元_显示": "7891.5", "PE_TTM_显示": "73.5", "PB_显示": "38.7", "换手率_显示": "4.9", "最新收盘价_显示": "566.0"}, {"排名": 11, "公司名称": "德科立", "证券代码": "688205.SH", "上市板块": "科创板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 93.3, "产业卡位分": 50.3, "信号强度分": 20, "市场定价分": 13, "路线筛选": "成品系统线", "产业节点": "光模块/光器件", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "光模块风向标", "最新收盘价": 210.52, "单日涨跌幅": -4.1217, "20日涨幅": -15.491148488619489, "60日涨幅": 2.4079389015907005, "120日涨幅": 33.24050632911393, "距120日高点": -28.957581075152696, "总市值_亿元": 335.226785, "PE_TTM": 437.3111, "PB": 14.32, "换手率": 4.6776, "市场定价风险": "中：离高点有距离，等待产业证据与走势共振", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光模块/光器件，主信号为速率升级；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-mid", "单日涨跌幅_显示": "-4.1%", "20日涨幅_显示": "-15.5%", "60日涨幅_显示": "2.4%", "120日涨幅_显示": "33.2%", "距120日高点_显示": "-29.0%", "总分_显示": "93.3", "产业卡位分_显示": "50.3", "信号强度分_显示": "20.0", "市场定价分_显示": "13.0", "总市值_亿元_显示": "335.2", "PE_TTM_显示": "437.3", "PB_显示": "14.3", "换手率_显示": "4.7", "最新收盘价_显示": "210.5"}, {"排名": 12, "公司名称": "联特科技", "证券代码": "301205.SZ", "上市板块": "创业板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 92.3, "产业卡位分": 50.3, "信号强度分": 20, "市场定价分": 12, "路线筛选": "成品系统线", "产业节点": "光模块", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "光模块弹性风向标", "最新收盘价": 315.86, "单日涨跌幅": -8.5789, "20日涨幅": 7.875683060109284, "60日涨幅": 42.33056957462149, "120日涨幅": 69.4618810021997, "距120日高点": -12.509002271342295, "总市值_亿元": 410.8849017, "PE_TTM": 469.9609, "PB": 25.2379, "换手率": 10.7966, "市场定价风险": "中：价格未明显过热，但仍需核验趋势质量", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光模块，主信号为速率升级；当前定价状态为中：价格未明显过热，但仍需核验趋势质量。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-mid", "单日涨跌幅_显示": "-8.6%", "20日涨幅_显示": "7.9%", "60日涨幅_显示": "42.3%", "120日涨幅_显示": "69.5%", "距120日高点_显示": "-12.5%", "总分_显示": "92.3", "产业卡位分_显示": "50.3", "信号强度分_显示": "20.0", "市场定价分_显示": "12.0", "总市值_亿元_显示": "410.9", "PE_TTM_显示": "470.0", "PB_显示": "25.2", "换手率_显示": "10.8", "最新收盘价_显示": "315.9"}, {"排名": 13, "公司名称": "太辰光", "证券代码": "300570.SZ", "上市板块": "创业板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 91.1, "产业卡位分": 53.1, "信号强度分": 24, "市场定价分": 4, "路线筛选": "无源耦合线", "产业节点": "光纤连接器/无源器件", "技术路线": "耦合路线", "主信号组": "耦合设备", "初步角色": "无源连接与耦合风向标", "最新收盘价": 234.1, "单日涨跌幅": -9.3725, "20日涨幅": 37.3826291079812, "60日涨幅": 97.93692398748625, "120日涨幅": 97.05387205387206, "距120日高点": -16.743722882139554, "总市值_亿元": 531.7040729, "PE_TTM": 186.3191, "PB": 30.0572, "换手率": 17.3698, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光纤连接器/无源器件，主信号为耦合设备；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验无源光路器件、耦合工艺/设备、良率关键约束、客户认证和扩产节奏。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-high", "单日涨跌幅_显示": "-9.4%", "20日涨幅_显示": "37.4%", "60日涨幅_显示": "97.9%", "120日涨幅_显示": "97.1%", "距120日高点_显示": "-16.7%", "总分_显示": "91.1", "产业卡位分_显示": "53.1", "信号强度分_显示": "24.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "531.7", "PE_TTM_显示": "186.3", "PB_显示": "30.1", "换手率_显示": "17.4", "最新收盘价_显示": "234.1"}, {"排名": 14, "公司名称": "长芯博创", "证券代码": "300548.SZ", "上市板块": "创业板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 91.1, "产业卡位分": 53.1, "信号强度分": 21, "市场定价分": 7, "路线筛选": "无源耦合线", "产业节点": "光模块/无源光器件", "技术路线": "WDM无源/系统架构", "主信号组": "无源光路", "初步角色": "光通信器件风向标", "最新收盘价": 262.65, "单日涨跌幅": -6.8287, "20日涨幅": 9.369144284821985, "60日涨幅": 74.28666224286661, "120日涨幅": 68.85245901639341, "距120日高点": -11.88902680398537, "总市值_亿元": 773.9103069, "PE_TTM": 206.2571, "PB": 37.0154, "换手率": 7.6626, "市场定价风险": "中高：关注度较高，避免仅凭主题追逐", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光模块/无源光器件，主信号为无源光路；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验无源光路器件、耦合工艺/设备、良率关键约束、客户认证和扩产节奏。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-midhi", "单日涨跌幅_显示": "-6.8%", "20日涨幅_显示": "9.4%", "60日涨幅_显示": "74.3%", "120日涨幅_显示": "68.9%", "距120日高点_显示": "-11.9%", "总分_显示": "91.1", "产业卡位分_显示": "53.1", "信号强度分_显示": "21.0", "市场定价分_显示": "7.0", "总市值_亿元_显示": "773.9", "PE_TTM_显示": "206.3", "PB_显示": "37.0", "换手率_显示": "7.7", "最新收盘价_显示": "262.6"}, {"排名": 15, "公司名称": "仕佳光子", "证券代码": "688313.SH", "上市板块": "科创板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 90.5, "产业卡位分": 54.5, "信号强度分": 22, "市场定价分": 4, "路线筛选": "光源线", "产业节点": "AWG/PLC/光芯片", "技术路线": "WDM无源/PIC平台", "主信号组": "无源光路", "初步角色": "无源光芯片风向标", "最新收盘价": 179.7, "单日涨跌幅": -10.123, "20日涨幅": 9.720356575894495, "60日涨幅": 102.82167042889392, "120日涨幅": 86.58498598276398, "距120日高点": -11.621501991835947, "总市值_亿元": 812.2193811, "PE_TTM": 205.5159, "PB": 48.9739, "换手率": 7.6094, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在AWG/PLC/光芯片，主信号为无源光路；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验激光器/光芯片客户认证、800G/1.6T导入、产能扩张、毛利率与订单弹性。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-high", "单日涨跌幅_显示": "-10.1%", "20日涨幅_显示": "9.7%", "60日涨幅_显示": "102.8%", "120日涨幅_显示": "86.6%", "距120日高点_显示": "-11.6%", "总分_显示": "90.5", "产业卡位分_显示": "54.5", "信号强度分_显示": "22.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "812.2", "PE_TTM_显示": "205.5", "PB_显示": "49.0", "换手率_显示": "7.6", "最新收盘价_显示": "179.7"}, {"排名": 16, "公司名称": "兆龙互连", "证券代码": "300913.SZ", "上市板块": "创业板", "名单层分类": "产业风向标", "观察顺序": "P1", "研究观察顺序": "重点观察", "总分": 88.9, "产业卡位分": 45.9, "信号强度分": 20, "市场定价分": 13, "路线筛选": "其他支撑线", "产业节点": "高速互连线缆", "技术路线": "电互连", "主信号组": "速率升级", "初步角色": "高速互连风向标", "最新收盘价": 50.75, "单日涨跌幅": -8.8214, "20日涨幅": -2.2346368715083775, "60日涨幅": 5.795288722117986, "120日涨幅": -8.788641265276775, "距120日高点": -20.229487582521223, "总市值_亿元": 173.96145900000002, "PE_TTM": 70.3387, "PB": 6.5674, "换手率": 4.9799, "市场定价风险": "中：离高点有距离，等待产业证据与走势共振", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在高速互连线缆，主信号为速率升级；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-mid", "单日涨跌幅_显示": "-8.8%", "20日涨幅_显示": "-2.2%", "60日涨幅_显示": "5.8%", "120日涨幅_显示": "-8.8%", "距120日高点_显示": "-20.2%", "总分_显示": "88.9", "产业卡位分_显示": "45.9", "信号强度分_显示": "20.0", "市场定价分_显示": "13.0", "总市值_亿元_显示": "174.0", "PE_TTM_显示": "70.3", "PB_显示": "6.6", "换手率_显示": "5.0", "最新收盘价_显示": "50.8"}, {"排名": 17, "公司名称": "罗博特科", "证券代码": "300757.SZ", "上市板块": "创业板", "名单层分类": "产业风向标", "观察顺序": "P1", "研究观察顺序": "重点观察", "总分": 88.1, "产业卡位分": 50.1, "信号强度分": 24, "市场定价分": 4, "路线筛选": "无源耦合线", "产业节点": "自动化设备/光电子扩展", "技术路线": "耦合路线/测试可靠性", "主信号组": "耦合设备", "初步角色": "设备端风向标", "最新收盘价": 587.9, "单日涨跌幅": -9.1345, "20日涨幅": -9.555237611729051, "60日涨幅": 46.105671256026646, "120日涨幅": 157.72653544342637, "距120日高点": -14.505925979786227, "总市值_亿元": 985.3680198999999, "PE_TTM": NaN, "PB": 60.6138, "换手率": 5.2157, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在自动化设备/光电子扩展，主信号为耦合设备；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验无源光路器件、耦合工艺/设备、良率关键约束、客户认证和扩产节奏。", "行情截至": "2026-06-26", "_level_class": "level-hot", "_risk_class": "risk-high", "单日涨跌幅_显示": "-9.1%", "20日涨幅_显示": "-9.6%", "60日涨幅_显示": "46.1%", "120日涨幅_显示": "157.7%", "距120日高点_显示": "-14.5%", "总分_显示": "88.1", "产业卡位分_显示": "50.1", "信号强度分_显示": "24.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "985.4", "PE_TTM_显示": "NA", "PB_显示": "60.6", "换手率_显示": "5.2", "最新收盘价_显示": "587.9"}, {"排名": 18, "公司名称": "剑桥科技", "证券代码": "603083.SH", "上市板块": "主板", "名单层分类": "核心候选", "观察顺序": "P1", "研究观察顺序": "重点观察", "总分": 87.8, "产业卡位分": 53.8, "信号强度分": 20, "市场定价分": 4, "路线筛选": "硅光PIC线", "产业节点": "高速光模块/光引擎", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "高速光模块与通信设备", "最新收盘价": 245.92, "单日涨跌幅": -5.5607, "20日涨幅": 21.118991331757297, "60日涨幅": 135.2626040371185, "120日涨幅": 104.473268479255, "距120日高点": -6.212577704893018, "总市值_亿元": 905.6013172800001, "PE_TTM": 258.4622, "PB": 11.9746, "换手率": 8.6839, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在高速光模块/光引擎，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验硅光PIC平台进度、调制器/探测器良率、客户导入节奏和是否从样品走向批量。", "行情截至": "2026-06-26", "_level_class": "level-watch", "_risk_class": "risk-high", "单日涨跌幅_显示": "-5.6%", "20日涨幅_显示": "21.1%", "60日涨幅_显示": "135.3%", "120日涨幅_显示": "104.5%", "距120日高点_显示": "-6.2%", "总分_显示": "87.8", "产业卡位分_显示": "53.8", "信号强度分_显示": "20.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "905.6", "PE_TTM_显示": "258.5", "PB_显示": "12.0", "换手率_显示": "8.7", "最新收盘价_显示": "245.9"}, {"排名": 19, "公司名称": "中际旭创", "证券代码": "300308.SZ", "上市板块": "创业板", "名单层分类": "产业风向标", "观察顺序": "P0", "研究观察顺序": "重点观察", "总分": 87.8, "产业卡位分": 53.8, "信号强度分": 20, "市场定价分": 4, "路线筛选": "硅光PIC线", "产业节点": "高速光模块/光引擎", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "全球光模块风向标", "最新收盘价": 1253.89, "单日涨跌幅": -5.2524, "20日涨幅": 4.666149133131325, "60日涨幅": 109.68060200668899, "120日涨幅": 101.914653784219, "距120日高点": -9.29155845565095, "总市值_亿元": 13983.81637983, "PE_TTM": 93.5442, "PB": 39.2946, "换手率": 3.1786, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在高速光模块/光引擎，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验硅光PIC平台进度、调制器/探测器良率、客户导入节奏和是否从样品走向批量。", "行情截至": "2026-06-26", "_level_class": "level-watch", "_risk_class": "risk-high", "单日涨跌幅_显示": "-5.3%", "20日涨幅_显示": "4.7%", "60日涨幅_显示": "109.7%", "120日涨幅_显示": "101.9%", "距120日高点_显示": "-9.3%", "总分_显示": "87.8", "产业卡位分_显示": "53.8", "信号强度分_显示": "20.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "13983.8", "PE_TTM_显示": "93.5", "PB_显示": "39.3", "换手率_显示": "3.2", "最新收盘价_显示": "1253.9"}, {"排名": 20, "公司名称": "精智达", "证券代码": "688627.SH", "上市板块": "科创板", "名单层分类": "产业风向标", "观察顺序": "P1", "研究观察顺序": "重点观察", "总分": 81.7, "产业卡位分": 48.7, "信号强度分": 19, "市场定价分": 4, "路线筛选": "测试验证线", "产业节点": "测试设备/检测设备", "技术路线": "测试可靠性", "主信号组": "测试可靠性", "初步角色": "测试设备风向标", "最新收盘价": 653.7, "单日涨跌幅": 2.3005, "20日涨幅": 65.12162469372807, "60日涨幅": 170.81779766343524, "120日涨幅": 154.65523957927542, "距120日高点": 0.0, "总市值_亿元": 615.3160434, "PE_TTM": 639.7039, "PB": 35.3229, "换手率": 8.1678, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在测试设备/检测设备，主信号为测试可靠性；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验高速测试设备、老化/可靠性验证、客户资本开支和订单确认。", "行情截至": "2026-06-26", "_level_class": "level-watch", "_risk_class": "risk-high", "单日涨跌幅_显示": "2.3%", "20日涨幅_显示": "65.1%", "60日涨幅_显示": "170.8%", "120日涨幅_显示": "154.7%", "距120日高点_显示": "0.0%", "总分_显示": "81.7", "产业卡位分_显示": "48.7", "信号强度分_显示": "19.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "615.3", "PE_TTM_显示": "639.7", "PB_显示": "35.3", "换手率_显示": "8.2", "最新收盘价_显示": "653.7"}, {"排名": 21, "公司名称": "长盈通", "证券代码": "688143.SH", "上市板块": "科创板", "名单层分类": "产业风向标", "观察顺序": "P1", "研究观察顺序": "重点观察", "总分": 79.9, "产业卡位分": 45.9, "信号强度分": 20, "市场定价分": 4, "路线筛选": "其他支撑线", "产业节点": "特种光纤/光器件材料", "技术路线": "材料/系统架构", "主信号组": "速率升级", "初步角色": "光纤材料风向标", "最新收盘价": 215.0, "单日涨跌幅": -10.6772, "20日涨幅": 40.98360655737705, "60日涨幅": 343.6648782501032, "120日涨幅": 363.36206896551727, "距120日高点": -10.677191524719564, "总市值_亿元": 276.87872000000004, "PE_TTM": 1284.73, "PB": 20.429, "换手率": 6.0579, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在特种光纤/光器件材料，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。", "行情截至": "2026-06-26", "_level_class": "level-watch", "_risk_class": "risk-high", "单日涨跌幅_显示": "-10.7%", "20日涨幅_显示": "41.0%", "60日涨幅_显示": "343.7%", "120日涨幅_显示": "363.4%", "距120日高点_显示": "-10.7%", "总分_显示": "79.9", "产业卡位分_显示": "45.9", "信号强度分_显示": "20.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "276.9", "PE_TTM_显示": "1284.7", "PB_显示": "20.4", "换手率_显示": "6.1", "最新收盘价_显示": "215.0"}, {"排名": 22, "公司名称": "共进股份", "证券代码": "603118.SH", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P2", "研究观察顺序": "重点观察", "总分": 79.3, "产业卡位分": 35.3, "信号强度分": 19, "市场定价分": 15, "路线筛选": "成品系统线", "产业节点": "通信设备/模块配套", "技术路线": "系统架构/CPO", "主信号组": "架构迁移", "初步角色": "通信设备与网络终端", "最新收盘价": 11.64, "单日涨跌幅": -5.8252, "20日涨幅": -13.069454817027637, "60日涨幅": -10.941086457536342, "120日涨幅": 2.555066079295165, "距120日高点": -34.23728813559321, "总市值_亿元": 91.63897295999999, "PE_TTM": 114.6438, "PB": 1.8061, "换手率": 3.854, "市场定价风险": "中低：不在阶段高位，但需要右侧放量确认", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在通信设备/模块配套，主信号为架构迁移；当前定价状态为中低：不在阶段高位，但需要右侧放量确认。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。", "行情截至": "2026-06-26", "_level_class": "level-watch", "_risk_class": "risk-low", "单日涨跌幅_显示": "-5.8%", "20日涨幅_显示": "-13.1%", "60日涨幅_显示": "-10.9%", "120日涨幅_显示": "2.6%", "距120日高点_显示": "-34.2%", "总分_显示": "79.3", "产业卡位分_显示": "35.3", "信号强度分_显示": "19.0", "市场定价分_显示": "15.0", "总市值_亿元_显示": "91.6", "PE_TTM_显示": "114.6", "PB_显示": "1.8", "换手率_显示": "3.9", "最新收盘价_显示": "11.6"}, {"排名": 23, "公司名称": "中兴通讯", "证券代码": "000063.SZ", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P2", "研究观察顺序": "重点观察", "总分": 77.3, "产业卡位分": 35.3, "信号强度分": 19, "市场定价分": 13, "路线筛选": "成品系统线", "产业节点": "通信设备/系统平台", "技术路线": "系统架构/CPO", "主信号组": "架构迁移", "初步角色": "设备商与系统平台", "最新收盘价": 35.67, "单日涨跌幅": -7.206, "20日涨幅": -6.866840731070489, "60日涨幅": 9.14932680538556, "120日涨幅": -4.087120193600424, "距120日高点": -15.951932139491042, "总市值_亿元": 1706.28689883, "PE_TTM": 38.1292, "PB": 2.225, "换手率": 5.8243, "市场定价风险": "中：离高点有距离，等待产业证据与走势共振", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在通信设备/系统平台，主信号为架构迁移；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。", "行情截至": "2026-06-26", "_level_class": "level-watch", "_risk_class": "risk-mid", "单日涨跌幅_显示": "-7.2%", "20日涨幅_显示": "-6.9%", "60日涨幅_显示": "9.1%", "120日涨幅_显示": "-4.1%", "距120日高点_显示": "-16.0%", "总分_显示": "77.3", "产业卡位分_显示": "35.3", "信号强度分_显示": "19.0", "市场定价分_显示": "13.0", "总市值_亿元_显示": "1706.3", "PE_TTM_显示": "38.1", "PB_显示": "2.2", "换手率_显示": "5.8", "最新收盘价_显示": "35.7"}, {"排名": 24, "公司名称": "沪电股份", "证券代码": "002463.SZ", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P2", "研究观察顺序": "补充观察", "总分": 75.7, "产业卡位分": 36.7, "信号强度分": 22, "市场定价分": 7, "路线筛选": "封装PCB线", "产业节点": "高速PCB/AI服务器PCB", "技术路线": "电互连/封装基板", "主信号组": "速率升级", "初步角色": "高速互连PCB", "最新收盘价": 147.28, "单日涨跌幅": -4.9745, "20日涨幅": 10.686908161731544, "60日涨幅": 82.63888888888889, "120日涨幅": 106.21674600952113, "距120日高点": -4.974514484805481, "总市值_亿元": 2834.20271008, "PE_TTM": 65.8822, "PB": 16.8804, "换手率": 4.271, "市场定价风险": "中高：关注度较高，避免仅凭主题追逐", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在高速PCB/AI服务器PCB，主信号为速率升级；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验高速PCB/封装基板材料、良率、AI交换机和光模块客户拉货信号。", "行情截至": "2026-06-26", "_level_class": "level-low", "_risk_class": "risk-midhi", "单日涨跌幅_显示": "-5.0%", "20日涨幅_显示": "10.7%", "60日涨幅_显示": "82.6%", "120日涨幅_显示": "106.2%", "距120日高点_显示": "-5.0%", "总分_显示": "75.7", "产业卡位分_显示": "36.7", "信号强度分_显示": "22.0", "市场定价分_显示": "7.0", "总市值_亿元_显示": "2834.2", "PE_TTM_显示": "65.9", "PB_显示": "16.9", "换手率_显示": "4.3", "最新收盘价_显示": "147.3"}, {"排名": 25, "公司名称": "深南电路", "证券代码": "002916.SZ", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P2", "研究观察顺序": "补充观察", "总分": 75.7, "产业卡位分": 36.7, "信号强度分": 22, "市场定价分": 7, "路线筛选": "封装PCB线", "产业节点": "高速PCB/封装基板", "技术路线": "电互连/封装基板", "主信号组": "速率升级", "初步角色": "高速PCB与封装基板", "最新收盘价": 433.5, "单日涨跌幅": -4.7253, "20日涨幅": 8.8430250075324, "60日涨幅": 85.90788232266917, "120日涨幅": 93.01838906451756, "距120日高点": -5.212752000699695, "总市值_亿元": 2952.857211, "PE_TTM": 81.2447, "PB": 16.3227, "换手率": 1.6847, "市场定价风险": "中高：关注度较高，避免仅凭主题追逐", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在高速PCB/封装基板，主信号为速率升级；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验高速PCB/封装基板材料、良率、AI交换机和光模块客户拉货信号。", "行情截至": "2026-06-26", "_level_class": "level-low", "_risk_class": "risk-midhi", "单日涨跌幅_显示": "-4.7%", "20日涨幅_显示": "8.8%", "60日涨幅_显示": "85.9%", "120日涨幅_显示": "93.0%", "距120日高点_显示": "-5.2%", "总分_显示": "75.7", "产业卡位分_显示": "36.7", "信号强度分_显示": "22.0", "市场定价分_显示": "7.0", "总市值_亿元_显示": "2952.9", "PE_TTM_显示": "81.2", "PB_显示": "16.3", "换手率_显示": "1.7", "最新收盘价_显示": "433.5"}, {"排名": 26, "公司名称": "沃格光电", "证券代码": "603773.SH", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P2", "研究观察顺序": "补充观察", "总分": 72.7, "产业卡位分": 36.7, "信号强度分": 22, "市场定价分": 4, "路线筛选": "封装PCB线", "产业节点": "玻璃/光电基板/封装材料", "技术路线": "封装基板", "主信号组": "封装基板", "初步角色": "光电材料与基板扩展", "最新收盘价": 178.0, "单日涨跌幅": 3.4944, "20日涨幅": 61.832893899445416, "60日涨幅": 402.8248587570622, "120日涨幅": 456.7719737253675, "距120日高点": 0.0, "总市值_亿元": 400.066748, "PE_TTM": NaN, "PB": 37.8833, "换手率": 13.9362, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在玻璃/光电基板/封装材料，主信号为封装基板；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验高速PCB/封装基板材料、良率、AI交换机和光模块客户拉货信号。", "行情截至": "2026-06-26", "_level_class": "level-low", "_risk_class": "risk-high", "单日涨跌幅_显示": "3.5%", "20日涨幅_显示": "61.8%", "60日涨幅_显示": "402.8%", "120日涨幅_显示": "456.8%", "距120日高点_显示": "0.0%", "总分_显示": "72.7", "产业卡位分_显示": "36.7", "信号强度分_显示": "22.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "400.1", "PE_TTM_显示": "NA", "PB_显示": "37.9", "换手率_显示": "13.9", "最新收盘价_显示": "178.0"}, {"排名": 27, "公司名称": "东山精密", "证券代码": "002384.SZ", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P2", "研究观察顺序": "补充观察", "总分": 72.7, "产业卡位分": 36.7, "信号强度分": 22, "市场定价分": 4, "路线筛选": "封装PCB线", "产业节点": "PCB/电子制造/光电配套", "技术路线": "电互连/封装基板", "主信号组": "速率升级", "初步角色": "高速互连与制造配套", "最新收盘价": 260.32, "单日涨跌幅": -5.6128, "20日涨幅": 18.8675799086758, "60日涨幅": 153.59961032635167, "120日涨幅": 220.15742221129008, "距120日高点": -5.612762871646126, "总市值_亿元": 4768.040644, "PE_TTM": 233.7163, "PB": 21.0624, "换手率": 4.9828, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在PCB/电子制造/光电配套，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验高速PCB/封装基板材料、良率、AI交换机和光模块客户拉货信号。", "行情截至": "2026-06-26", "_level_class": "level-low", "_risk_class": "risk-high", "单日涨跌幅_显示": "-5.6%", "20日涨幅_显示": "18.9%", "60日涨幅_显示": "153.6%", "120日涨幅_显示": "220.2%", "距120日高点_显示": "-5.6%", "总分_显示": "72.7", "产业卡位分_显示": "36.7", "信号强度分_显示": "22.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "4768.0", "PE_TTM_显示": "233.7", "PB_显示": "21.1", "换手率_显示": "5.0", "最新收盘价_显示": "260.3"}, {"排名": 28, "公司名称": "特发信息", "证券代码": "000070.SZ", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P2", "研究观察顺序": "补充观察", "总分": 70.9, "产业卡位分": 33.9, "信号强度分": 20, "市场定价分": 7, "路线筛选": "其他支撑线", "产业节点": "光通信/光纤光缆/模块配套", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "光通信基础设施", "最新收盘价": 22.29, "单日涨跌幅": -10.0121, "20日涨幅": 24.943946188340792, "60日涨幅": 42.155612244897966, "120日涨幅": 81.66259168704157, "距120日高点": -12.001579155151987, "总市值_亿元": 193.56477741, "PE_TTM": NaN, "PB": 19.3449, "换手率": 10.6612, "市场定价风险": "中高：关注度较高，避免仅凭主题追逐", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光通信/光纤光缆/模块配套，主信号为速率升级；当前定价状态为中高：关注度较高，避免仅凭主题追逐。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。", "行情截至": "2026-06-26", "_level_class": "level-low", "_risk_class": "risk-midhi", "单日涨跌幅_显示": "-10.0%", "20日涨幅_显示": "24.9%", "60日涨幅_显示": "42.2%", "120日涨幅_显示": "81.7%", "距120日高点_显示": "-12.0%", "总分_显示": "70.9", "产业卡位分_显示": "33.9", "信号强度分_显示": "20.0", "市场定价分_显示": "7.0", "总市值_亿元_显示": "193.6", "PE_TTM_显示": "NA", "PB_显示": "19.3", "换手率_显示": "10.7", "最新收盘价_显示": "22.3"}, {"排名": 29, "公司名称": "华脉科技", "证券代码": "603042.SH", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P3", "研究观察顺序": "补充观察", "总分": 70.9, "产业卡位分": 27.9, "信号强度分": 20, "市场定价分": 13, "路线筛选": "其他支撑线", "产业节点": "通信网络/光通信配套", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "通信网络配套", "最新收盘价": 14.85, "单日涨跌幅": -7.764, "20日涨幅": -24.118548799182427, "60日涨幅": -27.45481191988275, "120日涨幅": -17.224080267558538, "距120日高点": -37.68359211078472, "总市值_亿元": 31.001869799999998, "PE_TTM": NaN, "PB": 3.7173, "换手率": 7.6746, "市场定价风险": "中：离高点有距离，等待产业证据与走势共振", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在通信网络/光通信配套，主信号为速率升级；当前定价状态为中：离高点有距离，等待产业证据与走势共振。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。", "行情截至": "2026-06-26", "_level_class": "level-low", "_risk_class": "risk-mid", "单日涨跌幅_显示": "-7.8%", "20日涨幅_显示": "-24.1%", "60日涨幅_显示": "-27.5%", "120日涨幅_显示": "-17.2%", "距120日高点_显示": "-37.7%", "总分_显示": "70.9", "产业卡位分_显示": "27.9", "信号强度分_显示": "20.0", "市场定价分_显示": "13.0", "总市值_亿元_显示": "31.0", "PE_TTM_显示": "NA", "PB_显示": "3.7", "换手率_显示": "7.7", "最新收盘价_显示": "14.8"}, {"排名": 30, "公司名称": "烽火通信", "证券代码": "600498.SH", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P2", "研究观察顺序": "补充观察", "总分": 69.3, "产业卡位分": 35.3, "信号强度分": 20, "市场定价分": 4, "路线筛选": "成品系统线", "产业节点": "光通信系统/光模块", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "光通信系统平台", "最新收盘价": 76.22, "单日涨跌幅": -10.0012, "20日涨幅": 50.1871921182266, "60日涨幅": 65.76772509786866, "120日涨幅": 178.17518248175182, "距120日高点": -10.001180776951236, "总市值_亿元": 1035.1952685, "PE_TTM": 247.0456, "PB": 5.8911, "换手率": 9.2741, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光通信系统/光模块，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验800G/1.6T出货、客户结构、毛利率、海外链路和系统侧需求。", "行情截至": "2026-06-26", "_level_class": "level-low", "_risk_class": "risk-high", "单日涨跌幅_显示": "-10.0%", "20日涨幅_显示": "50.2%", "60日涨幅_显示": "65.8%", "120日涨幅_显示": "178.2%", "距120日高点_显示": "-10.0%", "总分_显示": "69.3", "产业卡位分_显示": "35.3", "信号强度分_显示": "20.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "1035.2", "PE_TTM_显示": "247.0", "PB_显示": "5.9", "换手率_显示": "9.3", "最新收盘价_显示": "76.2"}, {"排名": 31, "公司名称": "永鼎股份", "证券代码": "600105.SH", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P3", "研究观察顺序": "补充观察", "总分": 61.9, "产业卡位分": 27.9, "信号强度分": 20, "市场定价分": 4, "路线筛选": "其他支撑线", "产业节点": "光通信/光纤光缆", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "光通信材料与线缆", "最新收盘价": 65.71, "单日涨跌幅": -9.937, "20日涨幅": 35.40078302081184, "60日涨幅": 157.18199608610567, "120日涨幅": 209.66069745523092, "距120日高点": -9.93695175438597, "总市值_亿元": 960.6767830800001, "PE_TTM": 935.4925, "PB": 28.9517, "换手率": 10.4277, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光通信/光纤光缆，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。", "行情截至": "2026-06-26", "_level_class": "level-low", "_risk_class": "risk-high", "单日涨跌幅_显示": "-9.9%", "20日涨幅_显示": "35.4%", "60日涨幅_显示": "157.2%", "120日涨幅_显示": "209.7%", "距120日高点_显示": "-9.9%", "总分_显示": "61.9", "产业卡位分_显示": "27.9", "信号强度分_显示": "20.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "960.7", "PE_TTM_显示": "935.5", "PB_显示": "29.0", "换手率_显示": "10.4", "最新收盘价_显示": "65.7"}, {"排名": 32, "公司名称": "亨通光电", "证券代码": "600487.SH", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P3", "研究观察顺序": "补充观察", "总分": 61.9, "产业卡位分": 27.9, "信号强度分": 20, "市场定价分": 4, "路线筛选": "其他支撑线", "产业节点": "光纤光缆/光通信", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "光通信基础材料", "最新收盘价": 110.81, "单日涨跌幅": -9.9106, "20日涨幅": 57.22190692395006, "60日涨幅": 126.37385086823288, "120日涨幅": 322.77756581457464, "距120日高点": -9.910569105691058, "总市值_亿元": 2733.00919682, "PE_TTM": 84.6434, "PB": 8.4329, "换手率": 8.1312, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光纤光缆/光通信，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。", "行情截至": "2026-06-26", "_level_class": "level-low", "_risk_class": "risk-high", "单日涨跌幅_显示": "-9.9%", "20日涨幅_显示": "57.2%", "60日涨幅_显示": "126.4%", "120日涨幅_显示": "322.8%", "距120日高点_显示": "-9.9%", "总分_显示": "61.9", "产业卡位分_显示": "27.9", "信号强度分_显示": "20.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "2733.0", "PE_TTM_显示": "84.6", "PB_显示": "8.4", "换手率_显示": "8.1", "最新收盘价_显示": "110.8"}, {"排名": 33, "公司名称": "长飞光纤", "证券代码": "601869.SH", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P3", "研究观察顺序": "补充观察", "总分": 61.9, "产业卡位分": 27.9, "信号强度分": 20, "市场定价分": 4, "路线筛选": "其他支撑线", "产业节点": "光纤光缆/光通信材料", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "光通信基础材料", "最新收盘价": 543.0, "单日涨跌幅": -5.5652, "20日涨幅": 46.53892861961948, "60日涨幅": 97.98731131043536, "120日涨幅": 330.7130958991037, "距120日高点": -6.379310344827582, "总市值_亿元": 4495.524693, "PE_TTM": 388.4922, "PB": 31.5876, "换手率": 3.8351, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光纤光缆/光通信材料，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。", "行情截至": "2026-06-26", "_level_class": "level-low", "_risk_class": "risk-high", "单日涨跌幅_显示": "-5.6%", "20日涨幅_显示": "46.5%", "60日涨幅_显示": "98.0%", "120日涨幅_显示": "330.7%", "距120日高点_显示": "-6.4%", "总分_显示": "61.9", "产业卡位分_显示": "27.9", "信号强度分_显示": "20.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "4495.5", "PE_TTM_显示": "388.5", "PB_显示": "31.6", "换手率_显示": "3.8", "最新收盘价_显示": "543.0"}, {"排名": 34, "公司名称": "中天科技", "证券代码": "600522.SH", "上市板块": "主板", "名单层分类": "扩展候选", "观察顺序": "P3", "研究观察顺序": "补充观察", "总分": 61.9, "产业卡位分": 27.9, "信号强度分": 20, "市场定价分": 4, "路线筛选": "其他支撑线", "产业节点": "光通信/线缆材料", "技术路线": "系统架构/CPO", "主信号组": "速率升级", "初步角色": "光通信基础材料", "最新收盘价": 61.29, "单日涨跌幅": -10.0, "20日涨幅": 51.25863770977295, "60日涨幅": 126.5804066543438, "120日涨幅": 222.40925828511305, "距120日高点": -9.999999999999998, "总市值_亿元": 2091.79687113, "PE_TTM": 65.4989, "PB": 5.5029, "换手率": 11.5868, "市场定价风险": "阶段涨幅大，优先看回撤后的承接和业绩验证", "中报/财务核验": "待中报/财报核验（当前缓存未含完整财务指标）", "重点观察理由": "产业卡位在光通信/线缆材料，主信号为速率升级；当前定价状态为阶段涨幅大，优先看回撤后的承接和业绩验证。先做证据链核验，再讨论市场观察层面的右侧确认。", "下一步证据": "核验公司公告、互动平台、客户认证、订单节奏、产能利用率和中报兑现。", "行情截至": "2026-06-26", "_level_class": "level-low", "_risk_class": "risk-high", "单日涨跌幅_显示": "-10.0%", "20日涨幅_显示": "51.3%", "60日涨幅_显示": "126.6%", "120日涨幅_显示": "222.4%", "距120日高点_显示": "-10.0%", "总分_显示": "61.9", "产业卡位分_显示": "27.9", "信号强度分_显示": "20.0", "市场定价分_显示": "4.0", "总市值_亿元_显示": "2091.8", "PE_TTM_显示": "65.5", "PB_显示": "5.5", "换手率_显示": "11.6", "最新收盘价_显示": "61.3"}];
+const state = { level:'全部', board:'全部', route:'全部', q:'' };
+const buttons = [...document.querySelectorAll('button[data-filter]')];
+const search = document.getElementById('search');
+function applyFilter() {
+  document.querySelectorAll('.company-card, tbody tr').forEach(el => {
+    const okLevel = state.level === '全部' || el.dataset.level === state.level;
+    const okBoard = state.board === '全部' || el.dataset.board === state.board;
+    const okRoute = state.route === '全部' || el.dataset.route === state.route;
+    const okSearch = !state.q || (el.dataset.search || '').toLowerCase().includes(state.q);
+    el.classList.toggle('hidden', !(okLevel && okBoard && okRoute && okSearch));
+  });
+}
+buttons.forEach(btn => btn.addEventListener('click', () => {
+  const f = btn.dataset.filter, v = btn.dataset.value;
+  if (v === '全部') { state.level = '全部'; state.board = '全部'; state.route = '全部'; }
+  else { state[f] = state[f] === v ? '全部' : v; }
+  buttons.forEach(b => b.classList.toggle('active', (b.dataset.value === '全部' && state.level === '全部' && state.board === '全部' && state.route === '全部') || (b.dataset.value !== '全部' && state[b.dataset.filter] === b.dataset.value)));
+  applyFilter();
+}));
+search.addEventListener('input', e => { state.q = e.target.value.trim().toLowerCase(); applyFilter(); });
+</script>
+<!-- CPO_DASHBOARD_DOCK_START -->
+<style>
+.cpo-dashboard-dock {
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:linear-gradient(135deg,#17232b,#123e42);
+  box-shadow:0 14px 30px rgba(12,25,32,.24);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif;
+}
+.cpo-dashboard-dock a,
+.cpo-dashboard-dock button {
+  height:34px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:7px;
+  padding:0 12px;
+  color:#edf5f7;
+  background:rgba(255,255,255,.09);
+  font-size:14px;
+  line-height:32px;
+  text-decoration:none;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.cpo-dashboard-dock a:hover,
+.cpo-dashboard-dock button:hover {
+  background:rgba(255,255,255,.17);
+}
+.cpo-dashboard-dock__toggle {
+  min-width:54px;
+}
+.cpo-dashboard-dock.is-collapsed {
+  padding:6px;
+  border-radius:999px;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__home {
+  display:none;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__toggle {
+  min-width:46px;
+  border-radius:999px;
+  padding:0 10px;
+}
+@media (max-width: 760px) {
+  .cpo-dashboard-dock {
+    right:12px;
+    bottom:12px;
+  }
+  .cpo-dashboard-dock a,
+  .cpo-dashboard-dock button {
+    height:32px;
+    line-height:30px;
+    font-size:13px;
+    padding:0 10px;
+  }
+}
+</style>
+<div class="cpo-dashboard-dock" id="cpoDashboardDock">
+  <a class="cpo-dashboard-dock__home" href="./CPO研究中枢.html?v=dock20260628" title="返回 CPO 研究中枢">返回中枢</a>
+  <button class="cpo-dashboard-dock__toggle" type="button" title="收起或展开返回中枢按钮">收起</button>
+</div>
+<script>
+(function() {
+  var dock = document.getElementById('cpoDashboardDock');
+  if (!dock) return;
+  var toggle = dock.querySelector('.cpo-dashboard-dock__toggle');
+  toggle.addEventListener('click', function() {
+    dock.classList.toggle('is-collapsed');
+    toggle.textContent = dock.classList.contains('is-collapsed') ? '中枢' : '收起';
+  });
+})();
+</script>
+<!-- CPO_DASHBOARD_DOCK_END -->
+<div class="risk-note" style="margin:18px auto;max-width:1120px;padding:12px 14px;border:1px solid rgba(148,163,184,.28);border-radius:12px;color:#94a3b8;font-size:12px;line-height:1.7;">本专题内容基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。相关信息可能存在滞后或遗漏，请以公司公告和正式披露文件为准。</div></body>
+</html>

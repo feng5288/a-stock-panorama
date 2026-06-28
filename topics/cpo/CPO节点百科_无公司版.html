@@ -1,0 +1,395 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPO节点百科（无公司版）</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b0d;
+      --panel: #11171a;
+      --panel2: #151d20;
+      --line: #2c3c42;
+      --text: #f5f8f2;
+      --muted: #aab7b4;
+      --green: #d8ff4f;
+      --cyan: #62e4cf;
+      --amber: #ffd36a;
+      --red: #ff8585;
+      --blue: #83b7ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 26px 22px 48px;
+    }
+    header {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 26px;
+      background: linear-gradient(135deg, rgba(216,255,79,.12), rgba(98,228,207,.05)), var(--panel);
+    }
+    .eyebrow {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 4.4vw, 58px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+    p, li, td {
+      color: var(--muted);
+      line-height: 1.68;
+      font-size: 14px;
+    }
+    header p {
+      max-width: 1080px;
+      margin: 14px 0 0;
+      font-size: 15px;
+    }
+    section { margin-top: 16px; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 18px;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    button {
+      border: 1px solid var(--line);
+      background: var(--panel2);
+      color: var(--muted);
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 13px;
+    }
+    button.active,
+    button:hover {
+      color: #111;
+      background: var(--green);
+      border-color: var(--green);
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel2);
+      padding: 14px;
+      min-height: 108px;
+    }
+    .stat strong {
+      display: block;
+      color: var(--text);
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .node-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel2);
+      padding: 14px;
+      min-height: 360px;
+    }
+    .node-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 23px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 8px;
+      font-size: 12px;
+      color: var(--text);
+      background: rgba(255,255,255,.03);
+      white-space: nowrap;
+    }
+    .b-green { color: var(--green); }
+    .b-cyan { color: var(--cyan); }
+    .b-amber { color: var(--amber); }
+    .b-red { color: var(--red); }
+    .b-blue { color: var(--blue); }
+    .row {
+      margin-top: 10px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 9px;
+    }
+    .row b {
+      display: block;
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .row span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.58;
+    }
+    .hide { display: none; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: var(--green);
+      background: rgba(216,255,79,.04);
+      font-size: 13px;
+    }
+    @media (max-width: 1080px) {
+      .summary, .grid { grid-template-columns: 1fr; }
+      .wrap { padding: 18px; }
+      .node-card { min-height: auto; }
+    }
+  </style>
+
+<style id="cpo-visual-polish">
+:root{letter-spacing:0!important}
+body{letter-spacing:0!important}
+main{padding-top:14px!important;padding-bottom:28px!important}
+header:not(.cpo-public-top),.hero{box-shadow:0 8px 24px rgba(0,0,0,.14)!important}
+.topbar{padding:10px 16px!important;gap:10px!important}
+h1{font-size:clamp(22px,3vw,36px)!important;line-height:1.12!important}
+h2{font-size:18px!important;margin-bottom:10px!important}
+h3{font-size:15px!important}
+.subtitle,.sub,header p{line-height:1.5!important;font-size:13px!important;margin-top:6px!important}
+.panel,.card,.metric,.chain-wrap,aside,.table-section,.node-card,.stage{border-radius:8px!important}
+.panel{margin-bottom:10px!important}.panel h2{padding:9px 12px!important}.content{padding:10px!important}
+.grid,.cards,.score-strip{gap:9px!important}.card{min-height:auto!important;padding:10px!important}.card h3{margin-bottom:6px!important}.card p,.desc{line-height:1.45!important}
+.stage{min-height:170px!important;padding:10px!important}.stage h3{min-height:auto!important}.node-card{min-height:92px!important;padding:9px!important}
+.chain{padding:12px!important;gap:8px!important}.chain-wrap{max-height:70vh!important}
+.score-strip{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))!important;margin-bottom:10px!important}.metric{min-height:58px!important;padding:9px!important}.metric .value{font-size:18px!important}
+.layout{gap:12px!important}.detail-body{gap:8px!important;padding:11px!important}.field{padding-bottom:7px!important}.detail-head{padding:12px!important}.detail-title{font-size:17px!important}
+table{font-size:12px!important}th,td{padding:7px 8px!important;line-height:1.42!important}
+.risk-note{max-width:1240px!important;margin:12px auto!important;padding:9px 11px!important}
+.cpo-public-top{position:sticky;top:0;z-index:9999;background:rgba(8,13,18,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.22);padding:8px 14px;display:flex;gap:8px;align-items:center;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+.cpo-public-top__title{color:#eef7fb;font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cpo-public-top__links{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.cpo-public-top a{height:28px;line-height:26px;border:1px solid rgba(255,255,255,.18);border-radius:7px;padding:0 9px;color:#d8edf2;background:rgba(255,255,255,.06);text-decoration:none;font-size:12px}
+.cpo-public-top a:hover{border-color:#61d7c8;color:#fff}
+@media(max-width:900px){main{padding:12px!important}.stage{min-height:auto!important}.topbar{grid-template-columns:1fr!important}.cpo-public-top{align-items:flex-start;flex-direction:column}.cpo-public-top__links{justify-content:flex-start}}
+</style>
+</head>
+<body>
+<header class="cpo-public-top"><div class="cpo-public-top__title">CPO节点百科（无公司版）</div><nav class="cpo-public-top__links"><a href="../../core9_local_review.html?v=cpo">网站首页</a><a href="./index.html?v=visual2">CPO中枢</a><a href="./CPO全产业链详细全图_无公司版.html?v=visual2">产业链图</a><a href="./CPO关键约束环节总表.html?v=visual2">关键约束</a><a href="./CPO公司资料池.html?v=visual2">公司资料</a></nav></header>
+  <main class="wrap"><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、相关度、阶段标签、观察顺序和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section>
+    <header>
+      <div class="eyebrow">CPO 节点百科（无公司版）</div>
+      <h1>每个节点先讲清技术和卡点，再谈公司映射</h1>
+      <p>本页只解释 CPO 产业链节点本身：它是什么、输入输出是什么、关键指标是什么、为什么关键约束、供需信号怎么观察。这里不放公司名，不做介入观察。</p>
+      <div class="summary">
+        <div class="stat"><strong>19</strong><span>关键节点，覆盖材料、光电芯片、无源器件、PIC、封装耦合和测试可靠性。</span></div>
+        <div class="stat"><strong>6</strong><span>节点大类，可以直接作为后续半导体、PCB、MLCC 的百科模板。</span></div>
+        <div class="stat"><strong>0</strong><span>公司名称，当前页面严格保持无公司版。</span></div>
+        <div class="stat"><strong>7</strong><span>S 级核心：材料根基、光源、调制/PIC、光引擎、耦合。</span></div>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>节点筛选</h2>
+      <div class="toolbar">
+        <button class="active" data-filter="全部">全部</button>
+        <button data-filter="材料">材料</button>
+        <button data-filter="有源芯片">有源芯片</button>
+        <button data-filter="电芯片">电芯片</button>
+        <button data-filter="无源光器件">无源光器件</button>
+        <button data-filter="硅光/PIC">硅光/PIC</button>
+        <button data-filter="封装耦合">封装耦合</button>
+        <button data-filter="测试验证">测试验证</button>
+        <button data-filter="S">S级</button>
+      </div>
+
+      <div class="grid" id="node-grid">
+        <article class="node-card" data-type="材料" data-level="S"><h3>InP/GaAs</h3><div class="meta"><span class="badge b-blue">材料</span><span class="badge b-green">S</span></div><div class="row"><b>是什么</b><span>III-V 族化合物半导体材料，用于激光器、探测器等有源光芯片。</span></div><div class="row"><b>输入输出</b><span>输入为高纯衬底、外延、掺杂和刻蚀；输出为光源和探测器芯片基础结构。</span></div><div class="row"><b>关键指标</b><span>外延缺陷、发光效率、波长稳定性、寿命、温漂、晶圆良率。</span></div><div class="row"><b>为什么关键约束</b><span>材料和外延质量可能影响激光器良率、寿命和可靠性。</span></div><div class="row"><b>供需信号</b><span>光芯片产能缺口、交期拉长、外延良率爬坡慢。</span></div></article>
+        <article class="node-card" data-type="材料" data-level="S"><h3>SOI/SiN/SiON</h3><div class="meta"><span class="badge b-blue">材料</span><span class="badge b-green">S</span></div><div class="row"><b>是什么</b><span>硅光波导和低损耗无源光路的基础材料体系。</span></div><div class="row"><b>输入输出</b><span>输入为SOI晶圆、薄膜沉积、光刻刻蚀；输出为波导、调制平台和耦合结构。</span></div><div class="row"><b>关键指标</b><span>传输损耗、薄膜均匀性、折射率控制、温度稳定和工艺重复性。</span></div><div class="row"><b>为什么关键约束</b><span>硅光真正难点在工艺平台、低损耗和量产良率。</span></div><div class="row"><b>供需信号</b><span>硅光从样品走向小批量、低损耗波导需求提升、代工封装产能紧张。</span></div></article>
+        <article class="node-card" data-type="材料" data-level="A"><h3>Ge/SiGe</h3><div class="meta"><span class="badge b-blue">材料</span><span class="badge b-cyan">A</span></div><div class="row"><b>是什么</b><span>硅光探测器和高速光电转换的重要材料体系。</span></div><div class="row"><b>输入输出</b><span>输入为硅基外延、掺杂和金属化；输出为高速探测器结构。</span></div><div class="row"><b>关键指标</b><span>响应速度、响应度、暗电流、噪声、硅工艺兼容性。</span></div><div class="row"><b>为什么关键约束</b><span>接收端速度、灵敏度和噪声会影响误码率和系统余量。</span></div><div class="row"><b>供需信号</b><span>更高速率探测器需求提升、接收端良率成为关键约束。</span></div></article>
+        <article class="node-card" data-type="材料" data-level="A"><h3>TFLN</h3><div class="meta"><span class="badge b-blue">材料</span><span class="badge b-cyan">A</span></div><div class="row"><b>是什么</b><span>薄膜铌酸锂材料路线，常用于高速低损耗调制器。</span></div><div class="row"><b>输入输出</b><span>输入为薄膜铌酸锂晶圆、波导加工和电极设计；输出为高速调制器。</span></div><div class="row"><b>关键指标</b><span>调制带宽、插损、驱动电压、线性度、封装稳定性。</span></div><div class="row"><b>为什么关键约束</b><span>性能弹性强，但材料、工艺、封装和量产一致性难。</span></div><div class="row"><b>供需信号</b><span>高速调制器需求上升、TFLN从样品走向小批量。</span></div></article>
+        <article class="node-card" data-type="材料" data-level="A"><h3>陶瓷/AlN/玻璃/有机基板</h3><div class="meta"><span class="badge b-blue">材料</span><span class="badge b-cyan">A</span></div><div class="row"><b>是什么</b><span>光电封装中的承载、散热、绝缘和高可靠基板材料。</span></div><div class="row"><b>输入输出</b><span>输入为陶瓷粉体、AlN、玻璃或有机基材；输出为外壳、基板和载板。</span></div><div class="row"><b>关键指标</b><span>导热、热膨胀匹配、介电性能、机械强度、金属化可靠性。</span></div><div class="row"><b>为什么关键约束</b><span>靠近热源且承载光电器件，材料可靠性影响寿命和温漂。</span></div><div class="row"><b>供需信号</b><span>高导热基板需求上升、封装材料验证周期拉长。</span></div></article>
+        <article class="node-card" data-type="有源芯片" data-level="S"><h3>DFB/EML/CW/ELS 光源</h3><div class="meta"><span class="badge b-red">有源芯片</span><span class="badge b-green">S</span></div><div class="row"><b>是什么</b><span>光互连系统中的光源层，硅光和CPO对稳定光源依赖更强。</span></div><div class="row"><b>输入输出</b><span>输入为III-V外延、激光器芯片、驱动和热控；输出为稳定光源或外置光源。</span></div><div class="row"><b>关键指标</b><span>输出功率、波长稳定、线宽、寿命、温漂、耦合效率、功耗。</span></div><div class="row"><b>为什么关键约束</b><span>没有稳定光源，硅光PIC和CPO光引擎无法规模化交付。</span></div><div class="row"><b>供需信号</b><span>CW需求增长、激光器产能缺口、交期拉长、客户验证增加。</span></div></article>
+        <article class="node-card" data-type="有源芯片" data-level="S"><h3>调制器</h3><div class="meta"><span class="badge b-red">有源芯片</span><span class="badge b-green">S</span></div><div class="row"><b>是什么</b><span>把高速电信号调制到光信号上的核心器件。</span></div><div class="row"><b>输入输出</b><span>输入为电信号和连续光源；输出为已调制高速光信号。</span></div><div class="row"><b>关键指标</b><span>调制带宽、插损、Vpi、消光比、线性度、功耗、温度稳定性。</span></div><div class="row"><b>为什么关键约束</b><span>速率越高，调制器越影响链路上限和功耗水平。</span></div><div class="row"><b>供需信号</b><span>1.6T需求提升、低功耗路线被重视、TFLN/硅光调制进入验证。</span></div></article>
+        <article class="node-card" data-type="有源芯片" data-level="A"><h3>探测器 PD/APD</h3><div class="meta"><span class="badge b-red">有源芯片</span><span class="badge b-cyan">A</span></div><div class="row"><b>是什么</b><span>把光信号转换回电信号的接收端器件。</span></div><div class="row"><b>输入输出</b><span>输入为入射光信号和偏置电压；输出为电流信号。</span></div><div class="row"><b>关键指标</b><span>响应度、带宽、暗电流、噪声、灵敏度、可靠性。</span></div><div class="row"><b>为什么关键约束</b><span>影响接收端信噪比和误码率余量。</span></div><div class="row"><b>供需信号</b><span>接收灵敏度要求提升、PD/APD与硅光集成需求增加。</span></div></article>
+        <article class="node-card" data-type="电芯片" data-level="A"><h3>Driver/TIA/DSP/SerDes</h3><div class="meta"><span class="badge b-amber">电芯片</span><span class="badge b-cyan">A</span></div><div class="row"><b>是什么</b><span>高速电芯片层，负责驱动、接收、放大、均衡和重定时。</span></div><div class="row"><b>输入输出</b><span>输入为高速电信号或光电转换信号；输出为稳定高速信号。</span></div><div class="row"><b>关键指标</b><span>带宽、功耗、噪声、抖动、延迟、均衡能力。</span></div><div class="row"><b>为什么关键约束</b><span>CPO不只是光学问题，也是高速电信号和功耗问题。</span></div><div class="row"><b>供需信号</b><span>LPO/NPO/CPO改变DSP依赖，高速模拟芯片供应受关注。</span></div></article>
+        <article class="node-card" data-type="无源光器件" data-level="A"><h3>FA/FAU</h3><div class="meta"><span class="badge b-cyan">无源光器件</span><span class="badge b-cyan">A</span></div><div class="row"><b>是什么</b><span>光纤阵列和光纤阵列单元，用于多路光纤与芯片光口对准。</span></div><div class="row"><b>输入输出</b><span>输入为光纤、V-groove、端面加工和耦合工艺；输出为高密度光纤阵列。</span></div><div class="row"><b>关键指标</b><span>对准精度、插损、通道一致性、端面质量、温漂。</span></div><div class="row"><b>为什么关键约束</b><span>CPO和硅光提高光口密度，FAU一致性可能影响良率。</span></div><div class="row"><b>供需信号</b><span>多通道需求提升、耦合良率成为产线关键约束。</span></div></article>
+        <article class="node-card" data-type="无源光器件" data-level="A"><h3>AWG</h3><div class="meta"><span class="badge b-cyan">无源光器件</span><span class="badge b-cyan">A</span></div><div class="row"><b>是什么</b><span>阵列波导光栅，用于多波长分波和合波。</span></div><div class="row"><b>输入输出</b><span>输入为平面光波导和精密工艺；输出为多通道WDM器件。</span></div><div class="row"><b>关键指标</b><span>通道间隔、插损、串扰、温漂、通道一致性。</span></div><div class="row"><b>为什么关键约束</b><span>速率升级伴随更多波长和通道，AWG低损耗影响系统余量。</span></div><div class="row"><b>供需信号</b><span>1.6T多通道方案增加、AWG从小批量走向批量。</span></div></article>
+        <article class="node-card" data-type="无源光器件" data-level="A"><h3>PLC/MUX/DEMUX</h3><div class="meta"><span class="badge b-cyan">无源光器件</span><span class="badge b-cyan">A</span></div><div class="row"><b>是什么</b><span>平面光波导和复用解复用器件，用于光路分合和管理。</span></div><div class="row"><b>输入输出</b><span>输入为波导材料、光刻刻蚀和封装耦合；输出为光路管理器件。</span></div><div class="row"><b>关键指标</b><span>插损、回损、通道隔离、均匀性、温度稳定性。</span></div><div class="row"><b>为什么关键约束</b><span>它们不显眼但影响光路管理质量和良率。</span></div><div class="row"><b>供需信号</b><span>光引擎集成度提升、无源器件认证周期变长。</span></div></article>
+        <article class="node-card" data-type="无源光器件" data-level="B-A"><h3>微光学组件</h3><div class="meta"><span class="badge b-cyan">无源光器件</span><span class="badge b-amber">B-A</span></div><div class="row"><b>是什么</b><span>透镜、隔离器、滤波片、准直器等精密光学元件。</span></div><div class="row"><b>输入输出</b><span>输入为光学材料、镀膜和精密加工；输出为整形、隔离、滤波组件。</span></div><div class="row"><b>关键指标</b><span>光学精度、插损、隔离度、滤波精度、热稳定性。</span></div><div class="row"><b>为什么关键约束</b><span>高密度光引擎对尺寸、精度和可靠性要求更高。</span></div><div class="row"><b>供需信号</b><span>微光学价值量提升、精密装调产能紧张。</span></div></article>
+        <article class="node-card" data-type="硅光/PIC" data-level="S"><h3>硅光 PIC</h3><div class="meta"><span class="badge b-green">硅光/PIC</span><span class="badge b-green">S</span></div><div class="row"><b>是什么</b><span>在硅基平台上集成波导、调制器、探测器、耦合器和复用器件的芯片。</span></div><div class="row"><b>输入输出</b><span>输入为SOI/SiN/Ge、光子版图、晶圆制造和封装耦合；输出为光子集成芯片。</span></div><div class="row"><b>关键指标</b><span>片上传输损耗、调制效率、探测灵敏度、集成密度、良率。</span></div><div class="row"><b>为什么关键约束</b><span>CPO走向芯片化和低功耗，PIC是核心平台。</span></div><div class="row"><b>供需信号</b><span>PIC从样品走向小批量、硅光代工和封装产能紧张。</span></div></article>
+        <article class="node-card" data-type="封装耦合" data-level="S"><h3>光引擎</h3><div class="meta"><span class="badge b-blue">封装耦合</span><span class="badge b-green">S</span></div><div class="row"><b>是什么</b><span>把PIC、EIC、光源、FAU、基板、散热和机械结构集成起来的光电单元。</span></div><div class="row"><b>输入输出</b><span>输入为光电芯片、无源器件、基板、散热件和封装设备；输出为光引擎。</span></div><div class="row"><b>关键指标</b><span>转换效率、插损、功耗、热稳定、尺寸、良率、可靠性。</span></div><div class="row"><b>为什么关键约束</b><span>样品能做不等于可低成本、稳定、大批量交付。</span></div><div class="row"><b>供需信号</b><span>客户验证增加、自动化耦合需求提升、良率和交期成为限制。</span></div></article>
+        <article class="node-card" data-type="封装耦合" data-level="S"><h3>主动/被动耦合</h3><div class="meta"><span class="badge b-blue">封装耦合</span><span class="badge b-green">S</span></div><div class="row"><b>是什么</b><span>把芯片、光纤和光学器件精确对准，使光信号低损耗传输。</span></div><div class="row"><b>输入输出</b><span>输入为PIC、FAU、透镜和定位平台；输出为低插损光连接。</span></div><div class="row"><b>关键指标</b><span>对准精度、耦合效率、插损、节拍时间、自动化程度、良率。</span></div><div class="row"><b>为什么关键约束</b><span>主动耦合慢，被动耦合对前端设计和加工要求极高。</span></div><div class="row"><b>供需信号</b><span>耦合设备需求增长、产线节拍受限、光引擎良率爬坡慢。</span></div></article>
+        <article class="node-card" data-type="封装耦合" data-level="A"><h3>热管理</h3><div class="meta"><span class="badge b-blue">封装耦合</span><span class="badge b-cyan">A</span></div><div class="row"><b>是什么</b><span>控制光源、PIC、EIC和系统在高功率密度下的温度和温漂。</span></div><div class="row"><b>输入输出</b><span>输入为热界面材料、基板、散热结构；输出为稳定工作温度。</span></div><div class="row"><b>关键指标</b><span>热阻、热膨胀匹配、温度均匀性、长期老化、机械应力。</span></div><div class="row"><b>为什么关键约束</b><span>光器件对温度敏感，热管理影响波长、寿命和误码率。</span></div><div class="row"><b>供需信号</b><span>高导热基板和热界面材料需求上升。</span></div></article>
+        <article class="node-card" data-type="测试验证" data-level="A"><h3>BER/眼图/插损/回损</h3><div class="meta"><span class="badge b-amber">测试验证</span><span class="badge b-cyan">A</span></div><div class="row"><b>是什么</b><span>高速链路质量测试体系，用于观察光电链路能否稳定传输。</span></div><div class="row"><b>输入输出</b><span>输入为高速信号源、光模块/光引擎和测试仪表；输出为链路质量指标。</span></div><div class="row"><b>关键指标</b><span>误码率、眼高眼宽、抖动、插损、回损、测试时间。</span></div><div class="row"><b>为什么关键约束</b><span>速率越高，测试难度和时间成本越高。</span></div><div class="row"><b>供需信号</b><span>高速测试设备需求增加、客户认证项目变多、自动化测试建设加速。</span></div></article>
+        <article class="node-card" data-type="测试验证" data-level="A"><h3>温循/老化/可靠性验证</h3><div class="meta"><span class="badge b-amber">测试验证</span><span class="badge b-cyan">A</span></div><div class="row"><b>是什么</b><span>通过温度循环、长期老化和机械应力验证产品长期稳定工作。</span></div><div class="row"><b>输入输出</b><span>输入为样品、老化设备、温循设备和可靠性规范；输出为可靠性报告。</span></div><div class="row"><b>关键指标</b><span>老化时间、失效率、温循次数、漂移幅度、失效模式。</span></div><div class="row"><b>为什么关键约束</b><span>可靠性不过关就无法规模交付，测试周期也会占用产能。</span></div><div class="row"><b>供需信号</b><span>老化设备需求提升、认证周期延长、测试产能紧张。</span></div></article>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>下一步补充方向</h2>
+      <table>
+        <thead><tr><th>方向</th><th>要补什么</th><th>目的</th></tr></thead>
+        <tbody>
+          <tr><td>技术路线图</td><td>每个节点的主流方案、替代方案和争议路线</td><td>观察市场炒作是否符合真实技术路线</td></tr>
+          <tr><td>供需信号库</td><td>紧缺、价格变化、交期拉长、认证加速、良率爬坡等信号</td><td>为后续找市场关注度仍需观察节点做准备</td></tr>
+          <tr><td>公司映射层</td><td>等节点百科稳定后，再把公司贴回具体节点</td><td>避免一开始被个股带偏</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll("button[data-filter]");
+    const cards = document.querySelectorAll(".node-card");
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        button.classList.add("active");
+        const filter = button.dataset.filter;
+        cards.forEach(card => {
+          const show = filter === "全部" || card.dataset.type === filter || card.dataset.level === filter;
+          card.classList.toggle("hide", !show);
+        });
+      });
+    });
+  </script>
+<!-- CPO_DASHBOARD_DOCK_START -->
+<style>
+.cpo-dashboard-dock {
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:linear-gradient(135deg,#17232b,#123e42);
+  box-shadow:0 14px 30px rgba(12,25,32,.24);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif;
+}
+.cpo-dashboard-dock a,
+.cpo-dashboard-dock button {
+  height:34px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:7px;
+  padding:0 12px;
+  color:#edf5f7;
+  background:rgba(255,255,255,.09);
+  font-size:14px;
+  line-height:32px;
+  text-decoration:none;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.cpo-dashboard-dock a:hover,
+.cpo-dashboard-dock button:hover {
+  background:rgba(255,255,255,.17);
+}
+.cpo-dashboard-dock__toggle {
+  min-width:54px;
+}
+.cpo-dashboard-dock.is-collapsed {
+  padding:6px;
+  border-radius:999px;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__home {
+  display:none;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__toggle {
+  min-width:46px;
+  border-radius:999px;
+  padding:0 10px;
+}
+@media (max-width: 760px) {
+  .cpo-dashboard-dock {
+    right:12px;
+    bottom:12px;
+  }
+  .cpo-dashboard-dock a,
+  .cpo-dashboard-dock button {
+    height:32px;
+    line-height:30px;
+    font-size:13px;
+    padding:0 10px;
+  }
+}
+</style>
+<div class="cpo-dashboard-dock" id="cpoDashboardDock">
+  <a class="cpo-dashboard-dock__home" href="./CPO研究中枢.html?v=dock20260628" title="返回 CPO 研究中枢">返回中枢</a>
+  <button class="cpo-dashboard-dock__toggle" type="button" title="收起或展开返回中枢按钮">收起</button>
+</div>
+<script>
+(function() {
+  var dock = document.getElementById('cpoDashboardDock');
+  if (!dock) return;
+  var toggle = dock.querySelector('.cpo-dashboard-dock__toggle');
+  toggle.addEventListener('click', function() {
+    dock.classList.toggle('is-collapsed');
+    toggle.textContent = dock.classList.contains('is-collapsed') ? '中枢' : '收起';
+  });
+})();
+</script>
+<!-- CPO_DASHBOARD_DOCK_END -->
+<div class="risk-note" style="margin:18px auto;max-width:1120px;padding:12px 14px;border:1px solid rgba(148,163,184,.28);border-radius:12px;color:#94a3b8;font-size:12px;line-height:1.7;">本专题内容基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。相关信息可能存在滞后或遗漏，请以公司公告和正式披露文件为准。</div></body>
+</html>
+

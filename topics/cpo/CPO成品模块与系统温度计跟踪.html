@@ -1,0 +1,109 @@
+﻿<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CPO成品模块与系统温度计跟踪</title><script src="./cpo_module_system_temperature_data.js"></script><style>body{margin:0;background:#f7f8fa;color:#172033;font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif}header{position:sticky;top:0;z-index:2;background:rgba(247,248,250,.96);border-bottom:1px solid #d8dde7}.bar,main{max-width:1580px;margin:0 auto}.bar{padding:16px 20px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end}h1{font-size:24px;margin:0 0 8px}.sub{margin:0;color:#657084;font-size:13px;line-height:1.6;max-width:1060px}.filters{display:flex;gap:8px;flex-wrap:wrap}input,select{height:34px;border:1px solid #d8dde7;border-radius:6px;background:white;padding:0 10px}main{padding:18px 20px 28px}.metrics{display:grid;grid-template-columns:repeat(6,minmax(120px,1fr));gap:10px;margin-bottom:16px}.metric{background:white;border:1px solid #d8dde7;border-radius:8px;padding:12px}.metric span{color:#657084;font-size:12px}.metric b{display:block;font-size:22px;margin-top:5px}.cards{display:grid;grid-template-columns:repeat(3,minmax(280px,1fr));gap:12px}.card{background:white;border:1px solid #d8dde7;border-left:5px solid #176b87;border-radius:8px;padding:12px;display:grid;gap:9px;min-height:292px}.card.A{border-left-color:#b76100}.card.B{border-left-color:#596579}.card.C{border-left-color:#8a94a6}.card h2{font-size:18px;margin:0}.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{font-size:12px;border:1px solid #d8dde7;border-radius:6px;padding:2px 6px;color:#657084;background:#fafbfc}.tag.red{color:#b42318;border-color:#efc6c0;background:#fff7f5}.tag.green{color:#16704b;border-color:#bbdfd0;background:#f4fbf8}.tag.orange{color:#9a4b00;border-color:#efcf9a;background:#fff8ed}.label{font-size:12px;color:#657084;margin-bottom:2px}.field{font-size:13px;line-height:1.58;color:#26354d}.table{margin-top:16px;background:white;border:1px solid #d8dde7;border-radius:8px;overflow:auto}table{width:100%;border-collapse:collapse;min-width:1450px}th,td{border-bottom:1px solid #d8dde7;padding:10px;text-align:left;vertical-align:top;font-size:13px;line-height:1.5}th{background:#f1f4f8}@media(max-width:1200px){.bar{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.cards{grid-template-columns:1fr}}</style>
+<style id="cpo-visual-polish">
+:root{letter-spacing:0!important}
+body{letter-spacing:0!important}
+main{padding-top:14px!important;padding-bottom:28px!important}
+header:not(.cpo-public-top),.hero{box-shadow:0 8px 24px rgba(0,0,0,.14)!important}
+.topbar{padding:10px 16px!important;gap:10px!important}
+h1{font-size:clamp(22px,3vw,36px)!important;line-height:1.12!important}
+h2{font-size:18px!important;margin-bottom:10px!important}
+h3{font-size:15px!important}
+.subtitle,.sub,header p{line-height:1.5!important;font-size:13px!important;margin-top:6px!important}
+.panel,.card,.metric,.chain-wrap,aside,.table-section,.node-card,.stage{border-radius:8px!important}
+.panel{margin-bottom:10px!important}.panel h2{padding:9px 12px!important}.content{padding:10px!important}
+.grid,.cards,.score-strip{gap:9px!important}.card{min-height:auto!important;padding:10px!important}.card h3{margin-bottom:6px!important}.card p,.desc{line-height:1.45!important}
+.stage{min-height:170px!important;padding:10px!important}.stage h3{min-height:auto!important}.node-card{min-height:92px!important;padding:9px!important}
+.chain{padding:12px!important;gap:8px!important}.chain-wrap{max-height:70vh!important}
+.score-strip{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))!important;margin-bottom:10px!important}.metric{min-height:58px!important;padding:9px!important}.metric .value{font-size:18px!important}
+.layout{gap:12px!important}.detail-body{gap:8px!important;padding:11px!important}.field{padding-bottom:7px!important}.detail-head{padding:12px!important}.detail-title{font-size:17px!important}
+table{font-size:12px!important}th,td{padding:7px 8px!important;line-height:1.42!important}
+.risk-note{max-width:1240px!important;margin:12px auto!important;padding:9px 11px!important}
+.cpo-public-top{position:sticky;top:0;z-index:9999;background:rgba(8,13,18,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.22);padding:8px 14px;display:flex;gap:8px;align-items:center;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+.cpo-public-top__title{color:#eef7fb;font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cpo-public-top__links{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.cpo-public-top a{height:28px;line-height:26px;border:1px solid rgba(255,255,255,.18);border-radius:7px;padding:0 9px;color:#d8edf2;background:rgba(255,255,255,.06);text-decoration:none;font-size:12px}
+.cpo-public-top a:hover{border-color:#61d7c8;color:#fff}
+@media(max-width:900px){main{padding:12px!important}.stage{min-height:auto!important}.topbar{grid-template-columns:1fr!important}.cpo-public-top{align-items:flex-start;flex-direction:column}.cpo-public-top__links{justify-content:flex-start}}
+</style>
+</head><body>
+<header class="cpo-public-top"><div class="cpo-public-top__title">CPO成品模块与系统温度计跟踪</div><nav class="cpo-public-top__links"><a href="../../core9_local_review.html?v=cpo">网站首页</a><a href="./index.html?v=visual2">CPO中枢</a><a href="./CPO全产业链详细全图_无公司版.html?v=visual2">产业链图</a><a href="./CPO关键约束环节总表.html?v=visual2">关键约束</a><a href="./CPO公司资料池.html?v=visual2">公司资料</a></nav></header><header><div class="bar"><div><h1>CPO成品模块与系统温度计跟踪</h1><p class="sub">这张表不用于追成品光模块，而是用成品模块和系统硬件观察产业热度是否真实、是否已经关注度较高、资金是否可能向光源、硅光、FAU/AWG、光引擎封装和测试设备扩散。</p></div><div class="filters"><input id="q" placeholder="搜索公司/证据"><select id="grp"><option value="all">全部温度计</option><option value="成品模块温度计">成品模块</option><option value="系统温度计">系统温度计</option><option value="系统扩散温度计">系统扩散</option></select><select id="access"><option value="all">全部板块角色</option><option value="主板样本">主板样本</option><option value="非主板样本">非主板样本</option></select><select id="risk"><option value="all">全部阶段位置观察</option><option value="高">高风险</option><option value="中高">中高风险</option><option value="低">低/中风险</option></select></div></div></header><main><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、相关度、阶段标签、观察顺序和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section><section class="metrics" id="metrics"></section><section class="cards" id="cards"></section><section class="table"><table id="tbl"></table></section></main><script>const data=window.CPO_MODULE_SYSTEM_TEMPERATURE||[];const el=id=>document.getElementById(id);function pct(v){const n=parseFloat(String(v||'').replace('%',''));return Number.isFinite(n)?n:0}function filtered(){const q=el('q').value.trim().toLowerCase(),g=el('grp').value,a=el('access').value,r=el('risk').value;return data.filter(x=>Object.values(x).join(' ').toLowerCase().includes(q)&&(g==='all'||x.group===g)&&(a==='all'||(a==='主板样本'?x.userAccess.startsWith('主板样本'):x.userAccess.startsWith('非主板样本')))&&(r==='all'||(r==='高'?x.chaseRisk==='高':r==='中高'?x.chaseRisk==='中高':!['高','中高'].includes(x.chaseRisk))))}function render(){const rs=filtered();const m=[['公司数',rs.length],['主板样本',rs.filter(x=>x.userAccess.startsWith('主板样本')).length],['成品模块',rs.filter(x=>x.group==='成品模块温度计').length],['强证据',rs.filter(x=>x.evidenceGrade.includes('强')).length],['60日>100%',rs.filter(x=>pct(x.ret60d)>100).length],['高追涨风险',rs.filter(x=>x.chaseRisk==='高').length]];el('metrics').innerHTML=m.map(x=>`<div class="metric"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('');el('cards').innerHTML=rs.map(x=>{const hot=x.chaseRisk==='高'||x.chaseRisk==='中高';return `<article class="card ${x.bottleneck[0]}"><h2>${x.name}</h2><div class="tags"><span class="tag green">${x.userAccess}</span><span class="tag">${x.group}</span><span class="tag ${hot?'red':'orange'}">阶段位置 ${x.chaseRisk}</span><span class="tag">60日 ${x.ret60d}</span><span class="tag">回撤 ${x.drawdownFrom60dHigh}</span></div><div><div class="label">定位</div><div class="field">${x.layer}</div></div><div><div class="label">温度计用途</div><div class="field">${x.temperatureUse}</div></div><div><div class="label">上游解读</div><div class="field">${x.upstreamRead}</div></div><div><div class="label">观察</div><div class="field">${x.judgement}</div></div></article>`}).join('');const hs=['公司','板块','分组','定位','官方证据','业绩信号','行情','阶段位置','温度计用途','上游解读','下一步'];el('tbl').innerHTML=`<thead><tr>${hs.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rs.map(x=>`<tr><td>${x.name}<br>${x.code}</td><td>${x.userAccess}</td><td>${x.group}</td><td>${x.layer}<br>${x.chainRole}</td><td>${x.evidenceGrade}<br>${x.officialEvidence}</td><td>${x.earningsSignal}</td><td>5日 ${x.ret5d}<br>20日 ${x.ret20d}<br>60日 ${x.ret60d}<br>距高点 ${x.drawdownFrom60dHigh}</td><td>${x.chaseRisk}<br>${x.positionState}</td><td>${x.temperatureUse}</td><td>${x.upstreamRead}</td><td>${x.nextReview}</td></tr>`).join('')}</tbody>`}['q','grp','access','risk'].forEach(id=>el(id).addEventListener('input',render));render();</script><!-- CPO_DASHBOARD_DOCK_START -->
+<style>
+.cpo-dashboard-dock {
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:linear-gradient(135deg,#17232b,#123e42);
+  box-shadow:0 14px 30px rgba(12,25,32,.24);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif;
+}
+.cpo-dashboard-dock a,
+.cpo-dashboard-dock button {
+  height:34px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:7px;
+  padding:0 12px;
+  color:#edf5f7;
+  background:rgba(255,255,255,.09);
+  font-size:14px;
+  line-height:32px;
+  text-decoration:none;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.cpo-dashboard-dock a:hover,
+.cpo-dashboard-dock button:hover {
+  background:rgba(255,255,255,.17);
+}
+.cpo-dashboard-dock__toggle {
+  min-width:54px;
+}
+.cpo-dashboard-dock.is-collapsed {
+  padding:6px;
+  border-radius:999px;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__home {
+  display:none;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__toggle {
+  min-width:46px;
+  border-radius:999px;
+  padding:0 10px;
+}
+@media (max-width: 760px) {
+  .cpo-dashboard-dock {
+    right:12px;
+    bottom:12px;
+  }
+  .cpo-dashboard-dock a,
+  .cpo-dashboard-dock button {
+    height:32px;
+    line-height:30px;
+    font-size:13px;
+    padding:0 10px;
+  }
+}
+</style>
+<div class="cpo-dashboard-dock" id="cpoDashboardDock">
+  <a class="cpo-dashboard-dock__home" href="./CPO研究中枢.html?v=dock20260628" title="返回 CPO 研究中枢">返回中枢</a>
+  <button class="cpo-dashboard-dock__toggle" type="button" title="收起或展开返回中枢按钮">收起</button>
+</div>
+<script>
+(function() {
+  var dock = document.getElementById('cpoDashboardDock');
+  if (!dock) return;
+  var toggle = dock.querySelector('.cpo-dashboard-dock__toggle');
+  toggle.addEventListener('click', function() {
+    dock.classList.toggle('is-collapsed');
+    toggle.textContent = dock.classList.contains('is-collapsed') ? '中枢' : '收起';
+  });
+})();
+</script>
+<!-- CPO_DASHBOARD_DOCK_END -->
+<div class="risk-note" style="margin:18px auto;max-width:1120px;padding:12px 14px;border:1px solid rgba(148,163,184,.28);border-radius:12px;color:#94a3b8;font-size:12px;line-height:1.7;">本专题内容基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。相关信息可能存在滞后或遗漏，请以公司公告和正式披露文件为准。</div></body></html>

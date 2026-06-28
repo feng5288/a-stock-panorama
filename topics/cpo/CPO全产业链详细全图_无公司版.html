@@ -1,0 +1,566 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPO全产业链详细全图（无公司版）</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b0d;
+      --panel: #11171a;
+      --panel2: #151d20;
+      --line: #2c3c42;
+      --text: #f5f8f2;
+      --muted: #aab7b4;
+      --green: #d8ff4f;
+      --cyan: #62e4cf;
+      --amber: #ffd36a;
+      --red: #ff8585;
+      --blue: #83b7ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+    }
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 20px 16px;
+      background: #0c1113;
+      border-right: 1px solid var(--line);
+    }
+    .brand {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+    nav {
+      display: grid;
+      gap: 8px;
+      margin-top: 22px;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid transparent;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    nav a:hover {
+      color: var(--text);
+      background: var(--panel);
+      border-color: var(--line);
+    }
+    .sidebox {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    main {
+      padding: 28px;
+      overflow: hidden;
+    }
+    header {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 28px;
+      background: linear-gradient(135deg, rgba(216,255,79,.12), rgba(98,228,207,.05)), var(--panel);
+    }
+    .eyebrow {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 4.5vw, 60px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+    p, li, td {
+      color: var(--muted);
+      line-height: 1.68;
+      font-size: 14px;
+    }
+    header p {
+      max-width: 1080px;
+      margin: 14px 0 0;
+      font-size: 15px;
+    }
+    section { margin-top: 18px; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 18px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 8px;
+      border: 1px solid var(--line);
+      color: var(--green);
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 23px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 8px;
+      font-size: 12px;
+      color: var(--text);
+      background: rgba(255,255,255,.03);
+      white-space: nowrap;
+    }
+    .b-green { color: var(--green); }
+    .b-cyan { color: var(--cyan); }
+    .b-amber { color: var(--amber); }
+    .b-red { color: var(--red); }
+    .b-blue { color: var(--blue); }
+    .chain {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(190px, 1fr));
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+    .stage {
+      min-height: 300px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel2);
+      padding: 14px;
+      position: relative;
+    }
+    .stage::after {
+      content: "";
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      width: 12px;
+      height: 1px;
+      background: var(--line);
+    }
+    .stage:last-child::after { display: none; }
+    .num {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .stage strong {
+      display: block;
+      color: var(--text);
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .node {
+      border: 1px solid rgba(216,255,79,.2);
+      background: rgba(216,255,79,.04);
+      border-radius: 6px;
+      padding: 9px;
+      margin-top: 8px;
+    }
+    .node b {
+      display: block;
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .node span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .span4 { grid-column: span 4; }
+    .span6 { grid-column: span 6; }
+    .span8 { grid-column: span 8; }
+    .span12 { grid-column: 1 / -1; }
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel2);
+      padding: 14px;
+      min-height: 150px;
+    }
+    .mini strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .table-wrap table {
+      min-width: 980px;
+      border: 0;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: var(--green);
+      background: rgba(216,255,79,.04);
+      font-size: 13px;
+    }
+    .path {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel2);
+      padding: 13px;
+      min-height: 122px;
+    }
+    .step strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+    a { color: var(--cyan); }
+    @media (max-width: 1080px) {
+      .layout { grid-template-columns: 1fr; }
+      aside {
+        position: relative;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .sidebox { position: static; margin-top: 16px; }
+      .span4, .span6, .span8 { grid-column: 1 / -1; }
+      .path { grid-template-columns: 1fr; }
+      main { padding: 18px; }
+    }
+  </style>
+
+<style id="cpo-visual-polish">
+:root{letter-spacing:0!important}
+body{letter-spacing:0!important}
+main{padding-top:14px!important;padding-bottom:28px!important}
+header:not(.cpo-public-top),.hero{box-shadow:0 8px 24px rgba(0,0,0,.14)!important}
+.topbar{padding:10px 16px!important;gap:10px!important}
+h1{font-size:clamp(22px,3vw,36px)!important;line-height:1.12!important}
+h2{font-size:18px!important;margin-bottom:10px!important}
+h3{font-size:15px!important}
+.subtitle,.sub,header p{line-height:1.5!important;font-size:13px!important;margin-top:6px!important}
+.panel,.card,.metric,.chain-wrap,aside,.table-section,.node-card,.stage{border-radius:8px!important}
+.panel{margin-bottom:10px!important}.panel h2{padding:9px 12px!important}.content{padding:10px!important}
+.grid,.cards,.score-strip{gap:9px!important}.card{min-height:auto!important;padding:10px!important}.card h3{margin-bottom:6px!important}.card p,.desc{line-height:1.45!important}
+.stage{min-height:170px!important;padding:10px!important}.stage h3{min-height:auto!important}.node-card{min-height:92px!important;padding:9px!important}
+.chain{padding:12px!important;gap:8px!important}.chain-wrap{max-height:70vh!important}
+.score-strip{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))!important;margin-bottom:10px!important}.metric{min-height:58px!important;padding:9px!important}.metric .value{font-size:18px!important}
+.layout{gap:12px!important}.detail-body{gap:8px!important;padding:11px!important}.field{padding-bottom:7px!important}.detail-head{padding:12px!important}.detail-title{font-size:17px!important}
+table{font-size:12px!important}th,td{padding:7px 8px!important;line-height:1.42!important}
+.risk-note{max-width:1240px!important;margin:12px auto!important;padding:9px 11px!important}
+.cpo-public-top{position:sticky;top:0;z-index:9999;background:rgba(8,13,18,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.22);padding:8px 14px;display:flex;gap:8px;align-items:center;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+.cpo-public-top__title{color:#eef7fb;font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cpo-public-top__links{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.cpo-public-top a{height:28px;line-height:26px;border:1px solid rgba(255,255,255,.18);border-radius:7px;padding:0 9px;color:#d8edf2;background:rgba(255,255,255,.06);text-decoration:none;font-size:12px}
+.cpo-public-top a:hover{border-color:#61d7c8;color:#fff}
+@media(max-width:900px){main{padding:12px!important}.stage{min-height:auto!important}.topbar{grid-template-columns:1fr!important}.cpo-public-top{align-items:flex-start;flex-direction:column}.cpo-public-top__links{justify-content:flex-start}}
+</style>
+</head>
+<body>
+<header class="cpo-public-top"><div class="cpo-public-top__title">CPO全产业链详细全图（无公司版）</div><nav class="cpo-public-top__links"><a href="../../core9_local_review.html?v=cpo">网站首页</a><a href="./index.html?v=visual2">CPO中枢</a><a href="./CPO全产业链详细全图_无公司版.html?v=visual2">产业链图</a><a href="./CPO关键约束环节总表.html?v=visual2">关键约束</a><a href="./CPO公司资料池.html?v=visual2">公司资料</a></nav></header>
+  <div class="layout">
+    <aside>
+      <div class="brand">
+        CPO 详细全图
+        <span>无公司版：先产业体系，后公司映射</span>
+      </div>
+      <nav>
+        <a href="#flow">总流程</a>
+        <a href="#layers">分层拆解</a>
+        <a href="#materials">材料层</a>
+        <a href="#chips">光电芯片</a>
+        <a href="#passive">无源耦合</a>
+        <a href="#packaging">封装测试</a>
+        <a href="#bottleneck">卡点排序</a>
+        <a href="#market">扩散路径</a>
+      </nav>
+      <div class="sidebox">
+        当前页不展开公司。公司映射、主板样本、阶段位置观察和中报验证都放到后续步骤。
+      </div>
+    </aside>
+
+    <main><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、相关度、阶段标签、观察顺序和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section>
+      <header>
+        <div class="eyebrow">CPO 全产业链详细全图（无公司版）</div>
+        <h1>先把 CPO 的产业机器拆开，再把公司贴回去</h1>
+        <p>这张图只讲产业结构、技术流程、关键材料、工艺节点、测试验证和关键约束强度。它的目标是先呈现 CPO 如何从 AI 数据中心需求，一层层传导到材料、芯片、器件、封装、测试和成品系统。</p>
+      </header>
+
+      <section id="flow" class="card">
+        <div class="tag">总流程</div>
+        <h2>从 AI 数据中心到 CPO 交换系统</h2>
+        <div class="chain">
+          <div class="stage"><div class="num">01</div><strong>需求层</strong><div class="node"><b>AI 集群网络</b><span>训练/推理规模扩大，带宽、功耗、延迟压力上升。</span></div><div class="node"><b>800G/1.6T/3.2T</b><span>速率升级带动光互连价值量提升。</span></div></div>
+          <div class="stage"><div class="num">02</div><strong>架构层</strong><div class="node"><b>交换 ASIC</b><span>影响光互连是否更靠近芯片。</span></div><div class="node"><b>可插拔/LPO/NPO/CPO</b><span>不同路线改变光源、DSP、封装和测试需求。</span></div></div>
+          <div class="stage"><div class="num">03</div><strong>材料层</strong><div class="node"><b>InP/GaAs</b><span>激光器、探测器等有源光芯片基础。</span></div><div class="node"><b>SOI/SiN/Ge</b><span>硅光 PIC、波导、调制器和探测器基础。</span></div><div class="node"><b>陶瓷/AlN/玻璃</b><span>封装承载、散热和可靠性。</span></div></div>
+          <div class="stage"><div class="num">04</div><strong>有源芯片</strong><div class="node"><b>DFB/EML/CW/ELS</b><span>稳定光源是 CPO 光引擎基础。</span></div><div class="node"><b>调制器/探测器</b><span>完成电光/光电转换。</span></div><div class="node"><b>Driver/TIA/DSP</b><span>高速电信号驱动和恢复。</span></div></div>
+          <div class="stage"><div class="num">05</div><strong>无源耦合</strong><div class="node"><b>FAU/AWG/PLC</b><span>阵列耦合、分波合波、光路管理。</span></div><div class="node"><b>MUX/DEMUX</b><span>多波长高速传输基础。</span></div><div class="node"><b>透镜/滤波/MT</b><span>微光学和高密度连接。</span></div></div>
+          <div class="stage"><div class="num">06</div><strong>光引擎封装</strong><div class="node"><b>PIC/EIC 集成</b><span>光电芯片协同封装。</span></div><div class="node"><b>主动/被动耦合</b><span>微米级对准和自动化良率。</span></div><div class="node"><b>热管理</b><span>温漂、热阻和长期可靠性。</span></div></div>
+          <div class="stage"><div class="num">07</div><strong>测试验证</strong><div class="node"><b>BER/眼图</b><span>高速信号质量验证。</span></div><div class="node"><b>温循/老化</b><span>可靠性和寿命筛选。</span></div><div class="node"><b>插损/回损</b><span>光路质量验证。</span></div></div>
+          <div class="stage"><div class="num">08</div><strong>成品系统</strong><div class="node"><b>光模块/光引擎</b><span>当前业绩兑现较直观。</span></div><div class="node"><b>CPO 交换机</b><span>系统级交付和客户认证。</span></div></div>
+        </div>
+      </section>
+
+      <section id="layers" class="card">
+        <div class="tag">分层拆解</div>
+        <h2>每一层的输入、输出和关键约束</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>层级</th><th>核心问题</th><th>典型输入</th><th>典型输出</th><th>主要关键约束</th></tr></thead>
+            <tbody>
+              <tr><td>需求层</td><td>为什么需要 CPO？</td><td>AI训练/推理、云厂资本开支</td><td>高速网络需求</td><td>功耗、带宽、延迟、成本</td></tr>
+              <tr><td>架构层</td><td>光互连放在哪里？</td><td>交换 ASIC、板级设计</td><td>可插拔、LPO、NPO、CPO</td><td>标准、可靠性、系统协同</td></tr>
+              <tr><td>材料层</td><td>芯片和封装靠什么材料实现？</td><td>InP/GaAs、SOI、SiN、陶瓷、AlN</td><td>外延片、硅光晶圆、封装基板</td><td>缺陷、热稳定、低损耗</td></tr>
+              <tr><td>有源芯片层</td><td>光信号如何产生、调制和接收？</td><td>激光器、调制器、探测器、电芯片</td><td>光源、PIC、EIC</td><td>寿命、温漂、良率、功耗</td></tr>
+              <tr><td>无源器件层</td><td>光路如何分合、耦合和引出？</td><td>FAU、AWG、PLC、透镜、滤波片</td><td>低损耗光路组件</td><td>插损、串扰、温漂、一致性</td></tr>
+              <tr><td>加工封装层</td><td>如何变成可量产产品？</td><td>PIC/EIC、光源、FAU、基板、散热件</td><td>光引擎、CPO组件</td><td>对准精度、良率、热漂移、成本</td></tr>
+              <tr><td>测试验证层</td><td>能不能稳定交付？</td><td>测试设备、老化设备、自动化产线</td><td>BER、眼图、可靠性报告</td><td>测试时间、设备精度、验证周期</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="materials" class="grid">
+        <article class="card span6">
+          <div class="tag">材料层</div>
+          <h2>最容易向上游扩散的部分</h2>
+          <table>
+            <thead><tr><th>材料</th><th>对应环节</th><th>卡点</th></tr></thead>
+            <tbody>
+              <tr><td>InP/GaAs</td><td>DFB、EML、CW、探测器</td><td>外延质量、良率、寿命、温漂</td></tr>
+              <tr><td>SOI</td><td>硅光波导、调制器、PIC</td><td>低损耗、均匀性、工艺平台</td></tr>
+              <tr><td>SiN/SiON</td><td>低损耗波导、无源光路</td><td>薄膜质量、工艺一致性</td></tr>
+              <tr><td>Ge/SiGe</td><td>探测器、调制结构</td><td>外延、缺陷、响应速度</td></tr>
+              <tr><td>陶瓷/AlN</td><td>外壳、基板、散热</td><td>精密加工、金属化、热稳定</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article id="chips" class="card span6">
+          <div class="tag">光电芯片</div>
+          <h2>CPO 光引擎的心脏层</h2>
+          <table>
+            <thead><tr><th>器件</th><th>作用</th><th>关键指标</th></tr></thead>
+            <tbody>
+              <tr><td>DFB/EML/CW/ELS</td><td>产生稳定高速光源</td><td>功率、寿命、线宽、温漂</td></tr>
+              <tr><td>调制器</td><td>把电信号调制到光上</td><td>带宽、Vpi、损耗、线性度</td></tr>
+              <tr><td>PD/APD</td><td>把光信号转成电信号</td><td>灵敏度、响应速度、噪声</td></tr>
+              <tr><td>Driver/TIA</td><td>驱动和放大高速信号</td><td>功耗、噪声、带宽</td></tr>
+              <tr><td>DSP/Retimer/SerDes</td><td>均衡、重定时、信号完整性</td><td>功耗、延迟、算法</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <section id="passive" class="grid">
+        <article class="card span6">
+          <div class="tag">无源耦合</div>
+          <h2>关注度较低良率关键约束</h2>
+          <table>
+            <thead><tr><th>节点</th><th>作用</th><th>为什么重要</th></tr></thead>
+            <tbody>
+              <tr><td>FA/FAU</td><td>光纤阵列与芯片光口连接</td><td>密度越高，对准和一致性越难</td></tr>
+              <tr><td>AWG</td><td>分波/合波</td><td>1.6T多通道需求提升</td></tr>
+              <tr><td>PLC</td><td>平面光波导分路/合路</td><td>无源光路平台化</td></tr>
+              <tr><td>MUX/DEMUX</td><td>多波长复用解复用</td><td>高速传输基础</td></tr>
+              <tr><td>透镜/隔离器/滤波片</td><td>光路整形和保护</td><td>微光学精度要求高</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article id="packaging" class="card span6">
+          <div class="tag">封装测试</div>
+          <h2>从样品走向量产的关口</h2>
+          <table>
+            <thead><tr><th>环节</th><th>作用</th><th>难点</th></tr></thead>
+            <tbody>
+              <tr><td>主动耦合</td><td>动态寻找最佳光功率位置</td><td>效率低、设备依赖强</td></tr>
+              <tr><td>被动耦合</td><td>依靠设计和加工精度完成对准</td><td>前期工艺要求极高</td></tr>
+              <tr><td>Flip-chip/键合</td><td>高密度电互连</td><td>翘曲、焊点可靠性、高频损耗</td></tr>
+              <tr><td>热管理</td><td>控制光源和PIC温漂</td><td>热阻、材料匹配、长期老化</td></tr>
+              <tr><td>BER/眼图/老化</td><td>高速可靠性验证</td><td>测试时间、精度、产能占用</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <section id="bottleneck" class="card">
+        <div class="tag">卡点排序</div>
+        <h2>先看环节强度，不看公司名字</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>排序</th><th>节点</th><th>强度</th><th>原因</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>DFB/EML/CW/ELS 光源</td><td><span class="badge b-green">S</span></td><td>稳定光源是硅光和 CPO 光引擎基础。</td></tr>
+              <tr><td>2</td><td>硅光 PIC/调制器/探测器</td><td><span class="badge b-green">S</span></td><td>影响 CPO 路线能否芯片化和低功耗。</td></tr>
+              <tr><td>3</td><td>光引擎集成与耦合</td><td><span class="badge b-green">S</span></td><td>从样品走向量产的核心关口。</td></tr>
+              <tr><td>4</td><td>InP/GaAs 与硅光材料体系</td><td><span class="badge b-green">S</span></td><td>光芯片和硅光平台的上游根基。</td></tr>
+              <tr><td>5</td><td>FAU/AWG/PLC/MUX-DEMUX</td><td><span class="badge b-cyan">A</span></td><td>关注度较低良率关键约束，容易被后挖。</td></tr>
+              <tr><td>6</td><td>陶瓷/AlN/高可靠封装材料</td><td><span class="badge b-cyan">A</span></td><td>热管理和长期可靠性关键。</td></tr>
+              <tr><td>7</td><td>高速测试/老化/可靠性验证</td><td><span class="badge b-cyan">A</span></td><td>量产放大后测试产能可能成为关键约束。</td></tr>
+              <tr><td>8</td><td>成品光模块</td><td><span class="badge b-amber">B</span></td><td>业绩较直观，但市场认知最充分。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="market" class="card">
+        <div class="tag">扩散路径</div>
+        <h2>如果市场向上游炒，可能怎么走</h2>
+        <div class="path">
+          <div class="step"><strong>01 成品兑现</strong><p>800G/1.6T 光模块订单和利润先被交易。</p></div>
+          <div class="step"><strong>02 光源/硅光</strong><p>CW、ELS、PIC、CPO/NPO 技术路线被挖。</p></div>
+          <div class="step"><strong>03 材料上移</strong><p>InP/GaAs、SOI、SiN、陶瓷/AlN 等材料端被挖。</p></div>
+          <div class="step"><strong>04 无源耦合</strong><p>FAU、AWG、PLC、微光学、光耦合被挖。</p></div>
+          <div class="step"><strong>05 封装测试</strong><p>共晶贴片、耦合设备、高速测试、老化验证被挖。</p></div>
+          <div class="step"><strong>06 迁移专题</strong><p>PCB、连接器、散热、电源迁移到 AI 硬件专题。</p></div>
+        </div>
+      </section>
+    </main>
+  </div>
+<!-- CPO_DASHBOARD_DOCK_START -->
+<style>
+.cpo-dashboard-dock {
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:linear-gradient(135deg,#17232b,#123e42);
+  box-shadow:0 14px 30px rgba(12,25,32,.24);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif;
+}
+.cpo-dashboard-dock a,
+.cpo-dashboard-dock button {
+  height:34px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:7px;
+  padding:0 12px;
+  color:#edf5f7;
+  background:rgba(255,255,255,.09);
+  font-size:14px;
+  line-height:32px;
+  text-decoration:none;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.cpo-dashboard-dock a:hover,
+.cpo-dashboard-dock button:hover {
+  background:rgba(255,255,255,.17);
+}
+.cpo-dashboard-dock__toggle {
+  min-width:54px;
+}
+.cpo-dashboard-dock.is-collapsed {
+  padding:6px;
+  border-radius:999px;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__home {
+  display:none;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__toggle {
+  min-width:46px;
+  border-radius:999px;
+  padding:0 10px;
+}
+@media (max-width: 760px) {
+  .cpo-dashboard-dock {
+    right:12px;
+    bottom:12px;
+  }
+  .cpo-dashboard-dock a,
+  .cpo-dashboard-dock button {
+    height:32px;
+    line-height:30px;
+    font-size:13px;
+    padding:0 10px;
+  }
+}
+</style>
+<div class="cpo-dashboard-dock" id="cpoDashboardDock">
+  <a class="cpo-dashboard-dock__home" href="./CPO研究中枢.html?v=dock20260628" title="返回 CPO 研究中枢">返回中枢</a>
+  <button class="cpo-dashboard-dock__toggle" type="button" title="收起或展开返回中枢按钮">收起</button>
+</div>
+<script>
+(function() {
+  var dock = document.getElementById('cpoDashboardDock');
+  if (!dock) return;
+  var toggle = dock.querySelector('.cpo-dashboard-dock__toggle');
+  toggle.addEventListener('click', function() {
+    dock.classList.toggle('is-collapsed');
+    toggle.textContent = dock.classList.contains('is-collapsed') ? '中枢' : '收起';
+  });
+})();
+</script>
+<!-- CPO_DASHBOARD_DOCK_END -->
+<div class="risk-note" style="margin:18px auto;max-width:1120px;padding:12px 14px;border:1px solid rgba(148,163,184,.28);border-radius:12px;color:#94a3b8;font-size:12px;line-height:1.7;">本专题内容基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。相关信息可能存在滞后或遗漏，请以公司公告和正式披露文件为准。</div></body>
+</html>
+

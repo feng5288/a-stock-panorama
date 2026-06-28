@@ -1,0 +1,301 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CPO供需变化信号库（无公司版）</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --ink: #17202c;
+      --muted: #5c6675;
+      --line: #d9e0ea;
+      --red: #b91c1c;
+      --amber: #b45309;
+      --blue: #1d4ed8;
+      --teal: #0f766e;
+      --green: #15803d;
+      --slate: #334155;
+      --shadow: 0 10px 28px rgba(20, 30, 45, .08);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; background: var(--bg); color: var(--ink); letter-spacing: 0; }
+    .wrap { max-width: 1480px; margin: 0 auto; padding: 28px; }
+    header { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(360px, .75fr); gap: 18px; margin-bottom: 18px; }
+    .panel, .hero, .control, .signal, .table-card, .path-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow); }
+    .hero, .control, .panel, .path-card, .table-card { padding: 22px; }
+    .eyebrow { color: var(--blue); font-weight: 700; font-size: 13px; margin-bottom: 8px; }
+    h1 { margin: 0; font-size: 30px; line-height: 1.25; }
+    h2 { margin: 0 0 14px; font-size: 20px; }
+    h3 { margin: 0; font-size: 17px; line-height: 1.35; }
+    p { margin: 10px 0 0; color: var(--muted); line-height: 1.75; }
+    .summary { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-top: 18px; }
+    .stat { border: 1px solid var(--line); border-radius: 8px; padding: 12px; min-height: 86px; }
+    .stat strong { display:block; font-size:26px; margin-bottom: 5px; }
+    .stat span { color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    button { border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; background: #fff; color: var(--ink); cursor: pointer; font-size: 14px; }
+    button.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .legend { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-bottom: 18px; }
+    .level { border-radius: 8px; border: 1px solid var(--line); background: #fff; padding: 14px; min-height: 120px; }
+    .level b { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 28px; border-radius: 999px; color: #fff; margin-bottom: 10px; }
+    .level.s b { background: var(--red); }
+    .level.a b { background: var(--amber); }
+    .level.b b { background: var(--blue); }
+    .level.noise b { background: var(--slate); }
+    .level span { display: block; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .flow { display: grid; grid-template-columns: repeat(6, minmax(150px, 1fr)); gap: 10px; margin-bottom: 18px; }
+    .flow-step { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 14px; min-height: 135px; position: relative; }
+    .flow-step::after { content: ""; position: absolute; right: -10px; top: 50%; width: 10px; height: 2px; background: var(--line); }
+    .flow-step:last-child::after { display: none; }
+    .flow-step b { color: var(--blue); font-size: 13px; }
+    .flow-step span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .signal { padding: 16px; min-height: 280px; border-left: 5px solid var(--line); }
+    .signal[data-level="S"] { border-left-color: var(--red); }
+    .signal[data-level="A"] { border-left-color: var(--amber); }
+    .signal[data-level="B"] { border-left-color: var(--blue); }
+    .signal-top { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 12px; }
+    .badge { display: inline-flex; align-items: center; justify-content: center; height: 25px; min-width: 34px; border-radius: 999px; color: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .badge.s { background: var(--red); }
+    .badge.a { background: var(--amber); }
+    .badge.b { background: var(--blue); }
+    .rows { display: grid; gap: 9px; }
+    .row { display: grid; grid-template-columns: 76px 1fr; gap: 9px; font-size: 14px; line-height: 1.55; }
+    .row b { color: #293241; }
+    .row span { color: var(--muted); }
+    .table-card { margin-top: 18px; overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; min-width: 1120px; font-size: 14px; }
+    th, td { border: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; line-height: 1.55; }
+    th { background: #eef2f7; }
+    td:first-child { font-weight: 700; color: var(--ink); }
+    .two { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; margin-top: 18px; }
+    ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.75; }
+    .footer { margin: 18px 0 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, minmax(0,1fr)); } .flow { grid-template-columns: repeat(3, minmax(0,1fr)); } header, .two { grid-template-columns: 1fr; } }
+    @media (max-width: 720px) { .wrap { padding: 16px; } .summary, .legend, .grid, .flow { grid-template-columns: 1fr; } .flow-step::after { display:none; } h1 { font-size: 24px; } }
+  </style>
+
+<style id="cpo-visual-polish">
+:root{letter-spacing:0!important}
+body{letter-spacing:0!important}
+main{padding-top:14px!important;padding-bottom:28px!important}
+header:not(.cpo-public-top),.hero{box-shadow:0 8px 24px rgba(0,0,0,.14)!important}
+.topbar{padding:10px 16px!important;gap:10px!important}
+h1{font-size:clamp(22px,3vw,36px)!important;line-height:1.12!important}
+h2{font-size:18px!important;margin-bottom:10px!important}
+h3{font-size:15px!important}
+.subtitle,.sub,header p{line-height:1.5!important;font-size:13px!important;margin-top:6px!important}
+.panel,.card,.metric,.chain-wrap,aside,.table-section,.node-card,.stage{border-radius:8px!important}
+.panel{margin-bottom:10px!important}.panel h2{padding:9px 12px!important}.content{padding:10px!important}
+.grid,.cards,.score-strip{gap:9px!important}.card{min-height:auto!important;padding:10px!important}.card h3{margin-bottom:6px!important}.card p,.desc{line-height:1.45!important}
+.stage{min-height:170px!important;padding:10px!important}.stage h3{min-height:auto!important}.node-card{min-height:92px!important;padding:9px!important}
+.chain{padding:12px!important;gap:8px!important}.chain-wrap{max-height:70vh!important}
+.score-strip{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))!important;margin-bottom:10px!important}.metric{min-height:58px!important;padding:9px!important}.metric .value{font-size:18px!important}
+.layout{gap:12px!important}.detail-body{gap:8px!important;padding:11px!important}.field{padding-bottom:7px!important}.detail-head{padding:12px!important}.detail-title{font-size:17px!important}
+table{font-size:12px!important}th,td{padding:7px 8px!important;line-height:1.42!important}
+.risk-note{max-width:1240px!important;margin:12px auto!important;padding:9px 11px!important}
+.cpo-public-top{position:sticky;top:0;z-index:9999;background:rgba(8,13,18,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.22);padding:8px 14px;display:flex;gap:8px;align-items:center;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+.cpo-public-top__title{color:#eef7fb;font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cpo-public-top__links{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.cpo-public-top a{height:28px;line-height:26px;border:1px solid rgba(255,255,255,.18);border-radius:7px;padding:0 9px;color:#d8edf2;background:rgba(255,255,255,.06);text-decoration:none;font-size:12px}
+.cpo-public-top a:hover{border-color:#61d7c8;color:#fff}
+@media(max-width:900px){main{padding:12px!important}.stage{min-height:auto!important}.topbar{grid-template-columns:1fr!important}.cpo-public-top{align-items:flex-start;flex-direction:column}.cpo-public-top__links{justify-content:flex-start}}
+</style>
+</head>
+<body>
+<header class="cpo-public-top"><div class="cpo-public-top__title">CPO供需变化信号库（无公司版）</div><nav class="cpo-public-top__links"><a href="../../core9_local_review.html?v=cpo">网站首页</a><a href="./index.html?v=visual2">CPO中枢</a><a href="./CPO全产业链详细全图_无公司版.html?v=visual2">产业链图</a><a href="./CPO关键约束环节总表.html?v=visual2">关键约束</a><a href="./CPO公司资料池.html?v=visual2">公司资料</a></nav></header>
+  <div class="wrap">
+    <header>
+      <section class="hero">
+        <div class="eyebrow">CPO 供需变化信号库（无公司版）</div>
+        <h1>先观察信号相关度，再影响要不要贴公司</h1>
+        <p>这张图是 CPO 产业框架的信号层：不放公司名、不放股票代码、不做介入观察，只定义哪些供需、价格变化、供应紧张、验证、扩产信号值得后续进入公司映射。</p>
+        <div class="summary">
+          <div class="stat"><strong>12</strong><span>信号组，覆盖需求、速率、架构、光源、PIC、封装、耦合、测试。</span></div>
+          <div class="stat"><strong>4</strong><span>判别阶段标签：S、A、B、噪音，防止被题材牵着走。</span></div>
+          <div class="stat"><strong>0</strong><span>公司名称和股票代码，本页保持产业信号层。</span></div>
+          <div class="stat"><strong>4</strong><span>价格变化验证条件：价格、交期、订单、利润。</span></div>
+        </div>
+      </section>
+      <section class="control">
+        <h2>信号筛选</h2>
+        <p>看新闻或纪要时，把内容先放进下面的信号组，再观察强度。没有订单、交期、验证、利润配合的，通常只是噪音。</p>
+        <div class="filters">
+          <button class="active" data-filter="all">全部</button>
+          <button data-filter="需求">需求</button>
+          <button data-filter="架构">架构</button>
+          <button data-filter="光源">光源</button>
+          <button data-filter="PIC">PIC/调制</button>
+          <button data-filter="封装">封装/耦合</button>
+          <button data-filter="测试">测试</button>
+          <button data-filter="价格">价格/扩产</button>
+          <button data-filter="S">只看 S</button>
+        </div>
+      </section>
+    </header>
+
+    <section class="legend">
+      <div class="level s"><b>S</b><h3>强产业信号</h3><span>客户验证、批量订单、交期拉长、价格上涨、产能紧张至少出现两项以上。</span></div>
+      <div class="level a"><b>A</b><h3>中强信号</h3><span>技术路线变化明确或小批量验证，但收入和价格尚未完全兑现。</span></div>
+      <div class="level b"><b>B</b><h3>弱信号</h3><span>样品、展会、合作、研发进展为主，缺少订单或交付证据。</span></div>
+      <div class="level noise"><b>噪音</b><h3>题材信号</h3><span>概念表述、泛泛蹭热点、没有产品位置、没有收入贡献。</span></div>
+    </section>
+
+    <section class="flow" aria-label="signal transmission path">
+      <div class="flow-step"><b>1 需求源头</b><h3>AI 集群扩大</h3><span>端口数量、网络层数、低功耗诉求提升。</span></div>
+      <div class="flow-step"><b>2 速率升级</b><h3>800G / 1.6T</h3><span>200G/lane 推进后，链路预算和测试难度上升。</span></div>
+      <div class="flow-step"><b>3 架构迁移</b><h3>LPO / NPO / CPO</h3><span>从成品模块向光引擎和近封装光学扩散。</span></div>
+      <div class="flow-step"><b>4 上游关键约束</b><h3>光源 / PIC</h3><span>CW/ELS、调制、探测、WDM 良率成为关键。</span></div>
+      <div class="flow-step"><b>5 量产关键约束</b><h3>基板 / 耦合</h3><span>热、电、光三重约束同时影响良率。</span></div>
+      <div class="flow-step"><b>6 验证关键约束</b><h3>测试可靠性</h3><span>BER、眼图、温循、老化影响客户导入。</span></div>
+    </section>
+
+    <main class="grid"><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、相关度、阶段标签、观察顺序和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section>
+      <article class="signal" data-type="需求" data-level="S"><div class="signal-top"><h3>AI 集群规模</h3><span class="badge s">S</span></div><div class="rows"><div class="row"><b>强信号</b><span>大规模集群建设带来端口数量和速率提升。</span></div><div class="row"><b>弱信号</b><span>单个数据中心新闻，未说明网络需求。</span></div><div class="row"><b>噪音</b><span>泛泛说 AI 算力。</span></div><div class="row"><b>传导</b><span>800G/1.6T、交换芯片、光模块、CPO。</span></div></div></article>
+      <article class="signal" data-type="需求" data-level="S"><div class="signal-top"><h3>速率升级</h3><span class="badge s">S</span></div><div class="rows"><div class="row"><b>强信号</b><span>800G 放量、1.6T 导入、200G/lane 标准推进。</span></div><div class="row"><b>弱信号</b><span>只提高速样品。</span></div><div class="row"><b>噪音</b><span>展会概念。</span></div><div class="row"><b>传导</b><span>EML、CW、DSP/SerDes、测试设备。</span></div></div></article>
+      <article class="signal" data-type="架构" data-level="S"><div class="signal-top"><h3>架构迁移</h3><span class="badge s">S</span></div><div class="rows"><div class="row"><b>强信号</b><span>LPO/NPO/CPO 进入客户验证或产品节奏。</span></div><div class="row"><b>弱信号</b><span>技术路线讨论。</span></div><div class="row"><b>噪音</b><span>把任何硅光都叫 CPO。</span></div><div class="row"><b>传导</b><span>光引擎、PIC、ELS、封装基板。</span></div></div></article>
+      <article class="signal" data-type="光源" data-level="S"><div class="signal-top"><h3>光源紧张</h3><span class="badge s">S</span></div><div class="rows"><div class="row"><b>强信号</b><span>CW/ELS/EML 交期拉长、价格上行、客户锁产能。</span></div><div class="row"><b>弱信号</b><span>光源新品发布。</span></div><div class="row"><b>噪音</b><span>只说激光器概念。</span></div><div class="row"><b>传导</b><span>InP/GaAs、DFB、EML、CW、热控。</span></div></div></article>
+      <article class="signal" data-type="PIC" data-level="S"><div class="signal-top"><h3>PIC 良率</h3><span class="badge s">S</span></div><div class="rows"><div class="row"><b>强信号</b><span>硅光 PIC 良率爬坡慢、客户验证周期拉长。</span></div><div class="row"><b>弱信号</b><span>PIC 工艺展示。</span></div><div class="row"><b>噪音</b><span>泛硅光概念。</span></div><div class="row"><b>传导</b><span>SOI、SiN/SiON、调制、探测、WDM。</span></div></div></article>
+      <article class="signal" data-type="PIC" data-level="A"><div class="signal-top"><h3>调制关键约束</h3><span class="badge a">A</span></div><div class="rows"><div class="row"><b>强信号</b><span>高速调制器供给紧、低功耗路线被客户验证。</span></div><div class="row"><b>弱信号</b><span>TFLN/硅光样品。</span></div><div class="row"><b>噪音</b><span>只讲材料弹性。</span></div><div class="row"><b>传导</b><span>调制器、TFLN、III-V、封装耦合。</span></div></div></article>
+      <article class="signal" data-type="PIC" data-level="A"><div class="signal-top"><h3>无源光路</h3><span class="badge a">A</span></div><div class="rows"><div class="row"><b>强信号</b><span>AWG/PLC/MUX/DEMUX 插损、串扰、温漂成为验证问题。</span></div><div class="row"><b>弱信号</b><span>波分方案讨论。</span></div><div class="row"><b>噪音</b><span>只讲 WDM 概念。</span></div><div class="row"><b>传导</b><span>AWG、PLC、微环、微光学。</span></div></div></article>
+      <article class="signal" data-type="封装" data-level="S"><div class="signal-top"><h3>封装基板</h3><span class="badge s">S</span></div><div class="rows"><div class="row"><b>强信号</b><span>高导热基板、陶瓷/AlN/玻璃基板验证周期拉长。</span></div><div class="row"><b>弱信号</b><span>新材料展示。</span></div><div class="row"><b>噪音</b><span>只讲先进封装概念。</span></div><div class="row"><b>传导</b><span>陶瓷、AlN、玻璃、有机基板、光中介层。</span></div></div></article>
+      <article class="signal" data-type="封装" data-level="S"><div class="signal-top"><h3>耦合设备</h3><span class="badge s">S</span></div><div class="rows"><div class="row"><b>强信号</b><span>主动/被动耦合设备稼动率提升、交期拉长。</span></div><div class="row"><b>弱信号</b><span>自动化方案发布。</span></div><div class="row"><b>噪音</b><span>泛自动化。</span></div><div class="row"><b>传导</b><span>FAU、夹治具、精密装调、微光学。</span></div></div></article>
+      <article class="signal" data-type="测试" data-level="A"><div class="signal-top"><h3>测试可靠性</h3><span class="badge a">A</span></div><div class="rows"><div class="row"><b>强信号</b><span>BER、眼图、插损、温循、老化设备需求提升。</span></div><div class="row"><b>弱信号</b><span>实验室测试方案。</span></div><div class="row"><b>噪音</b><span>泛测试概念。</span></div><div class="row"><b>传导</b><span>高速测试、可靠性设备、校准夹具。</span></div></div></article>
+      <article class="signal" data-type="价格" data-level="S"><div class="signal-top"><h3>价格信号</h3><span class="badge s">S</span></div><div class="rows"><div class="row"><b>强信号</b><span>订单价格上调、长协锁价、毛利率改善。</span></div><div class="row"><b>弱信号</b><span>单月报价波动。</span></div><div class="row"><b>噪音</b><span>渠道传言。</span></div><div class="row"><b>验证</b><span>需和交期、订单、利润互相印证。</span></div></div></article>
+      <article class="signal" data-type="价格" data-level="A"><div class="signal-top"><h3>扩产信号</h3><span class="badge a">A</span></div><div class="rows"><div class="row"><b>强信号</b><span>明确扩产用于光源、PIC、耦合、测试关键约束。</span></div><div class="row"><b>弱信号</b><span>一般资本开支。</span></div><div class="row"><b>噪音</b><span>讲扩产但无客户。</span></div><div class="row"><b>验证</b><span>扩产需绑定客户和产品路线。</span></div></div></article>
+    </main>
+
+    <section class="table-card">
+      <h2>价格变化/供应紧张判别表</h2>
+      <table>
+        <thead><tr><th>观察项</th><th>强信号</th><th>弱信号</th><th>风险点</th><th>后续动作</th></tr></thead>
+        <tbody>
+          <tr><td>价格</td><td>订单价格上调或长协锁价</td><td>单月报价波动</td><td>渠道传言容易误导</td><td>需和交期、订单、毛利互相验证</td></tr>
+          <tr><td>交期</td><td>客户提前锁单、交期明显拉长</td><td>局部规格紧张</td><td>可能只是短期排产问题</td><td>看是否发生在核心关键约束节点</td></tr>
+          <tr><td>订单</td><td>客户验证转批量，或长单覆盖多个季度</td><td>样品送测</td><td>验证失败可能回撤</td><td>看收入确认和产品结构变化</td></tr>
+          <tr><td>利润</td><td>毛利率改善、产品结构升级、产能利用率提升</td><td>收入增长但利润不动</td><td>可能只是低毛利代工放量</td><td>结合财报和问询口径再观察</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="two">
+      <div class="path-card">
+        <h2>题材噪音过滤器</h2>
+        <ul>
+          <li>只说有相关技术储备，不进入核心框架。</li>
+          <li>只有展会样品，没有客户验证，暂按 B 级处理。</li>
+          <li>只写可用于 AI、CPO、硅光，但没有应用位置和收入贡献，视为噪音。</li>
+          <li>扩产没有明确产品线、客户和交付节奏，不升级为强信号。</li>
+          <li>价格变化没有订单、交期、利润印证，不升级为强信号。</li>
+        </ul>
+      </div>
+      <div class="path-card">
+        <h2>下一步怎么用</h2>
+        <ul>
+          <li>先把节点放进技术路线，再用本页观察信号相关度。</li>
+          <li>只有 S/A 级信号，才进入后续公司映射。</li>
+          <li>公司映射以后，再加市场位置观察：主板样本、涨幅位置、业绩兑现、阶段位置观察。</li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="footer">公开参考：OIF 能效接口方向强调 AI 数据中心需要更高能效、更低延迟的电/光接口，并覆盖可插拔、近封装和共封装方向；公开产业新闻也显示海外头部 AI 网络平台把硅光/CPO 纳入 2025-2026 产品节奏。本文仅作为产业研究框架，不构成投资建议。</p>
+  </div>
+  <script>
+    const buttons = Array.from(document.querySelectorAll('button[data-filter]'));
+    const cards = Array.from(document.querySelectorAll('.signal'));
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        buttons.forEach(b => b.classList.toggle('active', b === button));
+        cards.forEach(card => {
+          const show = filter === 'all' || card.dataset.type === filter || card.dataset.level === filter;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  </script>
+<!-- CPO_DASHBOARD_DOCK_START -->
+<style>
+.cpo-dashboard-dock {
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:linear-gradient(135deg,#17232b,#123e42);
+  box-shadow:0 14px 30px rgba(12,25,32,.24);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif;
+}
+.cpo-dashboard-dock a,
+.cpo-dashboard-dock button {
+  height:34px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:7px;
+  padding:0 12px;
+  color:#edf5f7;
+  background:rgba(255,255,255,.09);
+  font-size:14px;
+  line-height:32px;
+  text-decoration:none;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.cpo-dashboard-dock a:hover,
+.cpo-dashboard-dock button:hover {
+  background:rgba(255,255,255,.17);
+}
+.cpo-dashboard-dock__toggle {
+  min-width:54px;
+}
+.cpo-dashboard-dock.is-collapsed {
+  padding:6px;
+  border-radius:999px;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__home {
+  display:none;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__toggle {
+  min-width:46px;
+  border-radius:999px;
+  padding:0 10px;
+}
+@media (max-width: 760px) {
+  .cpo-dashboard-dock {
+    right:12px;
+    bottom:12px;
+  }
+  .cpo-dashboard-dock a,
+  .cpo-dashboard-dock button {
+    height:32px;
+    line-height:30px;
+    font-size:13px;
+    padding:0 10px;
+  }
+}
+</style>
+<div class="cpo-dashboard-dock" id="cpoDashboardDock">
+  <a class="cpo-dashboard-dock__home" href="./CPO研究中枢.html?v=dock20260628" title="返回 CPO 研究中枢">返回中枢</a>
+  <button class="cpo-dashboard-dock__toggle" type="button" title="收起或展开返回中枢按钮">收起</button>
+</div>
+<script>
+(function() {
+  var dock = document.getElementById('cpoDashboardDock');
+  if (!dock) return;
+  var toggle = dock.querySelector('.cpo-dashboard-dock__toggle');
+  toggle.addEventListener('click', function() {
+    dock.classList.toggle('is-collapsed');
+    toggle.textContent = dock.classList.contains('is-collapsed') ? '中枢' : '收起';
+  });
+})();
+</script>
+<!-- CPO_DASHBOARD_DOCK_END -->
+</body>
+</html>

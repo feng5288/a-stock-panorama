@@ -1,0 +1,170 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CPO节点路线信号三维矩阵（无公司版）</title>
+  <style>
+    :root{--bg:#f5f7fa;--panel:#fff;--ink:#17202c;--muted:#5f6b7a;--line:#d9e0ea;--blue:#1d4ed8;--teal:#0f766e;--red:#b91c1c;--amber:#b45309;--green:#15803d;--slate:#334155;--shadow:0 10px 28px rgba(20,30,45,.08)}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;letter-spacing:0}.wrap{max-width:1500px;margin:0 auto;padding:28px}header{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(360px,.75fr);gap:18px;margin-bottom:18px}.hero,.control,.panel,.matrix,.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow)}.hero,.control,.panel,.matrix{padding:22px}.eyebrow{color:var(--blue);font-size:13px;font-weight:700;margin-bottom:8px}h1{margin:0;font-size:30px;line-height:1.25}h2{margin:0 0 14px;font-size:20px}h3{margin:0;font-size:17px;line-height:1.35}p{margin:10px 0 0;color:var(--muted);line-height:1.75}.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px}.stat{border:1px solid var(--line);border-radius:8px;padding:12px;min-height:86px}.stat strong{display:block;font-size:26px;margin-bottom:5px}.stat span{color:var(--muted);font-size:13px;line-height:1.55}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}button{border:1px solid var(--line);border-radius:8px;padding:9px 12px;background:#fff;color:var(--ink);cursor:pointer;font-size:14px}button.active{background:var(--ink);color:#fff;border-color:var(--ink)}.chain{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:10px;margin-bottom:18px}.step{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;min-height:132px;position:relative}.step:after{content:"";position:absolute;right:-10px;top:50%;width:10px;height:2px;background:var(--line)}.step:last-child:after{display:none}.step b{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;margin-bottom:9px}.step:nth-child(2)b{background:var(--teal)}.step:nth-child(3)b{background:var(--amber)}.step:nth-child(4)b{background:var(--red)}.step:nth-child(5)b{background:var(--green)}.step span{display:block;color:var(--muted);font-size:13px;line-height:1.55;margin-top:8px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{padding:16px;min-height:300px;border-left:5px solid var(--line)}.card[data-signal="S"]{border-left-color:var(--red)}.card[data-signal="A"]{border-left-color:var(--amber)}.card[data-signal="B-A"]{border-left-color:var(--blue)}.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}.badge{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:25px;border-radius:999px;color:#fff;font-size:12px;font-weight:700;white-space:nowrap}.badge.s{background:var(--red)}.badge.a{background:var(--amber)}.badge.ba{background:var(--blue)}.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.pill{display:inline-flex;align-items:center;min-height:23px;border-radius:999px;background:#eef2f7;color:#334155;font-size:12px;font-weight:700;padding:3px 8px}.rows{display:grid;gap:8px}.row{display:grid;grid-template-columns:82px 1fr;gap:9px;font-size:14px;line-height:1.55}.row b{color:#293241}.row span{color:var(--muted)}.matrix{margin-top:18px;overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:1280px;font-size:14px}th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top;line-height:1.55}th{background:#eef2f7}td:first-child{font-weight:700}.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}ul{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.75}.footer{margin:18px 0 0;color:var(--muted);font-size:13px;line-height:1.7}@media(max-width:1100px){header,.two{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.chain{grid-template-columns:repeat(2,minmax(0,1fr))}.step:after{display:none}}@media(max-width:720px){.wrap{padding:16px}.summary,.cards,.chain{grid-template-columns:1fr}h1{font-size:24px}}
+  </style>
+
+<style id="cpo-visual-polish">
+:root{letter-spacing:0!important}
+body{letter-spacing:0!important}
+main{padding-top:14px!important;padding-bottom:28px!important}
+header:not(.cpo-public-top),.hero{box-shadow:0 8px 24px rgba(0,0,0,.14)!important}
+.topbar{padding:10px 16px!important;gap:10px!important}
+h1{font-size:clamp(22px,3vw,36px)!important;line-height:1.12!important}
+h2{font-size:18px!important;margin-bottom:10px!important}
+h3{font-size:15px!important}
+.subtitle,.sub,header p{line-height:1.5!important;font-size:13px!important;margin-top:6px!important}
+.panel,.card,.metric,.chain-wrap,aside,.table-section,.node-card,.stage{border-radius:8px!important}
+.panel{margin-bottom:10px!important}.panel h2{padding:9px 12px!important}.content{padding:10px!important}
+.grid,.cards,.score-strip{gap:9px!important}.card{min-height:auto!important;padding:10px!important}.card h3{margin-bottom:6px!important}.card p,.desc{line-height:1.45!important}
+.stage{min-height:170px!important;padding:10px!important}.stage h3{min-height:auto!important}.node-card{min-height:92px!important;padding:9px!important}
+.chain{padding:12px!important;gap:8px!important}.chain-wrap{max-height:70vh!important}
+.score-strip{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))!important;margin-bottom:10px!important}.metric{min-height:58px!important;padding:9px!important}.metric .value{font-size:18px!important}
+.layout{gap:12px!important}.detail-body{gap:8px!important;padding:11px!important}.field{padding-bottom:7px!important}.detail-head{padding:12px!important}.detail-title{font-size:17px!important}
+table{font-size:12px!important}th,td{padding:7px 8px!important;line-height:1.42!important}
+.risk-note{max-width:1240px!important;margin:12px auto!important;padding:9px 11px!important}
+.cpo-public-top{position:sticky;top:0;z-index:9999;background:rgba(8,13,18,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.22);padding:8px 14px;display:flex;gap:8px;align-items:center;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+.cpo-public-top__title{color:#eef7fb;font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cpo-public-top__links{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.cpo-public-top a{height:28px;line-height:26px;border:1px solid rgba(255,255,255,.18);border-radius:7px;padding:0 9px;color:#d8edf2;background:rgba(255,255,255,.06);text-decoration:none;font-size:12px}
+.cpo-public-top a:hover{border-color:#61d7c8;color:#fff}
+@media(max-width:900px){main{padding:12px!important}.stage{min-height:auto!important}.topbar{grid-template-columns:1fr!important}.cpo-public-top{align-items:flex-start;flex-direction:column}.cpo-public-top__links{justify-content:flex-start}}
+</style>
+</head>
+<body>
+<header class="cpo-public-top"><div class="cpo-public-top__title">CPO节点路线信号三维矩阵（无公司版）</div><nav class="cpo-public-top__links"><a href="../../core9_local_review.html?v=cpo">网站首页</a><a href="./index.html?v=visual2">CPO中枢</a><a href="./CPO全产业链详细全图_无公司版.html?v=visual2">产业链图</a><a href="./CPO关键约束环节总表.html?v=visual2">关键约束</a><a href="./CPO公司资料池.html?v=visual2">公司资料</a></nav></header>
+<div class="wrap">
+<header>
+<section class="hero">
+<div class="eyebrow">CPO 节点 × 技术路线 × 供需信号三维矩阵（无公司版）</div>
+<h1>把产业链节点挂到路线和信号上，后面公司才不会乱贴</h1>
+<p>这张图把 19 个 CPO 节点、10 条技术路线、12 类供需信号合成一张总矩阵。当前仍不放公司名、不放股票代码、不做介入观察。</p>
+<div class="summary"><div class="stat"><strong>19</strong><span>关键节点，来自 CPO 节点百科。</span></div><div class="stat"><strong>10</strong><span>技术路线，来自 CPO 技术路线图。</span></div><div class="stat"><strong>12</strong><span>信号组，来自供需变化信号库。</span></div><div class="stat"><strong>0</strong><span>公司和股票代码，严格保持无公司版。</span></div></div>
+</section>
+<section class="control"><h2>矩阵筛选</h2><p>后续贴公司之前，先用这张矩阵定位：节点、路线、信号、证据、误判风险。</p><div class="filters"><button class="active" data-filter="all">全部</button><button data-filter="材料">材料</button><button data-filter="有源芯片">有源芯片</button><button data-filter="无源光器件">无源光器件</button><button data-filter="硅光/PIC">硅光/PIC</button><button data-filter="封装耦合">封装耦合</button><button data-filter="测试验证">测试验证</button><button data-filter="S">只看 S 信号</button><button data-filter="光源紧张">光源紧张</button><button data-filter="PIC良率">PIC良率</button><button data-filter="耦合设备">耦合设备</button></div></section>
+</header>
+<section class="chain"><div class="step"><b>1</b><h3>节点</h3><span>先定位具体产业环节，不宜只说 CPO 概念。</span></div><div class="step"><b>2</b><h3>路线</h3><span>观察它属于光源、PIC、调制、耦合还是测试路线。</span></div><div class="step"><b>3</b><h3>信号</h3><span>看需求、价格变化、供应紧张、验证、扩产是否击中该节点。</span></div><div class="step"><b>4</b><h3>证据</h3><span>需找到客户验证、订单、交期、毛利或扩产证据。</span></div><div class="step"><b>5</b><h3>定价</h3><span>公司映射之后再看股价位置和阶段位置观察。</span></div></section>
+<main class="cards" id="cards"><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、相关度、阶段标签、观察顺序和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section></main>
+<section class="matrix"><h2>矩阵明细表</h2><table><thead><tr><th>节点</th><th>大类</th><th>技术路线</th><th>路线定位</th><th>主信号</th><th>信号</th><th>关键约束</th><th>后续贴公司证据</th><th>误判风险</th></tr></thead><tbody id="matrixBody"></tbody></table></section>
+<section class="two"><div class="panel"><h2>后续贴公司前的硬规则</h2><ul><li>每家公司需贴到一个具体节点，不宜只写 CPO 概念。</li><li>需说明它属于哪条技术路线，是主流、替代、关键约束还是争议。</li><li>需给出公开证据：客户验证、订单、交期、毛利、扩产至少一个。</li><li>市场观察层面的涨幅位置、业绩兑现、阶段位置观察放到下一阶段。</li></ul></div><div class="panel"><h2>下一步</h2><ul><li>建议做 CPO 公司映射模板（空表版）。</li><li>先设计字段、证据阶段标签和过滤规则，再开始贴 A 股公司。</li><li>这样后续进入主板样本时，不会被纯题材带偏。</li></ul></div></section>
+<p class="footer">本页是产业研究框架，不构成投资建议。它的目的不是选股，而是为后续选股建立更严的产业挂钩标准。</p>
+</div>
+<script>
+const data = [
+{node:'InP/GaAs',cat:'材料',route:'光源/PIC平台',pos:'基础材料与外延根基',sig:'光源紧张',level:'S',neck:'S',evi:'外延良率；激光器/探测器客户验证；扩产绑定产品线',risk:'只说化合物半导体但不对应高速光芯片'},
+{node:'SOI/SiN/SiON',cat:'材料',route:'PIC平台/WDM无源',pos:'硅光与低损耗光路平台',sig:'PIC良率',level:'S',neck:'S',evi:'硅光工艺平台；低损耗波导；客户验证；良率爬坡',risk:'泛硅光概念没有器件和工艺位置'},
+{node:'Ge/SiGe',cat:'材料',route:'探测器路线',pos:'接收端材料与高速探测基础',sig:'PIC良率',level:'A',neck:'A',evi:'PD/APD指标；暗电流；响应度；接收端良率',risk:'只讲材料展示没有接收端验证'},
+{node:'TFLN',cat:'材料',route:'调制器路线',pos:'替代调制材料路线',sig:'调制关键约束',level:'A',neck:'A',evi:'高速调制器样品到小批量；低Vpi；低插损；封装验证',risk:'把远期材料弹性当短期业绩兑现'},
+{node:'陶瓷/AlN/玻璃/有机基板',cat:'材料',route:'封装基板',pos:'隐性量产关键约束',sig:'封装基板',level:'S',neck:'A',evi:'高导热基板验证；热膨胀匹配；金属化可靠性；客户导入',risk:'只讲先进封装不绑定光电共封装'},
+{node:'DFB/EML/CW/ELS 光源',cat:'有源芯片',route:'光源路线',pos:'核心光源关键约束',sig:'光源紧张',level:'S',neck:'S',evi:'交期拉长；价格上行；客户锁产能；CW/ELS验证',risk:'把普通激光器等同于CPO光源'},
+{node:'调制器',cat:'有源芯片',route:'调制器路线',pos:'高速链路上限约束',sig:'调制关键约束',level:'S',neck:'S',evi:'带宽；插损；低Vpi；温稳；客户高速验证',risk:'只有实验室指标没有封装和批量一致性'},
+{node:'探测器 PD/APD',cat:'有源芯片',route:'探测器路线',pos:'接收端信噪比关键约束',sig:'PIC良率',level:'A',neck:'A',evi:'响应度；暗电流；带宽；接收灵敏度；误码余量',risk:'只看发射端忽视接收端良率'},
+{node:'Driver/TIA/DSP/SerDes',cat:'有源芯片',route:'电互连',pos:'高速电接口与链路补偿',sig:'速率升级',level:'S',neck:'A',evi:'112G/224G接口；低功耗DSP；LPO验证；客户链路测试',risk:'把光互连和电互连割裂看'},
+{node:'FA/FAU',cat:'无源光器件',route:'耦合路线',pos:'光纤阵列与芯片光口连接',sig:'耦合设备',level:'S',neck:'A',evi:'低插损；高精度阵列；批量耦合良率；交期变化',risk:'只当普通连接器看'},
+{node:'AWG',cat:'无源光器件',route:'WDM无源',pos:'多波长分合波核心',sig:'无源光路',level:'A',neck:'A',evi:'插损；串扰；温漂；波长数增加；客户验证',risk:'只讲WDM概念不看指标'},
+{node:'PLC/MUX/DEMUX',cat:'无源光器件',route:'WDM无源',pos:'平面光路与复用解复用',sig:'无源光路',level:'A',neck:'A',evi:'复用/解复用指标；插损；偏振；一致性',risk:'把低端无源器件和高速光路混同'},
+{node:'微光学组件',cat:'无源光器件',route:'耦合/WDM无源',pos:'准直滤波隔离等装调基础',sig:'耦合设备',level:'A',neck:'B-A',evi:'微透镜；隔离器；滤波器；自动化装调配套',risk:'零件价值被关注度不足但也容易泛化'},
+{node:'硅光 PIC',cat:'硅光/PIC',route:'PIC平台',pos:'片上光路集成核心',sig:'PIC良率',level:'S',neck:'S',evi:'调制/探测/WDM集成；良率；客户验证；工艺平台',risk:'只用硅光概念替代具体PIC能力'},
+{node:'光引擎',cat:'封装耦合',route:'系统架构/CPO',pos:'光电集成单元',sig:'架构迁移',level:'S',neck:'S',evi:'PIC+EIC+光源+FAU+基板+热管理整合验证',risk:'把光模块成品直接等同光引擎'},
+{node:'主动/被动耦合',cat:'封装耦合',route:'耦合路线',pos:'量产良率与成本曲线核心',sig:'耦合设备',level:'S',neck:'S',evi:'设备稼动率；耦合节拍；插损；自动化良率',risk:'只看设备概念不看客户导入'},
+{node:'热管理',cat:'封装耦合',route:'封装基板/系统架构',pos:'温漂寿命与系统可靠性约束',sig:'封装基板',level:'A',neck:'A',evi:'热阻；温漂；寿命；高功率光源散热；整机验证',risk:'泛散热概念没有光电场景'},
+{node:'BER/眼图/插损/回损测试',cat:'测试验证',route:'测试可靠性',pos:'高速链路质量验证',sig:'测试可靠性',level:'A',neck:'A',evi:'误码率；眼图；插损回损；校准夹具；高速测试需求',risk:'实验室测试不等于量产设备需求'},
+{node:'温循/老化/可靠性验证',cat:'测试验证',route:'测试可靠性',pos:'客户导入前最后验证门槛',sig:'测试可靠性',level:'A',neck:'A',evi:'温循；老化；批量一致性；可靠性标准；验证周期拉长',risk:'只讲测试概念忽视验证周期'}
+];
+const cards = document.getElementById('cards'); const body = document.getElementById('matrixBody');
+function badgeClass(v){ return v==='S'?'s':(v==='A'?'a':'ba'); }
+function render(filter='all'){
+  const shown = data.filter(d => filter==='all' || d.cat===filter || d.level===filter || d.sig===filter);
+  cards.innerHTML = shown.map(d => `<article class="card" data-signal="${d.level}"><div class="card-top"><div><h3>${d.node}</h3><div class="meta"><span class="pill">${d.cat}</span><span class="pill">${d.route}</span><span class="pill">${d.sig}</span></div></div><span class="badge ${badgeClass(d.level)}">${d.level}</span></div><div class="rows"><div class="row"><b>定位</b><span>${d.pos}</span></div><div class="row"><b>关键约束</b><span>${d.neck}</span></div><div class="row"><b>证据</b><span>${d.evi}</span></div><div class="row"><b>误判</b><span>${d.risk}</span></div></div></article>`).join('');
+  body.innerHTML = shown.map(d => `<tr><td>${d.node}</td><td>${d.cat}</td><td>${d.route}</td><td>${d.pos}</td><td>${d.sig}</td><td>${d.level}</td><td>${d.neck}</td><td>${d.evi}</td><td>${d.risk}</td></tr>`).join('');
+}
+document.querySelectorAll('button[data-filter]').forEach(btn => btn.addEventListener('click', () => { document.querySelectorAll('button[data-filter]').forEach(b=>b.classList.toggle('active', b===btn)); render(btn.dataset.filter); }));
+render();
+</script>
+<!-- CPO_DASHBOARD_DOCK_START -->
+<style>
+.cpo-dashboard-dock {
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:linear-gradient(135deg,#17232b,#123e42);
+  box-shadow:0 14px 30px rgba(12,25,32,.24);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif;
+}
+.cpo-dashboard-dock a,
+.cpo-dashboard-dock button {
+  height:34px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:7px;
+  padding:0 12px;
+  color:#edf5f7;
+  background:rgba(255,255,255,.09);
+  font-size:14px;
+  line-height:32px;
+  text-decoration:none;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.cpo-dashboard-dock a:hover,
+.cpo-dashboard-dock button:hover {
+  background:rgba(255,255,255,.17);
+}
+.cpo-dashboard-dock__toggle {
+  min-width:54px;
+}
+.cpo-dashboard-dock.is-collapsed {
+  padding:6px;
+  border-radius:999px;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__home {
+  display:none;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__toggle {
+  min-width:46px;
+  border-radius:999px;
+  padding:0 10px;
+}
+@media (max-width: 760px) {
+  .cpo-dashboard-dock {
+    right:12px;
+    bottom:12px;
+  }
+  .cpo-dashboard-dock a,
+  .cpo-dashboard-dock button {
+    height:32px;
+    line-height:30px;
+    font-size:13px;
+    padding:0 10px;
+  }
+}
+</style>
+<div class="cpo-dashboard-dock" id="cpoDashboardDock">
+  <a class="cpo-dashboard-dock__home" href="./CPO研究中枢.html?v=dock20260628" title="返回 CPO 研究中枢">返回中枢</a>
+  <button class="cpo-dashboard-dock__toggle" type="button" title="收起或展开返回中枢按钮">收起</button>
+</div>
+<script>
+(function() {
+  var dock = document.getElementById('cpoDashboardDock');
+  if (!dock) return;
+  var toggle = dock.querySelector('.cpo-dashboard-dock__toggle');
+  toggle.addEventListener('click', function() {
+    dock.classList.toggle('is-collapsed');
+    toggle.textContent = dock.classList.contains('is-collapsed') ? '中枢' : '收起';
+  });
+})();
+</script>
+<!-- CPO_DASHBOARD_DOCK_END -->
+</body>
+</html>

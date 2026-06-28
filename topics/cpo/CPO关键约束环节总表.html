@@ -1,0 +1,137 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CPO关键约束环节总表</title>
+  <script src="./cpo_bottleneck_data.js"></script>
+  <style>
+    :root{--bg:#f7f8fa;--ink:#172033;--muted:#657084;--line:#d8dde7;--panel:#fff;--s:#b42318;--a:#b76100;--b:#176b87;--c:#596579;--green:#16704b;--shadow:0 12px 32px rgba(23,32,51,.10)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;letter-spacing:0}header{position:sticky;top:0;z-index:10;background:rgba(247,248,250,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+    .topbar{max-width:1600px;margin:0 auto;padding:16px 20px 14px;display:grid;grid-template-columns:minmax(360px,1fr) auto;gap:16px;align-items:end}h1{margin:0 0 8px;font-size:24px;line-height:1.25;font-weight:800}.subtitle{margin:0;color:var(--muted);font-size:13px;line-height:1.6;max-width:880px}.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;align-items:center}select,.search{height:34px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:6px;padding:0 10px;font-size:13px;min-width:120px}.search{width:190px}main{max-width:1600px;margin:0 auto;padding:18px 20px 28px}.score-strip{display:grid;grid-template-columns:repeat(6,minmax(120px,1fr));gap:10px;margin-bottom:16px}.metric{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;min-height:78px}.metric .label{color:var(--muted);font-size:12px}.metric .value{margin-top:6px;font-size:20px;font-weight:800}.metric .hint{margin-top:5px;color:var(--muted);font-size:12px;line-height:1.35}.layout{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:16px;align-items:start}.chain-wrap{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:auto;box-shadow:var(--shadow)}.chain{min-width:1680px;padding:18px;display:grid;grid-template-columns:repeat(9,1fr);gap:12px;position:relative}.chain:before{content:"";position:absolute;left:56px;right:56px;top:58px;height:2px;background:linear-gradient(90deg,#aab2c0,#6e7b8f);z-index:0}.col{position:relative;z-index:1;min-width:0}.col-title{min-height:46px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:#26354d;border-radius:8px;font-size:14px;font-weight:800;padding:0 8px;margin-bottom:12px}.cards{display:grid;gap:10px}.card{width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-left:5px solid var(--c);border-radius:8px;padding:10px;cursor:pointer;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;min-height:120px}.card:hover,.card.active{transform:translateY(-1px);box-shadow:0 10px 22px rgba(23,32,51,.14);border-color:#b8c0cf}.card[data-level="S"]{border-left-color:var(--s)}.card[data-level="A"]{border-left-color:var(--a)}.card[data-level="B"],.card[data-level="B-C"]{border-left-color:var(--b)}.card-head{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}.level{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:24px;border-radius:6px;color:#fff;font-size:12px;font-weight:800;padding:0 6px;background:var(--c)}.level.S{background:var(--s)}.level.A{background:var(--a)}.level.B,.level.B-C{background:var(--b)}.score{color:var(--muted);font-size:12px;font-weight:700}.name{font-size:14px;font-weight:800;line-height:1.35;margin-bottom:7px}.desc{color:var(--muted);font-size:12px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.tags{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}.tag{border:1px solid var(--line);border-radius:6px;padding:2px 6px;color:var(--muted);font-size:11px;background:#fafbfc}.tag.hot{color:var(--s);border-color:#efc6c0;background:#fff7f5}.tag.green{color:var(--green);border-color:#bbdfd0;background:#f4fbf8}aside{position:sticky;top:106px;background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);overflow:hidden}.detail-head{padding:16px;border-bottom:1px solid var(--line);background:#fbfcfe}.detail-title{margin:0;font-size:19px;line-height:1.35}.detail-sub{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.55}.detail-body{padding:14px 16px 16px;display:grid;gap:12px}.field{border-bottom:1px solid #edf0f5;padding-bottom:10px}.field:last-child{border-bottom:0;padding-bottom:0}.field-label{color:var(--muted);font-size:12px;margin-bottom:5px}.field-value{font-size:13px;line-height:1.65}.legend{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:12px}.legend span{display:inline-flex;align-items:center;gap:5px}.dot{width:9px;height:9px;border-radius:50%;background:var(--c)}.dot.s{background:var(--s)}.dot.a{background:var(--a)}.dot.b{background:var(--b)}.table-section{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:auto}table{width:100%;border-collapse:collapse;min-width:1100px}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top;font-size:13px;line-height:1.5}th{background:#f1f4f8;color:#35445c;font-weight:800;position:sticky;top:0}tr:hover td{background:#fbfcfe}@media(max-width:980px){.topbar{grid-template-columns:1fr;align-items:start}.filters{justify-content:flex-start}.score-strip{grid-template-columns:repeat(2,minmax(120px,1fr))}.layout{grid-template-columns:1fr}aside{position:static}.chain{min-width:1180px}}
+  </style>
+
+<style id="cpo-visual-polish">
+:root{letter-spacing:0!important}
+body{letter-spacing:0!important}
+main{padding-top:14px!important;padding-bottom:28px!important}
+header:not(.cpo-public-top),.hero{box-shadow:0 8px 24px rgba(0,0,0,.14)!important}
+.topbar{padding:10px 16px!important;gap:10px!important}
+h1{font-size:clamp(22px,3vw,36px)!important;line-height:1.12!important}
+h2{font-size:18px!important;margin-bottom:10px!important}
+h3{font-size:15px!important}
+.subtitle,.sub,header p{line-height:1.5!important;font-size:13px!important;margin-top:6px!important}
+.panel,.card,.metric,.chain-wrap,aside,.table-section,.node-card,.stage{border-radius:8px!important}
+.panel{margin-bottom:10px!important}.panel h2{padding:9px 12px!important}.content{padding:10px!important}
+.grid,.cards,.score-strip{gap:9px!important}.card{min-height:auto!important;padding:10px!important}.card h3{margin-bottom:6px!important}.card p,.desc{line-height:1.45!important}
+.stage{min-height:170px!important;padding:10px!important}.stage h3{min-height:auto!important}.node-card{min-height:92px!important;padding:9px!important}
+.chain{padding:12px!important;gap:8px!important}.chain-wrap{max-height:70vh!important}
+.score-strip{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))!important;margin-bottom:10px!important}.metric{min-height:58px!important;padding:9px!important}.metric .value{font-size:18px!important}
+.layout{gap:12px!important}.detail-body{gap:8px!important;padding:11px!important}.field{padding-bottom:7px!important}.detail-head{padding:12px!important}.detail-title{font-size:17px!important}
+table{font-size:12px!important}th,td{padding:7px 8px!important;line-height:1.42!important}
+.risk-note{max-width:1240px!important;margin:12px auto!important;padding:9px 11px!important}
+.cpo-public-top{position:sticky;top:0;z-index:9999;background:rgba(8,13,18,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.22);padding:8px 14px;display:flex;gap:8px;align-items:center;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+.cpo-public-top__title{color:#eef7fb;font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cpo-public-top__links{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.cpo-public-top a{height:28px;line-height:26px;border:1px solid rgba(255,255,255,.18);border-radius:7px;padding:0 9px;color:#d8edf2;background:rgba(255,255,255,.06);text-decoration:none;font-size:12px}
+.cpo-public-top a:hover{border-color:#61d7c8;color:#fff}
+@media(max-width:900px){main{padding:12px!important}.stage{min-height:auto!important}.topbar{grid-template-columns:1fr!important}.cpo-public-top{align-items:flex-start;flex-direction:column}.cpo-public-top__links{justify-content:flex-start}}
+</style>
+</head>
+<body>
+<header class="cpo-public-top"><div class="cpo-public-top__title">CPO关键约束环节总表</div><nav class="cpo-public-top__links"><a href="../../core9_local_review.html?v=cpo">网站首页</a><a href="./index.html?v=visual2">CPO中枢</a><a href="./CPO全产业链详细全图_无公司版.html?v=visual2">产业链图</a><a href="./CPO关键约束环节总表.html?v=visual2">关键约束</a><a href="./CPO公司资料池.html?v=visual2">公司资料</a></nav></header>
+  <header><div class="topbar"><div><h1>CPO关键约束环节总表</h1><p class="subtitle">先看产业体系，再找公司。S/A级环节代表可能影响CPO量产、良率、功耗或可靠性的关键卡点；成品模块和外围硬件用于验证产业热度，不直接等同于“市场关注度仍需观察”。</p></div><div class="filters"><input class="search" id="search" placeholder="搜索环节/公司" /><select id="levelFilter"><option value="all">全部约束</option><option value="S">S级</option><option value="A">A级</option><option value="B">B级</option><option value="B-C">B-C级</option><option value="C">C级</option></select><select id="watchFilter"><option value="all">全部标签</option><option value="重点观察">重点观察</option><option value="待完善">待完善</option><option value="温度计/精选">温度计/精选</option><option value="外围精选">外围精选</option><option value="外围/谨慎">外围/谨慎</option></select><select id="priceFilter"><option value="all">全部定价</option><option value="高">关注度待观察高</option><option value="中">关注度待观察中</option><option value="低">关注度待观察低</option></select></div></div></header>
+  <main><section class='panel'><div class='content note'>本页内容用于产业链研究展示；公司名称、相关度、阶段标签、观察顺序和路线映射均为研究标签，不代表事实认定、证券评级或投资建议。</div></section><section class="score-strip" id="metrics"></section><section class="layout"><div><div class="chain-wrap"><div class="chain" id="chain"></div></div><div class="legend"><span><i class="dot s"></i>S：CPO绕不开的核心关键约束</span><span><i class="dot a"></i>A：影响性能/良率/交付</span><span><i class="dot b"></i>B：相关度较明确但竞争或替代更多</span><span><i class="dot"></i>C：外围映射或扩散</span></div></div><aside id="detail"></aside></section><section class="table-section"><table id="dataTable"></table></section></main>
+  <script>
+    const data=window.CPO_BOTTLENECK_SEGMENTS||[];const chainColumns=['系统/架构源头','上游材料','光芯片/电芯片','光器件/无源器件','光引擎/加工封装','测试/设备','成品模块','AI网络硬件扩散','系统外围'];let selectedId=data[0]?.id;const el=id=>document.getElementById(id);
+    function filtered(){const q=el('search').value.trim().toLowerCase();const level=el('levelFilter').value;const watch=el('watchFilter').value;const price=el('priceFilter').value;return data.filter(x=>{const text=Object.values(x).join(' ').toLowerCase();return(!q||text.includes(q))&&(level==='all'||x.bottleneck===level)&&(watch==='all'||x.watch===watch)&&(price==='all'||x.mispriced.includes(price));});}
+    function renderMetrics(rows){const metrics=[['当前环节',rows.length,'筛选后的产业环节数'],['S级约束',rows.filter(x=>x.bottleneck==='S').length,'光源、PIC、光引擎、共封装'],['A级约束',rows.filter(x=>x.bottleneck==='A').length,'器件、基板、测试等良率卡点'],['重点观察',rows.filter(x=>x.watch==='重点观察').length,'先找市场关注度仍需观察'],['待完善',rows.filter(x=>x.watch==='待完善').length,'理论有价值但证据未闭环'],['板块映射',rows.filter(x=>x.tradable.includes('主板样本')).length,'只代表上市板块差异，不代表市场位置']];el('metrics').innerHTML=metrics.map(m=>`<div class="metric"><div class="label">${m[0]}</div><div class="value">${m[1]}</div><div class="hint">${m[2]}</div></div>`).join('');}
+    function card(x){const hot=x.watch==='重点观察'||x.mispriced.includes('高');return `<button class="card ${x.id===selectedId?'active':''}" data-id="${x.id}" data-level="${x.bottleneck}"><div class="card-head"><span class="level ${x.bottleneck}">${x.bottleneck}</span><span class="score">重要度 ${x.criticality}</span></div><div class="name">${x.subStage}</div><div class="desc">${x.why}</div><div class="tags"><span class="tag ${hot?'hot':''}">${x.watch}</span><span class="tag green">${x.tradable}</span><span class="tag">${x.awareness}</span></div></button>`;}
+    function renderChain(rows){const grouped=Object.fromEntries(chainColumns.map(c=>[c,[]]));rows.forEach(x=>{if(grouped[x.stage])grouped[x.stage].push(x);});el('chain').innerHTML=chainColumns.map(col=>`<div class="col"><div class="col-title">${col}</div><div class="cards">${grouped[col].sort((a,b)=>a.order-b.order).map(card).join('')}</div></div>`).join('');document.querySelectorAll('.card').forEach(btn=>btn.addEventListener('click',()=>{selectedId=btn.dataset.id;renderAll(false);}));}
+    function field(label,value){return `<div class="field"><div class="field-label">${label}</div><div class="field-value">${value}</div></div>`;}
+    function renderDetail(rows){let x=data.find(v=>v.id===selectedId)||rows[0]||data[0];if(!x){el('detail').innerHTML='';return;}selectedId=x.id;el('detail').innerHTML=`<div class="detail-head"><h2 class="detail-title">${x.subStage}</h2><p class="detail-sub">${x.stage} · 约束阶段标签 ${x.bottleneck} · 重要度 ${x.criticality}</p></div><div class="detail-body">${field('技术作用',x.role)}${field('为什么关键',x.why)}${field('全球代表公司/生态',x.globalLeaders)}${field('国产进度',x.domesticProgress)}${field('A股映射',x.companies)}${field('市场信号',x.supplySignal)}${field('后续复核',x.nextReview)}${field('资料来源',x.source)}</div>`;}
+    function renderTable(rows){const headers=['关键约束','大环节','细分环节','重要度','板块/角色','市场认知','关注度变化','观察观察摘要','A股映射','后续复核'];const body=rows.sort((a,b)=>a.order-b.order).map(x=>`<tr><td><span class="level ${x.bottleneck}">${x.bottleneck}</span></td><td>${x.stage}</td><td>${x.subStage}</td><td>${x.criticality}</td><td>${x.tradable}</td><td>${x.awareness}</td><td>${x.mispriced}</td><td>${x.watch}</td><td>${x.companies}</td><td>${x.nextReview}</td></tr>`).join('');el('dataTable').innerHTML=`<thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${body}</tbody>`;}
+    function renderAll(reset=true){const rows=filtered();if(reset&&rows.length&&!rows.find(x=>x.id===selectedId))selectedId=rows[0].id;renderMetrics(rows);renderChain(rows);renderDetail(rows);renderTable(rows);}['search','levelFilter','watchFilter','priceFilter'].forEach(id=>el(id).addEventListener('input',()=>renderAll(true)));renderAll(false);
+  </script>
+<!-- CPO_DASHBOARD_DOCK_START -->
+<style>
+.cpo-dashboard-dock {
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  background:linear-gradient(135deg,#17232b,#123e42);
+  box-shadow:0 14px 30px rgba(12,25,32,.24);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif;
+}
+.cpo-dashboard-dock a,
+.cpo-dashboard-dock button {
+  height:34px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:7px;
+  padding:0 12px;
+  color:#edf5f7;
+  background:rgba(255,255,255,.09);
+  font-size:14px;
+  line-height:32px;
+  text-decoration:none;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.cpo-dashboard-dock a:hover,
+.cpo-dashboard-dock button:hover {
+  background:rgba(255,255,255,.17);
+}
+.cpo-dashboard-dock__toggle {
+  min-width:54px;
+}
+.cpo-dashboard-dock.is-collapsed {
+  padding:6px;
+  border-radius:999px;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__home {
+  display:none;
+}
+.cpo-dashboard-dock.is-collapsed .cpo-dashboard-dock__toggle {
+  min-width:46px;
+  border-radius:999px;
+  padding:0 10px;
+}
+@media (max-width: 760px) {
+  .cpo-dashboard-dock {
+    right:12px;
+    bottom:12px;
+  }
+  .cpo-dashboard-dock a,
+  .cpo-dashboard-dock button {
+    height:32px;
+    line-height:30px;
+    font-size:13px;
+    padding:0 10px;
+  }
+}
+</style>
+<div class="cpo-dashboard-dock" id="cpoDashboardDock">
+  <a class="cpo-dashboard-dock__home" href="./CPO研究中枢.html?v=dock20260628" title="返回 CPO 研究中枢">返回中枢</a>
+  <button class="cpo-dashboard-dock__toggle" type="button" title="收起或展开返回中枢按钮">收起</button>
+</div>
+<script>
+(function() {
+  var dock = document.getElementById('cpoDashboardDock');
+  if (!dock) return;
+  var toggle = dock.querySelector('.cpo-dashboard-dock__toggle');
+  toggle.addEventListener('click', function() {
+    dock.classList.toggle('is-collapsed');
+    toggle.textContent = dock.classList.contains('is-collapsed') ? '中枢' : '收起';
+  });
+})();
+</script>
+<!-- CPO_DASHBOARD_DOCK_END -->
+<div class="risk-note" style="margin:18px auto;max-width:1120px;padding:12px 14px;border:1px solid rgba(148,163,184,.28);border-radius:12px;color:#94a3b8;font-size:12px;line-height:1.7;">本专题内容基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。相关信息可能存在滞后或遗漏，请以公司公告和正式披露文件为准。</div></body>
+</html>
