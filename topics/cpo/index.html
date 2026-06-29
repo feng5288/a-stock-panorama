@@ -17,6 +17,29 @@
     .section{margin-top:18px;border:1px solid var(--line);border-radius:12px;background:rgba(16,24,33,.82);padding:18px}.section-head{display:flex;justify-content:space-between;gap:16px;align-items:end;margin-bottom:14px}.section-note{color:var(--muted);font-size:13px;line-height:1.65;max-width:780px}
     .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{position:relative;min-height:150px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));padding:16px;overflow:hidden}.card:hover{border-color:var(--accent);transform:translateY(-1px);transition:.16s ease}.card .tag{display:inline-flex;border:1px solid rgba(246,201,107,.42);color:var(--gold);border-radius:999px;padding:3px 8px;font-size:12px;margin-bottom:12px}.card h3{margin:0 0 9px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}.go{position:absolute;right:14px;bottom:12px;color:var(--accent);font-weight:900}
     .risk{margin-top:18px;border:1px solid rgba(148,163,184,.25);border-radius:10px;background:rgba(255,255,255,.035);color:#aebdca;font-size:12px;line-height:1.75;padding:12px 14px}
+
+    .daily-market{margin-top:18px;border:1px solid rgba(97,215,200,.28);border-radius:12px;background:linear-gradient(180deg,rgba(10,24,33,.92),rgba(8,14,22,.96));padding:18px;box-shadow:0 14px 42px rgba(0,0,0,.24)}
+    .daily-market-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-end;margin-bottom:14px}
+    .daily-market-title{font-size:18px;font-weight:900;color:#fff}
+    .daily-market-date{color:var(--accent);font-size:13px;font-weight:800}
+    .daily-market-note{color:var(--muted);font-size:12px;line-height:1.65;margin-top:4px}
+    .daily-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:12px}
+    .daily-kpi{border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.045);padding:11px}
+    .daily-kpi b{display:block;font-size:22px;line-height:1;color:#fff}
+    .daily-kpi span{display:block;margin-top:6px;color:var(--muted);font-size:12px}
+    .daily-lists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .daily-list{border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.035);padding:12px}
+    .daily-list h3{margin:0 0 9px;font-size:14px;color:#dceef4}
+    .daily-row{display:grid;grid-template-columns:minmax(0,1fr) 70px 82px;gap:8px;align-items:center;padding:7px 0;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
+    .daily-row:first-of-type{border-top:0}
+    .daily-name{min-width:0;color:#f4f7fb;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .daily-code{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+    .daily-pct{font-weight:900;text-align:right}
+    .daily-pct.up{color:#ff9a9a}.daily-pct.down{color:#7eb6ff}.daily-pct.flat{color:#c8d2dc}
+    .daily-amount{text-align:right;color:var(--muted);font-size:12px}
+    .daily-empty{color:var(--muted);font-size:13px;line-height:1.7}
+    @media(max-width:900px){.daily-market-head{align-items:flex-start;flex-direction:column}.daily-kpis,.daily-lists{grid-template-columns:1fr}.daily-row{grid-template-columns:minmax(0,1fr) 62px 74px}}
+
     @media(max-width:900px){.wrap{padding:16px}.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero-main,.side,.section{padding:16px}}
   </style>
 </head>
@@ -42,6 +65,23 @@
         </div>
       </aside>
     </section>
+    <section class="daily-market" id="dailyMarket">
+      <div class="daily-market-head">
+        <div>
+          <div class="daily-market-title">每日收盘观察</div>
+          <div class="daily-market-note">自动读取 CPO 公司池最新收盘数据，展示板块涨跌、成交活跃度和样本公司排序。</div>
+        </div>
+        <div class="daily-market-date" id="dailyMarketDate">数据加载中</div>
+      </div>
+      <div class="daily-kpis" id="dailyMarketKpis"></div>
+      <div class="daily-lists">
+        <div class="daily-list"><h3>涨幅靠前</h3><div id="dailyTopGainers" class="daily-empty">数据加载中</div></div>
+        <div class="daily-list"><h3>成交额靠前</h3><div id="dailyTopAmount" class="daily-empty">数据加载中</div></div>
+      </div>
+      <div class="daily-market-note" id="dailyMarketRisk" style="margin-top:12px"></div>
+    </section>
+
+
 
     <section class="section">
       <div class="section-head">
@@ -65,5 +105,51 @@
 
     <div class="risk">本专题内容基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。相关信息可能存在滞后或遗漏，请以公司公告和正式披露文件为准。</div>
   </main>
+
+  <script id="daily-market-module">
+  (function(){
+    const pctClass = value => value > 0 ? 'up' : value < 0 ? 'down' : 'flat';
+    const pctText = value => value == null ? '--' : (value > 0 ? '+' : '') + value.toFixed(2) + '%';
+    const numText = value => value == null ? '--' : value;
+    function renderRows(el, rows, mode){
+      if(!el) return;
+      if(!rows || !rows.length){ el.textContent = '暂无数据'; return; }
+      el.className = '';
+      el.innerHTML = rows.slice(0,6).map(row => '<div class="daily-row"><div class="daily-name">' +
+        row.name + '<span class="daily-code">' + row.code + '</span></div><div class="daily-pct ' +
+        pctClass(row.pct_chg || 0) + '">' + pctText(row.pct_chg) + '</div><div class="daily-amount">' +
+        (mode === 'amount' ? numText(row.amount_yi) + '亿' : numText(row.amount_yi) + '亿') + '</div></div>').join('');
+    }
+    function renderDaily(payload){
+      const topic = payload && payload.topics && payload.topics.cpo;
+      if(!topic) throw new Error('missing cpo topic data');
+      document.getElementById('dailyMarketDate').textContent = payload.trade_date_text || '最近收盘';
+      const s = topic.summary || {};
+      document.getElementById('dailyMarketKpis').innerHTML = [
+        ['平均涨跌幅', pctText(s.avg_pct_chg)],
+        ['上涨/下跌', (s.up_count || 0) + ' / ' + (s.down_count || 0)],
+        ['覆盖公司', topic.covered_count + ' / ' + topic.company_count],
+        ['合计成交额', numText(s.total_amount_yi) + '亿']
+      ].map(item => '<div class="daily-kpi"><b>' + item[1] + '</b><span>' + item[0] + '</span></div>').join('');
+      renderRows(document.getElementById('dailyTopGainers'), topic.top_gainers, 'pct');
+      renderRows(document.getElementById('dailyTopAmount'), topic.top_amount, 'amount');
+      document.getElementById('dailyMarketRisk').textContent = payload.note || '本模块仅用于产业链研究交流，不构成投资建议。';
+    }
+    fetch('../../data/daily_market_latest.json?v=' + Date.now())
+      .then(res => { if(!res.ok) throw new Error('daily data not ready'); return res.json(); })
+      .then(renderDaily)
+      .catch(() => {
+        const date = document.getElementById('dailyMarketDate');
+        const kpis = document.getElementById('dailyMarketKpis');
+        if(date) date.textContent = '收盘数据待更新';
+        if(kpis) kpis.innerHTML = '<div class="daily-kpi"><b>--</b><span>运行每日更新脚本后显示</span></div>';
+        ['dailyTopGainers','dailyTopAmount'].forEach(id => {
+          const el = document.getElementById(id);
+          if(el) el.textContent = '暂无收盘数据';
+        });
+      });
+  })();
+  </script>
+
 </body>
 </html>
