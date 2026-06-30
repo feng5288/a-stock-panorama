@@ -1,192 +1,86 @@
 {
-  "update_time": "2026-06-29T15:33:53.918712",
-  "trade_date": "2026-06-29",
+  "update_time": "2026-06-30T15:34:30.468539",
+  "trade_date": "2026-06-30",
   "market_summary": {
-    "sh_index": 4074,
-    "sz_index": 15812,
-    "cy_index": 4217,
-    "kc50_index": 1337,
-    "volume_trillion": 3.52
+    "sh_index": 4094.4,
+    "sz_index": 16205.56,
+    "cy_index": 4342.71,
+    "kc50_index": 2200.53,
+    "volume_trillion": 3.27
   },
-  "market_note": "三大指数集体收涨，沪指+1.16%深成指+0.19%创业板+0.54%，科创50暴涨4.61%创历史新高，半导体、电子特气、医药板块全面爆发，PCB和消费电子重挫。成交额3.52万亿，2469涨2933跌。",
+  "market_note": "A股半年收官，科创50大涨3.85%创新高，创业板指涨2.99%。半导体芯片全产业链爆发，算力硬件/CPO强势反弹，玻璃基板持续走强（京东方A成交400亿创历史记录），机器人概念持续活跃。两市成交约3.27万亿，超3000只个股上涨，170只涨停。",
   "hot_concepts": [
     {
-      "name": "半导体硅片",
-      "heat_pct": 10.0,
-      "source": "收盘领涨，有研硅+神工股份20CM涨停",
-      "note": "午后爆发，沪硅产业涨超11%，硅片涨价预期",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "电子特气",
-      "heat_pct": 9.5,
-      "source": "收盘领涨，广钢气体20CM涨停",
-      "note": "昊华科技+凯美特气+雅克科技涨停，金宏气体涨超10%",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "半导体材料",
-      "heat_pct": 9.0,
-      "source": "收盘涨幅居前",
-      "note": "神工股份涨停，阿石创涨超19%，西安奕材+华海诚科涨超13%",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "存储芯片",
-      "heat_pct": 8.5,
-      "source": "收盘涨幅居前",
-      "note": "正帆科技涨超17%，澜起科技涨超10%，涨价预期持续",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "芯片",
-      "heat_pct": 8.0,
-      "source": "收盘涨幅居前",
-      "note": "柏诚股份4天3板，彤程新材4天3板，半导体设备批量涨停",
+      "name": "半导体芯片",
+      "heat_pct": 7.0,
+      "source": "产业链持续走高，模拟芯片、功率半导体方向领涨，力合微、敏芯股份等多股涨停",
+      "note": "电子化学品、存储芯片、PCB概念等多个热点轮番活跃",
       "matched_stocks_count": 4
     },
     {
-      "name": "CRO",
-      "heat_pct": 7.5,
-      "source": "收盘涨幅居前",
-      "note": "万邦医药20%涨停，双成药业+美诺华+康龙化成跟涨",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "创新药",
-      "heat_pct": 7.0,
-      "source": "收盘涨幅居前",
-      "note": "CDE药物临床进展报告提振，三生国健20cm涨停，荣昌生物涨17%",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "科创50",
-      "heat_pct": 7.0,
-      "source": "科创50涨4.61%创历史新高",
-      "note": "半导体+医药双轮驱动，首次突破历史顶部",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "游戏",
+      "name": "算力硬件/CPO",
       "heat_pct": 6.5,
-      "source": "收盘涨幅居前",
-      "note": "完美世界封涨停，神州泰岳涨超10%，昆仑万维跟涨",
-      "matched_stocks_count": 0
+      "source": "算力硬件概念强势反弹，长光华芯20CM涨停",
+      "note": "光模块、CPO方向活跃",
+      "matched_stocks_count": 2
     },
     {
-      "name": "氦气概念",
+      "name": "玻璃基板",
       "heat_pct": 6.0,
-      "source": "涨幅居前",
-      "note": "昊华科技等多股涨停，工业气体概念联动走强",
+      "source": "持续走强，京东方A触及涨停创18年新高，TCL科技、水晶光电等涨停",
+      "note": "成交额超400亿创历史记录",
       "matched_stocks_count": 0
     },
     {
-      "name": "核聚变",
+      "name": "MLED/光学光电子",
       "heat_pct": 5.5,
-      "source": "早盘涨幅居前",
-      "note": "科技概念普涨背景下的资金追捧",
+      "source": "MLED板块走强，光学光电子涨幅居前",
+      "note": "与半导体、玻璃基板形成共振",
       "matched_stocks_count": 0
     },
     {
-      "name": "超导概念",
+      "name": "机器人概念",
       "heat_pct": 5.0,
-      "source": "涨幅居前",
-      "note": "题材轮动走高",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "猪肉概念",
-      "heat_pct": 4.5,
-      "source": "涨幅居前",
-      "note": "防御+涨价逻辑",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "液冷",
-      "heat_pct": 4.0,
-      "source": "涨停分析提及",
-      "note": "威派格7天4板",
+      "source": "持续反弹，天奇股份直线涨停，埃斯顿涨停",
+      "note": "春光科技、锋龙股份、中坚科技等涨停",
       "matched_stocks_count": 3
     },
     {
-      "name": "PCB概念",
-      "heat_pct": 1.0,
-      "source": "收盘领跌",
-      "note": "中京电子等近十股跌停，板块重挫",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "消费电子",
-      "heat_pct": 1.0,
-      "source": "收盘跌幅居前",
-      "note": "板块重挫",
+      "name": "创新药",
+      "heat_pct": 4.5,
+      "source": "局部走强，万邦医药20%二连板",
+      "note": "重组蛋白、减肥药、CRO等医药细分方向活跃",
       "matched_stocks_count": 0
     },
     {
-      "name": "光纤概念",
-      "heat_pct": 1.5,
-      "source": "收盘跌幅居前",
-      "note": "新安股份跌停",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "北交所",
-      "heat_pct": 2.0,
-      "source": "收盘领跌",
-      "note": "北证50跌3.27%",
+      "name": "锂矿",
+      "heat_pct": 3.5,
+      "source": "震荡反弹，中矿资源涨停",
+      "note": "永杉锂业、天华新能等跟涨",
       "matched_stocks_count": 0
-    },
-    {
-      "name": "通信设备",
-      "heat_pct": 2.0,
-      "source": "收盘跌幅居前",
-      "note": "延续调整",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "地产",
-      "heat_pct": 1.5,
-      "source": "收盘跌幅居前",
-      "note": "板块走低",
-      "matched_stocks_count": 2
     }
   ],
   "hot_stocks": [
-    {
-      "code": "000962",
-      "name": "东方钽业",
-      "rating": "C",
-      "score": null,
-      "heat_score": 27.0,
-      "matched_concepts": [
-        "半导体硅片",
-        "半导体材料",
-        "芯片"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
-    },
     {
       "code": "002213",
       "name": "大为股份",
       "rating": "D",
       "score": 5,
-      "heat_score": 16.5,
+      "heat_score": 7.0,
       "matched_concepts": [
-        "存储芯片",
-        "芯片"
+        "半导体芯片"
       ],
       "theme": "🔥 AI算力产业链",
       "track": "HBM存储产业链"
     },
     {
-      "code": "603688",
-      "name": "石英股份",
+      "code": "000962",
+      "name": "东方钽业",
       "rating": "C",
-      "score": 10,
-      "heat_score": 10.0,
+      "score": null,
+      "heat_score": 7.0,
       "matched_concepts": [
-        "半导体硅片"
+        "半导体芯片"
       ],
       "theme": "💡 半导体全产业链",
       "track": "半导体材料(卡脖子12大类)"
@@ -196,10 +90,9 @@
       "name": "泰晶科技",
       "rating": "D+",
       "score": 8,
-      "heat_score": 10.0,
+      "heat_score": 7.0,
       "matched_concepts": [
-        "芯片",
-        "通信设备"
+        "半导体芯片"
       ],
       "theme": "💡 半导体全产业链",
       "track": "芯片设计"
@@ -209,225 +102,138 @@
       "name": "海特高新",
       "rating": "C+",
       "score": 13,
-      "heat_score": 8.0,
+      "heat_score": 7.0,
       "matched_concepts": [
-        "芯片"
+        "半导体芯片"
       ],
       "theme": "💡 半导体全产业链",
       "track": "功率半导体"
     },
     {
-      "code": "002837",
-      "name": "英维克",
-      "rating": "B+",
-      "score": 18,
-      "heat_score": 4.0,
+      "code": "002902",
+      "name": "铭普光磁",
+      "rating": "D",
+      "score": 2,
+      "heat_score": 6.5,
       "matched_concepts": [
-        "液冷"
+        "算力硬件/CPO"
       ],
       "theme": "🔥 AI算力产业链",
-      "track": "液冷/温控"
-    },
-    {
-      "code": "603757",
-      "name": "大元泵业",
-      "rating": "C",
-      "score": 13,
-      "heat_score": 4.0,
-      "matched_concepts": [
-        "液冷"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "液冷/温控"
-    },
-    {
-      "code": "002272",
-      "name": "川润股份",
-      "rating": "C",
-      "score": 12,
-      "heat_score": 4.0,
-      "matched_concepts": [
-        "液冷"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "液冷/温控"
+      "track": "光通信/CPO光互连"
     },
     {
       "code": "600487",
       "name": "亨通光电",
       "rating": "A-",
       "score": 22,
-      "heat_score": 1.5,
+      "heat_score": 6.5,
       "matched_concepts": [
-        "光纤概念"
+        "算力硬件/CPO"
       ],
       "theme": "🔥 AI算力产业链",
       "track": "光通信/CPO光互连"
     },
     {
-      "code": "603042",
-      "name": "华脉科技",
-      "rating": "?",
-      "score": 3,
-      "heat_score": 1.5,
-      "matched_concepts": [
-        "光纤概念"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "光通信/CPO光互连"
-    },
-    {
-      "code": "600605",
-      "name": "汇通能源",
-      "rating": "D+",
-      "score": null,
-      "heat_score": 1.5,
-      "matched_concepts": [
-        "地产"
-      ],
-      "theme": "🏦 金融与地产",
-      "track": "房地产"
-    },
-    {
-      "code": "600736",
-      "name": "苏州高新",
-      "rating": "D+",
-      "score": 9,
-      "heat_score": 1.5,
-      "matched_concepts": [
-        "地产"
-      ],
-      "theme": "🏦 金融与地产",
-      "track": "房地产"
-    },
-    {
-      "code": "600601",
-      "name": "方正科技",
-      "rating": "B",
-      "score": 16,
-      "heat_score": 1.0,
-      "matched_concepts": [
-        "PCB概念"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
-    },
-    {
-      "code": "603328",
-      "name": "依顿电子",
+      "code": "603283",
+      "name": "赛腾股份",
       "rating": "B+",
       "score": 17,
-      "heat_score": 1.0,
+      "heat_score": 5.0,
       "matched_concepts": [
-        "PCB概念"
+        "机器人概念"
       ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
+    },
+    {
+      "code": "002747",
+      "name": "埃斯顿",
+      "rating": "B",
+      "score": null,
+      "heat_score": 5.0,
+      "matched_concepts": [
+        "机器人概念"
+      ],
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
+    },
+    {
+      "code": "002527",
+      "name": "新时达",
+      "rating": "?",
+      "score": null,
+      "heat_score": 5.0,
+      "matched_concepts": [
+        "机器人概念"
+      ],
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
     }
   ],
-  "total_matched_stocks": 14,
-  "updated": "2026-06-29 15:33",
+  "total_matched_stocks": 9,
+  "updated": "2026-06-30 15:34",
   "stocks": {
-    "000962": {
-      "heat": "high",
-      "maxChg": 27.0,
-      "concepts": [
-        "半导体硅片",
-        "半导体材料",
-        "芯片"
-      ]
-    },
     "002213": {
       "heat": "high",
-      "maxChg": 16.5,
+      "maxChg": 7.0,
       "concepts": [
-        "存储芯片",
-        "芯片"
+        "半导体芯片"
       ]
     },
-    "603688": {
+    "000962": {
       "heat": "high",
-      "maxChg": 10.0,
+      "maxChg": 7.0,
       "concepts": [
-        "半导体硅片"
+        "半导体芯片"
       ]
     },
     "603738": {
       "heat": "high",
-      "maxChg": 10.0,
+      "maxChg": 7.0,
       "concepts": [
-        "芯片",
-        "通信设备"
+        "半导体芯片"
       ]
     },
     "002023": {
       "heat": "high",
-      "maxChg": 8.0,
+      "maxChg": 7.0,
       "concepts": [
-        "芯片"
+        "半导体芯片"
       ]
     },
-    "002837": {
-      "heat": "warm",
-      "maxChg": 4.0,
+    "002902": {
+      "heat": "high",
+      "maxChg": 6.5,
       "concepts": [
-        "液冷"
-      ]
-    },
-    "603757": {
-      "heat": "warm",
-      "maxChg": 4.0,
-      "concepts": [
-        "液冷"
-      ]
-    },
-    "002272": {
-      "heat": "warm",
-      "maxChg": 4.0,
-      "concepts": [
-        "液冷"
+        "算力硬件/CPO"
       ]
     },
     "600487": {
-      "heat": "cold",
-      "maxChg": 1.5,
+      "heat": "high",
+      "maxChg": 6.5,
       "concepts": [
-        "光纤概念"
+        "算力硬件/CPO"
       ]
     },
-    "603042": {
-      "heat": "cold",
-      "maxChg": 1.5,
+    "603283": {
+      "heat": "high",
+      "maxChg": 5.0,
       "concepts": [
-        "光纤概念"
+        "机器人概念"
       ]
     },
-    "600605": {
-      "heat": "cold",
-      "maxChg": 1.5,
+    "002747": {
+      "heat": "high",
+      "maxChg": 5.0,
       "concepts": [
-        "地产"
+        "机器人概念"
       ]
     },
-    "600736": {
-      "heat": "cold",
-      "maxChg": 1.5,
+    "002527": {
+      "heat": "high",
+      "maxChg": 5.0,
       "concepts": [
-        "地产"
-      ]
-    },
-    "600601": {
-      "heat": "cold",
-      "maxChg": 1.0,
-      "concepts": [
-        "PCB概念"
-      ]
-    },
-    "603328": {
-      "heat": "cold",
-      "maxChg": 1.0,
-      "concepts": [
-        "PCB概念"
+        "机器人概念"
       ]
     }
   }
