@@ -1,203 +1,95 @@
 {
-  "update_time": "2026-07-01T15:33:03.196547",
-  "trade_date": "2026-07-01",
+  "update_time": "2026-07-02T15:32:39.036386",
+  "trade_date": "2026-07-02",
   "market_summary": {
-    "sh_index": 4112.0,
-    "sz_index": 16119.33,
-    "cy_index": 4325.67,
-    "kc50_index": 2145.93,
-    "volume_trillion": 3.68
+    "sh_index": -2.03,
+    "sz_index": -3.85,
+    "cy_index": -5.71,
+    "kc50_index": 0.0,
+    "volume_trillion": 3.45
   },
-  "market_note": "沪指涨0.44%站上4112点，深成指跌0.53%，创业板指跌1.89%，科创50冲高回落跌2.48%。养殖业集体爆发领涨两市，大金融（证券/保险）力撑沪指，半导体分化冲高回落，氟化工多氟多3连板。PCB概念、光纤概念跌幅居前。两市成交3.68万亿，放量3890亿，超4300股上涨，150股涨停，74股封板未遂。",
+  "market_note": "三大指数集体重挫，沪指跌2.03%报收，创业板指暴跌5.71%。两市成交3.45万亿缩量约2094亿。2219涨3162跌，156涨停41跌停。人形机器人逆势活跃十余股涨停，有色金属/贵金属走强，减肥药概念大涨。CPO/MLCC/半导体领跌。",
   "hot_concepts": [
     {
-      "name": "养殖业",
-      "heat_pct": 8.0,
-      "source": "养殖板块集体爆发，新希望、傲农生物、湘佳股份、益生股份涨停",
-      "note": "领涨两市，板块效应最强",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "大金融/证券保险",
-      "heat_pct": 7.0,
-      "source": "大金融板块走强，证券、保险方向领涨，华安证券、天风证券、国盛证券涨停",
-      "note": "沪指上攻4100点核心推手",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "半导体",
+      "name": "人形机器人",
       "heat_pct": 6.5,
-      "source": "半导体继续强势，龙图光罩、银河微电20CM涨停，北方华创创历史新高",
-      "note": "7月新一轮涨价潮催化，但尾盘冲高回落",
-      "matched_stocks_count": 4
-    },
-    {
-      "name": "氟化工",
-      "heat_pct": 6.0,
-      "source": "氟化工板块延续强势，多氟多走出3连板",
-      "note": "材料涨价逻辑持续",
-      "matched_stocks_count": 5
-    },
-    {
-      "name": "机器人概念",
-      "heat_pct": 5.5,
-      "source": "机器人概念活跃，拓斯达20CM涨停",
-      "note": "全市场近200只涨停背景下活跃",
+      "source": "逆势活跃十余只涨停",
+      "note": "福莱新材2连板，锋龙股份3天2板，日盈电子涨停",
       "matched_stocks_count": 3
     },
     {
-      "name": "电子特气",
-      "heat_pct": 5.0,
-      "source": "电子特气概念反复走强，蜀道装备、金宏气体20CM涨停",
-      "note": "半导体上游材料联动",
-      "matched_stocks_count": 0
+      "name": "贵金属",
+      "heat_pct": 5.8,
+      "source": "赤峰黄金、招金黄金等涨停",
+      "note": "翔鹭钨业、赤峰黄金、招金黄金、山金国际涨停",
+      "matched_stocks_count": 2
     },
     {
-      "name": "创新药",
-      "heat_pct": 4.5,
-      "source": "创新药异动拉升，美诺华直线涨停，海南海药7天5板",
-      "note": "短线游资聚焦",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "白酒",
-      "heat_pct": 4.0,
-      "source": "白酒板块震荡反弹，金种子酒涨停",
-      "note": "中银证券研报催化，红利资产属性",
+      "name": "减肥药",
+      "heat_pct": 5.2,
+      "source": "争光股份、美诺华双双涨停",
+      "note": "常山药业、圣诺生物、昊帆生物跟涨",
       "matched_stocks_count": 0
     },
     {
       "name": "有色金属",
-      "heat_pct": 3.5,
-      "source": "有色金属板块活跃，东方锆业9天6板，江钨装备11天6板",
-      "note": "连板高度标杆",
+      "heat_pct": 4.8,
+      "source": "板块偏强多股涨停",
+      "note": "翔鹭钨业等涨停",
       "matched_stocks_count": 0
     },
     {
-      "name": "物流",
+      "name": "芬太尼",
+      "heat_pct": 4.5,
+      "source": "涨幅居前",
+      "note": "板块逆势走强",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "化纤",
+      "heat_pct": 4.2,
+      "source": "异动上行两股涨停",
+      "note": "尤夫股份、优彩资源双双封板",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "先进封装",
+      "heat_pct": 3.8,
+      "source": "盘中回暖气派科技20%涨停",
+      "note": "气派科技涨20%封板",
+      "matched_stocks_count": 4
+    },
+    {
+      "name": "动漫",
+      "heat_pct": 3.5,
+      "source": "涨幅居前",
+      "note": "板块逆势活跃",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "制冷剂",
+      "heat_pct": 3.2,
+      "source": "涨幅居前",
+      "note": "氟化工相关",
+      "matched_stocks_count": 5
+    },
+    {
+      "name": "美容护理",
       "heat_pct": 3.0,
-      "source": "物流板块开盘走强，圆通速递一字涨停，韵达、申通逼近涨停",
-      "note": "中报预增催化",
+      "source": "涨幅居前",
+      "note": "纺服行业联动",
       "matched_stocks_count": 0
     }
   ],
   "hot_stocks": [
     {
-      "code": "002213",
-      "name": "大为股份",
-      "rating": "D",
-      "score": 5,
-      "heat_score": 6.5,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "HBM存储产业链"
-    },
-    {
-      "code": "000962",
-      "name": "东方钽业",
-      "rating": "C",
-      "score": null,
-      "heat_score": 6.5,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
-    },
-    {
-      "code": "603738",
-      "name": "泰晶科技",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 6.5,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "芯片设计"
-    },
-    {
-      "code": "002023",
-      "name": "海特高新",
-      "rating": "C+",
-      "score": 13,
-      "heat_score": 6.5,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "功率半导体"
-    },
-    {
-      "code": "605020",
-      "name": "永和股份",
-      "rating": "B+",
-      "score": 22,
-      "heat_score": 6.0,
-      "matched_concepts": [
-        "氟化工"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "特种化工新材料"
-    },
-    {
-      "code": "600596",
-      "name": "新安股份",
-      "rating": "B",
-      "score": 16,
-      "heat_score": 6.0,
-      "matched_concepts": [
-        "氟化工"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "特种化工新材料"
-    },
-    {
-      "code": "601678",
-      "name": "滨化股份",
-      "rating": "D",
-      "score": 10,
-      "heat_score": 6.0,
-      "matched_concepts": [
-        "氟化工"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "特种化工新材料"
-    },
-    {
-      "code": "603155",
-      "name": "新亚强",
-      "rating": "D+",
-      "score": 9,
-      "heat_score": 6.0,
-      "matched_concepts": [
-        "氟化工"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "特种化工新材料"
-    },
-    {
-      "code": "603938",
-      "name": "三孚股份",
-      "rating": "B",
-      "score": 14,
-      "heat_score": 6.0,
-      "matched_concepts": [
-        "氟化工"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "特种化工新材料"
-    },
-    {
       "code": "603283",
       "name": "赛腾股份",
       "rating": "B+",
       "score": 17,
-      "heat_score": 5.5,
+      "heat_score": 6.5,
       "matched_concepts": [
-        "机器人概念"
+        "人形机器人"
       ],
       "theme": "🤖 人形机器人产业链",
       "track": "机器人整机/系统集成"
@@ -207,9 +99,9 @@
       "name": "埃斯顿",
       "rating": "B",
       "score": null,
-      "heat_score": 5.5,
+      "heat_score": 6.5,
       "matched_concepts": [
-        "机器人概念"
+        "人形机器人"
       ],
       "theme": "🤖 人形机器人产业链",
       "track": "机器人整机/系统集成"
@@ -219,99 +111,245 @@
       "name": "新时达",
       "rating": "?",
       "score": null,
-      "heat_score": 5.5,
+      "heat_score": 6.5,
       "matched_concepts": [
-        "机器人概念"
+        "人形机器人"
       ],
       "theme": "🤖 人形机器人产业链",
       "track": "机器人整机/系统集成"
+    },
+    {
+      "code": "603995",
+      "name": "甬金股份",
+      "rating": "B",
+      "score": 17,
+      "heat_score": 5.8,
+      "matched_concepts": [
+        "贵金属"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "工业金属"
+    },
+    {
+      "code": "601137",
+      "name": "博威合金",
+      "rating": "D+",
+      "score": 11,
+      "heat_score": 5.8,
+      "matched_concepts": [
+        "贵金属"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "工业金属"
+    },
+    {
+      "code": "603688",
+      "name": "石英股份",
+      "rating": "C",
+      "score": 10,
+      "heat_score": 3.8,
+      "matched_concepts": [
+        "先进封装"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "HBM存储产业链"
+    },
+    {
+      "code": "300576",
+      "name": "容大感光",
+      "rating": "D+",
+      "score": null,
+      "heat_score": 3.8,
+      "matched_concepts": [
+        "先进封装"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "先进封装"
+    },
+    {
+      "code": "603650",
+      "name": "彤程新材",
+      "rating": "C+",
+      "score": 13,
+      "heat_score": 3.8,
+      "matched_concepts": [
+        "先进封装"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "先进封装"
+    },
+    {
+      "code": "600601",
+      "name": "方正科技",
+      "rating": "B",
+      "score": 16,
+      "heat_score": 3.8,
+      "matched_concepts": [
+        "先进封装"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "先进封装"
+    },
+    {
+      "code": "605020",
+      "name": "永和股份",
+      "rating": "B+",
+      "score": 22,
+      "heat_score": 3.2,
+      "matched_concepts": [
+        "制冷剂"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "特种化工新材料"
+    },
+    {
+      "code": "600596",
+      "name": "新安股份",
+      "rating": "B",
+      "score": 16,
+      "heat_score": 3.2,
+      "matched_concepts": [
+        "制冷剂"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "特种化工新材料"
+    },
+    {
+      "code": "601678",
+      "name": "滨化股份",
+      "rating": "D",
+      "score": 10,
+      "heat_score": 3.2,
+      "matched_concepts": [
+        "制冷剂"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "特种化工新材料"
+    },
+    {
+      "code": "603155",
+      "name": "新亚强",
+      "rating": "D+",
+      "score": 9,
+      "heat_score": 3.2,
+      "matched_concepts": [
+        "制冷剂"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "特种化工新材料"
+    },
+    {
+      "code": "603938",
+      "name": "三孚股份",
+      "rating": "B",
+      "score": 14,
+      "heat_score": 3.2,
+      "matched_concepts": [
+        "制冷剂"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "特种化工新材料"
     }
   ],
-  "total_matched_stocks": 12,
-  "updated": "2026-07-01 15:33",
+  "total_matched_stocks": 14,
+  "updated": "2026-07-02 15:32",
   "stocks": {
-    "002213": {
-      "heat": "high",
-      "maxChg": 6.5,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "000962": {
-      "heat": "high",
-      "maxChg": 6.5,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "603738": {
-      "heat": "high",
-      "maxChg": 6.5,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "002023": {
-      "heat": "high",
-      "maxChg": 6.5,
-      "concepts": [
-        "半导体"
-      ]
-    },
-    "605020": {
-      "heat": "high",
-      "maxChg": 6.0,
-      "concepts": [
-        "氟化工"
-      ]
-    },
-    "600596": {
-      "heat": "high",
-      "maxChg": 6.0,
-      "concepts": [
-        "氟化工"
-      ]
-    },
-    "601678": {
-      "heat": "high",
-      "maxChg": 6.0,
-      "concepts": [
-        "氟化工"
-      ]
-    },
-    "603155": {
-      "heat": "high",
-      "maxChg": 6.0,
-      "concepts": [
-        "氟化工"
-      ]
-    },
-    "603938": {
-      "heat": "high",
-      "maxChg": 6.0,
-      "concepts": [
-        "氟化工"
-      ]
-    },
     "603283": {
       "heat": "high",
-      "maxChg": 5.5,
+      "maxChg": 6.5,
       "concepts": [
-        "机器人概念"
+        "人形机器人"
       ]
     },
     "002747": {
       "heat": "high",
-      "maxChg": 5.5,
+      "maxChg": 6.5,
       "concepts": [
-        "机器人概念"
+        "人形机器人"
       ]
     },
     "002527": {
       "heat": "high",
-      "maxChg": 5.5,
+      "maxChg": 6.5,
       "concepts": [
-        "机器人概念"
+        "人形机器人"
+      ]
+    },
+    "603995": {
+      "heat": "high",
+      "maxChg": 5.8,
+      "concepts": [
+        "贵金属"
+      ]
+    },
+    "601137": {
+      "heat": "high",
+      "maxChg": 5.8,
+      "concepts": [
+        "贵金属"
+      ]
+    },
+    "603688": {
+      "heat": "warm",
+      "maxChg": 3.8,
+      "concepts": [
+        "先进封装"
+      ]
+    },
+    "300576": {
+      "heat": "warm",
+      "maxChg": 3.8,
+      "concepts": [
+        "先进封装"
+      ]
+    },
+    "603650": {
+      "heat": "warm",
+      "maxChg": 3.8,
+      "concepts": [
+        "先进封装"
+      ]
+    },
+    "600601": {
+      "heat": "warm",
+      "maxChg": 3.8,
+      "concepts": [
+        "先进封装"
+      ]
+    },
+    "605020": {
+      "heat": "warm",
+      "maxChg": 3.2,
+      "concepts": [
+        "制冷剂"
+      ]
+    },
+    "600596": {
+      "heat": "warm",
+      "maxChg": 3.2,
+      "concepts": [
+        "制冷剂"
+      ]
+    },
+    "601678": {
+      "heat": "warm",
+      "maxChg": 3.2,
+      "concepts": [
+        "制冷剂"
+      ]
+    },
+    "603155": {
+      "heat": "warm",
+      "maxChg": 3.2,
+      "concepts": [
+        "制冷剂"
+      ]
+    },
+    "603938": {
+      "heat": "warm",
+      "maxChg": 3.2,
+      "concepts": [
+        "制冷剂"
       ]
     }
   }
