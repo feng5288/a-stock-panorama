@@ -320,6 +320,40 @@ table{font-size:12px!important}th,td{padding:7px 8px!important;line-height:1.42!
 .cpo-public-top a:hover{border-color:#61d7c8;color:#fff}
 @media(max-width:900px){main{padding:12px!important}.stage{min-height:auto!important}.topbar{grid-template-columns:1fr!important}.cpo-public-top{align-items:flex-start;flex-direction:column}.cpo-public-top__links{justify-content:flex-start}}
 </style>
+<style id="topic-public-top-risk-style">
+.topic-risk-top{max-width:1180px;margin:0 auto 14px;padding:10px 12px;border:1px solid rgba(210,153,34,.36);background:rgba(210,153,34,.09);border-radius:8px;color:#6b4e11;line-height:1.65;font-size:13px}
+body:not(:has(main)) .topic-risk-top{margin:14px 30px}
+</style>
+<style id="cpo-node-stock-map-style">
+.cpo-node-clickable{position:relative;cursor:pointer;outline:none;transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease}
+.cpo-node-clickable:hover,.cpo-node-clickable:focus{border-color:var(--cyan)!important;box-shadow:0 0 0 2px rgba(98,228,207,.14);transform:translateY(-1px)}
+.cpo-node-stock-mark{position:absolute;right:8px;top:8px;display:inline-flex;align-items:center;min-height:22px;border:1px solid rgba(98,228,207,.42);border-radius:999px;background:rgba(98,228,207,.12);color:var(--cyan);font-size:11px;font-weight:800;padding:0 7px;pointer-events:none}
+.stage>.cpo-node-stock-mark{top:10px;right:10px}
+.cpo-stock-drawer{position:fixed;inset:0;z-index:100000;background:rgba(4,8,11,.58);display:none;justify-content:flex-end}
+.cpo-stock-drawer.is-open{display:flex}
+.cpo-stock-drawer__panel{width:min(520px,100%);height:100%;overflow:auto;background:#0d151a;border-left:1px solid rgba(148,163,184,.28);box-shadow:-20px 0 60px rgba(0,0,0,.38);padding:22px}
+.cpo-stock-drawer__close{position:sticky;top:0;float:right;width:34px;height:34px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:22px;line-height:28px;cursor:pointer}
+.cpo-stock-drawer__eyebrow{color:var(--cyan);font-size:13px;font-weight:900;margin-bottom:8px}
+.cpo-stock-drawer h2{margin:0 42px 8px 0;font-size:24px;color:#fff}
+.cpo-stock-drawer__note{color:#aab7b4;line-height:1.65;font-size:13px;margin:0 0 12px}
+.cpo-stock-drawer__chips{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 14px}
+.cpo-stock-drawer__chips span{border:1px solid rgba(216,255,79,.28);border-radius:999px;color:var(--green);background:rgba(216,255,79,.08);padding:4px 9px;font-size:12px}
+.cpo-stock-drawer__summary{display:grid;grid-template-columns:70px 1fr;gap:10px;align-items:center;border:1px solid rgba(148,163,184,.22);border-radius:9px;background:rgba(255,255,255,.04);padding:11px;margin-bottom:12px}
+.cpo-stock-drawer__summary b{font-size:28px;color:#fff;text-align:center}.cpo-stock-drawer__summary span{color:#aab7b4}
+.cpo-stock-drawer__list{display:grid;gap:10px}
+.cpo-stock-card{border:1px solid rgba(148,163,184,.22);border-radius:9px;background:rgba(255,255,255,.045);padding:13px}
+.cpo-stock-card__top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}.cpo-stock-card__top b{font-size:17px;color:#fff}.cpo-stock-card__top span{color:#aab7b4;font-size:12px}
+.cpo-stock-card__meta{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}.cpo-stock-card__meta span{border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:2px 7px;color:#dbe7ec;font-size:12px}
+.cpo-stock-card p{margin:5px 0;color:#aab7b4;font-size:13px;line-height:1.55}.cpo-stock-card p b{color:#dcecf0}
+.cpo-stock-card__actions{margin-top:10px}.cpo-stock-card__report,.cpo-stock-card__pending{display:inline-flex;align-items:center;min-height:30px;border-radius:7px;padding:0 10px;font-size:13px;font-weight:800}
+.cpo-stock-card__report{border:1px solid rgba(98,228,207,.42);background:rgba(98,228,207,.12);color:var(--cyan);text-decoration:none}.cpo-stock-card__report:hover{background:rgba(98,228,207,.2)}
+.cpo-stock-card__pending{border:1px solid rgba(148,163,184,.22);color:#aab7b4;background:rgba(255,255,255,.03)}
+.cpo-stock-drawer__footer{margin-top:14px;border-top:1px solid rgba(148,163,184,.18);padding-top:12px;display:grid;gap:8px;color:#aab7b4;font-size:12px;line-height:1.6}.cpo-stock-drawer__footer a{color:var(--cyan)}
+@media(max-width:760px){.cpo-stock-drawer__panel{padding:16px}.cpo-node-stock-mark{position:static;margin-top:7px;width:max-content}}
+</style>
+<script src="./cpo_node_stock_map.js?v=stockmap1"></script>
+<script src="./cpo_node_stock_map_runtime.js?v=stockmap1"></script>
+
 </head>
 <body>
 <header class="cpo-public-top"><div class="cpo-public-top__title">CPO全产业链详细全图（产业链版）</div><nav class="cpo-public-top__links"><a href="../../index.html">网站首页</a><a href="./index.html?v=visual2">CPO中枢</a><a href="./CPO全产业链详细全图_产业链版.html?v=visual2">产业链图</a><a href="./CPO关键约束环节总表.html?v=visual2">关键约束</a><a href="./CPO公司资料池.html?v=visual2">公司资料</a></nav></header>
@@ -340,7 +374,7 @@ table{font-size:12px!important}th,td{padding:7px 8px!important;line-height:1.42!
         <a href="#market">扩散路径</a>
       </nav>
       <div class="sidebox">
-        当前页不展开公司。公司映射、主板样本、阶段位置观察和中报验证都放到后续步骤。
+        点击高亮环节，可以查看对应公司池样本，并从公司卡片进入个股报告。
       </div>
     </aside>
 
@@ -348,7 +382,7 @@ table{font-size:12px!important}th,td{padding:7px 8px!important;line-height:1.42!
       <header>
         <div class="eyebrow">CPO 全产业链详细全图（产业链版）</div>
         <h1>CPO全产业链结构图</h1>
-        <p>这张图只讲产业结构、技术流程、关键材料、工艺节点、测试验证和关键约束强度。它的目标是先呈现 CPO 如何从 AI 数据中心需求，一层层传导到材料、芯片、器件、封装、测试和成品系统。</p>
+        <p>这张图先呈现 CPO 如何从 AI 数据中心需求，一层层传导到材料、芯片、器件、封装、测试和成品系统。图中高亮环节可点击查看对应公司池样本，并进入已接入的公司报告。</p>
       </header>
 
       <section id="flow" class="card">

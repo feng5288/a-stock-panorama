@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>飞荣达 个股公司深度分析报告</title>
+<style>
+:root{color-scheme:dark;--bg:#07111d;--panel:#0d1b2a;--card:#102235;--line:#23435e;--text:#eaf4ff;--muted:#9eb6cb;--gold:#ffd166;--green:#5eead4;--blue:#7db7ff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#07111d,#091523 45%,#07111d);color:var(--text);font-family:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;line-height:1.78}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 22px 56px}.top{border:1px solid var(--line);background:linear-gradient(135deg,rgba(125,183,255,.16),rgba(255,209,102,.08));border-radius:10px;padding:26px 28px;margin-bottom:18px}
+.eyebrow{color:var(--muted);font-size:14px}.title{font-size:34px;font-weight:900;margin:8px 0}.subtitle{color:#d6e9ff;font-size:16px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.chip{border:1px solid rgba(255,209,102,.35);background:rgba(255,209,102,.08);color:#ffe6a3;border-radius:999px;padding:5px 10px;font-size:13px}
+.snapshot{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}.snap{border:1px solid var(--line);background:var(--card);border-radius:9px;padding:14px}.snap b{display:block;color:var(--muted);font-size:13px}.snap span{display:block;font-size:21px;font-weight:900;margin-top:6px}.snap small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:250px minmax(0,1fr);gap:18px}.toc{position:sticky;top:12px;align-self:start;border:1px solid var(--line);background:rgba(13,27,42,.9);border-radius:9px;padding:12px}.toc a{display:block;color:#d8ecff;text-decoration:none;border-radius:7px;padding:8px 10px;font-size:14px}.toc a:hover{background:rgba(125,183,255,.12)}
+.section{border:1px solid var(--line);background:rgba(13,27,42,.82);border-radius:10px;padding:22px 26px;margin-bottom:16px}h2{margin:0 0 14px;font-size:25px}h3{margin:18px 0 8px;color:#ffe6a3;font-size:18px}p{margin:10px 0}.lead{font-size:17px;color:#f5fbff}.strong{color:#ffe6a3;font-weight:800}
+table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14px}th,td{border:1px solid rgba(158,182,203,.25);padding:9px 10px;text-align:left;vertical-align:top}th{background:rgba(125,183,255,.12);color:#dceeff}td{background:rgba(7,17,29,.38)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.box{border:1px solid rgba(158,182,203,.22);background:rgba(7,17,29,.34);border-radius:8px;padding:14px}.source{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.toc{position:static}.snapshot{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.title{font-size:28px}}@media(max-width:560px){.snapshot{grid-template-columns:1fr}.wrap{padding:18px 12px}}
+</style>
+
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <div class="eyebrow">300602 · 报告日期 2026-07-04 · 财务口径：2026Q1 · 行情快照：2026-07-03</div>
+    <div class="title">飞荣达 个股公司深度分析报告</div>
+    <div class="subtitle">AI算力与数字基础设施 · 热管理材料 · 以公开财务、产业链位置和估值约束为核心</div>
+    <div class="chips"><span class="chip">热管理材料</span><span class="chip">散热材料</span><span class="chip">结构件</span><span class="chip">AI服务器链</span></div>
+  </header>
+  <section class="snapshot">
+    <div class="snap"><b>最新净利润</b><span>0.79亿元</span><small>2026Q1 · 归母口径</small></div>
+    <div class="snap"><b>净利润同比</b><span>+33.92%</span><small>利润变化方向</small></div>
+    <div class="snap"><b>估值快照</b><span>PE 70.36x</span><small>PB 6.51x</small></div>
+    <div class="snap"><b>核心矛盾</b><span>产业映射 vs 财务兑现</span><small>看利润率、ROE 和现金流</small></div>
+  </section>
+  <div class="grid">
+    <nav class="toc">
+      <a href="#overview">第一章 公司概览</a>
+      <a href="#business">第二章 主营业务分析</a>
+      <a href="#chain">第三章 上下游与产业链位置</a>
+      <a href="#quality">第四章 经营质量分析</a>
+      <a href="#financial">第五章 财务全景分析</a>
+      <a href="#industry">第六章 行业竞争格局</a>
+      <a href="#valuation">第七章 估值分析</a>
+      <a href="#catalyst">第八章 催化剂与风险因素</a>
+      <a href="#summary">第九章 研究总结</a>
+    </nav>
+    <article>
+      <section class="section" id="overview">
+        <h2>第一章 公司概览</h2>
+        <table><tbody>
+          <tr><th>项目</th><th>内容</th></tr>
+          <tr><td>公司定位</td><td>AI算力与数字基础设施，核心细分为 热管理材料。本页把公司放在 AI服务器液冷、电源、连接器和热管理材料链条里观察，但不会把产业标签直接等同于经营结论。</td></tr>
+          <tr><td>股票代码</td><td>300602</td></tr>
+          <tr><td>核心标签</td><td>热管理材料 / 散热材料 / 结构件 / AI服务器链</td></tr>
+          <tr><td>最新财务期</td><td>2026Q1，归母净利润 0.79亿元，同比 +33.92%</td></tr>
+          <tr><td>行情快照</td><td>2026-07-03 收盘价 46.45元，成交额 12.80亿元</td></tr>
+        </tbody></table>
+        <p class="lead">飞荣达的研究重点不是“有没有 AI服务器概念”，而是其所在环节能否把下游算力建设转化为收入、利润率、ROE 和现金流。</p>
+      </section>
+      <section class="section" id="business">
+        <h2>第二章 主营业务分析</h2>
+        <p>公司主要围绕电磁屏蔽、导热材料和结构件配套展开，AI服务器链中的位置偏材料和散热结构件。</p>
+        <p>对这类公司，第一层要拆清楚产品价值量：液冷/温控公司的核心在设备交付、系统集成和运维稳定性；导热材料或连接器公司的核心在材料认证、客户导入和单机用量提升。不同环节的收入弹性、毛利率稳定性和现金流特征并不一样。</p>
+        <p>从研究角度看，主营验证顺序应是：产品是否进入目标客户或目标场景，相关业务占比是否提升，毛利率是否改善，最后才看估值是否能承接。只凭题材归属容易误判公司质量。</p>
+      </section>
+      <section class="section" id="chain">
+        <h2>第三章 上下游与产业链位置</h2>
+        <p>飞荣达不是整机服务器公司，核心观察点在导热材料、散热件和结构件能否随服务器功率提升获得更高价值量。</p>
+        <div class="two">
+          <div class="box"><h3>上游变量</h3><p>主要包括原材料、精密零部件、泵阀管路、连接器材料、导热材料、电子元器件和加工制造能力。成本波动会直接影响毛利率，客户认证周期会影响收入确认节奏。</p></div>
+          <div class="box"><h3>下游变量</h3><p>主要包括云厂商、服务器厂商、数据中心、军工及工业客户。下游资本开支和产品验证节奏决定订单弹性，回款周期决定现金流质量。</p></div>
+        </div>
+      </section>
+      <section class="section" id="quality">
+        <h2>第四章 经营质量分析</h2>
+        <p>最近年度 2025A 营收 65.27亿元、净利润 3.59亿元，毛利率 19.47%、净利率 5.51%。最新报告期净利润同比为 +33.92%，利润端处在改善区间。最新报告期净利润 0.79亿元，毛利率 20.90%，净利率 4.80%，ROE 1.89%。研究重点应从“AI服务器链映射”落到财务兑现：相关业务放量后，需要同步体现在利润率、ROE 和现金流上。</p>
+        <p>收入增长伴随毛利率下滑时，通常需要关注价格竞争或产品结构压力；净利润改善但经营现金流没有同步改善时，应继续跟踪应收账款和存货。对 AI服务器链配套公司来说，财务兑现比概念归属更重要。</p>
+      </section>
+      <section class="section" id="financial">
+        <h2>第五章 财务全景分析</h2>
+        <table>
+          <thead><tr><th>报告期</th><th>截止日</th><th>营收</th><th>净利润</th><th>毛利率</th><th>净利率</th><th>ROE</th><th>归母净利同比</th></tr></thead>
+          <tbody><tr>
+    <td>2023A</td>
+    <td>2023-12-31</td>
+    <td>43.46亿元</td>
+    <td>0.79亿元</td>
+    <td>19.47%</td>
+    <td>1.81%</td>
+    <td>3.29%</td>
+    <td>+7.31%</td>
+  </tr><tr>
+    <td>2024Q1</td>
+    <td>2024-03-31</td>
+    <td>暂无数据</td>
+    <td>0.17亿元</td>
+    <td>16.93%</td>
+    <td>1.74%</td>
+    <td>0.63%</td>
+    <td>+194.07%</td>
+  </tr><tr>
+    <td>2024Q2</td>
+    <td>2024-06-30</td>
+    <td>21.69亿元</td>
+    <td>0.48亿元</td>
+    <td>17.86%</td>
+    <td>2.21%</td>
+    <td>1.51%</td>
+    <td>+13.07%</td>
+  </tr><tr>
+    <td>2024Q3</td>
+    <td>2024-09-30</td>
+    <td>暂无数据</td>
+    <td>0.89亿元</td>
+    <td>18.27%</td>
+    <td>2.60%</td>
+    <td>2.75%</td>
+    <td>+111.26%</td>
+  </tr><tr>
+    <td>2024A</td>
+    <td>2024-12-31</td>
+    <td>50.31亿元</td>
+    <td>1.73亿元</td>
+    <td>19.18%</td>
+    <td>3.44%</td>
+    <td>4.95%</td>
+    <td>+83.01%</td>
+  </tr><tr>
+    <td>2025Q1</td>
+    <td>2025-03-31</td>
+    <td>暂无数据</td>
+    <td>0.62亿元</td>
+    <td>17.52%</td>
+    <td>5.26%</td>
+    <td>1.51%</td>
+    <td>+85.57%</td>
+  </tr><tr>
+    <td>2025Q2</td>
+    <td>2025-06-30</td>
+    <td>28.83亿元</td>
+    <td>1.75亿元</td>
+    <td>19.58%</td>
+    <td>6.07%</td>
+    <td>4.30%</td>
+    <td>+118.54%</td>
+  </tr><tr>
+    <td>2025Q3</td>
+    <td>2025-09-30</td>
+    <td>暂无数据</td>
+    <td>3.05亿元</td>
+    <td>20.23%</td>
+    <td>6.62%</td>
+    <td>7.27%</td>
+    <td>+119.36%</td>
+  </tr><tr>
+    <td>2025A</td>
+    <td>2025-12-31</td>
+    <td>65.27亿元</td>
+    <td>3.59亿元</td>
+    <td>19.47%</td>
+    <td>5.51%</td>
+    <td>9.17%</td>
+    <td>+59.97%</td>
+  </tr><tr>
+    <td>2026Q1</td>
+    <td>2026-03-31</td>
+    <td>暂无数据</td>
+    <td>0.79亿元</td>
+    <td>20.90%</td>
+    <td>4.80%</td>
+    <td>1.89%</td>
+    <td>+33.92%</td>
+  </tr></tbody>
+        </table>
+        <p>说明：营收、净利润、利润率、ROE 等字段来自 BaoStock 公开接口；若某季度营收字段为空，代表当前接口未返回该字段，不在页面中估算或补写。</p>
+      </section>
+      <section class="section" id="industry">
+        <h2>第六章 行业竞争格局</h2>
+        <p>AI服务器链的竞争不是单纯拼“是否沾边”。液冷环节看系统稳定性、交付能力和客户验证；热管理材料看材料性能、可靠性和客户导入；连接器看高速、高可靠和批量交付。越靠近关键部件，越需要用认证周期和利润率验证产业地位。</p>
+        <p>飞荣达所处环节的优势需要通过订单、毛利率和现金流逐步体现。若相关业务占比不高，即使概念相关，也只能作为产业链映射观察，不能替代主营业务判断。</p>
+      </section>
+      <section class="section" id="valuation">
+        <h2>第七章 估值分析</h2>
+        <p>2026-07-03 行情快照显示，收盘价 46.45元，PE(TTM) 70.36x，PB(MRQ) 6.51x，PS(TTM) 3.87x。估值分析的核心是利润兑现速度对当前估值的覆盖能力，主题热度只提供观察线索。后续季度收入、利润率和现金流同步改善时，市场对产业链位置的认可会获得更扎实的财务支撑；收入或题材映射领先、利润质量滞后的阶段，估值更容易受预期波动影响。</p>
+        <p>估值要和利润质量一起看。PE 较高时，需要更强的利润增长和现金流改善来消化；PB 较高时，需要 ROE 提升支撑；PS 较高时，需要收入增长转化为利润，而不是只停留在规模扩张。</p>
+      </section>
+      <section class="section" id="catalyst">
+        <h2>第八章 催化剂与风险因素</h2>
+        <div class="two">
+          <div class="box"><h3>可观察的正向变量</h3><p>AI服务器功率密度提升、液冷或热管理方案渗透、关键客户验证推进、相关业务占比提升、毛利率和现金流同步改善。</p></div>
+          <div class="box"><h3>需要跟踪的风险</h3><p>下游资本开支波动、价格竞争、项目验收延后、应收账款拉长、产品认证不及预期，以及估值先于财务兑现带来的波动。</p></div>
+        </div>
+      </section>
+      <section class="section" id="summary">
+        <h2>第九章 研究总结</h2>
+        <p class="lead">飞荣达可以纳入 AI服务器链观察，但研究结论必须落回“主营业务、财务兑现和估值约束”三件事。</p>
+        <p>当前最值得跟踪的是：相关业务是否形成可见收入，利润率能否改善，现金流是否跟得上，估值是否已经提前反映较多预期。后续中报或季报披露更多分业务数据后，应优先更新收入结构、毛利率和订单/客户信息。</p>
+        <p class="source">数据来源：BaoStock 公开财务接口、项目内每日行情快照及公司公开资料整理。基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。</p>
+      </section>
+    </article>
+  </div>
+
+<section class="section risk"><h2>风险提示</h2><p>基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。 市场价格受宏观环境、行业周期、公司经营、流动性和市场情绪影响。页面内容为公开资料整理，不代表对公司股价走势作出判断。</p></section>
+</main>
+</body>
+</html>

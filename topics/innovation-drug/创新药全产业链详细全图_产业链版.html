@@ -1,0 +1,1107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>创新药全产业链详细全图（产业链版）</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080b0d;--panel:#11171a;--panel2:#151d20;--line:#2c3c42;--text:#f5f8f2;--muted:#aab7b4;--green:#d8ff4f;--cyan:#62e4cf;--amber:#ffd36a;--red:#ff8585;--blue:#83b7ff}
+    *{box-sizing:border-box}body{margin:0;font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;background:radial-gradient(circle at 20% 0%,rgba(98,228,207,.12),transparent 34%),var(--bg);color:var(--text);letter-spacing:0}
+    a{color:inherit;text-decoration:none}.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh}aside{position:sticky;top:0;height:100vh;padding:20px 16px;background:#0c1113;border-right:1px solid var(--line)}
+    .brand{font-size:18px;font-weight:800;line-height:1.25}.brand span{display:block;color:var(--muted);font-size:12px;font-weight:500;margin-top:8px}nav{display:grid;gap:8px;margin-top:22px}nav a{color:var(--muted);border:1px solid transparent;padding:10px 12px;border-radius:6px;font-size:14px}nav a:hover{color:var(--text);background:var(--panel);border-color:var(--line)}
+    .sidebox{position:absolute;left:16px;right:16px;bottom:18px;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px;color:var(--muted);font-size:12px;line-height:1.65}
+    main{min-width:0;padding:26px 28px 46px}.hero{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:16px;align-items:stretch}.hero-card,.metric-card,.section{border:1px solid var(--line);background:linear-gradient(180deg,rgba(21,29,32,.96),rgba(13,18,20,.98));border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,.24)}
+    .hero-card{padding:26px}.eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--green);font-size:12px;font-weight:800;border:1px solid rgba(216,255,79,.35);border-radius:999px;padding:5px 10px;margin-bottom:14px}h1{margin:0;font-size:42px;line-height:1.08}.sub{margin:14px 0 0;color:var(--muted);font-size:15px;line-height:1.75;max-width:860px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:7px;padding:10px 12px;font-size:13px;color:#e9f2ef}.btn:hover{border-color:var(--cyan);color:#fff}
+    .metric-card{padding:18px;display:grid;gap:10px}.metric{border:1px solid rgba(255,255,255,.08);border-radius:8px;background:rgba(255,255,255,.04);padding:12px}.metric b{display:block;font-size:26px;line-height:1;color:var(--green)}.metric span{display:block;color:var(--muted);font-size:12px;margin-top:7px}
+    .section{margin-top:16px;padding:18px}.section-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;margin-bottom:14px}.section h2{margin:0;font-size:20px}.note{color:var(--muted);font-size:13px;line-height:1.65;max-width:820px}.chain{display:grid;gap:12px}.stage{display:grid;grid-template-columns:180px 1fr;gap:12px}.stage-name{border:1px solid rgba(216,255,79,.22);background:rgba(216,255,79,.08);border-radius:8px;padding:13px;font-weight:900;color:#f2ffd0}.nodes{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}.node{min-height:98px;text-align:left;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);border-radius:8px;padding:12px;cursor:pointer;font:inherit}.node:hover{border-color:var(--cyan);transform:translateY(-1px)}.node.empty{opacity:.55;background:rgba(255,255,255,.02);border-style:dashed}.node.empty:hover{border-color:var(--line);transform:none}.node b{display:block;font-size:15px}.node span{display:block;margin-top:8px;color:var(--muted);font-size:12px}.node em{font-style:normal;color:var(--green);font-weight:900}
+    .table-tools{display:flex;gap:10px;align-items:center;margin-bottom:12px}.search{flex:1;min-width:220px;height:38px;border:1px solid var(--line);border-radius:7px;background:#0d1315;color:var(--text);padding:0 12px;font:inherit}.pill{border:1px solid rgba(98,228,207,.32);color:var(--cyan);border-radius:999px;padding:7px 10px;font-size:12px}
+    table{width:100%;border-collapse:collapse;font-size:13px}th,td{border-bottom:1px solid rgba(255,255,255,.08);padding:10px 9px;text-align:left;vertical-align:top;line-height:1.55}th{color:#dbe7e4;background:#101719;position:sticky;top:0}td{color:#dce6e3}.muted{color:var(--muted)}.report-link{color:var(--green);font-weight:800}.pending{color:var(--muted)}
+    .drawer{position:fixed;right:0;top:0;bottom:0;width:min(520px,92vw);background:#0d1214;border-left:1px solid var(--line);box-shadow:-24px 0 70px rgba(0,0,0,.36);transform:translateX(104%);transition:.18s ease;z-index:30;display:flex;flex-direction:column}.drawer.open{transform:translateX(0)}.drawer-head{padding:18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}.drawer-title{font-size:20px;font-weight:900}.drawer-sub{margin-top:6px;color:var(--muted);font-size:13px}.close{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:6px;width:34px;height:34px;cursor:pointer}.drawer-body{padding:14px 18px;overflow:auto}.company{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.035);padding:12px;margin-bottom:10px}.company h3{margin:0;font-size:16px}.company p{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.6}.company .line{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:10px}.code{color:var(--muted);font-size:12px}.risk{margin-top:16px;border:1px solid rgba(255,211,106,.26);background:rgba(255,211,106,.08);border-radius:8px;padding:12px;color:#e8d5a6;font-size:12px;line-height:1.75}
+    @media(max-width:980px){.layout{grid-template-columns:1fr}aside{position:relative;height:auto}.sidebox{position:static;margin-top:18px}main{padding:16px}.hero{grid-template-columns:1fr}h1{font-size:32px}.stage{grid-template-columns:1fr}.nodes{grid-template-columns:1fr}}
+  </style>
+
+</head>
+<body>
+  <div class="layout">
+    <aside>
+      <div class="brand">创新药产业链图<span>节点可点击，查看相关公司与报告状态</span></div>
+      <nav>
+        <a href="../../index.html">网站首页</a>
+        <a href="index.html">专题首页</a>
+        <a href="#chain">产业链全图</a>
+        <a href="#companies">公司池</a>
+      </nav>
+      <div class="sidebox">基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。<br>数据截至：2026-07-03</div>
+    </aside>
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <div class="eyebrow">专题研究 · 产业链映射</div>
+          <h1>创新药全产业链详细全图</h1>
+          <p class="sub">围绕创新药、生物药、CXO/CDMO、化学制剂、原料药、疫苗诊断、中药和医药商业环节，观察研发管线、商业化和供给侧能力。</p>
+          <div class="actions">
+            <a class="btn" href="index.html">返回专题首页</a>
+            <a class="btn" href="#companies">查看公司池</a>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric"><b>74</b><span>已纳入观察公司</span></div>
+          <div class="metric"><b>8</b><span>产业链节点</span></div>
+          <div class="metric"><b>74</b><span>可跳转公司报告</span></div>
+          <div class="metric"><b>0</b><span>暂未生成报告</span></div>
+        </div>
+      </section>
+      <section class="section" id="chain">
+        <div class="section-head">
+          <div><h2>产业链节点映射</h2><div class="note">点击节点可展开对应公司。若公司报告已生成，可直接跳转；未生成时保留为观察样本。</div></div>
+          <span class="pill">可交互节点</span>
+        </div>
+        <div class="chain">
+          <div class="stage"><div class="stage-name">创新药与生物药</div><div class="nodes"><button class="node" data-node="创新药/小分子"><b>创新药/小分子</b><span><em>29</em> 家相关公司</span></button><button class="node" data-node="生物药/抗体/细胞治疗"><b>生物药/抗体/细胞治疗</b><span><em>26</em> 家相关公司</span></button></div></div><div class="stage"><div class="stage-name">CXO与CDMO</div><div class="nodes"><button class="node" data-node="CRO临床与临床前"><b>CRO临床与临床前</b><span><em>43</em> 家相关公司</span></button><button class="node" data-node="CDMO/CMO制造"><b>CDMO/CMO制造</b><span><em>43</em> 家相关公司</span></button></div></div><div class="stage"><div class="stage-name">制剂与原料药</div><div class="nodes"><button class="node" data-node="化学制剂"><b>化学制剂</b><span><em>24</em> 家相关公司</span></button><button class="node" data-node="原料药"><b>原料药</b><span><em>41</em> 家相关公司</span></button></div></div><div class="stage"><div class="stage-name">疫苗诊断与商业</div><div class="nodes"><button class="node" data-node="疫苗/诊断"><b>疫苗/诊断</b><span><em>2</em> 家相关公司</span></button><button class="node" data-node="中药/医药商业"><b>中药/医药商业</b><span><em>1</em> 家相关公司</span></button></div></div>
+        </div>
+      </section>
+      <section class="section" id="companies">
+        <div class="section-head">
+          <div><h2>公司池与报告入口</h2><div class="note">输入代码、名称或节点可以快速筛选。分类用于研究导航，不代表业务唯一归属。</div></div>
+        </div>
+        <div class="table-tools"><input id="search" class="search" placeholder="搜索公司、代码、节点"><span class="pill" id="resultCount">74 家</span></div>
+        <div style="overflow:auto;max-height:620px;border:1px solid var(--line);border-radius:8px">
+          <table><thead><tr><th>公司</th><th>节点</th><th>路径备注</th><th>报告</th></tr></thead><tbody id="companyRows"></tbody></table>
+        </div>
+        <div class="risk">基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。</div>
+      </section>
+    </main>
+  </div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer-head"><div><div class="drawer-title" id="drawerTitle">节点公司</div><div class="drawer-sub" id="drawerSub"></div></div><button class="close" id="closeDrawer">×</button></div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </aside>
+  <script id="topic-data" type="application/json">{
+  "topic": "创新药",
+  "companies": [
+    {
+      "code": "600276",
+      "name": "恒瑞医药",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子"
+      ],
+      "route": "核心节点 / 创新药 / 化学制药 / 医药 / 医疗 / 22.81亿",
+      "report": "../../company_research_core_deep/600276.html"
+    },
+    {
+      "code": "603259",
+      "name": "药明康德",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前"
+      ],
+      "route": "核心节点 / CXO / CRO / CDMO / 医药 / 46.71亿",
+      "report": "../../company_research_core_deep/603259.html"
+    },
+    {
+      "code": "603127",
+      "name": "昭衍新药",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前"
+      ],
+      "route": "核心节点 / CXO/生命科学 / 药物安评/CRO / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/603127.html"
+    },
+    {
+      "code": "603392",
+      "name": "万泰生物",
+      "stage": "疫苗诊断与商业",
+      "node": "疫苗/诊断",
+      "nodes": [
+        "疫苗/诊断",
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗"
+      ],
+      "route": "核心节点 / 创新药 / 生物药 / 疫苗 / 诊断 / -0.45亿",
+      "report": "../../company_research_core_deep/603392.html"
+    },
+    {
+      "code": "002262",
+      "name": "恩华药业",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "核心节点 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002262.html"
+    },
+    {
+      "code": "002294",
+      "name": "信立泰",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "核心节点 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002294.html"
+    },
+    {
+      "code": "002653",
+      "name": "海思科",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "核心节点 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002653.html"
+    },
+    {
+      "code": "002675",
+      "name": "东诚药业",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "核心节点 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002675.html"
+    },
+    {
+      "code": "002755",
+      "name": "奥赛康",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "核心节点 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002755.html"
+    },
+    {
+      "code": "600196",
+      "name": "复星医药",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗"
+      ],
+      "route": "核心节点 / 创新药 / 生物药 / 综合医药 / 医药 / 10.80亿",
+      "report": "../../company_research_core_deep/600196.html"
+    },
+    {
+      "code": "000963",
+      "name": "华东医药",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗"
+      ],
+      "route": "核心节点 / 创新药 / 生物药 / 医美 / 医药 / 9.97亿",
+      "report": "../../company_research_core_deep/000963.html"
+    },
+    {
+      "code": "000739",
+      "name": "普洛药业",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "核心节点 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/000739.html"
+    },
+    {
+      "code": "000534",
+      "name": "万泽股份",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/000534.html"
+    },
+    {
+      "code": "002020",
+      "name": "京新药业",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002020.html"
+    },
+    {
+      "code": "002099",
+      "name": "海翔药业",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002099.html"
+    },
+    {
+      "code": "002166",
+      "name": "莱茵生物",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002166.html"
+    },
+    {
+      "code": "002275",
+      "name": "桂林三金",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002275.html"
+    },
+    {
+      "code": "002287",
+      "name": "奇正藏药",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002287.html"
+    },
+    {
+      "code": "002317",
+      "name": "众生药业",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002317.html"
+    },
+    {
+      "code": "002349",
+      "name": "精华制药",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002349.html"
+    },
+    {
+      "code": "002399",
+      "name": "海普瑞",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002399.html"
+    },
+    {
+      "code": "002437",
+      "name": "誉衡药业",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002437.html"
+    },
+    {
+      "code": "002562",
+      "name": "兄弟科技",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002562.html"
+    },
+    {
+      "code": "002737",
+      "name": "葵花药业",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002737.html"
+    },
+    {
+      "code": "002950",
+      "name": "奥美医疗",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/002950.html"
+    },
+    {
+      "code": "600201",
+      "name": "生物股份",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600201.html"
+    },
+    {
+      "code": "600211",
+      "name": "西藏药业",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600211.html"
+    },
+    {
+      "code": "600267",
+      "name": "海正药业",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600267.html"
+    },
+    {
+      "code": "600285",
+      "name": "羚锐制药",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600285.html"
+    },
+    {
+      "code": "600329",
+      "name": "达仁堂",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600329.html"
+    },
+    {
+      "code": "600521",
+      "name": "华海药业",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600521.html"
+    },
+    {
+      "code": "600535",
+      "name": "天士力",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600535.html"
+    },
+    {
+      "code": "600572",
+      "name": "康恩贝",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600572.html"
+    },
+    {
+      "code": "600771",
+      "name": "广誉远",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600771.html"
+    },
+    {
+      "code": "600867",
+      "name": "通化东宝",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600867.html"
+    },
+    {
+      "code": "600993",
+      "name": "马应龙",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600993.html"
+    },
+    {
+      "code": "601515",
+      "name": "衢州东峰",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/601515.html"
+    },
+    {
+      "code": "603301",
+      "name": "振德医疗",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/603301.html"
+    },
+    {
+      "code": "603387",
+      "name": "基蛋生物",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/603387.html"
+    },
+    {
+      "code": "603439",
+      "name": "三力制药",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/603439.html"
+    },
+    {
+      "code": "603538",
+      "name": "美诺华",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/603538.html"
+    },
+    {
+      "code": "603707",
+      "name": "健友股份",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/603707.html"
+    },
+    {
+      "code": "603858",
+      "name": "步长制药",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "重点相关 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/603858.html"
+    },
+    {
+      "code": "002742",
+      "name": "冀衡医药",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子"
+      ],
+      "route": "重点相关 / 医药制造 / 医药中间体 / 化学制药 / 0.00亿",
+      "report": "../../company_research_core_deep/002742.html"
+    },
+    {
+      "code": "000790",
+      "name": "华神科技",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/000790.html"
+    },
+    {
+      "code": "000919",
+      "name": "金陵药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/000919.html"
+    },
+    {
+      "code": "000952",
+      "name": "广济药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/000952.html"
+    },
+    {
+      "code": "002107",
+      "name": "沃华医药",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002107.html"
+    },
+    {
+      "code": "002365",
+      "name": "永安药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002365.html"
+    },
+    {
+      "code": "002370",
+      "name": "亚太药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002370.html"
+    },
+    {
+      "code": "002412",
+      "name": "汉森制药",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002412.html"
+    },
+    {
+      "code": "002566",
+      "name": "益盛药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002566.html"
+    },
+    {
+      "code": "002688",
+      "name": "金河生物",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002688.html"
+    },
+    {
+      "code": "002793",
+      "name": "罗欣药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002793.html"
+    },
+    {
+      "code": "002826",
+      "name": "易明医药",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002826.html"
+    },
+    {
+      "code": "002868",
+      "name": "绿康生化",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002868.html"
+    },
+    {
+      "code": "002900",
+      "name": "哈三联",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002900.html"
+    },
+    {
+      "code": "002923",
+      "name": "润都股份",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002923.html"
+    },
+    {
+      "code": "600351",
+      "name": "亚宝药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/600351.html"
+    },
+    {
+      "code": "600671",
+      "name": "天目药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/600671.html"
+    },
+    {
+      "code": "603139",
+      "name": "康惠股份",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/603139.html"
+    },
+    {
+      "code": "603520",
+      "name": "司太立",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/603520.html"
+    },
+    {
+      "code": "603590",
+      "name": "康辰药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/603590.html"
+    },
+    {
+      "code": "603669",
+      "name": "灵康药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "重点相关 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/603669.html"
+    },
+    {
+      "code": "002022",
+      "name": "科华生物",
+      "stage": "疫苗诊断与商业",
+      "node": "疫苗/诊断",
+      "nodes": [
+        "疫苗/诊断"
+      ],
+      "route": "产业配套 / 体外诊断 / 医疗器械 / 生物试剂 / 0.00亿",
+      "report": "../../company_research_core_deep/002022.html"
+    },
+    {
+      "code": "603739",
+      "name": "蔚蓝生物",
+      "stage": "制剂与原料药",
+      "node": "化学制剂",
+      "nodes": [
+        "化学制剂"
+      ],
+      "route": "产业配套 / 生物制品 / 动物保健 / 酶制剂 / 0.00亿",
+      "report": "../../company_research_core_deep/603739.html"
+    },
+    {
+      "code": "000423",
+      "name": "东阿阿胶",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "产业配套 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/000423.html"
+    },
+    {
+      "code": "000623",
+      "name": "吉林敖东",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "产业配套 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/000623.html"
+    },
+    {
+      "code": "000989",
+      "name": "九芝堂",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "产业配套 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/000989.html"
+    },
+    {
+      "code": "600750",
+      "name": "华润江中",
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "route": "产业配套 / CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO / 0.00亿",
+      "report": "../../company_research_core_deep/600750.html"
+    },
+    {
+      "code": "002603",
+      "name": "以岭药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "中药/医药商业"
+      ],
+      "route": "外围观察 / 中药 / 创新中药 / 医药 / 创新药 / 4.09亿",
+      "report": "../../company_research_core_deep/002603.html"
+    },
+    {
+      "code": "000590",
+      "name": "古汉医药",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "外围观察 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/000590.html"
+    },
+    {
+      "code": "002644",
+      "name": "佛慈制药",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "外围观察 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/002644.html"
+    },
+    {
+      "code": "600479",
+      "name": "千金药业",
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "route": "外围观察 / 药品制造 / 药品/制剂 / 创新药/生物药 / 0.00亿",
+      "report": "../../company_research_core_deep/600479.html"
+    }
+  ],
+  "nodes": [
+    {
+      "stage": "创新药与生物药",
+      "node": "创新药/小分子",
+      "count": 29
+    },
+    {
+      "stage": "创新药与生物药",
+      "node": "生物药/抗体/细胞治疗",
+      "count": 26
+    },
+    {
+      "stage": "CXO与CDMO",
+      "node": "CRO临床与临床前",
+      "count": 43
+    },
+    {
+      "stage": "CXO与CDMO",
+      "node": "CDMO/CMO制造",
+      "count": 43
+    },
+    {
+      "stage": "制剂与原料药",
+      "node": "化学制剂",
+      "count": 24
+    },
+    {
+      "stage": "制剂与原料药",
+      "node": "原料药",
+      "count": 41
+    },
+    {
+      "stage": "疫苗诊断与商业",
+      "node": "疫苗/诊断",
+      "count": 2
+    },
+    {
+      "stage": "疫苗诊断与商业",
+      "node": "中药/医药商业",
+      "count": 1
+    }
+  ]
+}</script>
+  <script>
+    const data = JSON.parse(document.getElementById('topic-data').textContent);
+    const companies = data.companies || [];
+    const rows = document.getElementById('companyRows');
+    const resultCount = document.getElementById('resultCount');
+    const search = document.getElementById('search');
+    const drawer = document.getElementById('drawer');
+    const drawerTitle = document.getElementById('drawerTitle');
+    const drawerSub = document.getElementById('drawerSub');
+    const drawerBody = document.getElementById('drawerBody');
+    function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+    function reportCell(c){return c.report ? '<a class="report-link" href="'+esc(c.report)+'">查看报告</a>' : '<span class="pending">暂未生成</span>';}
+    function render(list){
+      rows.innerHTML = list.map(c => '<tr><td><b>'+esc(c.name)+'</b><div class="muted">'+esc(c.code || '未匹配代码')+'</div></td><td>'+esc(c.stage)+'<br><span class="muted">'+esc((c.nodes && c.nodes.length ? c.nodes : [c.node]).join(' / '))+'</span></td><td class="muted">'+esc(c.route || '样本池映射')+'</td><td>'+reportCell(c)+'</td></tr>').join('');
+      resultCount.textContent = list.length + ' 家';
+    }
+    function openNode(node){
+      const list = companies.filter(c => (c.nodes && c.nodes.length ? c.nodes : [c.node]).includes(node));
+      drawerTitle.textContent = node;
+      drawerSub.textContent = list.length + ' 家相关公司';
+      drawerBody.innerHTML = list.length ? list.map(c => '<div class="company"><h3>'+esc(c.name)+'</h3><p>'+esc(c.stage)+' · '+esc(c.route || '样本池映射')+'</p><div class="line"><span class="code">'+esc(c.code || '未匹配代码')+'</span>'+reportCell(c)+'</div></div>').join('') : '<p class="muted">该节点样本待补充。</p>';
+      drawer.classList.add('open');
+    }
+    document.querySelectorAll('.node').forEach(btn => btn.addEventListener('click', () => openNode(btn.dataset.node)));
+    document.getElementById('closeDrawer').addEventListener('click', () => drawer.classList.remove('open'));
+    search.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      render(!q ? companies : companies.filter(c => [c.name,c.code,c.stage,c.node,(c.nodes || []).join(' '),c.route].join(' ').toLowerCase().includes(q)));
+    });
+    render(companies);
+  </script>
+</body>
+</html>
