@@ -1,0 +1,656 @@
+{
+  "generated_at": "2026-07-02",
+  "decision": "release_manifest_ready_not_pushed",
+  "public_push_status": "not_pushed",
+  "homepage_action": {
+    "source": "index_1609_release_preview.html",
+    "target": "index.html",
+    "action": "copy_source_to_target_only_when_user_confirms_push"
+  },
+  "hard_fails": 0,
+  "warnings": 0,
+  "counts": {
+    "companies": 1609,
+    "publish_files_explicit": 29,
+    "public_topic_files": 24,
+    "member_topic_files_held": 102,
+    "operational_files_held": 10,
+    "homepage_text_chars": 419
+  },
+  "report_roots": [
+    {
+      "root": "company_research",
+      "exists": true,
+      "files": 678,
+      "bytes": 8021938
+    },
+    {
+      "root": "reports_v2_public_batches_local",
+      "exists": true,
+      "files": 360,
+      "bytes": 4136999
+    },
+    {
+      "root": "reports",
+      "exists": true,
+      "files": 2175,
+      "bytes": 45164678
+    }
+  ],
+  "gates": [
+    {
+      "name": "第 7 步候选包",
+      "status": "pass",
+      "detail": "阻断 0，提醒 0"
+    },
+    {
+      "name": "第 8 步路径确认",
+      "status": "pass",
+      "detail": "阻断 0，待确认 1"
+    },
+    {
+      "name": "候选首页会员入口边界",
+      "status": "pass",
+      "detail": "未露出 7 个后续会员专题入口"
+    },
+    {
+      "name": "候选首页运维入口边界",
+      "status": "pass",
+      "detail": "未露出发布检查页入口"
+    },
+    {
+      "name": "1609 公司数据基准",
+      "status": "pass",
+      "detail": "1609/1609"
+    },
+    {
+      "name": "CPO 专题发布文件",
+      "status": "pass",
+      "detail": "24 个文件，501.6KB"
+    }
+  ],
+  "publish_set": [
+    {
+      "path": "index_1609_release_preview.html",
+      "exists": true,
+      "bytes": 1283322
+    },
+    {
+      "path": "data/company_master_1609_foundation.json",
+      "exists": true,
+      "bytes": 1887298
+    },
+    {
+      "path": "data/classification_mainline_1609.json",
+      "exists": true,
+      "bytes": 6429401
+    },
+    {
+      "path": "data/classification_quality_gate_1609.json",
+      "exists": true,
+      "bytes": 1887907
+    },
+    {
+      "path": "data/report_quality_gate_1609.json",
+      "exists": true,
+      "bytes": 1887447
+    },
+    {
+      "path": "topics/cpo/cpo_bottleneck_data.js",
+      "bytes": 19002
+    },
+    {
+      "path": "topics/cpo/CPO_FAU_AWG_PLC_MUX_DEMUX_光耦合线专项观察.html",
+      "bytes": 11781
+    },
+    {
+      "path": "topics/cpo/cpo_light_source_audit_data.js",
+      "bytes": 10698
+    },
+    {
+      "path": "topics/cpo/cpo_module_system_temperature_data.js",
+      "bytes": 16067
+    },
+    {
+      "path": "topics/cpo/cpo_optical_engine_packaging_audit_data.js",
+      "bytes": 12425
+    },
+    {
+      "path": "topics/cpo/cpo_passive_coupling_audit_data.js",
+      "bytes": 10848
+    },
+    {
+      "path": "topics/cpo/cpo_silicon_photonics_audit_data.js",
+      "bytes": 12496
+    },
+    {
+      "path": "topics/cpo/cpo_testing_equipment_audit_data.js",
+      "bytes": 13647
+    },
+    {
+      "path": "topics/cpo/CPO成品模块与系统温度计跟踪.html",
+      "bytes": 12649
+    },
+    {
+      "path": "topics/cpo/CPO高速测试_老化_可靠性验证设备线专项观察.html",
+      "bytes": 12012
+    },
+    {
+      "path": "topics/cpo/CPO公司池观察样本排序表.html",
+      "bytes": 143145
+    },
+    {
+      "path": "topics/cpo/CPO公司资料池.html",
+      "bytes": 23197
+    },
+    {
+      "path": "topics/cpo/CPO供需变化信号库_产业链版.html",
+      "bytes": 24457
+    },
+    {
+      "path": "topics/cpo/CPO关键约束环节总表.html",
+      "bytes": 18110
+    },
+    {
+      "path": "topics/cpo/CPO光引擎_封装耦合_共封装线专项观察.html",
+      "bytes": 11810
+    },
+    {
+      "path": "topics/cpo/CPO光源线DFB_EML_CW_ELS专题观察.html",
+      "bytes": 11824
+    },
+    {
+      "path": "topics/cpo/CPO硅光PIC_调制器_探测器线专项观察.html",
+      "bytes": 11836
+    },
+    {
+      "path": "topics/cpo/CPO技术路线图_产业链版.html",
+      "bytes": 24307
+    },
+    {
+      "path": "topics/cpo/CPO节点百科_产业链版.html",
+      "bytes": 30426
+    },
+    {
+      "path": "topics/cpo/CPO节点路线信号三维矩阵_产业链版.html",
+      "bytes": 20138
+    },
+    {
+      "path": "topics/cpo/CPO全产业链详细全图_产业链版.html",
+      "bytes": 25928
+    },
+    {
+      "path": "topics/cpo/CPO研究中枢.html",
+      "bytes": 13310
+    },
+    {
+      "path": "topics/cpo/CPO专项观察合集.html",
+      "bytes": 9051
+    },
+    {
+      "path": "topics/cpo/index.html",
+      "bytes": 14450
+    }
+  ],
+  "hold_set": [
+    {
+      "path": "topics/pcb/index.html",
+      "bytes": 15179
+    },
+    {
+      "path": "topics/pcb/PCB_ABF_IC载板线专题观察.html",
+      "bytes": 7361
+    },
+    {
+      "path": "topics/pcb/PCB_AI服务器高多层板线专题观察.html",
+      "bytes": 7665
+    },
+    {
+      "path": "topics/pcb/PCB高速材料线专题观察.html",
+      "bytes": 7914
+    },
+    {
+      "path": "topics/pcb/PCB高速交换机背板线专题观察.html",
+      "bytes": 7503
+    },
+    {
+      "path": "topics/pcb/PCB公司池观察样本排序表.html",
+      "bytes": 21687
+    },
+    {
+      "path": "topics/pcb/PCB供需变化信号库_产业链版.html",
+      "bytes": 9966
+    },
+    {
+      "path": "topics/pcb/PCB关键约束环节总表.html",
+      "bytes": 20892
+    },
+    {
+      "path": "topics/pcb/PCB技术路线图_产业链版.html",
+      "bytes": 9526
+    },
+    {
+      "path": "topics/pcb/PCB节点百科_产业链版.html",
+      "bytes": 19381
+    },
+    {
+      "path": "topics/pcb/PCB节点路线信号三维矩阵_产业链版.html",
+      "bytes": 15989
+    },
+    {
+      "path": "topics/pcb/PCB可映射公司池_名单层.html",
+      "bytes": 16099
+    },
+    {
+      "path": "topics/pcb/PCB全产业链详细全图_产业链版.html",
+      "bytes": 17032
+    },
+    {
+      "path": "topics/pcb/PCB设备与电子化学品线专题观察.html",
+      "bytes": 7651
+    },
+    {
+      "path": "topics/pcb/PCB研究中枢.html",
+      "bytes": 12816
+    },
+    {
+      "path": "topics/pcb/PCB专题观察合集.html",
+      "bytes": 6724
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备_光刻涂胶显影线专题观察.html",
+      "bytes": 7560
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备_刻蚀薄膜沉积线专题观察.html",
+      "bytes": 7647
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备_离子注入_CMP_清洗线专题观察.html",
+      "bytes": 7684
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备_量测检测线专题观察.html",
+      "bytes": 7659
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备_先进封装设备线专题观察.html",
+      "bytes": 7684
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备公司池观察样本排序表.html",
+      "bytes": 12885
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备供需与国产替代信号库_产业链版.html",
+      "bytes": 8006
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备关键约束环节总表.html",
+      "bytes": 11804
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备技术路线图_产业链版.html",
+      "bytes": 7357
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备节点百科_产业链版.html",
+      "bytes": 14749
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备节点路线信号三维矩阵_产业链版.html",
+      "bytes": 12712
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备可映射公司池_名单层.html",
+      "bytes": 11071
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备全产业链详细全图_产业链版.html",
+      "bytes": 13176
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备研究中枢.html",
+      "bytes": 9153
+    },
+    {
+      "path": "topics/semiconductor-equipment/半导体设备专题观察合集.html",
+      "bytes": 7755
+    },
+    {
+      "path": "topics/semiconductor-equipment/index.html",
+      "bytes": 11536
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料_电子特气与湿电子化学品线专题观察.html",
+      "bytes": 7889
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料_光刻胶与配套试剂线专题观察.html",
+      "bytes": 7847
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料_硅片与掩膜版线专题观察.html",
+      "bytes": 7827
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料_先进封装材料与关键耗材线专题观察.html",
+      "bytes": 7876
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料_CMP_靶材_前驱体线专题观察.html",
+      "bytes": 7826
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料公司池观察样本排序表.html",
+      "bytes": 15199
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料供需与国产替代信号库_产业链版.html",
+      "bytes": 8083
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料关键约束环节总表.html",
+      "bytes": 12151
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料技术路线图_产业链版.html",
+      "bytes": 7446
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料节点百科_产业链版.html",
+      "bytes": 14395
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料节点路线信号三维矩阵_产业链版.html",
+      "bytes": 12515
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料可映射公司池_名单层.html",
+      "bytes": 12450
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料全产业链详细全图_产业链版.html",
+      "bytes": 12924
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料研究中枢.html",
+      "bytes": 9266
+    },
+    {
+      "path": "topics/semiconductor-materials/半导体材料专题观察合集.html",
+      "bytes": 7956
+    },
+    {
+      "path": "topics/semiconductor-materials/index.html",
+      "bytes": 11649
+    },
+    {
+      "path": "topics/mlcc-passive/index.html",
+      "bytes": 11597
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC_被动元件扩散线专题观察.html",
+      "bytes": 7862
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC_高容车规与AI服务器需求线专题观察.html",
+      "bytes": 7835
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC_供需变化与库存周期线专题观察.html",
+      "bytes": 7797
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC_上游粉体与电极浆料线专题观察.html",
+      "bytes": 7854
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC_制造工艺与设备线专题观察.html",
+      "bytes": 7789
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC被动元件公司池观察样本排序表.html",
+      "bytes": 11071
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC被动元件供需变化信号库_产业链版.html",
+      "bytes": 8136
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC被动元件关键约束环节总表.html",
+      "bytes": 11205
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC被动元件技术路线图_产业链版.html",
+      "bytes": 7386
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC被动元件节点百科_产业链版.html",
+      "bytes": 13844
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC被动元件节点路线信号三维矩阵_产业链版.html",
+      "bytes": 12002
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC被动元件可映射公司池_名单层.html",
+      "bytes": 9751
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC被动元件全产业链详细全图_产业链版.html",
+      "bytes": 12551
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC被动元件研究中枢.html",
+      "bytes": 9225
+    },
+    {
+      "path": "topics/mlcc-passive/MLCC被动元件专题观察合集.html",
+      "bytes": 7910
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装_材料耗材与热管理线专题观察.html",
+      "bytes": 8270
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装_测试检测与可靠性线专题观察.html",
+      "bytes": 8530
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装_ABF载板与高端基板线专题观察.html",
+      "bytes": 8266
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装_CoWoS与2.5D产能线专题观察.html",
+      "bytes": 8510
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装_RDL_Bumping_TSV_HybridBonding线专题观察.html",
+      "bytes": 8518
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet公司池观察样本排序表.html",
+      "bytes": 9032
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet供需与卡口信号库_产业链版.html",
+      "bytes": 8742
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet关键约束环节总表.csv",
+      "bytes": 2627
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet关键约束环节总表.html",
+      "bytes": 10567
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet技术路线图_产业链版.html",
+      "bytes": 7980
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet节点百科_产业链版.html",
+      "bytes": 19150
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet节点路线信号三维矩阵_产业链版.html",
+      "bytes": 13822
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet可映射公司池_名单层.csv",
+      "bytes": 4150
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet可映射公司池_名单层.html",
+      "bytes": 13388
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet全产业链详细全图_产业链版.html",
+      "bytes": 16643
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet统一节点索引.csv",
+      "bytes": 6107
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet研究中枢.html",
+      "bytes": 9387
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet专题观察合集.html",
+      "bytes": 7760
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/先进封装Chiplet专题观察索引.csv",
+      "bytes": 1009
+    },
+    {
+      "path": "topics/advanced-packaging-chiplet/index.html",
+      "bytes": 11773
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器_电源_HVDC_BBU_UPS线专题观察.html",
+      "bytes": 7186
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器_高速连接器_铜缆_线束线专题观察.html",
+      "bytes": 7190
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器_上游材料与被动件扩散线专题观察.html",
+      "bytes": 7208
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器_液冷冷板_CDU_快接头线专题观察.html",
+      "bytes": 7277
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器_整柜_ODM_结构件线专题观察.html",
+      "bytes": 7004
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器液冷电源连接器公司池观察样本排序表.html",
+      "bytes": 9537
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器液冷电源连接器供需与卡口信号库_产业链版.html",
+      "bytes": 7688
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器液冷电源连接器关键约束环节总表.html",
+      "bytes": 9336
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器液冷电源连接器技术路线图_产业链版.html",
+      "bytes": 7274
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器液冷电源连接器节点百科_产业链版.html",
+      "bytes": 15178
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器液冷电源连接器节点路线信号三维矩阵_产业链版.html",
+      "bytes": 11950
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器液冷电源连接器可映射公司池_名单层.csv",
+      "bytes": 2753
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器液冷电源连接器可映射公司池_名单层.html",
+      "bytes": 11059
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器液冷电源连接器全产业链详细全图_产业链版.html",
+      "bytes": 13851
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器液冷电源连接器研究中枢.html",
+      "bytes": 8980
+    },
+    {
+      "path": "topics/ai-server-infrastructure/AI服务器液冷电源连接器专题观察合集.html",
+      "bytes": 7387
+    },
+    {
+      "path": "topics/ai-server-infrastructure/index.html",
+      "bytes": 11364
+    },
+    {
+      "path": "topics/power-grid/index.html",
+      "bytes": 13134
+    },
+    {
+      "path": "step5_release_preflight_1609.html",
+      "exists": true,
+      "bytes": 3375
+    },
+    {
+      "path": "step6_summary_pages_expansion_365.html",
+      "exists": true,
+      "bytes": 102520
+    },
+    {
+      "path": "step7_release_candidate_1609.html",
+      "exists": true,
+      "bytes": 9249
+    },
+    {
+      "path": "step8_publish_path_precheck_1609.html",
+      "exists": true,
+      "bytes": 6124
+    },
+    {
+      "path": "step9_release_diff_manifest_1609.html",
+      "exists": false,
+      "bytes": 0
+    },
+    {
+      "path": "data/step5_release_preflight_1609.json",
+      "exists": true,
+      "bytes": 2062
+    },
+    {
+      "path": "data/step6_summary_pages_expansion_365.json",
+      "exists": true,
+      "bytes": 109876
+    },
+    {
+      "path": "data/step7_release_candidate_1609.json",
+      "exists": true,
+      "bytes": 7036
+    },
+    {
+      "path": "data/step8_publish_path_precheck_1609.json",
+      "exists": true,
+      "bytes": 4277
+    },
+    {
+      "path": "data/step9_release_diff_manifest_1609.json",
+      "exists": false,
+      "bytes": 0
+    }
+  ],
+  "next_step": "下一步可以做正式发布前最后一次本地镜像页：把候选首页按正式首页路径模拟打开，并抽查搜索、主线展开、CPO 专题入口。通过后再由你决定是否推送。"
+}

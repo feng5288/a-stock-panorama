@@ -1,0 +1,2355 @@
+{
+  "generated_at": "2026-07-02",
+  "rows": [
+    {
+      "code": "603590",
+      "name": "康辰药业",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch16_20/603590.html",
+      "bytes": 10343,
+      "finance": {
+        "code": "603590",
+        "bs_code": "sh.603590",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603590",
+          "pubDate": "2026-04-23",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.014680",
+          "npMargin": "0.225774",
+          "gpMargin": "0.898073",
+          "netProfit": "48512063.090000",
+          "epsTTM": "1.060830",
+          "MBRevenue": "",
+          "totalShare": "159010477.00",
+          "liqaShare": "158223477.00"
+        },
+        "growth": {
+          "code": "sh.603590",
+          "pubDate": "2026-04-23",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.021237",
+          "YOYAsset": "0.049421",
+          "YOYNI": "0.007780",
+          "YOYEPSBasic": "0.071429",
+          "YOYPNI": "0.061041"
+        },
+        "errors": [],
+        "net_profit_yi": 0.49,
+        "yoy_parent_net_income_pct": 6.1,
+        "gross_margin_pct": 89.81,
+        "net_margin_pct": 22.58
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002412",
+      "name": "汉森制药",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002412.html",
+      "bytes": 10367,
+      "finance": {
+        "code": "002412",
+        "bs_code": "sz.002412",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002412",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.015990",
+          "npMargin": "0.145905",
+          "gpMargin": "0.792983",
+          "netProfit": "38406422.880000",
+          "epsTTM": "0.447674",
+          "MBRevenue": "",
+          "totalShare": "503200000.00",
+          "liqaShare": "497845000.00"
+        },
+        "growth": {
+          "code": "sz.002412",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.104694",
+          "YOYAsset": "0.073565",
+          "YOYNI": "2.411732",
+          "YOYEPSBasic": "2.406250",
+          "YOYPNI": "2.411732"
+        },
+        "errors": [],
+        "net_profit_yi": 0.38,
+        "yoy_parent_net_income_pct": 241.17,
+        "gross_margin_pct": 79.3,
+        "net_margin_pct": 14.59
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002826",
+      "name": "易明医药",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002826.html",
+      "bytes": 10343,
+      "finance": {
+        "code": "002826",
+        "bs_code": "sz.002826",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002826",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.023758",
+          "npMargin": "0.107617",
+          "gpMargin": "0.824797",
+          "netProfit": "19648370.410000",
+          "epsTTM": "0.490017",
+          "MBRevenue": "",
+          "totalShare": "190677750.00",
+          "liqaShare": "174554386.00"
+        },
+        "growth": {
+          "code": "sz.002826",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.101458",
+          "YOYAsset": "0.118377",
+          "YOYNI": "0.038028",
+          "YOYEPSBasic": "0.100000",
+          "YOYPNI": "0.045468"
+        },
+        "errors": [],
+        "net_profit_yi": 0.2,
+        "yoy_parent_net_income_pct": 4.55,
+        "gross_margin_pct": 82.48,
+        "net_margin_pct": 10.76
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002858",
+      "name": "力盛体育",
+      "mainline": "消费与服务",
+      "tracks": [
+        "文体娱乐",
+        "体育",
+        "游戏/内容"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002858.html",
+      "bytes": 10313,
+      "finance": {
+        "code": "002858",
+        "bs_code": "sz.002858",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002858",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.011614",
+          "npMargin": "0.186275",
+          "gpMargin": "0.291609",
+          "netProfit": "19528112.920000",
+          "epsTTM": "-0.043057",
+          "MBRevenue": "",
+          "totalShare": "163919838.00",
+          "liqaShare": "146963738.00"
+        },
+        "growth": {
+          "code": "sz.002858",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.022751",
+          "YOYAsset": "-0.024419",
+          "YOYNI": "0.123365",
+          "YOYEPSBasic": "-0.065327",
+          "YOYPNI": "-0.063552"
+        },
+        "errors": [],
+        "net_profit_yi": 0.2,
+        "yoy_parent_net_income_pct": -6.36,
+        "gross_margin_pct": 29.16,
+        "net_margin_pct": 18.63
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603818",
+      "name": "曲美家居",
+      "mainline": "消费与服务",
+      "tracks": [
+        "家居/轻工",
+        "家具制造",
+        "家居/轻工制造"
+      ],
+      "path": "company_research_rework_p2_batch16_20/603818.html",
+      "bytes": 10375,
+      "finance": {
+        "code": "603818",
+        "bs_code": "sh.603818",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603818",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.000602",
+          "npMargin": "0.002954",
+          "gpMargin": "0.356715",
+          "netProfit": "2501435.760000",
+          "epsTTM": "-0.208545",
+          "MBRevenue": "",
+          "totalShare": "686543855.00",
+          "liqaShare": "686543855.00"
+        },
+        "growth": {
+          "code": "sh.603818",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.058750",
+          "YOYAsset": "-0.112327",
+          "YOYNI": "2.011344",
+          "YOYEPSBasic": "1.200000",
+          "YOYPNI": "1.291726"
+        },
+        "errors": [],
+        "net_profit_yi": 0.03,
+        "yoy_parent_net_income_pct": 129.17,
+        "gross_margin_pct": 35.67,
+        "net_margin_pct": 0.3
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000802",
+      "name": "北京文化",
+      "mainline": "消费与服务",
+      "tracks": [
+        "文体娱乐",
+        "影视/广电",
+        "游戏/内容"
+      ],
+      "path": "company_research_rework_p2_batch16_20/000802.html",
+      "bytes": 10421,
+      "finance": {
+        "code": "000802",
+        "bs_code": "sz.000802",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000802",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.033205",
+          "npMargin": "-0.415289",
+          "gpMargin": "0.015906",
+          "netProfit": "-20614109.040000",
+          "epsTTM": "-0.293241",
+          "MBRevenue": "",
+          "totalShare": "715900255.00",
+          "liqaShare": "715544005.00"
+        },
+        "growth": {
+          "code": "sz.000802",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.295787",
+          "YOYAsset": "-0.199149",
+          "YOYNI": "0.905395",
+          "YOYEPSBasic": "0.905388",
+          "YOYPNI": "0.905404"
+        },
+        "errors": [],
+        "net_profit_yi": -0.21,
+        "yoy_parent_net_income_pct": 90.54,
+        "gross_margin_pct": 1.59,
+        "net_margin_pct": -41.53
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002575",
+      "name": "群兴玩具",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "批发/贸易",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002575.html",
+      "bytes": 10421,
+      "finance": {
+        "code": "002575",
+        "bs_code": "sz.002575",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002575",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.001057",
+          "npMargin": "-0.016545",
+          "gpMargin": "0.114132",
+          "netProfit": "-1065236.880000",
+          "epsTTM": "-0.019862",
+          "MBRevenue": "",
+          "totalShare": "616500000.00",
+          "liqaShare": "584325500.00"
+        },
+        "growth": {
+          "code": "sz.002575",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.023851",
+          "YOYAsset": "0.012625",
+          "YOYNI": "0.931823",
+          "YOYEPSBasic": "0.966667",
+          "YOYPNI": "0.940838"
+        },
+        "errors": [],
+        "net_profit_yi": -0.01,
+        "yoy_parent_net_income_pct": 94.08,
+        "gross_margin_pct": 11.41,
+        "net_margin_pct": -1.65
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002995",
+      "name": "天地在线",
+      "mainline": "消费与服务",
+      "tracks": [
+        "专业服务",
+        "商务服务",
+        "商务服务 / 综合服务"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002995.html",
+      "bytes": 10393,
+      "finance": {
+        "code": "002995",
+        "bs_code": "sz.002995",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002995",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.000424",
+          "npMargin": "-0.001809",
+          "gpMargin": "0.053797",
+          "netProfit": "-394271.800000",
+          "epsTTM": "-0.625603",
+          "MBRevenue": "",
+          "totalShare": "177454480.00",
+          "liqaShare": "112417208.00"
+        },
+        "growth": {
+          "code": "sz.002995",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.123263",
+          "YOYAsset": "-0.118043",
+          "YOYNI": "0.975911",
+          "YOYEPSBasic": "0.980847",
+          "YOYPNI": "0.980655"
+        },
+        "errors": [],
+        "net_profit_yi": 0,
+        "yoy_parent_net_income_pct": 98.07,
+        "gross_margin_pct": 5.38,
+        "net_margin_pct": -0.18
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "001330",
+      "name": "博纳影业",
+      "mainline": "消费与服务",
+      "tracks": [
+        "文体娱乐",
+        "影视/广电",
+        "游戏/内容"
+      ],
+      "path": "company_research_rework_p2_batch16_20/001330.html",
+      "bytes": 10422,
+      "finance": {
+        "code": "001330",
+        "bs_code": "sz.001330",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.001330",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.011618",
+          "npMargin": "-0.158833",
+          "gpMargin": "0.109216",
+          "netProfit": "-44061321.730000",
+          "epsTTM": "-0.402744",
+          "MBRevenue": "",
+          "totalShare": "1374518984.00",
+          "liqaShare": "1162847322.00"
+        },
+        "growth": {
+          "code": "sz.001330",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.121421",
+          "YOYAsset": "-0.130947",
+          "YOYNI": "0.953879",
+          "YOYEPSBasic": "0.957143",
+          "YOYPNI": "0.953652"
+        },
+        "errors": [],
+        "net_profit_yi": -0.44,
+        "yoy_parent_net_income_pct": 95.37,
+        "gross_margin_pct": 10.92,
+        "net_margin_pct": -15.88
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002820",
+      "name": "桂发祥",
+      "mainline": "消费与服务",
+      "tracks": [
+        "食品饮料",
+        "食品制造",
+        "大众消费"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002820.html",
+      "bytes": 10321,
+      "finance": {
+        "code": "002820",
+        "bs_code": "sz.002820",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002820",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.008411",
+          "npMargin": "0.049646",
+          "gpMargin": "0.462530",
+          "netProfit": "7318977.230000",
+          "epsTTM": "-0.118740",
+          "MBRevenue": "",
+          "totalShare": "200868295.00",
+          "liqaShare": "200868295.00"
+        },
+        "growth": {
+          "code": "sz.002820",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.057332",
+          "YOYAsset": "-0.045979",
+          "YOYNI": "0.101471",
+          "YOYEPSBasic": "0.333333",
+          "YOYPNI": "0.101471"
+        },
+        "errors": [],
+        "net_profit_yi": 0.07,
+        "yoy_parent_net_income_pct": 10.15,
+        "gross_margin_pct": 46.25,
+        "net_margin_pct": 4.96
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000663",
+      "name": "永安林业",
+      "mainline": "消费与服务",
+      "tracks": [
+        "农产品",
+        "林业",
+        "种业/种植"
+      ],
+      "path": "company_research_rework_p2_batch16_20/000663.html",
+      "bytes": 10392,
+      "finance": {
+        "code": "000663",
+        "bs_code": "sz.000663",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000663",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.013534",
+          "npMargin": "-0.217399",
+          "gpMargin": "0.113555",
+          "netProfit": "-12700622.480000",
+          "epsTTM": "-0.263212",
+          "MBRevenue": "",
+          "totalShare": "336683929.00",
+          "liqaShare": "306301196.00"
+        },
+        "growth": {
+          "code": "sz.000663",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.086199",
+          "YOYAsset": "-0.024763",
+          "YOYNI": "0.338165",
+          "YOYEPSBasic": "0.343416",
+          "YOYPNI": "0.342750"
+        },
+        "errors": [],
+        "net_profit_yi": -0.13,
+        "yoy_parent_net_income_pct": 34.27,
+        "gross_margin_pct": 11.36,
+        "net_margin_pct": -21.74
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "001366",
+      "name": "播恩集团",
+      "mainline": "消费与服务",
+      "tracks": [
+        "食品饮料",
+        "农副食品",
+        "大众消费"
+      ],
+      "path": "company_research_rework_p2_batch16_20/001366.html",
+      "bytes": 10351,
+      "finance": {
+        "code": "001366",
+        "bs_code": "sz.001366",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.001366",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.011434",
+          "npMargin": "0.026525",
+          "gpMargin": "0.139937",
+          "netProfit": "9149201.780000",
+          "epsTTM": "-0.034272",
+          "MBRevenue": "",
+          "totalShare": "160680000.00",
+          "liqaShare": "160680000.00"
+        },
+        "growth": {
+          "code": "sz.001366",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.003691",
+          "YOYAsset": "0.100639",
+          "YOYNI": "2.787893",
+          "YOYEPSBasic": "3.000000",
+          "YOYPNI": "2.787893"
+        },
+        "errors": [],
+        "net_profit_yi": 0.09,
+        "yoy_parent_net_income_pct": 278.79,
+        "gross_margin_pct": 13.99,
+        "net_margin_pct": 2.65
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002234",
+      "name": "民和股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "农产品",
+        "畜牧养殖",
+        "猪禽水产养殖"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002234.html",
+      "bytes": 10422,
+      "finance": {
+        "code": "002234",
+        "bs_code": "sz.002234",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002234",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.038885",
+          "npMargin": "-0.148747",
+          "gpMargin": "-0.000129",
+          "netProfit": "-69822125.530000",
+          "epsTTM": "-0.759361",
+          "MBRevenue": "",
+          "totalShare": "348960212.00",
+          "liqaShare": "301408639.00"
+        },
+        "growth": {
+          "code": "sz.002234",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.134704",
+          "YOYAsset": "-0.051293",
+          "YOYNI": "0.036231",
+          "YOYEPSBasic": "0.050000",
+          "YOYPNI": "0.049613"
+        },
+        "errors": [],
+        "net_profit_yi": -0.7,
+        "yoy_parent_net_income_pct": 4.96,
+        "gross_margin_pct": -0.01,
+        "net_margin_pct": -14.87
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002425",
+      "name": "凯撒文化",
+      "mainline": "消费与服务",
+      "tracks": [
+        "互联网",
+        "互联网/平台",
+        "传媒互联网"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002425.html",
+      "bytes": 10363,
+      "finance": {
+        "code": "002425",
+        "bs_code": "sz.002425",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002425",
+          "pubDate": "2026-04-27",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.004793",
+          "npMargin": "0.059423",
+          "gpMargin": "0.222002",
+          "netProfit": "11499840.380000",
+          "epsTTM": "-0.574564",
+          "MBRevenue": "",
+          "totalShare": "956665066.00",
+          "liqaShare": "920185923.00"
+        },
+        "growth": {
+          "code": "sz.002425",
+          "pubDate": "2026-04-27",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.170815",
+          "YOYAsset": "-0.162640",
+          "YOYNI": "4.029156",
+          "YOYEPSBasic": "2.179487",
+          "YOYPNI": "2.241969"
+        },
+        "errors": [],
+        "net_profit_yi": 0.11,
+        "yoy_parent_net_income_pct": 224.2,
+        "gross_margin_pct": 22.2,
+        "net_margin_pct": 5.94
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002574",
+      "name": "明牌珠宝",
+      "mainline": "消费与服务",
+      "tracks": [
+        "文体娱乐",
+        "文化用品",
+        "游戏/内容"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002574.html",
+      "bytes": 10353,
+      "finance": {
+        "code": "002574",
+        "bs_code": "sz.002574",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002574",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.004541",
+          "npMargin": "0.013356",
+          "gpMargin": "0.078702",
+          "netProfit": "12787085.670000",
+          "epsTTM": "-0.585557",
+          "MBRevenue": "",
+          "totalShare": "528000000.00",
+          "liqaShare": "528000000.00"
+        },
+        "growth": {
+          "code": "sz.002574",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.112558",
+          "YOYAsset": "-0.069828",
+          "YOYNI": "1.339378",
+          "YOYEPSBasic": "1.285714",
+          "YOYPNI": "1.323822"
+        },
+        "errors": [],
+        "net_profit_yi": 0.13,
+        "yoy_parent_net_income_pct": 132.38,
+        "gross_margin_pct": 7.87,
+        "net_margin_pct": 1.34
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002702",
+      "name": "海欣食品",
+      "mainline": "消费与服务",
+      "tracks": [
+        "食品饮料",
+        "农副食品",
+        "大众消费"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002702.html",
+      "bytes": 10351,
+      "finance": {
+        "code": "002702",
+        "bs_code": "sz.002702",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002702",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.011098",
+          "npMargin": "0.028621",
+          "gpMargin": "0.219699",
+          "netProfit": "13470397.570000",
+          "epsTTM": "-0.069054",
+          "MBRevenue": "",
+          "totalShare": "555760000.00",
+          "liqaShare": "458743750.00"
+        },
+        "growth": {
+          "code": "sz.002702",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.036009",
+          "YOYAsset": "-0.033379",
+          "YOYNI": "16.182383",
+          "YOYEPSBasic": "8.363636",
+          "YOYPNI": "8.302619"
+        },
+        "errors": [],
+        "net_profit_yi": 0.13,
+        "yoy_parent_net_income_pct": 830.26,
+        "gross_margin_pct": 21.97,
+        "net_margin_pct": 2.86
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002712",
+      "name": "思美传媒",
+      "mainline": "消费与服务",
+      "tracks": [
+        "专业服务",
+        "商务服务",
+        "游戏/内容"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002712.html",
+      "bytes": 10353,
+      "finance": {
+        "code": "002712",
+        "bs_code": "sz.002712",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002712",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.002362",
+          "npMargin": "0.001762",
+          "gpMargin": "0.027056",
+          "netProfit": "3824613.360000",
+          "epsTTM": "-0.091298",
+          "MBRevenue": "",
+          "totalShare": "544276198.00",
+          "liqaShare": "540900273.00"
+        },
+        "growth": {
+          "code": "sz.002712",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.008275",
+          "YOYAsset": "0.007167",
+          "YOYNI": "1.932732",
+          "YOYEPSBasic": "1.612245",
+          "YOYPNI": "1.613811"
+        },
+        "errors": [],
+        "net_profit_yi": 0.04,
+        "yoy_parent_net_income_pct": 161.38,
+        "gross_margin_pct": 2.71,
+        "net_margin_pct": 0.18
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002799",
+      "name": "环球印务",
+      "mainline": "消费与服务",
+      "tracks": [
+        "家居/轻工",
+        "造纸",
+        "家居/轻工制造"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002799.html",
+      "bytes": 10357,
+      "finance": {
+        "code": "002799",
+        "bs_code": "sz.002799",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002799",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.001841",
+          "npMargin": "0.013648",
+          "gpMargin": "0.192333",
+          "netProfit": "2293893.080000",
+          "epsTTM": "-0.049943",
+          "MBRevenue": "",
+          "totalShare": "320040000.00",
+          "liqaShare": "320034400.00"
+        },
+        "growth": {
+          "code": "sz.002799",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.012422",
+          "YOYAsset": "-0.108102",
+          "YOYNI": "1.541490",
+          "YOYEPSBasic": "2.000000",
+          "YOYPNI": "1.634758"
+        },
+        "errors": [],
+        "net_profit_yi": 0.02,
+        "yoy_parent_net_income_pct": 163.48,
+        "gross_margin_pct": 19.23,
+        "net_margin_pct": 1.36
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002800",
+      "name": "天顺股份",
+      "mainline": "交运物流",
+      "tracks": [
+        "公路物流",
+        "供应链服务",
+        "物流服务"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002800.html",
+      "bytes": 10326,
+      "finance": {
+        "code": "002800",
+        "bs_code": "sz.002800",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002800",
+          "pubDate": "2026-04-22",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.003583",
+          "npMargin": "0.007141",
+          "gpMargin": "0.081745",
+          "netProfit": "1663665.620000",
+          "epsTTM": "-0.157637",
+          "MBRevenue": "",
+          "totalShare": "152253067.00",
+          "liqaShare": "147842866.00"
+        },
+        "growth": {
+          "code": "sz.002800",
+          "pubDate": "2026-04-22",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.051521",
+          "YOYAsset": "-0.121572",
+          "YOYNI": "0.104213",
+          "YOYEPSBasic": "-0.086614",
+          "YOYPNI": "-0.086494"
+        },
+        "errors": [],
+        "net_profit_yi": 0.02,
+        "yoy_parent_net_income_pct": -8.65,
+        "gross_margin_pct": 8.17,
+        "net_margin_pct": 0.71
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600386",
+      "name": "北巴传媒",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "零售",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/600386.html",
+      "bytes": 10373,
+      "finance": {
+        "code": "600386",
+        "bs_code": "sh.600386",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600386",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.005555",
+          "npMargin": "-0.015982",
+          "gpMargin": "0.170226",
+          "netProfit": "-9795041.490000",
+          "epsTTM": "-0.014480",
+          "MBRevenue": "",
+          "totalShare": "806400000.00",
+          "liqaShare": "806400000.00"
+        },
+        "growth": {
+          "code": "sh.600386",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.046284",
+          "YOYAsset": "-0.098882",
+          "YOYNI": "0.396610",
+          "YOYEPSBasic": "-0.200000",
+          "YOYPNI": "-0.157805"
+        },
+        "errors": [],
+        "net_profit_yi": -0.1,
+        "yoy_parent_net_income_pct": -15.78,
+        "gross_margin_pct": 17.02,
+        "net_margin_pct": -1.6
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600697",
+      "name": "欧亚集团",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "零售",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/600697.html",
+      "bytes": 10312,
+      "finance": {
+        "code": "600697",
+        "bs_code": "sh.600697",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600697",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.001612",
+          "npMargin": "0.024697",
+          "gpMargin": "0.374966",
+          "netProfit": "45112410.600000",
+          "epsTTM": "-0.324429",
+          "MBRevenue": "",
+          "totalShare": "159088075.00",
+          "liqaShare": "155376015.00"
+        },
+        "growth": {
+          "code": "sh.600697",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.025985",
+          "YOYAsset": "-0.028376",
+          "YOYNI": "0.134273",
+          "YOYEPSBasic": "0.000000",
+          "YOYPNI": "0.054895"
+        },
+        "errors": [],
+        "net_profit_yi": 0.45,
+        "yoy_parent_net_income_pct": 5.49,
+        "gross_margin_pct": 37.5,
+        "net_margin_pct": 2.47
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600712",
+      "name": "南宁百货",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "零售",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/600712.html",
+      "bytes": 10336,
+      "finance": {
+        "code": "600712",
+        "bs_code": "sh.600712",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600712",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.003625",
+          "npMargin": "0.020165",
+          "gpMargin": "0.276480",
+          "netProfit": "2743171.530000",
+          "epsTTM": "-0.058703",
+          "MBRevenue": "",
+          "totalShare": "544655360.00",
+          "liqaShare": "538648371.00"
+        },
+        "growth": {
+          "code": "sh.600712",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.040468",
+          "YOYAsset": "-0.021656",
+          "YOYNI": "1.413740",
+          "YOYEPSBasic": "1.409836",
+          "YOYPNI": "1.413740"
+        },
+        "errors": [],
+        "net_profit_yi": 0.03,
+        "yoy_parent_net_income_pct": 141.37,
+        "gross_margin_pct": 27.65,
+        "net_margin_pct": 2.02
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000799",
+      "name": "酒鬼酒",
+      "mainline": "消费与服务",
+      "tracks": [
+        "食品饮料",
+        "酿酒/饮料",
+        "白酒 / 高端消费"
+      ],
+      "path": "company_research_rework_p2_batch16_20/000799.html",
+      "bytes": 10349,
+      "finance": {
+        "code": "000799",
+        "bs_code": "sz.000799",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000799",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.008837",
+          "npMargin": "0.104581",
+          "gpMargin": "0.672986",
+          "netProfit": "33180776.740000",
+          "epsTTM": "-0.099974",
+          "MBRevenue": "",
+          "totalShare": "324928980.00",
+          "liqaShare": "324898230.00"
+        },
+        "growth": {
+          "code": "sz.000799",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.056837",
+          "YOYAsset": "-0.039043",
+          "YOYNI": "0.046274",
+          "YOYEPSBasic": "0.046107",
+          "YOYPNI": "0.046274"
+        },
+        "errors": [],
+        "net_profit_yi": 0.33,
+        "yoy_parent_net_income_pct": 4.63,
+        "gross_margin_pct": 67.3,
+        "net_margin_pct": 10.46
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600199",
+      "name": "金种子酒",
+      "mainline": "消费与服务",
+      "tracks": [
+        "食品饮料",
+        "酿酒/饮料",
+        "白酒 / 高端消费"
+      ],
+      "path": "company_research_rework_p2_batch16_20/600199.html",
+      "bytes": 10445,
+      "finance": {
+        "code": "600199",
+        "bs_code": "sh.600199",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600199",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.007804",
+          "npMargin": "-0.080110",
+          "gpMargin": "0.510918",
+          "netProfit": "-15241320.050000",
+          "epsTTM": "-0.265875",
+          "MBRevenue": "",
+          "totalShare": "657796824.00",
+          "liqaShare": "657796824.00"
+        },
+        "growth": {
+          "code": "sh.600199",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.087587",
+          "YOYAsset": "-0.029982",
+          "YOYNI": "0.608166",
+          "YOYEPSBasic": "0.608108",
+          "YOYPNI": "0.608471"
+        },
+        "errors": [],
+        "net_profit_yi": -0.15,
+        "yoy_parent_net_income_pct": 60.85,
+        "gross_margin_pct": 51.09,
+        "net_margin_pct": -8.01
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603123",
+      "name": "翠微股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "零售",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/603123.html",
+      "bytes": 10400,
+      "finance": {
+        "code": "603123",
+        "bs_code": "sh.603123",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603123",
+          "pubDate": "2026-04-21",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.018474",
+          "npMargin": "-0.056537",
+          "gpMargin": "0.222199",
+          "netProfit": "-30707199.960000",
+          "epsTTM": "-0.537253",
+          "MBRevenue": "",
+          "totalShare": "798736665.00",
+          "liqaShare": "652275949.00"
+        },
+        "growth": {
+          "code": "sh.603123",
+          "pubDate": "2026-04-21",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.208055",
+          "YOYAsset": "-0.035276",
+          "YOYNI": "0.635873",
+          "YOYEPSBasic": "0.633028",
+          "YOYPNI": "0.629249"
+        },
+        "errors": [],
+        "net_profit_yi": -0.31,
+        "yoy_parent_net_income_pct": 62.92,
+        "gross_margin_pct": 22.22,
+        "net_margin_pct": -5.65
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603533",
+      "name": "掌阅科技",
+      "mainline": "消费与服务",
+      "tracks": [
+        "互联网",
+        "互联网/平台",
+        "传媒互联网"
+      ],
+      "path": "company_research_rework_p2_batch16_20/603533.html",
+      "bytes": 10427,
+      "finance": {
+        "code": "603533",
+        "bs_code": "sh.603533",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603533",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.014586",
+          "npMargin": "-0.042736",
+          "gpMargin": "0.639013",
+          "netProfit": "-33953109.150000",
+          "epsTTM": "-0.309651",
+          "MBRevenue": "",
+          "totalShare": "438896835.00",
+          "liqaShare": "438896835.00"
+        },
+        "growth": {
+          "code": "sh.603533",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.085349",
+          "YOYAsset": "-0.089427",
+          "YOYNI": "0.510723",
+          "YOYEPSBasic": "0.529412",
+          "YOYPNI": "0.545923"
+        },
+        "errors": [],
+        "net_profit_yi": -0.34,
+        "yoy_parent_net_income_pct": 54.59,
+        "gross_margin_pct": 63.9,
+        "net_margin_pct": -4.27
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002174",
+      "name": "游族网络",
+      "mainline": "消费与服务",
+      "tracks": [
+        "互联网",
+        "互联网/平台",
+        "传媒互联网"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002174.html",
+      "bytes": 10364,
+      "finance": {
+        "code": "002174",
+        "bs_code": "sz.002174",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002174",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.023053",
+          "npMargin": "0.293000",
+          "gpMargin": "0.401443",
+          "netProfit": "103734290.680000",
+          "epsTTM": "-0.273839",
+          "MBRevenue": "",
+          "totalShare": "979810967.00",
+          "liqaShare": "979259042.00"
+        },
+        "growth": {
+          "code": "sz.002174",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.073921",
+          "YOYAsset": "-0.074174",
+          "YOYNI": "3.199359",
+          "YOYEPSBasic": "2.666667",
+          "YOYPNI": "3.199886"
+        },
+        "errors": [],
+        "net_profit_yi": 1.04,
+        "yoy_parent_net_income_pct": 319.99,
+        "gross_margin_pct": 40.14,
+        "net_margin_pct": 29.3
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600540",
+      "name": "新赛股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "农产品",
+        "农业种植",
+        "种业/种植"
+      ],
+      "path": "company_research_rework_p2_batch16_20/600540.html",
+      "bytes": 10344,
+      "finance": {
+        "code": "600540",
+        "bs_code": "sh.600540",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600540",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.114918",
+          "npMargin": "0.028604",
+          "gpMargin": "0.047899",
+          "netProfit": "41003000.400000",
+          "epsTTM": "-0.204218",
+          "MBRevenue": "",
+          "totalShare": "581376960.00",
+          "liqaShare": "581376960.00"
+        },
+        "growth": {
+          "code": "sh.600540",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.235787",
+          "YOYAsset": "0.052851",
+          "YOYNI": "1.439408",
+          "YOYEPSBasic": "1.297125",
+          "YOYPNI": "1.298890"
+        },
+        "errors": [],
+        "net_profit_yi": 0.41,
+        "yoy_parent_net_income_pct": 129.89,
+        "gross_margin_pct": 4.79,
+        "net_margin_pct": 2.86
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000716",
+      "name": "黑芝麻",
+      "mainline": "消费与服务",
+      "tracks": [
+        "食品饮料",
+        "食品制造",
+        "大众消费"
+      ],
+      "path": "company_research_rework_p2_batch16_20/000716.html",
+      "bytes": 10345,
+      "finance": {
+        "code": "000716",
+        "bs_code": "sz.000716",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000716",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.013095",
+          "npMargin": "0.048648",
+          "gpMargin": "0.216351",
+          "netProfit": "31435011.280000",
+          "epsTTM": "-0.022802",
+          "MBRevenue": "",
+          "totalShare": "752884050.00",
+          "liqaShare": "738689337.00"
+        },
+        "growth": {
+          "code": "sz.000716",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.015696",
+          "YOYAsset": "0.014646",
+          "YOYNI": "18.234398",
+          "YOYEPSBasic": "13.666667",
+          "YOYPNI": "13.614784"
+        },
+        "errors": [],
+        "net_profit_yi": 0.31,
+        "yoy_parent_net_income_pct": 1361.48,
+        "gross_margin_pct": 21.64,
+        "net_margin_pct": 4.86
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600859",
+      "name": "王府井",
+      "mainline": "消费与服务",
+      "tracks": [
+        "零售 / 电商",
+        "零售电商",
+        "渠道服务"
+      ],
+      "path": "company_research_rework_p2_batch16_20/600859.html",
+      "bytes": 10327,
+      "finance": {
+        "code": "600859",
+        "bs_code": "sh.600859",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600859",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.002661",
+          "npMargin": "0.023344",
+          "gpMargin": "0.367212",
+          "netProfit": "65604981.450000",
+          "epsTTM": "-0.039035",
+          "MBRevenue": "",
+          "totalShare": "1123931424.00",
+          "liqaShare": "1123828064.00"
+        },
+        "growth": {
+          "code": "sh.600859",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.012762",
+          "YOYAsset": "-0.031364",
+          "YOYNI": "0.211146",
+          "YOYEPSBasic": "-0.132075",
+          "YOYPNI": "-0.071886"
+        },
+        "errors": [],
+        "net_profit_yi": 0.66,
+        "yoy_parent_net_income_pct": -7.19,
+        "gross_margin_pct": 36.72,
+        "net_margin_pct": 2.33
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603458",
+      "name": "勘设股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "专业服务",
+        "技术服务",
+        "专业服务 / 工程咨询"
+      ],
+      "path": "company_research_rework_p2_batch16_20/603458.html",
+      "bytes": 10460,
+      "finance": {
+        "code": "603458",
+        "bs_code": "sh.603458",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603458",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.006161",
+          "npMargin": "-0.088396",
+          "gpMargin": "0.211756",
+          "netProfit": "-17262825.380000",
+          "epsTTM": "-1.249419",
+          "MBRevenue": "",
+          "totalShare": "306124514.00",
+          "liqaShare": "306124514.00"
+        },
+        "growth": {
+          "code": "sh.603458",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.133746",
+          "YOYAsset": "-0.143635",
+          "YOYNI": "0.128421",
+          "YOYEPSBasic": "0.166667",
+          "YOYPNI": "0.181951"
+        },
+        "errors": [],
+        "net_profit_yi": -0.17,
+        "yoy_parent_net_income_pct": 18.2,
+        "gross_margin_pct": 21.18,
+        "net_margin_pct": -8.84
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000428",
+      "name": "华天酒店",
+      "mainline": "消费与服务",
+      "tracks": [
+        "旅游餐饮",
+        "酒店旅游",
+        "旅游/酒店"
+      ],
+      "path": "company_research_rework_p2_batch16_20/000428.html",
+      "bytes": 10415,
+      "finance": {
+        "code": "000428",
+        "bs_code": "sz.000428",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000428",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.047779",
+          "npMargin": "-0.638521",
+          "gpMargin": "0.019884",
+          "netProfit": "-76411252.290000",
+          "epsTTM": "-0.205442",
+          "MBRevenue": "",
+          "totalShare": "1018926000.00",
+          "liqaShare": "1018926000.00"
+        },
+        "growth": {
+          "code": "sz.000428",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.141263",
+          "YOYAsset": "-0.034090",
+          "YOYNI": "0.011041",
+          "YOYEPSBasic": "0.014469",
+          "YOYPNI": "0.014218"
+        },
+        "errors": [],
+        "net_profit_yi": -0.76,
+        "yoy_parent_net_income_pct": 1.42,
+        "gross_margin_pct": 1.99,
+        "net_margin_pct": -63.85
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000607",
+      "name": "华媒控股",
+      "mainline": "消费与服务",
+      "tracks": [
+        "专业服务",
+        "商务服务",
+        "商务服务 / 综合服务"
+      ],
+      "path": "company_research_rework_p2_batch16_20/000607.html",
+      "bytes": 10461,
+      "finance": {
+        "code": "000607",
+        "bs_code": "sz.000607",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000607",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.022630",
+          "npMargin": "-0.134701",
+          "gpMargin": "0.101925",
+          "netProfit": "-28512252.330000",
+          "epsTTM": "-0.341051",
+          "MBRevenue": "",
+          "totalShare": "1017698410.00",
+          "liqaShare": "885033444.00"
+        },
+        "growth": {
+          "code": "sz.000607",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.242537",
+          "YOYAsset": "-0.115484",
+          "YOYNI": "0.366269",
+          "YOYEPSBasic": "0.281501",
+          "YOYPNI": "0.281406"
+        },
+        "errors": [],
+        "net_profit_yi": -0.29,
+        "yoy_parent_net_income_pct": 28.14,
+        "gross_margin_pct": 10.19,
+        "net_margin_pct": -13.47
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000626",
+      "name": "远大控股",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "批发/贸易",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/000626.html",
+      "bytes": 10356,
+      "finance": {
+        "code": "000626",
+        "bs_code": "sz.000626",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000626",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.026891",
+          "npMargin": "0.003566",
+          "gpMargin": "0.011146",
+          "netProfit": "78645769.300000",
+          "epsTTM": "-0.173994",
+          "MBRevenue": "",
+          "totalShare": "506626864.00",
+          "liqaShare": "503711521.00"
+        },
+        "growth": {
+          "code": "sz.000626",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.070208",
+          "YOYAsset": "0.102303",
+          "YOYNI": "2.343337",
+          "YOYEPSBasic": "3.535433",
+          "YOYPNI": "3.524773"
+        },
+        "errors": [],
+        "net_profit_yi": 0.79,
+        "yoy_parent_net_income_pct": 352.48,
+        "gross_margin_pct": 1.11,
+        "net_margin_pct": 0.36
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002086",
+      "name": "东方海洋",
+      "mainline": "消费与服务",
+      "tracks": [
+        "农产品",
+        "渔业",
+        "猪禽水产养殖"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002086.html",
+      "bytes": 10407,
+      "finance": {
+        "code": "002086",
+        "bs_code": "sz.002086",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002086",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.008848",
+          "npMargin": "-0.145222",
+          "gpMargin": "0.112219",
+          "netProfit": "-11381062.400000",
+          "epsTTM": "-0.072411",
+          "MBRevenue": "",
+          "totalShare": "1958946500.00",
+          "liqaShare": "1581285137.00"
+        },
+        "growth": {
+          "code": "sz.002086",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.100262",
+          "YOYAsset": "-0.085630",
+          "YOYNI": "0.490252",
+          "YOYEPSBasic": "0.000000",
+          "YOYPNI": "0.490099"
+        },
+        "errors": [],
+        "net_profit_yi": -0.11,
+        "yoy_parent_net_income_pct": 49.01,
+        "gross_margin_pct": 11.22,
+        "net_margin_pct": -14.52
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002187",
+      "name": "广百股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "零售",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002187.html",
+      "bytes": 10312,
+      "finance": {
+        "code": "002187",
+        "bs_code": "sz.002187",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002187",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.006058",
+          "npMargin": "0.039404",
+          "gpMargin": "0.417083",
+          "netProfit": "24132862.760000",
+          "epsTTM": "-0.134687",
+          "MBRevenue": "",
+          "totalShare": "700894633.00",
+          "liqaShare": "700894633.00"
+        },
+        "growth": {
+          "code": "sz.002187",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.024662",
+          "YOYAsset": "-0.118218",
+          "YOYNI": "0.064054",
+          "YOYEPSBasic": "0.000000",
+          "YOYPNI": "0.078394"
+        },
+        "errors": [],
+        "net_profit_yi": 0.24,
+        "yoy_parent_net_income_pct": 7.84,
+        "gross_margin_pct": 41.71,
+        "net_margin_pct": 3.94
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002291",
+      "name": "遥望科技",
+      "mainline": "消费与服务",
+      "tracks": [
+        "互联网",
+        "互联网/平台",
+        "传媒互联网"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002291.html",
+      "bytes": 10364,
+      "finance": {
+        "code": "002291",
+        "bs_code": "sz.002291",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002291",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.079468",
+          "npMargin": "0.357987",
+          "gpMargin": "0.110334",
+          "netProfit": "225894020.550000",
+          "epsTTM": "-0.352994",
+          "MBRevenue": "",
+          "totalShare": "935130353.00",
+          "liqaShare": "869125270.00"
+        },
+        "growth": {
+          "code": "sz.002291",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.109940",
+          "YOYAsset": "-0.149285",
+          "YOYNI": "3.486381",
+          "YOYEPSBasic": "3.489253",
+          "YOYPNI": "3.493802"
+        },
+        "errors": [],
+        "net_profit_yi": 2.26,
+        "yoy_parent_net_income_pct": 349.38,
+        "gross_margin_pct": 11.03,
+        "net_margin_pct": 35.8
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600088",
+      "name": "中视传媒",
+      "mainline": "消费与服务",
+      "tracks": [
+        "文体娱乐",
+        "影视/广电",
+        "游戏/内容"
+      ],
+      "path": "company_research_rework_p2_batch16_20/600088.html",
+      "bytes": 10357,
+      "finance": {
+        "code": "600088",
+        "bs_code": "sh.600088",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600088",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.000540",
+          "npMargin": "0.004373",
+          "gpMargin": "0.181939",
+          "netProfit": "480723.980000",
+          "epsTTM": "-0.020684",
+          "MBRevenue": "",
+          "totalShare": "397706400.00",
+          "liqaShare": "397706400.00"
+        },
+        "growth": {
+          "code": "sh.600088",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.017885",
+          "YOYAsset": "-0.032666",
+          "YOYNI": "1.047213",
+          "YOYEPSBasic": "1.086957",
+          "YOYPNI": "1.074756"
+        },
+        "errors": [],
+        "net_profit_yi": 0,
+        "yoy_parent_net_income_pct": 107.48,
+        "gross_margin_pct": 18.19,
+        "net_margin_pct": 0.44
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600880",
+      "name": "博瑞传播",
+      "mainline": "消费与服务",
+      "tracks": [
+        "文体娱乐",
+        "出版传媒",
+        "游戏/内容"
+      ],
+      "path": "company_research_rework_p2_batch16_20/600880.html",
+      "bytes": 10333,
+      "finance": {
+        "code": "600880",
+        "bs_code": "sh.600880",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600880",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.002322",
+          "npMargin": "0.098510",
+          "gpMargin": "0.414503",
+          "netProfit": "11246148.200000",
+          "epsTTM": "-0.012491",
+          "MBRevenue": "",
+          "totalShare": "1093332092.00",
+          "liqaShare": "1093030175.00"
+        },
+        "growth": {
+          "code": "sh.600880",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.014424",
+          "YOYAsset": "0.010461",
+          "YOYNI": "0.937329",
+          "YOYEPSBasic": "0.000000",
+          "YOYPNI": "0.246409"
+        },
+        "errors": [],
+        "net_profit_yi": 0.11,
+        "yoy_parent_net_income_pct": 24.64,
+        "gross_margin_pct": 41.45,
+        "net_margin_pct": 9.85
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "601366",
+      "name": "利群股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "零售",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/601366.html",
+      "bytes": 10315,
+      "finance": {
+        "code": "601366",
+        "bs_code": "sh.601366",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.601366",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.001601",
+          "npMargin": "0.002267",
+          "gpMargin": "0.337621",
+          "netProfit": "3788406.290000",
+          "epsTTM": "-0.333758",
+          "MBRevenue": "",
+          "totalShare": "959741113.00",
+          "liqaShare": "959741113.00"
+        },
+        "growth": {
+          "code": "sh.601366",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.037727",
+          "YOYAsset": "-0.073212",
+          "YOYNI": "0.860705",
+          "YOYEPSBasic": "0.166667",
+          "YOYPNI": "0.315579"
+        },
+        "errors": [],
+        "net_profit_yi": 0.04,
+        "yoy_parent_net_income_pct": 31.56,
+        "gross_margin_pct": 33.76,
+        "net_margin_pct": 0.23
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603569",
+      "name": "长久物流",
+      "mainline": "交运物流",
+      "tracks": [
+        "汽车物流",
+        "供应链服务",
+        "物流服务"
+      ],
+      "path": "company_research_rework_p2_batch16_20/603569.html",
+      "bytes": 10330,
+      "finance": {
+        "code": "603569",
+        "bs_code": "sh.603569",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603569",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.000357",
+          "npMargin": "0.017731",
+          "gpMargin": "0.121054",
+          "netProfit": "12996913.440000",
+          "epsTTM": "-0.149797",
+          "MBRevenue": "",
+          "totalShare": "603507251.00",
+          "liqaShare": "603507251.00"
+        },
+        "growth": {
+          "code": "sh.603569",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.109365",
+          "YOYAsset": "-0.020064",
+          "YOYNI": "0.025950",
+          "YOYEPSBasic": "-0.840000",
+          "YOYPNI": "-0.761384"
+        },
+        "errors": [],
+        "net_profit_yi": 0.13,
+        "yoy_parent_net_income_pct": -76.14,
+        "gross_margin_pct": 12.11,
+        "net_margin_pct": 1.77
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603719",
+      "name": "良品铺子",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "零售",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/603719.html",
+      "bytes": 10336,
+      "finance": {
+        "code": "603719",
+        "bs_code": "sh.603719",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603719",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.023621",
+          "npMargin": "0.023317",
+          "gpMargin": "0.273190",
+          "netProfit": "47567232.700000",
+          "epsTTM": "-0.159107",
+          "MBRevenue": "",
+          "totalShare": "401000000.00",
+          "liqaShare": "401000000.00"
+        },
+        "growth": {
+          "code": "sh.603719",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.074136",
+          "YOYAsset": "-0.120844",
+          "YOYNI": "2.305634",
+          "YOYEPSBasic": "2.333333",
+          "YOYPNI": "2.319604"
+        },
+        "errors": [],
+        "net_profit_yi": 0.48,
+        "yoy_parent_net_income_pct": 231.96,
+        "gross_margin_pct": 27.32,
+        "net_margin_pct": 2.33
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "605136",
+      "name": "丽人丽妆",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "零售",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/605136.html",
+      "bytes": 10336,
+      "finance": {
+        "code": "605136",
+        "bs_code": "sh.605136",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.605136",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.004292",
+          "npMargin": "0.024964",
+          "gpMargin": "0.424754",
+          "netProfit": "10368792.710000",
+          "epsTTM": "-0.128182",
+          "MBRevenue": "",
+          "totalShare": "400458500.00",
+          "liqaShare": "400458500.00"
+        },
+        "growth": {
+          "code": "sh.605136",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.021052",
+          "YOYAsset": "-0.017202",
+          "YOYNI": "1.554775",
+          "YOYEPSBasic": "1.600000",
+          "YOYPNI": "1.564222"
+        },
+        "errors": [],
+        "net_profit_yi": 0.1,
+        "yoy_parent_net_income_pct": 156.42,
+        "gross_margin_pct": 42.48,
+        "net_margin_pct": 2.5
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "605388",
+      "name": "均瑶健康",
+      "mainline": "消费与服务",
+      "tracks": [
+        "食品饮料",
+        "酿酒/饮料",
+        "白酒 / 高端消费"
+      ],
+      "path": "company_research_rework_p2_batch16_20/605388.html",
+      "bytes": 10360,
+      "finance": {
+        "code": "605388",
+        "bs_code": "sh.605388",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.605388",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.005655",
+          "npMargin": "0.024267",
+          "gpMargin": "0.375023",
+          "netProfit": "10455386.140000",
+          "epsTTM": "-0.320486",
+          "MBRevenue": "",
+          "totalShare": "600484000.00",
+          "liqaShare": "600484000.00"
+        },
+        "growth": {
+          "code": "sh.605388",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.134764",
+          "YOYAsset": "-0.157831",
+          "YOYNI": "0.086558",
+          "YOYEPSBasic": "-0.208791",
+          "YOYPNI": "-0.205575"
+        },
+        "errors": [],
+        "net_profit_yi": 0.1,
+        "yoy_parent_net_income_pct": -20.56,
+        "gross_margin_pct": 37.5,
+        "net_margin_pct": 2.43
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000829",
+      "name": "天音控股",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "批发/贸易",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/000829.html",
+      "bytes": 10420,
+      "finance": {
+        "code": "000829",
+        "bs_code": "sz.000829",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000829",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.008709",
+          "npMargin": "-0.000520",
+          "gpMargin": "0.026119",
+          "netProfit": "-15180839.800000",
+          "epsTTM": "-0.017940",
+          "MBRevenue": "",
+          "totalShare": "1025100438.00",
+          "liqaShare": "1024129669.00"
+        },
+        "growth": {
+          "code": "sz.000829",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.020460",
+          "YOYAsset": "0.272873",
+          "YOYNI": "0.385694",
+          "YOYEPSBasic": "0.107914",
+          "YOYPNI": "0.110085"
+        },
+        "errors": [],
+        "net_profit_yi": -0.15,
+        "yoy_parent_net_income_pct": 11.01,
+        "gross_margin_pct": 2.61,
+        "net_margin_pct": -0.05
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002277",
+      "name": "友阿股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "零售",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002277.html",
+      "bytes": 10316,
+      "finance": {
+        "code": "002277",
+        "bs_code": "sz.002277",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002277",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.006667",
+          "npMargin": "0.183429",
+          "gpMargin": "0.765005",
+          "netProfit": "37641169.840000",
+          "epsTTM": "-0.235839",
+          "MBRevenue": "",
+          "totalShare": "1394172800.00",
+          "liqaShare": "1394172800.00"
+        },
+        "growth": {
+          "code": "sz.002277",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.049031",
+          "YOYAsset": "-0.037476",
+          "YOYNI": "0.198429",
+          "YOYEPSBasic": "0.155894",
+          "YOYPNI": "0.157385"
+        },
+        "errors": [],
+        "net_profit_yi": 0.38,
+        "yoy_parent_net_income_pct": 15.74,
+        "gross_margin_pct": 76.5,
+        "net_margin_pct": 18.34
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600429",
+      "name": "三元股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "食品饮料",
+        "食品制造",
+        "大众消费"
+      ],
+      "path": "company_research_rework_p2_batch16_20/600429.html",
+      "bytes": 10330,
+      "finance": {
+        "code": "600429",
+        "bs_code": "sh.600429",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600429",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.020962",
+          "npMargin": "0.056395",
+          "gpMargin": "0.230504",
+          "netProfit": "97028894.880000",
+          "epsTTM": "-0.141828",
+          "MBRevenue": "",
+          "totalShare": "1502089065.00",
+          "liqaShare": "1497557426.00"
+        },
+        "growth": {
+          "code": "sh.600429",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.046091",
+          "YOYAsset": "-0.032223",
+          "YOYNI": "0.112718",
+          "YOYEPSBasic": "0.155172",
+          "YOYPNI": "0.142827"
+        },
+        "errors": [],
+        "net_profit_yi": 0.97,
+        "yoy_parent_net_income_pct": 14.28,
+        "gross_margin_pct": 23.05,
+        "net_margin_pct": 5.64
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600655",
+      "name": "豫园股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "商贸零售",
+        "零售",
+        "零售/电商"
+      ],
+      "path": "company_research_rework_p2_batch16_20/600655.html",
+      "bytes": 10336,
+      "finance": {
+        "code": "600655",
+        "bs_code": "sh.600655",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600655",
+          "pubDate": "2026-04-17",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.005234",
+          "npMargin": "0.019616",
+          "gpMargin": "0.179800",
+          "netProfit": "189264624.480000",
+          "epsTTM": "-1.230975",
+          "MBRevenue": "",
+          "totalShare": "3892458273.00",
+          "liqaShare": "3889846273.00"
+        },
+        "growth": {
+          "code": "sh.600655",
+          "pubDate": "2026-04-17",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.155254",
+          "YOYAsset": "-0.055178",
+          "YOYNI": "201.216114",
+          "YOYEPSBasic": "2.153846",
+          "YOYPNI": "2.028669"
+        },
+        "errors": [],
+        "net_profit_yi": 1.89,
+        "yoy_parent_net_income_pct": 202.87,
+        "gross_margin_pct": 17.98,
+        "net_margin_pct": 1.96
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002069",
+      "name": "獐子岛",
+      "mainline": "消费与服务",
+      "tracks": [
+        "农产品",
+        "渔业",
+        "猪禽水产养殖"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002069.html",
+      "bytes": 10333,
+      "finance": {
+        "code": "002069",
+        "bs_code": "sz.002069",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002069",
+          "pubDate": "2026-04-22",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.079176",
+          "npMargin": "0.006040",
+          "gpMargin": "0.165197",
+          "netProfit": "1916838.680000",
+          "epsTTM": "-0.009333",
+          "MBRevenue": "",
+          "totalShare": "711112194.00",
+          "liqaShare": "710216194.00"
+        },
+        "growth": {
+          "code": "sz.002069",
+          "pubDate": "2026-04-22",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.447421",
+          "YOYAsset": "-0.025573",
+          "YOYNI": "1.723673",
+          "YOYEPSBasic": "2.636364",
+          "YOYPNI": "2.638646"
+        },
+        "errors": [],
+        "net_profit_yi": 0.02,
+        "yoy_parent_net_income_pct": 263.86,
+        "gross_margin_pct": 16.52,
+        "net_margin_pct": 0.6
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002622",
+      "name": "皓宸医疗",
+      "mainline": "医药健康",
+      "tracks": [
+        "医疗服务",
+        "医疗健康",
+        "口腔医疗"
+      ],
+      "path": "company_research_rework_p2_batch16_20/002622.html",
+      "bytes": 10151,
+      "finance": {
+        "code": "002622",
+        "bs_code": "sz.002622",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002622",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.030996",
+          "npMargin": "-0.064154",
+          "gpMargin": "0.486463",
+          "netProfit": "-8648208.880000",
+          "epsTTM": "-0.137558",
+          "MBRevenue": "",
+          "totalShare": "840000000.00",
+          "liqaShare": "839975250.00"
+        },
+        "growth": {
+          "code": "sz.002622",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.299994",
+          "YOYAsset": "-0.075169",
+          "YOYNI": "0.519642",
+          "YOYEPSBasic": "0.317241",
+          "YOYPNI": "0.317170"
+        },
+        "errors": [],
+        "net_profit_yi": -0.09,
+        "yoy_parent_net_income_pct": 31.72,
+        "gross_margin_pct": 48.65,
+        "net_margin_pct": -6.42
+      },
+      "forbidden_hits": [],
+      "pass": true
+    }
+  ]
+}

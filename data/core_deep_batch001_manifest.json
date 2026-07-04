@@ -1,0 +1,510 @@
+{
+  "generated_at": "2026-07-02",
+  "total": 50,
+  "pass": 50,
+  "finance_periods": {
+    "2026Q1": 50
+  },
+  "rows": [
+    {
+      "code": "000636",
+      "name": "风华高科",
+      "mainline": "PCB/被动元件/电子材料",
+      "path": "company_research_core_batch001/000636.html",
+      "bytes": 14868,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002484",
+      "name": "江海股份",
+      "mainline": "PCB/被动元件/电子材料",
+      "path": "company_research_core_batch001/002484.html",
+      "bytes": 14869,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002534",
+      "name": "西子洁能",
+      "mainline": "电力设备与电力运营",
+      "path": "company_research_core_batch001/002534.html",
+      "bytes": 14648,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "000561",
+      "name": "烽火电子",
+      "mainline": "电力设备与电力运营",
+      "path": "company_research_core_batch001/000561.html",
+      "bytes": 14857,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600601",
+      "name": "方正科技",
+      "mainline": "PCB/被动元件/电子材料",
+      "path": "company_research_core_batch001/600601.html",
+      "bytes": 15008,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "300576",
+      "name": "容大感光",
+      "mainline": "PCB/被动元件/电子材料",
+      "path": "company_research_core_batch001/300576.html",
+      "bytes": 14909,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002189",
+      "name": "中光学",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/002189.html",
+      "bytes": 14755,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "300102",
+      "name": "乾照光电",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/300102.html",
+      "bytes": 15133,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "300323",
+      "name": "华灿光电",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/300323.html",
+      "bytes": 15170,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600522",
+      "name": "中天科技",
+      "mainline": "电力设备与电力运营",
+      "path": "company_research_core_batch001/600522.html",
+      "bytes": 14777,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002463",
+      "name": "沪电股份",
+      "mainline": "PCB/被动元件/电子材料",
+      "path": "company_research_core_batch001/002463.html",
+      "bytes": 14881,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600552",
+      "name": "凯盛科技",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/600552.html",
+      "bytes": 15127,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002475",
+      "name": "立讯精密",
+      "mainline": "PCB/被动元件/电子材料",
+      "path": "company_research_core_batch001/002475.html",
+      "bytes": 14901,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "603212",
+      "name": "赛伍技术",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/603212.html",
+      "bytes": 15013,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002138",
+      "name": "顺络电子",
+      "mainline": "PCB/被动元件/电子材料",
+      "path": "company_research_core_batch001/002138.html",
+      "bytes": 14833,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600869",
+      "name": "远东股份",
+      "mainline": "PCB/被动元件/电子材料",
+      "path": "company_research_core_batch001/600869.html",
+      "bytes": 14952,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002669",
+      "name": "康达新材",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/002669.html",
+      "bytes": 14961,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002409",
+      "name": "雅克科技",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/002409.html",
+      "bytes": 14891,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002741",
+      "name": "光华科技",
+      "mainline": "新能源车与储能",
+      "path": "company_research_core_batch001/002741.html",
+      "bytes": 15060,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "603688",
+      "name": "石英股份",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/603688.html",
+      "bytes": 14894,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600703",
+      "name": "三安光电",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/600703.html",
+      "bytes": 15377,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600460",
+      "name": "士兰微",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/600460.html",
+      "bytes": 15344,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600596",
+      "name": "新安股份",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/600596.html",
+      "bytes": 15479,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002023",
+      "name": "海特高新",
+      "mainline": "半导体与电子元器件",
+      "path": "company_research_core_batch001/002023.html",
+      "bytes": 15379,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600563",
+      "name": "法拉电子",
+      "mainline": "PCB/被动元件/电子材料",
+      "path": "company_research_core_batch001/600563.html",
+      "bytes": 15246,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002885",
+      "name": "京泉华",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/002885.html",
+      "bytes": 15047,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "001314",
+      "name": "亿道信息",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/001314.html",
+      "bytes": 15116,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "603118",
+      "name": "共进股份",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/603118.html",
+      "bytes": 15057,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "603083",
+      "name": "剑桥科技",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/603083.html",
+      "bytes": 15100,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "605118",
+      "name": "力鼎光电",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/605118.html",
+      "bytes": 15064,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600936",
+      "name": "北投科技",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/600936.html",
+      "bytes": 15094,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002151",
+      "name": "北斗星通",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/002151.html",
+      "bytes": 15095,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600435",
+      "name": "北方导航",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/600435.html",
+      "bytes": 15076,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "000536",
+      "name": "华映科技",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/000536.html",
+      "bytes": 15082,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "603186",
+      "name": "华正新材",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/603186.html",
+      "bytes": 15086,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "603042",
+      "name": "华脉科技",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/603042.html",
+      "bytes": 15089,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600775",
+      "name": "南京熊猫",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/600775.html",
+      "bytes": 15084,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "605376",
+      "name": "博迁新材",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/605376.html",
+      "bytes": 15069,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "603068",
+      "name": "博通集成",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/603068.html",
+      "bytes": 15048,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002383",
+      "name": "合众思壮",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/002383.html",
+      "bytes": 15073,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002402",
+      "name": "和而泰",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/002402.html",
+      "bytes": 15024,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600562",
+      "name": "国睿科技",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/600562.html",
+      "bytes": 15060,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600198",
+      "name": "大唐电信",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/600198.html",
+      "bytes": 15097,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "600288",
+      "name": "大恒科技",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/600288.html",
+      "bytes": 15101,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002077",
+      "name": "大港股份",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/002077.html",
+      "bytes": 15091,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "603025",
+      "name": "大豪科技",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/603025.html",
+      "bytes": 15058,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "603072",
+      "name": "天和磁材",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/603072.html",
+      "bytes": 15056,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002935",
+      "name": "天奥电子",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/002935.html",
+      "bytes": 15089,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002134",
+      "name": "天津普林",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/002134.html",
+      "bytes": 15093,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    },
+    {
+      "code": "002635",
+      "name": "安洁科技",
+      "mainline": "AI算力与数字基础设施",
+      "path": "company_research_core_batch001/002635.html",
+      "bytes": 15061,
+      "financePeriod": "2026Q1",
+      "issues": [],
+      "pass": true
+    }
+  ]
+}

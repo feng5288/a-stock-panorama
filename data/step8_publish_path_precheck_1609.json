@@ -1,0 +1,135 @@
+{
+  "generated_at": "2026-07-02",
+  "decision": "publish_path_precheck_ready",
+  "public_push_status": "not_pushed",
+  "planned_homepage": "index_1609_release_preview.html",
+  "current_public_homepage": "index.html",
+  "hard_fails": 0,
+  "warnings": 1,
+  "gates": [
+    {
+      "name": "第 7 步候选包通过",
+      "status": "pass",
+      "detail": "阻断 0，提醒 0"
+    },
+    {
+      "name": "候选首页存在",
+      "status": "pass",
+      "detail": "index_1609_release_preview.html 1253.2KB"
+    },
+    {
+      "name": "候选首页公开表达",
+      "status": "pass",
+      "detail": "未发现内部或交易化表达"
+    },
+    {
+      "name": "候选首页站内链接",
+      "status": "pass",
+      "detail": "1 个站内链接，缺失 0"
+    },
+    {
+      "name": "CPO 公开专题入口",
+      "status": "pass",
+      "detail": "入口文件与首页链接均存在"
+    },
+    {
+      "name": "会员专题文件保留",
+      "status": "pass",
+      "detail": "7 个专题文件存在"
+    },
+    {
+      "name": "会员专题发布边界",
+      "status": "warn",
+      "detail": "0/7 个会员专题在候选首页可见；如本轮只公开 CPO，推送前需要决定是否隐藏这些入口"
+    },
+    {
+      "name": "当前公开首页未被替换",
+      "status": "pass",
+      "detail": "index.html 仍存在，本步骤未覆盖正式首页"
+    }
+  ],
+  "topics": [
+    {
+      "slug": "cpo",
+      "title": "CPO",
+      "release": "public_ready",
+      "href": "topics/cpo/index.html",
+      "file": "topics/cpo/index.html",
+      "exists": true,
+      "linkedInPlannedHomepage": true,
+      "visibleTitleInPlannedHomepage": true
+    },
+    {
+      "slug": "pcb",
+      "title": "PCB",
+      "release": "member_later",
+      "href": "topics/pcb/index.html",
+      "file": "topics/pcb/index.html",
+      "exists": true,
+      "linkedInPlannedHomepage": false,
+      "visibleTitleInPlannedHomepage": false
+    },
+    {
+      "slug": "semiconductor-equipment",
+      "title": "半导体设备",
+      "release": "member_later",
+      "href": "topics/semiconductor-equipment/index.html",
+      "file": "topics/semiconductor-equipment/index.html",
+      "exists": true,
+      "linkedInPlannedHomepage": false,
+      "visibleTitleInPlannedHomepage": false
+    },
+    {
+      "slug": "semiconductor-materials",
+      "title": "半导体材料",
+      "release": "member_later",
+      "href": "topics/semiconductor-materials/index.html",
+      "file": "topics/semiconductor-materials/index.html",
+      "exists": true,
+      "linkedInPlannedHomepage": false,
+      "visibleTitleInPlannedHomepage": false
+    },
+    {
+      "slug": "mlcc-passive",
+      "title": "MLCC 被动元件",
+      "release": "member_later",
+      "href": "topics/mlcc-passive/index.html",
+      "file": "topics/mlcc-passive/index.html",
+      "exists": true,
+      "linkedInPlannedHomepage": false,
+      "visibleTitleInPlannedHomepage": false
+    },
+    {
+      "slug": "advanced-packaging-chiplet",
+      "title": "先进封装 Chiplet",
+      "release": "member_later",
+      "href": "topics/advanced-packaging-chiplet/index.html",
+      "file": "topics/advanced-packaging-chiplet/index.html",
+      "exists": true,
+      "linkedInPlannedHomepage": false,
+      "visibleTitleInPlannedHomepage": false
+    },
+    {
+      "slug": "ai-server-infrastructure",
+      "title": "AI 服务器 / 液冷 / 电源 / 连接器",
+      "release": "member_later",
+      "href": "topics/ai-server-infrastructure/index.html",
+      "file": "topics/ai-server-infrastructure/index.html",
+      "exists": true,
+      "linkedInPlannedHomepage": false,
+      "visibleTitleInPlannedHomepage": false
+    },
+    {
+      "slug": "power-grid",
+      "title": "电网 / 特高压",
+      "release": "member_later",
+      "href": "topics/power-grid/index.html",
+      "file": "topics/power-grid/index.html",
+      "exists": true,
+      "linkedInPlannedHomepage": false,
+      "visibleTitleInPlannedHomepage": false
+    }
+  ],
+  "boundary_note": "本步骤只做发布前路径确认，不覆盖 index.html，不推送独立站。",
+  "next_step": "下一步可做发布包差异清单：明确哪些文件进入公开站、哪些会员专题暂不公开，然后再决定是否推送。"
+}

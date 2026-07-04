@@ -1,0 +1,2355 @@
+{
+  "generated_at": "2026-07-02",
+  "rows": [
+    {
+      "code": "000695",
+      "name": "滨海能源",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "非金属矿物",
+        "钢铁/建材"
+      ],
+      "path": "company_research_rework_p2_batch11_15/000695.html",
+      "bytes": 10415,
+      "finance": {
+        "code": "000695",
+        "bs_code": "sz.000695",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000695",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.060063",
+          "npMargin": "-0.053524",
+          "gpMargin": "0.100362",
+          "netProfit": "-11251329.720000",
+          "epsTTM": "-0.383251",
+          "MBRevenue": "",
+          "totalShare": "231752139.00",
+          "liqaShare": "221811164.00"
+        },
+        "growth": {
+          "code": "sz.000695",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "1.034944",
+          "YOYAsset": "1.972067",
+          "YOYNI": "0.008374",
+          "YOYEPSBasic": "-0.021097",
+          "YOYPNI": "-0.064887"
+        },
+        "errors": [],
+        "net_profit_yi": -0.11,
+        "yoy_parent_net_income_pct": -6.49,
+        "gross_margin_pct": 10.04,
+        "net_margin_pct": -5.35
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603226",
+      "name": "菲林格尔",
+      "mainline": "消费与服务",
+      "tracks": [
+        "家居建材",
+        "地板家居",
+        "家居消费"
+      ],
+      "path": "company_research_rework_p2_batch11_15/603226.html",
+      "bytes": 10157,
+      "finance": {
+        "code": "603226",
+        "bs_code": "sh.603226",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603226",
+          "pubDate": "2026-04-23",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.016651",
+          "npMargin": "-0.601439",
+          "gpMargin": "0.061683",
+          "netProfit": "-17071164.740000",
+          "epsTTM": "-0.219946",
+          "MBRevenue": "",
+          "totalShare": "355491770.00",
+          "liqaShare": "355491770.00"
+        },
+        "growth": {
+          "code": "sh.603226",
+          "pubDate": "2026-04-23",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.084094",
+          "YOYAsset": "-0.123165",
+          "YOYNI": "0.106467",
+          "YOYEPSBasic": "0.000000",
+          "YOYPNI": "0.046469"
+        },
+        "errors": [],
+        "net_profit_yi": -0.17,
+        "yoy_parent_net_income_pct": 4.65,
+        "gross_margin_pct": 6.17,
+        "net_margin_pct": -60.14
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000630",
+      "name": "铜陵有色",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "工业金属",
+        "有色冶炼",
+        "金属矿产"
+      ],
+      "path": "company_research_rework_p2_batch11_15/000630.html",
+      "bytes": 10359,
+      "finance": {
+        "code": "000630",
+        "bs_code": "sz.000630",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000630",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.035947",
+          "npMargin": "0.030775",
+          "gpMargin": "0.075770",
+          "netProfit": "1990213348.640000",
+          "epsTTM": "0.196116",
+          "MBRevenue": "",
+          "totalShare": "13409471510.00",
+          "liqaShare": "11142989627.00"
+        },
+        "growth": {
+          "code": "sz.000630",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.075034",
+          "YOYAsset": "0.209042",
+          "YOYNI": "0.476387",
+          "YOYEPSBasic": "0.111111",
+          "YOYPNI": "0.191171"
+        },
+        "errors": [],
+        "net_profit_yi": 19.9,
+        "yoy_parent_net_income_pct": 19.12,
+        "gross_margin_pct": 7.58,
+        "net_margin_pct": 3.08
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002998",
+      "name": "优彩资源",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化学纤维",
+        "化纤 / 高分子"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002998.html",
+      "bytes": 10387,
+      "finance": {
+        "code": "002998",
+        "bs_code": "sz.002998",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002998",
+          "pubDate": "2026-04-13",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.017870",
+          "npMargin": "0.052361",
+          "gpMargin": "0.112534",
+          "netProfit": "32016112.460000",
+          "epsTTM": "0.193256",
+          "MBRevenue": "",
+          "totalShare": "354813752.00",
+          "liqaShare": "270490224.00"
+        },
+        "growth": {
+          "code": "sz.002998",
+          "pubDate": "2026-04-13",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.045793",
+          "YOYAsset": "0.003658",
+          "YOYNI": "1.065149",
+          "YOYEPSBasic": "0.800000",
+          "YOYPNI": "1.065149"
+        },
+        "errors": [],
+        "net_profit_yi": 0.32,
+        "yoy_parent_net_income_pct": 106.51,
+        "gross_margin_pct": 11.25,
+        "net_margin_pct": 5.24
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "001378",
+      "name": "德冠新材",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "橡胶/塑料",
+        "化纤 / 高分子"
+      ],
+      "path": "company_research_rework_p2_batch11_15/001378.html",
+      "bytes": 10369,
+      "finance": {
+        "code": "001378",
+        "bs_code": "sz.001378",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.001378",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.014943",
+          "npMargin": "0.067846",
+          "gpMargin": "0.156515",
+          "netProfit": "28180928.380000",
+          "epsTTM": "0.664887",
+          "MBRevenue": "",
+          "totalShare": "133333600.00",
+          "liqaShare": "64505766.00"
+        },
+        "growth": {
+          "code": "sz.001378",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.007950",
+          "YOYAsset": "0.038196",
+          "YOYNI": "0.274598",
+          "YOYEPSBasic": "0.275030",
+          "YOYPNI": "0.274598"
+        },
+        "errors": [],
+        "net_profit_yi": 0.28,
+        "yoy_parent_net_income_pct": 27.46,
+        "gross_margin_pct": 15.65,
+        "net_margin_pct": 6.78
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603041",
+      "name": "美思德",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/603041.html",
+      "bytes": 10357,
+      "finance": {
+        "code": "603041",
+        "bs_code": "sh.603041",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603041",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.009363",
+          "npMargin": "0.074728",
+          "gpMargin": "0.203953",
+          "netProfit": "14247574.700000",
+          "epsTTM": "0.321152",
+          "MBRevenue": "",
+          "totalShare": "183147692.00",
+          "liqaShare": "183147692.00"
+        },
+        "growth": {
+          "code": "sh.603041",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.020061",
+          "YOYAsset": "0.024405",
+          "YOYNI": "0.373229",
+          "YOYEPSBasic": "0.142857",
+          "YOYPNI": "0.177285"
+        },
+        "errors": [],
+        "net_profit_yi": 0.14,
+        "yoy_parent_net_income_pct": 17.73,
+        "gross_margin_pct": 20.4,
+        "net_margin_pct": 7.47
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002671",
+      "name": "龙泉股份",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "非金属矿物",
+        "钢铁/建材"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002671.html",
+      "bytes": 10445,
+      "finance": {
+        "code": "002671",
+        "bs_code": "sz.002671",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002671",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.004475",
+          "npMargin": "-0.029308",
+          "gpMargin": "0.216460",
+          "netProfit": "-5941056.020000",
+          "epsTTM": "0.097306",
+          "MBRevenue": "",
+          "totalShare": "563226346.00",
+          "liqaShare": "550932098.00"
+        },
+        "growth": {
+          "code": "sz.002671",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.000393",
+          "YOYAsset": "-0.046867",
+          "YOYNI": "0.589935",
+          "YOYEPSBasic": "0.488550",
+          "YOYPNI": "0.499371"
+        },
+        "errors": [],
+        "net_profit_yi": -0.06,
+        "yoy_parent_net_income_pct": 49.94,
+        "gross_margin_pct": 21.65,
+        "net_margin_pct": -2.93
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603172",
+      "name": "万丰股份",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/603172.html",
+      "bytes": 10366,
+      "finance": {
+        "code": "603172",
+        "bs_code": "sh.603172",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603172",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.012631",
+          "npMargin": "0.084200",
+          "gpMargin": "0.271539",
+          "netProfit": "14144109.640000",
+          "epsTTM": "0.388730",
+          "MBRevenue": "",
+          "totalShare": "133380000.00",
+          "liqaShare": "50080000.00"
+        },
+        "growth": {
+          "code": "sh.603172",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.037502",
+          "YOYAsset": "0.104392",
+          "YOYNI": "0.335572",
+          "YOYEPSBasic": "0.250000",
+          "YOYPNI": "0.346408"
+        },
+        "errors": [],
+        "net_profit_yi": 0.14,
+        "yoy_parent_net_income_pct": 34.64,
+        "gross_margin_pct": 27.15,
+        "net_margin_pct": 8.42
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "605033",
+      "name": "美邦股份",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/605033.html",
+      "bytes": 10367,
+      "finance": {
+        "code": "605033",
+        "bs_code": "sh.605033",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.605033",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.030422",
+          "npMargin": "0.105906",
+          "gpMargin": "0.367990",
+          "netProfit": "35620121.960000",
+          "epsTTM": "0.401867",
+          "MBRevenue": "",
+          "totalShare": "135200000.00",
+          "liqaShare": "135200000.00"
+        },
+        "growth": {
+          "code": "sh.605033",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.029493",
+          "YOYAsset": "0.074953",
+          "YOYNI": "0.189228",
+          "YOYEPSBasic": "0.181818",
+          "YOYPNI": "0.189228"
+        },
+        "errors": [],
+        "net_profit_yi": 0.36,
+        "yoy_parent_net_income_pct": 18.92,
+        "gross_margin_pct": 36.8,
+        "net_margin_pct": 10.59
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "001231",
+      "name": "农心科技",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/001231.html",
+      "bytes": 10363,
+      "finance": {
+        "code": "001231",
+        "bs_code": "sz.001231",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.001231",
+          "pubDate": "2026-04-27",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.019086",
+          "npMargin": "0.085451",
+          "gpMargin": "0.260217",
+          "netProfit": "17956428.940000",
+          "epsTTM": "0.676166",
+          "MBRevenue": "",
+          "totalShare": "99940000.00",
+          "liqaShare": "50841500.00"
+        },
+        "growth": {
+          "code": "sz.001231",
+          "pubDate": "2026-04-27",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.045065",
+          "YOYAsset": "0.046502",
+          "YOYNI": "0.066117",
+          "YOYEPSBasic": "0.052632",
+          "YOYPNI": "0.051277"
+        },
+        "errors": [],
+        "net_profit_yi": 0.18,
+        "yoy_parent_net_income_pct": 5.13,
+        "gross_margin_pct": 26.02,
+        "net_margin_pct": 8.55
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002748",
+      "name": "世龙实业",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002748.html",
+      "bytes": 10384,
+      "finance": {
+        "code": "002748",
+        "bs_code": "sz.002748",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002748",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.027302",
+          "npMargin": "0.070648",
+          "gpMargin": "0.167586",
+          "netProfit": "38489994.090000",
+          "epsTTM": "0.299676",
+          "MBRevenue": "",
+          "totalShare": "240000000.00",
+          "liqaShare": "240000000.00"
+        },
+        "growth": {
+          "code": "sz.002748",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.043409",
+          "YOYAsset": "0.189835",
+          "YOYNI": "0.592202",
+          "YOYEPSBasic": "0.592850",
+          "YOYPNI": "0.592202"
+        },
+        "errors": [],
+        "net_profit_yi": 0.38,
+        "yoy_parent_net_income_pct": 59.22,
+        "gross_margin_pct": 16.76,
+        "net_margin_pct": 7.06
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603332",
+      "name": "苏州龙杰",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化学纤维",
+        "化纤 / 高分子"
+      ],
+      "path": "company_research_rework_p2_batch11_15/603332.html",
+      "bytes": 10366,
+      "finance": {
+        "code": "603332",
+        "bs_code": "sh.603332",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603332",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.014749",
+          "npMargin": "0.057903",
+          "gpMargin": "0.114418",
+          "netProfit": "19336272.670000",
+          "epsTTM": "0.382965",
+          "MBRevenue": "",
+          "totalShare": "216347184.00",
+          "liqaShare": "216347184.00"
+        },
+        "growth": {
+          "code": "sh.603332",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.032289",
+          "YOYAsset": "0.029675",
+          "YOYNI": "0.474072",
+          "YOYEPSBasic": "0.500000",
+          "YOYPNI": "0.474072"
+        },
+        "errors": [],
+        "net_profit_yi": 0.19,
+        "yoy_parent_net_income_pct": 47.41,
+        "gross_margin_pct": 11.44,
+        "net_margin_pct": 5.79
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603980",
+      "name": "吉华集团",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/603980.html",
+      "bytes": 10387,
+      "finance": {
+        "code": "603980",
+        "bs_code": "sh.603980",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603980",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.004643",
+          "npMargin": "0.040198",
+          "gpMargin": "0.158448",
+          "netProfit": "16538865.670000",
+          "epsTTM": "0.137881",
+          "MBRevenue": "",
+          "totalShare": "676833360.00",
+          "liqaShare": "676833360.00"
+        },
+        "growth": {
+          "code": "sh.603980",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.011728",
+          "YOYAsset": "-0.002630",
+          "YOYNI": "1.754249",
+          "YOYEPSBasic": "1.900000",
+          "YOYPNI": "1.878949"
+        },
+        "errors": [],
+        "net_profit_yi": 0.17,
+        "yoy_parent_net_income_pct": 187.89,
+        "gross_margin_pct": 15.84,
+        "net_margin_pct": 4.02
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002802",
+      "name": "洪汇新材",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002802.html",
+      "bytes": 10367,
+      "finance": {
+        "code": "002802",
+        "bs_code": "sz.002802",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002802",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.019768",
+          "npMargin": "0.136572",
+          "gpMargin": "0.245125",
+          "netProfit": "12783934.930000",
+          "epsTTM": "0.235036",
+          "MBRevenue": "",
+          "totalShare": "181245890.00",
+          "liqaShare": "149683207.00"
+        },
+        "growth": {
+          "code": "sz.002802",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.023806",
+          "YOYAsset": "0.015243",
+          "YOYNI": "0.122927",
+          "YOYEPSBasic": "0.166667",
+          "YOYPNI": "0.122927"
+        },
+        "errors": [],
+        "net_profit_yi": 0.13,
+        "yoy_parent_net_income_pct": 12.29,
+        "gross_margin_pct": 24.51,
+        "net_margin_pct": 13.66
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600558",
+      "name": "大西洋",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "工业金属",
+        "金属制品",
+        "金属矿产"
+      ],
+      "path": "company_research_rework_p2_batch11_15/600558.html",
+      "bytes": 10348,
+      "finance": {
+        "code": "600558",
+        "bs_code": "sh.600558",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600558",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.022727",
+          "npMargin": "0.066042",
+          "gpMargin": "0.163853",
+          "netProfit": "65358776.950000",
+          "epsTTM": "0.219425",
+          "MBRevenue": "",
+          "totalShare": "897604831.00",
+          "liqaShare": "897604831.00"
+        },
+        "growth": {
+          "code": "sh.600558",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.029154",
+          "YOYAsset": "0.019227",
+          "YOYNI": "0.324712",
+          "YOYEPSBasic": "0.361842",
+          "YOYPNI": "0.360383"
+        },
+        "errors": [],
+        "net_profit_yi": 0.65,
+        "yoy_parent_net_income_pct": 36.04,
+        "gross_margin_pct": 16.39,
+        "net_margin_pct": 6.6
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600768",
+      "name": "宁波富邦",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "工业金属",
+        "有色冶炼",
+        "金属矿产"
+      ],
+      "path": "company_research_rework_p2_batch11_15/600768.html",
+      "bytes": 10379,
+      "finance": {
+        "code": "600768",
+        "bs_code": "sh.600768",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600768",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.063076",
+          "npMargin": "0.140371",
+          "gpMargin": "0.248055",
+          "netProfit": "56948402.580000",
+          "epsTTM": "0.609274",
+          "MBRevenue": "",
+          "totalShare": "133747200.00",
+          "liqaShare": "133747200.00"
+        },
+        "growth": {
+          "code": "sh.600768",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.195367",
+          "YOYAsset": "0.182258",
+          "YOYNI": "4.244276",
+          "YOYEPSBasic": "4.250000",
+          "YOYPNI": "4.504867"
+        },
+        "errors": [],
+        "net_profit_yi": 0.57,
+        "yoy_parent_net_income_pct": 450.49,
+        "gross_margin_pct": 24.81,
+        "net_margin_pct": 14.04
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002918",
+      "name": "蒙娜丽莎",
+      "mainline": "消费与服务",
+      "tracks": [
+        "家居建材",
+        "陶瓷瓷砖",
+        "家居消费"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002918.html",
+      "bytes": 10160,
+      "finance": {
+        "code": "002918",
+        "bs_code": "sz.002918",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002918",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.005501",
+          "npMargin": "-0.032365",
+          "gpMargin": "0.247946",
+          "netProfit": "-20519021.890000",
+          "epsTTM": "0.228921",
+          "MBRevenue": "",
+          "totalShare": "408806479.00",
+          "liqaShare": "214191530.00"
+        },
+        "growth": {
+          "code": "sz.002918",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.003612",
+          "YOYAsset": "-0.094044",
+          "YOYNI": "0.646793",
+          "YOYEPSBasic": "0.733333",
+          "YOYPNI": "0.694265"
+        },
+        "errors": [],
+        "net_profit_yi": -0.21,
+        "yoy_parent_net_income_pct": 69.43,
+        "gross_margin_pct": 24.79,
+        "net_margin_pct": -3.24
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002709",
+      "name": "天赐材料",
+      "mainline": "新能源车与储能",
+      "tracks": [
+        "电池材料",
+        "电解液",
+        "锂电材料"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002709.html",
+      "bytes": 10211,
+      "finance": {
+        "code": "002709",
+        "bs_code": "sz.002709",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002709",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.089589",
+          "npMargin": "0.246846",
+          "gpMargin": "0.386535",
+          "netProfit": "1647319537.140000",
+          "epsTTM": "1.406239",
+          "MBRevenue": "",
+          "totalShare": "2038561744.00",
+          "liqaShare": "1509011019.00"
+        },
+        "growth": {
+          "code": "sz.002709",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.450654",
+          "YOYAsset": "0.231579",
+          "YOYNI": "10.178115",
+          "YOYEPSBasic": "9.250000",
+          "YOYPNI": "10.057510"
+        },
+        "errors": [],
+        "net_profit_yi": 16.47,
+        "yoy_parent_net_income_pct": 1005.75,
+        "gross_margin_pct": 38.65,
+        "net_margin_pct": 24.68
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600160",
+      "name": "巨化股份",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/600160.html",
+      "bytes": 10370,
+      "finance": {
+        "code": "600160",
+        "bs_code": "sh.600160",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600160",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.055796",
+          "npMargin": "0.216181",
+          "gpMargin": "0.343878",
+          "netProfit": "1300931747.670000",
+          "epsTTM": "1.538071",
+          "MBRevenue": "",
+          "totalShare": "2699746081.00",
+          "liqaShare": "2699746081.00"
+        },
+        "growth": {
+          "code": "sh.600160",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.160967",
+          "YOYAsset": "0.348871",
+          "YOYNI": "0.459718",
+          "YOYEPSBasic": "0.456376",
+          "YOYPNI": "0.459262"
+        },
+        "errors": [],
+        "net_profit_yi": 13.01,
+        "yoy_parent_net_income_pct": 45.93,
+        "gross_margin_pct": 34.39,
+        "net_margin_pct": 21.62
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002676",
+      "name": "顺威股份",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "橡胶/塑料",
+        "化纤 / 高分子"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002676.html",
+      "bytes": 10369,
+      "finance": {
+        "code": "002676",
+        "bs_code": "sz.002676",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002676",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.019665",
+          "npMargin": "0.035515",
+          "gpMargin": "0.196817",
+          "netProfit": "26768012.900000",
+          "epsTTM": "0.115043",
+          "MBRevenue": "",
+          "totalShare": "720000000.00",
+          "liqaShare": "719976459.00"
+        },
+        "growth": {
+          "code": "sz.002676",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.066806",
+          "YOYAsset": "0.034654",
+          "YOYNI": "0.082948",
+          "YOYEPSBasic": "0.133540",
+          "YOYPNI": "0.134193"
+        },
+        "errors": [],
+        "net_profit_yi": 0.27,
+        "yoy_parent_net_income_pct": 13.42,
+        "gross_margin_pct": 19.68,
+        "net_margin_pct": 3.55
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002054",
+      "name": "德美化工",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002054.html",
+      "bytes": 10366,
+      "finance": {
+        "code": "002054",
+        "bs_code": "sz.002054",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002054",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.018207",
+          "npMargin": "0.068218",
+          "gpMargin": "0.352532",
+          "netProfit": "58135230.360000",
+          "epsTTM": "0.277114",
+          "MBRevenue": "",
+          "totalShare": "482115452.00",
+          "liqaShare": "384012328.00"
+        },
+        "growth": {
+          "code": "sz.002054",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.052683",
+          "YOYAsset": "-0.002439",
+          "YOYNI": "0.787476",
+          "YOYEPSBasic": "0.455357",
+          "YOYPNI": "0.486108"
+        },
+        "errors": [],
+        "net_profit_yi": 0.58,
+        "yoy_parent_net_income_pct": 48.61,
+        "gross_margin_pct": 35.25,
+        "net_margin_pct": 6.82
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "601218",
+      "name": "吉鑫科技",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "工业金属",
+        "金属制品",
+        "金属矿产"
+      ],
+      "path": "company_research_rework_p2_batch11_15/601218.html",
+      "bytes": 10376,
+      "finance": {
+        "code": "601218",
+        "bs_code": "sh.601218",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.601218",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.021742",
+          "npMargin": "0.137790",
+          "gpMargin": "0.186667",
+          "netProfit": "65208937.580000",
+          "epsTTM": "0.163406",
+          "MBRevenue": "",
+          "totalShare": "969033512.00",
+          "liqaShare": "969033512.00"
+        },
+        "growth": {
+          "code": "sh.601218",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.050998",
+          "YOYAsset": "0.146998",
+          "YOYNI": "0.552157",
+          "YOYEPSBasic": "0.550691",
+          "YOYPNI": "0.552160"
+        },
+        "errors": [],
+        "net_profit_yi": 0.65,
+        "yoy_parent_net_income_pct": 55.22,
+        "gross_margin_pct": 18.67,
+        "net_margin_pct": 13.78
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "605268",
+      "name": "王力安防",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "工业金属",
+        "金属制品",
+        "金属矿产"
+      ],
+      "path": "company_research_rework_p2_batch11_15/605268.html",
+      "bytes": 10357,
+      "finance": {
+        "code": "605268",
+        "bs_code": "sh.605268",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.605268",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.016859",
+          "npMargin": "0.052552",
+          "gpMargin": "0.251366",
+          "netProfit": "28272349.160000",
+          "epsTTM": "0.292890",
+          "MBRevenue": "",
+          "totalShare": "446302500.00",
+          "liqaShare": "440492500.00"
+        },
+        "growth": {
+          "code": "sh.605268",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.038767",
+          "YOYAsset": "-0.026027",
+          "YOYNI": "0.217527",
+          "YOYEPSBasic": "0.400000",
+          "YOYPNI": "0.211564"
+        },
+        "errors": [],
+        "net_profit_yi": 0.28,
+        "yoy_parent_net_income_pct": 21.16,
+        "gross_margin_pct": 25.14,
+        "net_margin_pct": 5.26
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "001368",
+      "name": "通达创智",
+      "mainline": "消费与服务",
+      "tracks": [
+        "运动户外",
+        "消费品制造",
+        "品牌代工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/001368.html",
+      "bytes": 10085,
+      "finance": {
+        "code": "001368",
+        "bs_code": "sz.001368",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.001368",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.023046",
+          "npMargin": "0.104353",
+          "gpMargin": "0.266357",
+          "netProfit": "32274741.310000",
+          "epsTTM": "0.899219",
+          "MBRevenue": "",
+          "totalShare": "113836944.00",
+          "liqaShare": "32611099.00"
+        },
+        "growth": {
+          "code": "sz.001368",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.018806",
+          "YOYAsset": "0.038233",
+          "YOYNI": "0.146335",
+          "YOYEPSBasic": "0.160000",
+          "YOYPNI": "0.146335"
+        },
+        "errors": [],
+        "net_profit_yi": 0.32,
+        "yoy_parent_net_income_pct": 14.63,
+        "gross_margin_pct": 26.64,
+        "net_margin_pct": 10.44
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002722",
+      "name": "物产金轮",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "工业金属",
+        "金属制品",
+        "金属矿产"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002722.html",
+      "bytes": 10357,
+      "finance": {
+        "code": "002722",
+        "bs_code": "sz.002722",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002722",
+          "pubDate": "2026-04-21",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.013894",
+          "npMargin": "0.066777",
+          "gpMargin": "0.200949",
+          "netProfit": "41238490.470000",
+          "epsTTM": "0.725985",
+          "MBRevenue": "",
+          "totalShare": "222372010.00",
+          "liqaShare": "222357010.00"
+        },
+        "growth": {
+          "code": "sz.002722",
+          "pubDate": "2026-04-21",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.122739",
+          "YOYAsset": "0.091040",
+          "YOYNI": "0.292070",
+          "YOYEPSBasic": "0.266667",
+          "YOYPNI": "0.291908"
+        },
+        "errors": [],
+        "net_profit_yi": 0.41,
+        "yoy_parent_net_income_pct": 29.19,
+        "gross_margin_pct": 20.09,
+        "net_margin_pct": 6.68
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "003017",
+      "name": "大洋生物",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/003017.html",
+      "bytes": 10364,
+      "finance": {
+        "code": "003017",
+        "bs_code": "sz.003017",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.003017",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.026859",
+          "npMargin": "0.111114",
+          "gpMargin": "0.234590",
+          "netProfit": "30903872.250000",
+          "epsTTM": "1.206928",
+          "MBRevenue": "",
+          "totalShare": "84000000.00",
+          "liqaShare": "69287988.00"
+        },
+        "growth": {
+          "code": "sz.003017",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.080971",
+          "YOYAsset": "0.135374",
+          "YOYNI": "0.053699",
+          "YOYEPSBasic": "0.055556",
+          "YOYPNI": "0.052059"
+        },
+        "errors": [],
+        "net_profit_yi": 0.31,
+        "yoy_parent_net_income_pct": 5.21,
+        "gross_margin_pct": 23.46,
+        "net_margin_pct": 11.11
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603086",
+      "name": "先达股份",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/603086.html",
+      "bytes": 10363,
+      "finance": {
+        "code": "603086",
+        "bs_code": "sh.603086",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603086",
+          "pubDate": "2026-04-22",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.010404",
+          "npMargin": "0.034039",
+          "gpMargin": "0.180354",
+          "netProfit": "21600680.570000",
+          "epsTTM": "0.315091",
+          "MBRevenue": "",
+          "totalShare": "434813143.00",
+          "liqaShare": "434813143.00"
+        },
+        "growth": {
+          "code": "sh.603086",
+          "pubDate": "2026-04-22",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.066761",
+          "YOYAsset": "0.054806",
+          "YOYNI": "0.015733",
+          "YOYEPSBasic": "0.000000",
+          "YOYPNI": "0.012655"
+        },
+        "errors": [],
+        "net_profit_yi": 0.22,
+        "yoy_parent_net_income_pct": 1.27,
+        "gross_margin_pct": 18.04,
+        "net_margin_pct": 3.4
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002942",
+      "name": "新农股份",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002942.html",
+      "bytes": 10367,
+      "finance": {
+        "code": "002942",
+        "bs_code": "sz.002942",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002942",
+          "pubDate": "2026-04-22",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.036917",
+          "npMargin": "0.134503",
+          "gpMargin": "0.325644",
+          "netProfit": "46109195.310000",
+          "epsTTM": "0.640305",
+          "MBRevenue": "",
+          "totalShare": "155857930.00",
+          "liqaShare": "137208793.00"
+        },
+        "growth": {
+          "code": "sz.002942",
+          "pubDate": "2026-04-22",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.053725",
+          "YOYAsset": "0.064777",
+          "YOYNI": "0.105222",
+          "YOYEPSBasic": "0.111111",
+          "YOYPNI": "0.105222"
+        },
+        "errors": [],
+        "net_profit_yi": 0.46,
+        "yoy_parent_net_income_pct": 10.52,
+        "gross_margin_pct": 32.56,
+        "net_margin_pct": 13.45
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600724",
+      "name": "宁波富达",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "非金属矿物",
+        "钢铁/建材"
+      ],
+      "path": "company_research_rework_p2_batch11_15/600724.html",
+      "bytes": 10358,
+      "finance": {
+        "code": "600724",
+        "bs_code": "sh.600724",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600724",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.021092",
+          "npMargin": "0.178509",
+          "gpMargin": "0.367662",
+          "netProfit": "53403043.290000",
+          "epsTTM": "0.128318",
+          "MBRevenue": "",
+          "totalShare": "1445241071.00",
+          "liqaShare": "1444942664.00"
+        },
+        "growth": {
+          "code": "sh.600724",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.039886",
+          "YOYAsset": "-0.051045",
+          "YOYNI": "0.018615",
+          "YOYEPSBasic": "0.034913",
+          "YOYPNI": "0.036102"
+        },
+        "errors": [],
+        "net_profit_yi": 0.53,
+        "yoy_parent_net_income_pct": 3.61,
+        "gross_margin_pct": 36.77,
+        "net_margin_pct": 17.85
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600315",
+      "name": "上海家化",
+      "mainline": "消费与服务",
+      "tracks": [
+        "个护家清",
+        "日化消费",
+        "品牌消费"
+      ],
+      "path": "company_research_rework_p2_batch11_15/600315.html",
+      "bytes": 10073,
+      "finance": {
+        "code": "600315",
+        "bs_code": "sh.600315",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600315",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.031806",
+          "npMargin": "0.123735",
+          "gpMargin": "0.658452",
+          "netProfit": "222134304.080000",
+          "epsTTM": "0.405490",
+          "MBRevenue": "",
+          "totalShare": "672225980.00",
+          "liqaShare": "672225980.00"
+        },
+        "growth": {
+          "code": "sh.600315",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.032181",
+          "YOYAsset": "0.019742",
+          "YOYNI": "0.023027",
+          "YOYEPSBasic": "0.031250",
+          "YOYPNI": "0.023027"
+        },
+        "errors": [],
+        "net_profit_yi": 2.22,
+        "yoy_parent_net_income_pct": 2.3,
+        "gross_margin_pct": 65.85,
+        "net_margin_pct": 12.37
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002760",
+      "name": "凤形股份",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "工业金属",
+        "金属制品",
+        "金属矿产"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002760.html",
+      "bytes": 10378,
+      "finance": {
+        "code": "002760",
+        "bs_code": "sz.002760",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002760",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.007989",
+          "npMargin": "0.045049",
+          "gpMargin": "0.195712",
+          "netProfit": "6661654.650000",
+          "epsTTM": "0.220258",
+          "MBRevenue": "",
+          "totalShare": "107988706.00",
+          "liqaShare": "107988706.00"
+        },
+        "growth": {
+          "code": "sz.002760",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.029948",
+          "YOYAsset": "0.039598",
+          "YOYNI": "1.186046",
+          "YOYEPSBasic": "1.000000",
+          "YOYPNI": "1.186046"
+        },
+        "errors": [],
+        "net_profit_yi": 0.07,
+        "yoy_parent_net_income_pct": 118.6,
+        "gross_margin_pct": 19.57,
+        "net_margin_pct": 4.5
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600028",
+      "name": "中国石化",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "能源资源",
+        "石化资源",
+        "基础材料"
+      ],
+      "path": "company_research_rework_p2_batch11_15/600028.html",
+      "bytes": 10363,
+      "finance": {
+        "code": "600028",
+        "bs_code": "sh.600028",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600028",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.020447",
+          "npMargin": "0.027755",
+          "gpMargin": "0.198889",
+          "netProfit": "19614000000.000000",
+          "epsTTM": "0.293991",
+          "MBRevenue": "",
+          "totalShare": "120925514222.00",
+          "liqaShare": "94752475375.00"
+        },
+        "growth": {
+          "code": "sh.600028",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.002010",
+          "YOYAsset": "0.062582",
+          "YOYNI": "0.352130",
+          "YOYEPSBasic": "0.293578",
+          "YOYPNI": "0.282117"
+        },
+        "errors": [],
+        "net_profit_yi": 196.14,
+        "yoy_parent_net_income_pct": 28.21,
+        "gross_margin_pct": 19.89,
+        "net_margin_pct": 2.78
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "001358",
+      "name": "兴欣新材",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/001358.html",
+      "bytes": 10367,
+      "finance": {
+        "code": "001358",
+        "bs_code": "sz.001358",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.001358",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.014890",
+          "npMargin": "0.176183",
+          "gpMargin": "0.335075",
+          "netProfit": "20551215.560000",
+          "epsTTM": "0.424798",
+          "MBRevenue": "",
+          "totalShare": "123200000.00",
+          "liqaShare": "49696477.00"
+        },
+        "growth": {
+          "code": "sz.001358",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.001562",
+          "YOYAsset": "0.027581",
+          "YOYNI": "0.227686",
+          "YOYEPSBasic": "0.214286",
+          "YOYPNI": "0.229811"
+        },
+        "errors": [],
+        "net_profit_yi": 0.21,
+        "yoy_parent_net_income_pct": 22.98,
+        "gross_margin_pct": 33.51,
+        "net_margin_pct": 17.62
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603120",
+      "name": "肯特催化",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/603120.html",
+      "bytes": 10367,
+      "finance": {
+        "code": "603120",
+        "bs_code": "sh.603120",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603120",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.016385",
+          "npMargin": "0.117709",
+          "gpMargin": "0.255670",
+          "netProfit": "19363896.010000",
+          "epsTTM": "0.931886",
+          "MBRevenue": "",
+          "totalShare": "90400000.00",
+          "liqaShare": "22600000.00"
+        },
+        "growth": {
+          "code": "sh.603120",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.358986",
+          "YOYAsset": "0.327695",
+          "YOYNI": "0.103033",
+          "YOYEPSBasic": "-0.192308",
+          "YOYPNI": "0.103033"
+        },
+        "errors": [],
+        "net_profit_yi": 0.19,
+        "yoy_parent_net_income_pct": 10.3,
+        "gross_margin_pct": 25.57,
+        "net_margin_pct": 11.77
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "001218",
+      "name": "丽臣实业",
+      "mainline": "消费与服务",
+      "tracks": [
+        "日化代工",
+        "表面活性剂",
+        "消费品供应链"
+      ],
+      "path": "company_research_rework_p2_batch11_15/001218.html",
+      "bytes": 10123,
+      "finance": {
+        "code": "001218",
+        "bs_code": "sz.001218",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.001218",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.032412",
+          "npMargin": "0.054716",
+          "gpMargin": "0.130380",
+          "netProfit": "77178912.890000",
+          "epsTTM": "1.620905",
+          "MBRevenue": "",
+          "totalShare": "130178260.00",
+          "liqaShare": "118061170.00"
+        },
+        "growth": {
+          "code": "sz.001218",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.081589",
+          "YOYAsset": "0.110249",
+          "YOYNI": "1.790621",
+          "YOYEPSBasic": "1.857143",
+          "YOYPNI": "1.790621"
+        },
+        "errors": [],
+        "net_profit_yi": 0.77,
+        "yoy_parent_net_income_pct": 179.06,
+        "gross_margin_pct": 13.04,
+        "net_margin_pct": 5.47
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "001325",
+      "name": "元创股份",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "橡胶/塑料",
+        "化纤 / 高分子"
+      ],
+      "path": "company_research_rework_p2_batch11_15/001325.html",
+      "bytes": 10366,
+      "finance": {
+        "code": "001325",
+        "bs_code": "sz.001325",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.001325",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.014126",
+          "npMargin": "0.081773",
+          "gpMargin": "0.207665",
+          "netProfit": "25574072.400000",
+          "epsTTM": "2.016802",
+          "MBRevenue": "",
+          "totalShare": "78400000.00",
+          "liqaShare": "19600000.00"
+        },
+        "growth": {
+          "code": "sz.001325",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "",
+          "YOYAsset": "",
+          "YOYNI": "0.012712",
+          "YOYEPSBasic": "-0.232558",
+          "YOYPNI": "0.012712"
+        },
+        "errors": [],
+        "net_profit_yi": 0.26,
+        "yoy_parent_net_income_pct": 1.27,
+        "gross_margin_pct": 20.77,
+        "net_margin_pct": 8.18
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603193",
+      "name": "润本股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "个护家清",
+        "驱蚊护理",
+        "品牌消费"
+      ],
+      "path": "company_research_rework_p2_batch11_15/603193.html",
+      "bytes": 10076,
+      "finance": {
+        "code": "603193",
+        "bs_code": "sh.603193",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603193",
+          "pubDate": "2026-04-23",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.023422",
+          "npMargin": "0.197068",
+          "gpMargin": "0.590965",
+          "netProfit": "52635434.580000",
+          "epsTTM": "0.798183",
+          "MBRevenue": "",
+          "totalShare": "404593314.00",
+          "liqaShare": "103336314.00"
+        },
+        "growth": {
+          "code": "sh.603193",
+          "pubDate": "2026-04-23",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.070112",
+          "YOYAsset": "0.056594",
+          "YOYNI": "0.190918",
+          "YOYEPSBasic": "0.181818",
+          "YOYPNI": "0.190918"
+        },
+        "errors": [],
+        "net_profit_yi": 0.53,
+        "yoy_parent_net_income_pct": 19.09,
+        "gross_margin_pct": 59.1,
+        "net_margin_pct": 19.71
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600727",
+      "name": "鲁北化工",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化工新材料",
+        "新材料化工"
+      ],
+      "path": "company_research_rework_p2_batch11_15/600727.html",
+      "bytes": 10384,
+      "finance": {
+        "code": "600727",
+        "bs_code": "sh.600727",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600727",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.017533",
+          "npMargin": "0.045690",
+          "gpMargin": "0.115525",
+          "netProfit": "63585758.190000",
+          "epsTTM": "0.111280",
+          "MBRevenue": "",
+          "totalShare": "528583135.00",
+          "liqaShare": "528583135.00"
+        },
+        "growth": {
+          "code": "sh.600727",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.019030",
+          "YOYAsset": "0.055639",
+          "YOYNI": "0.085568",
+          "YOYEPSBasic": "0.571429",
+          "YOYPNI": "0.570719"
+        },
+        "errors": [],
+        "net_profit_yi": 0.64,
+        "yoy_parent_net_income_pct": 57.07,
+        "gross_margin_pct": 11.55,
+        "net_margin_pct": 4.57
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002379",
+      "name": "宏桥控股",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "工业金属",
+        "有色冶炼",
+        "金属矿产"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002379.html",
+      "bytes": 10361,
+      "finance": {
+        "code": "002379",
+        "bs_code": "sz.002379",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002379",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.138129",
+          "npMargin": "0.165062",
+          "gpMargin": "0.240302",
+          "netProfit": "6756438857.040000",
+          "epsTTM": "1.512434",
+          "MBRevenue": "",
+          "totalShare": "13031118202.00",
+          "liqaShare": "1136373753.00"
+        },
+        "growth": {
+          "code": "sz.002379",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "26.455842",
+          "YOYAsset": "34.762443",
+          "YOYNI": "0.309704",
+          "YOYEPSBasic": "0.375597",
+          "YOYPNI": "0.375598"
+        },
+        "errors": [],
+        "net_profit_yi": 67.56,
+        "yoy_parent_net_income_pct": 37.56,
+        "gross_margin_pct": 24.03,
+        "net_margin_pct": 16.51
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000790",
+      "name": "华神科技",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch11_15/000790.html",
+      "bytes": 10366,
+      "finance": {
+        "code": "000790",
+        "bs_code": "sz.000790",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000790",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.003371",
+          "npMargin": "0.008376",
+          "gpMargin": "0.426083",
+          "netProfit": "915248.190000",
+          "epsTTM": "-0.486448",
+          "MBRevenue": "",
+          "totalShare": "623719364.00",
+          "liqaShare": "622614614.00"
+        },
+        "growth": {
+          "code": "sz.000790",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.289844",
+          "YOYAsset": "-0.347512",
+          "YOYNI": "1.063116",
+          "YOYEPSBasic": "1.166667",
+          "YOYPNI": "1.165649"
+        },
+        "errors": [],
+        "net_profit_yi": 0.01,
+        "yoy_parent_net_income_pct": 116.56,
+        "gross_margin_pct": 42.61,
+        "net_margin_pct": 0.84
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000590",
+      "name": "古汉医药",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch11_15/000590.html",
+      "bytes": 10430,
+      "finance": {
+        "code": "000590",
+        "bs_code": "sz.000590",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000590",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.012520",
+          "npMargin": "-0.094993",
+          "gpMargin": "0.428115",
+          "netProfit": "-6807935.660000",
+          "epsTTM": "-0.171520",
+          "MBRevenue": "",
+          "totalShare": "239471267.00",
+          "liqaShare": "239358527.00"
+        },
+        "growth": {
+          "code": "sz.000590",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.070776",
+          "YOYAsset": "-0.143216",
+          "YOYNI": "0.581340",
+          "YOYEPSBasic": "0.580265",
+          "YOYPNI": "0.580865"
+        },
+        "errors": [],
+        "net_profit_yi": -0.07,
+        "yoy_parent_net_income_pct": 58.09,
+        "gross_margin_pct": 42.81,
+        "net_margin_pct": -9.5
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000952",
+      "name": "广济药业",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch11_15/000952.html",
+      "bytes": 10431,
+      "finance": {
+        "code": "000952",
+        "bs_code": "sz.000952",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000952",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.049546",
+          "npMargin": "-0.207287",
+          "gpMargin": "0.224405",
+          "netProfit": "-33807248.660000",
+          "epsTTM": "-1.153198",
+          "MBRevenue": "",
+          "totalShare": "346750339.00",
+          "liqaShare": "343994035.00"
+        },
+        "growth": {
+          "code": "sz.000952",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.393929",
+          "YOYAsset": "-0.207004",
+          "YOYNI": "0.158599",
+          "YOYEPSBasic": "0.119576",
+          "YOYPNI": "0.127462"
+        },
+        "errors": [],
+        "net_profit_yi": -0.34,
+        "yoy_parent_net_income_pct": 12.75,
+        "gross_margin_pct": 22.44,
+        "net_margin_pct": -20.73
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002022",
+      "name": "科华生物",
+      "mainline": "医药健康",
+      "tracks": [
+        "体外诊断",
+        "医疗器械",
+        "生物试剂"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002022.html",
+      "bytes": 10149,
+      "finance": {
+        "code": "002022",
+        "bs_code": "sz.002022",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002022",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.018578",
+          "npMargin": "-0.109850",
+          "gpMargin": "0.368072",
+          "netProfit": "-43401483.610000",
+          "epsTTM": "-1.414079",
+          "MBRevenue": "",
+          "totalShare": "514350669.00",
+          "liqaShare": "514277544.00"
+        },
+        "growth": {
+          "code": "sz.002022",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.220798",
+          "YOYAsset": "-0.124907",
+          "YOYNI": "0.192463",
+          "YOYEPSBasic": "0.090734",
+          "YOYPNI": "0.090284"
+        },
+        "errors": [],
+        "net_profit_yi": -0.43,
+        "yoy_parent_net_income_pct": 9.03,
+        "gross_margin_pct": 36.81,
+        "net_margin_pct": -10.98
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002900",
+      "name": "哈三联",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002900.html",
+      "bytes": 10421,
+      "finance": {
+        "code": "002900",
+        "bs_code": "sz.002900",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002900",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.003988",
+          "npMargin": "-0.033800",
+          "gpMargin": "0.408790",
+          "netProfit": "-7734708.910000",
+          "epsTTM": "-1.004686",
+          "MBRevenue": "",
+          "totalShare": "316354550.00",
+          "liqaShare": "161122400.00"
+        },
+        "growth": {
+          "code": "sz.002900",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.171868",
+          "YOYAsset": "-0.106741",
+          "YOYNI": "0.740406",
+          "YOYEPSBasic": "0.777778",
+          "YOYPNI": "0.755357"
+        },
+        "errors": [],
+        "net_profit_yi": -0.08,
+        "yoy_parent_net_income_pct": 75.54,
+        "gross_margin_pct": 40.88,
+        "net_margin_pct": -3.38
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002793",
+      "name": "罗欣药业",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002793.html",
+      "bytes": 10366,
+      "finance": {
+        "code": "002793",
+        "bs_code": "sz.002793",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002793",
+          "pubDate": "2026-04-23",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.021336",
+          "npMargin": "0.049758",
+          "gpMargin": "0.610093",
+          "netProfit": "28995465.620000",
+          "epsTTM": "-0.248330",
+          "MBRevenue": "",
+          "totalShare": "1087588486.00",
+          "liqaShare": "1085933619.00"
+        },
+        "growth": {
+          "code": "sz.002793",
+          "pubDate": "2026-04-23",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.211574",
+          "YOYAsset": "-0.126419",
+          "YOYNI": "12.505693",
+          "YOYEPSBasic": "3.264151",
+          "YOYPNI": "3.273480"
+        },
+        "errors": [],
+        "net_profit_yi": 0.29,
+        "yoy_parent_net_income_pct": 327.35,
+        "gross_margin_pct": 61.01,
+        "net_margin_pct": 4.98
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002923",
+      "name": "润都股份",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002923.html",
+      "bytes": 10366,
+      "finance": {
+        "code": "002923",
+        "bs_code": "sz.002923",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002923",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.014915",
+          "npMargin": "0.044747",
+          "gpMargin": "0.471406",
+          "netProfit": "15603820.990000",
+          "epsTTM": "-0.148514",
+          "MBRevenue": "",
+          "totalShare": "334893286.00",
+          "liqaShare": "258084833.00"
+        },
+        "growth": {
+          "code": "sz.002923",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.086634",
+          "YOYAsset": "-0.094261",
+          "YOYNI": "7.352459",
+          "YOYEPSBasic": "4.000000",
+          "YOYPNI": "7.352459"
+        },
+        "errors": [],
+        "net_profit_yi": 0.16,
+        "yoy_parent_net_income_pct": 735.25,
+        "gross_margin_pct": 47.14,
+        "net_margin_pct": 4.47
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603139",
+      "name": "康惠股份",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch11_15/603139.html",
+      "bytes": 10367,
+      "finance": {
+        "code": "603139",
+        "bs_code": "sh.603139",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603139",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.039001",
+          "npMargin": "0.234246",
+          "gpMargin": "0.339350",
+          "netProfit": "21868297.400000",
+          "epsTTM": "-2.956878",
+          "MBRevenue": "",
+          "totalShare": "99880000.00",
+          "liqaShare": "99880000.00"
+        },
+        "growth": {
+          "code": "sh.603139",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.350301",
+          "YOYAsset": "-0.110916",
+          "YOYNI": "1.796480",
+          "YOYEPSBasic": "2.235294",
+          "YOYPNI": "2.211172"
+        },
+        "errors": [],
+        "net_profit_yi": 0.22,
+        "yoy_parent_net_income_pct": 221.12,
+        "gross_margin_pct": 33.93,
+        "net_margin_pct": 23.42
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603669",
+      "name": "灵康药业",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch11_15/603669.html",
+      "bytes": 10366,
+      "finance": {
+        "code": "603669",
+        "bs_code": "sh.603669",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603669",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.004754",
+          "npMargin": "0.034158",
+          "gpMargin": "0.288461",
+          "netProfit": "2955905.520000",
+          "epsTTM": "-0.238008",
+          "MBRevenue": "",
+          "totalShare": "721246136.00",
+          "liqaShare": "721246136.00"
+        },
+        "growth": {
+          "code": "sh.603669",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.170282",
+          "YOYAsset": "-0.089131",
+          "YOYNI": "1.158738",
+          "YOYEPSBasic": "1.158915",
+          "YOYPNI": "1.158738"
+        },
+        "errors": [],
+        "net_profit_yi": 0.03,
+        "yoy_parent_net_income_pct": 115.87,
+        "gross_margin_pct": 28.85,
+        "net_margin_pct": 3.42
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002868",
+      "name": "绿康生化",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002868.html",
+      "bytes": 10366,
+      "finance": {
+        "code": "002868",
+        "bs_code": "sz.002868",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002868",
+          "pubDate": "2026-04-15",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.092078",
+          "npMargin": "0.046400",
+          "gpMargin": "0.270145",
+          "netProfit": "5952691.370000",
+          "epsTTM": "-0.667540",
+          "MBRevenue": "",
+          "totalShare": "155415837.00",
+          "liqaShare": "107002504.00"
+        },
+        "growth": {
+          "code": "sz.002868",
+          "pubDate": "2026-04-15",
+          "statDate": "2026-03-31",
+          "YOYEquity": "2.253913",
+          "YOYAsset": "-0.464461",
+          "YOYNI": "1.203068",
+          "YOYEPSBasic": "1.210526",
+          "YOYPNI": "1.207733"
+        },
+        "errors": [],
+        "net_profit_yi": 0.06,
+        "yoy_parent_net_income_pct": 120.77,
+        "gross_margin_pct": 27.01,
+        "net_margin_pct": 4.64
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002370",
+      "name": "亚太药业",
+      "mainline": "医药健康",
+      "tracks": [
+        "药品制造",
+        "药品/制剂",
+        "创新药/生物药"
+      ],
+      "path": "company_research_rework_p2_batch11_15/002370.html",
+      "bytes": 10430,
+      "finance": {
+        "code": "002370",
+        "bs_code": "sz.002370",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002370",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.002312",
+          "npMargin": "-0.043432",
+          "gpMargin": "0.355461",
+          "netProfit": "-2587529.710000",
+          "epsTTM": "0.136151",
+          "MBRevenue": "",
+          "totalShare": "745667530.00",
+          "liqaShare": "745667530.00"
+        },
+        "growth": {
+          "code": "sz.002370",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.120098",
+          "YOYAsset": "-0.144453",
+          "YOYNI": "0.668402",
+          "YOYEPSBasic": "0.666667",
+          "YOYPNI": "0.668402"
+        },
+        "errors": [],
+        "net_profit_yi": -0.03,
+        "yoy_parent_net_income_pct": 66.84,
+        "gross_margin_pct": 35.55,
+        "net_margin_pct": -4.34
+      },
+      "forbidden_hits": [],
+      "pass": true
+    }
+  ]
+}

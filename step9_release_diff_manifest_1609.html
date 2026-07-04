@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>发布包差异清单</title>
+  <style>
+    :root{color-scheme:dark;--bg:#070b16;--panel:#111a2e;--line:rgba(148,163,184,.22);--text:#edf4ff;--muted:#9fb0c7;--gold:#f7bf54;--green:#67e8a2;--red:#ff8f8f;--amber:#ffd27a}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 16% 0%,#1c2a49 0,#070b16 34%,#050812 100%);color:var(--text);font-family:"Microsoft YaHei",Arial,sans-serif}.wrap{max-width:1200px;margin:0 auto;padding:28px 22px 64px}.top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.eyebrow{color:var(--gold);font-weight:900;font-size:13px}.title{font-size:32px;font-weight:900;margin:8px 0}.muted{color:var(--muted)}.panel{background:linear-gradient(180deg,rgba(17,26,46,.96),rgba(13,21,39,.96));border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:18px}.decision{min-width:260px}.decision strong{display:block;font-size:20px;color:var(--green)}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.card{background:rgba(15,23,42,.72);border:1px solid rgba(148,163,184,.18);border-radius:12px;padding:15px}.card b{display:block;color:var(--muted);font-size:12px}.card span{font-size:22px;font-weight:900}table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid rgba(148,163,184,.16);text-align:left;font-size:14px;vertical-align:top}th{color:var(--gold);font-size:13px}.badge{display:inline-flex;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:900}.pass{background:rgba(103,232,162,.14);color:var(--green)}.warn{background:rgba(255,210,122,.14);color:var(--amber)}.fail{background:rgba(255,143,143,.14);color:var(--red)}.scroll{max-height:340px;overflow:auto}.note{line-height:1.8}@media(max-width:860px){.top{display:block}.grid{grid-template-columns:1fr 1fr}.decision{min-width:0}.title{font-size:26px}}
+  </style>
+
+</head>
+<body>
+  <main class="wrap">
+    <section class="top">
+      <div>
+        <div class="eyebrow">发布包差异清单</div>
+        <div class="title">公开站上架文件边界</div>
+        <div class="muted">明确本轮公开、暂不公开、运维检查三类文件。当前只生成清单，不覆盖正式首页，不推送。</div>
+      </div>
+      <div class="panel decision">
+        <div class="muted">当前结论</div>
+        <strong>清单已就绪</strong>
+        <div class="muted">阻断 0 项，提醒 0 项</div>
+      </div>
+    </section>
+    <section class="grid panel">
+      <div class="card"><b>公司数据</b><span>1609</span></div>
+      <div class="card"><b>CPO 文件</b><span>24</span></div>
+      <div class="card"><b>暂不公开专题文件</b><span>102</span></div>
+      <div class="card"><b>运维检查文件</b><span>10</span></div>
+    </section>
+    <section class="panel">
+      <table><thead><tr><th>检查项</th><th>状态</th><th>说明</th></tr></thead><tbody><tr><td>第 7 步候选包</td><td><span class="badge pass">通过</span></td><td>阻断 0，提醒 0</td></tr><tr><td>第 8 步路径确认</td><td><span class="badge pass">通过</span></td><td>阻断 0，待确认 1</td></tr><tr><td>候选首页会员入口边界</td><td><span class="badge pass">通过</span></td><td>未露出 7 个后续会员专题入口</td></tr><tr><td>候选首页运维入口边界</td><td><span class="badge pass">通过</span></td><td>未露出发布检查页入口</td></tr><tr><td>1609 公司数据基准</td><td><span class="badge pass">通过</span></td><td>1609/1609</td></tr><tr><td>CPO 专题发布文件</td><td><span class="badge pass">通过</span></td><td>24 个文件，501.6KB</td></tr></tbody></table>
+    </section>
+    <section class="panel">
+      <h2>报告目录基准</h2>
+      <table><thead><tr><th>目录</th><th>文件数</th><th>体量</th></tr></thead><tbody><tr><td>company_research</td><td>678</td><td>7.65MB</td></tr><tr><td>reports_v2_public_batches_local</td><td>360</td><td>3.95MB</td></tr><tr><td>reports</td><td>2175</td><td>43.07MB</td></tr></tbody></table>
+    </section>
+    <section class="panel scroll">
+      <h2>本轮公开文件清单</h2>
+      <table><thead><tr><th>文件</th><th>体量</th><th>状态</th></tr></thead><tbody><tr><td>index_1609_release_preview.html</td><td>1253.2KB</td><td><span class="badge pass">通过</span></td></tr><tr><td>data/company_master_1609_foundation.json</td><td>1843.1KB</td><td><span class="badge pass">通过</span></td></tr><tr><td>data/classification_mainline_1609.json</td><td>6278.7KB</td><td><span class="badge pass">通过</span></td></tr><tr><td>data/classification_quality_gate_1609.json</td><td>1843.7KB</td><td><span class="badge pass">通过</span></td></tr><tr><td>data/report_quality_gate_1609.json</td><td>1843.2KB</td><td><span class="badge pass">通过</span></td></tr><tr><td>topics/cpo/cpo_bottleneck_data.js</td><td>18.6KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO_FAU_AWG_PLC_MUX_DEMUX_光耦合线专项观察.html</td><td>11.5KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/cpo_light_source_audit_data.js</td><td>10.4KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/cpo_module_system_temperature_data.js</td><td>15.7KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/cpo_optical_engine_packaging_audit_data.js</td><td>12.1KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/cpo_passive_coupling_audit_data.js</td><td>10.6KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/cpo_silicon_photonics_audit_data.js</td><td>12.2KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/cpo_testing_equipment_audit_data.js</td><td>13.3KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO成品模块与系统温度计跟踪.html</td><td>12.4KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO高速测试_老化_可靠性验证设备线专项观察.html</td><td>11.7KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO公司池观察样本排序表.html</td><td>139.8KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO公司资料池.html</td><td>22.7KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO供需变化信号库_产业链版.html</td><td>23.9KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO关键约束环节总表.html</td><td>17.7KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO光引擎_封装耦合_共封装线专项观察.html</td><td>11.5KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO光源线DFB_EML_CW_ELS专题观察.html</td><td>11.5KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO硅光PIC_调制器_探测器线专项观察.html</td><td>11.6KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO技术路线图_产业链版.html</td><td>23.7KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO节点百科_产业链版.html</td><td>29.7KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO节点路线信号三维矩阵_产业链版.html</td><td>19.7KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO全产业链详细全图_产业链版.html</td><td>25.3KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO研究中枢.html</td><td>13.0KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/CPO专项观察合集.html</td><td>8.8KB</td><td><span class="badge fail">阻断</span></td></tr><tr><td>topics/cpo/index.html</td><td>14.1KB</td><td><span class="badge fail">阻断</span></td></tr></tbody></table>
+    </section>
+    <section class="panel note">
+      <h2>下一步</h2>
+      <p>下一步可以做正式发布前最后一次本地镜像页：把候选首页按正式首页路径模拟打开，并抽查搜索、主线展开、CPO 专题入口。通过后再由你决定是否推送。</p>
+      <p>首页动作：确认发布时，才把 index_1609_release_preview.html 作为 index.html 的内容基准。</p>
+    </section>
+  </main>
+</body>
+</html>

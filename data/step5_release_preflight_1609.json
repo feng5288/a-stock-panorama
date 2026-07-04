@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-02",
+  "decision": "local_release_preflight_pass",
+  "hard_fails": 0,
+  "warnings": 0,
+  "report_summary": {
+    "total": 1609,
+    "display_ready": 1609,
+    "usable_but_should_expand": 0,
+    "thin_needs_rework": 0,
+    "missing": 0,
+    "summary_pages_blocked": 0
+  },
+  "classification_summary": {
+    "total": 1609,
+    "ready": 1609,
+    "auto_rule_review": 0,
+    "needs_manual_review": 0,
+    "mainline_counts": {
+      "AI算力与数字基础设施": 126,
+      "PCB/被动元件/电子材料": 31,
+      "半导体与电子元器件": 31,
+      "电力设备与电力运营": 180,
+      "新能源车与储能": 79,
+      "高端装备与机器人": 160,
+      "有色金属与新材料": 326,
+      "医药健康": 90,
+      "消费与服务": 382,
+      "金融地产": 134,
+      "交运物流": 26,
+      "军工航空航天": 26,
+      "环保与公用事业": 18
+    },
+    "stable_report_aliases": 0
+  },
+  "gates": [
+    {
+      "name": "1609 公司展示入口",
+      "status": "pass",
+      "detail": "1609/1609 可展示，缺失 0"
+    },
+    {
+      "name": "报告薄弱队列",
+      "status": "pass",
+      "detail": "待扩写 0，过薄 0"
+    },
+    {
+      "name": "分类质量门",
+      "status": "pass",
+      "detail": "1609/1609 ready，人工复核 0"
+    },
+    {
+      "name": "首页公开表述",
+      "status": "pass",
+      "detail": "未发现内部词或交易化表述"
+    },
+    {
+      "name": "报告公开表述",
+      "status": "pass",
+      "detail": "报告入口文件未发现敏感词/缺失/过小"
+    },
+    {
+      "name": "首页相对链接",
+      "status": "pass",
+      "detail": "1 个本地链接可解析"
+    },
+    {
+      "name": "摘要页深度一致性",
+      "status": "pass",
+      "detail": "0 个摘要页仍建议后续加厚，不阻止本地预检通过"
+    }
+  ],
+  "report_issues": [],
+  "missing_home_links": [],
+  "next_step": "可进入本地发布候选确认；若要推送独立站，再执行公开站路径和专题入口复核。"
+}

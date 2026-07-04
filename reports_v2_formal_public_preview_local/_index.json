@@ -1,0 +1,62 @@
+[
+  {
+    "code": "000791",
+    "name": "甘肃能源",
+    "risk_layer": "low_risk_ready",
+    "path": "reports_v2_formal_public_preview_local/000791_甘肃能源_研究报告预览.html"
+  },
+  {
+    "code": "600166",
+    "name": "福田汽车",
+    "risk_layer": "low_risk_ready",
+    "path": "reports_v2_formal_public_preview_local/600166_福田汽车_研究报告预览.html"
+  },
+  {
+    "code": "600388",
+    "name": "龙净环保",
+    "risk_layer": "low_risk_ready",
+    "path": "reports_v2_formal_public_preview_local/600388_龙净环保_研究报告预览.html"
+  },
+  {
+    "code": "605020",
+    "name": "永和股份",
+    "risk_layer": "medium_review",
+    "path": "reports_v2_formal_public_preview_local/605020_永和股份_研究报告预览.html"
+  },
+  {
+    "code": "601233",
+    "name": "桐昆股份",
+    "risk_layer": "medium_review",
+    "path": "reports_v2_formal_public_preview_local/601233_桐昆股份_研究报告预览.html"
+  },
+  {
+    "code": "002064",
+    "name": "华峰化学",
+    "risk_layer": "medium_review",
+    "path": "reports_v2_formal_public_preview_local/002064_华峰化学_研究报告预览.html"
+  },
+  {
+    "code": "000423",
+    "name": "东阿阿胶",
+    "risk_layer": "medium_review",
+    "path": "reports_v2_formal_public_preview_local/000423_东阿阿胶_研究报告预览.html"
+  },
+  {
+    "code": "002020",
+    "name": "京新药业",
+    "risk_layer": "medium_review",
+    "path": "reports_v2_formal_public_preview_local/002020_京新药业_研究报告预览.html"
+  },
+  {
+    "code": "002404",
+    "name": "嘉欣丝绸",
+    "risk_layer": "medium_review",
+    "path": "reports_v2_formal_public_preview_local/002404_嘉欣丝绸_研究报告预览.html"
+  },
+  {
+    "code": "603387",
+    "name": "基蛋生物",
+    "risk_layer": "medium_review",
+    "path": "reports_v2_formal_public_preview_local/603387_基蛋生物_研究报告预览.html"
+  }
+]

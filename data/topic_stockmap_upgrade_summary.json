@@ -1,0 +1,69 @@
+{
+  "generatedAt": "2026-07-04T05:16:00.105Z",
+  "summary": [
+    {
+      "topic": "PCB",
+      "companies": 34,
+      "reports": 34,
+      "pending": 0,
+      "nodes": 12,
+      "chain": "C:\\Users\\LYDN\\a-stock-panorama\\topics\\pcb\\PCB全产业链详细全图_产业链版.html"
+    },
+    {
+      "topic": "半导体设备",
+      "companies": 17,
+      "reports": 17,
+      "pending": 0,
+      "nodes": 12,
+      "chain": "C:\\Users\\LYDN\\a-stock-panorama\\topics\\semiconductor-equipment\\半导体设备全产业链详细全图_产业链版.html"
+    },
+    {
+      "topic": "半导体材料",
+      "companies": 26,
+      "reports": 26,
+      "pending": 0,
+      "nodes": 10,
+      "chain": "C:\\Users\\LYDN\\a-stock-panorama\\topics\\semiconductor-materials\\半导体材料全产业链详细全图_产业链版.html"
+    },
+    {
+      "topic": "MLCC被动元件",
+      "companies": 12,
+      "reports": 12,
+      "pending": 0,
+      "nodes": 9,
+      "chain": "C:\\Users\\LYDN\\a-stock-panorama\\topics\\mlcc-passive\\MLCC被动元件全产业链详细全图_产业链版.html"
+    },
+    {
+      "topic": "先进封装Chiplet",
+      "companies": 12,
+      "reports": 12,
+      "pending": 0,
+      "nodes": 8,
+      "chain": "C:\\Users\\LYDN\\a-stock-panorama\\topics\\advanced-packaging-chiplet\\先进封装Chiplet全产业链详细全图_产业链版.html"
+    },
+    {
+      "topic": "AI服务器链",
+      "companies": 12,
+      "reports": 12,
+      "pending": 0,
+      "nodes": 9,
+      "chain": "C:\\Users\\LYDN\\a-stock-panorama\\topics\\ai-server-infrastructure\\AI服务器液冷电源连接器全产业链详细全图_产业链版.html"
+    },
+    {
+      "topic": "电网特高压",
+      "companies": 33,
+      "reports": 33,
+      "pending": 0,
+      "nodes": 7,
+      "chain": "C:\\Users\\LYDN\\a-stock-panorama\\topics\\power-grid\\电网特高压全产业链详细全图_产业链版.html"
+    },
+    {
+      "topic": "创新药",
+      "companies": 74,
+      "reports": 74,
+      "pending": 0,
+      "nodes": 8,
+      "chain": "C:\\Users\\LYDN\\a-stock-panorama\\topics\\innovation-drug\\创新药全产业链详细全图_产业链版.html"
+    }
+  ]
+}

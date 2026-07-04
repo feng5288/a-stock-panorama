@@ -1,0 +1,378 @@
+{
+  "generated_at": "2026-07-02",
+  "source": "CNINFO hisAnnouncement query",
+  "date_range": "2026-06-01~2026-07-02",
+  "total_companies": 1609,
+  "matched_companies": 13,
+  "event_counts": {
+    "half_year_or_mid": 0,
+    "forecast": 13,
+    "express": 0
+  },
+  "errors": [],
+  "priority_queue": [
+    {
+      "code": "002048",
+      "name": "宁波华翔",
+      "mainline": "新能源车与储能",
+      "tracks": [
+        "动力电池",
+        "固态/半固态电池",
+        "动力电池/储能"
+      ],
+      "reportPath": "reports/宁波华翔.html",
+      "reportSource": "legacy_full_report",
+      "reportBytes": 14562,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "002048",
+          "name": "宁波华翔",
+          "title": "2026年半年度业绩预告",
+          "announcement_time": 1782489600000,
+          "announcement_id": "1225389693",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-06-27/1225389693.PDF"
+        }
+      ],
+      "priority_score": 63
+    },
+    {
+      "code": "002998",
+      "name": "优彩资源",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "新材料",
+        "化学纤维",
+        "化纤 / 高分子",
+        "稀土资源",
+        "有色金属",
+        "功能材料"
+      ],
+      "reportPath": "company_research/002998.html",
+      "reportSource": "stable_company_research",
+      "reportBytes": 10387,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "002998",
+          "name": "优彩资源",
+          "title": "2026年半年度业绩预告",
+          "announcement_time": 1782921600000,
+          "announcement_id": "1225403762",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-07-02/1225403762.PDF"
+        }
+      ],
+      "priority_score": 53
+    },
+    {
+      "code": "002458",
+      "name": "益生股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "农林牧渔",
+        "白羽肉鸡种鸡",
+        "游戏/内容",
+        "数字内容",
+        "消费与服务"
+      ],
+      "reportPath": "reports/益生股份.html",
+      "reportSource": "legacy_full_report",
+      "reportBytes": 14393,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "002458",
+          "name": "益生股份",
+          "title": "2026年半年度业绩预告",
+          "announcement_time": 1782835200000,
+          "announcement_id": "1225400174",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-07-01/1225400174.PDF"
+        }
+      ],
+      "priority_score": 53
+    },
+    {
+      "code": "002326",
+      "name": "永太科技",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "氟化工 / 电子化学品",
+        "氟化工/电子化学品",
+        "精细化工",
+        "电子材料"
+      ],
+      "reportPath": "reports/永太科技.html",
+      "reportSource": "legacy_full_report",
+      "reportBytes": 15447,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "002326",
+          "name": "永太科技",
+          "title": "2026年半年度业绩预告",
+          "announcement_time": 1782835200000,
+          "announcement_id": "1225399398",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-07-01/1225399398.PDF"
+        }
+      ],
+      "priority_score": 53
+    },
+    {
+      "code": "000603",
+      "name": "盛达资源",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "工业金属",
+        "铜",
+        "金属矿产",
+        "资源品",
+        "有色金属",
+        "稀土资源"
+      ],
+      "reportPath": "reports/盛达资源.html",
+      "reportSource": "legacy_full_report",
+      "reportBytes": 14828,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "000603",
+          "name": "盛达资源",
+          "title": "2026年半年度业绩预告",
+          "announcement_time": 1782748800000,
+          "announcement_id": "1225396198",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-06-30/1225396198.PDF"
+        }
+      ],
+      "priority_score": 53
+    },
+    {
+      "code": "002568",
+      "name": "百润股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "食品饮料",
+        "酿酒/饮料",
+        "白酒 / 高端消费"
+      ],
+      "reportPath": "company_research/002568.html",
+      "reportSource": "stable_company_research",
+      "reportBytes": 10361,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "002568",
+          "name": "百润股份",
+          "title": "2026半年度业绩预告",
+          "announcement_time": 1782403200000,
+          "announcement_id": "1225388685",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-06-26/1225388685.PDF"
+        }
+      ],
+      "priority_score": 53
+    },
+    {
+      "code": "000703",
+      "name": "恒逸石化",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "特种化工新材料",
+        "高分子材料",
+        "新材料化工",
+        "稀土资源",
+        "有色金属",
+        "功能材料"
+      ],
+      "reportPath": "reports/恒逸石化.html",
+      "reportSource": "legacy_full_report",
+      "reportBytes": 14858,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "000703",
+          "name": "恒逸石化",
+          "title": "2026年半年度业绩预告",
+          "announcement_time": 1782403200000,
+          "announcement_id": "1225387510",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-06-26/1225387510.PDF"
+        }
+      ],
+      "priority_score": 53
+    },
+    {
+      "code": "002979",
+      "name": "雷赛智能",
+      "mainline": "高端装备与机器人",
+      "tracks": [
+        "工业自动化 / 工业母机",
+        "工业自动化",
+        "工业母机",
+        "高端装备"
+      ],
+      "reportPath": "reports_v2_public_batches_local/batch_008/002979_雷赛智能_研究报告.html",
+      "reportSource": "new_deep_report",
+      "reportBytes": 11498,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "002979",
+          "name": "雷赛智能",
+          "title": "2026年半年度业绩预告",
+          "announcement_time": 1782921600000,
+          "announcement_id": "1225403602",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-07-02/1225403602.PDF"
+        }
+      ],
+      "priority_score": 45
+    },
+    {
+      "code": "002545",
+      "name": "东方铁塔",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "特种化工新材料",
+        "高分子材料",
+        "新材料化工",
+        "稀土资源",
+        "有色金属",
+        "功能材料"
+      ],
+      "reportPath": "reports_v2_public_batches_local/batch_010/002545_东方铁塔_研究报告.html",
+      "reportSource": "new_deep_report",
+      "reportBytes": 11578,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "002545",
+          "name": "东方铁塔",
+          "title": "2026年半年度业绩预告",
+          "announcement_time": 1782921600000,
+          "announcement_id": "1225403247",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-07-02/1225403247.PDF"
+        }
+      ],
+      "priority_score": 45
+    },
+    {
+      "code": "002083",
+      "name": "孚日股份",
+      "mainline": "消费与服务",
+      "tracks": [
+        "纺织服装",
+        "纺织/面料",
+        "服装/纺织",
+        "服装纺织",
+        "品牌消费",
+        "消费与服务"
+      ],
+      "reportPath": "reports_v2_public_batches_local/batch_002/002083_孚日股份_研究报告.html",
+      "reportSource": "new_deep_report",
+      "reportBytes": 11137,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "002083",
+          "name": "孚日股份",
+          "title": "孚日集团股份有限公司2026年半年度业绩预告",
+          "announcement_time": 1782921600000,
+          "announcement_id": "1225403167",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-07-02/1225403167.PDF"
+        }
+      ],
+      "priority_score": 45
+    },
+    {
+      "code": "600520",
+      "name": "三佳科技",
+      "mainline": "高端装备与机器人",
+      "tracks": [
+        "工业母机/机床",
+        "激光加工/切割设备",
+        "工业自动化 / 工业母机",
+        "工业自动化",
+        "工业母机",
+        "高端装备"
+      ],
+      "reportPath": "reports_v2_public_batches_local/batch_008/600520_三佳科技_研究报告.html",
+      "reportSource": "new_deep_report",
+      "reportBytes": 11647,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "600520",
+          "name": "三佳科技",
+          "title": "三佳科技关于召开2025年年度业绩说明会的预告公告",
+          "announcement_time": 1782230400000,
+          "announcement_id": "1225382500",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-06-24/1225382500.PDF"
+        }
+      ],
+      "priority_score": 45
+    },
+    {
+      "code": "600482",
+      "name": "中国动力",
+      "mainline": "军工航空航天",
+      "tracks": [
+        "航空装备",
+        "航空发动机",
+        "轨交/船舶/海工装备",
+        "航空运输",
+        "客运航空",
+        "交运物流"
+      ],
+      "reportPath": "reports_v2_public_batches_local/batch_011/600482_中国动力_研究报告.html",
+      "reportSource": "new_deep_report",
+      "reportBytes": 11617,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "600482",
+          "name": "中国动力",
+          "title": "中国动力2025年年度暨2026年第一季度业绩说明会预告公告",
+          "announcement_time": 1780934400000,
+          "announcement_id": "1225357783",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-06-09/1225357783.PDF"
+        }
+      ],
+      "priority_score": 45
+    },
+    {
+      "code": "002648",
+      "name": "卫星化学",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "烯烃",
+        "新材料化工",
+        "化工"
+      ],
+      "reportPath": "company_research/002648.html",
+      "reportSource": "stable_company_research",
+      "reportBytes": 18780,
+      "events": [
+        {
+          "type": "forecast",
+          "label": "业绩预告",
+          "code": "002648",
+          "name": "卫星化学",
+          "title": "2026年半年度业绩预告",
+          "announcement_time": 1782144000000,
+          "announcement_id": "1225380550",
+          "url": "http://static.cninfo.com.cn/finalpage/2026-06-23/1225380550.PDF"
+        }
+      ],
+      "priority_score": 43
+    }
+  ]
+}

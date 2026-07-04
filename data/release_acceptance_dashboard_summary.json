@@ -1,0 +1,155 @@
+{
+  "generatedAt": "2026-07-04T09:35:18.190Z",
+  "outFile": "C:\\Users\\LYDN\\a-stock-panorama\\release_acceptance_dashboard.html",
+  "metrics": [
+    [
+      "专题入口",
+      9,
+      "9 个专题均在首页开放"
+    ],
+    [
+      "专题公司映射",
+      254,
+      "全链路图公司池合计"
+    ],
+    [
+      "专题报告缺口",
+      0,
+      "应为 0"
+    ],
+    [
+      "专题报告审计",
+      "240/240",
+      "长电式 9 章结构"
+    ],
+    [
+      "公开风险词",
+      0,
+      "应为 0"
+    ],
+    [
+      "首页状态",
+      "可访问",
+      "本地入口"
+    ]
+  ],
+  "topicCards": [
+    {
+      "title": "CPO光互连专题",
+      "home": "topics/cpo/index.html",
+      "chain": "topics/cpo/CPO全产业链详细全图_产业链版.html",
+      "homeExists": true,
+      "chainExists": true,
+      "companies": 34,
+      "reports": 34,
+      "pending": 0,
+      "nodes": 48
+    },
+    {
+      "title": "PCB / 高速PCB专题",
+      "home": "topics/pcb/index.html",
+      "chain": "topics/pcb/PCB全产业链详细全图_产业链版.html",
+      "homeExists": true,
+      "chainExists": true,
+      "companies": 34,
+      "reports": 34,
+      "pending": 0,
+      "nodes": 10
+    },
+    {
+      "title": "半导体设备专题",
+      "home": "topics/semiconductor-equipment/index.html",
+      "chain": "topics/semiconductor-equipment/半导体设备全产业链详细全图_产业链版.html",
+      "homeExists": true,
+      "chainExists": true,
+      "companies": 17,
+      "reports": 17,
+      "pending": 0,
+      "nodes": 12
+    },
+    {
+      "title": "半导体材料专题",
+      "home": "topics/semiconductor-materials/index.html",
+      "chain": "topics/semiconductor-materials/半导体材料全产业链详细全图_产业链版.html",
+      "homeExists": true,
+      "chainExists": true,
+      "companies": 26,
+      "reports": 26,
+      "pending": 0,
+      "nodes": 9
+    },
+    {
+      "title": "MLCC被动元件专题",
+      "home": "topics/mlcc-passive/index.html",
+      "chain": "topics/mlcc-passive/MLCC被动元件全产业链详细全图_产业链版.html",
+      "homeExists": true,
+      "chainExists": true,
+      "companies": 12,
+      "reports": 12,
+      "pending": 0,
+      "nodes": 6
+    },
+    {
+      "title": "先进封装 / Chiplet专题",
+      "home": "topics/advanced-packaging-chiplet/index.html",
+      "chain": "topics/advanced-packaging-chiplet/先进封装Chiplet全产业链详细全图_产业链版.html",
+      "homeExists": true,
+      "chainExists": true,
+      "companies": 12,
+      "reports": 12,
+      "pending": 0,
+      "nodes": 7
+    },
+    {
+      "title": "AI服务器基础设施专题",
+      "home": "topics/ai-server-infrastructure/index.html",
+      "chain": "topics/ai-server-infrastructure/AI服务器液冷电源连接器全产业链详细全图_产业链版.html",
+      "homeExists": true,
+      "chainExists": true,
+      "companies": 12,
+      "reports": 12,
+      "pending": 0,
+      "nodes": 6
+    },
+    {
+      "title": "电网 / 特高压专题",
+      "home": "topics/power-grid/index.html",
+      "chain": "topics/power-grid/电网特高压全产业链详细全图_产业链版.html",
+      "homeExists": true,
+      "chainExists": true,
+      "companies": 33,
+      "reports": 33,
+      "pending": 0,
+      "nodes": 5
+    },
+    {
+      "title": "创新药专题",
+      "home": "topics/innovation-drug/index.html",
+      "chain": "topics/innovation-drug/创新药全产业链详细全图_产业链版.html",
+      "homeExists": true,
+      "chainExists": true,
+      "companies": 74,
+      "reports": 74,
+      "pending": 0,
+      "nodes": 8
+    }
+  ],
+  "sampleReports": 27,
+  "topicReportAudit": {
+    "total": 240,
+    "pass": 240,
+    "fail": 0,
+    "failures": []
+  },
+  "reportTermsAudit": {
+    "generated_at": "2026/7/4 17:34:48",
+    "total_company_rows": 1614,
+    "unique_report_paths": 1612,
+    "source_counts": {
+      "formal_core_deep_report": 1614
+    },
+    "issue_report_paths": 0,
+    "by_group": {},
+    "rows": []
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "generated_at": "2026-07-03T13:03:14.813Z",
+  "options": {
+    "date": "20260703",
+    "localOnly": true,
+    "fetchMarket": false,
+    "fetchFinance": false,
+    "fetchCninfo": false,
+    "buildQueue": false,
+    "rebuildReports": false,
+    "refreshTopics": false,
+    "refreshHome": false,
+    "runPrecheck": false,
+    "financeLimit": "",
+    "continueOnError": true
+  },
+  "safety": {
+    "local_only": true,
+    "public_push": false,
+    "note": "本脚本只更新本地预览与本地数据产物，不执行 git push 或公开站发布。"
+  },
+  "steps": [
+    {
+      "step": "专题收盘行情更新",
+      "command": "python",
+      "args": [
+        "update_daily_market_data.py",
+        "20260703"
+      ],
+      "started_at": "2026-07-03T13:03:14.774Z",
+      "skipped": true,
+      "ok": true,
+      "reason": "skip_market",
+      "elapsed_sec": 0
+    },
+    {
+      "step": "每日收盘控制台刷新",
+      "command": "K:\\AI\\node\\node.exe",
+      "args": [
+        "build_daily_update_console.js"
+      ],
+      "started_at": "2026-07-03T13:03:14.775Z",
+      "skipped": false,
+      "ok": true,
+      "status": 0,
+      "signal": "",
+      "error": "",
+      "stdout": "{\n  \"outPath\": \"C:\\\\Users\\\\LYDN\\\\a-stock-panorama\\\\daily_update_console.html\",\n  \"siteConfigPath\": \"C:\\\\Users\\\\LYDN\\\\a-stock-panorama\\\\data\\\\daily_market_config.json\",\n  \"topics\": 8,\n  \"updated\": 8,\n  \"missing\": 1\n}",
+      "stderr": "",
+      "elapsed_sec": 0.04
+    },
+    {
+      "step": "1609 最新财务雷达",
+      "command": "python",
+      "args": [
+        "fetch_latest_finance_radar_1609.py"
+      ],
+      "started_at": "2026-07-03T13:03:14.813Z",
+      "skipped": true,
+      "ok": true,
+      "reason": "skip_finance",
+      "elapsed_sec": 0
+    },
+    {
+      "step": "巨潮公告更新雷达",
+      "command": "python",
+      "args": [
+        "build_cninfo_update_radar_1609.py"
+      ],
+      "started_at": "2026-07-03T13:03:14.813Z",
+      "skipped": true,
+      "ok": true,
+      "reason": "skip_cninfo",
+      "elapsed_sec": 0
+    },
+    {
+      "step": "核心主线报告更新队列",
+      "command": "K:\\AI\\node\\node.exe",
+      "args": [
+        "build_core_deep_update_queue_1609.js"
+      ],
+      "started_at": "2026-07-03T13:03:14.813Z",
+      "skipped": true,
+      "ok": true,
+      "reason": "skip_queue",
+      "elapsed_sec": 0
+    },
+    {
+      "step": "按队列重建深度报告",
+      "command": "K:\\AI\\node\\node.exe",
+      "args": [
+        "build_core_deep_reports_bulk.js"
+      ],
+      "started_at": "2026-07-03T13:03:14.813Z",
+      "skipped": true,
+      "ok": true,
+      "reason": "report_rebuild_requires_--update-reports",
+      "elapsed_sec": 0
+    },
+    {
+      "step": "新增专题刷新",
+      "command": "K:\\AI\\node\\node.exe",
+      "args": [
+        "build_power_grid_and_innovation_topics.js"
+      ],
+      "started_at": "2026-07-03T13:03:14.813Z",
+      "skipped": true,
+      "ok": true,
+      "reason": "skip_topics",
+      "elapsed_sec": 0
+    },
+    {
+      "step": "专题公开提示补齐",
+      "command": "K:\\AI\\node\\node.exe",
+      "args": [
+        "add_topic_public_top_risk_note.js"
+      ],
+      "started_at": "2026-07-03T13:03:14.813Z",
+      "skipped": true,
+      "ok": true,
+      "reason": "skip_topics",
+      "elapsed_sec": 0
+    },
+    {
+      "step": "专题链接与用词检查",
+      "command": "K:\\AI\\node\\node.exe",
+      "args": [
+        "validate_topics_public.js"
+      ],
+      "started_at": "2026-07-03T13:03:14.813Z",
+      "skipped": true,
+      "ok": true,
+      "reason": "skip_precheck",
+      "elapsed_sec": 0
+    },
+    {
+      "step": "首页与 1609 基础数据刷新",
+      "command": "K:\\AI\\node\\node.exe",
+      "args": [
+        "build_1609_foundation_pipeline.js"
+      ],
+      "started_at": "2026-07-03T13:03:14.813Z",
+      "skipped": true,
+      "ok": true,
+      "reason": "skip_home",
+      "elapsed_sec": 0
+    },
+    {
+      "step": "长电式报告深度审计",
+      "command": "K:\\AI\\node\\node.exe",
+      "args": [
+        "audit_changdian_report_depth.js"
+      ],
+      "started_at": "2026-07-03T13:03:14.813Z",
+      "skipped": true,
+      "ok": true,
+      "reason": "skip_precheck",
+      "elapsed_sec": 0
+    }
+  ],
+  "artifacts": {
+    "daily_market": {
+      "trade_date": "20260629",
+      "trade_date_text": "2026-06-29 收盘",
+      "topics": 8,
+      "missing_total": 1
+    },
+    "latest_finance": {
+      "total": 1609,
+      "by_period": {
+        "2026Q1": 772,
+        "2025A": 125,
+        "missing": 712
+      },
+      "q2_available": 0,
+      "missing": 712
+    },
+    "cninfo": {
+      "matched_companies": 13,
+      "event_counts": {
+        "half_year_or_mid": 0,
+        "forecast": 13,
+        "express": 0
+      },
+      "date_range": "2026-06-01~2026-07-02"
+    },
+    "report_queue": {
+      "queued": 970,
+      "first_batch_size": 50
+    },
+    "changdian_style_audit": {
+      "total": 1609,
+      "changdian_like": 21,
+      "not_changdian_like": 1588,
+      "byStatus": {
+        "template_deep_or_legacy": 1308,
+        "thin_or_generic": 280,
+        "changdian_like": 21
+      }
+    }
+  }
+}

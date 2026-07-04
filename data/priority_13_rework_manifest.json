@@ -1,0 +1,312 @@
+{
+  "generated_at": "2026-07-01",
+  "rows": [
+    {
+      "code": "002203",
+      "name": "海亮股份",
+      "mainline": "PCB/被动元件/电子材料",
+      "tracks": [
+        "覆铜板/CCL",
+        "铜箔",
+        "PCB/高速PCB",
+        "PCB",
+        "高速PCB",
+        "电子电路"
+      ],
+      "path": "company_research_rework_13/002203.html",
+      "bytes": 12766,
+      "finance": {
+        "pubDate": "2026-04-30",
+        "period": "2026Q1",
+        "netProfitYi": 5.1,
+        "yoyPct": 26.42,
+        "grossMargin": 5.02,
+        "netMargin": 2.13
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603042",
+      "name": "华脉科技",
+      "mainline": "AI算力与数字基础设施",
+      "tracks": [
+        "光通信/CPO光互连",
+        "光纤光缆",
+        "光通信基础设施"
+      ],
+      "path": "company_research_rework_13/603042.html",
+      "bytes": 12576,
+      "finance": {
+        "pubDate": "2026-04-28",
+        "period": "2026Q1",
+        "netProfitYi": 0.08,
+        "yoyPct": 76.53,
+        "grossMargin": 28.3,
+        "netMargin": 4.99
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600605",
+      "name": "汇通能源",
+      "mainline": "金融地产",
+      "tracks": [
+        "房地产",
+        "房地产开发",
+        "证券 / 财富管理"
+      ],
+      "path": "company_research_rework_13/600605.html",
+      "bytes": 12446,
+      "finance": {
+        "pubDate": "2026-04-29",
+        "period": "2026Q1",
+        "netProfitYi": 0.11,
+        "yoyPct": -9.51,
+        "grossMargin": 48.2,
+        "netMargin": 27.11
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603399",
+      "name": "永杉锂业",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "稀有/战略金属",
+        "锂",
+        "稀有小金属 / 战略金属",
+        "稀土资源",
+        "有色金属",
+        "功能材料"
+      ],
+      "path": "company_research_rework_13/603399.html",
+      "bytes": 12280,
+      "finance": {
+        "pubDate": "2026-04-28",
+        "period": "2026Q1",
+        "netProfitYi": 1.45,
+        "yoyPct": 549.24,
+        "grossMargin": 16.86,
+        "netMargin": 6.99
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000922",
+      "name": "佳电股份",
+      "mainline": "电力设备与电力运营",
+      "tracks": [
+        "核电",
+        "核电设备/主泵"
+      ],
+      "path": "company_research_rework_13/000922.html",
+      "bytes": 12303,
+      "finance": {
+        "pubDate": "2026-04-28",
+        "period": "2026Q1",
+        "netProfitYi": 1.11,
+        "yoyPct": 46.03,
+        "grossMargin": 19.35,
+        "netMargin": 9.13
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "300576",
+      "name": "容大感光",
+      "mainline": "PCB/被动元件/电子材料",
+      "tracks": [
+        "先进封装",
+        "封装材料",
+        "PCB/高速PCB",
+        "PCB",
+        "高速PCB",
+        "电子电路"
+      ],
+      "path": "company_research_rework_13/300576.html",
+      "bytes": 12317,
+      "finance": {
+        "pubDate": "2026-04-28",
+        "period": "2026Q1",
+        "netProfitYi": 0.27,
+        "yoyPct": -22.43,
+        "grossMargin": 35.46,
+        "netMargin": 9.79
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "600459",
+      "name": "贵研铂业",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "稀有/战略金属",
+        "铂族金属",
+        "稀有小金属 / 战略金属",
+        "稀土资源",
+        "有色金属",
+        "功能材料"
+      ],
+      "path": "company_research_rework_13/600459.html",
+      "bytes": 12297,
+      "finance": {
+        "pubDate": "2026-04-30",
+        "period": "2026Q1",
+        "netProfitYi": 2.35,
+        "yoyPct": 9.13,
+        "grossMargin": 3.63,
+        "netMargin": 1.8
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002428",
+      "name": "云南锗业",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "稀有/战略金属",
+        "锗",
+        "稀有小金属 / 战略金属",
+        "稀土资源",
+        "有色金属",
+        "功能材料"
+      ],
+      "path": "company_research_rework_13/002428.html",
+      "bytes": 12313,
+      "finance": {
+        "pubDate": "2026-04-30",
+        "period": "2026Q1",
+        "netProfitYi": 0.09,
+        "yoyPct": -10.71,
+        "grossMargin": 20.29,
+        "netMargin": 3.18
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000962",
+      "name": "东方钽业",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "稀有/战略金属",
+        "钽铌",
+        "半导体材料",
+        "稀土资源",
+        "有色金属",
+        "功能材料"
+      ],
+      "path": "company_research_rework_13/000962.html",
+      "bytes": 12296,
+      "finance": {
+        "pubDate": "2026-04-28",
+        "period": "2026Q1",
+        "netProfitYi": 0.54,
+        "yoyPct": -3.82,
+        "grossMargin": 14.89,
+        "netMargin": 11.39
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "000960",
+      "name": "锡业股份",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "稀有/战略金属",
+        "锡",
+        "稀有小金属 / 战略金属",
+        "稀土资源",
+        "有色金属",
+        "功能材料"
+      ],
+      "path": "company_research_rework_13/000960.html",
+      "bytes": 12220,
+      "finance": {
+        "pubDate": "2026-04-28",
+        "period": "2026Q1",
+        "netProfitYi": 8.87,
+        "yoyPct": 73.71,
+        "grossMargin": 10.04,
+        "netMargin": 5.7
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "603880",
+      "name": "南卫股份",
+      "mainline": "医药健康",
+      "tracks": [
+        "医用耗材",
+        "医用敷料/防护用品",
+        "医疗材料"
+      ],
+      "path": "company_research_rework_13/603880.html",
+      "bytes": 12393,
+      "finance": {
+        "pubDate": "2026-04-30",
+        "period": "2026Q1",
+        "netProfitYi": -0.05,
+        "yoyPct": 35.71,
+        "grossMargin": 9.09,
+        "netMargin": -3.2
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002972",
+      "name": "科安达",
+      "mainline": "高端装备与机器人",
+      "tracks": [
+        "轨交装备",
+        "轨交信号/防雷",
+        "轨交/船舶/海工装备",
+        "专用装备",
+        "高端装备"
+      ],
+      "path": "company_research_rework_13/002972.html",
+      "bytes": 12154,
+      "finance": {
+        "pubDate": "2026-04-27",
+        "period": "2026Q1",
+        "netProfitYi": 0.37,
+        "yoyPct": 16.45,
+        "grossMargin": 73.63,
+        "netMargin": 40.11
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "code": "002213",
+      "name": "大为股份",
+      "mainline": "半导体与电子元器件",
+      "tracks": [
+        "HBM存储产业链",
+        "存储芯片"
+      ],
+      "path": "company_research_rework_13/002213.html",
+      "bytes": 12415,
+      "finance": {
+        "pubDate": "2026-04-24",
+        "period": "2026Q1",
+        "netProfitYi": 0.16,
+        "yoyPct": 926.91,
+        "grossMargin": 10.2,
+        "netMargin": 3.86
+      },
+      "forbidden_hits": [],
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "generated_at": "2026/7/4 11:17:53",
+  "decision": "ready_for_manual_publish_confirmation",
+  "public_push_status": "not_pushed",
+  "homepage_action_on_publish": {
+    "source": "index_1609_release_preview.html",
+    "target": "index.html",
+    "note": "用户确认推送后，再将预览首页作为正式 index.html 发布。"
+  },
+  "counts": {
+    "companies": 1609,
+    "linkedCompanies": 1609,
+    "uniqueReportPaths": 1607,
+    "missingReports": 0,
+    "topicPages": 145,
+    "sampledReports": 20
+  },
+  "gates": [
+    {
+      "name": "1609 公司入口",
+      "status": "pass",
+      "detail": "1609/1609"
+    },
+    {
+      "name": "报告链接",
+      "status": "pass",
+      "detail": "1607 unique paths, missing 0"
+    },
+    {
+      "name": "长电式深度审计",
+      "status": "pass",
+      "detail": "1609/1609 pass"
+    },
+    {
+      "name": "报告公开表述审计",
+      "status": "pass",
+      "detail": "0 issue paths"
+    },
+    {
+      "name": "20 份前台抽样",
+      "status": "pass",
+      "detail": "20 checked, 0 failed"
+    },
+    {
+      "name": "9 个专题",
+      "status": "pass",
+      "detail": "145 topic pages"
+    },
+    {
+      "name": "首页与专题坏链",
+      "status": "pass",
+      "detail": "0 missing links"
+    },
+    {
+      "name": "首页与专题公开词",
+      "status": "pass",
+      "detail": "0 visible issues, 0 raw issues"
+    }
+  ],
+  "topicSummary": [
+    {
+      "dir": "cpo",
+      "name": "CPO",
+      "exists": true,
+      "pages": 17,
+      "bytes": 423701
+    },
+    {
+      "dir": "pcb",
+      "name": "PCB",
+      "exists": true,
+      "pages": 16,
+      "bytes": 205427
+    },
+    {
+      "dir": "semiconductor-equipment",
+      "name": "半导体设备",
+      "exists": true,
+      "pages": 16,
+      "bytes": 160745
+    },
+    {
+      "dir": "semiconductor-materials",
+      "name": "半导体材料",
+      "exists": true,
+      "pages": 16,
+      "bytes": 165582
+    },
+    {
+      "dir": "mlcc-passive",
+      "name": "MLCC被动元件",
+      "exists": true,
+      "pages": 16,
+      "bytes": 155770
+    },
+    {
+      "dir": "advanced-packaging-chiplet",
+      "name": "先进封装Chiplet",
+      "exists": true,
+      "pages": 16,
+      "bytes": 172240
+    },
+    {
+      "dir": "ai-server-infrastructure",
+      "name": "AI服务器 / 液冷 / 电源 / 连接器",
+      "exists": true,
+      "pages": 16,
+      "bytes": 151649
+    },
+    {
+      "dir": "power-grid",
+      "name": "电网特高压",
+      "exists": true,
+      "pages": 16,
+      "bytes": 178106
+    },
+    {
+      "dir": "innovation-drug",
+      "name": "创新药",
+      "exists": true,
+      "pages": 16,
+      "bytes": 200580
+    }
+  ],
+  "sample": [
+    {
+      "code": "600182",
+      "name": "S佳通",
+      "path": "company_research_core_deep/600182.html",
+      "exists": true,
+      "bytes": 21975,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "600843",
+      "name": "上工申贝",
+      "path": "company_research_core_deep/600843.html",
+      "exists": true,
+      "bytes": 22206,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "002607",
+      "name": "中公教育",
+      "path": "company_research_core_deep/002607.html",
+      "exists": true,
+      "bytes": 21885,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "000657",
+      "name": "中钨高新",
+      "path": "company_research_core_deep/000657.html",
+      "exists": true,
+      "bytes": 21975,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "603733",
+      "name": "仙鹤股份",
+      "path": "company_research_core_deep/603733.html",
+      "exists": true,
+      "bytes": 22079,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "002012",
+      "name": "凯恩股份",
+      "path": "company_research_core_deep/002012.html",
+      "exists": true,
+      "bytes": 21926,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "002757",
+      "name": "南兴股份",
+      "path": "company_research_core_deep/002757.html",
+      "exists": true,
+      "bytes": 22176,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "600460",
+      "name": "士兰微",
+      "path": "company_research_core_deep/600460.html",
+      "exists": true,
+      "bytes": 22316,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "002379",
+      "name": "宏桥控股",
+      "path": "company_research_core_deep/002379.html",
+      "exists": true,
+      "bytes": 21974,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "002054",
+      "name": "德美化工",
+      "path": "company_research_core_deep/002054.html",
+      "exists": true,
+      "bytes": 21935,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "600101",
+      "name": "明星电力",
+      "path": "company_research_core_deep/600101.html",
+      "exists": true,
+      "bytes": 22064,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "000550",
+      "name": "江铃汽车",
+      "path": "company_research_core_deep/000550.html",
+      "exists": true,
+      "bytes": 22063,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "000753",
+      "name": "漳州发展",
+      "path": "company_research_core_deep/000753.html",
+      "exists": true,
+      "bytes": 21884,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "603333",
+      "name": "福华尚纬",
+      "path": "company_research_core_deep/603333.html",
+      "exists": true,
+      "bytes": 21976,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "002170",
+      "name": "芭田股份",
+      "path": "company_research_core_deep/002170.html",
+      "exists": true,
+      "bytes": 22080,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "600763",
+      "name": "通策医疗",
+      "path": "company_research_core_deep/600763.html",
+      "exists": true,
+      "bytes": 21667,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "600125",
+      "name": "铁龙物流",
+      "path": "company_research_core_deep/600125.html",
+      "exists": true,
+      "bytes": 21953,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "603383",
+      "name": "顶点软件",
+      "path": "company_research_core_deep/603383.html",
+      "exists": true,
+      "bytes": 22215,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "002521",
+      "name": "齐峰新材",
+      "path": "company_research_core_deep/002521.html",
+      "exists": true,
+      "bytes": 21925,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    },
+    {
+      "code": "002534",
+      "name": "西子洁能",
+      "path": "company_research_core_deep/002534.html",
+      "exists": true,
+      "bytes": 21992,
+      "sections": 9,
+      "tables": 11,
+      "hits": []
+    }
+  ],
+  "issues": {
+    "sampleFailures": [],
+    "missingReports": [],
+    "missingLinks": [],
+    "visibleIssues": [],
+    "rawIssues": []
+  },
+  "publish_set_summary": {
+    "homepagePreview": "index_1609_release_preview.html",
+    "homepageTarget": "index.html",
+    "dataFiles": [
+      "data/company_master_1609_foundation.json",
+      "data/public_report_terms_audit_1609.json",
+      "data/manager_style_rewrite_1609_manifest.json"
+    ],
+    "reports": 1607,
+    "topics": [
+      {
+        "root": "topics/cpo",
+        "pages": 17
+      },
+      {
+        "root": "topics/pcb",
+        "pages": 16
+      },
+      {
+        "root": "topics/semiconductor-equipment",
+        "pages": 16
+      },
+      {
+        "root": "topics/semiconductor-materials",
+        "pages": 16
+      },
+      {
+        "root": "topics/mlcc-passive",
+        "pages": 16
+      },
+      {
+        "root": "topics/advanced-packaging-chiplet",
+        "pages": 16
+      },
+      {
+        "root": "topics/ai-server-infrastructure",
+        "pages": 16
+      },
+      {
+        "root": "topics/power-grid",
+        "pages": 16
+      },
+      {
+        "root": "topics/innovation-drug",
+        "pages": 16
+      }
+    ]
+  }
+}

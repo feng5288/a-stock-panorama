@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>发布前路径确认</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080d1b;--panel:#111a2e;--panel2:#0d1527;--line:rgba(148,163,184,.22);--text:#edf4ff;--muted:#9fb0c7;--gold:#f7bf54;--green:#67e8a2;--red:#ff8f8f;--amber:#ffd27a}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 16% 0%,#1a2948 0,#080d1b 35%,#060912 100%);color:var(--text);font-family:"Microsoft YaHei",Arial,sans-serif}.wrap{max-width:1180px;margin:0 auto;padding:28px 22px 64px}.top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.eyebrow{color:var(--gold);font-weight:900;font-size:13px}.title{font-size:32px;font-weight:900;margin:8px 0}.muted{color:var(--muted)}.panel{background:linear-gradient(180deg,rgba(17,26,46,.96),rgba(13,21,39,.96));border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:18px}.decision{min-width:260px}.decision strong{display:block;font-size:20px;color:var(--green)}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.card{background:rgba(15,23,42,.72);border:1px solid rgba(148,163,184,.18);border-radius:12px;padding:15px}.card b{display:block;color:var(--muted);font-size:12px}.card span{font-size:22px;font-weight:900}table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid rgba(148,163,184,.16);text-align:left;font-size:14px;vertical-align:top}th{color:var(--gold);font-size:13px}.badge{display:inline-flex;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:900}.pass{background:rgba(103,232,162,.14);color:var(--green)}.warn{background:rgba(255,210,122,.14);color:var(--amber)}.fail{background:rgba(255,143,143,.14);color:var(--red)}a{color:#ffe1a0}.note{line-height:1.8}@media(max-width:860px){.top{display:block}.grid{grid-template-columns:1fr 1fr}.decision{min-width:0}.title{font-size:26px}}
+  </style>
+
+</head>
+<body>
+  <main class="wrap">
+    <section class="top">
+      <div>
+        <div class="eyebrow">发布前路径确认</div>
+        <div class="title">1609 家公司公开站上架基准</div>
+        <div class="muted">确认候选首页、专题入口、站内链接和发布边界。本页只做检查，不执行公开发布。</div>
+      </div>
+      <div class="panel decision">
+        <div class="muted">当前结论</div>
+        <strong>路径确认通过</strong>
+        <div class="muted">阻断 0 项，待确认 1 项</div>
+      </div>
+    </section>
+    <section class="grid panel">
+      <div class="card"><b>候选首页</b><span>index_1609_release_preview.html</span></div>
+      <div class="card"><b>正式首页</b><span>index.html</span></div>
+      <div class="card"><b>专题入口</b><span>8</span></div>
+      <div class="card"><b>推送状态</b><span>未推送</span></div>
+    </section>
+    <section class="panel">
+      <table>
+        <thead><tr><th>检查项</th><th>状态</th><th>说明</th></tr></thead>
+        <tbody><tr><td>第 7 步候选包通过</td><td><span class="badge pass">通过</span></td><td>阻断 0，提醒 0</td></tr><tr><td>候选首页存在</td><td><span class="badge pass">通过</span></td><td>index_1609_release_preview.html 1253.2KB</td></tr><tr><td>候选首页公开表达</td><td><span class="badge pass">通过</span></td><td>未发现内部或交易化表达</td></tr><tr><td>候选首页站内链接</td><td><span class="badge pass">通过</span></td><td>1 个站内链接，缺失 0</td></tr><tr><td>CPO 公开专题入口</td><td><span class="badge pass">通过</span></td><td>入口文件与首页链接均存在</td></tr><tr><td>会员专题文件保留</td><td><span class="badge pass">通过</span></td><td>7 个专题文件存在</td></tr><tr><td>会员专题发布边界</td><td><span class="badge warn">待确认</span></td><td>0/7 个会员专题在候选首页可见；如本轮只公开 CPO，推送前需要决定是否隐藏这些入口</td></tr><tr><td>当前公开首页未被替换</td><td><span class="badge pass">通过</span></td><td>index.html 仍存在，本步骤未覆盖正式首页</td></tr></tbody>
+      </table>
+    </section>
+    <section class="panel">
+      <table>
+        <thead><tr><th>专题</th><th>发布口径</th><th>文件</th><th>候选首页入口</th></tr></thead>
+        <tbody><tr><td>CPO</td><td>当前公开专题</td><td><span class="badge pass">通过</span></td><td><span class="badge pass">通过</span></td></tr><tr><td>PCB</td><td>会员专题，后续开放</td><td><span class="badge pass">通过</span></td><td><span class="badge warn">待确认</span></td></tr><tr><td>半导体设备</td><td>会员专题，后续开放</td><td><span class="badge pass">通过</span></td><td><span class="badge warn">待确认</span></td></tr><tr><td>半导体材料</td><td>会员专题，后续开放</td><td><span class="badge pass">通过</span></td><td><span class="badge warn">待确认</span></td></tr><tr><td>MLCC 被动元件</td><td>会员专题，后续开放</td><td><span class="badge pass">通过</span></td><td><span class="badge warn">待确认</span></td></tr><tr><td>先进封装 Chiplet</td><td>会员专题，后续开放</td><td><span class="badge pass">通过</span></td><td><span class="badge warn">待确认</span></td></tr><tr><td>AI 服务器 / 液冷 / 电源 / 连接器</td><td>会员专题，后续开放</td><td><span class="badge pass">通过</span></td><td><span class="badge warn">待确认</span></td></tr><tr><td>电网 / 特高压</td><td>会员专题，后续开放</td><td><span class="badge pass">通过</span></td><td><span class="badge warn">待确认</span></td></tr></tbody>
+      </table>
+    </section>
+    <section class="panel note">
+      <h2>下一步</h2>
+      <p>下一步可做发布包差异清单：明确哪些文件进入公开站、哪些会员专题暂不公开，然后再决定是否推送。</p>
+      <p>本步骤只做发布前路径确认，不覆盖 index.html，不推送独立站。</p>
+    </section>
+  </main>
+</body>
+</html>

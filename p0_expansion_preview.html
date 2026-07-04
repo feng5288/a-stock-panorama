@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P0扩容分类预览</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3}
+a{color:#79c0ff;text-decoration:none}
+.top{position:sticky;top:0;z-index:5;background:#0d1117;border-bottom:1px solid #30363d}
+.top-inner{max-width:1480px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+h1{font-size:20px;letter-spacing:0}.nav{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid #30363d;background:#161b22;color:#c9d1d9;border-radius:8px;padding:8px 10px;font-size:13px;cursor:pointer}
+.btn.active{border-color:#58a6ff;color:#fff;background:#10243a}
+.wrap{max-width:1480px;margin:0 auto;padding:18px;display:grid;grid-template-columns:280px 1fr;gap:14px}
+.panel{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px;margin-bottom:14px}
+.summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.metric{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:12px}.metric b{display:block;font-size:22px;margin-bottom:4px}.metric span{font-size:12px;color:#8b949e}
+.side{position:sticky;top:72px;align-self:start}.bucket{display:flex;justify-content:space-between;gap:8px;width:100%;text-align:left;margin-bottom:7px}.bucket small{color:#8b949e}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:10px}
+.card{background:#0d1117;border:1px solid #21262d;border-left:4px solid #8b949e;border-radius:8px;padding:12px}
+.card.high{border-left-color:#f85149;background:linear-gradient(90deg,#2d1418 0,#0d1117 22%)}
+.card.medium{border-left-color:#d29922;background:linear-gradient(90deg,#2d240f 0,#0d1117 22%)}
+.card.review{border-left-color:#58a6ff;background:linear-gradient(90deg,#10243a 0,#0d1117 22%)}
+.name{font-size:15px;font-weight:700;margin-bottom:6px}.meta,.line{font-size:12px;color:#8b949e;line-height:1.55}.path{font-size:13px;color:#c9d1d9;line-height:1.55;margin-bottom:4px}
+.pill-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.pill{display:inline-flex;border:1px solid #30363d;border-radius:999px;padding:2px 8px;font-size:12px;color:#c9d1d9;background:#161b22}
+.pill.high{border-color:#f85149;color:#ffa198}.pill.medium{border-color:#d29922;color:#f2cc60}.pill.review{border-color:#58a6ff;color:#a5d6ff}.empty{padding:34px;text-align:center;color:#8b949e}
+@media(max-width:900px){.wrap{grid-template-columns:1fr}.side{position:static}.summary{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="top-inner"><div><h1>P0扩容分类预览</h1><div class="meta" id="subtitle"></div></div><div class="nav"><a class="btn" href="classification_v2_preview.html?v=rules1">分类规则预览</a><a class="btn" href="index_classification_v2.html?v=power2">新版首页</a></div></div></header>
+<main class="wrap">
+  <aside class="side">
+    <section class="panel"><div class="meta" style="margin-bottom:8px">行业过滤</div><div id="bucketList"></div></section>
+    <section class="panel"><div class="meta" style="margin-bottom:8px">证据等级</div><button class="btn bucket active" data-level="all">全部 <small id="countAll"></small></button><button class="btn bucket" data-level="high">高证据 <small id="countHigh"></small></button><button class="btn bucket" data-level="medium">中证据 <small id="countMedium"></small></button><button class="btn bucket" data-level="review">V2待补证据 <small id="countReview"></small></button></section>
+  </aside>
+  <section><div class="summary" id="summary"></div><section class="panel"><div class="toolbar"><button class="btn active" id="showAll">全部公司</button><button class="btn" id="showWarnings">只看待处理</button><button class="btn" id="showReview">只看待补证据</button></div><div id="content"></div></section></section>
+</main>
+<script src="classification_rules_v2.js"></script>
+<script src="p0_classification_preview.js"></script>
+<script>
+var DATA=typeof P0_CLASSIFICATION_PREVIEW!=="undefined"?P0_CLASSIFICATION_PREVIEW:{rows:[]};
+var rows=DATA.rows||[];
+var activeBucket="all", activeLevel="all", mode="all";
+var levelLabel={high:"高证据",medium:"中证据",review:"V2待补证据"};
+var warningLabel={root_alias_not_found:"旧报告缺少主分类关键词",child_alias_not_found:"旧报告缺少细分赛道关键词",subcategory_not_in_rules:"细分赛道待纳入规则",docx_text_too_short:"旧报告文本过短"};
+var reasonLabel={old_report_missing_concept_tags:"旧报告未取得概念标签",old_report_avoids_unverified_tags:"旧报告主动避免杜撰标签",old_report_generic_business_description:"主营业务描述过于通用",old_report_industry_template_only:"正文主要是行业模板",no_root_business_keyword_in_old_report:"缺少主行业业务关键词",no_child_track_keyword_in_old_report:"缺少细分赛道业务关键词"};
+function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",""":"&quot;","'":"&#39;"}[c]})}
+function arr(v){return Array.isArray(v)?v:(v?[v]:[])}
+function labelList(values,map){return arr(values).map(function(v){return map[v]||v})}
+function countsBy(key){var out={};rows.forEach(function(r){var k=r[key]||"";out[k]=(out[k]||0)+1});return out}
+function filtered(){return rows.filter(function(r){if(activeBucket!=="all"&&r.bucket!==activeBucket)return false;if(activeLevel!=="all"&&r.evidence_level!==activeLevel)return false;if(mode==="warnings"&&!arr(r.warnings).length)return false;if(mode==="review"&&r.evidence_level!=="review")return false;return true})}
+function renderSummary(){var high=rows.filter(function(r){return r.evidence_level==="high"}).length;var medium=rows.filter(function(r){return r.evidence_level==="medium"}).length;var review=rows.filter(function(r){return r.evidence_level==="review"}).length;var warnings=rows.filter(function(r){return arr(r.warnings).length}).length;document.getElementById("summary").innerHTML=[["P0样本",rows.length],["高证据",high],["中证据",medium],["V2待补证据",review],["待处理",warnings]].map(function(x){return '<div class="metric"><b>'+esc(x[1])+'</b><span>'+esc(x[0])+'</span></div>'}).join("");document.getElementById("countAll").textContent=rows.length;document.getElementById("countHigh").textContent=high;document.getElementById("countMedium").textContent=medium;document.getElementById("countReview").textContent=review;document.getElementById("subtitle").textContent="规则版本 "+(DATA.rules_version||"--")+" · 生成时间 "+(DATA.generated_at||"--")}
+function renderBuckets(){var counts=countsBy("bucket");var names=Object.keys(counts).sort();var html='<button class="btn bucket '+(activeBucket==="all"?"active":"")+'" data-bucket="all">全部行业 <small>'+rows.length+'</small></button>';names.forEach(function(name){html+='<button class="btn bucket '+(activeBucket===name?"active":"")+'" data-bucket="'+esc(name)+'">'+esc(name)+' <small>'+counts[name]+'</small></button>'});document.getElementById("bucketList").innerHTML=html;document.querySelectorAll("[data-bucket]").forEach(function(btn){btn.onclick=function(){activeBucket=btn.getAttribute("data-bucket");render()}})}
+function card(r){var warnings=labelList(r.warnings,warningLabel), reasons=labelList(r.review_reasons,reasonLabel), rootHits=arr(r.root_alias_hits), childHits=arr(r.child_alias_hits), action=r.recommended_action||"";var evidence=levelLabel[r.evidence_level]||r.evidence_level;return '<article class="card '+esc(r.evidence_level)+'"><div class="name">'+esc(r.name)+' <span class="meta">'+esc(r.code)+'</span></div><div class="path">'+esc(r.bucket)+' / '+esc(r.subcategory)+'</div><div class="pill-row"><span class="pill '+esc(r.evidence_level)+'">'+esc(evidence)+'</span>'+(rootHits.length?'<span class="pill">主类依据 '+esc(rootHits.join(" / "))+'</span>':'')+(childHits.length?'<span class="pill">细分依据 '+esc(childHits.join(" / "))+'</span>':'')+(warnings.length?'<span class="pill review">待补 '+esc(warnings.join(" / "))+'</span>':'')+(reasons.length?'<span class="pill review">原因 '+esc(reasons.join(" / "))+'</span>':'')+'</div>'+(action?'<div class="line" style="margin-top:8px;color:#a5d6ff">下一步：'+esc(action)+'</div>':'')+'</article>'}
+function renderContent(){var list=filtered();document.getElementById("content").innerHTML=list.length?'<div class="grid">'+list.map(card).join("")+'</div>':'<div class="empty">没有匹配公司</div>'}
+function render(){renderSummary();renderBuckets();document.querySelectorAll("[data-level]").forEach(function(btn){btn.classList.toggle("active",activeLevel===btn.getAttribute("data-level"));btn.onclick=function(){activeLevel=btn.getAttribute("data-level");render()}});document.getElementById("showAll").classList.toggle("active",mode==="all");document.getElementById("showWarnings").classList.toggle("active",mode==="warnings");document.getElementById("showReview").classList.toggle("active",mode==="review");renderContent()}
+document.getElementById("showAll").onclick=function(){mode="all";render()};document.getElementById("showWarnings").onclick=function(){mode="warnings";render()};document.getElementById("showReview").onclick=function(){mode="review";render()};render();
+</script>
+</body>
+</html>

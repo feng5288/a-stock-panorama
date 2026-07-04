@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>首页1-9当前池证据不足处理表</title>
+  <script src="core9_gap_resolution_v1.js"></script>
+  <style>
+    :root{--accent:#7c2d12;--ink:#111827;--muted:#667085;--line:#e5e7eb;--bg:#f7f8fb;--panel:#fff;}
+    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    header{padding:22px 28px;background:linear-gradient(90deg,#111827,#374151);color:white}h1{font-size:24px;margin:0 0 8px}.sub{color:#d1d5db;font-size:13px;line-height:1.6}
+    main{padding:22px 28px 40px}.nav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}.nav a{color:#111827;text-decoration:none;background:white;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px}.nav a.active{background:var(--accent);color:white;border-color:var(--accent)}
+    .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:14px 0 18px}.metric{background:white;border:1px solid var(--line);border-radius:8px;padding:12px}.metric b{display:block;font-size:22px}.metric span{font-size:12px;color:var(--muted)}
+    .toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0 16px}.toolbar input,.toolbar select{height:34px;border:1px solid var(--line);border-radius:6px;padding:0 10px;background:white}.hint{font-size:12px;color:var(--muted)}
+    .grid{display:grid;gap:12px}.card{background:white;border:1px solid var(--line);border-radius:8px;padding:14px}.card h3{font-size:17px;margin:0 0 8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.tag{display:inline-flex;align-items:center;border-radius:999px;padding:3px 8px;font-size:12px;background:#eef2ff;color:#3730a3}.tag.ok{background:#fee2e2;color:#991b1b}.tag.mid{background:#fff7ed;color:#9a3412}.tag.gray{background:#f3f4f6;color:#374151}.tag.blue{background:#dbeafe;color:#1d4ed8}.tag.green{background:#dcfce7;color:#166534}
+    .kv{display:grid;grid-template-columns:120px 1fr;gap:6px 10px;font-size:13px;line-height:1.55}.kv div:nth-child(odd){color:var(--muted)}
+    table{width:100%;border-collapse:collapse;background:white;border:1px solid var(--line);border-radius:8px;overflow:hidden}th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;font-size:13px;vertical-align:top}th{background:#f3f4f6;color:#374151;position:sticky;top:0}tr:hover td{background:#fafafa}.nowrap{white-space:nowrap}.small{font-size:12px;color:var(--muted);line-height:1.45}.section-title{font-size:18px;margin:22px 0 10px}
+  </style>
+
+</head>
+<body>
+<header><h1>首页1-9当前池证据不足处理表</h1><div class="sub" id="subtitle"></div></header>
+<main>
+  <div class="nav">
+    <a href="core9_external_evidence_cards.html?v=next4">外部候选证据卡</a>
+    <a href="core9_gap_resolution.html?v=next4">证据不足处理</a>
+    <a href="core9_deferred_legacy_queue.html?v=next4">旧路径延期</a>
+    <a href="core9_v2_first_batch.html?v=next4">V2首批名单</a>
+  </div>
+  <div id="app"></div>
+</main>
+<script>
+
+function esc(v){return String(v ?? '').replace(/[&<>"']/g, s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));}
+function num(v, unit=''){return v===null||v===undefined||v===''?'--':esc(v)+unit;}
+function metric(label, value){return '<div class="metric"><b>'+esc(value)+'</b><span>'+esc(label)+'</span></div>';}
+function setActive(name){document.querySelectorAll('.nav a').forEach(a=>{if(a.getAttribute('href').startsWith(name))a.classList.add('active')});}
+
+setActive('core9_gap_resolution.html');
+const data = CORE9_GAP_RESOLUTION_V1;
+document.getElementById('subtitle').textContent = data.purpose + ' 生成时间：' + data.generated_at;
+const decisions = ['全部','保留首批','降为相关','移出首批','暂缓入首批'];
+const app = document.getElementById('app');
+function render(){const f=document.getElementById('filter')?.value||'全部';const rows=data.rows.filter(r=>f==='全部'||r.decision===f);app.querySelector('#rows').innerHTML=rows.map(r=>'<tr><td class="nowrap">'+esc(r.concept_seq)+'. '+esc(r.concept_name)+'</td><td class="nowrap">'+esc(r.code)+'<br>'+esc(r.name)+'</td><td>'+esc(r.current_primary||'')+'</td><td>'+esc(r.report_status)+' / '+esc(r.report_kind)+'</td><td><span class="tag '+(r.include_first_batch?'ok':r.decision==='移出首批'?'gray':'mid')+'">'+esc(r.decision)+'</span></td><td>'+esc(r.decision_reason)+'</td><td>'+esc(r.next_action)+'</td></tr>').join('');}
+app.innerHTML='<div class="summary">'+metric('总数',data.summary.total)+metric('保留首批',data.summary.keep_first_batch)+metric('降为相关',data.summary.downgrade_related)+metric('移出首批',data.summary.remove_first_batch)+'</div><div class="toolbar"><select id="filter">'+decisions.map(d=>'<option>'+d+'</option>').join('')+'</select><span class="hint">这张表不会覆盖正式分类，只决定是否进入首页1-9完整V2首批。</span></div><table><thead><tr><th>概念</th><th>公司</th><th>当前主线</th><th>报告</th><th>处理</th><th>原因</th><th>下一步</th></tr></thead><tbody id="rows"></tbody></table>';
+document.getElementById('filter').addEventListener('change',render);render();
+
+</script>
+</body>
+</html>

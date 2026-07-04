@@ -1,0 +1,276 @@
+{
+  "generated_at": "2026-07-02",
+  "decision": "local_candidate_ready_not_pushed",
+  "public_push_status": "not_pushed",
+  "hard_fails": 0,
+  "warnings": 0,
+  "report_summary": {
+    "total": 1609,
+    "display_ready": 1609,
+    "usable_but_should_expand": 0,
+    "thin_needs_rework": 0,
+    "missing": 0,
+    "summary_pages_blocked": 0
+  },
+  "classification_summary": {
+    "total": 1609,
+    "ready": 1609,
+    "auto_rule_review": 0,
+    "needs_manual_review": 0,
+    "mainline_counts": {
+      "AI算力与数字基础设施": 126,
+      "PCB/被动元件/电子材料": 31,
+      "半导体与电子元器件": 31,
+      "电力设备与电力运营": 180,
+      "新能源车与储能": 79,
+      "高端装备与机器人": 160,
+      "有色金属与新材料": 326,
+      "医药健康": 90,
+      "消费与服务": 382,
+      "金融地产": 134,
+      "交运物流": 26,
+      "军工航空航天": 26,
+      "环保与公用事业": 18
+    },
+    "stable_report_aliases": 0
+  },
+  "step5": {
+    "decision": "local_release_preflight_pass",
+    "hard_fails": 0,
+    "warnings": 0
+  },
+  "step6": {
+    "total": 365,
+    "pass": 365,
+    "min_bytes_after": 10915,
+    "failed_count": 0
+  },
+  "homepage": {
+    "path": "index_1609_release_preview.html",
+    "hits": [],
+    "local_href_total": 1,
+    "missing_hrefs": []
+  },
+  "gates": [
+    {
+      "name": "1609 家公司入口覆盖",
+      "status": "pass",
+      "detail": "1609/1609 可展示，缺失 0"
+    },
+    {
+      "name": "报告厚度队列清零",
+      "status": "pass",
+      "detail": "待扩写 0，过薄 0，摘要阻断 0"
+    },
+    {
+      "name": "365 个摘要页加厚通过",
+      "status": "pass",
+      "detail": "365/365 通过，最小体量 10.7KB"
+    },
+    {
+      "name": "分类入口覆盖",
+      "status": "pass",
+      "detail": "1609/1609 ready，人工处理项 0"
+    },
+    {
+      "name": "第 5 步预检通过",
+      "status": "pass",
+      "detail": "阻断项 0，提醒项 0"
+    },
+    {
+      "name": "首页文件存在",
+      "status": "pass",
+      "detail": "首页候选文件可读取"
+    },
+    {
+      "name": "首页公开表述检查",
+      "status": "pass",
+      "detail": "未发现内部词或交易化表达"
+    },
+    {
+      "name": "首页相对链接检查",
+      "status": "pass",
+      "detail": "1 个站内链接，缺失 0"
+    },
+    {
+      "name": "抽样报告公开表述检查",
+      "status": "pass",
+      "detail": "19 份跨主线样本，提醒 0"
+    }
+  ],
+  "report_samples": [
+    {
+      "code": "600182",
+      "name": "S佳通",
+      "path": "company_research_core_deep/600182.html",
+      "status": "pass",
+      "bytes": 14876,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "002129",
+      "name": "TCL中环",
+      "path": "company_research_core_deep/002129.html",
+      "status": "pass",
+      "bytes": 14861,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "000100",
+      "name": "TCL科技",
+      "path": "company_research_core_deep/000100.html",
+      "status": "pass",
+      "bytes": 14625,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "002727",
+      "name": "一心堂",
+      "path": "company_research/002727.html",
+      "status": "pass",
+      "bytes": 11166,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "601038",
+      "name": "一拖股份",
+      "path": "company_research_core_deep/601038.html",
+      "status": "pass",
+      "bytes": 15045,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "000800",
+      "name": "一汽解放",
+      "path": "company_research_core_deep/000800.html",
+      "status": "pass",
+      "bytes": 14635,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "603392",
+      "name": "万泰生物",
+      "path": "company_research/603392.html",
+      "status": "pass",
+      "bytes": 19065,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "000002",
+      "name": "万科A",
+      "path": "company_research_core_deep/000002.html",
+      "status": "pass",
+      "bytes": 14539,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "601360",
+      "name": "三六零",
+      "path": "company_research_core_deep/601360.html",
+      "status": "pass",
+      "bytes": 14914,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "601827",
+      "name": "三峰环境",
+      "path": "company_research/601827.html",
+      "status": "pass",
+      "bytes": 11165,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "001317",
+      "name": "三羊马",
+      "path": "company_research/001317.html",
+      "status": "pass",
+      "bytes": 10336,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "002384",
+      "name": "东山精密",
+      "path": "company_research_core_deep/002384.html",
+      "status": "pass",
+      "bytes": 14764,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "000099",
+      "name": "中信海直",
+      "path": "company_research/000099.html",
+      "status": "pass",
+      "bytes": 11259,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "600584",
+      "name": "长电科技",
+      "path": "company_research_core_deep/600584.html",
+      "status": "pass",
+      "bytes": 14693,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "002138",
+      "name": "顺络电子",
+      "path": "company_research_core_deep/002138.html",
+      "status": "pass",
+      "bytes": 14676,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "603005",
+      "name": "晶方科技",
+      "path": "company_research_core_deep/603005.html",
+      "status": "pass",
+      "bytes": 14536,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "603986",
+      "name": "兆易创新",
+      "path": "company_research_core_deep/603986.html",
+      "status": "pass",
+      "bytes": 14737,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "600031",
+      "name": "三一重工",
+      "path": "company_research_core_deep/600031.html",
+      "status": "pass",
+      "bytes": 14680,
+      "hits": [],
+      "hasDisclaimer": true
+    },
+    {
+      "code": "600519",
+      "name": "贵州茅台",
+      "path": "company_research/600519.html",
+      "status": "pass",
+      "bytes": 18662,
+      "hits": [],
+      "hasDisclaimer": true
+    }
+  ],
+  "report_sample_issues": [],
+  "next_step": "本地候选包已具备发布前确认条件；如要公开上线，需要单独执行推送前路径检查与发布动作。"
+}

@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-07-04T10:12:17.343Z",
+  "companies": 1718,
+  "validCompanies": 1643,
+  "noValidPath": 76,
+  "nodes": 151,
+  "concepts": 151,
+  "reports": 1672,
+  "rootCounts": {
+    "资源周期": 169,
+    "化工材料": 166,
+    "传媒互联网": 124,
+    "高端装备与工业": 124,
+    "医药医疗": 97,
+    "商贸零售/社服": 96,
+    "资料待完善": 76,
+    "纺服轻工": 75,
+    "消费白马": 73,
+    "电力与公用事业": 71,
+    "电网 / 特高压": 68,
+    "金融": 68,
+    "消费电子": 67,
+    "机器人/自动化": 60,
+    "有色金属与新材料": 51,
+    "地产/建筑建材": 47,
+    "计算机/软件服务": 47,
+    "新能源汽车": 45,
+    "光通信基础设施": 40,
+    "交运物流": 30,
+    "半导体": 28,
+    "动力电池 / 储能": 26,
+    "环保/水务固废": 26,
+    "PCB / 高速PCB": 25,
+    "国防军工与航空航天": 20,
+    "农业养殖": 18,
+    "AI算力": 16,
+    "光模块 / CPO": 14,
+    "被动元器件 / MLCC": 9
+  },
+  "coreIds": [
+    {
+      "id": "ai_compute",
+      "exists": true
+    },
+    {
+      "id": "pcb_high_speed",
+      "exists": true
+    },
+    {
+      "id": "semiconductor",
+      "exists": true
+    },
+    {
+      "id": "optical_module",
+      "exists": true
+    },
+    {
+      "id": "passive_components",
+      "exists": true
+    },
+    {
+      "id": "comm_optical_infra",
+      "exists": true
+    },
+    {
+      "id": "battery_storage",
+      "exists": true
+    },
+    {
+      "id": "power_grid_uhv",
+      "exists": true
+    }
+  ]
+}

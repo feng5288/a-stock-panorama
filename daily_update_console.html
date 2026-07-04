@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日收盘更新控制台</title>
+<style>
+:root{color-scheme:dark;--bg:#080b10;--panel:#111827;--line:#263244;--text:#e6edf3;--muted:#94a3b8;--blue:#58a6ff;--green:#3fb950;--gold:#d29922;--red:#f85149}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 18% 0,#17263b 0,#080b10 42%,#05070b 100%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1320px,calc(100% - 36px));margin:0 auto}.top{position:sticky;top:0;z-index:10;background:rgba(8,11,16,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.top .wrap{height:58px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:900}.brand small{display:block;color:var(--muted);font-size:12px;font-weight:500;margin-top:2px}.btn{height:34px;border:1px solid var(--line);border-radius:8px;background:#101722;color:#dbeafe;padding:0 12px;display:inline-flex;align-items:center}.hero{padding:24px 0 14px;display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:14px}.panel,.card{background:rgba(17,24,39,.92);border:1px solid var(--line);border-radius:8px}.panel{padding:18px}.eyebrow{display:inline-flex;border:1px solid rgba(88,166,255,.45);background:rgba(88,166,255,.12);color:#9ccfff;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:800}h1{margin:12px 0 8px;font-size:32px;color:#f8fafc}.note{color:var(--muted);line-height:1.7;margin:0}.summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary div{background:#0b1220;border:1px solid #202b3d;border-radius:8px;padding:12px}.summary b{display:block;font-size:24px;color:#fff}.summary span{display:block;color:var(--muted);font-size:12px;margin-top:6px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:12px 0 18px}.card{padding:14px;min-height:205px}.card.ok{border-left:4px solid var(--green)}.card.warn{border-left:4px solid var(--gold)}.card-top{display:flex;justify-content:space-between;gap:10px}.seq{width:28px;height:28px;border-radius:8px;background:#202938;border:1px solid #344054;display:grid;place-items:center;font-weight:900}.status,.pill{border:1px solid #344054;border-radius:999px;padding:4px 8px;font-size:12px;color:#dbeafe;background:#101722}.ok .status,.pill.ok{border-color:rgba(63,185,80,.45);color:#b7f7c8;background:rgba(63,185,80,.1)}.warn .status,.pill.warn{border-color:rgba(210,153,34,.45);color:#f7d48b;background:rgba(210,153,34,.1)}.card h2{font-size:17px;line-height:1.35;margin:14px 0 10px;color:#fff}.kpis{display:grid;grid-template-columns:1fr;gap:6px}.kpis div{background:#0b1220;border:1px solid #202b3d;border-radius:8px;padding:8px}.kpis b{color:#fff}.kpis span{display:block;color:var(--muted);font-size:12px;margin-top:4px}.missing{margin:10px 0 0;color:#f7d48b;font-size:12px;line-height:1.6}.card a{display:inline-flex;margin-top:12px;color:#9ccfff;font-weight:800;font-size:13px}.table-panel{margin:18px 0 40px;overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px;min-width:920px}th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}th{color:#cbd5e1;background:rgba(15,23,42,.45)}td:last-child{color:#f7d48b}code{color:#cbd5e1}@media(max-width:1120px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}.summary{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:720px){.grid,.summary{grid-template-columns:1fr}.top .wrap{height:auto;padding:12px 0;align-items:flex-start;flex-direction:column}h1{font-size:25px}}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="wrap"><div class="brand">每日收盘更新控制台<small>本页面仅用于本地检查，不推送公开站</small></div><nav><a class="btn" href="member_topics_local.html">会员专题入口</a></nav></div></header>
+<main class="wrap">
+  <section class="hero">
+    <div class="panel"><span class="eyebrow">Daily Close</span><h1>专题每日数据状态</h1><p class="note">配置文件覆盖 8 个专题。当前最新数据文件：2026-06-29 收盘。若覆盖数小于公司池数量，通常是当日停牌、无交易或行情源暂未返回，缺失名单会在下方显示。</p></div>
+    <aside class="panel summary">
+      <div><b>8</b><span>配置专题</span></div>
+      <div><b>8</b><span>已更新专题</span></div>
+      <div><b>217</b><span>配置公司</span></div>
+      <div><b>1</b><span>缺失行情</span></div>
+    </aside>
+  </section>
+  <section class="grid">
+  <article class="card ok">
+    <div class="card-top"><span class="seq">1</span><span class="status">已更新</span></div>
+    <h2>CPO光互连</h2>
+    <div class="kpis">
+      <div><b>34/34</b><span>覆盖公司</span></div>
+      <div><b>-3.34%</b><span>平均涨跌幅</span></div>
+      <div><b>2859.31亿</b><span>合计成交额</span></div>
+    </div>
+    
+    <a href="topics/cpo/index.html">打开专题</a>
+  </article>
+
+
+  <article class="card ok">
+    <div class="card-top"><span class="seq">2</span><span class="status">已更新</span></div>
+    <h2>PCB / 高速PCB</h2>
+    <div class="kpis">
+      <div><b>34/34</b><span>覆盖公司</span></div>
+      <div><b>-3.84%</b><span>平均涨跌幅</span></div>
+      <div><b>1242亿</b><span>合计成交额</span></div>
+    </div>
+    
+    <a href="topics/pcb/index.html">打开专题</a>
+  </article>
+
+
+  <article class="card warn">
+    <div class="card-top"><span class="seq">3</span><span class="status">已更新，有缺口</span></div>
+    <h2>半导体设备</h2>
+    <div class="kpis">
+      <div><b>16/17</b><span>覆盖公司</span></div>
+      <div><b>9.1%</b><span>平均涨跌幅</span></div>
+      <div><b>1004.77亿</b><span>合计成交额</span></div>
+    </div>
+    <p class="missing">缺失：拓荆科技 688072</p>
+    <a href="topics/semiconductor-equipment/index.html">打开专题</a>
+  </article>
+
+
+  <article class="card ok">
+    <div class="card-top"><span class="seq">4</span><span class="status">已更新</span></div>
+    <h2>半导体材料</h2>
+    <div class="kpis">
+      <div><b>26/26</b><span>覆盖公司</span></div>
+      <div><b>6.62%</b><span>平均涨跌幅</span></div>
+      <div><b>1349.62亿</b><span>合计成交额</span></div>
+    </div>
+    
+    <a href="topics/semiconductor-materials/index.html">打开专题</a>
+  </article>
+
+
+  <article class="card ok">
+    <div class="card-top"><span class="seq">5</span><span class="status">已更新</span></div>
+    <h2>MLCC被动元件</h2>
+    <div class="kpis">
+      <div><b>12/12</b><span>覆盖公司</span></div>
+      <div><b>1.6%</b><span>平均涨跌幅</span></div>
+      <div><b>729.06亿</b><span>合计成交额</span></div>
+    </div>
+    
+    <a href="topics/mlcc-passive/index.html">打开专题</a>
+  </article>
+
+
+  <article class="card ok">
+    <div class="card-top"><span class="seq">6</span><span class="status">已更新</span></div>
+    <h2>先进封装 / Chiplet</h2>
+    <div class="kpis">
+      <div><b>24/24</b><span>覆盖公司</span></div>
+      <div><b>1.01%</b><span>平均涨跌幅</span></div>
+      <div><b>1780.64亿</b><span>合计成交额</span></div>
+    </div>
+    
+    <a href="topics/advanced-packaging-chiplet/index.html">打开专题</a>
+  </article>
+
+
+  <article class="card ok">
+    <div class="card-top"><span class="seq">7</span><span class="status">已更新</span></div>
+    <h2>AI服务器 / 液冷 / 电源 / 连接器</h2>
+    <div class="kpis">
+      <div><b>19/19</b><span>覆盖公司</span></div>
+      <div><b>-2.29%</b><span>平均涨跌幅</span></div>
+      <div><b>850.08亿</b><span>合计成交额</span></div>
+    </div>
+    
+    <a href="topics/ai-server-infrastructure/index.html">打开专题</a>
+  </article>
+
+
+  <article class="card ok">
+    <div class="card-top"><span class="seq">8</span><span class="status">已更新</span></div>
+    <h2>电网 / 特高压</h2>
+    <div class="kpis">
+      <div><b>51/51</b><span>覆盖公司</span></div>
+      <div><b>-0.62%</b><span>平均涨跌幅</span></div>
+      <div><b>546.56亿</b><span>合计成交额</span></div>
+    </div>
+    
+    <a href="topics/power-grid/index.html">打开专题</a>
+  </article>
+</section>
+  <section class="panel table-panel">
+    <h2>更新明细</h2>
+    <table><thead><tr><th>序号</th><th>专题</th><th>ID</th><th>状态</th><th>覆盖</th><th>平均涨跌幅</th><th>成交额</th><th>缺失明细</th></tr></thead><tbody>
+  <tr>
+    <td>1</td>
+    <td>CPO光互连</td>
+    <td>cpo</td>
+    <td><span class="ok pill">已更新</span></td>
+    <td>34/34</td>
+    <td>-3.34%</td>
+    <td>2859.31亿</td>
+    <td>无</td>
+  </tr>
+
+
+  <tr>
+    <td>2</td>
+    <td>PCB / 高速PCB</td>
+    <td>pcb</td>
+    <td><span class="ok pill">已更新</span></td>
+    <td>34/34</td>
+    <td>-3.84%</td>
+    <td>1242亿</td>
+    <td>无</td>
+  </tr>
+
+
+  <tr>
+    <td>3</td>
+    <td>半导体设备</td>
+    <td>semiconductor-equipment</td>
+    <td><span class="warn pill">已更新，有缺口</span></td>
+    <td>16/17</td>
+    <td>9.1%</td>
+    <td>1004.77亿</td>
+    <td>拓荆科技 688072</td>
+  </tr>
+
+
+  <tr>
+    <td>4</td>
+    <td>半导体材料</td>
+    <td>semiconductor-materials</td>
+    <td><span class="ok pill">已更新</span></td>
+    <td>26/26</td>
+    <td>6.62%</td>
+    <td>1349.62亿</td>
+    <td>无</td>
+  </tr>
+
+
+  <tr>
+    <td>5</td>
+    <td>MLCC被动元件</td>
+    <td>mlcc-passive</td>
+    <td><span class="ok pill">已更新</span></td>
+    <td>12/12</td>
+    <td>1.6%</td>
+    <td>729.06亿</td>
+    <td>无</td>
+  </tr>
+
+
+  <tr>
+    <td>6</td>
+    <td>先进封装 / Chiplet</td>
+    <td>advanced-packaging-chiplet</td>
+    <td><span class="ok pill">已更新</span></td>
+    <td>24/24</td>
+    <td>1.01%</td>
+    <td>1780.64亿</td>
+    <td>无</td>
+  </tr>
+
+
+  <tr>
+    <td>7</td>
+    <td>AI服务器 / 液冷 / 电源 / 连接器</td>
+    <td>ai-server-infrastructure</td>
+    <td><span class="ok pill">已更新</span></td>
+    <td>19/19</td>
+    <td>-2.29%</td>
+    <td>850.08亿</td>
+    <td>无</td>
+  </tr>
+
+
+  <tr>
+    <td>8</td>
+    <td>电网 / 特高压</td>
+    <td>power-grid</td>
+    <td><span class="ok pill">已更新</span></td>
+    <td>51/51</td>
+    <td>-0.62%</td>
+    <td>546.56亿</td>
+    <td>无</td>
+  </tr>
+</tbody></table>
+    <p class="note">更新命令：<code>node C:\Users\LYDN\Documents\网站维护\run_daily_website_update_pipeline.js --date YYYYMMDD</code>。默认只更新本地预览，不推送公开站；如 Tushare 接口提示频率限制，等待限制窗口结束后再运行。</p>
+  </section>
+</main>
+</body>
+</html>

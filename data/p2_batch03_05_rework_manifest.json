@@ -1,0 +1,1445 @@
+{
+  "generated_at": "2026-07-02",
+  "rows": [
+    {
+      "batch": "P2-21",
+      "code": "603333",
+      "name": "福华尚纬",
+      "mainline": "电力设备与电力运营",
+      "tracks": [
+        "电网设备",
+        "电气设备",
+        "电网设备 / 特高压"
+      ],
+      "path": "company_research_rework_p2_batch03_05/603333.html",
+      "bytes": 10423,
+      "finance": {
+        "code": "603333",
+        "bs_code": "sh.603333",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603333",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.000268",
+          "npMargin": "0.008355",
+          "gpMargin": "0.154815",
+          "netProfit": "3469361.990000",
+          "epsTTM": "-0.051890",
+          "MBRevenue": "",
+          "totalShare": "621527586.00",
+          "liqaShare": "621527586.00"
+        },
+        "growth": {
+          "code": "sh.603333",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.016593",
+          "YOYAsset": "0.637556",
+          "YOYNI": "1.240053",
+          "YOYEPSBasic": "1.043478",
+          "YOYPNI": "1.037798"
+        },
+        "errors": [],
+        "net_profit_yi": 0.03,
+        "yoy_parent_net_income_pct": 103.78,
+        "gross_margin_pct": 15.48,
+        "net_margin_pct": 0.84
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-22",
+      "code": "002513",
+      "name": "蓝丰生化",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "农化/化工材料",
+        "精细化工",
+        "农业材料"
+      ],
+      "path": "company_research_rework_p2_batch03_05/002513.html",
+      "bytes": 10306,
+      "finance": {
+        "code": "002513",
+        "bs_code": "sz.002513",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002513",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.354307",
+          "npMargin": "-0.042382",
+          "gpMargin": "0.061241",
+          "netProfit": "-27638674.440000",
+          "epsTTM": "-0.487793",
+          "MBRevenue": "",
+          "totalShare": "375593978.00",
+          "liqaShare": "289041302.00"
+        },
+        "growth": {
+          "code": "sz.002513",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "2.198754",
+          "YOYAsset": "0.106075",
+          "YOYNI": "0.245924",
+          "YOYEPSBasic": "0.328814",
+          "YOYPNI": "0.330092"
+        },
+        "errors": [],
+        "net_profit_yi": -0.28,
+        "yoy_parent_net_income_pct": 33.01,
+        "gross_margin_pct": 6.12,
+        "net_margin_pct": -4.24
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-23",
+      "code": "002059",
+      "name": "云南旅游",
+      "mainline": "消费与服务",
+      "tracks": [
+        "文旅服务",
+        "旅游景区/索道",
+        "文化消费"
+      ],
+      "path": "company_research_rework_p2_batch03_05/002059.html",
+      "bytes": 10317,
+      "finance": {
+        "code": "002059",
+        "bs_code": "sz.002059",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002059",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.031146",
+          "npMargin": "-0.699923",
+          "gpMargin": "-0.074529",
+          "netProfit": "-41295195.950000",
+          "epsTTM": "-0.311217",
+          "MBRevenue": "",
+          "totalShare": "1012434813.00",
+          "liqaShare": "983046058.00"
+        },
+        "growth": {
+          "code": "sz.002059",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.229676",
+          "YOYAsset": "-0.099636",
+          "YOYNI": "0.261868",
+          "YOYEPSBasic": "0.301688",
+          "YOYPNI": "0.303104"
+        },
+        "errors": [],
+        "net_profit_yi": -0.41,
+        "yoy_parent_net_income_pct": 30.31,
+        "gross_margin_pct": -7.45,
+        "net_margin_pct": -69.99
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-24",
+      "code": "002184",
+      "name": "海得控制",
+      "mainline": "电力设备与电力运营",
+      "tracks": [
+        "电网设备",
+        "电气设备",
+        "电网设备 / 特高压"
+      ],
+      "path": "company_research_rework_p2_batch03_05/002184.html",
+      "bytes": 10423,
+      "finance": {
+        "code": "002184",
+        "bs_code": "sz.002184",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002184",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.002414",
+          "npMargin": "0.018627",
+          "gpMargin": "0.173498",
+          "netProfit": "8380993.760000",
+          "epsTTM": "-0.206297",
+          "MBRevenue": "",
+          "totalShare": "351908370.00",
+          "liqaShare": "240370401.00"
+        },
+        "growth": {
+          "code": "sz.002184",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.118599",
+          "YOYAsset": "-0.255862",
+          "YOYNI": "2.770400",
+          "YOYEPSBasic": "1.483333",
+          "YOYPNI": "1.482316"
+        },
+        "errors": [],
+        "net_profit_yi": 0.08,
+        "yoy_parent_net_income_pct": 148.23,
+        "gross_margin_pct": 17.35,
+        "net_margin_pct": 1.86
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-25",
+      "code": "002573",
+      "name": "清新环境",
+      "mainline": "环保与公用事业",
+      "tracks": [
+        "大气治理",
+        "节能环保",
+        "环境工程"
+      ],
+      "path": "company_research_rework_p2_batch03_05/002573.html",
+      "bytes": 10330,
+      "finance": {
+        "code": "002573",
+        "bs_code": "sz.002573",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002573",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.003933",
+          "npMargin": "0.010016",
+          "gpMargin": "0.176469",
+          "netProfit": "16829518.790000",
+          "epsTTM": "-0.288960",
+          "MBRevenue": "",
+          "totalShare": "1415267079.00",
+          "liqaShare": "1413003179.00"
+        },
+        "growth": {
+          "code": "sz.002573",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.073677",
+          "YOYAsset": "-0.026734",
+          "YOYNI": "0.380444",
+          "YOYEPSBasic": "1.202899",
+          "YOYPNI": "1.213457"
+        },
+        "errors": [],
+        "net_profit_yi": 0.17,
+        "yoy_parent_net_income_pct": 121.35,
+        "gross_margin_pct": 17.65,
+        "net_margin_pct": 1
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-26",
+      "code": "600719",
+      "name": "大连热电",
+      "mainline": "电力设备与电力运营",
+      "tracks": [
+        "发电运营",
+        "火电/热电",
+        "火电 / 煤电"
+      ],
+      "path": "company_research_rework_p2_batch03_05/600719.html",
+      "bytes": 10316,
+      "finance": {
+        "code": "600719",
+        "bs_code": "sh.600719",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600719",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.267192",
+          "npMargin": "0.266394",
+          "gpMargin": "0.261031",
+          "netProfit": "94853331.050000",
+          "epsTTM": "-0.147338",
+          "MBRevenue": "",
+          "totalShare": "404599600.00",
+          "liqaShare": "404599600.00"
+        },
+        "growth": {
+          "code": "sh.600719",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.131494",
+          "YOYAsset": "-0.115495",
+          "YOYNI": "0.587454",
+          "YOYEPSBasic": "0.581081",
+          "YOYPNI": "0.587454"
+        },
+        "errors": [],
+        "net_profit_yi": 0.95,
+        "yoy_parent_net_income_pct": 58.75,
+        "gross_margin_pct": 26.1,
+        "net_margin_pct": 26.64
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-27",
+      "code": "002893",
+      "name": "京能热力",
+      "mainline": "电力设备与电力运营",
+      "tracks": [
+        "发电运营",
+        "火电/热电",
+        "火电 / 煤电"
+      ],
+      "path": "company_research_rework_p2_batch03_05/002893.html",
+      "bytes": 10295,
+      "finance": {
+        "code": "002893",
+        "bs_code": "sz.002893",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002893",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.144649",
+          "npMargin": "0.262346",
+          "gpMargin": "0.374261",
+          "netProfit": "192757570.850000",
+          "epsTTM": "0.246495",
+          "MBRevenue": "",
+          "totalShare": "263640000.00",
+          "liqaShare": "202778618.00"
+        },
+        "growth": {
+          "code": "sz.002893",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.026012",
+          "YOYAsset": "0.023544",
+          "YOYNI": "0.015747",
+          "YOYEPSBasic": "0.014085",
+          "YOYPNI": "0.014450"
+        },
+        "errors": [],
+        "net_profit_yi": 1.93,
+        "yoy_parent_net_income_pct": 1.44,
+        "gross_margin_pct": 37.43,
+        "net_margin_pct": 26.23
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-28",
+      "code": "600101",
+      "name": "明星电力",
+      "mainline": "电力设备与电力运营",
+      "tracks": [
+        "发电运营",
+        "火电/热电",
+        "火电 / 煤电"
+      ],
+      "path": "company_research_rework_p2_batch03_05/600101.html",
+      "bytes": 10294,
+      "finance": {
+        "code": "600101",
+        "bs_code": "sh.600101",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600101",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.023349",
+          "npMargin": "0.087592",
+          "gpMargin": "0.116085",
+          "netProfit": "72891267.800000",
+          "epsTTM": "0.336346",
+          "MBRevenue": "",
+          "totalShare": "547862471.00",
+          "liqaShare": "547862471.00"
+        },
+        "growth": {
+          "code": "sh.600101",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.030451",
+          "YOYAsset": "0.018532",
+          "YOYNI": "0.001655",
+          "YOYEPSBasic": "0.001506",
+          "YOYPNI": "0.001655"
+        },
+        "errors": [],
+        "net_profit_yi": 0.73,
+        "yoy_parent_net_income_pct": 0.17,
+        "gross_margin_pct": 11.61,
+        "net_margin_pct": 8.76
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-29",
+      "code": "002576",
+      "name": "通达动力",
+      "mainline": "电力设备与电力运营",
+      "tracks": [
+        "电网设备",
+        "电气设备",
+        "电网设备 / 特高压"
+      ],
+      "path": "company_research_rework_p2_batch03_05/002576.html",
+      "bytes": 10402,
+      "finance": {
+        "code": "002576",
+        "bs_code": "sz.002576",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002576",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.016584",
+          "npMargin": "0.048001",
+          "gpMargin": "0.140153",
+          "netProfit": "21920990.750000",
+          "epsTTM": "0.516664",
+          "MBRevenue": "",
+          "totalShare": "165100000.00",
+          "liqaShare": "162027571.00"
+        },
+        "growth": {
+          "code": "sz.002576",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.031916",
+          "YOYAsset": "-0.041180",
+          "YOYNI": "0.145584",
+          "YOYEPSBasic": "0.153779",
+          "YOYPNI": "0.153837"
+        },
+        "errors": [],
+        "net_profit_yi": 0.22,
+        "yoy_parent_net_income_pct": 15.38,
+        "gross_margin_pct": 14.02,
+        "net_margin_pct": 4.8
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-30",
+      "code": "600969",
+      "name": "郴电国际",
+      "mainline": "电力设备与电力运营",
+      "tracks": [
+        "发电运营",
+        "火电/热电",
+        "火电 / 煤电"
+      ],
+      "path": "company_research_rework_p2_batch03_05/600969.html",
+      "bytes": 10293,
+      "finance": {
+        "code": "600969",
+        "bs_code": "sh.600969",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600969",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.003114",
+          "npMargin": "0.021490",
+          "gpMargin": "0.053213",
+          "netProfit": "22605795.060000",
+          "epsTTM": "0.207560",
+          "MBRevenue": "",
+          "totalShare": "370050484.00",
+          "liqaShare": "370050484.00"
+        },
+        "growth": {
+          "code": "sh.600969",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.021284",
+          "YOYAsset": "-0.022464",
+          "YOYNI": "0.137225",
+          "YOYEPSBasic": "0.044369",
+          "YOYPNI": "0.043228"
+        },
+        "errors": [],
+        "net_profit_yi": 0.23,
+        "yoy_parent_net_income_pct": 4.32,
+        "gross_margin_pct": 5.32,
+        "net_margin_pct": 2.15
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-31",
+      "code": "000421",
+      "name": "南京公用",
+      "mainline": "环保与公用事业",
+      "tracks": [
+        "燃气供应",
+        "城市公用事业",
+        "交通出行服务"
+      ],
+      "path": "company_research_rework_p2_batch03_05/000421.html",
+      "bytes": 10330,
+      "finance": {
+        "code": "000421",
+        "bs_code": "sz.000421",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000421",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.026042",
+          "npMargin": "0.051769",
+          "gpMargin": "0.128935",
+          "netProfit": "131568746.700000",
+          "epsTTM": "0.152421",
+          "MBRevenue": "",
+          "totalShare": "574415734.00",
+          "liqaShare": "574296297.00"
+        },
+        "growth": {
+          "code": "sz.000421",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.024295",
+          "YOYAsset": "-0.342459",
+          "YOYNI": "2.022392",
+          "YOYEPSBasic": "1.206655",
+          "YOYPNI": "1.199266"
+        },
+        "errors": [],
+        "net_profit_yi": 1.32,
+        "yoy_parent_net_income_pct": 119.93,
+        "gross_margin_pct": 12.89,
+        "net_margin_pct": 5.18
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-32",
+      "code": "001299",
+      "name": "美能能源",
+      "mainline": "环保与公用事业",
+      "tracks": [
+        "燃气供应",
+        "城市燃气",
+        "公用事业"
+      ],
+      "path": "company_research_rework_p2_batch03_05/001299.html",
+      "bytes": 10271,
+      "finance": {
+        "code": "001299",
+        "bs_code": "sz.001299",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.001299",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.022556",
+          "npMargin": "0.125665",
+          "gpMargin": "0.194916",
+          "netProfit": "27690742.390000",
+          "epsTTM": "0.427278",
+          "MBRevenue": "",
+          "totalShare": "242638606.00",
+          "liqaShare": "218399919.00"
+        },
+        "growth": {
+          "code": "sz.001299",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.063519",
+          "YOYAsset": "-0.021640",
+          "YOYNI": "0.056138",
+          "YOYEPSBasic": "0.090909",
+          "YOYPNI": "0.044774"
+        },
+        "errors": [],
+        "net_profit_yi": 0.28,
+        "yoy_parent_net_income_pct": 4.48,
+        "gross_margin_pct": 19.49,
+        "net_margin_pct": 12.57
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-33",
+      "code": "002887",
+      "name": "绿茵生态",
+      "mainline": "环保与公用事业",
+      "tracks": [
+        "生态修复",
+        "园林环保",
+        "环境治理"
+      ],
+      "path": "company_research_rework_p2_batch03_05/002887.html",
+      "bytes": 10328,
+      "finance": {
+        "code": "002887",
+        "bs_code": "sz.002887",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002887",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.016542",
+          "npMargin": "0.442411",
+          "gpMargin": "0.601959",
+          "netProfit": "39667581.810000",
+          "epsTTM": "0.441121",
+          "MBRevenue": "",
+          "totalShare": "305987641.00",
+          "liqaShare": "217231141.00"
+        },
+        "growth": {
+          "code": "sz.002887",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.024405",
+          "YOYAsset": "-0.007818",
+          "YOYNI": "0.456049",
+          "YOYEPSBasic": "0.444444",
+          "YOYPNI": "0.507511"
+        },
+        "errors": [],
+        "net_profit_yi": 0.4,
+        "yoy_parent_net_income_pct": 50.75,
+        "gross_margin_pct": 60.2,
+        "net_margin_pct": 44.24
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-34",
+      "code": "601368",
+      "name": "绿城水务",
+      "mainline": "环保与公用事业",
+      "tracks": [
+        "供水运营",
+        "污水处理",
+        "水务环保"
+      ],
+      "path": "company_research_rework_p2_batch03_05/601368.html",
+      "bytes": 10276,
+      "finance": {
+        "code": "601368",
+        "bs_code": "sh.601368",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.601368",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.005242",
+          "npMargin": "0.042900",
+          "gpMargin": "0.338699",
+          "netProfit": "23428559.400000",
+          "epsTTM": "0.134018",
+          "MBRevenue": "",
+          "totalShare": "882973077.00",
+          "liqaShare": "882973077.00"
+        },
+        "growth": {
+          "code": "sh.601368",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.019362",
+          "YOYAsset": "0.115857",
+          "YOYNI": "9.795081",
+          "YOYEPSBasic": "10.440000",
+          "YOYPNI": "10.648289"
+        },
+        "errors": [],
+        "net_profit_yi": 0.23,
+        "yoy_parent_net_income_pct": 1064.83,
+        "gross_margin_pct": 33.87,
+        "net_margin_pct": 4.29
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-35",
+      "code": "603291",
+      "name": "联合水务",
+      "mainline": "环保与公用事业",
+      "tracks": [
+        "供水运营",
+        "污水处理",
+        "水务环保"
+      ],
+      "path": "company_research_rework_p2_batch03_05/603291.html",
+      "bytes": 10252,
+      "finance": {
+        "code": "603291",
+        "bs_code": "sh.603291",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603291",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.008181",
+          "npMargin": "0.073549",
+          "gpMargin": "0.342836",
+          "netProfit": "15812216.170000",
+          "epsTTM": "0.245026",
+          "MBRevenue": "",
+          "totalShare": "423220604.00",
+          "liqaShare": "423220604.00"
+        },
+        "growth": {
+          "code": "sh.603291",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.020907",
+          "YOYAsset": "-0.009659",
+          "YOYNI": "0.190124",
+          "YOYEPSBasic": "0.189189",
+          "YOYPNI": "0.187936"
+        },
+        "errors": [],
+        "net_profit_yi": 0.16,
+        "yoy_parent_net_income_pct": 18.79,
+        "gross_margin_pct": 34.28,
+        "net_margin_pct": 7.35
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-36",
+      "code": "600168",
+      "name": "武汉控股",
+      "mainline": "环保与公用事业",
+      "tracks": [
+        "污水处理",
+        "自来水供应",
+        "水务环保"
+      ],
+      "path": "company_research_rework_p2_batch03_05/600168.html",
+      "bytes": 10261,
+      "finance": {
+        "code": "600168",
+        "bs_code": "sh.600168",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600168",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.005584",
+          "npMargin": "0.045166",
+          "gpMargin": "0.164392",
+          "netProfit": "40301783.420000",
+          "epsTTM": "0.103633",
+          "MBRevenue": "",
+          "totalShare": "993397569.00",
+          "liqaShare": "993397569.00"
+        },
+        "growth": {
+          "code": "sh.600168",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.388280",
+          "YOYAsset": "0.061620",
+          "YOYNI": "0.274296",
+          "YOYEPSBasic": "0.000000",
+          "YOYPNI": "0.321451"
+        },
+        "errors": [],
+        "net_profit_yi": 0.4,
+        "yoy_parent_net_income_pct": 32.15,
+        "gross_margin_pct": 16.44,
+        "net_margin_pct": 4.52
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-37",
+      "code": "600089",
+      "name": "特变电工",
+      "mainline": "电力设备与电力运营",
+      "tracks": [
+        "电网设备",
+        "电气设备",
+        "电网设备 / 特高压"
+      ],
+      "path": "company_research_rework_p2_batch03_05/600089.html",
+      "bytes": 10405,
+      "finance": {
+        "code": "600089",
+        "bs_code": "sh.600089",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600089",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.024026",
+          "npMargin": "0.085834",
+          "gpMargin": "0.211192",
+          "netProfit": "2141208723.920000",
+          "epsTTM": "1.220838",
+          "MBRevenue": "",
+          "totalShare": "5052792571.00",
+          "liqaShare": "5052792571.00"
+        },
+        "growth": {
+          "code": "sh.600089",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.103951",
+          "YOYAsset": "0.130093",
+          "YOYNI": "0.291816",
+          "YOYEPSBasic": "0.133982",
+          "YOYPNI": "0.133952"
+        },
+        "errors": [],
+        "net_profit_yi": 21.41,
+        "yoy_parent_net_income_pct": 13.4,
+        "gross_margin_pct": 21.12,
+        "net_margin_pct": 8.58
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-38",
+      "code": "001230",
+      "name": "劲旅环境",
+      "mainline": "环保与公用事业",
+      "tracks": [
+        "环卫服务",
+        "城市环境服务",
+        "环保运营"
+      ],
+      "path": "company_research_rework_p2_batch03_05/001230.html",
+      "bytes": 10324,
+      "finance": {
+        "code": "001230",
+        "bs_code": "sz.001230",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.001230",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.021207",
+          "npMargin": "0.097597",
+          "gpMargin": "0.239681",
+          "netProfit": "46543863.730000",
+          "epsTTM": "1.287728",
+          "MBRevenue": "",
+          "totalShare": "134226057.00",
+          "liqaShare": "78557270.00"
+        },
+        "growth": {
+          "code": "sz.001230",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.070646",
+          "YOYAsset": "0.067772",
+          "YOYNI": "0.055001",
+          "YOYEPSBasic": "0.103448",
+          "YOYPNI": "0.092252"
+        },
+        "errors": [],
+        "net_profit_yi": 0.47,
+        "yoy_parent_net_income_pct": 9.23,
+        "gross_margin_pct": 23.97,
+        "net_margin_pct": 9.76
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-39",
+      "code": "002616",
+      "name": "长青集团",
+      "mainline": "电力设备与电力运营",
+      "tracks": [
+        "生物质发电",
+        "热电运营",
+        "清洁能源运营"
+      ],
+      "path": "company_research_rework_p2_batch03_05/002616.html",
+      "bytes": 10313,
+      "finance": {
+        "code": "002616",
+        "bs_code": "sz.002616",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002616",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.027082",
+          "npMargin": "0.111270",
+          "gpMargin": "0.201682",
+          "netProfit": "99998524.740000",
+          "epsTTM": "0.347517",
+          "MBRevenue": "",
+          "totalShare": "859216368.00",
+          "liqaShare": "587480268.00"
+        },
+        "growth": {
+          "code": "sz.002616",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.289678",
+          "YOYAsset": "-0.075882",
+          "YOYNI": "0.224463",
+          "YOYEPSBasic": "0.059524",
+          "YOYPNI": "0.226638"
+        },
+        "errors": [],
+        "net_profit_yi": 1,
+        "yoy_parent_net_income_pct": 22.66,
+        "gross_margin_pct": 20.17,
+        "net_margin_pct": 11.13
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-40",
+      "code": "603579",
+      "name": "荣泰健康",
+      "mainline": "消费与服务",
+      "tracks": [
+        "健康消费",
+        "按摩器具",
+        "智能家居"
+      ],
+      "path": "company_research_rework_p2_batch03_05/603579.html",
+      "bytes": 10094,
+      "finance": {
+        "code": "603579",
+        "bs_code": "sh.603579",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603579",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.024686",
+          "npMargin": "0.156454",
+          "gpMargin": "0.309386",
+          "netProfit": "69183681.070000",
+          "epsTTM": "0.877893",
+          "MBRevenue": "",
+          "totalShare": "201052364.00",
+          "liqaShare": "201052364.00"
+        },
+        "growth": {
+          "code": "sh.603579",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.380817",
+          "YOYAsset": "0.129696",
+          "YOYNI": "0.572419",
+          "YOYEPSBasic": "0.400000",
+          "YOYPNI": "0.587178"
+        },
+        "errors": [],
+        "net_profit_yi": 0.69,
+        "yoy_parent_net_income_pct": 58.72,
+        "gross_margin_pct": 30.94,
+        "net_margin_pct": 15.65
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-41",
+      "code": "000810",
+      "name": "创维数字",
+      "mainline": "AI算力与数字基础设施",
+      "tracks": [
+        "数字终端",
+        "智能盒子/显示终端",
+        "车载显示观察"
+      ],
+      "path": "company_research_rework_p2_batch03_05/000810.html",
+      "bytes": 10298,
+      "finance": {
+        "code": "000810",
+        "bs_code": "sz.000810",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000810",
+          "pubDate": "2026-04-21",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.012660",
+          "npMargin": "0.031093",
+          "gpMargin": "0.149463",
+          "netProfit": "77552072.320000",
+          "epsTTM": "0.223805",
+          "MBRevenue": "",
+          "totalShare": "1150195579.00",
+          "liqaShare": "1110606175.00"
+        },
+        "growth": {
+          "code": "sz.000810",
+          "pubDate": "2026-04-21",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.035928",
+          "YOYAsset": "0.261644",
+          "YOYNI": "36.106802",
+          "YOYEPSBasic": "14.446809",
+          "YOYPNI": "14.557860"
+        },
+        "errors": [],
+        "net_profit_yi": 0.78,
+        "yoy_parent_net_income_pct": 1455.79,
+        "gross_margin_pct": 14.95,
+        "net_margin_pct": 3.11
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-42",
+      "code": "600303",
+      "name": "曙光股份",
+      "mainline": "新能源车与储能",
+      "tracks": [
+        "汽车及零部件",
+        "汽车制造/零部件",
+        "汽车零部件"
+      ],
+      "path": "company_research_rework_p2_batch03_05/600303.html",
+      "bytes": 10409,
+      "finance": {
+        "code": "600303",
+        "bs_code": "sh.600303",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600303",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.061993",
+          "npMargin": "-0.280449",
+          "gpMargin": "0.027478",
+          "netProfit": "-61295412.140000",
+          "epsTTM": "-0.505540",
+          "MBRevenue": "",
+          "totalShare": "683604211.00",
+          "liqaShare": "675604211.00"
+        },
+        "growth": {
+          "code": "sh.600303",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.258079",
+          "YOYAsset": "-0.084415",
+          "YOYNI": "0.178666",
+          "YOYEPSBasic": "0.181818",
+          "YOYPNI": "0.172365"
+        },
+        "errors": [],
+        "net_profit_yi": -0.61,
+        "yoy_parent_net_income_pct": 17.24,
+        "gross_margin_pct": 2.75,
+        "net_margin_pct": -28.04
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-43",
+      "code": "002715",
+      "name": "登云股份",
+      "mainline": "新能源车与储能",
+      "tracks": [
+        "汽车及零部件",
+        "汽车制造/零部件",
+        "汽车零部件"
+      ],
+      "path": "company_research_rework_p2_batch03_05/002715.html",
+      "bytes": 10348,
+      "finance": {
+        "code": "002715",
+        "bs_code": "sz.002715",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002715",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.014322",
+          "npMargin": "0.048774",
+          "gpMargin": "0.267582",
+          "netProfit": "6619086.930000",
+          "epsTTM": "-0.068287",
+          "MBRevenue": "",
+          "totalShare": "138000000.00",
+          "liqaShare": "138000000.00"
+        },
+        "growth": {
+          "code": "sz.002715",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.028169",
+          "YOYAsset": "-0.191179",
+          "YOYNI": "20.502195",
+          "YOYEPSBasic": "20.818182",
+          "YOYPNI": "20.502195"
+        },
+        "errors": [],
+        "net_profit_yi": 0.07,
+        "yoy_parent_net_income_pct": 2050.22,
+        "gross_margin_pct": 26.76,
+        "net_margin_pct": 4.88
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-44",
+      "code": "603768",
+      "name": "常青股份",
+      "mainline": "新能源车与储能",
+      "tracks": [
+        "汽车及零部件",
+        "汽车制造/零部件",
+        "汽车零部件"
+      ],
+      "path": "company_research_rework_p2_batch03_05/603768.html",
+      "bytes": 10324,
+      "finance": {
+        "code": "603768",
+        "bs_code": "sh.603768",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603768",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.003168",
+          "npMargin": "0.007545",
+          "gpMargin": "0.177074",
+          "netProfit": "6934505.600000",
+          "epsTTM": "-0.858699",
+          "MBRevenue": "",
+          "totalShare": "237955857.00",
+          "liqaShare": "237955857.00"
+        },
+        "growth": {
+          "code": "sh.603768",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.101786",
+          "YOYAsset": "0.106325",
+          "YOYNI": "0.130755",
+          "YOYEPSBasic": "0.000000",
+          "YOYPNI": "0.130755"
+        },
+        "errors": [],
+        "net_profit_yi": 0.07,
+        "yoy_parent_net_income_pct": 13.08,
+        "gross_margin_pct": 17.71,
+        "net_margin_pct": 0.75
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-45",
+      "code": "000868",
+      "name": "安凯客车",
+      "mainline": "新能源车与储能",
+      "tracks": [
+        "汽车及零部件",
+        "汽车制造/零部件",
+        "整车"
+      ],
+      "path": "company_research_rework_p2_batch03_05/000868.html",
+      "bytes": 10296,
+      "finance": {
+        "code": "000868",
+        "bs_code": "sz.000868",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000868",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.002304",
+          "npMargin": "0.004907",
+          "gpMargin": "0.087266",
+          "netProfit": "3347475.330000",
+          "epsTTM": "-0.061480",
+          "MBRevenue": "",
+          "totalShare": "939514735.00",
+          "liqaShare": "733328668.00"
+        },
+        "growth": {
+          "code": "sz.000868",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.070623",
+          "YOYAsset": "0.057801",
+          "YOYNI": "1.109732",
+          "YOYEPSBasic": "-0.574468",
+          "YOYPNI": "-0.576533"
+        },
+        "errors": [],
+        "net_profit_yi": 0.03,
+        "yoy_parent_net_income_pct": -57.65,
+        "gross_margin_pct": 8.73,
+        "net_margin_pct": 0.49
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-46",
+      "code": "603178",
+      "name": "圣龙股份",
+      "mainline": "新能源车与储能",
+      "tracks": [
+        "汽车及零部件",
+        "汽车制造/零部件",
+        "汽车零部件"
+      ],
+      "path": "company_research_rework_p2_batch03_05/603178.html",
+      "bytes": 10345,
+      "finance": {
+        "code": "603178",
+        "bs_code": "sh.603178",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603178",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.016516",
+          "npMargin": "0.051013",
+          "gpMargin": "0.150651",
+          "netProfit": "18877523.140000",
+          "epsTTM": "-0.683522",
+          "MBRevenue": "",
+          "totalShare": "236411881.00",
+          "liqaShare": "236411881.00"
+        },
+        "growth": {
+          "code": "sh.603178",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.096769",
+          "YOYAsset": "-0.111800",
+          "YOYNI": "1.610185",
+          "YOYEPSBasic": "1.615385",
+          "YOYPNI": "1.610185"
+        },
+        "errors": [],
+        "net_profit_yi": 0.19,
+        "yoy_parent_net_income_pct": 161.02,
+        "gross_margin_pct": 15.07,
+        "net_margin_pct": 5.1
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-47",
+      "code": "603767",
+      "name": "中马传动",
+      "mainline": "新能源车与储能",
+      "tracks": [
+        "汽车及零部件",
+        "汽车制造/零部件",
+        "汽车零部件"
+      ],
+      "path": "company_research_rework_p2_batch03_05/603767.html",
+      "bytes": 10321,
+      "finance": {
+        "code": "603767",
+        "bs_code": "sh.603767",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603767",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.004452",
+          "npMargin": "0.029599",
+          "gpMargin": "0.123960",
+          "netProfit": "6070342.440000",
+          "epsTTM": "-0.018724",
+          "MBRevenue": "",
+          "totalShare": "308631500.00",
+          "liqaShare": "308631500.00"
+        },
+        "growth": {
+          "code": "sh.603767",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.046160",
+          "YOYAsset": "-0.027517",
+          "YOYNI": "0.004089",
+          "YOYEPSBasic": "0.000000",
+          "YOYPNI": "0.004089"
+        },
+        "errors": [],
+        "net_profit_yi": 0.06,
+        "yoy_parent_net_income_pct": 0.41,
+        "gross_margin_pct": 12.4,
+        "net_margin_pct": 2.96
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-48",
+      "code": "002863",
+      "name": "今飞凯达",
+      "mainline": "新能源车与储能",
+      "tracks": [
+        "汽车及零部件",
+        "汽车制造/零部件",
+        "汽车零部件"
+      ],
+      "path": "company_research_rework_p2_batch03_05/002863.html",
+      "bytes": 10324,
+      "finance": {
+        "code": "002863",
+        "bs_code": "sz.002863",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002863",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.010393",
+          "npMargin": "0.021228",
+          "gpMargin": "0.124712",
+          "netProfit": "29649126.690000",
+          "epsTTM": "0.106736",
+          "MBRevenue": "",
+          "totalShare": "599483554.00",
+          "liqaShare": "599483554.00"
+        },
+        "growth": {
+          "code": "sz.002863",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.015229",
+          "YOYAsset": "0.078579",
+          "YOYNI": "0.147055",
+          "YOYEPSBasic": "0.250000",
+          "YOYPNI": "0.159518"
+        },
+        "errors": [],
+        "net_profit_yi": 0.3,
+        "yoy_parent_net_income_pct": 15.95,
+        "gross_margin_pct": 12.47,
+        "net_margin_pct": 2.12
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-49",
+      "code": "002593",
+      "name": "日上集团",
+      "mainline": "新能源车与储能",
+      "tracks": [
+        "汽车及零部件",
+        "汽车制造/零部件",
+        "汽车零部件"
+      ],
+      "path": "company_research_rework_p2_batch03_05/002593.html",
+      "bytes": 10345,
+      "finance": {
+        "code": "002593",
+        "bs_code": "sz.002593",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002593",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.013100",
+          "npMargin": "0.042581",
+          "gpMargin": "0.147476",
+          "netProfit": "32007890.090000",
+          "epsTTM": "0.159274",
+          "MBRevenue": "",
+          "totalShare": "803858029.00",
+          "liqaShare": "560504329.00"
+        },
+        "growth": {
+          "code": "sz.002593",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.024976",
+          "YOYAsset": "-0.012705",
+          "YOYNI": "1.323431",
+          "YOYEPSBasic": "1.000000",
+          "YOYPNI": "1.261726"
+        },
+        "errors": [],
+        "net_profit_yi": 0.32,
+        "yoy_parent_net_income_pct": 126.17,
+        "gross_margin_pct": 14.75,
+        "net_margin_pct": 4.26
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-50",
+      "code": "603006",
+      "name": "联明股份",
+      "mainline": "新能源车与储能",
+      "tracks": [
+        "汽车及零部件",
+        "汽车制造/零部件",
+        "汽车零部件"
+      ],
+      "path": "company_research_rework_p2_batch03_05/603006.html",
+      "bytes": 10345,
+      "finance": {
+        "code": "603006",
+        "bs_code": "sh.603006",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603006",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.016356",
+          "npMargin": "0.094732",
+          "gpMargin": "0.245490",
+          "netProfit": "22063164.840000",
+          "epsTTM": "0.408573",
+          "MBRevenue": "",
+          "totalShare": "254254250.00",
+          "liqaShare": "254254250.00"
+        },
+        "growth": {
+          "code": "sh.603006",
+          "pubDate": "2026-04-24",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.061651",
+          "YOYAsset": "-0.158599",
+          "YOYNI": "1.373339",
+          "YOYEPSBasic": "1.250000",
+          "YOYPNI": "1.090307"
+        },
+        "errors": [],
+        "net_profit_yi": 0.22,
+        "yoy_parent_net_income_pct": 109.03,
+        "gross_margin_pct": 24.55,
+        "net_margin_pct": 9.47
+      },
+      "forbidden_hits": [],
+      "pass": true
+    }
+  ]
+}

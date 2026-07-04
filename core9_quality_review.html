@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>核心主线分类质检</title>
+<style>
+:root{color-scheme:dark;--bg:#080b10;--panel:#101620;--panel2:#141c28;--line:#263244;--text:#e6edf3;--muted:#8b949e;--red:#ff6b6b;--green:#3fb950;--blue:#58a6ff;--gold:#d29922}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,#182536 0,#080b10 38%,#07090d 100%);color:var(--text);font-family:Inter,"Microsoft YaHei",Arial,sans-serif}
+.wrap{width:min(1280px,calc(100% - 40px));margin:0 auto;padding:22px 0 48px}
+.top{position:sticky;top:0;z-index:5;background:rgba(8,11,16,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}.brand b{font-size:18px}.brand small{display:block;color:var(--muted);margin-top:4px}.top a{color:var(--text);text-decoration:none;border:1px solid var(--line);background:#111827;border-radius:8px;padding:8px 12px}
+.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:16px;margin-top:18px}.panel{background:linear-gradient(180deg,rgba(20,28,40,.96),rgba(12,17,25,.96));border:1px solid var(--line);border-radius:8px;padding:18px}.hero h1{margin:0 0 10px;font-size:30px;letter-spacing:0}.hero p{margin:0;color:var(--muted);line-height:1.7}.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.kpi{background:#0b111a;border:1px solid var(--line);border-radius:8px;padding:14px}.kpi b{font-size:24px}.kpi span{display:block;color:var(--muted);font-size:13px;margin-top:6px}
+.section{margin-top:18px}.section h2{font-size:19px;margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.card,.child-card{background:rgba(16,22,32,.94);border:1px solid var(--line);border-radius:8px;padding:14px}.card h3{margin:0;font-size:17px}.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.pill{display:inline-flex;align-items:center;height:24px;border-radius:999px;padding:0 8px;font-size:12px;border:1px solid var(--line);color:var(--muted)}.pill.good{color:#b7f7c8;border-color:rgba(63,185,80,.5);background:rgba(63,185,80,.1)}.pill.blue{color:#b9ddff;border-color:rgba(88,166,255,.5);background:rgba(88,166,255,.1)}.pill.warn{color:#f7d48b;border-color:rgba(210,153,34,.55);background:rgba(210,153,34,.1)}
+.child-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}.child-card header{display:flex;justify-content:space-between;gap:8px}.child-card p{color:var(--muted);line-height:1.55;margin:10px 0 0;font-size:13px}
+table{width:100%;border-collapse:collapse;background:rgba(16,22,32,.94);border:1px solid var(--line);border-radius:8px;overflow:hidden}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{color:#c9d1d9;background:#111827;font-weight:600}td{color:#d8e0e8}td small{display:block;color:var(--muted);margin-top:4px}
+.subsection{margin-top:18px}.suspect td:nth-child(1){white-space:nowrap}.muted{color:var(--muted)}.note{border-left:3px solid var(--blue);padding-left:12px;color:#c9d1d9}
+@media(max-width:980px){.hero{grid-template-columns:1fr}.grid,.child-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.wrap{width:min(100% - 24px,1280px)}.grid,.child-grid,.kpis{grid-template-columns:1fr}.hero h1{font-size:24px}table{font-size:13px}}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="wrap"><div class="brand"><b>核心主线分类质检</b><small>本地预览 · 用于检查分类准确性，不对外展示</small></div><a href="./core9_local_review.html?v=corefix1">返回本地首页</a></div></header>
+<main class="wrap">
+  <section class="hero">
+    <div class="panel">
+      <h1>8 个核心主线分类体检</h1>
+      <p>这一页用于快速查看核心主线的细分结构、重点公司是否已归类、哪些公司资料仍待补齐，以及哪些细分后续还值得继续拆分。当前结果只用于本地验收，确认后再同步到正式网站。</p>
+    </div>
+    <div class="panel kpis">
+      <div class="kpi"><b>8</b><span>核心主线</span></div>
+      <div class="kpi"><b>1719</b><span>公司资料</span></div>
+      <div class="kpi"><b>0</b><span>待处理提示</span></div>
+      <div class="kpi"><b>62</b><span>重点样本已进入主线</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>主线结构</h2>
+    <div class="grid">
+      <article class="card"><h3>AI算力</h3><div class="meta"><span class="pill good">16 家</span><span class="pill blue">4 个子分类</span><span class="pill warn">5 家资料整理中</span></div></article><article class="card"><h3>PCB / 高速PCB</h3><div class="meta"><span class="pill good">25 家</span><span class="pill blue">5 个子分类</span><span class="pill warn">9 家资料整理中</span></div></article><article class="card"><h3>半导体</h3><div class="meta"><span class="pill good">28 家</span><span class="pill blue">6 个子分类</span><span class="pill warn">10 家资料整理中</span></div></article><article class="card"><h3>光模块 / CPO</h3><div class="meta"><span class="pill good">14 家</span><span class="pill blue">4 个子分类</span><span class="pill warn">9 家资料整理中</span></div></article><article class="card"><h3>被动元器件 / MLCC</h3><div class="meta"><span class="pill good">9 家</span><span class="pill blue">4 个子分类</span><span class="pill warn">1 家资料整理中</span></div></article><article class="card"><h3>光通信基础设施</h3><div class="meta"><span class="pill good">40 家</span><span class="pill blue">5 个子分类</span><span class="pill warn">1 家资料整理中</span></div></article><article class="card"><h3>动力电池 / 储能</h3><div class="meta"><span class="pill good">26 家</span><span class="pill blue">4 个子分类</span><span class="pill warn">3 家资料整理中</span></div></article><article class="card"><h3>电网 / 特高压</h3><div class="meta"><span class="pill good">68 家</span><span class="pill blue">12 个子分类</span><span class="pill warn">1 家资料整理中</span></div></article>
+    </div>
+  </section>
+
+  
+    <section class="section">
+      <h2>AI算力</h2>
+      <p class="note">当前主线共 16 家，子分类 4 个。报告状态：新版报告 4 家，公司报告 7 家，资料整理中 5 家。</p>
+      <div class="child-grid">
+    <article class="child-card">
+      <header>
+        <b>AI芯片 / 国产算力芯片</b>
+        <span>2 家</span>
+      </header>
+      <p>海光信息 / 寒武纪</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>AI服务器 / 整机 / 交换机</b>
+        <span>6 家</span>
+      </header>
+      <p>工业富联 / 中科曙光 / 紫光股份 / 浪潮信息 / 神州数码 / 宝信软件</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>液冷 / 温控</b>
+        <span>5 家</span>
+      </header>
+      <p>英维克 / 高澜股份 / 申菱环境 / 同飞股份 / 飞荣达</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>电源 / UPS</b>
+        <span>3 家</span>
+      </header>
+      <p>麦格米特 / 科华数据 / 科士达</p>
+    </article>
+  </div>
+      <div class="subsection">
+        <table>
+          <thead><tr><th>重点公司</th><th>期望位置</th><th>主线状态</th><th>资料状态</th><th>当前标签</th><th>报告</th></tr></thead>
+          <tbody>
+    <tr>
+      <td><b>浪潮信息</b><small>000977</small></td>
+      <td>AI服务器 / 整机</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>AI算力 / AI服务器 / 整机 / 交换机 / 计算机/软件服务 / IT基础设施/云计算</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>工业富联</b><small>601138</small></td>
+      <td>AI服务器 / 整机</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>AI算力 / AI服务器 / 整机 / 交换机 / AI服务器整机 / 系统集成</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>中科曙光</b><small>603019</small></td>
+      <td>AI服务器 / 整机</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>AI算力 / AI服务器 / 整机 / 交换机 / AI服务器整机 / 系统集成</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>英维克</b><small>002837</small></td>
+      <td>液冷 / 温控</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>AI算力 / IT基础设施/云计算 / 液冷 / 温控</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>高澜股份</b><small>300499</small></td>
+      <td>液冷 / 温控</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>AI算力 / 液冷 / 温控</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>申菱环境</b><small>301018</small></td>
+      <td>液冷 / 温控</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>AI算力 / 液冷 / 温控</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>麦格米特</b><small>002851</small></td>
+      <td>服务器电源</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>AI算力 / 电力与公用事业 / 服务器电源 / 供电配套 / 电源 / UPS</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>科华数据</b><small>002335</small></td>
+      <td>UPS / 数据中心电源</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>AI算力 / 动力电池 / 储能 / 电网 / 特高压 / 储能系统 / PCS / 逆变器 / 储能逆变器 / UPS / 电源 / UPS</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+  
+    <section class="section">
+      <h2>PCB / 高速PCB</h2>
+      <p class="note">当前主线共 25 家，子分类 5 个。报告状态：新版报告 1 家，公司报告 15 家，资料整理中 9 家。</p>
+      <div class="child-grid">
+    <article class="child-card">
+      <header>
+        <b>服务器PCB / 高速多层板</b>
+        <span>12 家</span>
+      </header>
+      <p>广合科技 / 沪电股份 / 胜宏科技 / 深南电路 / 东山精密 / 鹏鼎控股 / 景旺电子 / 崇达技术</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>覆铜板 / 树脂 / 玻纤布</b>
+        <span>6 家</span>
+      </header>
+      <p>生益科技 / 华正新材 / 金安国纪 / 山东玻纤 / 东材科技 / 平安电工</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>PCB化学品 / 光刻胶</b>
+        <span>2 家</span>
+      </header>
+      <p>光华科技 / 容大感光</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>铜箔 / 铜材</b>
+        <span>4 家</span>
+      </header>
+      <p>诺德股份 / 海亮股份 / 嘉元科技 / 德福科技</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>IC载板 / 封装基板</b>
+        <span>3 家</span>
+      </header>
+      <p>深南电路 / 兴森科技 / 生益科技</p>
+    </article>
+  </div>
+      <div class="subsection">
+        <table>
+          <thead><tr><th>重点公司</th><th>期望位置</th><th>主线状态</th><th>资料状态</th><th>当前标签</th><th>报告</th></tr></thead>
+          <tbody>
+    <tr>
+      <td><b>广合科技</b><small>001389</small></td>
+      <td>服务器PCB</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>PCB / 高速PCB / 服务器PCB / 高速多层板</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>沪电股份</b><small>002463</small></td>
+      <td>高速PCB</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>汽车零部件 / PCB / 高速PCB / 服务器PCB / 高速多层板</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>胜宏科技</b><small>300476</small></td>
+      <td>高多层板</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>PCB / 高速PCB / 服务器PCB / 高速多层板</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>深南电路</b><small>002916</small></td>
+      <td>PCB / IC载板</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>PCB / 高速PCB / 服务器PCB / 高速多层板 / IC载板 / 封装基板</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>生益科技</b><small>600183</small></td>
+      <td>覆铜板</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>PCB / 高速PCB / 覆铜板 / 树脂 / 玻纤布 / IC载板 / 封装基板</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>华正新材</b><small>603186</small></td>
+      <td>覆铜板</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>PCB / 高速PCB / 覆铜板 / 树脂 / 玻纤布</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>兴森科技</b><small>002436</small></td>
+      <td>IC载板</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>PCB / 高速PCB / IC载板 / 封装基板</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>嘉元科技</b><small>688388</small></td>
+      <td>铜箔</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>PCB / 高速PCB / 铜箔 / 铜材</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+  
+    <section class="section">
+      <h2>半导体</h2>
+      <p class="note">当前主线共 28 家，子分类 6 个。报告状态：新版报告 11 家，公司报告 7 家，资料整理中 10 家。</p>
+      <div class="child-grid">
+    <article class="child-card">
+      <header>
+        <b>半导体设备</b>
+        <span>9 家</span>
+      </header>
+      <p>盛美上海 / 中微公司 / 北方华创 / 拓荆科技 / 芯源微 / 华海清科 / 赛腾股份 / 长川科技</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>封装测试 / 先进封装</b>
+        <span>4 家</span>
+      </header>
+      <p>通富微电 / 华天科技 / 晶方科技 / 长电科技</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>半导体材料</b>
+        <span>6 家</span>
+      </header>
+      <p>沪硅产业 / 雅克科技 / 石英股份 / 江丰电子 / 安集科技 / 金宏气体</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>模拟 / 功率 / MCU</b>
+        <span>4 家</span>
+      </header>
+      <p>韦尔股份 / 兆易创新 / 台基股份 / 旭光电子</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>存储芯片</b>
+        <span>4 家</span>
+      </header>
+      <p>江波龙 / 佰维存储 / 兆易创新 / 大为股份</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>射频 / 通信芯片</b>
+        <span>2 家</span>
+      </header>
+      <p>博通集成 / 泰晶科技</p>
+    </article>
+  </div>
+      <div class="subsection">
+        <table>
+          <thead><tr><th>重点公司</th><th>期望位置</th><th>主线状态</th><th>资料状态</th><th>当前标签</th><th>报告</th></tr></thead>
+          <tbody>
+    <tr>
+      <td><b>北方华创</b><small>002371</small></td>
+      <td>半导体设备</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>半导体 / 半导体设备</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>中微公司</b><small>688012</small></td>
+      <td>半导体设备</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>半导体 / 半导体设备</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>盛美上海</b><small>688082</small></td>
+      <td>半导体设备</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>半导体 / 半导体设备</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>赛腾股份</b><small>603283</small></td>
+      <td>半导体设备</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>半导体 / 半导体设备</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>沪硅产业</b><small>688126</small></td>
+      <td>半导体材料</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>半导体 / 半导体材料</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>石英股份</b><small>603688</small></td>
+      <td>高纯石英 / 半导体材料</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>半导体 / 半导体材料</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>江丰电子</b><small>300666</small></td>
+      <td>靶材</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>半导体 / 半导体材料</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>安集科技</b><small>688019</small></td>
+      <td>CMP材料</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>半导体 / 半导体材料</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+  
+    <section class="section">
+      <h2>光模块 / CPO</h2>
+      <p class="note">当前主线共 14 家，子分类 4 个。报告状态：新版报告 2 家，公司报告 3 家，资料整理中 9 家。</p>
+      <div class="child-grid">
+    <article class="child-card">
+      <header>
+        <b>CPO光引擎 / 封装耦合</b>
+        <span>6 家</span>
+      </header>
+      <p>天孚通信 / 太辰光 / 光库科技 / 仕佳光子 / 源杰科技 / 博创科技</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>高速光模块</b>
+        <span>8 家</span>
+      </header>
+      <p>中际旭创 / 新易盛 / 光迅科技 / 剑桥科技 / 联特科技 / 德科立 / 铭普光磁 / 博创科技</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>光芯片 / 激光器</b>
+        <span>4 家</span>
+      </header>
+      <p>源杰科技 / 仕佳光子 / 光迅科技 / 长光华芯</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>光器件 / 连接器 / FAU</b>
+        <span>4 家</span>
+      </header>
+      <p>天孚通信 / 太辰光 / 光库科技 / 博创科技</p>
+    </article>
+  </div>
+      <div class="subsection">
+        <table>
+          <thead><tr><th>重点公司</th><th>期望位置</th><th>主线状态</th><th>资料状态</th><th>当前标签</th><th>报告</th></tr></thead>
+          <tbody>
+    <tr>
+      <td><b>中际旭创</b><small>300308</small></td>
+      <td>高速光模块</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光模块 / CPO / 高速光模块</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>新易盛</b><small>300502</small></td>
+      <td>高速光模块</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光模块 / CPO / 高速光模块</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>光迅科技</b><small>002281</small></td>
+      <td>光模块 / 光器件</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光模块 / CPO / 高速光模块 / 光芯片 / 激光器</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>天孚通信</b><small>300394</small></td>
+      <td>光器件 / CPO配套</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光模块 / CPO / CPO光引擎 / 封装耦合 / 光器件 / 连接器 / FAU</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>联特科技</b><small>301205</small></td>
+      <td>高速光模块</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光模块 / CPO / 高速光模块</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>德科立</b><small>688205</small></td>
+      <td>光模块</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光模块 / CPO / 高速光模块</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>源杰科技</b><small>688498</small></td>
+      <td>光芯片</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光模块 / CPO / CPO光引擎 / 封装耦合 / 光芯片 / 激光器</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>太辰光</b><small>300570</small></td>
+      <td>光连接器</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光模块 / CPO / CPO光引擎 / 封装耦合 / 光器件 / 连接器 / FAU</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+  
+    <section class="section">
+      <h2>被动元器件 / MLCC</h2>
+      <p class="note">当前主线共 9 家，子分类 4 个。报告状态：新版报告 1 家，公司报告 7 家，资料整理中 1 家。</p>
+      <div class="child-grid">
+    <article class="child-card">
+      <header>
+        <b>电容 / 铝电解 / 薄膜电容</b>
+        <span>3 家</span>
+      </header>
+      <p>江海股份 / 法拉电子 / 艾华集团</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>电感 / 磁性元件</b>
+        <span>1 家</span>
+      </header>
+      <p>顺络电子</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>MLCC / 陶瓷元件</b>
+        <span>2 家</span>
+      </header>
+      <p>风华高科 / 三环集团</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>被动元件材料 / 铝箔 / 载带</b>
+        <span>3 家</span>
+      </header>
+      <p>新疆众和 / 洁美科技 / 东材科技</p>
+    </article>
+  </div>
+      <div class="subsection">
+        <table>
+          <thead><tr><th>重点公司</th><th>期望位置</th><th>主线状态</th><th>资料状态</th><th>当前标签</th><th>报告</th></tr></thead>
+          <tbody>
+    <tr>
+      <td><b>艾华集团</b><small>603989</small></td>
+      <td>铝电解电容</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>被动元器件 / MLCC / 电容 / 铝电解 / 薄膜电容</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>江海股份</b><small>002484</small></td>
+      <td>电容</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>被动元器件 / MLCC / 电容 / 铝电解 / 薄膜电容</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>法拉电子</b><small>600563</small></td>
+      <td>薄膜电容</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>被动元器件 / MLCC / 电容 / 铝电解 / 薄膜电容</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>顺络电子</b><small>002138</small></td>
+      <td>电感</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>被动元器件 / MLCC / 消费电子 / 电感 / 磁性元件</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>风华高科</b><small>000636</small></td>
+      <td>MLCC</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>被动元器件 / MLCC / MLCC / 陶瓷元件</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>三环集团</b><small>300408</small></td>
+      <td>陶瓷元件 / MLCC</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>被动元器件 / MLCC / MLCC / 陶瓷元件</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>新疆众和</b><small>600888</small></td>
+      <td>电子铝箔</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>被动元器件 / MLCC / 被动元件材料 / 铝箔 / 载带</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>洁美科技</b><small>002859</small></td>
+      <td>载带</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>被动元器件 / MLCC / 被动元件材料 / 铝箔 / 载带</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+  
+    <section class="section">
+      <h2>光通信基础设施</h2>
+      <p class="note">当前主线共 40 家，子分类 5 个。报告状态：新版报告 0 家，公司报告 39 家，资料整理中 1 家。</p>
+      <div class="child-grid">
+    <article class="child-card">
+      <header>
+        <b>光纤光缆</b>
+        <span>6 家</span>
+      </header>
+      <p>长飞光纤 / 亨通光电 / 中天科技 / 特发信息 / 烽火通信 / 华脉科技</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>光器件 / 光学材料</b>
+        <span>8 家</span>
+      </header>
+      <p>中光学 / 福晶科技 / 水晶光电 / 三利谱 / 江南新材 / 福蓉科技 / 力鼎光电 / 博迁新材</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>通信电子配套</b>
+        <span>16 家</span>
+      </header>
+      <p>京泉华 / 深科技 / 中国长城 / 北斗星通 / 和而泰 / 环旭电子 / 盛路通信 / 银河电子</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>光传输设备 / 通信系统</b>
+        <span>7 家</span>
+      </header>
+      <p>烽火通信 / 瑞斯康达 / 共进股份 / 大唐电信 / 东方通信 / 南京熊猫 / 剑桥科技</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>广电网络 / 传输网络</b>
+        <span>4 家</span>
+      </header>
+      <p>歌华有线 / 贵广网络 / 北投科技 / 福日电子</p>
+    </article>
+  </div>
+      <div class="subsection">
+        <table>
+          <thead><tr><th>重点公司</th><th>期望位置</th><th>主线状态</th><th>资料状态</th><th>当前标签</th><th>报告</th></tr></thead>
+          <tbody>
+    <tr>
+      <td><b>长飞光纤</b><small>601869</small></td>
+      <td>光纤光缆</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光通信基础设施 / 光纤光缆</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>亨通光电</b><small>600487</small></td>
+      <td>光纤光缆 / 海缆</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光通信基础设施 / 光纤光缆</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>中天科技</b><small>600522</small></td>
+      <td>光纤光缆 / 海缆</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>电网 / 特高压 / 光通信基础设施 / 光纤光缆 / 海缆 / 特种电缆</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>烽火通信</b><small>600498</small></td>
+      <td>光通信设备</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光通信基础设施 / 光纤光缆 / 光传输设备 / 通信系统</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>特发信息</b><small>000070</small></td>
+      <td>光通信线缆</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光通信基础设施 / 光纤光缆</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>华脉科技</b><small>603042</small></td>
+      <td>通信网络配套</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>光通信基础设施 / 光纤光缆</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+  
+    <section class="section">
+      <h2>动力电池 / 储能</h2>
+      <p class="note">当前主线共 26 家，子分类 4 个。报告状态：新版报告 5 家，公司报告 18 家，资料整理中 3 家。</p>
+      <div class="child-grid">
+    <article class="child-card">
+      <header>
+        <b>动力电池 / 电芯</b>
+        <span>8 家</span>
+      </header>
+      <p>国轩高科 / 亿纬锂能 / 欣旺达 / 宁德时代 / 比亚迪 / 科力远 / 安孚科技 / 雄韬股份</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>储能系统 / PCS / 逆变器</b>
+        <span>4 家</span>
+      </header>
+      <p>阳光电源 / 德业股份 / 科华数据 / 科士达</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>锂电材料</b>
+        <span>4 家</span>
+      </header>
+      <p>赣锋锂业 / 湘潭电化 / 东方锆业 / 滨化股份</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>电池热管理 / 结构件</b>
+        <span>10 家</span>
+      </header>
+      <p>三花智控 / 银轮股份 / 和胜股份 / 腾龙股份 / 旭升集团 / 友升股份 / 伯特利 / 嵘泰股份</p>
+    </article>
+  </div>
+      <div class="subsection">
+        <table>
+          <thead><tr><th>重点公司</th><th>期望位置</th><th>主线状态</th><th>资料状态</th><th>当前标签</th><th>报告</th></tr></thead>
+          <tbody>
+    <tr>
+      <td><b>宁德时代</b><small>300750</small></td>
+      <td>动力电池</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>新能源汽车 / 动力电池 / 储能 / 电力与公用事业 / 动力电池 / 电芯</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>比亚迪</b><small>002594</small></td>
+      <td>动力电池</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>新能源汽车 / 动力电池 / 储能 / 汽车零部件 / 动力电池 / 电芯</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>亿纬锂能</b><small>300014</small></td>
+      <td>动力电池</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>新能源汽车 / 动力电池 / 储能 / 动力电池 / 电芯</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>国轩高科</b><small>002074</small></td>
+      <td>动力电池</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>新能源汽车 / 动力电池 / 储能 / 动力电池 / 电芯</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>阳光电源</b><small>300274</small></td>
+      <td>储能 / PCS</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>动力电池 / 储能 / 光伏 / 电网 / 特高压 / 储能系统 / PCS / 逆变器 / 储能逆变器 / UPS</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>德业股份</b><small>605117</small></td>
+      <td>逆变器 / 储能</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>动力电池 / 储能 / 电网 / 特高压 / 储能系统 / PCS / 逆变器 / 储能逆变器 / UPS</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>赣锋锂业</b><small>002460</small></td>
+      <td>锂电材料</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>动力电池 / 储能 / 电力与公用事业 / 新能源材料 / 资源周期 / 金属矿产 / 锂电材料</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>三花智控</b><small>002050</small></td>
+      <td>热管理</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>动力电池 / 储能 / 电力与公用事业 / 机器人/自动化 / 人形机器人 / 执行器 / 热管理 / 结构件</td>
+      <td><span class="pill good">新版报告</span></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+  
+    <section class="section">
+      <h2>电网 / 特高压</h2>
+      <p class="note">当前主线共 68 家，子分类 12 个。报告状态：新版报告 1 家，公司报告 66 家，资料整理中 1 家。</p>
+      <div class="child-grid">
+    <article class="child-card">
+      <header>
+        <b>特高压核心设备</b>
+        <span>6 家</span>
+      </header>
+      <p>许继电气 / 三变科技 / 大连电瓷 / 平高电气 / 保变电气 / 中国西电</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>电网自动化 / 调度</b>
+        <span>8 家</span>
+      </header>
+      <p>东方电子 / 金智科技 / 智光电气 / 海得控制 / 国电南瑞 / 中恒电气 / 国电南自 / 四方股份</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>配电 / 智能电气</b>
+        <span>14 家</span>
+      </header>
+      <p>金智科技 / 三变科技 / 智光电气 / 海得控制 / 森源电气 / 长高电新 / 伊戈尔 / 卧龙电驱</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>储能逆变器 / UPS</b>
+        <span>8 家</span>
+      </header>
+      <p>德赛电池 / 豪鹏科技 / 蔚蓝锂芯 / 科华数据 / 科士达 / 圣阳股份 / 阳光电源 / 德业股份</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>变压器 / 换流变</b>
+        <span>5 家</span>
+      </header>
+      <p>特变电工 / 保变电气 / 中国西电 / 三变科技 / 伊戈尔</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>开关设备 / 绝缘子</b>
+        <span>6 家</span>
+      </header>
+      <p>平高电气 / 思源电气 / 长高电新 / 大连电瓷 / 神马电力 / 森源电气</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>继保 / 电网自动化</b>
+        <span>8 家</span>
+      </header>
+      <p>许继电气 / 国电南瑞 / 东方电子 / 四方股份 / 国电南自 / 金智科技 / 智光电气 / 海得控制</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>电力电缆 / 导线</b>
+        <span>8 家</span>
+      </header>
+      <p>汉缆股份 / 金杯电工 / 通达股份 / 精达股份 / 杭电股份 / 起帆电缆 / 宝胜股份 / 华通线缆</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>海缆 / 特种电缆</b>
+        <span>4 家</span>
+      </header>
+      <p>东方电缆 / 中天科技 / 华菱线缆 / 福华尚纬</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>火电运营</b>
+        <span>8 家</span>
+      </header>
+      <p>大唐发电 / 建投能源 / 长源电力 / 赣能股份 / 华电辽能 / 广州发展 / 陕西能源 / 杭州热电</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>地方电力 / 综合能源</b>
+        <span>8 家</span>
+      </header>
+      <p>穗恒运A / 天富能源 / 涪陵电力 / 通宝能源 / 三峡水利 / 广西能源 / 广安爱众 / 宁波能源</p>
+    </article>
+  
+    <article class="child-card">
+      <header>
+        <b>水电 / 调峰储能</b>
+        <span>6 家</span>
+      </header>
+      <p>黔源电力 / 南网储能 / 湖南发展 / 川能动力 / 协鑫能科 / 云南能投</p>
+    </article>
+  </div>
+      <div class="subsection">
+        <table>
+          <thead><tr><th>重点公司</th><th>期望位置</th><th>主线状态</th><th>资料状态</th><th>当前标签</th><th>报告</th></tr></thead>
+          <tbody>
+    <tr>
+      <td><b>许继电气</b><small>000400</small></td>
+      <td>特高压 / 继保</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>电力与公用事业 / 电网 / 特高压 / 特高压核心设备 / 继保 / 电网自动化</td>
+      <td><span class="pill warn">资料整理中</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>平高电气</b><small>600312</small></td>
+      <td>特高压设备</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>电网 / 特高压 / 特高压核心设备 / 开关设备 / 绝缘子</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>中国西电</b><small>601179</small></td>
+      <td>特高压设备</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>电网 / 特高压 / 特高压核心设备 / 变压器 / 换流变</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>国电南瑞</b><small>600406</small></td>
+      <td>电网自动化</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>电网 / 特高压 / 行业软件/应用软件 / 电网自动化 / 调度 / 继保 / 电网自动化</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>思源电气</b><small>002028</small></td>
+      <td>开关 / 变压器</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>电网 / 特高压 / 开关设备 / 绝缘子</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>特变电工</b><small>600089</small></td>
+      <td>变压器</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>电网 / 特高压 / 变压器 / 换流变</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>东方电缆</b><small>603606</small></td>
+      <td>电线电缆 / 海缆</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>电网 / 特高压 / 海缆 / 特种电缆</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  
+    <tr>
+      <td><b>大唐发电</b><small>601991</small></td>
+      <td>火电</td>
+      <td><span class="pill good">已进入主线</span></td>
+      <td><span class="pill blue">已有资料</span></td>
+      <td>电网 / 特高压 / 火电运营</td>
+      <td><span class="pill blue">公司报告</span></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+  
+
+  <section class="section">
+    <h2>待处理提示</h2>
+    <table class="suspect">
+      <thead><tr><th>类型</th><th>主线</th><th>对象</th><th>原因</th><th>当前标签</th></tr></thead>
+      <tbody>
+        <tr><td colspan="5" class="muted">暂无明显提示</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,315 @@
+{
+  "generatedAt": "2026-07-04T09:11:08.048Z",
+  "totalCompanies": 34,
+  "generatedReports": 21,
+  "linkedReports": 34,
+  "auditFailures": 0,
+  "rows": [
+    {
+      "code": "300394",
+      "name": "天孚通信",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/300394.html",
+      "bytes": 20517,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "688195",
+      "name": "腾景科技",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/688195.html",
+      "bytes": 20417,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "688167",
+      "name": "炬光科技",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/688167.html",
+      "bytes": 20429,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "000988",
+      "name": "华工科技",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/000988.html",
+      "bytes": 22037,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "002281",
+      "name": "光迅科技",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/002281.html",
+      "bytes": 22013,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "688498",
+      "name": "源杰科技",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/688498.html",
+      "bytes": 20405,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "688048",
+      "name": "长光华芯",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/688048.html",
+      "bytes": 20400,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "002902",
+      "name": "铭普光磁",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/002902.html",
+      "bytes": 22112,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "300620",
+      "name": "光库科技",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/300620.html",
+      "bytes": 20483,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "300502",
+      "name": "新易盛",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/300502.html",
+      "bytes": 20314,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "688205",
+      "name": "德科立",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/688205.html",
+      "bytes": 20330,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "301205",
+      "name": "联特科技",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/301205.html",
+      "bytes": 20311,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "300570",
+      "name": "太辰光",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/300570.html",
+      "bytes": 20468,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "300548",
+      "name": "长芯博创",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/300548.html",
+      "bytes": 20471,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "688313",
+      "name": "仕佳光子",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/688313.html",
+      "bytes": 20367,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "300913",
+      "name": "兆龙互连",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/300913.html",
+      "bytes": 20389,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "300757",
+      "name": "罗博特科",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/300757.html",
+      "bytes": 20507,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "603083",
+      "name": "剑桥科技",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/603083.html",
+      "bytes": 22078,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "300308",
+      "name": "中际旭创",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/300308.html",
+      "bytes": 20459,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "688627",
+      "name": "精智达",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/688627.html",
+      "bytes": 20414,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "688143",
+      "name": "长盈通",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/688143.html",
+      "bytes": 20432,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "603118",
+      "name": "共进股份",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/603118.html",
+      "bytes": 22059,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "000063",
+      "name": "中兴通讯",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/000063.html",
+      "bytes": 20471,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "002463",
+      "name": "沪电股份",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/002463.html",
+      "bytes": 22437,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "002916",
+      "name": "深南电路",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/002916.html",
+      "bytes": 22393,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "603773",
+      "name": "沃格光电",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/603773.html",
+      "bytes": 20546,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "002384",
+      "name": "东山精密",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/002384.html",
+      "bytes": 22404,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "000070",
+      "name": "特发信息",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/000070.html",
+      "bytes": 22087,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "603042",
+      "name": "华脉科技",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/603042.html",
+      "bytes": 22070,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "600498",
+      "name": "烽火通信",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/600498.html",
+      "bytes": 20459,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "600105",
+      "name": "永鼎股份",
+      "generated": true,
+      "reportPath": "../../company_research_core_deep/600105.html",
+      "bytes": 20441,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "600487",
+      "name": "亨通光电",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/600487.html",
+      "bytes": 22075,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "601869",
+      "name": "长飞光纤",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/601869.html",
+      "bytes": 22099,
+      "missingRequired": [],
+      "forbiddenHits": []
+    },
+    {
+      "code": "600522",
+      "name": "中天科技",
+      "generated": false,
+      "reportPath": "../../company_research_core_deep/600522.html",
+      "bytes": 22315,
+      "missingRequired": [],
+      "forbiddenHits": []
+    }
+  ]
+}

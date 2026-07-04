@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>数据接入预览 - A股全景树</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(13,17,23,.96);border-bottom:1px solid #21262d;backdrop-filter:blur(10px)}.top-inner{max-width:1380px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand b{display:block;color:#f0f6fc;font-size:18px}.brand span{display:block;color:#8b949e;font-size:12px;margin-top:2px}.nav{display:flex;gap:8px;flex-wrap:wrap}.btn{height:34px;border:1px solid #30363d;background:#161b22;color:#c9d1d9;border-radius:8px;padding:0 10px;display:inline-flex;align-items:center;cursor:pointer}.btn:hover{border-color:#58a6ff;color:#fff}.wrap{max-width:1380px;margin:0 auto;padding:18px}.hero,.panel{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:16px;margin-bottom:12px}.hero h1{margin:0 0 8px;color:#f0f6fc;font-size:28px;line-height:1.25}.hero p{margin:0;color:#9da7b3;line-height:1.7}.metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:12px 0}.metric{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:12px}.metric b{display:block;color:#f0f6fc;font-size:24px}.metric span{display:block;color:#8b949e;font-size:12px;margin-top:5px}.toolbar{display:grid;grid-template-columns:minmax(220px,1fr) 210px 160px 160px;gap:8px}.toolbar input,.toolbar select{height:38px;border:1px solid #30363d;background:#0d1117;color:#c9d1d9;border-radius:8px;padding:0 10px;outline:none}.toolbar input:focus,.toolbar select:focus{border-color:#58a6ff}.status-line{margin-top:10px;color:#8b949e;font-size:13px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}.card{background:#161b22;border:1px solid #21262d;border-left:4px solid #8b949e;border-radius:8px;padding:14px;cursor:pointer;min-height:178px;transition:.15s ease}.card:hover{transform:translateY(-2px);border-color:#58a6ff;box-shadow:0 8px 22px rgba(0,0,0,.25)}.card.deep{border-left-color:#58a6ff;background:linear-gradient(90deg,#10243a 0,#161b22 22%)}.card.material{border-left-color:#d29922;background:linear-gradient(90deg,#2d240f 0,#161b22 22%)}.card.pending{border-left-color:#8b949e}.head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.head h3{margin:0;color:#f0f6fc;font-size:17px}.head small{display:block;color:#8b949e;margin-top:3px}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.chip{display:inline-flex;align-items:center;border:1px solid #30363d;background:#0d1117;color:#9da7b3;border-radius:999px;padding:2px 7px;font-size:11px}.chip.blue{background:#1f6feb22;color:#79c0ff;border-color:#1f6feb55}.chip.gold{background:#d2992220;color:#e3b341;border-color:#d2992255}.chip.green{background:#23863622;color:#7ee787;border-color:#23863655}.chip.red{background:#f8514922;color:#ffb3b3;border-color:#f8514955}.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:10px}.fact{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:7px;color:#8b949e;font-size:11px}.fact b{display:block;color:#c9d1d9;font-size:12px}.empty{border:1px dashed #30363d;border-radius:8px;padding:34px;text-align:center;color:#8b949e;background:#0d1117;line-height:1.8}.modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,.72);backdrop-filter:blur(10px);z-index:60;display:flex;align-items:center;justify-content:center;padding:22px}.modal-backdrop[hidden]{display:none}.modal{width:min(760px,100%);max-height:min(86vh,820px);overflow:auto;background:linear-gradient(180deg,#111827,#070b12);border:1px solid #2f3b52;border-radius:14px;box-shadow:0 24px 90px rgba(0,0,0,.55);padding:22px}.modal-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;border-bottom:1px solid #202a3b;padding-bottom:14px;margin-bottom:16px}.modal-title{font-size:24px;font-weight:800;color:#fff}.modal-sub{color:#93a4bc;margin-top:4px}.modal-close{border:1px solid #344054;background:#111827;color:#dbeafe;border-radius:10px;width:36px;height:36px;cursor:pointer;font-size:20px;line-height:1}.modal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}.modal-fact{background:#0b1220;border:1px solid #1f2a3d;border-radius:10px;padding:12px}.modal-fact b{display:block;color:#fff;font-size:18px;margin-bottom:4px}.modal-fact span{color:#93a4bc;font-size:12px}.modal-section{margin-top:16px}.modal-section h3{font-size:14px;color:#dbeafe;margin:0 0 8px}.modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.report-link,.muted-link{display:inline-flex;border-radius:8px;padding:8px 11px;font-size:12px}.report-link{background:#1f6feb;color:#fff}.muted-link{background:#21262d;color:#8b949e;border:1px solid #30363d}.risk-note{margin-top:16px;padding:12px 14px;border:1px solid #334155;background:#0b1220;border-radius:10px;color:#a8b3c4;font-size:12px;line-height:1.7}@media(max-width:980px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar{grid-template-columns:1fr 1fr}.top-inner{align-items:flex-start;flex-direction:column}}@media(max-width:620px){.metrics,.toolbar,.modal-grid{grid-template-columns:1fr}.hero h1{font-size:24px}.grid{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><b>A股全景树</b><span>数据接入预览</span></div>
+    <nav class="nav">
+      <a class="btn" href="data_pipeline_quality.html?v=sync1">接入检查</a>
+      <a class="btn" href="index.html?v=bridge2">返回首页</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h1 id="pageTitle">等待数据载入</h1>
+    <p id="pageDesc">读取辅助对话交付后的公司主档、资料状态和分类映射，预览它们进入网站后的展示效果。</p>
+  </section>
+  <section class="metrics" id="metrics"></section>
+  <section class="panel">
+    <div class="toolbar">
+      <input id="search" placeholder="搜索公司、代码、行业或概念">
+      <select id="industry"><option value="">全部分类</option></select>
+      <select id="status">
+        <option value="">全部资料状态</option>
+        <option value="new">深度资料</option>
+        <option value="historical">公司资料</option>
+        <option value="pending">资料整理中</option>
+      </select>
+      <select id="issue">
+        <option value="">全部记录</option>
+        <option value="missingReport">缺少资料状态</option>
+        <option value="missingMapping">缺少分类映射</option>
+        <option value="missingPath">资料无链接</option>
+      </select>
+    </div>
+    <div class="status-line" id="statusLine"></div>
+  </section>
+  <section class="grid" id="results"></section>
+</main>
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal" id="modalBody" role="dialog" aria-modal="true" aria-label="公司资料预览"></div>
+</div>
+<script>
+(function(){
+  const RISK_NOTE = '基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。';
+  const state = { rows: [], report: null, loadedFiles: [] };
+  const $ = id => document.getElementById(id);
+
+  function esc(value){
+    return String(value == null ? '' : value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  }
+  function normalizeCode(code){
+    const digits = String(code || '').replace(/\D/g, '');
+    return digits ? digits.padStart(6, '0').slice(-6) : '';
+  }
+  function arr(value){ return Array.isArray(value) ? value : []; }
+  function pctText(value){
+    if(value == null || value === '') return '--';
+    const num = Number(value);
+    if(Number.isNaN(num)) return '--';
+    return (num > 0 ? '+' : '') + num.toFixed(1) + '%';
+  }
+  function statusLabel(status, label){
+    if(label) return label;
+    if(status === 'new') return '深度资料';
+    if(status === 'historical') return '公司资料';
+    return '资料整理中';
+  }
+  function statusClass(status){
+    if(status === 'new') return 'deep';
+    if(status === 'historical') return 'material';
+    return 'pending';
+  }
+  function chipClass(status){
+    if(status === 'new') return 'blue';
+    if(status === 'historical') return 'gold';
+    return '';
+  }
+  function unique(values){
+    const seen = new Set();
+    return arr(values).map(v => String(v || '').trim()).filter(v => {
+      if(!v || seen.has(v)) return false;
+      seen.add(v);
+      return true;
+    });
+  }
+  function tagName(tag){
+    return typeof tag === 'string' ? tag : (tag && (tag.name || tag.node_name)) || '';
+  }
+  function keyFor(item){
+    return normalizeCode(item.code) || String(item.name || '').trim();
+  }
+  function byKey(rows){
+    const map = {};
+    arr(rows).forEach(item => {
+      const key = keyFor(item);
+      if(key) map[key] = item;
+    });
+    return map;
+  }
+  async function loadJson(url){
+    try{
+      const res = await fetch(url + '?v=' + Date.now());
+      if(!res.ok) return null;
+      state.loadedFiles.push(url);
+      return await res.json();
+    }catch(e){
+      return null;
+    }
+  }
+  function mergeData(companyMaster, reportStatus, mappingData, syncReport){
+    const companies = arr(companyMaster && companyMaster.companies);
+    const reports = arr(reportStatus && reportStatus.reports);
+    const mappings = arr(mappingData && mappingData.mappings);
+    const companyByKey = byKey(companies);
+    const reportByKey = byKey(reports);
+    const mappingByKey = byKey(mappings);
+    const keys = new Set([...Object.keys(companyByKey), ...Object.keys(reportByKey), ...Object.keys(mappingByKey)]);
+    return [...keys].map(key => {
+      const c = companyByKey[key] || {};
+      const r = reportByKey[key] || {};
+      const m = mappingByKey[key] || {};
+      const code = normalizeCode(c.code || r.code || m.code);
+      const tags = unique([...(arr(m.tags || m.concept_tags).map(tagName)), ...(arr(c.tags || c.concept_tags).map(tagName))]).slice(0, 12);
+      const secondaryTracks = unique([...(arr(m.secondary_tracks)), ...(arr(c.secondary_tracks))]).slice(0, 6);
+      const reportStatusValue = r.status || c.report_status || 'pending';
+      return {
+        code,
+        name: c.name || r.name || m.name || code || key,
+        primary_industry: m.primary_industry || c.primary_industry || '资料整理中',
+        secondary_tracks: secondaryTracks,
+        tags,
+        report_status: reportStatusValue,
+        report_label: statusLabel(reportStatusValue, r.label || c.report_label),
+        report_path: r.path || c.report_path || '',
+        financial_signal: c.financial_signal || {},
+        issue_missing_report: !reportByKey[key],
+        issue_missing_mapping: !mappingByKey[key],
+        issue_missing_path: reportStatusValue !== 'pending' && !(r.path || c.report_path),
+      };
+    }).sort((a,b) => String(a.code || a.name).localeCompare(String(b.code || b.name), 'zh-Hans-CN'));
+  }
+  function renderMetrics(rows){
+    const deep = rows.filter(x => x.report_status === 'new').length;
+    const material = rows.filter(x => x.report_status === 'historical').length;
+    const pending = rows.filter(x => x.report_status === 'pending').length;
+    const classified = rows.filter(x => !x.issue_missing_mapping).length;
+    const metrics = [
+      ['公司记录', rows.length],
+      ['深度资料', deep],
+      ['公司资料', material],
+      ['资料整理中', pending],
+      ['已映射分类', classified],
+    ].map(([label,value]) => `<div class="metric"><b>${esc(value)}</b><span>${esc(label)}</span></div>`).join('');
+    $('metrics').innerHTML = metrics;
+  }
+  function fillIndustry(rows){
+    const select = $('industry');
+    const value = select.value;
+    select.innerHTML = '<option value="">全部分类</option>' + unique(rows.map(x => x.primary_industry)).sort((a,b)=>a.localeCompare(b,'zh-Hans-CN')).map(x => `<option value="${esc(x)}">${esc(x)}</option>`).join('');
+    select.value = value;
+  }
+  function rowText(item){
+    return [item.code,item.name,item.primary_industry,item.secondary_tracks.join(' '),item.tags.join(' ')].join(' ').toLowerCase();
+  }
+  function matchesIssue(item, issue){
+    if(issue === 'missingReport') return item.issue_missing_report;
+    if(issue === 'missingMapping') return item.issue_missing_mapping;
+    if(issue === 'missingPath') return item.issue_missing_path;
+    return true;
+  }
+  function filteredRows(){
+    const q = $('search').value.trim().toLowerCase();
+    const industry = $('industry').value;
+    const status = $('status').value;
+    const issue = $('issue').value;
+    return state.rows.filter(item => {
+      return (!q || rowText(item).includes(q)) &&
+        (!industry || item.primary_industry === industry) &&
+        (!status || item.report_status === status) &&
+        matchesIssue(item, issue);
+    });
+  }
+  function card(item){
+    const finance = item.financial_signal || {};
+    const cls = statusClass(item.report_status);
+    const tags = item.tags.slice(0,4).map(t => `<span class="chip">${esc(t)}</span>`).join('');
+    const issueChips = [
+      item.issue_missing_report ? '<span class="chip red">缺资料状态</span>' : '',
+      item.issue_missing_mapping ? '<span class="chip red">缺分类映射</span>' : '',
+      item.issue_missing_path ? '<span class="chip red">资料无链接</span>' : '',
+    ].join('');
+    return `<article class="card ${cls}" data-code="${esc(item.code || item.name)}">
+      <div class="head"><div><h3>${esc(item.name)}</h3><small>${esc(item.code || '代码待补')} · ${esc(item.primary_industry)}</small></div><span class="chip ${chipClass(item.report_status)}">${esc(item.report_label)}</span></div>
+      <div class="facts">
+        <div class="fact"><b>${esc(finance.net_profit_yi == null ? '--' : finance.net_profit_yi + '亿')}</b>净利润</div>
+        <div class="fact"><b>${esc(pctText(finance.yoy_parent_net_income_pct))}</b>同比</div>
+        <div class="fact"><b>${esc(finance.improvement_status || '待资料完善')}</b>变化</div>
+      </div>
+      <div class="chips">${tags || '<span class="chip gold">标签整理中</span>'}${issueChips}</div>
+    </article>`;
+  }
+  function renderResults(){
+    const rows = filteredRows();
+    $('statusLine').textContent = state.rows.length ? `匹配 ${rows.length} 家；默认最多显示前 200 家。已载入：${state.loadedFiles.join('、') || '暂无交付文件'}` : '还没有可预览的数据。请等待辅助对话把正式 JSON 放入接收目录，然后运行同步脚本。';
+    $('results').innerHTML = rows.length ? rows.slice(0,200).map(card).join('') : '<div class="empty">暂无匹配公司。若还未交付数据，这是正常状态。</div>';
+    document.querySelectorAll('[data-code]').forEach(el => el.addEventListener('click', () => openModal(el.dataset.code)));
+  }
+  function openModal(codeOrName){
+    const item = state.rows.find(x => x.code === codeOrName || x.name === codeOrName);
+    if(!item) return;
+    const finance = item.financial_signal || {};
+    const tracks = item.secondary_tracks.slice(0,4);
+    const tags = item.tags.slice(0,12);
+    const material = item.report_path ? `<a class="report-link" href="${esc(item.report_path)}" target="_blank" rel="noopener">查看公司资料</a>` : '<span class="muted-link">资料整理中</span>';
+    $('modalBody').innerHTML = `<div class="modal-top"><div><div class="modal-title">${esc(item.name)} <span class="modal-sub">${esc(item.code || '')}</span></div><div class="modal-sub">${esc(item.primary_industry)}${tracks.length ? ' · ' + esc(tracks.join(' / ')) : ''}</div></div><button class="modal-close" id="modalCloseBtn" aria-label="关闭">×</button></div>
+      <div class="modal-grid">
+        <div class="modal-fact"><b>${esc(finance.net_profit_yi == null ? '--' : finance.net_profit_yi + '亿')}</b><span>净利润</span></div>
+        <div class="modal-fact"><b>${esc(pctText(finance.yoy_parent_net_income_pct))}</b><span>净利润同比</span></div>
+        <div class="modal-fact"><b>${esc(finance.improvement_status || '待资料完善')}</b><span>财务变化</span></div>
+      </div>
+      <div class="modal-section"><h3>产业归属</h3><div class="chips"><span class="chip blue">${esc(item.primary_industry)}</span>${tracks.map(x => `<span class="chip">${esc(x)}</span>`).join('')}</div></div>
+      <div class="modal-section"><h3>概念标签</h3><div class="chips">${tags.length ? tags.map(x => `<span class="chip">${esc(x)}</span>`).join('') : '<span class="chip gold">标签整理中</span>'}</div></div>
+      <div class="modal-section"><h3>接入检查</h3><div class="chips"><span class="chip ${chipClass(item.report_status)}">${esc(item.report_label)}</span>${item.issue_missing_report ? '<span class="chip red">缺资料状态</span>' : ''}${item.issue_missing_mapping ? '<span class="chip red">缺分类映射</span>' : ''}${item.issue_missing_path ? '<span class="chip red">资料无链接</span>' : ''}</div></div>
+      <div class="modal-actions">${material}<button class="muted-link" id="modalCloseAction" type="button">继续浏览</button></div>
+      <div class="risk-note">${esc(RISK_NOTE)}</div>`;
+    $('modalBackdrop').hidden = false;
+    document.body.style.overflow = 'hidden';
+    $('modalCloseBtn').addEventListener('click', closeModal);
+    $('modalCloseAction').addEventListener('click', closeModal);
+  }
+  function closeModal(){
+    $('modalBackdrop').hidden = true;
+    document.body.style.overflow = '';
+  }
+  async function init(){
+    const [companyMaster, reportStatus, mappingData, syncReport] = await Promise.all([
+      loadJson('data/company_master.json'),
+      loadJson('data/report_status.json'),
+      loadJson('data/classification_mapping.json'),
+      loadJson('data/data_pipeline_sync_report.json'),
+    ]);
+    state.report = syncReport;
+    state.rows = mergeData(companyMaster, reportStatus, mappingData, syncReport);
+    if(state.rows.length){
+      $('pageTitle').textContent = '数据接入预览';
+      $('pageDesc').textContent = '以下是辅助对话交付数据进入网站后的展示效果，可先在本地检查搜索、分类、资料状态和公司弹窗。';
+    }else{
+      $('pageTitle').textContent = '等待辅助对话交付数据';
+      $('pageDesc').textContent = '接收目录准备好了。等 company_master.json、report_status.json、classification_mapping.json 同步进网站后，这里会显示本地预览。';
+    }
+    renderMetrics(state.rows);
+    fillIndustry(state.rows);
+    renderResults();
+    ['input','change'].forEach(evt => {
+      $('search').addEventListener(evt, renderResults);
+      $('industry').addEventListener(evt, renderResults);
+      $('status').addEventListener(evt, renderResults);
+      $('issue').addEventListener(evt, renderResults);
+    });
+  }
+  init();
+})();
+</script>
+</body>
+</html>

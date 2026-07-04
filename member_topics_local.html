@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>会员专题本地预览</title>
+<style>
+:root{color-scheme:dark;--bg:#080b10;--panel:#111827;--panel2:#0d1420;--line:#263244;--text:#e6edf3;--muted:#94a3b8;--blue:#58a6ff;--red:#f85149;--gold:#d29922;--green:#3fb950}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 18% 0,#18263a 0,#0b1018 38%,#07090d 100%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1360px,calc(100% - 36px));margin:0 auto}
+.top{position:sticky;top:0;z-index:10;background:rgba(8,11,16,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top-inner{height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:900;color:#f8fafc}
+.brand small{display:block;color:var(--muted);font-size:12px;font-weight:500;margin-top:2px}
+.nav{display:flex;gap:8px;flex-wrap:wrap}
+.btn{height:36px;border:1px solid var(--line);border-radius:8px;background:#101722;color:#dbe7f5;padding:0 12px;display:inline-flex;align-items:center}
+.btn:hover{border-color:var(--blue)}
+.hero{padding:26px 0 12px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:14px;align-items:stretch}
+.panel{background:rgba(17,24,39,.92);border:1px solid var(--line);border-radius:8px;padding:18px}
+.eyebrow{display:inline-flex;border:1px solid rgba(88,166,255,.45);background:rgba(88,166,255,.12);color:#9ccfff;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:800}
+h1{font-size:32px;line-height:1.2;margin:12px 0 8px;color:#f8fafc;letter-spacing:0}
+.hero p{margin:0;color:var(--muted);line-height:1.7;max-width:780px}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.kpi{background:var(--panel2);border:1px solid #202b3d;border-radius:8px;padding:12px}
+.kpi b{display:block;font-size:24px;line-height:1;color:#f8fafc}
+.kpi span{display:block;margin-top:7px;color:var(--muted);font-size:12px}
+.section-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-end;margin:12px 0 10px}
+.section-head h2{margin:0;font-size:20px;color:#f8fafc}
+.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.6}
+.topic-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.topic-card{position:relative;display:block;background:rgba(17,24,39,.94);border:1px solid var(--line);border-radius:8px;padding:15px;min-height:245px;overflow:hidden;transition:.15s ease}
+.topic-card:hover{transform:translateY(-2px);border-color:var(--blue);box-shadow:0 12px 28px rgba(0,0,0,.28)}
+.topic-card.live{border-left:4px solid var(--red);background:linear-gradient(90deg,rgba(248,81,73,.12),rgba(17,24,39,.94) 24%)}
+.topic-card.member{border-left:4px solid var(--gold);background:linear-gradient(90deg,rgba(210,153,34,.12),rgba(17,24,39,.94) 24%)}
+.topic-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.seq{width:30px;height:30px;border-radius:8px;background:#202938;border:1px solid #344054;display:grid;place-items:center;font-weight:900;color:#dbeafe}
+.status,.table-status{border:1px solid #344054;border-radius:999px;padding:4px 8px;font-size:12px;color:#dbeafe;background:#101722}
+.status.live,.table-status.live{border-color:rgba(248,81,73,.55);color:#ffb3b3;background:rgba(248,81,73,.12)}
+.topic-card.live .status{border-color:rgba(248,81,73,.55);color:#ffb3b3;background:rgba(248,81,73,.12)}
+.topic-card.member .status,.table-status.member{border-color:rgba(210,153,34,.55);color:#f1d28c;background:rgba(210,153,34,.12)}
+.topic-card h2{font-size:19px;line-height:1.3;margin:14px 0 8px;color:#f8fafc}
+.topic-card p{margin:0;color:#aab7c7;font-size:13px;line-height:1.65}
+.focus,.meta{display:flex;gap:6px;flex-wrap:wrap}
+.focus{margin-top:12px}
+.focus span{border:1px solid rgba(88,166,255,.28);background:rgba(88,166,255,.08);color:#b8dcff;border-radius:999px;padding:3px 7px;font-size:11px}
+.meta{position:absolute;left:15px;right:15px;bottom:44px}
+.meta span{border:1px solid #344054;background:#0b1220;color:#aab7c7;border-radius:999px;padding:3px 7px;font-size:11px}
+.meta .danger{border-color:rgba(248,81,73,.55);color:#ffb3b3}
+.go{position:absolute;left:15px;bottom:15px;color:#9ccfff;font-weight:800;font-size:13px}
+.check-panel{margin:16px 0 40px}
+table{width:100%;border-collapse:collapse}
+th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top;font-size:13px}
+th{color:#cbd5e1;background:rgba(15,23,42,.45)}
+.risk{margin-top:14px;color:#94a3b8;font-size:12px;line-height:1.7;border:1px solid #263244;background:#0b1220;border-radius:8px;padding:12px}
+@media(max-width:1120px){.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:720px){.topic-grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.top-inner{height:auto;padding:12px 0;align-items:flex-start;flex-direction:column}h1{font-size:25px}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <div class="brand">会员专题本地预览<small>本页面仅用于本机检查，暂不推送公开站</small></div>
+    <nav class="nav">
+      <a class="btn" href="index.html">公开站首页</a>
+      <a class="btn" href="core9_local_review.html">本地概念页</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="panel">
+      <span class="eyebrow">本地会员专题入口</span>
+      <h1>8 个专题集中预览</h1>
+      <p>当前公开站只开放 CPO 专题，其余 7 个专题先保留在本地检查。后续确认内容、表达和链接都适合会员阅读后，再按批次接入会员专区。</p>
+    </div>
+    <aside class="panel kpis">
+      <div class="kpi"><b>8</b><span>专题入口</span></div>
+      <div class="kpi"><b>1</b><span>当前公开</span></div>
+      <div class="kpi"><b>114</b><span>专题页面</span></div>
+      <div class="kpi"><b>5</b><span>表格文件</span></div>
+    </aside>
+  </section>
+  <section class="section-head">
+    <div>
+      <h2>专题入口</h2>
+      <p>CPO 已经公开；其余专题是本地会员内容，先做内容和风险表达检查。</p>
+    </div>
+  </section>
+  <section class="topic-grid">
+    
+    <a class="topic-card live" href="topics/cpo/index.html">
+      <div class="topic-top">
+        <div class="seq">1</div>
+        <div class="status">已公开</div>
+      </div>
+      <h2>CPO光互连专题</h2>
+      <p>覆盖光源、硅光PIC、无源耦合、封装耦合、测试验证和公司资料。</p>
+      <div class="focus"><span>光模块/CPO</span><span>硅光与光芯片</span><span>封装耦合</span><span>测试验证</span></div>
+      <div class="meta"><span>17 个页面</span><span>入口正常</span></div>
+      <div class="go">进入专题 →</div>
+    </a>
+
+    <a class="topic-card member" href="topics/pcb/index.html">
+      <div class="topic-top">
+        <div class="seq">2</div>
+        <div class="status">会员内容待上架</div>
+      </div>
+      <h2>PCB专题</h2>
+      <p>覆盖高速PCB、HDI、IC载板、覆铜板、铜箔、树脂和AI服务器链条。</p>
+      <div class="focus"><span>高速PCB</span><span>覆铜板/树脂/玻纤布</span><span>铜箔</span><span>IC载板</span></div>
+      <div class="meta"><span>16 个页面</span><span>入口正常</span></div>
+      <div class="go">进入专题 →</div>
+    </a>
+
+    <a class="topic-card member" href="topics/semiconductor-equipment/index.html">
+      <div class="topic-top">
+        <div class="seq">3</div>
+        <div class="status">会员内容待上架</div>
+      </div>
+      <h2>半导体设备专题</h2>
+      <p>覆盖刻蚀、薄膜沉积、清洗、涂胶显影、CMP、量测检测和测试设备。</p>
+      <div class="focus"><span>刻蚀/薄膜沉积</span><span>清洗/CMP</span><span>量测检测</span><span>先进封装设备</span></div>
+      <div class="meta"><span>16 个页面</span><span>入口正常</span></div>
+      <div class="go">进入专题 →</div>
+    </a>
+
+    <a class="topic-card member" href="topics/semiconductor-materials/index.html">
+      <div class="topic-top">
+        <div class="seq">4</div>
+        <div class="status">会员内容待上架</div>
+      </div>
+      <h2>半导体材料专题</h2>
+      <p>覆盖硅片、电子特气、靶材、CMP材料、高纯石英、湿电子化学品和光刻胶配套。</p>
+      <div class="focus"><span>硅片/掩膜版</span><span>电子特气</span><span>CMP/靶材</span><span>光刻胶配套</span></div>
+      <div class="meta"><span>16 个页面</span><span>入口正常</span></div>
+      <div class="go">进入专题 →</div>
+    </a>
+
+    <a class="topic-card member" href="topics/mlcc-passive/index.html">
+      <div class="topic-top">
+        <div class="seq">5</div>
+        <div class="status">会员内容待上架</div>
+      </div>
+      <h2>MLCC被动元件专题</h2>
+      <p>覆盖电容、电感、MLCC、电子铝箔、载带和被动元件材料。</p>
+      <div class="focus"><span>MLCC</span><span>铝电容材料</span><span>电感/磁性元件</span><span>载带/粉体</span></div>
+      <div class="meta"><span>16 个页面</span><span>入口正常</span></div>
+      <div class="go">进入专题 →</div>
+    </a>
+
+    <a class="topic-card member" href="topics/advanced-packaging-chiplet/index.html">
+      <div class="topic-top">
+        <div class="seq">6</div>
+        <div class="status">会员内容待上架</div>
+      </div>
+      <h2>先进封装 / Chiplet专题</h2>
+      <p>覆盖封装测试、先进封装、Chiplet、ABF载板、RDL、Bumping和热管理材料。</p>
+      <div class="focus"><span>CoWoS/2.5D</span><span>Chiplet</span><span>ABF载板</span><span>测试检测</span></div>
+      <div class="meta"><span>16 个页面</span><span>4 个表格</span><span>入口正常</span></div>
+      <div class="go">进入专题 →</div>
+    </a>
+
+    <a class="topic-card member" href="topics/ai-server-infrastructure/index.html">
+      <div class="topic-top">
+        <div class="seq">7</div>
+        <div class="status">会员内容待上架</div>
+      </div>
+      <h2>AI服务器 / 液冷 / 电源 / 连接器专题</h2>
+      <p>覆盖AI服务器整机、液冷温控、电源UPS、连接器、铜缆线束和数据中心配套。</p>
+      <div class="focus"><span>AI服务器</span><span>液冷</span><span>电源/UPS</span><span>高速连接器</span></div>
+      <div class="meta"><span>16 个页面</span><span>1 个表格</span><span>入口正常</span></div>
+      <div class="go">进入专题 →</div>
+    </a>
+
+    <a class="topic-card member" href="topics/power-grid/index.html">
+      <div class="topic-top">
+        <div class="seq">8</div>
+        <div class="status">会员内容待上架</div>
+      </div>
+      <h2>电网 / 特高压专题</h2>
+      <p>覆盖特高压核心设备、变压器、开关设备、线缆、火电和电网自动化。</p>
+      <div class="focus"><span>特高压</span><span>变压器/开关</span><span>线缆</span><span>电网自动化</span></div>
+      <div class="meta"><span>1 个页面</span><span>入口正常</span></div>
+      <div class="go">进入专题 →</div>
+    </a>
+  </section>
+  <section class="panel check-panel">
+    <div class="section-head" style="margin-top:0">
+      <div>
+        <h2>本地检查清单</h2>
+        <p>用于确认每个专题入口是否存在，以及页面数量是否正常。</p>
+      </div>
+    </div>
+    <table>
+      <thead><tr><th>序号</th><th>专题</th><th>状态</th><th>本地文件</th><th>入口</th></tr></thead>
+      <tbody><tr>
+    <td>1</td>
+    <td>CPO光互连专题</td>
+    <td><span class="table-status live">已公开</span></td>
+    <td>17 个页面 / 0 个表格</td>
+    <td>入口正常</td>
+  </tr>
+<tr>
+    <td>2</td>
+    <td>PCB专题</td>
+    <td><span class="table-status member">会员内容待上架</span></td>
+    <td>16 个页面 / 0 个表格</td>
+    <td>入口正常</td>
+  </tr>
+<tr>
+    <td>3</td>
+    <td>半导体设备专题</td>
+    <td><span class="table-status member">会员内容待上架</span></td>
+    <td>16 个页面 / 0 个表格</td>
+    <td>入口正常</td>
+  </tr>
+<tr>
+    <td>4</td>
+    <td>半导体材料专题</td>
+    <td><span class="table-status member">会员内容待上架</span></td>
+    <td>16 个页面 / 0 个表格</td>
+    <td>入口正常</td>
+  </tr>
+<tr>
+    <td>5</td>
+    <td>MLCC被动元件专题</td>
+    <td><span class="table-status member">会员内容待上架</span></td>
+    <td>16 个页面 / 0 个表格</td>
+    <td>入口正常</td>
+  </tr>
+<tr>
+    <td>6</td>
+    <td>先进封装 / Chiplet专题</td>
+    <td><span class="table-status member">会员内容待上架</span></td>
+    <td>16 个页面 / 4 个表格</td>
+    <td>入口正常</td>
+  </tr>
+<tr>
+    <td>7</td>
+    <td>AI服务器 / 液冷 / 电源 / 连接器专题</td>
+    <td><span class="table-status member">会员内容待上架</span></td>
+    <td>16 个页面 / 1 个表格</td>
+    <td>入口正常</td>
+  </tr>
+<tr>
+    <td>8</td>
+    <td>电网 / 特高压专题</td>
+    <td><span class="table-status member">会员内容待上架</span></td>
+    <td>1 个页面 / 0 个表格</td>
+    <td>入口正常</td>
+  </tr></tbody>
+    </table>
+    <div class="risk">本网站内容基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。公司分类、概念标签和报告内容会随公开资料更新持续修订。</div>
+  </section>
+</main>
+</body>
+</html>

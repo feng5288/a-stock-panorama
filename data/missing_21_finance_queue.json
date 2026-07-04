@@ -1,0 +1,393 @@
+{
+  "generated_at": "2026-07-04T02:30:32.096Z",
+  "total": 21,
+  "queue": [
+    {
+      "index": 1,
+      "code": "603392",
+      "name": "万泰生物",
+      "mainline": "医药健康",
+      "tracks": [
+        "创新药",
+        "生物药",
+        "疫苗",
+        "诊断",
+        "医药",
+        "IVD"
+      ],
+      "primaryTrack": "创新药",
+      "secondaryTracks": [
+        "生物药",
+        "疫苗",
+        "诊断"
+      ],
+      "reportPath": "company_research/603392.html"
+    },
+    {
+      "index": 2,
+      "code": "601607",
+      "name": "上海医药",
+      "mainline": "医药健康",
+      "tracks": [
+        "医药商业",
+        "综合医药",
+        "医药",
+        "医药流通"
+      ],
+      "primaryTrack": "医药商业",
+      "secondaryTracks": [
+        "综合医药",
+        "医药",
+        "医药流通"
+      ],
+      "reportPath": "company_research/601607.html"
+    },
+    {
+      "index": 3,
+      "code": "600030",
+      "name": "中信证券",
+      "mainline": "金融地产",
+      "tracks": [
+        "证券",
+        "财富管理"
+      ],
+      "primaryTrack": "证券",
+      "secondaryTracks": [
+        "财富管理"
+      ],
+      "reportPath": "company_research/600030.html"
+    },
+    {
+      "index": 4,
+      "code": "000538",
+      "name": "云南白药",
+      "mainline": "医药健康",
+      "tracks": [
+        "中药",
+        "品牌中药",
+        "医药"
+      ],
+      "primaryTrack": "中药",
+      "secondaryTracks": [
+        "品牌中药",
+        "医药"
+      ],
+      "reportPath": "company_research/000538.html"
+    },
+    {
+      "index": 5,
+      "code": "000858",
+      "name": "五粮液",
+      "mainline": "消费与服务",
+      "tracks": [
+        "白酒",
+        "高端消费",
+        "消费"
+      ],
+      "primaryTrack": "白酒",
+      "secondaryTracks": [
+        "高端消费",
+        "消费"
+      ],
+      "reportPath": "company_research/000858.html"
+    },
+    {
+      "index": 6,
+      "code": "002603",
+      "name": "以岭药业",
+      "mainline": "医药健康",
+      "tracks": [
+        "中药",
+        "创新中药",
+        "医药",
+        "创新药"
+      ],
+      "primaryTrack": "中药",
+      "secondaryTracks": [
+        "创新中药",
+        "医药",
+        "创新药"
+      ],
+      "reportPath": "company_research/002603.html"
+    },
+    {
+      "index": 7,
+      "code": "000963",
+      "name": "华东医药",
+      "mainline": "医药健康",
+      "tracks": [
+        "创新药",
+        "生物药",
+        "医美",
+        "医药",
+        "医疗服务"
+      ],
+      "primaryTrack": "创新药",
+      "secondaryTracks": [
+        "生物药",
+        "医美",
+        "医药"
+      ],
+      "reportPath": "company_research/000963.html"
+    },
+    {
+      "index": 8,
+      "code": "600196",
+      "name": "复星医药",
+      "mainline": "医药健康",
+      "tracks": [
+        "创新药",
+        "生物药",
+        "综合医药",
+        "医药",
+        "医疗器械"
+      ],
+      "primaryTrack": "创新药",
+      "secondaryTracks": [
+        "生物药",
+        "综合医药",
+        "医药"
+      ],
+      "reportPath": "company_research/600196.html"
+    },
+    {
+      "index": 9,
+      "code": "603233",
+      "name": "大参林",
+      "mainline": "医药健康",
+      "tracks": [
+        "医药商业",
+        "药房",
+        "医药"
+      ],
+      "primaryTrack": "医药商业",
+      "secondaryTracks": [
+        "药房",
+        "医药"
+      ],
+      "reportPath": "company_research/603233.html"
+    },
+    {
+      "index": 10,
+      "code": "601398",
+      "name": "工商银行",
+      "mainline": "金融地产",
+      "tracks": [
+        "银行",
+        "高股息",
+        "金融服务",
+        "信贷与零售金融"
+      ],
+      "primaryTrack": "银行",
+      "secondaryTracks": [
+        "高股息",
+        "金融服务",
+        "信贷与零售金融"
+      ],
+      "reportPath": "company_research/601398.html"
+    },
+    {
+      "index": 11,
+      "code": "601939",
+      "name": "建设银行",
+      "mainline": "金融地产",
+      "tracks": [
+        "银行",
+        "高股息",
+        "金融服务",
+        "信贷与零售金融"
+      ],
+      "primaryTrack": "银行",
+      "secondaryTracks": [
+        "高股息",
+        "金融服务",
+        "信贷与零售金融"
+      ],
+      "reportPath": "company_research/601939.html"
+    },
+    {
+      "index": 12,
+      "code": "600276",
+      "name": "恒瑞医药",
+      "mainline": "医药健康",
+      "tracks": [
+        "创新药",
+        "化学制药",
+        "医药",
+        "医疗"
+      ],
+      "primaryTrack": "创新药",
+      "secondaryTracks": [
+        "化学制药",
+        "医药",
+        "医疗"
+      ],
+      "reportPath": "company_research/600276.html"
+    },
+    {
+      "index": 13,
+      "code": "600036",
+      "name": "招商银行",
+      "mainline": "金融地产",
+      "tracks": [
+        "股份制银行",
+        "财富管理",
+        "银行",
+        "高股息",
+        "金融服务",
+        "信贷与零售金融"
+      ],
+      "primaryTrack": "股份制银行",
+      "secondaryTracks": [
+        "财富管理",
+        "银行",
+        "高股息"
+      ],
+      "reportPath": "company_research/600036.html"
+    },
+    {
+      "index": 14,
+      "code": "000651",
+      "name": "格力电器",
+      "mainline": "消费与服务",
+      "tracks": [
+        "家电",
+        "白电",
+        "消费电子/家电"
+      ],
+      "primaryTrack": "家电",
+      "secondaryTracks": [
+        "白电",
+        "消费电子/家电"
+      ],
+      "reportPath": "company_research/000651.html"
+    },
+    {
+      "index": 15,
+      "code": "603939",
+      "name": "益丰药房",
+      "mainline": "医药健康",
+      "tracks": [
+        "医药商业",
+        "药房",
+        "医药"
+      ],
+      "primaryTrack": "医药商业",
+      "secondaryTracks": [
+        "药房",
+        "医药"
+      ],
+      "reportPath": "company_research/603939.html"
+    },
+    {
+      "index": 16,
+      "code": "000333",
+      "name": "美的集团",
+      "mainline": "消费与服务",
+      "tracks": [
+        "家电",
+        "智能家居",
+        "消费电子/家电"
+      ],
+      "primaryTrack": "家电",
+      "secondaryTracks": [
+        "智能家居",
+        "消费电子/家电"
+      ],
+      "reportPath": "company_research/000333.html"
+    },
+    {
+      "index": 17,
+      "code": "603883",
+      "name": "老百姓",
+      "mainline": "医药健康",
+      "tracks": [
+        "医药商业",
+        "药房",
+        "医药"
+      ],
+      "primaryTrack": "医药商业",
+      "secondaryTracks": [
+        "药房",
+        "医药"
+      ],
+      "reportPath": "company_research/603883.html"
+    },
+    {
+      "index": 18,
+      "code": "603991",
+      "name": "至正股份",
+      "mainline": "有色金属与新材料",
+      "tracks": [
+        "特种化工新材料",
+        "线缆高分子材料",
+        "新材料化工",
+        "稀土资源",
+        "有色金属",
+        "功能材料"
+      ],
+      "primaryTrack": "特种化工新材料",
+      "secondaryTracks": [
+        "线缆高分子材料",
+        "新材料化工",
+        "稀土资源"
+      ],
+      "reportPath": "company_research_core_deep/603991-old.html"
+    },
+    {
+      "index": 19,
+      "code": "603259",
+      "name": "药明康德",
+      "mainline": "医药健康",
+      "tracks": [
+        "CXO",
+        "CRO",
+        "CDMO",
+        "医药"
+      ],
+      "primaryTrack": "CXO",
+      "secondaryTracks": [
+        "CRO",
+        "CDMO",
+        "医药"
+      ],
+      "reportPath": "company_research/603259.html"
+    },
+    {
+      "index": 20,
+      "code": "600519",
+      "name": "贵州茅台",
+      "mainline": "消费与服务",
+      "tracks": [
+        "白酒",
+        "高端消费",
+        "消费",
+        "高股息"
+      ],
+      "primaryTrack": "白酒",
+      "secondaryTracks": [
+        "高端消费",
+        "消费",
+        "高股息"
+      ],
+      "reportPath": "company_research/600519.html"
+    },
+    {
+      "index": 21,
+      "code": "600763",
+      "name": "通策医疗",
+      "mainline": "医药健康",
+      "tracks": [
+        "医疗服务",
+        "口腔",
+        "医药"
+      ],
+      "primaryTrack": "医疗服务",
+      "secondaryTracks": [
+        "口腔",
+        "医药"
+      ],
+      "reportPath": "company_research/600763.html"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>数据接入检查 - A股全景树</title>
+  <style>
+*{box-sizing:border-box}body{margin:0;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}a{color:#79c0ff;text-decoration:none}.top{position:sticky;top:0;z-index:10;background:rgba(13,17,23,.96);border-bottom:1px solid #21262d;backdrop-filter:blur(10px)}.top-inner{max-width:1320px;margin:0 auto;padding:14px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center}.brand b{display:block;color:#f0f6fc;font-size:18px}.brand span{display:block;color:#8b949e;font-size:12px;margin-top:2px}.btn{display:inline-flex;border:1px solid #30363d;background:#161b22;border-radius:8px;padding:8px 10px;color:#c9d1d9}.wrap{max-width:1320px;margin:0 auto;padding:18px}.hero,.panel{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:16px;margin-bottom:12px}.hero h1{margin:0 0 8px;color:#f0f6fc;font-size:26px}.hero p{margin:0;color:#9da7b3;line-height:1.7}.metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:12px 0}.metric{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:12px}.metric b{display:block;color:#f0f6fc;font-size:24px}.metric span{display:block;color:#8b949e;font-size:12px;margin-top:5px}.pillrow,.list{display:flex;gap:8px;flex-wrap:wrap}.pill{display:inline-flex;border:1px solid #30363d;background:#0d1117;border-radius:999px;padding:4px 9px;color:#9da7b3;font-size:12px}.ok{color:#7ee787;border-color:#23863688;background:#23863622}.warn{color:#e3b341;border-color:#d2992288;background:#d2992220}.bad{color:#ffb3b3;border-color:#f8514988;background:#f8514922}.item{width:100%;background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:10px;color:#9da7b3;font-size:13px}.item b{color:#f0f6fc}.section-title{font-size:16px;font-weight:900;color:#f0f6fc;margin:0 0 10px}.empty{border:1px dashed #30363d;border-radius:8px;padding:18px;color:#8b949e}.code{font-family:Consolas,monospace;color:#dbeafe}.risk{line-height:1.7;color:#aebdca}@media(max-width:900px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.top-inner{align-items:flex-start;flex-direction:column}}@media(max-width:560px){.metrics{grid-template-columns:1fr}.hero h1{font-size:22px}}
+  </style>
+
+</head>
+<body>
+  <header class="top"><div class="top-inner"><div class="brand"><b>A股全景树</b><span>数据接入检查</span></div><div class="pillrow"><a class="btn" href="data_pipeline_preview.html?v=preview1">接入预览</a><a class="btn" href="index.html?v=bridge2">返回首页</a></div></div></header>
+  <main class="wrap">
+    <section class="hero">
+      <h1>等待辅助对话交付数据</h1>
+      <p>接收目录：<span class="code">E:\CODEX  zhuanyi\网站规划工作区\data_pipeline_output</span></p>
+      <p>生成时间：2026-06-29T13:46:26.103Z</p>
+    </section>
+    <section class="panel"><div class="section-title">文件状态</div><div class="pillrow"><span class="pill warn">company_master：等待接收</span><span class="pill warn">report_status：等待接收</span><span class="pill warn">classification_mapping：等待接收</span></div></section>
+    <section class="metrics"><div class="metric"><b>0</b><span>接收文件</span></div><div class="metric"><b>0</b><span>公司主档</span></div><div class="metric"><b>0</b><span>资料状态</span></div><div class="metric"><b>0</b><span>分类映射</span></div><div class="metric"><b>0</b><span>复制资料</span></div><div class="metric"><b>0</b><span>链接异常</span></div></section>
+    <section class="panel"><div class="section-title">公开措辞检查</div><span class="pill ok">未发现需处理词</span></section>
+    <section class="panel"><div class="section-title">缺少资料状态的公司</div><div class="empty">暂无异常样本。</div></section>
+    <section class="panel"><div class="section-title">缺少分类映射的公司</div><div class="empty">暂无异常样本。</div></section>
+    <section class="panel"><div class="section-title">资料源文件缺失</div><div class="empty">暂无异常样本。</div></section>
+    <section class="panel"><div class="section-title">资料链接异常</div><div class="empty">暂无异常样本。</div></section>
+    <section class="panel risk"><div class="section-title">统一风险提示</div>基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。</section>
+  </main>
+</body>
+</html>

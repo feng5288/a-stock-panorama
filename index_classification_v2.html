@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股投资全景树 - 分类版</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Microsoft YaHei','PingFang SC',Arial,sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh}
+a{color:inherit}
+#app{max-width:1420px;margin:0 auto;padding:0 20px 42px}
+#topbar{position:sticky;top:0;z-index:100;background:#0d1117;border-bottom:1px solid #21262d;padding:14px 0 10px;margin-bottom:16px}
+.top-inner{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+h1{font-size:18px;color:#58a6ff;white-space:nowrap}
+.search{flex:1;min-width:220px}
+.search input{width:100%;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px 14px;color:#c9d1d9;font-size:13px;outline:none}
+.search input:focus{border-color:#58a6ff}
+.actions{display:flex;align-items:center;gap:8px;font-size:11px;color:#8b949e;flex-wrap:wrap}
+.btn{background:#21262d;border:1px solid #30363d;color:#8b949e;padding:6px 12px;border-radius:8px;font-size:12px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover,.btn.active{background:#30363d;color:#c9d1d9}
+.btn.primary{background:#1f6feb22;color:#58a6ff;border-color:#1f6feb44}
+#stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 16px}
+.stat{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:12px}
+.stat b{display:block;color:#8b949e;font-size:12px;font-weight:500;margin-bottom:3px}
+.stat span{font-size:22px;font-weight:800;color:#f0f6fc}
+#breadcrumb{display:flex;align-items:center;gap:6px;padding:0 0 14px;flex-wrap:wrap}
+.crumb{font-size:12px;padding:4px 12px;border-radius:6px;cursor:pointer;background:#21262d;color:#8b949e;border:1px solid transparent}
+.crumb:hover{background:#30363d;color:#c9d1d9}
+.crumb.active{background:#1f6feb22;color:#58a6ff;border-color:#1f6feb44;cursor:default}
+.sep{color:#30363d;font-size:14px}
+.layout{display:grid;grid-template-columns:1fr 340px;gap:14px;align-items:start}
+.main-panel,.side-panel{background:#0d1117}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#161b22;border:1px solid #21262d;border-radius:8px;padding:10px 12px;margin-bottom:14px}
+.toolbar label{font-size:12px;color:#8b949e;display:flex;align-items:center;gap:6px}
+.toolbar select{background:#0d1117;border:1px solid #30363d;color:#c9d1d9;border-radius:7px;height:30px;padding:0 8px;outline:none}
+.toolbar input{accent-color:#58a6ff}
+.level-title{font-size:13px;color:#8b949e;margin-bottom:12px}
+.section-title{font-size:16px;color:#f0f6fc;font-weight:800;margin:18px 0 12px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:10px}
+.card{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:15px 16px;transition:all .16s;position:relative;overflow:hidden}
+.card.clickable{cursor:pointer}
+.card.clickable:hover{border-color:#58a6ff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.card.node{border-left:4px solid #58a6ff}
+.card.concept{border-left:4px solid #f85149;background:linear-gradient(90deg,#2d1418 0,#161b22 24%)}
+.card.child{border-left:4px solid #8b949e}
+.card.stock{border-left:4px solid #8b949e}
+.card.stock-strong{border-left-color:#f85149;background:linear-gradient(90deg,#2d1418 0,#161b22 22%)}
+.card.stock-steady{border-left-color:#d29922;background:linear-gradient(90deg,#2d240f 0,#161b22 22%)}
+.card.stock-watch{border-left-color:#58a6ff;background:linear-gradient(90deg,#10243a 0,#161b22 22%)}
+.card.stock-risk{border-left-color:#8b949e;background:linear-gradient(90deg,#1b1f27 0,#161b22 22%)}
+.icon{font-size:21px;margin-bottom:7px}
+.name{font-size:15px;font-weight:700;color:#f0f6fc;line-height:1.35;padding-right:28px}
+.main-name{font-size:20px;font-weight:900;color:#f0f6fc;line-height:1.25;padding-right:28px}
+.main-name .num{color:#8b949e;font-size:16px;margin-right:7px}
+.meta{margin-top:8px;font-size:11px;color:#8b949e;display:flex;gap:6px;flex-wrap:wrap;line-height:1.45}
+.badge{background:#21262d;border:1px solid #30363d;border-radius:999px;padding:2px 7px}
+.badge.good{background:#23863622;color:#7ee787;border-color:#23863655}
+.badge.warn{background:#d2992220;color:#e3b341;border-color:#d2992255}
+.badge.grade-strong{background:#f8514922;color:#ff9b9b;border-color:#f8514955}
+.badge.grade-steady{background:#d2992220;color:#e3b341;border-color:#d2992255}
+.badge.grade-watch{background:#1f6feb22;color:#79c0ff;border-color:#1f6feb55}
+.badge.grade-risk{background:#8b949e22;color:#c9d1d9;border-color:#8b949e55}
+.badge.advantage{background:#f8514922;color:#ffb3b3;border-color:#f8514955}
+.arrow{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:18px;color:#30363d}
+.card.clickable:hover .arrow{color:#58a6ff;right:11px}
+.stock .name{padding-right:0}
+.stock-rows{margin-top:10px;border-top:1px solid #21262d}
+.row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #1b222d;padding:6px 0;font-size:12px}
+.row span:first-child{color:#8b949e}
+.row span:last-child{text-align:right;color:#c9d1d9}
+.report-link{display:inline-flex;align-items:center;margin-top:10px;height:30px;padding:0 10px;border-radius:7px;background:#1f6feb;color:#fff;text-decoration:none;font-size:12px}
+.report-link:hover{background:#388bfd}
+.side-panel{position:sticky;top:96px}
+.box{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:14px;margin-bottom:10px}
+.box h2{font-size:15px;color:#f0f6fc;margin-bottom:10px}
+.small-list{display:flex;flex-direction:column;gap:7px}
+.small-item{font-size:12px;color:#8b949e;line-height:1.45;padding-bottom:7px;border-bottom:1px solid #21262d}
+.small-item:last-child{border-bottom:0;padding-bottom:0}
+.small-item b{color:#c9d1d9;font-weight:600}
+.small-link{cursor:pointer}
+.small-link:hover b{color:#58a6ff}
+.node-index{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#21262d;border:1px solid #30363d;color:#8b949e;font-size:11px;margin-bottom:7px}
+.health{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:14px}
+.health-card{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:10px}
+.health-card b{display:block;color:#8b949e;font-size:11px;font-weight:500;margin-bottom:3px}
+.health-card span{font-size:18px;color:#f0f6fc;font-weight:800}
+.mark-row{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 14px}
+.calibration-note{font-size:12px;color:#8b949e;line-height:1.55;background:#161b22;border:1px solid #21262d;border-radius:8px;padding:10px 12px;margin:0 0 10px}
+.mark-btn{border:1px solid #30363d;background:#21262d;color:#8b949e;border-radius:999px;padding:5px 10px;font-size:12px;cursor:pointer}
+.mark-btn:hover,.mark-btn.active{background:#30363d;color:#f0f6fc}
+.mark-btn.merge.active{border-color:#d29922;color:#e3b341;background:#d2992220}
+.mark-btn.split.active{border-color:#58a6ff;color:#79c0ff;background:#1f6feb22}
+.mark-btn.rename.active{border-color:#a371f7;color:#d2a8ff;background:#a371f722}
+.empty{text-align:center;padding:60px 20px;color:#484f58;background:#161b22;border:1px solid #21262d;border-radius:8px}
+.note{font-size:12px;color:#8b949e;line-height:1.6}
+@media(max-width:980px){#stats{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}.side-panel{position:static}.card-grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}}
+
+.local-version-banner{position:sticky;top:0;z-index:999;background:#281b00;border-bottom:1px solid #8a5a00;color:#ffe7b3;padding:10px 20px;font-size:13px;line-height:1.5}
+.local-version-banner strong{color:#fff;font-size:14px;margin-right:8px}
+.local-version-banner a{display:inline-flex;margin-left:10px;color:#ffd36a;text-decoration:none;border:1px solid rgba(255,211,106,.45);border-radius:8px;padding:3px 8px;background:rgba(255,211,106,.08)}
+.local-version-banner a:hover{background:rgba(255,211,106,.16)}
+
+</style>
+
+</head>
+<body>
+<div class="local-version-banner" data-local-version-signpost="1"><strong>内部样本页：分类 V2 预览版</strong>用于分类结构和交互预览，当前保留为内部参考。<a href="index_v2_delivery.html?v=public2">返回新版演示入口</a><a href="site_versions_index.html">版本总览</a></div>
+
+<div id="app">
+  <div id="topbar">
+    <div class="top-inner">
+      <h1>A股投资全景树 · 分类版</h1>
+      <div class="search"><input id="search" placeholder="搜索公司 / 代码 / 概念节点 / 标签"></div>
+      <div class="actions">
+        <a class="btn" href="index.html">旧版首页</a>
+        <a class="btn" href="classification_v2_preview.html">分类预览</a>
+        <button class="btn primary" id="homeBtn">概念图首页</button>
+      </div>
+    </div>
+  </div>
+  <section id="stats"></section>
+  <nav id="breadcrumb"></nav>
+  <section class="toolbar">
+    <label>排序
+      <select id="sortMode">
+        <option value="grade">综合评价</option>
+        <option value="weight">标签权重</option>
+        <option value="improve">财务改善</option>
+        <option value="profit">净利润额</option>
+        <option value="valuation">估值压力</option>
+        <option value="duplicate">重复挂载</option>
+      </select>
+    </label>
+    <label><input type="checkbox" id="reportOnly"> 只看有深度报告</label>
+  </section>
+  <section class="layout">
+    <main class="main-panel">
+      <div id="content"></div>
+    </main>
+    <aside class="side-panel">
+      <div class="box">
+        <h2>热点概念入口</h2>
+        <div id="hotNodes" class="small-list"></div>
+      </div>
+      <div class="box">
+        <h2>分类状态</h2>
+        <div id="statusBox" class="note"></div>
+      </div>
+      <div class="box">
+        <h2>节点校准建议</h2>
+        <div id="suggestBox" class="small-list"></div>
+      </div>
+    </aside>
+  </section>
+</div>
+
+<script src="classification_v2.js"></script>
+<script src="v2_reports_index.js"></script>
+<script src="p0_evidence_cards_v1.js"></script>
+<script>
+var DATA=typeof CLASSIFICATION_V2_INDEX!=='undefined'?CLASSIFICATION_V2_INDEX:null;
+var REPORTS=typeof V2_REPORTS_BY_CODE!=='undefined'?V2_REPORTS_BY_CODE:{};
+var P0CARDS=typeof P0_EVIDENCE_CARDS_V1!=='undefined'?P0_EVIDENCE_CARDS_V1:{rows:[]};
+var P0_BY_CODE={};
+(P0CARDS.rows||[]).forEach(function(r){P0_BY_CODE[r.code]=r});
+var stack=[];
+var virtualStack=[];
+var q='';
+var sortMode='grade';
+var reportOnly=false;
+var nodeMarks={};
+try{nodeMarks=JSON.parse(localStorage.getItem('classification_v2_node_marks')||'{}')}catch(e){nodeMarks={}}
+
+function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function fmtNum(v,suffix){return typeof v==='number'?v.toFixed(2).replace(/\.?0+$/,'')+(suffix||''):'--'}
+function fmtPct(v){return typeof v==='number'?(v>0?'+':'')+v.toFixed(2).replace(/\.?0+$/,'')+'%':'--'}
+function nodes(){return DATA&&DATA.taxonomy?DATA.taxonomy.nodes:[]}
+function roots(){return nodes().filter(function(n){return !n.parent})}
+function childrenOf(id){return nodes().filter(function(n){return n.parent===id})}
+function nodeById(id){return nodes().find(function(n){return n.id===id})}
+function stocks(){return DATA?Object.keys(DATA.stocks_by_code||{}).map(function(k){return DATA.stocks_by_code[k]}):[]}
+function conceptFor(id){return (DATA.concepts||[]).find(function(c){return c.node_id===id})||null}
+function reportUrl(code){var r=REPORTS[code];return r&&r.file?encodeURI(r.relative_path||('reports_v2/'+r.file)):''}
+function hasDeepReport(code){return !!(REPORTS[code]&&REPORTS[code].file)}
+function evidenceCard(code){return P0_BY_CODE[String(code).padStart(6,'0')]||P0_BY_CODE[code]||null}
+function evidenceScores(stock){
+ var ev=evidenceCard(stock.code),ce=ev&&ev.classification_evidence||{};
+ return{theme:typeof ce.theme_purity_score==='number'?ce.theme_purity_score:null,fundamental:typeof ce.fundamental_score==='number'?ce.fundamental_score:null,status:ce.evidence_status||'',original:ev&&ev.original_evidence_level||''};
+}
+function evidenceGrade(stock){
+ var e=evidenceScores(stock),theme=e.theme,fund=e.fundamental;
+ if(theme===null)return null;
+ if(theme>=90&&fund!==null&&fund>=75)return{label:'高纯度核心',cls:'strong',rank:5};
+ if(theme>=88)return{label:'高纯度观察',cls:'steady',rank:4};
+ if(theme>=78)return{label:'证据跟踪',cls:'watch',rank:3};
+ return{label:'证据偏弱',cls:'risk',rank:1};
+}
+function allNodeIds(id){return [id].concat(childrenOf(id).map(function(c){return c.id}))}
+function directNodeIds(id){return [id]}
+function mountCount(stock){return (stock.tags||[]).filter(function(t){return t.node_id&&t.node_id!=='unmapped'}).reduce(function(acc,t){acc[t.node_id]=1;return acc},{})}
+function mountCountNum(stock){return Object.keys(mountCount(stock)).length}
+function virtualConcepts(){
+ return [
+  {id:'main_cpo',label:'CPO / 光模块',desc:'借鉴 CPO 卡脖子环节，按系统架构、材料、光芯片、硅光、高速电芯片、封装模块继续细分。',match:['CPO','光模块','高速光通信'],children:[
+   {id:'cpo_arch',label:'系统/架构源头',desc:'数据中心架构、交换机、AI服务器与系统集成入口。',match:['CPO架构','光通信系统','数据中心光互联','交换机光模块']},
+   {id:'cpo_material',label:'上游材料',desc:'光学材料、基板、连接材料、封装材料。',match:['光通信材料','光模块材料','硅光材料','光学材料']},
+   {id:'cpo_light_chip',label:'光芯片/光源',desc:'激光器、探测器、光芯片等光侧核心环节。',match:['光芯片','光源','激光器','探测器']},
+   {id:'cpo_silicon',label:'硅光/PIC',desc:'硅光平台、PIC、调制器等集成化方向。',match:['硅光','PIC','调制器']},
+   {id:'cpo_electrical_chip',label:'高速电芯片',desc:'DSP、Driver、TIA、Retimer、SerDes 等电侧核心芯片。',match:['DSP','Driver','TIA','Retimer','SerDes','高速芯片']},
+   {id:'cpo_module',label:'封装/模块/测试',desc:'光模块、CPO封装、测试与制造交付环节。',match:['光模块','CPO','封装','测试']}
+  ]},
+  {id:'main_pcb',label:'PCB / 高速PCB',desc:'作为 AI 算力硬件的并行主线，后续固定拆成高速板、HDI/载板、材料、设备/检测。',match:['PCB','高速PCB','HDI','载板','覆铜板'],children:[
+   {id:'pcb_highspeed',label:'高速PCB',desc:'AI服务器、交换机与高速通信设备中的高速板。',match:['高速PCB','PCB']},
+   {id:'pcb_hdi_substrate',label:'HDI/载板',desc:'HDI、封装基板、服务器与高端电子载板方向。',match:['HDI','载板','封装基板']},
+   {id:'pcb_material',label:'覆铜板/材料',desc:'覆铜板、铜箔、树脂等 PCB 上游材料。',match:['覆铜板','CCL','铜箔','树脂','PCB材料']},
+   {id:'pcb_equipment',label:'设备/检测',desc:'PCB 制造设备、测试检测、钻孔曝光等环节。',match:['PCB设备','PCB检测','PCB测试','钻孔设备','曝光设备']}
+  ]},
+  {id:'main_data_center_infra',label:'AI数据中心基础设施',desc:'承接液冷、供配电、铜缆连接、IDC、服务器电源等算力扩建中的基础设施环节。',match:['液冷','散热','热管理','铜缆','高速连接','连接器','数据中心','IDC','服务器电源','AI服务器电源','UPS','电源','供配电'],children:[
+   {id:'liquid_cooling',label:'液冷 / 热管理',desc:'冷板、浸没式液冷、CDU、温控、散热材料等数据中心热管理方向。',match:['液冷','冷板','浸没式液冷','CDU','温控','散热','热管理','散热材料']},
+   {id:'high_speed_interconnect',label:'铜缆高速连接 / 连接器',desc:'高速连接器、铜缆连接、背板连接器、线缆组件等短距高速互联。',match:['铜缆','高速连接','连接器','背板连接器','线缆组件','高速互联']},
+   {id:'data_center_power',label:'数据中心电源 / 供配电',desc:'服务器电源、UPS、变压器、配电、储能备电等供电环节。',match:['服务器电源','AI服务器电源','UPS','供配电','电源','变压器','储能备电']},
+   {id:'idc_infrastructure',label:'IDC / 数据中心建设',desc:'数据中心建设、机房工程、运营商与云基础设施。',match:['IDC','数据中心','机房','云基础设施','运营商']},
+   {id:'data_center_cooling_material',label:'散热材料 / 导热材料',desc:'导热垫片、散热材料、热界面材料等材料环节。',match:['散热材料','导热材料','导热垫片','热界面材料']}
+  ]},
+  {id:'main_optical_infra',label:'光通信基础设施',desc:'与 CPO/光模块并列，承接光纤光缆、光棒预制棒、海底光缆、电力通信等基础设施公司。',match:['光纤','光缆','光棒','预制棒','海底光缆','电力通信','光通信基础设施','通信设备'],children:[
+   {id:'optical_fiber_cable',label:'光纤光缆',desc:'长飞光纤、亨通光电这类公司的核心承接位置。',match:['光纤','光缆','光纤光缆']},
+   {id:'optical_preform',label:'光棒 / 预制棒',desc:'光纤上游核心材料与制造环节。',match:['光棒','预制棒','光纤预制棒']},
+   {id:'data_center_optical_interconnect',label:'数据中心光互联',desc:'数据中心内部和园区间高速光互联，不等同于 CPO 核心器件。',match:['数据中心光互联','光互联','高速光通信','数据中心互联']},
+   {id:'submarine_cable',label:'海底光缆',desc:'海缆、海洋通信、跨海/跨境通信基础设施。',match:['海底光缆','海缆','海洋通信']},
+   {id:'power_communication',label:'电力通信 / 能源互联',desc:'电力通信、智能电网通信、能源互联网相关通信基础设施。',match:['电力通信','智能电网通信','能源互联','能源互联网']}
+  ]},
+  {id:'main_capacitor',label:'电容 / 被动元器件',desc:'把 MLCC、铝电解电容、电极箔、电感、射频器件放在同一条被动元器件主线里。',match:['MLCC','电容','铝电解电容','电极箔','电子铝箔','被动元器件','电子元器件','电感'],children:[
+   {id:'mlcc_core',label:'MLCC',desc:'陶瓷电容、车规/高容 MLCC 等核心方向。',match:['MLCC','陶瓷电容']},
+   {id:'aluminum_capacitor_material',label:'铝电解电容材料',desc:'铝电解电容上游材料，重点看高纯铝、电子铝箔、电极箔等环节。',match:['铝电解电容','电极箔','电子铝箔','高纯铝','电容箔']},
+   {id:'electrode_foil',label:'电极箔 / 电子铝箔',desc:'铝电解电容关键原材料，适合承接新疆众和这类材料型公司。',match:['电极箔','电子铝箔','电容箔','高纯铝']},
+   {id:'mlcc_inductor',label:'电感/磁性元件',desc:'片式电感、功率电感、磁性器件。',match:['电感','磁性元件','磁性器件']},
+   {id:'mlcc_rf',label:'射频/滤波器',desc:'射频前端、滤波器及相关被动器件。',match:['射频','滤波器']},
+   {id:'mlcc_platform',label:'被动元器件平台',desc:'多品类被动元器件和电子元器件平台型公司。',match:['被动元器件','电子元器件']}
+  ]},
+  {id:'main_materials',label:'关键材料 / 上游卡位',desc:'专门承接材料型公司：主业可能在有色、化工、电子材料，但行情经常按下游卡位重估。',match:['材料','高纯铝','电子铝箔','电极箔','覆铜板','铜箔','硅片','电子特气','光刻胶','靶材','CMP','磁性材料','高温合金','钛合金'],children:[
+   {id:'electronic_component_materials',label:'电子元器件材料',desc:'铝电解电容材料、陶瓷粉体、磁性材料、电子铝箔、电极箔等。',match:['电子元器件材料','铝电解电容','电极箔','电子铝箔','陶瓷粉体','磁性材料','高纯铝']},
+   {id:'pcb_materials',label:'PCB材料',desc:'覆铜板、铜箔、树脂、玻纤布、载板材料等 PCB 上游环节。',match:['PCB材料','覆铜板','铜箔','树脂','玻纤布','载板材料']},
+   {id:'semiconductor_materials',label:'半导体材料',desc:'硅片、电子特气、光刻胶、靶材、CMP、湿电子化学品等。',match:['半导体材料','硅片','电子特气','光刻胶','靶材','CMP','湿电子化学品']},
+   {id:'ai_compute_materials',label:'AI算力材料',desc:'高速连接材料、散热材料、光通信材料、电源相关材料。',match:['AI算力材料','高速连接材料','散热材料','光通信材料','电源材料']},
+   {id:'new_energy_materials',label:'新能源材料',desc:'锂电、钠电、光伏、稀土磁材等新能源上游材料。',match:['锂电材料','钠电材料','光伏材料','稀土磁材','新能源材料']},
+   {id:'advanced_metal_materials',label:'高端金属 / 合金材料',desc:'高纯铝、钛合金、高温合金、铜合金、特种钢等高端材料。',match:['高纯铝','钛合金','高温合金','铜合金','特种钢','高端金属']}
+  ]},
+  {id:'main_robotics',label:'机器人 / 自动化',desc:'人形机器人、执行器、减速器、丝杠、传感器和工业自动化，单独作为高端制造主线。',match:['机器人','人形机器人','机器人执行器','减速器','丝杠','力矩传感器','机器人传感器','电子皮肤','工业自动化','工业母机'],children:[
+   {id:'humanoid_robot',label:'人形机器人整机 / 本体',desc:'人形机器人本体、整机平台和系统集成。',match:['人形机器人','机器人本体','整机']},
+   {id:'robot_actuator',label:'执行器',desc:'旋转/线性执行器、关节模组、空心杯电机等。',match:['执行器','机器人执行器','关节模组','空心杯电机']},
+   {id:'robot_reducer_screw',label:'减速器 / 丝杠',desc:'谐波减速器、RV减速器、滚珠丝杠、行星滚柱丝杠。',match:['减速器','丝杠','谐波减速器','RV减速器','滚柱丝杠']},
+   {id:'robot_sensor',label:'传感器 / 电子皮肤',desc:'力矩传感器、触觉传感器、电子皮肤等感知环节。',match:['力矩传感器','机器人传感器','触觉传感器','电子皮肤']},
+   {id:'industrial_automation',label:'工业自动化 / 工业母机',desc:'工业自动化、数控系统、工业软件、精密制造装备。',match:['工业自动化','工业母机','数控系统','工业软件','精密制造']}
+  ]},
+  {id:'main_advanced_chip',label:'AI芯片 / 存储 / 先进封装',desc:'把国产算力芯片、HBM/存储、Chiplet、先进封装放成半导体内部的高景气主线。',match:['AI芯片','GPU','国产CPU','存储芯片','HBM','先进封装','Chiplet','封装测试','CIS封装','模拟芯片','MCU'],children:[
+   {id:'ai_chip_compute',label:'AI芯片 / 国产算力芯片',desc:'GPU、国产CPU、AI加速芯片和智能计算。',match:['AI芯片','GPU','国产CPU','智能计算','AI加速芯片']},
+   {id:'memory_hbm',label:'存储芯片 / HBM',desc:'DRAM、NAND、HBM、存储控制与国产存储链。',match:['存储芯片','HBM','DRAM','NAND','存储']},
+   {id:'advanced_packaging_virtual',label:'先进封装 / Chiplet',desc:'Chiplet、2.5D/3D封装、封装测试与先进封装材料设备。',match:['先进封装','Chiplet','封装测试','2.5D','3D封装']},
+   {id:'analog_mcu_cis',label:'模拟 / MCU / CIS',desc:'模拟芯片、MCU、CIS及车规/消费电子细分芯片。',match:['模拟芯片','MCU','CIS','CIS封装']}
+  ]},
+  {id:'main_battery_newtech',label:'电池新技术 / 储能',desc:'固态电池、钠电、锂电材料、储能系统等新能源技术升级主线。',match:['固态电池','钠电','锂电池','锂电材料','动力电池','储能','储能系统','新能源材料'],children:[
+   {id:'solid_state_battery',label:'固态电池',desc:'固态电解质、硫化物/氧化物路线、固态电池材料和设备。',match:['固态电池','固态电解质','硫化物','氧化物电解质']},
+   {id:'sodium_battery',label:'钠电池',desc:'钠离子电池、正负极、电解液及材料体系。',match:['钠电','钠离子电池','钠电材料']},
+   {id:'lithium_materials',label:'锂电材料',desc:'锂资源、正负极、电解液、隔膜等锂电材料环节。',match:['锂资源','锂电材料','正极','负极','电解液','隔膜']},
+   {id:'energy_storage_system',label:'储能系统',desc:'大储、户储、PCS、逆变器、电池系统和储能集成。',match:['储能','储能系统','PCS','逆变器','储能集成']}
+  ]}
+ ];
+}
+function candidateHotThemes(){
+ return [
+  {label:'低空经济 / eVTOL',reason:'热度高，但当前样本标签不足；后续需要补整机、空管、复材、电池、运营等分支。'},
+  {label:'可控核聚变',reason:'适合做前沿能源候选主线，需确认超导材料、磁体、电源、真空设备等公司证据。'},
+  {label:'商业航天 / 卫星互联网',reason:'可与军工航天交叉，但需要区分卫星制造、火箭、地面站、运营服务。'},
+  {label:'边缘AI / AI终端',reason:'消费电子和AI应用交叉，等报告标签更充分后再升为主干。'},
+  {label:'智能驾驶 / 车路云',reason:'汽车电子已有样本，后续可拆感知、域控、线控底盘、路侧设备。'}
+ ];
+}
+function virtualById(id){
+ var found=null;
+ function walk(list){(list||[]).forEach(function(v){if(found)return;if(v.id===id)found=v;else walk(v.children)})}
+ walk(virtualConcepts());
+ return found;
+}
+function virtualChildrenOf(id){var v=virtualById(id);return v&&v.children?v.children:[]}
+function virtualParentOf(id){
+ var parent=null;
+ function walk(list,p){(list||[]).forEach(function(v){if(parent)return;if(v.id===id)parent=p;else walk(v.children,v.id)})}
+ walk(virtualConcepts(),null);
+ return parent;
+}
+function virtualRootOf(id){
+ var cur=id,parent=virtualParentOf(cur);
+ while(parent){cur=parent;parent=virtualParentOf(cur)}
+ return virtualById(cur);
+}
+function virtualPath(id){
+ var path=[],cur=id;
+ while(cur){path.unshift(cur);cur=virtualParentOf(cur)}
+ return path;
+}
+function virtualText(stock){
+ return [stock.code,stock.name,stock.primary_industry].concat(stock.secondary_tracks||[]).concat((stock.tags||[]).map(function(t){return [t.name,t.node_name,(t.path||[]).join('/')].join('/')})).join('/').toLowerCase();
+}
+function stockMatchesVirtual(stock,v){
+ var text=virtualText(stock);
+ var selfMatch=(v.match||[]).some(function(m){return text.indexOf(String(m).toLowerCase())>=0});
+ var parent=virtualParentOf(v.id);
+ if(!parent)return selfMatch;
+ var root=virtualRootOf(v.id), rootMatch=(root.match||[]).some(function(m){return text.indexOf(String(m).toLowerCase())>=0});
+ return rootMatch&&selfMatch;
+}
+function virtualHit(stock,v){
+ var best=null;
+ (stock.tags||[]).forEach(function(t){
+  var tagText=[t.name,t.node_name,(t.path||[]).join('/')].join('/').toLowerCase();
+  if((v.match||[]).some(function(m){return tagText.indexOf(String(m).toLowerCase())>=0})){
+   if(!best||t.weight>best.weight)best=t;
+  }
+ });
+ return best?Object.assign({},best,{node_name:v.label}):{node_name:v.label,weight:.68,role:'概念匹配',name:v.label};
+}
+function virtualStocksFor(id,subtree){
+ var v=virtualById(id), buckets=v?(subtree?[v].concat(virtualChildrenOf(id)): [v]):[];
+ if(!buckets.length)return[];
+ return sortStockHits(stocks().map(function(s){
+  var hitV=buckets.find(function(x){return stockMatchesVirtual(s,x)});
+  return hitV?{stock:s,hit:virtualHit(s,hitV)}:null;
+ }).filter(function(x){return x&&matchQuery(x.stock)&&(!reportOnly||hasDeepReport(x.stock.code))}));
+}
+function virtualHealth(id){
+ var list=virtualStocksFor(id,true), sum=0, improve=0, worse=0, duplicates=0;
+ list.forEach(function(x){
+  sum+=x.hit.weight;
+  var st=(x.stock.financial_signal||{}).improvement_status||'';
+  if(st.indexOf('改善')>=0)improve++;
+  if(st.indexOf('恶化')>=0)worse++;
+  if(mountCountNum(x.stock)>1)duplicates++;
+ });
+ return{count:list.length,avg:list.length?sum/list.length:0,improve:improve,worse:worse,duplicates:duplicates};
+}
+function bestHit(stock,nodeIds){
+ var best=null;
+ (stock.tags||[]).forEach(function(t){
+  if(nodeIds.indexOf(t.node_id)<0)return;
+  if(!best||t.weight>best.weight)best=t;
+ });
+ return best;
+}
+function matchQuery(stock){
+ if(!q)return true;
+ var text=[stock.code,stock.name,stock.primary_industry].concat(stock.secondary_tracks||[]).concat((stock.tags||[]).map(function(t){return t.name+' '+t.node_name})).join(' ').toLowerCase();
+ return text.indexOf(q.toLowerCase())>=0;
+}
+function stocksFor(id){
+ var ids=allNodeIds(id);
+ return sortStockHits(stocks().map(function(s){return{stock:s,hit:bestHit(s,ids)}}).filter(function(x){return x.hit&&matchQuery(x.stock)&&(!reportOnly||hasDeepReport(x.stock.code))}));
+}
+function leafStocksFor(id){
+ var ids=directNodeIds(id);
+ return sortStockHits(stocks().map(function(s){return{stock:s,hit:bestHit(s,ids)}}).filter(function(x){return x.hit&&matchQuery(x.stock)&&(!reportOnly||hasDeepReport(x.stock.code))}));
+}
+function bestOverall(stock){
+ return (stock.tags||[]).filter(function(t){return t.node_id!=='unmapped'}).sort(function(a,b){return b.weight-a.weight})[0]||null;
+}
+function searchResults(){
+ return sortStockHits(stocks().filter(function(s){return matchQuery(s)&&(!reportOnly||hasDeepReport(s.code))}).map(function(s){return{stock:s,hit:bestOverall(s)}}).filter(function(x){return x.hit}));
+}
+function improveScore(stock){
+ var fs=stock.financial_signal||{},y=fs.yoy_parent_net_income_pct;
+ if(typeof y!=='number')return -9999;
+ return y;
+}
+function profitScore(stock){
+ var fs=stock.financial_signal||{},v=fs.net_profit_yi;
+ return typeof v==='number'?v:-9999;
+}
+function valuationScore(stock){
+ var r=REPORTS[stock.code]||{},pe=r.pe_ttm;
+ return typeof pe==='number'?pe:999999;
+}
+function displayGrade(stock){
+ var eg=evidenceGrade(stock);
+ if(eg)return eg;
+ var fs=stock.financial_signal||{},y=fs.yoy_parent_net_income_pct,profit=fs.net_profit_yi,pe=(REPORTS[stock.code]||{}).pe_ttm;
+ var score=0;
+ if(typeof y==='number'){if(y>=30)score+=3;else if(y>=8)score+=2;else if(y>=0)score+=1;else if(y<=-20)score-=2;else score-=1}
+ if(typeof profit==='number'){if(profit>=50)score+=2;else if(profit>=10)score+=1;else if(profit<0)score-=2}
+ if(typeof pe==='number'){if(pe>80)score-=2;else if(pe>45)score-=1;else if(pe>0&&pe<20)score+=1}
+ if(score>=4)return{label:'强势改善',cls:'strong',rank:4};
+ if(score>=2)return{label:'稳健改善',cls:'steady',rank:3};
+ if(score>=0)return{label:'跟踪观察',cls:'watch',rank:2};
+ return{label:'承压修复',cls:'risk',rank:1};
+}
+function gradeScore(stock){return displayGrade(stock).rank}
+function sortStockHits(list){
+ return list.sort(function(a,b){
+  if(sortMode==='grade')return gradeScore(b.stock)-gradeScore(a.stock)||b.hit.weight-a.hit.weight;
+  if(sortMode==='improve')return improveScore(b.stock)-improveScore(a.stock);
+  if(sortMode==='profit')return profitScore(b.stock)-profitScore(a.stock);
+  if(sortMode==='valuation')return valuationScore(a.stock)-valuationScore(b.stock);
+  if(sortMode==='duplicate')return mountCountNum(b.stock)-mountCountNum(a.stock);
+  return b.hit.weight-a.hit.weight;
+ });
+}
+function nodeHealth(id){
+ var list=stocksFor(id), sum=0, improve=0, worse=0, reports=0, duplicates=0;
+ list.forEach(function(x){
+  sum+=x.hit.weight;
+  var st=(x.stock.financial_signal||{}).improvement_status||'';
+  if(st.indexOf('改善')>=0)improve++;
+  if(st.indexOf('恶化')>=0)worse++;
+  if(hasDeepReport(x.stock.code))reports++;
+  if(mountCountNum(x.stock)>1)duplicates++;
+ });
+ return{count:list.length,avg:list.length?sum/list.length:0,improve:improve,worse:worse,reports:reports,duplicates:duplicates};
+}
+function nodeMark(id,type){
+ var m=nodeMarks[id]||{};
+ if(m[type])delete m[type];else m[type]=1;
+ nodeMarks[id]=m;
+ localStorage.setItem('classification_v2_node_marks',JSON.stringify(nodeMarks));
+ render();
+}
+function markClass(id,type){
+ return nodeMarks[id]&&nodeMarks[id][type]?' active':'';
+}
+function jumpNode(id){
+ if(virtualById(id)){jumpVirtual(id);return}
+ if(!nodeById(id))return;
+ var path=[],cur=nodeById(id);
+ while(cur){path.unshift(cur.id);cur=cur.parent?nodeById(cur.parent):null}
+ stack=path;
+ virtualStack=[];
+ q='';
+ document.getElementById('search').value='';
+ render();
+}
+function jumpVirtual(id){
+ if(!virtualById(id))return;
+ virtualStack=virtualPath(id);
+ stack=[];
+ q='';
+ document.getElementById('search').value='';
+ render();
+}
+function hotConceptEntries(){
+ var wanted=virtualConcepts().map(function(v){return{label:v.label,virtual_id:v.id,match:v.match}}).concat([
+  {label:'AI服务器链',match:['AI服务器链','AI服务器']},
+  {label:'存储芯片',match:['存储芯片','存储']},
+  {label:'半导体设备',match:['半导体设备']},
+  {label:'创新药',match:['创新药','生物药']},
+  {label:'机器人',match:['机器人','人形机器人']}
+ ]);
+ return wanted.map(function(w){
+  if(w.virtual_id){
+   var v=virtualById(w.virtual_id), count=virtualStocksFor(w.virtual_id,true).length;
+   return {label:w.label,virtual_id:w.virtual_id,path:'主流概念主干 / '+w.label,count:count,weight:count?0.9:0};
+  }
+  var hit=(DATA.concepts||[]).find(function(c){
+   var text=[c.name,(c.path||[]).join('/'),(c.raw_tags||[]).join('/')].join('/');
+   return w.match.some(function(m){return text.indexOf(m)>=0});
+  });
+  return hit?{label:w.label,node_id:hit.node_id,path:(hit.path||[hit.name]).join(' / '),count:hit.stock_count,weight:hit.total_weight}:null;
+ }).filter(Boolean);
+}
+function mainstreamConcepts(){
+ return virtualConcepts().map(function(v){return{label:v.label,virtual_id:v.id,desc:v.desc,count:virtualStocksFor(v.id,true).length}}).concat([
+  {label:'半导体',node_id:'semiconductor',desc:'芯片、设备、材料、封测、存储、CIS/MCU 等主线入口'},
+  {label:'AI服务器链',node_id:'ai_server',desc:'服务器、数据中心、电源、散热、连接器与制造环节'},
+  {label:'半导体设备',node_id:'semicap',desc:'刻蚀、薄膜沉积、MOCVD、国产替代设备链'}
+ ].filter(function(x){return x.virtual_id||nodeById(x.node_id)}));
+}
+function conceptEntryCard(x,i){
+ var n=x.node_id?nodeById(x.node_id):null, concept=x.node_id?conceptFor(x.node_id):null, count=x.virtual_id?x.count:(n?n.stock_count:(concept?concept.stock_count:0));
+ var target=x.virtual_id||x.node_id;
+ return'<article class="card clickable concept" onclick="jumpNode(\''+esc(target)+'\')"><div class="main-name"><span class="num">'+(i+1)+'</span>'+esc(x.label)+'</div><div class="meta"><span class="badge good">'+esc(count||0)+'家公司</span><span class="badge warn">主流概念</span></div><div class="meta">'+esc(x.desc)+'</div><div class="arrow">›</div></article>';
+}
+function candidateCard(x,i){
+ return'<article class="card child"><div class="main-name"><span class="num">'+(i+1)+'</span>'+esc(x.label)+'</div><div class="meta"><span class="badge warn">候选热点</span><span class="badge">待数据确认</span></div><div class="meta">'+esc(x.reason)+'</div></article>';
+}
+function advantageTags(stock){
+ var r=REPORTS[stock.code]||{}, text=[stock.name,r.industry_primary,r.industry_secondary,(r.concepts||[]).join('/')].join('/');
+ var tags=[];
+ if(/中际旭创|新易盛/.test(stock.name))tags.push('全球光模块龙头');
+ if(/工业富联/.test(stock.name))tags.push('AI服务器制造龙头');
+ if(/沪电股份/.test(stock.name))tags.push('高速PCB龙头');
+ if(/顺络电子/.test(stock.name))tags.push('被动元器件龙头');
+ if(/新疆众和|新疆众合/.test(stock.name))tags.push('电极箔/高纯铝材料');
+ if(/紫金矿业/.test(stock.name))tags.push('全球矿业龙头');
+ if(/万华化学/.test(stock.name))tags.push('MDI龙头');
+ if(/贵州茅台/.test(stock.name))tags.push('高端白酒龙头');
+ if(/宁德时代/.test(stock.name))tags.push('动力电池龙头');
+ if(/迈瑞医疗/.test(stock.name))tags.push('医疗器械龙头');
+ if(!tags.length&&/龙头|全球|高端|国产替代|平台/.test(text))tags.push('优势待核验');
+ return tags.slice(0,2);
+}
+function renderStats(){
+ var unmapped=(DATA.unmapped_concepts||[]).length;
+ var high=(P0CARDS.rows||[]).filter(function(r){return (r.classification_evidence||{}).theme_purity_score>=88}).length;
+ document.getElementById('stats').innerHTML=[
+  ['公司',DATA.calibrated_count+'家'],
+  ['概念节点',nodes().length+'个'],
+  ['P0高纯度',high+'家'],
+  ['待归类概念',unmapped+'个']
+ ].map(function(x){return'<div class="stat"><b>'+esc(x[0])+'</b><span>'+esc(x[1])+'</span></div>'}).join('');
+}
+function renderCrumbs(){
+ var html='<span class="crumb '+(stack.length===0&&virtualStack.length===0?'active':'')+'" onclick="goHome()">首页</span>';
+ if(virtualStack.length){
+  virtualStack.forEach(function(id,i){
+   var v=virtualById(id);
+   html+='<span class="sep">/</span><span class="crumb '+(i===virtualStack.length-1?'active':'')+'" onclick="goVirtualTo('+i+')">'+esc(v?v.label:id)+'</span>';
+  });
+  document.getElementById('breadcrumb').innerHTML=html;
+  return;
+ }
+ stack.forEach(function(id,i){
+  var n=nodeById(id);
+  html+='<span class="sep">/</span><span class="crumb '+(i===stack.length-1?'active':'')+'" onclick="goTo('+i+')">'+esc(n?n.name:id)+'</span>';
+ });
+ document.getElementById('breadcrumb').innerHTML=html;
+}
+function virtualNodeCard(v,index){
+ var count=virtualStocksFor(v.id,true).length;
+ return'<article class="card clickable child" onclick="openVirtual(\''+esc(v.id)+'\')"><div class="node-index">'+(index+1)+'</div><div class="name">'+esc(v.label)+'</div><div class="meta"><span class="badge good">'+esc(count)+'家公司</span><span class="badge">'+esc(virtualChildrenOf(v.id).length)+'个子概念</span></div><div class="meta">'+esc(v.desc||'按产业链环节细分')+'</div><div class="arrow">›</div></article>';
+}
+function nodeCard(n,child,index){
+ var concept=conceptFor(n.id), raw=(concept&&concept.raw_tags||n.raw_tags||[]).slice(0,5).join(' / ');
+ return'<article class="card clickable '+(child?'child':'node')+'" onclick="openNode(\''+esc(n.id)+'\')"><div class="node-index">'+(typeof index==='number'?index+1:(child?'分':'主'))+'</div><div class="name">'+esc(n.name)+'</div><div class="meta"><span class="badge good">'+esc(n.stock_count||0)+'家公司</span><span class="badge">'+esc(childrenOf(n.id).length)+'个子概念</span></div><div class="meta">'+esc(raw||'暂无标签')+'</div><div class="arrow">›</div></article>';
+}
+function stockCard(x){
+ var s=x.stock,h=x.hit,fs=s.financial_signal||{},href=reportUrl(s.code),ev=evidenceCard(s.code),es=evidenceScores(s);
+ var grade=displayGrade(s);
+ var adv=advantageTags(s).map(function(t){return'<span class="badge advantage">'+esc(t)+'</span>'}).join('');
+ var scoreBadges=ev?'<span class="badge grade-'+grade.cls+'">主题 '+fmtNum(es.theme,'')+'</span><span class="badge">基本面 '+fmtNum(es.fundamental,'')+'</span>':'';
+ var scoreRows=ev?'<div class="row"><span>主题 / 基本面</span><span>'+fmtNum(es.theme,'')+' / '+fmtNum(es.fundamental,'')+'</span></div><div class="row"><span>证据状态</span><span>'+esc(es.original==='review'?'旧报告弱，新证据已补':'结构化证据已接入')+'</span></div>':'';
+ return'<article class="card stock stock-'+grade.cls+'"><div class="name">'+esc(s.name)+' <span style="font-size:11px;color:#8b949e">'+esc(s.code)+'</span></div><div class="meta"><span class="badge grade-'+grade.cls+'">'+esc(grade.label)+'</span>'+scoreBadges+adv+'<span class="badge">'+esc(h.node_name)+'</span><span class="badge">W '+fmtNum(h.weight,'')+'</span><span class="badge">挂载 '+mountCountNum(s)+'</span></div><div class="stock-rows">'+scoreRows+'<div class="row"><span>主分类</span><span>'+esc(s.primary_industry)+'</span></div><div class="row"><span>净利润</span><span>'+fmtNum(fs.net_profit_yi,'亿元')+'</span></div><div class="row"><span>同比 / 状态</span><span>'+fmtPct(fs.yoy_parent_net_income_pct)+' / '+esc(fs.improvement_status||'--')+'</span></div><div class="row"><span>PE</span><span>'+fmtNum((REPORTS[s.code]||{}).pe_ttm,'x')+'</span></div></div>'+(href?'<a class="report-link" target="_blank" rel="noopener noreferrer" href="'+href+'">打开深度报告</a>':'')+'</article>';
+}
+function renderHome(){
+ var items=q?searchResults():roots();
+ var html='<div class="level-title">'+(q?'搜索结果 · '+items.length+'家公司':'概念图主干 · '+roots().length+'个一级节点')+'</div>';
+ if(q){
+  html+=items.length?'<div class="card-grid">'+items.map(stockCard).join('')+'</div>':'<div class="empty">没有找到匹配公司</div>';
+ }else{
+  var mainstream=mainstreamConcepts();
+  html='<div class="section-title">主流概念主干</div><div class="card-grid">'+mainstream.map(conceptEntryCard).join('')+'</div>'
+   +'<div class="section-title">行业主分类</div><div class="level-title">候选热点池：先放在行业分类区观察，等报告证据和样本数量足够后再升为主流概念主干</div>'
+   +'<div class="card-grid">'+candidateHotThemes().map(candidateCard).join('')+'</div>'
+   +'<div class="level-title" style="margin-top:16px">正式行业锚点：后续用于全 A 扩容和财报更新</div>'
+   +'<div class="card-grid">'+items.map(function(n,i){return nodeCard(n,false,i)}).join('')+'</div>';
+ }
+ document.getElementById('content').innerHTML=html;
+}
+function renderNode(id){
+ var n=nodeById(id);if(!n){renderHome();return}
+ var childNodes=childrenOf(id);
+ var list=childNodes.length&&!q?stocksFor(id):leafStocksFor(id);
+ var h=nodeHealth(id);
+ var html='<div class="level-title">'+esc((n.path||[n.name]).join(' / '))+' · '+(childNodes.length&&!q?'继续选择细分概念':'叶子概念 · '+list.length+'家公司')+'</div>';
+ html+='<div class="health"><div class="health-card"><b>公司数</b><span>'+h.count+'</span></div><div class="health-card"><b>平均权重</b><span>'+fmtNum(h.avg,'')+'</span></div><div class="health-card"><b>改善</b><span>'+h.improve+'</span></div><div class="health-card"><b>恶化</b><span>'+h.worse+'</span></div><div class="health-card"><b>重复挂载</b><span>'+h.duplicates+'</span></div></div>';
+ html+='<div class="calibration-note">节点校准只用于维护概念图结构：合并=与相邻概念重复度高；拆分=节点里混入了不同产业逻辑；改名=名称不能准确表达公司共同特征。</div>';
+ html+='<div class="mark-row"><button class="mark-btn merge'+markClass(id,'merge')+'" onclick="nodeMark(\''+esc(id)+'\',\'merge\')">建议合并</button><button class="mark-btn split'+markClass(id,'split')+'" onclick="nodeMark(\''+esc(id)+'\',\'split\')">建议拆分</button><button class="mark-btn rename'+markClass(id,'rename')+'" onclick="nodeMark(\''+esc(id)+'\',\'rename\')">建议改名</button></div>';
+ if(childNodes.length&&!q){
+  html+='<div class="card-grid" style="margin-bottom:16px">'+childNodes.map(function(c,i){return nodeCard(c,true,i)}).join('')+'</div>';
+ }else if(q){
+  html+=list.length?'<div class="card-grid">'+list.map(stockCard).join('')+'</div>':'<div class="empty">当前节点没有匹配公司</div>';
+ }else{
+  html+=list.length?'<div class="card-grid">'+list.map(stockCard).join('')+'</div>':'<div class="empty">当前叶子概念没有匹配公司</div>';
+ }
+ document.getElementById('content').innerHTML=html;
+}
+function renderVirtual(id){
+ var v=virtualById(id);if(!v){renderHome();return}
+ var childNodes=virtualChildrenOf(id);
+ var list=childNodes.length&&!q?virtualStocksFor(id,true):virtualStocksFor(id,false);
+ var h=virtualHealth(id);
+ var html='<div class="level-title">'+esc(virtualStack.map(function(x){var n=virtualById(x);return n?n.label:x}).join(' / '))+' · '+(childNodes.length&&!q?'继续选择细分概念':'叶子概念 · '+list.length+'家公司')+'</div>';
+ html+='<div class="health"><div class="health-card"><b>公司数</b><span>'+h.count+'</span></div><div class="health-card"><b>平均权重</b><span>'+fmtNum(h.avg,'')+'</span></div><div class="health-card"><b>改善</b><span>'+h.improve+'</span></div><div class="health-card"><b>恶化</b><span>'+h.worse+'</span></div><div class="health-card"><b>重复挂载</b><span>'+h.duplicates+'</span></div></div>';
+ html+='<div class="calibration-note">这里先按产业链环节做前端概念分层预览；确认后会固化进分类 V2 生成器，作为后续全 A 扩容的正式节点。</div>';
+ if(childNodes.length&&!q){
+  html+='<div class="card-grid" style="margin-bottom:16px">'+childNodes.map(virtualNodeCard).join('')+'</div>';
+ }else if(q){
+  html+=list.length?'<div class="card-grid">'+list.map(stockCard).join('')+'</div>':'<div class="empty">当前概念没有匹配公司</div>';
+ }else{
+  html+=list.length?'<div class="card-grid">'+list.map(stockCard).join('')+'</div>':'<div class="empty">当前叶子概念还没有匹配公司，后续扩容后自动补充</div>';
+ }
+ document.getElementById('content').innerHTML=html;
+}
+function renderSide(){
+ var hot=hotConceptEntries();
+ document.getElementById('hotNodes').innerHTML=hot.map(function(c){
+  var target=c.virtual_id||c.node_id;
+  return'<div class="small-item small-link" onclick="jumpNode(\''+esc(target)+'\')"><b>'+esc(c.label)+'</b><br>'+esc(c.path)+'<br>命中 '+esc(c.count)+' 家 · 权重 '+fmtNum(c.weight,'')+'</div>';
+ }).join('')+'<div class="small-item"><b>说明</b><br>CPO、PCB、液冷/数据中心、光通信、机器人、先进封装、电池新技术、关键材料已作为主流概念入口并行展示；当前是前端预览层，确认后再固化到分类生成器。</div>';
+ var unmapped=DATA.unmapped_concepts||[];
+ document.getElementById('statusBox').innerHTML=unmapped.length?'还有 '+unmapped.length+' 个待归类概念，扩容前建议先补进概念图。':'当前样本标签已全部归入概念图。后续扩容时，只需要处理新增的待归类概念。';
+ var marked=Object.keys(nodeMarks).filter(function(id){return nodeMarks[id]&&Object.keys(nodeMarks[id]).length});
+ var suggestions=[];
+ nodes().forEach(function(n){
+  var h=nodeHealth(n.id);
+  if(h.count===0)suggestions.push('<div class="small-item"><b>'+esc(n.name)+'</b><br>暂无公司挂载，扩容前可观察是否保留。</div>');
+  else if(h.duplicates>=Math.max(3,Math.ceil(h.count*.6)))suggestions.push('<div class="small-item"><b>'+esc(n.name)+'</b><br>重复挂载偏多，可观察是否需要拆分或收窄标签。</div>');
+ });
+ marked.forEach(function(id){
+  var n=nodeById(id),m=nodeMarks[id]||{},types=[];
+  if(m.merge)types.push('合并');if(m.split)types.push('拆分');if(m.rename)types.push('改名');
+  suggestions.unshift('<div class="small-item"><b>'+esc(n?n.name:id)+'</b><br>已标记：'+esc(types.join(' / '))+'</div>');
+ });
+ document.getElementById('suggestBox').innerHTML=suggestions.slice(0,8).join('')||'<div class="small-item">暂无明显结构问题。</div>';
+}
+function render(){
+ if(!DATA){document.getElementById('content').innerHTML='<div class="empty">分类数据未加载</div>';return}
+ renderStats();renderCrumbs();renderSide();
+ if(virtualStack.length)renderVirtual(virtualStack[virtualStack.length-1]);
+ else if(stack.length===0)renderHome();else renderNode(stack[stack.length-1]);
+}
+function openNode(id){stack.push(id);virtualStack=[];q='';document.getElementById('search').value='';render()}
+function openVirtual(id){virtualStack.push(id);stack=[];q='';document.getElementById('search').value='';render()}
+function goHome(){stack=[];virtualStack=[];render()}
+function goTo(i){stack=stack.slice(0,i+1);render()}
+function goVirtualTo(i){virtualStack=virtualStack.slice(0,i+1);render()}
+document.getElementById('search').addEventListener('input',function(e){q=e.target.value.trim();render()});
+document.getElementById('homeBtn').addEventListener('click',function(){q='';stack=[];virtualStack=[];document.getElementById('search').value='';render()});
+document.getElementById('sortMode').addEventListener('change',function(e){sortMode=e.target.value;render()});
+document.getElementById('reportOnly').addEventListener('change',function(e){reportOnly=e.target.checked;render()});
+render();
+</script>
+</body>
+</html>

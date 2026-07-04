@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日更新流水线日志</title>
+<style>
+body{margin:0;background:#07111f;color:#eef4ff;font-family:"Microsoft YaHei",Arial,sans-serif;line-height:1.7}
+.wrap{max-width:1280px;margin:0 auto;padding:26px 22px 56px}
+h1{margin:0 0 8px}.muted{color:#9fb0c7}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
+.card{background:#111a2e;border:1px solid rgba(148,163,184,.22);border-radius:8px;padding:14px}
+.card b{display:block;color:#9fb0c7;font-size:12px}.card span{font-size:24px;font-weight:900}
+table{width:100%;border-collapse:collapse;background:#111a2e;border:1px solid rgba(148,163,184,.22)}
+th,td{padding:9px 10px;border-bottom:1px solid rgba(148,163,184,.16);font-size:13px;text-align:left;vertical-align:top}
+th{color:#f7bf54}.ok{color:#67e8a2}.bad{color:#ff8f8f}code{color:#cbd5e1;white-space:pre-wrap}
+pre{background:#0b1220;border:1px solid rgba(148,163,184,.18);border-radius:8px;padding:12px;overflow:auto}
+@media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+</style>
+
+</head>
+<body><main class="wrap">
+<h1>每日更新流水线日志</h1>
+<p class="muted">本页面仅用于本地检查；脚本不会推送公开站。生成时间：2026-07-03T13:03:14.813Z</p>
+<section class="cards">
+  <div class="card"><b>执行步骤</b><span>11</span></div>
+  <div class="card"><b>完成</b><span>1</span></div>
+  <div class="card"><b>跳过</b><span>10</span></div>
+  <div class="card"><b>失败</b><span>0</span></div>
+</section>
+<table><thead><tr><th>#</th><th>步骤</th><th>状态</th><th>耗时</th><th>命令</th><th>输出摘要</th></tr></thead><tbody><tr>
+    <td>1</td>
+    <td>专题收盘行情更新</td>
+    <td class="ok">跳过</td>
+    <td>0s</td>
+    <td><code>python update_daily_market_data.py 20260703</code></td>
+    <td>skip_market</td>
+  </tr><tr>
+    <td>2</td>
+    <td>每日收盘控制台刷新</td>
+    <td class="ok">完成</td>
+    <td>0.04s</td>
+    <td><code>K:\AI\node\node.exe build_daily_update_console.js</code></td>
+    <td>{
+  &quot;outPath&quot;: &quot;C:\\Users\\LYDN\\a-stock-panorama\\daily_update_console.html&quot;,
+  &quot;siteConfigPath&quot;: &quot;C:\\Users\\LYDN\\a-stock-panorama\\data\\daily_market_config.json&quot;,
+  &quot;topics&quot;: 8,
+  &quot;updated&quot;: 8,
+  &quot;missing&quot;: 1
+}</td>
+  </tr><tr>
+    <td>3</td>
+    <td>1609 最新财务雷达</td>
+    <td class="ok">跳过</td>
+    <td>0s</td>
+    <td><code>python fetch_latest_finance_radar_1609.py</code></td>
+    <td>skip_finance</td>
+  </tr><tr>
+    <td>4</td>
+    <td>巨潮公告更新雷达</td>
+    <td class="ok">跳过</td>
+    <td>0s</td>
+    <td><code>python build_cninfo_update_radar_1609.py</code></td>
+    <td>skip_cninfo</td>
+  </tr><tr>
+    <td>5</td>
+    <td>核心主线报告更新队列</td>
+    <td class="ok">跳过</td>
+    <td>0s</td>
+    <td><code>K:\AI\node\node.exe build_core_deep_update_queue_1609.js</code></td>
+    <td>skip_queue</td>
+  </tr><tr>
+    <td>6</td>
+    <td>按队列重建深度报告</td>
+    <td class="ok">跳过</td>
+    <td>0s</td>
+    <td><code>K:\AI\node\node.exe build_core_deep_reports_bulk.js</code></td>
+    <td>report_rebuild_requires_--update-reports</td>
+  </tr><tr>
+    <td>7</td>
+    <td>新增专题刷新</td>
+    <td class="ok">跳过</td>
+    <td>0s</td>
+    <td><code>K:\AI\node\node.exe build_power_grid_and_innovation_topics.js</code></td>
+    <td>skip_topics</td>
+  </tr><tr>
+    <td>8</td>
+    <td>专题公开提示补齐</td>
+    <td class="ok">跳过</td>
+    <td>0s</td>
+    <td><code>K:\AI\node\node.exe add_topic_public_top_risk_note.js</code></td>
+    <td>skip_topics</td>
+  </tr><tr>
+    <td>9</td>
+    <td>专题链接与用词检查</td>
+    <td class="ok">跳过</td>
+    <td>0s</td>
+    <td><code>K:\AI\node\node.exe validate_topics_public.js</code></td>
+    <td>skip_precheck</td>
+  </tr><tr>
+    <td>10</td>
+    <td>首页与 1609 基础数据刷新</td>
+    <td class="ok">跳过</td>
+    <td>0s</td>
+    <td><code>K:\AI\node\node.exe build_1609_foundation_pipeline.js</code></td>
+    <td>skip_home</td>
+  </tr><tr>
+    <td>11</td>
+    <td>长电式报告深度审计</td>
+    <td class="ok">跳过</td>
+    <td>0s</td>
+    <td><code>K:\AI\node\node.exe audit_changdian_report_depth.js</code></td>
+    <td>skip_precheck</td>
+  </tr></tbody></table>
+<h2>关键产物摘要</h2>
+<pre>{
+  &quot;daily_market&quot;: {
+    &quot;trade_date&quot;: &quot;20260629&quot;,
+    &quot;trade_date_text&quot;: &quot;2026-06-29 收盘&quot;,
+    &quot;topics&quot;: 8,
+    &quot;missing_total&quot;: 1
+  },
+  &quot;latest_finance&quot;: {
+    &quot;total&quot;: 1609,
+    &quot;by_period&quot;: {
+      &quot;2026Q1&quot;: 772,
+      &quot;2025A&quot;: 125,
+      &quot;missing&quot;: 712
+    },
+    &quot;q2_available&quot;: 0,
+    &quot;missing&quot;: 712
+  },
+  &quot;cninfo&quot;: {
+    &quot;matched_companies&quot;: 13,
+    &quot;event_counts&quot;: {
+      &quot;half_year_or_mid&quot;: 0,
+      &quot;forecast&quot;: 13,
+      &quot;express&quot;: 0
+    },
+    &quot;date_range&quot;: &quot;2026-06-01~2026-07-02&quot;
+  },
+  &quot;report_queue&quot;: {
+    &quot;queued&quot;: 970,
+    &quot;first_batch_size&quot;: 50
+  },
+  &quot;changdian_style_audit&quot;: {
+    &quot;total&quot;: 1609,
+    &quot;changdian_like&quot;: 21,
+    &quot;not_changdian_like&quot;: 1588,
+    &quot;byStatus&quot;: {
+      &quot;template_deep_or_legacy&quot;: 1308,
+      &quot;thin_or_generic&quot;: 280,
+      &quot;changdian_like&quot;: 21
+    }
+  }
+}</pre>
+</main></body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股全景树 - 扩容运营面板</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Microsoft YaHei','PingFang SC',Arial,sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh}
+a{color:inherit;text-decoration:none}
+#app{max-width:1440px;margin:0 auto;padding:18px 20px 42px}
+.topbar{position:sticky;top:0;z-index:10;background:#0d1117cc;backdrop-filter:blur(8px);border-bottom:1px solid #21262d;padding:12px 0 14px;margin-bottom:16px}
+.topline{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+h1{font-size:20px;color:#f0f6fc;font-weight:850}
+.nav{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid #30363d;background:#161b22;color:#8b949e;border-radius:7px;padding:7px 11px;font-size:12px}.btn:hover,.btn.primary{color:#58a6ff;border-color:#1f6feb55;background:#1f6feb18}
+.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0}.metric{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:13px}.metric b{display:block;font-size:24px;color:#f0f6fc}.metric span{font-size:12px;color:#8b949e}.metric.good{border-left:4px solid #2ea043}.metric.warn{border-left:4px solid #d29922}.metric.hot{border-left:4px solid #f85149}.metric.info{border-left:4px solid #58a6ff}
+.grid{display:grid;grid-template-columns:1fr 380px;gap:14px;align-items:start}.panel{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:14px;margin-bottom:12px}.panel h2{font-size:16px;color:#f0f6fc;margin-bottom:10px}.muted{color:#8b949e;font-size:12px;line-height:1.55}.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.controls input,.controls select{height:34px;background:#0d1117;color:#c9d1d9;border:1px solid #30363d;border-radius:7px;padding:0 9px;outline:none}.controls input{flex:1;min-width:220px}.controls select{min-width:130px}
+.table-wrap{overflow:auto;border:1px solid #21262d;border-radius:8px}table{width:100%;border-collapse:collapse;min-width:980px}th,td{border-bottom:1px solid #21262d;padding:9px 10px;text-align:left;font-size:12px;vertical-align:top}th{position:sticky;top:0;background:#0d1117;color:#8b949e;font-weight:600}td{color:#c9d1d9}.code{font-family:Consolas,monospace;color:#8b949e}.pill{display:inline-flex;align-items:center;border:1px solid #30363d;background:#21262d;color:#8b949e;border-radius:999px;padding:2px 7px;font-size:11px;white-space:nowrap}.pill.done{background:#23863622;border-color:#23863655;color:#7ee787}.pill.next{background:#d2992220;border-color:#d2992255;color:#e3b341}.pill.seed{background:#1f6feb22;border-color:#1f6feb55;color:#79c0ff}.pill.p1{background:#f8514922;border-color:#f8514955;color:#ff9b9b}.pill.p0{background:#23863622;border-color:#23863655;color:#7ee787}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.small-card{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:12px}.small-card b{display:block;color:#f0f6fc;font-size:14px;margin-bottom:6px}.bar{height:8px;background:#21262d;border-radius:999px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;background:#58a6ff}.list{display:flex;flex-direction:column;gap:7px}.item{font-size:12px;color:#8b949e;line-height:1.5;border-bottom:1px solid #21262d;padding-bottom:7px}.item:last-child{border-bottom:0}.item b{color:#c9d1d9}.empty{padding:24px;text-align:center;color:#8b949e}
+@media(max-width:980px){.summary{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+<div id="app">
+  <div class="topbar">
+    <div class="topline">
+      <h1>A股全景树 · 扩容运营面板</h1>
+      <div class="nav">
+        <a class="btn" href="index_classification_v2_next.html?v=next4">210家接入版</a>
+        <a class="btn" href="classification_210_quality_diagnosis.html?v=q210c">质量诊断</a>
+        <a class="btn" href="p0_evidence_cards_preview.html?v=p0cards2">P0证据卡</a>
+        <a class="btn primary" href="expansion_batch_dashboard.html?v=ops1">扩容面板</a>
+      </div>
+    </div>
+  </div>
+  <div id="summary" class="summary"></div>
+  <div class="grid">
+    <main>
+      <section class="panel">
+        <h2>候选队列</h2>
+        <div class="controls">
+          <input id="q" placeholder="搜索公司、代码、行业、子分类">
+          <select id="phase"><option value="">全部阶段</option></select>
+          <select id="status"><option value="">全部状态</option></select>
+          <select id="priority"><option value="">全部优先级</option></select>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>阶段</th><th>状态</th><th>优先级</th><th>公司</th><th>行业/子分类</th><th>来源</th><th>原因</th></tr></thead><tbody id="rows"></tbody></table></div>
+      </section>
+    </main>
+    <aside>
+      <section class="panel"><h2>建议动作</h2><div id="actions" class="list"></div></section>
+      <section class="panel"><h2>待补行业分布</h2><div id="buckets" class="cards"></div></section>
+      <section class="panel"><h2>空叶子节点</h2><div id="emptyNodes" class="list"></div></section>
+    </aside>
+  </div>
+</div>
+<script src="expansion_batch_dashboard_v1.js"></script>
+<script>
+const DATA=EXPANSION_BATCH_DASHBOARD_V1;
+const $=id=>document.getElementById(id);
+function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function pill(text,cls){return `<span class="pill ${cls||''}">${esc(text)}</span>`}
+function statusClass(s){if(s==='已接入分类树')return 'done'; if(s==='P1待补证据')return 'next'; return 'seed'}
+function priorityClass(p){return String(p||'').toLowerCase()}
+function renderSummary(){const c=DATA.current,s=DATA.queue_summary;$('summary').innerHTML=[
+ ['已接入分类树',c.integrated_stock_count+'家','good'],['高纯度证据',c.evidence_high_purity_count+'家','hot'],['后续种子池',s.later_seed_count+'家','warn'],['种子池后预计',s.projected_after_seed_pool+'家','info']
+].map(x=>`<div class="metric ${x[2]}"><b>${esc(x[1])}</b><span>${esc(x[0])}</span></div>`).join('')}
+function initSelect(id,values){$(id).innerHTML='<option value="">全部'+({'phase':'阶段','status':'状态','priority':'优先级'}[id]||'')+'</option>'+values.map(v=>`<option>${esc(v)}</option>`).join('')}
+function filtered(){const q=$('q').value.trim().toLowerCase(),ph=$('phase').value,st=$('status').value,pr=$('priority').value;return DATA.queue.filter(r=>{const text=[r.code,r.name,r.bucket,r.subcategory,r.reason,r.source].join(' ').toLowerCase();return (!q||text.includes(q))&&(!ph||r.phase===ph)&&(!st||r.status===st)&&(!pr||r.priority===pr)})}
+function renderRows(){const list=filtered();$('rows').innerHTML=list.length?list.map(r=>`<tr><td>${esc(r.phase)}</td><td>${pill(r.status,statusClass(r.status))}</td><td>${pill(r.priority,priorityClass(r.priority))}</td><td><b>${esc(r.name)}</b><br><span class="code">${esc(r.code)}</span></td><td>${esc(r.bucket)}<br><span class="muted">${esc(r.subcategory)}</span></td><td>${esc(r.source)}${r.extra_sources?'<br><span class="muted">'+esc(r.extra_sources.join(' / '))+'</span>':''}</td><td>${esc(r.reason)}</td></tr>`).join(''):`<tr><td colspan="7" class="empty">没有匹配候选</td></tr>`}
+function renderSide(){
+ $('actions').innerHTML=DATA.recommended_next_actions.map((x,i)=>`<div class="item"><b>${i+1}. ${esc(x)}</b></div>`).join('');
+ const buckets=Object.entries(DATA.queue_summary.pending_bucket_counts||{}).sort((a,b)=>b[1]-a[1]).slice(0,12),max=Math.max(1,...buckets.map(x=>x[1]));
+ $('buckets').innerHTML=buckets.map(([k,v])=>`<div class="small-card"><b>${esc(k)}</b><span class="muted">待补 ${esc(v)} 家</span><div class="bar"><i style="width:${Math.round(v/max*100)}%"></i></div></div>`).join('');
+ $('emptyNodes').innerHTML=(DATA.empty_leaf_nodes||[]).slice(0,12).map(n=>`<div class="item"><b>${esc(n.name)}</b><br>${esc(n.path)}</div>`).join('')||'<div class="item">当前没有需要优先处理的空叶子节点。</div>';
+}
+function render(){renderRows()}
+renderSummary();initSelect('phase',Object.keys(DATA.queue_summary.phase_counts||{}));initSelect('status',Object.keys(DATA.queue_summary.status_counts||{}));initSelect('priority',Object.keys(DATA.queue_summary.priority_counts||{}));renderSide();['q','phase','status','priority'].forEach(id=>$(id).addEventListener('input',render));render();
+</script>
+</body>
+</html>

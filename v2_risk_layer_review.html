@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>V2 风险分层评估 - A股全景树</title>
+  <style>
+*{box-sizing:border-box}body{margin:0;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}a{color:inherit;text-decoration:none}.top{position:sticky;top:0;z-index:20;background:rgba(13,17,23,.96);border-bottom:1px solid #21262d;backdrop-filter:blur(10px)}.top-inner{max-width:1480px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand b{display:block;color:#f0f6fc;font-size:18px}.brand span{display:block;color:#8b949e;font-size:12px;margin-top:2px}.nav{display:flex;gap:8px;flex-wrap:wrap}.btn{height:34px;border:1px solid #30363d;background:#161b22;color:#c9d1d9;border-radius:8px;padding:0 10px;display:inline-flex;align-items:center}.wrap{max-width:1480px;margin:0 auto;padding:18px}.hero,.panel{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:16px;margin-bottom:12px}.hero h1{margin:0 0 8px;color:#f0f6fc;font-size:28px;line-height:1.25}.hero p{margin:0;color:#9da7b3;line-height:1.7}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0}.metric{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:12px}.metric b{display:block;color:#f0f6fc;font-size:24px}.metric span{display:block;color:#8b949e;font-size:12px;margin-top:5px}.toolbar{display:grid;grid-template-columns:minmax(240px,1fr) 180px 180px;gap:8px}.toolbar input,.toolbar select{height:38px;border:1px solid #30363d;background:#0d1117;color:#c9d1d9;border-radius:8px;padding:0 10px}.status-line{margin-top:10px;color:#8b949e;font-size:13px;line-height:1.6}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;background:#161b22;border:1px solid #21262d;border-radius:8px;overflow:hidden}th,td{border-bottom:1px solid #21262d;padding:10px;text-align:left;vertical-align:top;font-size:12px;line-height:1.55}th{color:#8b949e;background:#0d1117;white-space:nowrap}tr:hover{background:#1b222c}.pill{display:inline-flex;border:1px solid #30363d;background:#0d1117;color:#9da7b3;border-radius:999px;padding:2px 7px;font-size:11px;margin:0 4px 4px 0}.ok{color:#7ee787;border-color:#23863688;background:#23863622}.info{color:#79c0ff;border-color:#1f6feb88;background:#1f6feb22}.warn{color:#e3b341;border-color:#d2992288;background:#d2992220}.bad{color:#ffb3b3;border-color:#f8514988;background:#f8514922}.gray{color:#9da7b3}.muted{color:#8b949e}.nowrap{white-space:nowrap}.link{display:inline-flex;border-radius:8px;border:1px solid #30363d;background:#0d1117;color:#79c0ff;padding:5px 8px;margin-bottom:5px}.local{border-color:#d2992255;color:#e3b341}.note{white-space:pre-wrap;max-height:220px;overflow:auto;background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:12px;color:#aebdca;line-height:1.7}@media(max-width:980px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar{grid-template-columns:1fr}.top-inner{align-items:flex-start;flex-direction:column}}@media(max-width:620px){.metrics{grid-template-columns:1fr}.hero h1{font-size:24px}}
+  </style>
+
+</head>
+<body>
+  <header class="top"><div class="top-inner"><div class="brand"><b>A股全景树</b><span>V2 风险分层评估</span></div><nav class="nav"><a class="btn" href="data_pipeline_quality.html?v=sync1">接入检查</a><a class="btn" href="data_pipeline_preview.html?v=preview1">接入预览</a><a class="btn" href="index.html?v=bridge2">返回首页</a></nav></div></header>
+  <main class="wrap">
+    <section class="hero">
+      <h1>已接收辅助对话风险分层清单</h1>
+      <p>公开站继续按：正式 V2 &gt; 旧版报告 &gt; 暂未生成。v2_batches 草稿不得接成公开报告链接。</p>
+      <p>数据来源：risk_layer_manifest_50.json；页面只用于本地内部评估，不接入公开站。</p>
+    </section>
+    <section class="metrics"><div class="metric"><b>50</b><span>草稿总数</span></div><div class="metric"><b>0</b><span>低风险候选</span></div><div class="metric"><b>0</b><span>中风险复核</span></div><div class="metric"><b>50</b><span>高风险人工</span></div><div class="metric"><b>0</b><span>退回修复</span></div><div class="metric"><b>0</b><span>待分层可抽读</span></div><div class="metric"><b>0</b><span>待分层轻复核</span></div><div class="metric"><b>4</b><span>财务完整</span></div></section>
+    <section class="panel">
+      <div class="toolbar">
+        <input id="search" placeholder="搜索公司、代码、批次或标签">
+        <select id="risk"><option value="">全部风险层</option><option value="low_risk_ready">低风险候选</option><option value="medium_review">中风险复核</option><option value="high_manual_review">高风险人工</option><option value="blocked_fix">退回修复</option><option value="pending_risk_layer_ready_sample">待分层可抽读</option><option value="pending_risk_layer_light_review">待分层轻复核</option></select>
+        <select id="batch"><option value="">全部批次</option><option value="batch_001">batch_001</option><option value="batch_002">batch_002</option><option value="batch_003">batch_003</option><option value="batch_004">batch_004</option><option value="batch_005">batch_005</option></select>
+      </div>
+      <div class="status-line" id="statusLine"></div>
+    </section>
+    <section class="panel">
+      <div class="table-wrap"><table><thead><tr><th>批次</th><th>公司</th><th>风险/状态</th><th>标签</th><th>质量字段</th><th>备注</th><th>正式公开前动作</th><th>内部入口</th></tr></thead><tbody id="rows"><tr data-risk="high_manual_review" data-batch="batch_001" data-search="002236 大华股份 batch_001 ">
+      <td class="nowrap">batch_001<br><span class="muted">#1</span></td>
+      <td><strong>大华股份</strong><br><span class="muted">002236</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill ok">财务完整</span><br><span class="pill gray">pass</span></td>
+      <td><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：AI|算力|人工智能</span><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span></td>
+      <td>补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_001/01_大华股份_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/大华股份.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_001" data-search="000791 甘肃能源 batch_001 ">
+      <td class="nowrap">batch_001<br><span class="muted">#2</span></td>
+      <td><strong>甘肃能源</strong><br><span class="muted">000791</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill ok">财务完整</span><br><span class="pill gray">pass</span></td>
+      <td><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span><span class="pill warn">文本包含龙头、排名、独家、唯一等强事实词</span><span class="pill warn">文本包含交易化或过强表述</span></td>
+      <td>确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_001/02_甘肃能源_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/甘肃能源.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_001" data-search="600166 福田汽车 batch_001 ">
+      <td class="nowrap">batch_001<br><span class="muted">#3</span></td>
+      <td><strong>福田汽车</strong><br><span class="muted">600166</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill ok">财务完整</span><br><span class="pill gray">pass</span></td>
+      <td><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span><span class="pill warn">文本包含龙头、排名、独家、唯一等强事实词</span><span class="pill warn">文本包含交易化或过强表述</span></td>
+      <td>确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_001/03_福田汽车_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/福田汽车.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_001" data-search="600388 龙净环保 batch_001 ">
+      <td class="nowrap">batch_001<br><span class="muted">#4</span></td>
+      <td><strong>龙净环保</strong><br><span class="muted">600388</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill ok">财务完整</span><br><span class="pill gray">pass</span></td>
+      <td><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span><span class="pill warn">文本包含龙头、排名、独家、唯一等强事实词</span><span class="pill warn">文本包含交易化或过强表述</span></td>
+      <td>确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_001/04_龙净环保_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/龙净环保.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_001" data-search="603663 三祥新材 batch_001 ">
+      <td class="nowrap">batch_001<br><span class="muted">#5</span></td>
+      <td><strong>三祥新材</strong><br><span class="muted">603663</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：固态|半固态|动力电池|储能</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_001/05_三祥新材_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/三祥新材.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_001" data-search="600487 亨通光电 batch_001 ">
+      <td class="nowrap">batch_001<br><span class="muted">#6</span></td>
+      <td><strong>亨通光电</strong><br><span class="muted">600487</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：AI|算力|人工智能 / CPO|光通信|光互连</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_001/06_亨通光电_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/亨通光电.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_001" data-search="002064 华峰化学 batch_001 ">
+      <td class="nowrap">batch_001<br><span class="muted">#7</span></td>
+      <td><strong>华峰化学</strong><br><span class="muted">002064</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_001/07_华峰化学_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/华峰化学.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_001" data-search="605020 永和股份 batch_001 ">
+      <td class="nowrap">batch_001<br><span class="muted">#8</span></td>
+      <td><strong>永和股份</strong><br><span class="muted">605020</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_001/08_永和股份_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/永和股份.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_001" data-search="603337 杰克科技 batch_001 ">
+      <td class="nowrap">batch_001<br><span class="muted">#9</span></td>
+      <td><strong>杰克科技</strong><br><span class="muted">603337</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：机器人|工业母机|机床</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_001/09_杰克科技_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/杰克科技.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_001" data-search="600961 株冶集团 batch_001 ">
+      <td class="nowrap">batch_001<br><span class="muted">#10</span></td>
+      <td><strong>株冶集团</strong><br><span class="muted">600961</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：稀有|战略金属|铜|铅锌</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_001/10_株冶集团_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/株冶集团.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_002" data-search="600460 士兰微 batch_002 ">
+      <td class="nowrap">batch_002<br><span class="muted">#1</span></td>
+      <td><strong>士兰微</strong><br><span class="muted">600460</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：半导体|芯片|碳化硅|SiC</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_002/01_士兰微_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/士兰微.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_002" data-search="601233 桐昆股份 batch_002 ">
+      <td class="nowrap">batch_002<br><span class="muted">#2</span></td>
+      <td><strong>桐昆股份</strong><br><span class="muted">601233</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_002/02_桐昆股份_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/桐昆股份.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_002" data-search="002837 英维克 batch_002 ">
+      <td class="nowrap">batch_002<br><span class="muted">#3</span></td>
+      <td><strong>英维克</strong><br><span class="muted">002837</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：AI|算力|人工智能 / 液冷|温控|数据中心</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_002/03_英维克_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/英维克.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_002" data-search="603283 赛腾股份 batch_002 ">
+      <td class="nowrap">batch_002<br><span class="muted">#4</span></td>
+      <td><strong>赛腾股份</strong><br><span class="muted">603283</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：半导体|芯片|碳化硅|SiC / 机器人|工业母机|机床</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_002/04_赛腾股份_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/赛腾股份.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_002" data-search="000423 东阿阿胶 batch_002 ">
+      <td class="nowrap">batch_002<br><span class="muted">#5</span></td>
+      <td><strong>东阿阿胶</strong><br><span class="muted">000423</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_002/05_东阿阿胶_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/东阿阿胶.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_002" data-search="002448 中原内配 batch_002 ">
+      <td class="nowrap">batch_002<br><span class="muted">#6</span></td>
+      <td><strong>中原内配</strong><br><span class="muted">002448</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：固态|半固态|动力电池|储能</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_002/06_中原内配_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/中原内配.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_002" data-search="000951 中国重汽 batch_002 ">
+      <td class="nowrap">batch_002<br><span class="muted">#7</span></td>
+      <td><strong>中国重汽</strong><br><span class="muted">000951</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：固态|半固态|动力电池|储能</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_002/07_中国重汽_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/中国重汽.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_002" data-search="000957 中通客车 batch_002 ">
+      <td class="nowrap">batch_002<br><span class="muted">#8</span></td>
+      <td><strong>中通客车</strong><br><span class="muted">000957</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：固态|半固态|动力电池|储能</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_002/08_中通客车_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/中通客车.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_002" data-search="000060 中金岭南 batch_002 ">
+      <td class="nowrap">batch_002<br><span class="muted">#9</span></td>
+      <td><strong>中金岭南</strong><br><span class="muted">000060</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：稀有|战略金属|铜|铅锌</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_002/09_中金岭南_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/中金岭南.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_002" data-search="605305 中际联合 batch_002 ">
+      <td class="nowrap">batch_002<br><span class="muted">#10</span></td>
+      <td><strong>中际联合</strong><br><span class="muted">605305</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：机器人|工业母机|机床</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_002/10_中际联合_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/中际联合.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_003" data-search="002432 九安医疗 batch_003 ">
+      <td class="nowrap">batch_003<br><span class="muted">#1</span></td>
+      <td><strong>九安医疗</strong><br><span class="muted">002432</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：机器人|工业母机|机床</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_003/01_九安医疗_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/九安医疗.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_003" data-search="000878 云南铜业 batch_003 ">
+      <td class="nowrap">batch_003<br><span class="muted">#2</span></td>
+      <td><strong>云南铜业</strong><br><span class="muted">000878</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：稀有|战略金属|铜|铅锌</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_003/02_云南铜业_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/云南铜业.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_003" data-search="002284 亚太股份 batch_003 ">
+      <td class="nowrap">batch_003<br><span class="muted">#3</span></td>
+      <td><strong>亚太股份</strong><br><span class="muted">002284</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：固态|半固态|动力电池|储能</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_003/03_亚太股份_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/亚太股份.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_003" data-search="002020 京新药业 batch_003 ">
+      <td class="nowrap">batch_003<br><span class="muted">#4</span></td>
+      <td><strong>京新药业</strong><br><span class="muted">002020</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_003/04_京新药业_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/京新药业.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_003" data-search="002823 凯中精密 batch_003 ">
+      <td class="nowrap">batch_003<br><span class="muted">#5</span></td>
+      <td><strong>凯中精密</strong><br><span class="muted">002823</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：电网|特高压|直流输电</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_003/05_凯中精密_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/凯中精密.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_003" data-search="000551 创元科技 batch_003 ">
+      <td class="nowrap">batch_003<br><span class="muted">#6</span></td>
+      <td><strong>创元科技</strong><br><span class="muted">000551</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：机器人|工业母机|机床</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_003/06_创元科技_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/创元科技.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_003" data-search="002906 华阳集团 batch_003 ">
+      <td class="nowrap">batch_003<br><span class="muted">#7</span></td>
+      <td><strong>华阳集团</strong><br><span class="muted">002906</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：AI|算力|人工智能 / CPO|光通信|光互连</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_003/07_华阳集团_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/华阳集团.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_003" data-search="603418 友升股份 batch_003 ">
+      <td class="nowrap">batch_003<br><span class="muted">#8</span></td>
+      <td><strong>友升股份</strong><br><span class="muted">603418</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：固态|半固态|动力电池|储能</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_003/08_友升股份_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/友升股份.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_003" data-search="002404 嘉欣丝绸 batch_003 ">
+      <td class="nowrap">batch_003<br><span class="muted">#9</span></td>
+      <td><strong>嘉欣丝绸</strong><br><span class="muted">002404</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_003/09_嘉欣丝绸_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/嘉欣丝绸.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_003" data-search="603293 埃泰克 batch_003 ">
+      <td class="nowrap">batch_003<br><span class="muted">#10</span></td>
+      <td><strong>埃泰克</strong><br><span class="muted">603293</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：AI|算力|人工智能 / CPO|光通信|光互连</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_003/10_埃泰克_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/埃泰克.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_004" data-search="603387 基蛋生物 batch_004 ">
+      <td class="nowrap">batch_004<br><span class="muted">#1</span></td>
+      <td><strong>基蛋生物</strong><br><span class="muted">603387</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_004/01_基蛋生物_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/基蛋生物.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_004" data-search="601991 大唐发电 batch_004 ">
+      <td class="nowrap">batch_004<br><span class="muted">#2</span></td>
+      <td><strong>大唐发电</strong><br><span class="muted">601991</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：电网|特高压|直流输电</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_004/02_大唐发电_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/大唐发电.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_004" data-search="002249 大洋电机 batch_004 ">
+      <td class="nowrap">batch_004<br><span class="muted">#3</span></td>
+      <td><strong>大洋电机</strong><br><span class="muted">002249</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：电网|特高压|直流输电</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_004/03_大洋电机_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/大洋电机.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_004" data-search="002606 大连电瓷 batch_004 ">
+      <td class="nowrap">batch_004<br><span class="muted">#4</span></td>
+      <td><strong>大连电瓷</strong><br><span class="muted">002606</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：电网|特高压|直流输电</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_004/04_大连电瓷_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/大连电瓷.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_004" data-search="002283 天润工业 batch_004 ">
+      <td class="nowrap">batch_004<br><span class="muted">#5</span></td>
+      <td><strong>天润工业</strong><br><span class="muted">002283</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：固态|半固态|动力电池|储能</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_004/05_天润工业_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/天润工业.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_004" data-search="002950 奥美医疗 batch_004 ">
+      <td class="nowrap">batch_004<br><span class="muted">#6</span></td>
+      <td><strong>奥美医疗</strong><br><span class="muted">002950</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_004/06_奥美医疗_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/奥美医疗.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_004" data-search="603014 威高血净 batch_004 ">
+      <td class="nowrap">batch_004<br><span class="muted">#7</span></td>
+      <td><strong>威高血净</strong><br><span class="muted">603014</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：机器人|工业母机|机床</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_004/07_威高血净_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/威高血净.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_004" data-search="002083 孚日股份 batch_004 ">
+      <td class="nowrap">batch_004<br><span class="muted">#8</span></td>
+      <td><strong>孚日股份</strong><br><span class="muted">002083</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">文本包含客户/供应商/合作/上下游等关系词</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_004/08_孚日股份_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/孚日股份.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_004" data-search="600982 宁波能源 batch_004 ">
+      <td class="nowrap">batch_004<br><span class="muted">#9</span></td>
+      <td><strong>宁波能源</strong><br><span class="muted">600982</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：电网|特高压|直流输电</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_004/09_宁波能源_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/宁波能源.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_004" data-search="600366 宁波韵升 batch_004 ">
+      <td class="nowrap">batch_004<br><span class="muted">#10</span></td>
+      <td><strong>宁波韵升</strong><br><span class="muted">600366</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：稀有|战略金属|铜|铅锌</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_004/10_宁波韵升_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/宁波韵升.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_005" data-search="002026 山东威达 batch_005 ">
+      <td class="nowrap">batch_005<br><span class="muted">#1</span></td>
+      <td><strong>山东威达</strong><br><span class="muted">002026</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：电网|特高压|直流输电</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_005/01_山东威达_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/山东威达.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_005" data-search="000680 山推股份 batch_005 ">
+      <td class="nowrap">batch_005<br><span class="muted">#2</span></td>
+      <td><strong>山推股份</strong><br><span class="muted">000680</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：机器人|工业母机|机床</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_005/02_山推股份_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/山推股份.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_005" data-search="600312 平高电气 batch_005 ">
+      <td class="nowrap">batch_005<br><span class="muted">#3</span></td>
+      <td><strong>平高电气</strong><br><span class="muted">600312</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：电网|特高压|直流输电</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_005/03_平高电气_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/平高电气.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_005" data-search="002833 弘亚数控 batch_005 ">
+      <td class="nowrap">batch_005<br><span class="muted">#4</span></td>
+      <td><strong>弘亚数控</strong><br><span class="muted">002833</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：机器人|工业母机|机床</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_005/04_弘亚数控_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/弘亚数控.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_005" data-search="601799 星宇股份 batch_005 ">
+      <td class="nowrap">batch_005<br><span class="muted">#5</span></td>
+      <td><strong>星宇股份</strong><br><span class="muted">601799</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：固态|半固态|动力电池|储能</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_005/05_星宇股份_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/星宇股份.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_005" data-search="603890 春秋电子 batch_005 ">
+      <td class="nowrap">batch_005<br><span class="muted">#6</span></td>
+      <td><strong>春秋电子</strong><br><span class="muted">603890</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：AI|算力|人工智能 / CPO|光通信|光互连</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_005/06_春秋电子_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/春秋电子.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_005" data-search="601877 正泰电器 batch_005 ">
+      <td class="nowrap">batch_005<br><span class="muted">#7</span></td>
+      <td><strong>正泰电器</strong><br><span class="muted">601877</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：电网|特高压|直流输电</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_005/07_正泰电器_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/正泰电器.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_005" data-search="603271 永杰新材 batch_005 ">
+      <td class="nowrap">batch_005<br><span class="muted">#8</span></td>
+      <td><strong>永杰新材</strong><br><span class="muted">603271</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：稀有|战略金属|铜|铅锌</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_005/08_永杰新材_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/永杰新材.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_005" data-search="603409 汇通控股 batch_005 ">
+      <td class="nowrap">batch_005<br><span class="muted">#9</span></td>
+      <td><strong>汇通控股</strong><br><span class="muted">603409</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：固态|半固态|动力电池|储能</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_005/09_汇通控股_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/汇通控股.html</span></td>
+    </tr><tr data-risk="high_manual_review" data-batch="batch_005" data-search="600362 江西铜业 batch_005 ">
+      <td class="nowrap">batch_005<br><span class="muted">#10</span></td>
+      <td><strong>江西铜业</strong><br><span class="muted">600362</span></td>
+      <td><span class="pill warn">高风险人工复核</span><br><span class="muted">local_draft_not_public</span></td>
+      <td><span class="pill gray">标签待补</span></td>
+      <td><span class="pill warn">财务待补</span><br><span class="pill gray">pass_with_review_notes</span></td>
+      <td><span class="pill warn">财务字段不完整</span><span class="pill warn">分类映射存在人工复核要求或总表复核原因</span><span class="pill warn">涉及热门/高敏概念：稀有|战略金属|铜|铅锌</span></td>
+      <td>退回补齐财务字段 / 补主营业务与分类标签证据 / 抽样复核热门概念归属证据 / 确认未把无公开证据关系写成事实 / 确认强事实表述有公开证据或改为中性表述 / 删除交易化或过强表述 / 补财务字段或删除明确趋势判断</td>
+      <td><a class="link local" href="file:///E:/CODEX  zhuanyi/网站规划工作区/company_master_1609/v2_batches/batch_005/10_江西铜业_V2深度报告草稿.html" target="_blank" rel="noopener">打开本地草稿</a><br><span class="muted">reports/江西铜业.html</span></td>
+    </tr></tbody></table></div>
+    </section>
+    <section class="panel"><h2 class="section-title">辅助对话决策摘要</h2><div class="note"># Batch 001-005 风险分层与放行决策
+
+生成时间：2026-06-29 21:57:40
+
+## 总览
+
+- 总数：50
+- low_risk_ready：0
+- medium_review：0
+- high_manual_review：50
+- blocked_fix：0
+- 抽样放行候选：0
+- 必须退回补财务字段或分类证据：47
+
+## 放行口径
+
+- 当前 50 份全部保持 `local_draft_not_public`。
+- 当前公开站仍按：正式 V2 &gt; 旧版报告 &gt; 暂未生成。
+- 不要把 `v2_batches` 草稿路径接成公开报告链接。
+- low_risk_ready 只能进入抽样放行候选；抽样通过后仍需另行生成正式 V2 路径。
+- medium_review 进入轻复核，不逐份重写，但需要按风险原因补证据或抽样检查。
+- high_manual_review 必须人工重点复核。
+- blocked_fix 必须修复后重跑。
+
+## 可进入抽样放行候选
+
+- 暂无。
+
+## 必须退回补财务字段或分类证据
+
+- 002236 大华股份：补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述
+- 603663 三祥新材：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 600487 亨通光电：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 002064 华峰化学：退回补齐财务字段；补主营业务与分类标签证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 605020 永和股份：退回补齐财务字段；补主营业务与分类标签证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 603337 杰克科技：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 600961 株冶集团：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 600460 士兰微：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 601233 桐昆股份：退回补齐财务字段；补主营业务与分类标签证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 002837 英维克：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 603283 赛腾股份：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 000423 东阿阿胶：退回补齐财务字段；补主营业务与分类标签证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 002448 中原内配：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 000951 中国重汽：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 000957 中通客车：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 000060 中金岭南：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 605305 中际联合：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 002432 九安医疗：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 000878 云南铜业：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 002284 亚太股份：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 002020 京新药业：退回补齐财务字段；补主营业务与分类标签证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 002823 凯中精密：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 000551 创元科技：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 002906 华阳集团：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 603418 友升股份：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 002404 嘉欣丝绸：退回补齐财务字段；补主营业务与分类标签证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 603293 埃泰克：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 603387 基蛋生物：退回补齐财务字段；补主营业务与分类标签证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 601991 大唐发电：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 002249 大洋电机：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 002606 大连电瓷：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 002283 天润工业：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 002950 奥美医疗：退回补齐财务字段；补主营业务与分类标签证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 603014 威高血净：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 002083 孚日股份：退回补齐财务字段；补主营业务与分类标签证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 600982 宁波能源：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 600366 宁波韵升：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 002026 山东威达：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 000680 山推股份：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 600312 平高电气：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 002833 弘亚数控：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 601799 星宇股份：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 603890 春秋电子：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 601877 正泰电器：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 603271 永杰新材：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+- 603409 汇通控股：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；补财务字段或删除明确趋势判断
+- 600362 江西铜业：退回补齐财务字段；补主营业务与分类标签证据；抽样复核热门概念归属证据；确认未把无公开证据关系写成事实；确认强事实表述有公开证据或改为中性表述；删除交易化或过强表述；补财务字段或删除明确趋势判断
+
+## 高风险人工重点复核
+
+- 002236 大华股份：分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：AI|算力|人工智能；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述
+- 000791 甘肃能源：文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述
+- 600166 福田汽车：文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述
+- 600388 龙净环保：文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述
+- 603663 三祥新材：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：固态|半固态|动力电池|储能；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 600487 亨通光电：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：AI|算力|人工智能 / CPO|光通信|光互连；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002064 华峰化学：财务字段不完整；分类映射存在人工复核要求或总表复核原因；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 605020 永和股份：财务字段不完整；分类映射存在人工复核要求或总表复核原因；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 603337 杰克科技：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：机器人|工业母机|机床；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 600961 株冶集团：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：稀有|战略金属|铜|铅锌；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 600460 士兰微：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：半导体|芯片|碳化硅|SiC；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 601233 桐昆股份：财务字段不完整；分类映射存在人工复核要求或总表复核原因；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002837 英维克：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：AI|算力|人工智能 / 液冷|温控|数据中心；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 603283 赛腾股份：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：半导体|芯片|碳化硅|SiC / 机器人|工业母机|机床；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 000423 东阿阿胶：财务字段不完整；分类映射存在人工复核要求或总表复核原因；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002448 中原内配：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：固态|半固态|动力电池|储能；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 000951 中国重汽：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：固态|半固态|动力电池|储能；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 000957 中通客车：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：固态|半固态|动力电池|储能；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 000060 中金岭南：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：稀有|战略金属|铜|铅锌；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 605305 中际联合：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：机器人|工业母机|机床；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002432 九安医疗：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：机器人|工业母机|机床；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 000878 云南铜业：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：稀有|战略金属|铜|铅锌；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002284 亚太股份：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：固态|半固态|动力电池|储能；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002020 京新药业：财务字段不完整；分类映射存在人工复核要求或总表复核原因；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002823 凯中精密：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：电网|特高压|直流输电；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 000551 创元科技：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：机器人|工业母机|机床；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002906 华阳集团：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：AI|算力|人工智能 / CPO|光通信|光互连；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 603418 友升股份：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：固态|半固态|动力电池|储能；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002404 嘉欣丝绸：财务字段不完整；分类映射存在人工复核要求或总表复核原因；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 603293 埃泰克：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：AI|算力|人工智能 / CPO|光通信|光互连；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 603387 基蛋生物：财务字段不完整；分类映射存在人工复核要求或总表复核原因；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 601991 大唐发电：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：电网|特高压|直流输电；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002249 大洋电机：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：电网|特高压|直流输电；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002606 大连电瓷：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：电网|特高压|直流输电；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002283 天润工业：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：固态|半固态|动力电池|储能；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002950 奥美医疗：财务字段不完整；分类映射存在人工复核要求或总表复核原因；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 603014 威高血净：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：机器人|工业母机|机床；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002083 孚日股份：财务字段不完整；分类映射存在人工复核要求或总表复核原因；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 600982 宁波能源：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：电网|特高压|直流输电；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 600366 宁波韵升：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：稀有|战略金属|铜|铅锌；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002026 山东威达：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：电网|特高压|直流输电；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 000680 山推股份：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：机器人|工业母机|机床；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 600312 平高电气：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：电网|特高压|直流输电；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 002833 弘亚数控：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：机器人|工业母机|机床；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 601799 星宇股份：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：固态|半固态|动力电池|储能；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 603890 春秋电子：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：AI|算力|人工智能 / CPO|光通信|光互连；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 601877 正泰电器：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：电网|特高压|直流输电；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 603271 永杰新材：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：稀有|战略金属|铜|铅锌；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 603409 汇通控股：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：固态|半固态|动力电池|储能；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+- 600362 江西铜业：财务字段不完整；分类映射存在人工复核要求或总表复核原因；涉及热门/高敏概念：稀有|战略金属|铜|铅锌；文本包含客户/供应商/合作/上下游等关系词；文本包含龙头、排名、独家、唯一等强事实词；文本包含交易化或过强表述；财务字段不完整但文本包含明确趋势判断词；质量复核为带备注通过
+
+## 阻断修复
+
+- 暂无。
+
+## 后续批量生产格式
+
+后续扩大到 200/300/1600 家时，每批除 HTML 报告和 QC 外，必须同步交付风险分层清单，字段至少包含 risk_layer、risk_reasons、required_actions、can_enter_sampling_release_candidate、public_release_allowed_now。
+</div></section>
+    <section class="panel"><h2 class="section-title">风险分层交接摘要</h2><div class="note"># 给主对话的风险分层交接
+
+生成时间：2026-06-29 21:57:40
+
+辅助对话已按“分层复核 + 抽样放行 + 风险分级入库”方式，重新生成 batch_001-batch_005 共 50 份草稿的风险分层清单。
+
+结果：
+
+- low_risk_ready：0
+- medium_review：0
+- high_manual_review：50
+- blocked_fix：0
+- 抽样放行候选：0
+- 必须退回补财务字段或分类证据：47
+
+边界：
+
+- 当前 50 份不要接入公开站，仍保持 local_draft_not_public。
+- 当前公开站仍按：正式 V2 &gt; 旧版报告 &gt; 暂未生成。
+- 不要把 v2_batches 草稿路径接成公开报告链接。
+- 后续扩大到 200/300/1600 家时，也按同一风险分层格式交付，不再只交付 QC pass。
+
+文件：
+
+E:\CODEX  zhuanyi\网站规划工作区\company_master_1609\v2_ingress_rules\risk_layer_manifest_50.csv
+E:\CODEX  zhuanyi\网站规划工作区\company_master_1609\v2_ingress_rules\risk_layer_manifest_50.json
+E:\CODEX  zhuanyi\网站规划工作区\company_master_1609\v2_ingress_rules\batch_release_decision.md
+</div></section>
+  </main>
+  <script>
+const rows = Array.from(document.querySelectorAll('#rows tr'));
+const search = document.getElementById('search');
+const risk = document.getElementById('risk');
+const batch = document.getElementById('batch');
+const statusLine = document.getElementById('statusLine');
+function applyFilters(){
+  const q = search.value.trim().toLowerCase();
+  const r = risk.value;
+  const b = batch.value;
+  let shown = 0;
+  rows.forEach(row => {
+    const ok = (!q || row.dataset.search.toLowerCase().includes(q)) && (!r || row.dataset.risk === r) && (!b || row.dataset.batch === b);
+    row.style.display = ok ? '' : 'none';
+    if(ok) shown += 1;
+  });
+  statusLine.textContent = '当前显示 ' + shown + ' / ' + rows.length + ' 家；公开站仍继续使用正式 V2 / 旧版报告 / 暂未生成的规则。';
+}
+[search,risk,batch].forEach(el => el.addEventListener('input', applyFilters));
+[risk,batch].forEach(el => el.addEventListener('change', applyFilters));
+applyFilters();
+  </script>
+</body>
+</html>

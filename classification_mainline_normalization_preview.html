@@ -1,0 +1,2039 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>分类主干归一化预览</title>
+  <style>
+    :root{--bg:#101722;--panel:#172232;--line:#2c3a4f;--text:#eef4ff;--muted:#9aa9bd;--gold:#d7b46a;--blue:#69a7ff;--green:#60d394}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"Microsoft YaHei",Arial,sans-serif}main{max-width:1380px;margin:0 auto;padding:24px 18px 56px}.top{display:flex;gap:18px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:16px}h1{font-size:28px;margin:0 0 8px}.sub{color:var(--muted);font-size:14px}.stats{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:10px;min-width:520px}.stat{background:#111c2b;border:1px solid var(--line);padding:12px;border-radius:8px}.stat b{display:block;font-size:24px;color:var(--gold)}.toolbar{display:flex;gap:10px;margin:14px 0 18px}.toolbar input{flex:1;background:#0e1621;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:11px 12px}.toolbar button{background:#203047;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:10px 12px;cursor:pointer}.grid{display:grid;gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}.head{width:100%;display:grid;grid-template-columns:56px 1fr 88px;gap:12px;align-items:center;background:#172232;color:var(--text);border:0;text-align:left;padding:14px 16px;cursor:pointer}.idx{color:var(--gold);font-weight:700}.title{font-size:18px;font-weight:700}.count{color:var(--green);text-align:right}.body{display:none;border-top:1px solid var(--line);padding:12px 14px 16px}.card.open .body{display:block}.origin{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.origin span{background:#101a28;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:5px 9px;font-size:12px}.origin b{color:var(--blue)}table{width:100%;border-collapse:collapse;font-size:13px}th,td{border-bottom:1px solid var(--line);padding:9px 8px;vertical-align:top}th{text-align:left;color:#cbd7e6;background:#121d2c;position:sticky;top:0}td span{color:var(--muted)}em{display:inline-block;margin-left:8px;color:var(--gold);font-style:normal;font-size:12px}@media(max-width:900px){.top{display:block}.stats{min-width:0;grid-template-columns:repeat(2,1fr);margin-top:14px}.head{grid-template-columns:42px 1fr 70px}}
+  </style>
+
+</head>
+<body>
+<main>
+  <section class="top">
+    <div>
+      <h1>分类主干归一化预览</h1>
+      <div class="sub">本页只用于本地校准预览，不覆盖正式首页分类。生成时间：2026/7/1 19:58:08</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>363</b>本地新版报告</div>
+      <div class="stat"><b>13</b>归一化主干</div>
+      <div class="stat"><b>287</b>主分类已归并</div>
+      <div class="stat"><b>13</b>有公司分布</div>
+    </div>
+  </section>
+  <div class="toolbar">
+    <input id="q" placeholder="搜索公司、代码、主干或原分类" oninput="filterCards()">
+    <button onclick="expandAll()">展开全部</button>
+    <button onclick="collapseAll()">收起全部</button>
+  </div>
+  <div class="grid" id="grid">
+    <section class="card" data-mainline="AI算力与数字基础设施">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">01</span>
+        <span class="title">AI算力与数字基础设施</span>
+        <span class="count">23 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>计算机 / 软件服务 <b>9</b></span><span>AI算力产业链 <b>8</b></span><span>信创与计算机硬件 <b>1</b></span><span>电力自动化与能源数字化 <b>1</b></span><span>航运信息化与智慧交通 <b>1</b></span><span>金融科技软件 <b>1</b></span><span>网络安全与互联网服务 <b>1</b></span><span>软件服务 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>中国长城</strong><br><span>000066</span></td>
+            <td>信创与计算机硬件<em>已归并</em></td>
+            <td>信创整机 / 计算机硬件 / 网络安全弱相关 / 信创</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东方电子</strong><br><span>000682</span></td>
+            <td>电力自动化与能源数字化<em>已归并</em></td>
+            <td>电力自动化 / 配用电自动化 / 能源数字化</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>浪潮信息</strong><br><span>000977</span></td>
+            <td>计算机 / 软件服务<em>已归并</em></td>
+            <td>IT基础设施 / 云计算 / 计算机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东华软件</strong><br><span>002065</span></td>
+            <td>计算机 / 软件服务<em>已归并</em></td>
+            <td>行业软件 / 应用软件 / 计算机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>石基信息</strong><br><span>002153</span></td>
+            <td>计算机 / 软件服务<em>已归并</em></td>
+            <td>IT服务 / 酒店信息化 / 计算机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>大为股份</strong><br><span>002213</span></td>
+            <td>AI算力产业链<em>已归并</em></td>
+            <td>HBM存储产业链 / 存储芯片</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>启明信息</strong><br><span>002232</span></td>
+            <td>计算机 / 软件服务<em>已归并</em></td>
+            <td>汽车IT / 车联网 / 计算机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>大华股份</strong><br><span>002236</span></td>
+            <td>计算机 / 软件服务<em>已归并</em></td>
+            <td>AI应用</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>川润股份</strong><br><span>002272</span></td>
+            <td>AI算力产业链<em>已归并</em></td>
+            <td>液冷/温控 / 液冷系统/换热器 / IT基础设施/云计算</td>
+            <td>2026-03-31<br>承压</td>
+          </tr><tr>
+            <td><strong>久其软件</strong><br><span>002279</span></td>
+            <td>计算机 / 软件服务<em>已归并</em></td>
+            <td>行业软件 / 应用软件 / 计算机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中远海科</strong><br><span>002401</span></td>
+            <td>航运信息化与智慧交通<em>已归并</em></td>
+            <td>航运信息化 / 智慧交通 / 软件服务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中科金财</strong><br><span>002657</span></td>
+            <td>金融科技软件<em>已归并</em></td>
+            <td>金融IT / 软件服务 / 数字政务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>英维克</strong><br><span>002837</span></td>
+            <td>AI算力产业链<em>已归并</em></td>
+            <td>液冷/温控 / 数据中心温控 / IT基础设施/云计算</td>
+            <td>2026-03-31<br>承压</td>
+          </tr><tr>
+            <td><strong>容大感光</strong><br><span>300576</span></td>
+            <td>AI算力产业链<em>已归并</em></td>
+            <td>先进封装 / 封装材料 / PCB/高速PCB</td>
+            <td>2026-03-31<br>承压</td>
+          </tr><tr>
+            <td><strong>航天信息</strong><br><span>600271</span></td>
+            <td>计算机 / 软件服务<em>已归并</em></td>
+            <td>信创 / 电子政务 / 计算机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>亨通光电</strong><br><span>600487</span></td>
+            <td>AI算力产业链<em>已归并</em></td>
+            <td>光通信/CPO光互连 / 光纤光缆 / 光通信基础设施</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>方正科技</strong><br><span>600601</span></td>
+            <td>AI算力产业链<em>已归并</em></td>
+            <td>AI服务器/算力 / 服务器PCB/高速背板 / PCB/高速PCB</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>远东股份</strong><br><span>600869</span></td>
+            <td>AI算力产业链<em>已归并</em></td>
+            <td>AI服务器/算力 / 服务器整机 / PCB/高速PCB</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三六零</strong><br><span>601360</span></td>
+            <td>网络安全与互联网服务<em>已归并</em></td>
+            <td>网络安全 / 互联网服务 / AI应用弱相关</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>泛微网络</strong><br><span>603039</span></td>
+            <td>计算机 / 软件服务<em>已归并</em></td>
+            <td>行业软件 / 应用软件 / 计算机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>华脉科技</strong><br><span>603042</span></td>
+            <td>AI算力产业链<em>已归并</em></td>
+            <td>光通信/CPO光互连 / 光纤光缆 / 光通信基础设施</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>数据港</strong><br><span>603881</span></td>
+            <td>计算机 / 软件服务<em>已归并</em></td>
+            <td>IDC / 数据中心 / 计算机</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中科软</strong><br><span>603927</span></td>
+            <td>软件服务<em>已归并</em></td>
+            <td>保险IT / 行业软件</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="半导体与电子元器件">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">02</span>
+        <span class="title">半导体与电子元器件</span>
+        <span class="count">22 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>半导体全产业链 <b>6</b></span><span>电子设备制造 <b>2</b></span><span>半导体材料 <b>2</b></span><span>半导体 <b>2</b></span><span>通信服务与数字营销 <b>1</b></span><span>电子元器件分销 <b>1</b></span><span>信息安全与智能卡 <b>1</b></span><span>通信网络服务 <b>1</b></span><span>光学元件与光电装备 <b>1</b></span><span>显示材料 <b>1</b></span><span>电子陶瓷与封装材料 <b>1</b></span><span>半导体装备与精密模具 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>中嘉博创</strong><br><span>000889</span></td>
+            <td>通信服务与数字营销<em>已归并</em></td>
+            <td>通信服务 / 数字营销 / 信息服务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>瑞立科密</strong><br><span>001285</span></td>
+            <td>电子设备制造<em>已归并</em></td>
+            <td>汽车电子弱相关 / 电子零部件 / 精密制造</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中电港</strong><br><span>001287</span></td>
+            <td>电子元器件分销<em>已归并</em></td>
+            <td>电子供应链 / 半导体分销</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东信和平</strong><br><span>002017</span></td>
+            <td>信息安全与智能卡<em>已归并</em></td>
+            <td>智能卡 / 数字身份 / 信息安全</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>海特高新</strong><br><span>002023</span></td>
+            <td>半导体全产业链<em>已归并</em></td>
+            <td>半导体材料(关键环节) / GaAs/GaN射频 / 半导体材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三维通信</strong><br><span>002115</span></td>
+            <td>通信网络服务<em>已归并</em></td>
+            <td>通信网络优化 / 通信服务 / 卫星互联网弱相关</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中光学</strong><br><span>002189</span></td>
+            <td>光学元件与光电装备<em>已归并</em></td>
+            <td>光学元件 / 光电装备 / 显示/投影</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三利谱</strong><br><span>002876</span></td>
+            <td>显示材料<em>已归并</em></td>
+            <td>偏光片 / 光学膜</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中晶科技</strong><br><span>003026</span></td>
+            <td>半导体材料<em>已归并</em></td>
+            <td>半导体硅片 / 硅材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中瓷电子</strong><br><span>003031</span></td>
+            <td>电子陶瓷与封装材料<em>已归并</em></td>
+            <td>电子陶瓷 / 封装材料 / 电子元器件</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>士兰微</strong><br><span>600460</span></td>
+            <td>半导体全产业链<em>已归并</em></td>
+            <td>半导体材料(关键环节) / 碳化硅SiC / 半导体材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三佳科技</strong><br><span>600520</span></td>
+            <td>半导体装备与精密模具<em>已归并</em></td>
+            <td>半导体封装模具 / 精密模具 / 专用设备 / 半导体装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>法拉电子</strong><br><span>600563</span></td>
+            <td>半导体<em>已归并</em></td>
+            <td>模拟 / 功率 / MCU</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>新安股份</strong><br><span>600596</span></td>
+            <td>半导体全产业链<em>已归并</em></td>
+            <td>半导体材料(关键环节) / 电子级硫酸/高纯氟气 / 半导体材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三安光电</strong><br><span>600703</span></td>
+            <td>半导体全产业链<em>已归并</em></td>
+            <td>半导体材料(关键环节) / 碳化硅SiC / 半导体材料</td>
+            <td>2026-03-31<br>承压</td>
+          </tr><tr>
+            <td><strong>东方通信</strong><br><span>600776</span></td>
+            <td>通信设备与信息通信<em>已归并</em></td>
+            <td>通信设备 / 专网通信 / 信息通信</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东材科技</strong><br><span>601208</span></td>
+            <td>半导体<em>已归并</em></td>
+            <td>半导体材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>赛腾股份</strong><br><span>603283</span></td>
+            <td>半导体设备与自动化设备<em>已归并</em></td>
+            <td>半导体设备 / 自动化检测设备 / 精密制造装备 / 机器人弱相关</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>埃泰克</strong><br><span>603293</span></td>
+            <td>电子设备制造<em>已归并</em></td>
+            <td>电子零部件 / 精密制造 / 智能设备部件</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>彤程新材</strong><br><span>603650</span></td>
+            <td>半导体全产业链<em>已归并</em></td>
+            <td>半导体材料(关键环节) / 光刻胶 / 半导体设备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>石英股份</strong><br><span>603688</span></td>
+            <td>半导体材料<em>已归并</em></td>
+            <td>高纯石英 / 石英材料</td>
+            <td>2026-03-31<br>承压</td>
+          </tr><tr>
+            <td><strong>泰晶科技</strong><br><span>603738</span></td>
+            <td>半导体全产业链<em>已归并</em></td>
+            <td>芯片设计 / 通信/射频芯片 / 射频 / 通信芯片</td>
+            <td>2026-03-31<br>改善</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="PCB/被动元件/电子材料">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">03</span>
+        <span class="title">PCB/被动元件/电子材料</span>
+        <span class="count">7 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>PCB电路板产业链 <b>6</b></span><span>消费电子结构件 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>平安电工</strong><br><span>001359</span></td>
+            <td>PCB电路板产业链<em>已归并</em></td>
+            <td>覆铜板/CCL / 玻纤布/基布 / PCB/高速PCB</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>贤丰控股</strong><br><span>002141</span></td>
+            <td>PCB电路板产业链<em>已归并</em></td>
+            <td>覆铜板/CCL / 电子级玻纤布 / PCB/高速PCB</td>
+            <td>2026-03-31<br>承压</td>
+          </tr><tr>
+            <td><strong>海亮股份</strong><br><span>002203</span></td>
+            <td>PCB电路板产业链<em>已归并</em></td>
+            <td>覆铜板/CCL / 铜箔 / PCB/高速PCB</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>诺德股份</strong><br><span>600110</span></td>
+            <td>PCB电路板产业链<em>已归并</em></td>
+            <td>覆铜板/CCL / 铜箔 / PCB/高速PCB</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>亨通股份</strong><br><span>600226</span></td>
+            <td>PCB电路板产业链<em>已归并</em></td>
+            <td>覆铜板/CCL / 铜箔 / PCB/高速PCB</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>春秋电子</strong><br><span>603890</span></td>
+            <td>消费电子结构件<em>已归并</em></td>
+            <td>精密结构件 / 笔电结构件 / 消费电子 / 电子制造</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>山东玻纤</strong><br><span>605006</span></td>
+            <td>PCB电路板产业链<em>已归并</em></td>
+            <td>覆铜板/CCL / 电子级玻纤布 / PCB/高速PCB</td>
+            <td>2026-03-31<br>改善</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="电力设备与电力运营">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">04</span>
+        <span class="title">电力设备与电力运营</span>
+        <span class="count">35 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>电力电网 <b>14</b></span><span>电力与公用事业 <b>10</b></span><span>电力运营 <b>3</b></span><span>电力电子与充电设备 <b>1</b></span><span>电线电缆 <b>1</b></span><span>光通信与电力电缆 <b>1</b></span><span>发电装备 <b>1</b></span><span>综合能源运营 <b>1</b></span><span>能源装备与工业装备 <b>1</b></span><span>电缆与海洋工程 <b>1</b></span><span>燃气与公用事业 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>深圳能源</strong><br><span>000027</span></td>
+            <td>电力与公用事业<em>已归并</em></td>
+            <td>综合电力</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>深南电A</strong><br><span>000037</span></td>
+            <td>电力运营<em>已归并</em></td>
+            <td>燃气发电 / 区域电力运营 / 综合能源 / 区域能源</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>粤电力A</strong><br><span>000539</span></td>
+            <td>电力与公用事业<em>已归并</em></td>
+            <td>火电 / 绿电运营</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>宝新能源</strong><br><span>000690</span></td>
+            <td>电力与公用事业<em>已归并</em></td>
+            <td>新能源发电</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>晋控电力</strong><br><span>000767</span></td>
+            <td>电力与公用事业<em>已归并</em></td>
+            <td>火电 / 煤电</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>甘肃能源</strong><br><span>000791</span></td>
+            <td>电力与公用事业<em>已归并</em></td>
+            <td>综合电力</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>湖北能源</strong><br><span>000883</span></td>
+            <td>电力与公用事业<em>已归并</em></td>
+            <td>综合电力</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>佳电股份</strong><br><span>000922</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>核电 / 核电设备/主泵</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>山东威达</strong><br><span>002026</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 特高压/直流输电 / 电网设备 / 特高压</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三变科技</strong><br><span>002112</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 特高压/直流输电 / 电网设备 / 特高压</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>大洋电机</strong><br><span>002249</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 特高压/直流输电 / 电网设备 / 特高压</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中恒电气</strong><br><span>002364</span></td>
+            <td>电力电子与充电设备<em>已归并</em></td>
+            <td>电力电子 / 充电设备 / 数据中心电源</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>长高电气</strong><br><span>002452</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 输变电设备 / 电网设备 / 特高压</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中超控股</strong><br><span>002471</span></td>
+            <td>电线电缆<em>已归并</em></td>
+            <td>电力电缆 / 线缆制造 / 电气材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>金杯电工</strong><br><span>002533</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 特高压/直流输电 / 电网设备 / 特高压</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>通达股份</strong><br><span>002560</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 特高压/直流输电 / 电网设备 / 特高压</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>大连电瓷</strong><br><span>002606</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 特高压/直流输电 / 电网设备 / 特高压</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>凯中精密</strong><br><span>002823</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 特高压/直流输电 / 电网设备 / 特高压</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三峡水利</strong><br><span>600116</span></td>
+            <td>电力运营<em>已归并</em></td>
+            <td>水电 / 配售电 / 综合能源</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>桂冠电力</strong><br><span>600236</span></td>
+            <td>电力与公用事业<em>已归并</em></td>
+            <td>水电</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>平高电气</strong><br><span>600312</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 特高压/直流输电 / 电网设备 / 特高压</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中天科技</strong><br><span>600522</span></td>
+            <td>光通信与电力电缆<em>已归并</em></td>
+            <td>光通信 / 电力电缆 / 海洋通信/电缆</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>京能电力</strong><br><span>600578</span></td>
+            <td>电力与公用事业<em>已归并</em></td>
+            <td>火电 / 煤电</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>华电能源</strong><br><span>600726</span></td>
+            <td>电力与公用事业<em>已归并</em></td>
+            <td>火电 / 煤电</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>华银电力</strong><br><span>600744</span></td>
+            <td>电力与公用事业<em>已归并</em></td>
+            <td>火电 / 煤电</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东方电气</strong><br><span>600875</span></td>
+            <td>发电装备<em>已归并</em></td>
+            <td>电站设备 / 风电/水电装备 / 能源装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>宁波能源</strong><br><span>600982</span></td>
+            <td>综合能源运营<em>已归并</em></td>
+            <td>热电联产 / 地方能源运营 / 综合能源</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国西电</strong><br><span>601179</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 特高压/直流输电 / 电网设备 / 特高压</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上海电气</strong><br><span>601727</span></td>
+            <td>能源装备与工业装备<em>已归并</em></td>
+            <td>电力装备 / 能源装备 / 工业装备</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>正泰电器</strong><br><span>601877</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 特高压/直流输电 / 电网设备 / 特高压</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>大唐发电</strong><br><span>601991</span></td>
+            <td>电力运营<em>已归并</em></td>
+            <td>火电 / 综合电力 / 发电运营</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>福达合金</strong><br><span>603045</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>电网设备 / 电接触材料 / IT基础设施/云计算</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东方电缆</strong><br><span>603606</span></td>
+            <td>电缆与海洋工程<em>已归并</em></td>
+            <td>海缆 / 电力电缆 / 海上风电配套</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东方环宇</strong><br><span>603706</span></td>
+            <td>燃气与公用事业<em>已归并</em></td>
+            <td>燃气供应 / 城市公用事业 / 区域能源</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>恒盛能源</strong><br><span>605580</span></td>
+            <td>电力电网<em>已归并</em></td>
+            <td>火电 / 煤电 / 火电 / 煤电</td>
+            <td>2026-03-31<br>改善</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="新能源车与储能">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">05</span>
+        <span class="title">新能源车与储能</span>
+        <span class="count">32 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>新能源智能汽车 <b>18</b></span><span>新能源汽车 <b>3</b></span><span>新能源发电 <b>3</b></span><span>汽车零部件 <b>2</b></span><span>商用车整车 <b>1</b></span><span>电池与储能 <b>1</b></span><span>光伏硅材料 <b>1</b></span><span>光伏与电缆材料 <b>1</b></span><span>锂电材料 <b>1</b></span><span>汽车电子 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>潍柴动力</strong><br><span>000338</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>江铃汽车</strong><br><span>000550</span></td>
+            <td>新能源汽车<em>已归并</em></td>
+            <td>整车 / 商用车</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>一汽解放</strong><br><span>000800</span></td>
+            <td>商用车整车<em>已归并</em></td>
+            <td>商用车 / 重卡 / 整车制造 / 新能源汽车弱相关</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>创维数字</strong><br><span>000810</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>智能驾驶 / 域控制器/传感器 / 汽车零部件</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国重汽</strong><br><span>000951</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中通客车</strong><br><span>000957</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>豪鹏科技</strong><br><span>001283</span></td>
+            <td>电池与储能<em>已归并</em></td>
+            <td>锂离子电池 / 消费电池 / 储能电池 / 电池制造</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>TCL中环</strong><br><span>002129</span></td>
+            <td>光伏硅材料<em>已归并</em></td>
+            <td>硅片 / 光伏材料 / 新能源发电上游 / 光伏硅片 / 新能源上游</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东方锆业</strong><br><span>002167</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>天润工业</strong><br><span>002283</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>亚太股份</strong><br><span>002284</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中利集团</strong><br><span>002309</span></td>
+            <td>光伏与电缆材料<em>已归并</em></td>
+            <td>光伏组件 / 电线电缆 / 新能源材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中原内配</strong><br><span>002448</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>海联金汇</strong><br><span>002537</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>万安科技</strong><br><span>002590</span></td>
+            <td>新能源汽车<em>已归并</em></td>
+            <td>汽车零部件</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>光华科技</strong><br><span>002741</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 电池材料/电子化学品 / PCB/高速PCB</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>丰元股份</strong><br><span>002805</span></td>
+            <td>锂电材料<em>已归并</em></td>
+            <td>正极材料 / 新能源材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>华阳集团</strong><br><span>002906</span></td>
+            <td>汽车电子<em>已归并</em></td>
+            <td>智能座舱 / 车载电子 / 汽车零部件</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东风科技</strong><br><span>600081</span></td>
+            <td>汽车零部件<em>已归并</em></td>
+            <td>汽车电子 / 智能汽车零部件 / 智能汽车弱相关</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上汽集团</strong><br><span>600104</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>汽车及零部件 / 汽车制造/零部件 / 汽车零部件</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>福田汽车</strong><br><span>600166</span></td>
+            <td>新能源汽车<em>已归并</em></td>
+            <td>整车 / 商用车</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>金龙汽车</strong><br><span>600686</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>滨化股份</strong><br><span>601678</span></td>
+            <td>新能源发电<em>已归并</em></td>
+            <td>氢能 / 氢燃料电池系统 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>星宇股份</strong><br><span>601799</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>福达股份</strong><br><span>603166</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>天洋新材</strong><br><span>603330</span></td>
+            <td>新能源发电<em>已归并</em></td>
+            <td>光伏全链 / 光伏胶膜 / 光伏</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>汇通控股</strong><br><span>603409</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>友升股份</strong><br><span>603418</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 动力电池/储能</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>高能环境</strong><br><span>603588</span></td>
+            <td>新能源发电<em>已归并</em></td>
+            <td>环保/新能源运营 / 危废/固废处理 / 游戏/内容</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三祥新材</strong><br><span>603663</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>动力电池 / 固态/半固态电池 / 锆材料 / 特种无机材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中马传动</strong><br><span>603767</span></td>
+            <td>新能源智能汽车<em>已归并</em></td>
+            <td>汽车及零部件 / 汽车制造/零部件 / 汽车零部件</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>上海沿浦</strong><br><span>605128</span></td>
+            <td>汽车零部件<em>已归并</em></td>
+            <td>座椅骨架 / 冲压件</td>
+            <td>2026-03-31<br>改善</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="高端装备与机器人">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">06</span>
+        <span class="title">高端装备与机器人</span>
+        <span class="count">33 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>高端装备与工业 <b>22</b></span><span>机器人 / 自动化 <b>1</b></span><span>粉末冶金与金属材料 <b>1</b></span><span>工程机械与轨交装备 <b>1</b></span><span>缝制设备与轻工装备 <b>1</b></span><span>农业机械装备 <b>1</b></span><span>重型装备 <b>1</b></span><span>重型机械装备 <b>1</b></span><span>焊接与切割设备 <b>1</b></span><span>冶金装备 <b>1</b></span><span>AI算力产业链 <b>1</b></span><span>电机与工业设备 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>创元科技</strong><br><span>000551</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工业母机/机床 / 激光加工/切割设备 / 工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>山推股份</strong><br><span>000680</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工业母机/机床 / 激光加工/切割设备 / 工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>九安医疗</strong><br><span>002432</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工业母机/机床 / 激光加工/切割设备 / 工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>弘亚数控</strong><br><span>002833</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工业母机/机床 / 激光加工/切割设备 / 工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>科安达</strong><br><span>002972</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>轨交装备 / 轨交信号/防雷 / 轨交/船舶/海工装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>雷赛智能</strong><br><span>002979</span></td>
+            <td>机器人 / 自动化<em>已归并</em></td>
+            <td>工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>瑞鹄模具</strong><br><span>002997</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工业母机/机床 / 激光加工/切割设备 / 工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>泰坦股份</strong><br><span>003036</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工业母机/机床 / 激光加工/切割设备 / 工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>三一重工</strong><br><span>600031</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>专用机械 / 专用设备 / 精密制造 / 高端设备</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中船科技</strong><br><span>600072</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>轨交 / 船舶 / 海工装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东睦股份</strong><br><span>600114</span></td>
+            <td>粉末冶金与金属材料<em>已归并</em></td>
+            <td>粉末冶金 / 金属材料 / 汽车零部件材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国船舶</strong><br><span>600150</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>交通装备 / 轨交/船舶/航空 / 轨交/船舶/海工装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中油工程</strong><br><span>600339</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>油气服务/装备 / 油气工程EPC / 能源资源</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>科达制造</strong><br><span>600499</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工业母机/机床 / 激光加工/切割设备 / 工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中铁工业</strong><br><span>600528</span></td>
+            <td>工程机械与轨交装备<em>已归并</em></td>
+            <td>盾构机 / 道岔 / 工程装备 / 工程机械 / 轨交装备</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>上工申贝</strong><br><span>600843</span></td>
+            <td>缝制设备与轻工装备<em>已归并</em></td>
+            <td>工业缝纫机 / 缝制设备 / 轻工装备 / 工业自动化弱相关</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>一拖股份</strong><br><span>601038</span></td>
+            <td>农业机械装备<em>已归并</em></td>
+            <td>拖拉机 / 农机装备 / 农业机械</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中铝国际</strong><br><span>601068</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工程/矿山机械 / 有色冶金工程EPC / 工程机械 / 矿山装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国一重</strong><br><span>601106</span></td>
+            <td>重型装备<em>已归并</em></td>
+            <td>重型机械 / 冶金装备 / 能源装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国化学</strong><br><span>601117</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工程/矿山机械 / 化学工程EPC / 工程机械 / 矿山装备</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中信重工</strong><br><span>601608</span></td>
+            <td>重型机械装备<em>已归并</em></td>
+            <td>矿山装备 / 重型机械 / 高端装备</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中国中车</strong><br><span>601766</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>交通装备 / 轨交/船舶/航空 / 轨交/船舶/海工装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>威高血净</strong><br><span>603014</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工业母机/机床 / 激光加工/切割设备 / 工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上海沪工</strong><br><span>603131</span></td>
+            <td>焊接与切割设备<em>已归并</em></td>
+            <td>焊接设备 / 切割设备 / 工业设备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中重科技</strong><br><span>603135</span></td>
+            <td>冶金装备<em>已归并</em></td>
+            <td>轧钢设备 / 高端装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国瑞林</strong><br><span>603257</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工程/矿山机械 / 矿山工程设计 / 工程机械 / 矿山装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>杰克科技</strong><br><span>603337</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工业母机/机床 / 激光加工/切割设备 / 工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>浙江鼎力</strong><br><span>603338</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工业母机/机床 / 激光加工/切割设备 / 工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>祥和实业</strong><br><span>603500</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>轨交装备 / 轨交扣件/道岔 / 轨交/船舶/海工装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>大元泵业</strong><br><span>603757</span></td>
+            <td>AI算力产业链<em>已归并</em></td>
+            <td>泵阀与流体设备 / 民用水泵 / 屏蔽泵/热管理弱相关</td>
+            <td>2026-03-31<br>承压</td>
+          </tr><tr>
+            <td><strong>中创物流</strong><br><span>603967</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>物流装备 / 多式联运/代理 / 快递/物流</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中电电机</strong><br><span>603988</span></td>
+            <td>电机与工业设备<em>已归并</em></td>
+            <td>电机 / 工业设备 / 专用电机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中际联合</strong><br><span>605305</span></td>
+            <td>高端装备与工业<em>已归并</em></td>
+            <td>工业母机/机床 / 激光加工/切割设备 / 工业自动化 / 工业母机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="有色金属与新材料">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">07</span>
+        <span class="title">有色金属与新材料</span>
+        <span class="count">71 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>有色金属与新材料 <b>51</b></span><span>资源周期 <b>4</b></span><span>稀土资源与材料 <b>2</b></span><span>钢铁材料 <b>1</b></span><span>人造石英石材料 <b>1</b></span><span>磁性材料 <b>1</b></span><span>能源化工 <b>1</b></span><span>建筑防水材料 <b>1</b></span><span>钢结构与钾肥资源 <b>1</b></span><span>锂铯铷资源 <b>1</b></span><span>化工与医药中间体 <b>1</b></span><span>包装印刷与新材料 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>中金岭南</strong><br><span>000060</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 铜 / 金属矿产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中钨高新</strong><br><span>000657</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 金属制品 / 金属矿产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中信特钢</strong><br><span>000708</span></td>
+            <td>资源周期<em>已归并</em></td>
+            <td>钢铁 / 建材</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中南股份</strong><br><span>000717</span></td>
+            <td>钢铁材料<em>已归并</em></td>
+            <td>钢铁 / 板材 / 工业金属</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中色股份</strong><br><span>000758</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 铜 / 金属矿产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国稀土</strong><br><span>000831</span></td>
+            <td>稀土资源与材料<em>已归并</em></td>
+            <td>稀土 / 稀土资源 / 稀土材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>国风新材</strong><br><span>000859</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>云南铜业</strong><br><span>000878</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 铜 / 金属矿产</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>锡业股份</strong><br><span>000960</span></td>
+            <td>有色金属与新材料</td>
+            <td>稀有/战略金属 / 锡 / 稀有小金属 / 战略金属</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东方钽业</strong><br><span>000962</span></td>
+            <td>有色金属与新材料</td>
+            <td>稀有/战略金属 / 钽铌 / 半导体材料</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中科三环</strong><br><span>000970</span></td>
+            <td>有色金属与新材料</td>
+            <td>稀土永磁 / 钕铁硼永磁 / 风电</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中旗新材</strong><br><span>001212</span></td>
+            <td>人造石英石材料<em>已归并</em></td>
+            <td>石英石板材 / 建材材料 / 装饰材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>丽臣实业</strong><br><span>001218</span></td>
+            <td>有色金属与新材料</td>
+            <td>新材料 / 化工新材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国铀业</strong><br><span>001280</span></td>
+            <td>有色金属与新材料</td>
+            <td>稀有金属 / 有色采选 / 稀有小金属 / 战略金属</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中钢天源</strong><br><span>002057</span></td>
+            <td>磁性材料<em>已归并</em></td>
+            <td>新材料 / 稀土功能材料</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中材科技</strong><br><span>002080</span></td>
+            <td>有色金属与新材料</td>
+            <td>新材料 / 非金属矿物 / 钢铁/建材</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东华能源</strong><br><span>002221</span></td>
+            <td>能源化工<em>已归并</em></td>
+            <td>LPG/丙烯 / 化工原料 / 能源贸易</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东方雨虹</strong><br><span>002271</span></td>
+            <td>建筑防水材料<em>已归并</em></td>
+            <td>防水材料 / 建筑材料 / 建材化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>乐通股份</strong><br><span>002319</span></td>
+            <td>有色金属与新材料</td>
+            <td>新材料 / 化工新材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>云南锗业</strong><br><span>002428</span></td>
+            <td>有色金属与新材料</td>
+            <td>稀有/战略金属 / 锗 / 稀有小金属 / 战略金属</td>
+            <td>2026-03-31<br>承压</td>
+          </tr><tr>
+            <td><strong>闰土股份</strong><br><span>002440</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>浙江众成</strong><br><span>002522</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 功能性膜材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东方铁塔</strong><br><span>002545</span></td>
+            <td>钢结构与钾肥资源<em>已归并</em></td>
+            <td>钢结构 / 通信铁塔 / 钾肥资源</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>万润股份</strong><br><span>002643</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中矿资源</strong><br><span>002738</span></td>
+            <td>锂铯铷资源<em>已归并</em></td>
+            <td>锂资源 / 铯铷资源 / 新能源金属</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>冀衡医药</strong><br><span>002742</span></td>
+            <td>化工与医药中间体<em>已归并</em></td>
+            <td>基础化工 / 医药中间体 / 化工品</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>世龙实业</strong><br><span>002748</span></td>
+            <td>有色金属与新材料</td>
+            <td>新材料 / 化工新材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>国恩股份</strong><br><span>002768</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 半导体材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>腾远钴业</strong><br><span>301219</span></td>
+            <td>有色金属与新材料</td>
+            <td>稀有/战略金属 / 钴 / 稀有小金属 / 战略金属</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东风股份</strong><br><span>600006</span></td>
+            <td>包装印刷与新材料<em>已归并</em></td>
+            <td>包装印刷 / 纸包装 / 新材料弱相关</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国石化</strong><br><span>600028</span></td>
+            <td>资源周期<em>已归并</em></td>
+            <td>能源资源</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>皖维高新</strong><br><span>600063</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>乐凯胶片</strong><br><span>600135</span></td>
+            <td>有色金属与新材料</td>
+            <td>新材料 / 化工新材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国巨石</strong><br><span>600176</span></td>
+            <td>有色金属与新材料</td>
+            <td>新材料 / 非金属矿物 / 钢铁/建材</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>S佳通</strong><br><span>600182</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中稀有色</strong><br><span>600259</span></td>
+            <td>稀土资源与材料<em>已归并</em></td>
+            <td>稀土 / 有色资源 / 稀土材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>江西铜业</strong><br><span>600362</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 铜 / 金属矿产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>宁波韵升</strong><br><span>600366</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 铜 / 金属矿产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>盛和资源</strong><br><span>600392</span></td>
+            <td>资源周期<em>已归并</em></td>
+            <td>有色 / 稀土资源</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>贵研铂业</strong><br><span>600459</span></td>
+            <td>有色金属与新材料</td>
+            <td>稀有/战略金属 / 铂族金属 / 稀有小金属 / 战略金属</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中金黄金</strong><br><span>600489</span></td>
+            <td>有色金属与新材料</td>
+            <td>稀有金属 / 有色采选 / 黄金 / 贵金属</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中化国际</strong><br><span>600500</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>豫光金铅</strong><br><span>600531</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 铜 / 金属矿产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中孚实业</strong><br><span>600595</span></td>
+            <td>铝产业链<em>已归并</em></td>
+            <td>电解铝 / 铝加工 / 工业金属</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中毅达</strong><br><span>600610</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东阳光</strong><br><span>600673</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 铝箔/电子箔 / 金属矿产</td>
+            <td>2026-03-31<br>承压</td>
+          </tr><tr>
+            <td><strong>上海石化</strong><br><span>600688</span></td>
+            <td>石油化工<em>已归并</em></td>
+            <td>炼化 / 石化材料 / 化工品</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>盛屯矿业</strong><br><span>600711</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 铜 / 金属矿产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>株冶集团</strong><br><span>600961</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 铅锌 / 稀有小金属 / 战略金属</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中信金属</strong><br><span>601061</span></td>
+            <td>金属贸易与大宗商品<em>已归并</em></td>
+            <td>金属贸易 / 大宗商品 / 资源供应链</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>博威合金</strong><br><span>601137</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 铜合金 / 光伏</td>
+            <td>2026-03-31<br>承压</td>
+          </tr><tr>
+            <td><strong>三角轮胎</strong><br><span>601163</span></td>
+            <td>轮胎与橡胶制品<em>已归并</em></td>
+            <td>轮胎 / 橡胶制品 / 汽车配套</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国铝业</strong><br><span>601600</span></td>
+            <td>资源周期<em>已归并</em></td>
+            <td>金属矿产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>丰林集团</strong><br><span>601996</span></td>
+            <td>有色金属与新材料</td>
+            <td>材料制造 / 木材/建材 / 钢铁/建材</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>万盛股份</strong><br><span>603010</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中策橡胶</strong><br><span>603049</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东方材料</strong><br><span>603110</span></td>
+            <td>有色金属与新材料</td>
+            <td>新材料 / 化工新材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>新亚强</strong><br><span>603155</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 有机硅/氟化工 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>万丰股份</strong><br><span>603172</span></td>
+            <td>有色金属与新材料</td>
+            <td>新材料 / 化工新材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>新凤鸣</strong><br><span>603225</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>永杰新材</strong><br><span>603271</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 铜 / 金属矿产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>恒兴新材</strong><br><span>603276</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>丰倍生物</strong><br><span>603334</span></td>
+            <td>生物柴油与油脂化工<em>已归并</em></td>
+            <td>生物柴油 / 油脂化工 / 生物基材料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三美股份</strong><br><span>603379</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 高分子材料 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>永杉锂业</strong><br><span>603399</span></td>
+            <td>有色金属与新材料</td>
+            <td>稀有/战略金属 / 锂 / 稀有小金属 / 战略金属</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>永冠新材</strong><br><span>603681</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 功能性涂层/胶粘剂 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>仙鹤股份</strong><br><span>603733</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 特种纸/特种浆 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东宏股份</strong><br><span>603856</span></td>
+            <td>有色金属与新材料</td>
+            <td>新材料 / 橡胶/塑料 / 化纤 / 高分子</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>丽岛新材</strong><br><span>603937</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 金属制品 / 金属矿产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三孚股份</strong><br><span>603938</span></td>
+            <td>有色金属与新材料</td>
+            <td>特种化工新材料 / 有机硅/氟化工 / 新材料化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>甬金股份</strong><br><span>603995</span></td>
+            <td>有色金属与新材料</td>
+            <td>工业金属 / 不锈钢/特种钢 / 智能家居 / 白电</td>
+            <td>2026-03-31<br>改善</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="医药健康">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">08</span>
+        <span class="title">医药健康</span>
+        <span class="count">9 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>医药健康 <b>8</b></span><span>医药流通 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>万泽股份</strong><br><span>000534</span></td>
+            <td>医药健康</td>
+            <td>CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>誉衡药业</strong><br><span>002437</span></td>
+            <td>医药健康</td>
+            <td>CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东诚药业</strong><br><span>002675</span></td>
+            <td>医药健康</td>
+            <td>CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>奥美医疗</strong><br><span>002950</span></td>
+            <td>医药健康</td>
+            <td>CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国医药</strong><br><span>600056</span></td>
+            <td>医药流通<em>已归并</em></td>
+            <td>医药商业 / 医药供应链</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>海正药业</strong><br><span>600267</span></td>
+            <td>医药健康</td>
+            <td>CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>马应龙</strong><br><span>600993</span></td>
+            <td>医药健康</td>
+            <td>CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>三力制药</strong><br><span>603439</span></td>
+            <td>医药健康</td>
+            <td>CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>南卫股份</strong><br><span>603880</span></td>
+            <td>医药健康</td>
+            <td>CXO/生命科学 / CDMO/原料药 / CXO/CRO/CDMO</td>
+            <td>2026-03-31<br>改善</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="消费与服务">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">09</span>
+        <span class="title">消费与服务</span>
+        <span class="count">56 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>消费与服务业 <b>26</b></span><span>商贸零售 / 社服 <b>6</b></span><span>传媒互联网 <b>5</b></span><span>纺服轻工 <b>5</b></span><span>农业养殖 <b>3</b></span><span>出版传媒 <b>2</b></span><span>旅游景区服务 <b>1</b></span><span>游戏与互联网内容 <b>1</b></span><span>家电与消费电子 <b>1</b></span><span>消费电子 <b>1</b></span><span>影视传媒 <b>1</b></span><span>体育产业服务 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>中成股份</strong><br><span>000151</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>商贸零售 / 批发/贸易 / 零售/电商</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中兴商业</strong><br><span>000715</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>商贸零售 / 零售 / 零售/电商</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中原传媒</strong><br><span>000719</span></td>
+            <td>出版传媒<em>已归并</em></td>
+            <td>出版 / 教材教辅 / 文化传媒</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中水渔业</strong><br><span>000798</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>农产品 / 渔业 / 猪禽水产养殖</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>粤海饲料</strong><br><span>001313</span></td>
+            <td>农业养殖<em>已归并</em></td>
+            <td>饲料 / 水产饲料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>分众传媒</strong><br><span>002027</span></td>
+            <td>传媒互联网<em>已归并</em></td>
+            <td>广告营销</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>丽江股份</strong><br><span>002033</span></td>
+            <td>旅游景区服务<em>已归并</em></td>
+            <td>景区运营 / 旅游服务 / 文旅消费 / 旅游景区</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>登海种业</strong><br><span>002041</span></td>
+            <td>农业养殖<em>已归并</em></td>
+            <td>种业 / 种植</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>景兴纸业</strong><br><span>002067</span></td>
+            <td>纺服轻工<em>已归并</em></td>
+            <td>造纸 / 印刷</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>太阳纸业</strong><br><span>002078</span></td>
+            <td>纺服轻工<em>已归并</em></td>
+            <td>造纸 / 印刷</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>孚日股份</strong><br><span>002083</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>纺织服装 / 纺织/面料 / 服装/纺织</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东方海洋</strong><br><span>002086</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>农产品 / 渔业 / 猪禽水产养殖</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东港股份</strong><br><span>002117</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>家居/轻工 / 印刷/包装 / 家居/轻工制造</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三全食品</strong><br><span>002216</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>食品饮料 / 食品制造 / 大众消费</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中顺洁柔</strong><br><span>002511</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>家居/轻工 / 造纸 / 家居/轻工制造</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三七互娱</strong><br><span>002555</span></td>
+            <td>传媒互联网<em>已归并</em></td>
+            <td>游戏 / 内容</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>世纪华通</strong><br><span>002602</span></td>
+            <td>游戏与互联网内容<em>已归并</em></td>
+            <td>网络游戏 / 互联网内容 / 数字娱乐 / 游戏</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中公教育</strong><br><span>002607</span></td>
+            <td>传媒互联网<em>已归并</em></td>
+            <td>教育 / 人力服务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>TCL智家</strong><br><span>002668</span></td>
+            <td>家电与消费电子<em>已归并</em></td>
+            <td>白电 / 智能家居 / 家用电器 / 消费电子</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>一心堂</strong><br><span>002727</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>家电/家居 / 定制家居/软体 / 智能家居 / 白电</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三夫户外</strong><br><span>002780</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>商贸零售 / 零售 / 零售/电商</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>裕同科技</strong><br><span>002831</span></td>
+            <td>纺服轻工<em>已归并</em></td>
+            <td>包装</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>嘉美包装</strong><br><span>002969</span></td>
+            <td>纺服轻工<em>已归并</em></td>
+            <td>包装</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>海信视像</strong><br><span>600060</span></td>
+            <td>消费电子<em>已归并</em></td>
+            <td>显示终端 / 电视显示 / 智能终端 / 智能电视</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中视传媒</strong><br><span>600088</span></td>
+            <td>影视传媒<em>已归并</em></td>
+            <td>影视制作 / 广电传媒 / 内容运营</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中体产业</strong><br><span>600158</span></td>
+            <td>体育产业服务<em>已归并</em></td>
+            <td>体育赛事 / 体育运营 / 文体服务 / 体育产业</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>赤天化</strong><br><span>600227</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>农业/化肥化工 / 化肥/尿素 / 石化 / 煤化工</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>首旅酒店</strong><br><span>600258</span></td>
+            <td>商贸零售 / 社服<em>已归并</em></td>
+            <td>旅游 / 酒店</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上海家化</strong><br><span>600315</span></td>
+            <td>美妆日化<em>已归并</em></td>
+            <td>日化用品 / 护肤美妆 / 大众消费</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>小商品城</strong><br><span>600415</span></td>
+            <td>商贸零售 / 社服<em>已归并</em></td>
+            <td>商品市场 / 零售 / 商贸零售</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>三元股份</strong><br><span>600429</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>食品饮料 / 食品制造 / 大众消费</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>北大荒</strong><br><span>600598</span></td>
+            <td>农业养殖<em>已归并</em></td>
+            <td>种业 / 种植</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上海三毛</strong><br><span>600689</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>商贸零售 / 批发/贸易 / 零售/电商</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东百集团</strong><br><span>600693</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>商贸零售 / 零售 / 零售/电商</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中粮糖业</strong><br><span>600737</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>农产品/食品加工 / 糖业 / 大众消费</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>丽尚国潮</strong><br><span>600738</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>商贸零售 / 零售 / 零售/电商</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>锦江酒店</strong><br><span>600754</span></td>
+            <td>商贸零售 / 社服<em>已归并</em></td>
+            <td>酒店 / 商贸零售</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上海物贸</strong><br><span>600822</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>商贸零售 / 批发/贸易 / 零售/电商</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>王府井</strong><br><span>600859</span></td>
+            <td>商贸零售 / 社服<em>已归并</em></td>
+            <td>零售 / 电商</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中炬高新</strong><br><span>600872</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>食品饮料 / 食品制造 / 大众消费</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国黄金</strong><br><span>600916</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>商贸零售 / 零售 / 黄金 / 贵金属</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>博汇纸业</strong><br><span>600966</span></td>
+            <td>纺服轻工<em>已归并</em></td>
+            <td>造纸 / 印刷</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中南传媒</strong><br><span>601098</span></td>
+            <td>出版传媒<em>已归并</em></td>
+            <td>出版 / 教材教辅 / 文化传媒</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中国科传</strong><br><span>601858</span></td>
+            <td>科技出版与知识服务<em>已归并</em></td>
+            <td>科技出版 / 知识服务 / 文化传媒</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国中免</strong><br><span>601888</span></td>
+            <td>商贸零售 / 社服<em>已归并</em></td>
+            <td>免税 / 旅游零售 / 商贸零售</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>吉视传媒</strong><br><span>601929</span></td>
+            <td>传媒互联网<em>已归并</em></td>
+            <td>广电 / 内容平台</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>永辉超市</strong><br><span>601933</span></td>
+            <td>商贸零售 / 社服<em>已归并</em></td>
+            <td>零售 / 电商</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中材节能</strong><br><span>603126</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>专业服务 / 技术服务 / 专业服务 / 工程咨询</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上海雅仕</strong><br><span>603329</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>专业服务 / 商务服务 / 商务服务 / 综合服务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中公高科</strong><br><span>603860</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>专业服务 / 技术服务 / 专业服务 / 工程咨询</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中农立华</strong><br><span>603970</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>商贸零售 / 批发/贸易 / 零售/电商</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>行动教育</strong><br><span>605098</span></td>
+            <td>传媒互联网<em>已归并</em></td>
+            <td>教育 / 人力服务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>丽人丽妆</strong><br><span>605136</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>商贸零售 / 零售 / 零售/电商</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>一鸣食品</strong><br><span>605179</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>食品饮料 / 食品制造 / 大众消费</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>法狮龙</strong><br><span>605318</span></td>
+            <td>消费与服务业<em>已归并</em></td>
+            <td>家居/轻工 / 其他制造 / 家居/轻工制造</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东鹏饮料</strong><br><span>605499</span></td>
+            <td>饮料食品<em>已归并</em></td>
+            <td>功能饮料 / 软饮料 / 食品饮料</td>
+            <td>2026-03-31<br>改善</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="金融地产">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">10</span>
+        <span class="title">金融地产</span>
+        <span class="count">26 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>地产 / 建筑建材 <b>7</b></span><span>证券与财富管理 <b>7</b></span><span>金融与地产 <b>6</b></span><span>金融 <b>4</b></span><span>产业金融与能源资本 <b>1</b></span><span>证券与投资银行 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>万科A</strong><br><span>000002</span></td>
+            <td>地产 / 建筑建材<em>已归并</em></td>
+            <td>房地产开发 / 地产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中油资本</strong><br><span>000617</span></td>
+            <td>产业金融与能源资本<em>已归并</em></td>
+            <td>产业金融 / 能源资本 / 综合金融</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东北证券</strong><br><span>000686</span></td>
+            <td>证券与财富管理<em>已归并</em></td>
+            <td>证券 / 经纪业务 / 财富管理</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>箭牌家居</strong><br><span>001322</span></td>
+            <td>地产 / 建筑建材<em>已归并</em></td>
+            <td>建材 / 家居材料 / 地产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>世荣兆业</strong><br><span>002016</span></td>
+            <td>金融与地产<em>已归并</em></td>
+            <td>房地产 / 房地产开发</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>世联行</strong><br><span>002285</span></td>
+            <td>金融与地产<em>已归并</em></td>
+            <td>地产开发 / 房地产开发</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上海建工</strong><br><span>600170</span></td>
+            <td>地产 / 建筑建材<em>已归并</em></td>
+            <td>建筑工程 / 基建 / 地产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>宁夏建材</strong><br><span>600449</span></td>
+            <td>地产 / 建筑建材<em>已归并</em></td>
+            <td>建材 / 水泥玻璃 / 地产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>空港股份</strong><br><span>600463</span></td>
+            <td>地产 / 建筑建材<em>已归并</em></td>
+            <td>园区 / 物业运营 / 地产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>安徽建工</strong><br><span>600502</span></td>
+            <td>地产 / 建筑建材<em>已归并</em></td>
+            <td>建筑工程 / 基建 / 地产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>汇通能源</strong><br><span>600605</span></td>
+            <td>金融与地产<em>已归并</em></td>
+            <td>房地产 / 房地产开发 / 证券 / 财富管理</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>苏州高新</strong><br><span>600736</span></td>
+            <td>金融与地产<em>已归并</em></td>
+            <td>房地产 / 房地产开发 / 光伏</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中泰证券</strong><br><span>600918</span></td>
+            <td>证券与财富管理<em>已归并</em></td>
+            <td>证券 / 经纪业务 / 财富管理</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东方证券</strong><br><span>600958</span></td>
+            <td>证券与财富管理<em>已归并</em></td>
+            <td>证券 / 投资银行 / 财富管理</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中信建投</strong><br><span>601066</span></td>
+            <td>证券与财富管理<em>已归并</em></td>
+            <td>证券 / 投资银行 / 财富管理</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上海银行</strong><br><span>601229</span></td>
+            <td>金融与地产<em>已归并</em></td>
+            <td>银行</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>农业银行</strong><br><span>601288</span></td>
+            <td>金融<em>已归并</em></td>
+            <td>保险 / 综合金融</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>新华保险</strong><br><span>601336</span></td>
+            <td>金融<em>已归并</em></td>
+            <td>保险 / 综合金融</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中原证券</strong><br><span>601375</span></td>
+            <td>证券与财富管理<em>已归并</em></td>
+            <td>证券 / 经纪业务 / 财富管理</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国太保</strong><br><span>601601</span></td>
+            <td>金融<em>已归并</em></td>
+            <td>保险 / 综合金融</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中银证券</strong><br><span>601696</span></td>
+            <td>证券与财富管理<em>已归并</em></td>
+            <td>证券 / 经纪业务 / 财富管理</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>宁波建工</strong><br><span>601789</span></td>
+            <td>地产 / 建筑建材<em>已归并</em></td>
+            <td>建筑工程 / 基建 / 地产</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国银河</strong><br><span>601881</span></td>
+            <td>证券与财富管理<em>已归并</em></td>
+            <td>证券 / 经纪业务 / 财富管理</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国银行</strong><br><span>601988</span></td>
+            <td>金融<em>已归并</em></td>
+            <td>银行</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中金公司</strong><br><span>601995</span></td>
+            <td>证券与投资银行<em>已归并</em></td>
+            <td>证券 / 投资银行 / 财富管理</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中信银行</strong><br><span>601998</span></td>
+            <td>金融与地产<em>已归并</em></td>
+            <td>银行</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="交运物流">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">11</span>
+        <span class="title">交运物流</span>
+        <span class="count">27 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>交运物流 <b>17</b></span><span>航空运输 <b>2</b></span><span>高速公路与交通运营 <b>1</b></span><span>物流运输服务 <b>1</b></span><span>港口物流 <b>1</b></span><span>高速公路运营 <b>1</b></span><span>能源航运 <b>1</b></span><span>特种船运输 <b>1</b></span><span>仓储物流 <b>1</b></span><span>综合物流 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>深圳机场</strong><br><span>000089</span></td>
+            <td>交运物流</td>
+            <td>机场</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>北部湾港</strong><br><span>000582</span></td>
+            <td>交运物流</td>
+            <td>港口</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东莞控股</strong><br><span>000828</span></td>
+            <td>高速公路与交通运营<em>已归并</em></td>
+            <td>高速公路 / 交通运营 / 区域交通服务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>厦门港务</strong><br><span>000905</span></td>
+            <td>交运物流</td>
+            <td>港口</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>三羊马</strong><br><span>001317</span></td>
+            <td>物流运输服务<em>已归并</em></td>
+            <td>汽车物流 / 多式联运 / 物流服务 / 物流运输</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>南京港</strong><br><span>002040</span></td>
+            <td>交运物流</td>
+            <td>港口</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>顺丰控股</strong><br><span>002352</span></td>
+            <td>交运物流</td>
+            <td>快递 / 物流</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>华夏航空</strong><br><span>002928</span></td>
+            <td>交运物流</td>
+            <td>航空</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上海机场</strong><br><span>600009</span></td>
+            <td>交运物流</td>
+            <td>机场</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上港集团</strong><br><span>600018</span></td>
+            <td>港口物流<em>已归并</em></td>
+            <td>港口运营 / 集装箱码头 / 物流服务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中原高速</strong><br><span>600020</span></td>
+            <td>高速公路运营<em>已归并</em></td>
+            <td>高速公路 / 交通运营 / 区域交通服务</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中远海能</strong><br><span>600026</span></td>
+            <td>能源航运<em>已归并</em></td>
+            <td>油轮运输 / LNG运输 / 航运服务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>南方航空</strong><br><span>600029</span></td>
+            <td>交运物流</td>
+            <td>航空</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国东航</strong><br><span>600115</span></td>
+            <td>航空运输<em>已归并</em></td>
+            <td>航空客运 / 民航运输 / 交通服务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>宁沪高速</strong><br><span>600377</span></td>
+            <td>交运物流</td>
+            <td>高速公路</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中远海特</strong><br><span>600428</span></td>
+            <td>特种船运输<em>已归并</em></td>
+            <td>航运服务 / 综合物流</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>深高速</strong><br><span>600548</span></td>
+            <td>交运物流</td>
+            <td>高速公路</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>天津港</strong><br><span>600717</span></td>
+            <td>交运物流</td>
+            <td>港口</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中储股份</strong><br><span>600787</span></td>
+            <td>仓储物流<em>已归并</em></td>
+            <td>供应链服务 / 物流园区</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>唐山港</strong><br><span>601000</span></td>
+            <td>交运物流</td>
+            <td>港口</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>宁波港</strong><br><span>601018</span></td>
+            <td>交运物流</td>
+            <td>港口</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>春秋航空</strong><br><span>601021</span></td>
+            <td>交运物流</td>
+            <td>航空</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国国航</strong><br><span>601111</span></td>
+            <td>航空运输<em>已归并</em></td>
+            <td>航空客运 / 民航运输 / 交通服务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>东航物流</strong><br><span>601156</span></td>
+            <td>交运物流</td>
+            <td>航空物流</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>广深铁路</strong><br><span>601333</span></td>
+            <td>交运物流</td>
+            <td>铁路</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国外运</strong><br><span>601598</span></td>
+            <td>综合物流<em>已归并</em></td>
+            <td>国际货代 / 供应链服务</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>吉祥航空</strong><br><span>603885</span></td>
+            <td>交运物流</td>
+            <td>航空</td>
+            <td>2026-03-31<br>改善</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="军工航空航天">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">12</span>
+        <span class="title">军工航空航天</span>
+        <span class="count">9 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>国防军工与航空航天 <b>7</b></span><span>军工材料与特种装备 <b>1</b></span><span>航空装备 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>中信海直</strong><br><span>000099</span></td>
+            <td>国防军工与航空航天<em>已归并</em></td>
+            <td>航空装备 / 航空发动机</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>中兵红箭</strong><br><span>000519</span></td>
+            <td>军工材料与特种装备<em>已归并</em></td>
+            <td>特种材料 / 超硬材料 / 军工装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中天火箭</strong><br><span>003009</span></td>
+            <td>国防军工与航空航天<em>已归并</em></td>
+            <td>航空装备 / 航空发动机 / 轨交/船舶/海工装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中航成飞</strong><br><span>302132</span></td>
+            <td>航空装备<em>已归并</em></td>
+            <td>军用航空 / 航空整机</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>旭光电子</strong><br><span>600353</span></td>
+            <td>国防军工与航空航天<em>已归并</em></td>
+            <td>军工电子 / 真空灭弧室/军工电子管 / 模拟/功率/MCU</td>
+            <td>2026-03-31<br>承压</td>
+          </tr><tr>
+            <td><strong>中航机载</strong><br><span>600372</span></td>
+            <td>国防军工与航空航天<em>已归并</em></td>
+            <td>航空装备 / 航空发动机 / 轨交/船舶/海工装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中国动力</strong><br><span>600482</span></td>
+            <td>国防军工与航空航天<em>已归并</em></td>
+            <td>航空装备 / 航空发动机 / 轨交/船舶/海工装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中船防务</strong><br><span>600685</span></td>
+            <td>国防军工与航空航天<em>已归并</em></td>
+            <td>航空装备 / 航空发动机 / 轨交/船舶/海工装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中航重机</strong><br><span>600765</span></td>
+            <td>国防军工与航空航天<em>已归并</em></td>
+            <td>航空装备 / 航空发动机 / 轨交/船舶/海工装备</td>
+            <td>2026-03-31<br>改善</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" data-mainline="环保与公用事业">
+      <button class="head" onclick="toggleCard(this)">
+        <span class="idx">13</span>
+        <span class="title">环保与公用事业</span>
+        <span class="count">13 家</span>
+      </button>
+      <div class="body">
+        <div class="origin"><span>环保 / 水务固废 <b>8</b></span><span>环保固废与垃圾焚烧 <b>1</b></span><span>水务环保与公用事业 <b>1</b></span><span>安防与系统集成 <b>1</b></span><span>工程咨询与检测 <b>1</b></span><span>环保水务 <b>1</b></span></div>
+        <table>
+          <thead><tr><th>公司</th><th>原主分类</th><th>归一化细分</th><th>财务信号</th></tr></thead>
+          <tbody><tr>
+            <td><strong>中国天楹</strong><br><span>000035</span></td>
+            <td>环保固废与垃圾焚烧<em>已归并</em></td>
+            <td>垃圾焚烧 / 固废处理 / 环保运营 / 环保固废</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中山公用</strong><br><span>000685</span></td>
+            <td>水务环保与公用事业<em>已归并</em></td>
+            <td>水务 / 污水处理 / 固废环保</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>城发环境</strong><br><span>000885</span></td>
+            <td>环保 / 水务固废<em>已归并</em></td>
+            <td>环保综合 / 环保</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>盈峰环境</strong><br><span>000967</span></td>
+            <td>环保 / 水务固废<em>已归并</em></td>
+            <td>环卫装备 / 环境服务 / 环保</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>旺能环境</strong><br><span>002034</span></td>
+            <td>环保 / 水务固废<em>已归并</em></td>
+            <td>固废 / 垃圾焚烧 / 环保</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>瀚蓝环境</strong><br><span>600323</span></td>
+            <td>环保 / 水务固废<em>已归并</em></td>
+            <td>水务 / 固废 / 环保</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>龙净环保</strong><br><span>600388</span></td>
+            <td>环保 / 水务固废<em>已归并</em></td>
+            <td>大气治理 / 环保</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中安科</strong><br><span>600654</span></td>
+            <td>安防与系统集成<em>已归并</em></td>
+            <td>安防服务 / 系统集成 / 城市安全</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>创业环保</strong><br><span>600874</span></td>
+            <td>环保 / 水务固废<em>已归并</em></td>
+            <td>水务 / 污水处理 / 环保</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上海环境</strong><br><span>601200</span></td>
+            <td>环保 / 水务固废<em>已归并</em></td>
+            <td>环保综合 / 环保</td>
+            <td>2026-03-31<br>基本稳定</td>
+          </tr><tr>
+            <td><strong>三峰环境</strong><br><span>601827</span></td>
+            <td>环保 / 水务固废<em>已归并</em></td>
+            <td>固废 / 垃圾焚烧 / 环保</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>上海建科</strong><br><span>603153</span></td>
+            <td>工程咨询与检测<em>已归并</em></td>
+            <td>工程咨询 / 检测认证 / 城市建设服务</td>
+            <td>2026-03-31<br>改善</td>
+          </tr><tr>
+            <td><strong>中持股份</strong><br><span>603903</span></td>
+            <td>环保水务<em>已归并</em></td>
+            <td>污水处理 / 环境治理 / 水务运营</td>
+            <td>2026-03-31<br>改善</td>
+          </tr></tbody>
+        </table>
+      </div>
+    </section></div>
+</main>
+<script>
+function toggleCard(btn){btn.closest('.card').classList.toggle('open')}
+function expandAll(){document.querySelectorAll('.card').forEach(x=>x.classList.add('open'))}
+function collapseAll(){document.querySelectorAll('.card').forEach(x=>x.classList.remove('open'))}
+function filterCards(){const q=document.getElementById('q').value.trim().toLowerCase();document.querySelectorAll('.card').forEach(card=>{const show=!q||card.textContent.toLowerCase().includes(q);card.style.display=show?'':'none';if(q&&show)card.classList.add('open')})}
+document.querySelector('.card')?.classList.add('open');
+</script>
+</body>
+</html>

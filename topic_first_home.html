@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A股全景树 - 专题研究版</title>
+<style>
+:root{color-scheme:dark;--bg:#061117;--panel:#0d2028;--panel2:#132b35;--line:rgba(255,255,255,.12);--text:#edf7f7;--muted:#9cb3b8;--gold:#d8b15f;--cyan:#64d9eb;--green:#76d49a;--blue:#7bb7ff;--violet:#b9a2ff;--red:#ff8c87;--orange:#f4a261;--teal:#57c7b6}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 18% -8%,#1a3943 0,#08151b 38%,#05090d 100%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1280px,calc(100vw - 32px));margin:0 auto}.nav{position:sticky;top:0;z-index:5;background:rgba(6,17,23,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}.nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:800;font-size:18px;letter-spacing:.02em}.nav-links{display:flex;gap:10px;flex-wrap:wrap}.nav-links a{border:1px solid var(--line);background:rgba(255,255,255,.06);border-radius:8px;padding:8px 10px;color:#dbe9ec;font-size:13px}.hero{padding:34px 0 18px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(310px,.9fr);gap:24px;align-items:end}.eyebrow{color:var(--gold);font-size:13px;letter-spacing:.08em}.hero h1{margin:10px 0 14px;font-size:clamp(34px,5vw,66px);line-height:1.02;letter-spacing:0}.hero p{max-width:780px;color:var(--muted);font-size:17px;line-height:1.8}.risk{border:1px solid rgba(216,177,95,.26);background:rgba(216,177,95,.08);border-radius:8px;padding:13px 14px;color:#f2e7ce;line-height:1.7}.hero-panel{border:1px solid var(--line);border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.045));padding:18px}.hero-panel h2{margin:0 0 14px;font-size:16px}.metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.metric{border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:13px;background:rgba(255,255,255,.045)}.metric b{display:block;font-size:26px}.metric span{color:var(--muted);font-size:13px}.section{padding:22px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:0 0 14px}.section-head h2{margin:0;font-size:26px}.section-head p{margin:6px 0 0;color:var(--muted);line-height:1.7}.topic-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.topic-card{position:relative;min-height:238px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));padding:16px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}.topic-card:before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),transparent)}.topic-card.optional{opacity:.82}.topic-card .seq{font:700 13px/1 Consolas,monospace;color:var(--gold)}.topic-card strong{display:block;margin:14px 0 10px;font-size:20px;line-height:1.25}.topic-card p{margin:0;color:#b9cbd0;line-height:1.68;font-size:14px}.topic-card small{display:block;margin-top:12px;color:#789099;font-size:12px}.topic-card em{align-self:flex-start;margin-top:14px;border:1px solid currentColor;border-radius:999px;padding:5px 9px;font-style:normal;font-size:12px}.cyan{color:var(--cyan)}.green{color:var(--green)}.gold{color:var(--gold)}.blue{color:var(--blue)}.violet{color:var(--violet)}.red{color:var(--red)}.orange{color:var(--orange)}.teal{color:var(--teal)}.concept-band{margin-top:8px;border-top:1px solid rgba(255,255,255,.08);padding-top:22px}.concept-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.concept-card{border:1px solid var(--line);border-radius:8px;padding:14px;background:rgba(255,255,255,.055);min-height:154px}.concept-card span{font:700 13px/1 Consolas,monospace;color:var(--gold)}.concept-card strong{display:block;margin:12px 0 8px;font-size:18px}.concept-card p{margin:0;color:var(--muted);line-height:1.58;font-size:13px}.concept-card em{display:inline-flex;margin-top:12px;color:#bceff4;font-style:normal;font-size:12px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 36px}.actions a{border:1px solid var(--line);border-radius:8px;padding:11px 13px;background:rgba(255,255,255,.075)}@media(max-width:1100px){.topic-grid,.concept-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}}@media(max-width:680px){.nav-inner{height:auto;padding:14px 0;align-items:flex-start;flex-direction:column}.topic-grid,.concept-grid{grid-template-columns:1fr}.hero h1{font-size:38px}.section-head{align-items:flex-start;flex-direction:column}.metric-grid{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner"><a class="brand" href="#">A股全景树</a><div class="nav-links"><a href="#topics">专题研究</a><a href="#concepts">概念导航</a><a href="core9_local_review.html">进入概念全景导航</a></div></div></nav>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">专题研究导航</div>
+      <h1>专题研究与概念全景导航</h1>
+      <p>首页先展示重点专题入口，方便读者直接进入产业链研究；下方保留概念全景导航，用于按主线、细分概念和公司资料继续查找。</p>
+      <div class="risk">风险提示：本站内容基于公开资料、历史数据与产业链资料整理，仅用于研究交流和信息索引，不构成投资建议、收益承诺、买卖依据或个股推荐。</div>
+    </div>
+    <aside class="hero-panel">
+      <h2>当前页面结构</h2>
+      <div class="metric-grid">
+        <div class="metric"><b>7</b><span>重点专题入口</span></div>
+        <div class="metric"><b>1</b><span>预留扩展专题</span></div>
+        <div class="metric"><b>8</b><span>概念主线导航</span></div>
+        <div class="metric"><b>1600+</b><span>公司资料入口</span></div>
+      </div>
+    </aside>
+  </section>
+  <section class="section" id="topics">
+    <div class="section-head">
+      <div><h2>专题研究专区</h2><p>适合先看产业专题，再进入公司与概念资料。</p></div>
+      <span class="eyebrow">7个重点专题 + 1个预留专题</span>
+    </div>
+    <div class="topic-grid">
+  <a class="topic-card " href="topics/cpo/index.html">
+    <span class="seq">01</span>
+    <div>
+      <strong>CPO</strong>
+      <p>光源、硅光PIC、无源耦合、封装基板、测试验证与公司资料池。</p>
+      <small>数据截至 2026-06-26</small>
+    </div>
+    <em class="cyan">已接入</em>
+  </a>
+  <a class="topic-card " href="topics/pcb/index.html">
+    <span class="seq">02</span>
+    <div>
+      <strong>PCB</strong>
+      <p>服务器PCB、铜箔、树脂、玻纤布、覆铜板和AI算力链配套。</p>
+      <small>高速PCB / HDI / 覆铜板</small>
+    </div>
+    <em class="green">研究框架</em>
+  </a>
+  <a class="topic-card " href="topics/semiconductor-equipment/index.html">
+    <span class="seq">03</span>
+    <div>
+      <strong>半导体设备</strong>
+      <p>设备环节按工艺流程拆分，后续补充公司资料与公开披露信息。</p>
+      <small>刻蚀 / 薄膜 / 清洗 / 量测</small>
+    </div>
+    <em class="gold">资料整理中</em>
+  </a>
+  <a class="topic-card " href="topics/semiconductor-materials/index.html">
+    <span class="seq">04</span>
+    <div>
+      <strong>半导体材料</strong>
+      <p>材料环节按晶圆制造和封装材料两条线整理。</p>
+      <small>硅片 / 特气 / 光刻胶 / 靶材</small>
+    </div>
+    <em class="blue">资料整理中</em>
+  </a>
+  <a class="topic-card " href="topics/mlcc-passive/index.html">
+    <span class="seq">05</span>
+    <div>
+      <strong>MLCC / 被动元件</strong>
+      <p>被动元件、电子铝箔、载带、陶瓷粉体和上游材料。</p>
+      <small>MLCC / 电容 / 电感 / 铝箔</small>
+    </div>
+    <em class="violet">研究框架</em>
+  </a>
+  <a class="topic-card " href="topics/advanced-packaging-chiplet/index.html">
+    <span class="seq">06</span>
+    <div>
+      <strong>先进封装 / Chiplet</strong>
+      <p>封装基板、RDL、TSV、封测设备与材料、Chiplet产业链。</p>
+      <small>2.5D / 3D / TSV / HBM配套</small>
+    </div>
+    <em class="red">资料整理中</em>
+  </a>
+  <a class="topic-card " href="topics/ai-server-infrastructure/index.html">
+    <span class="seq">07</span>
+    <div>
+      <strong>AI服务器 / 液冷 / 电源 / 连接器</strong>
+      <p>AI服务器链、液冷散热、电源、连接器、高速线缆和机柜配套。</p>
+      <small>服务器 / 散热 / 电源 / 高速连接</small>
+    </div>
+    <em class="orange">资料整理中</em>
+  </a>
+  <a class="topic-card optional" href="topics/power-grid/index.html">
+    <span class="seq">08</span>
+    <div>
+      <strong>电网 / 特高压</strong>
+      <p>作为后续扩展专题保留，当前已有框架页可查看。</p>
+      <small>电网设备 / 特高压 / 电力运营</small>
+    </div>
+    <em class="teal">预留入口</em>
+  </a></div>
+  </section>
+  <section class="section concept-band" id="concepts">
+    <div class="section-head">
+      <div><h2>概念全景导航</h2><p>保留原来的主干概念入口，适合按概念层级继续找公司。</p></div>
+      <span class="eyebrow">概念全景</span>
+    </div>
+    <div class="concept-grid">
+  <a class="concept-card" href="core9_local_review.html">
+    <span>01</span>
+    <strong>AI算力</strong>
+    <p>AI芯片、服务器、电源、液冷等方向</p>
+    <em>10家公司</em>
+  </a>
+  <a class="concept-card" href="core9_local_review.html">
+    <span>02</span>
+    <strong>光模块 / CPO</strong>
+    <p>高速光模块、CPO、硅光、光引擎</p>
+    <em>5家公司</em>
+  </a>
+  <a class="concept-card" href="core9_local_review.html">
+    <span>03</span>
+    <strong>PCB / 高速PCB</strong>
+    <p>服务器PCB、覆铜板、铜箔、树脂</p>
+    <em>21家公司</em>
+  </a>
+  <a class="concept-card" href="core9_local_review.html">
+    <span>04</span>
+    <strong>半导体</strong>
+    <p>设备、材料、封测、存储与功率器件</p>
+    <em>45家公司</em>
+  </a>
+  <a class="concept-card" href="core9_local_review.html">
+    <span>05</span>
+    <strong>电子元器件 / 被动元件</strong>
+    <p>MLCC、电容、电感、电子铝箔</p>
+    <em>7家公司</em>
+  </a>
+  <a class="concept-card" href="core9_local_review.html">
+    <span>06</span>
+    <strong>光通信基础设施</strong>
+    <p>光纤光缆、通信设备、光通信配套</p>
+    <em>48家公司</em>
+  </a>
+  <a class="concept-card" href="core9_local_review.html">
+    <span>07</span>
+    <strong>动力电池 / 储能</strong>
+    <p>电池、储能系统、材料与设备</p>
+    <em>63家公司</em>
+  </a>
+  <a class="concept-card" href="core9_local_review.html">
+    <span>08</span>
+    <strong>电网设备 / 特高压</strong>
+    <p>变压器、线缆、电网自动化、电力运营</p>
+    <em>75家公司</em>
+  </a></div>
+    <div class="actions">
+      <a href="core9_local_review.html">打开概念全景导航</a>
+      <a href="index.html">打开当前正式首页候选</a>
+    </div>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,473 @@
+{
+  "summary": {
+    "generated_at": "2026-06-29 22:21:10",
+    "inbox_dir": "E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_intake_inbox",
+    "total_candidates": 10,
+    "local_preview_ready": 10,
+    "public_release_ready": 0,
+    "blocked": 0,
+    "warning_only": 10,
+    "risk_manifest_rows": 10,
+    "has_release_decision": true
+  },
+  "rows": [
+    {
+      "code": "000791",
+      "name": "甘肃能源",
+      "formal_v2_path": "reports_v2_formal_public_preview_local/000791_甘肃能源_研究报告预览.html",
+      "source_formal_v2_path": "E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\000791_甘肃能源_正式V2候选.html",
+      "local_preview_path": "reports_v2_formal_candidates_local/000791_甘肃能源_正式V2候选.html",
+      "public_preview_path": "reports_v2_formal_public_preview_local/000791_甘肃能源_研究报告预览.html",
+      "risk_layer": "low_risk_ready",
+      "public_release_allowed_now": false,
+      "can_enter_sampling_release_candidate": true,
+      "financial_complete": true,
+      "classification_evidence_status": "master_and_legacy_consistent",
+      "relationship_claim_status": "no_named_relationship_claims",
+      "strong_claim_status": "neutralized",
+      "trading_wording_status": "cleared",
+      "field_completeness_status": "complete_for_sampling_review",
+      "evidence_summary": "财务字段完整、分类证据有状态、关系事实已收敛、强表述和交易化表述已清除",
+      "report_period": "2026-03-31",
+      "net_profit": 7.679770931599999,
+      "net_profit_yoy": 9.2418,
+      "improvement_status": "改善",
+      "financial_source": "BaoStock query_profit_data/query_growth_data，2026Q1；同比优先取 query_growth_data.YOYNI，缺失时用 2025Q1 净利润计算",
+      "primary_industry": "电力与公用事业",
+      "concept_tags": [
+        "电力与公用事业",
+        "综合电力"
+      ],
+      "required_actions": [
+        "进入抽样放行候选；抽样通过后再由主对话评估是否接入正式路径"
+      ],
+      "legacy_report_path": "reports/甘肃能源.html",
+      "validation": {
+        "can_local_preview": true,
+        "can_public_release": false,
+        "blockers": [],
+        "warnings": [
+          "public_release_allowed_now 不是 true，仅允许本地抽样预览",
+          "formal_v2_path 仍像草稿或本地路径，不可公开发布"
+        ],
+        "resolved_formal_path": "C:\\Users\\LYDN\\a-stock-panorama\\reports_v2_formal_public_preview_local\\000791_甘肃能源_研究报告预览.html",
+        "formal_file_exists": true
+      }
+    },
+    {
+      "code": "600166",
+      "name": "福田汽车",
+      "formal_v2_path": "reports_v2_formal_public_preview_local/600166_福田汽车_研究报告预览.html",
+      "source_formal_v2_path": "E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\600166_福田汽车_正式V2候选.html",
+      "local_preview_path": "reports_v2_formal_candidates_local/600166_福田汽车_正式V2候选.html",
+      "public_preview_path": "reports_v2_formal_public_preview_local/600166_福田汽车_研究报告预览.html",
+      "risk_layer": "low_risk_ready",
+      "public_release_allowed_now": false,
+      "can_enter_sampling_release_candidate": true,
+      "financial_complete": true,
+      "classification_evidence_status": "master_and_legacy_consistent",
+      "relationship_claim_status": "no_named_relationship_claims",
+      "strong_claim_status": "neutralized",
+      "trading_wording_status": "cleared",
+      "field_completeness_status": "complete_for_sampling_review",
+      "evidence_summary": "财务字段完整、分类证据有状态、关系事实已收敛、强表述和交易化表述已清除",
+      "report_period": "2026-03-31",
+      "net_profit": 4.7934380727,
+      "net_profit_yoy": 17.093,
+      "improvement_status": "改善",
+      "financial_source": "BaoStock query_profit_data/query_growth_data，2026Q1；同比优先取 query_growth_data.YOYNI，缺失时用 2025Q1 净利润计算",
+      "primary_industry": "新能源汽车",
+      "concept_tags": [
+        "新能源汽车",
+        "整车 / 商用车"
+      ],
+      "required_actions": [
+        "进入抽样放行候选；抽样通过后再由主对话评估是否接入正式路径"
+      ],
+      "legacy_report_path": "reports/福田汽车.html",
+      "validation": {
+        "can_local_preview": true,
+        "can_public_release": false,
+        "blockers": [],
+        "warnings": [
+          "public_release_allowed_now 不是 true，仅允许本地抽样预览",
+          "formal_v2_path 仍像草稿或本地路径，不可公开发布"
+        ],
+        "resolved_formal_path": "C:\\Users\\LYDN\\a-stock-panorama\\reports_v2_formal_public_preview_local\\600166_福田汽车_研究报告预览.html",
+        "formal_file_exists": true
+      }
+    },
+    {
+      "code": "600388",
+      "name": "龙净环保",
+      "formal_v2_path": "reports_v2_formal_public_preview_local/600388_龙净环保_研究报告预览.html",
+      "source_formal_v2_path": "E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\600388_龙净环保_正式V2候选.html",
+      "local_preview_path": "reports_v2_formal_candidates_local/600388_龙净环保_正式V2候选.html",
+      "public_preview_path": "reports_v2_formal_public_preview_local/600388_龙净环保_研究报告预览.html",
+      "risk_layer": "low_risk_ready",
+      "public_release_allowed_now": false,
+      "can_enter_sampling_release_candidate": true,
+      "financial_complete": true,
+      "classification_evidence_status": "master_and_legacy_consistent",
+      "relationship_claim_status": "no_named_relationship_claims",
+      "strong_claim_status": "neutralized",
+      "trading_wording_status": "cleared",
+      "field_completeness_status": "complete_for_sampling_review",
+      "evidence_summary": "财务字段完整、分类证据有状态、关系事实已收敛、强表述和交易化表述已清除",
+      "report_period": "2026-03-31",
+      "net_profit": 2.4511300986,
+      "net_profit_yoy": 32.8403,
+      "improvement_status": "改善",
+      "financial_source": "BaoStock query_profit_data/query_growth_data，2026Q1；同比优先取 query_growth_data.YOYNI，缺失时用 2025Q1 净利润计算",
+      "primary_industry": "环保 / 水务固废",
+      "concept_tags": [
+        "环保",
+        "大气治理"
+      ],
+      "required_actions": [
+        "进入抽样放行候选；抽样通过后再由主对话评估是否接入正式路径"
+      ],
+      "legacy_report_path": "reports/龙净环保.html",
+      "validation": {
+        "can_local_preview": true,
+        "can_public_release": false,
+        "blockers": [],
+        "warnings": [
+          "public_release_allowed_now 不是 true，仅允许本地抽样预览",
+          "formal_v2_path 仍像草稿或本地路径，不可公开发布"
+        ],
+        "resolved_formal_path": "C:\\Users\\LYDN\\a-stock-panorama\\reports_v2_formal_public_preview_local\\600388_龙净环保_研究报告预览.html",
+        "formal_file_exists": true
+      }
+    },
+    {
+      "code": "605020",
+      "name": "永和股份",
+      "formal_v2_path": "reports_v2_formal_public_preview_local/605020_永和股份_研究报告预览.html",
+      "source_formal_v2_path": "E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\605020_永和股份_正式V2候选.html",
+      "local_preview_path": "reports_v2_formal_candidates_local/605020_永和股份_正式V2候选.html",
+      "public_preview_path": "reports_v2_formal_public_preview_local/605020_永和股份_研究报告预览.html",
+      "risk_layer": "medium_review",
+      "public_release_allowed_now": false,
+      "can_enter_sampling_release_candidate": true,
+      "financial_complete": true,
+      "classification_evidence_status": "structured_but_needs_source_check",
+      "relationship_claim_status": "no_named_relationship_claims",
+      "strong_claim_status": "neutralized",
+      "trading_wording_status": "cleared",
+      "field_completeness_status": "complete_for_sampling_review",
+      "evidence_summary": "分类证据仍需核验",
+      "report_period": "2026-03-31",
+      "net_profit": 1.8089431077,
+      "net_profit_yoy": 84.7667,
+      "improvement_status": "改善",
+      "financial_source": "BaoStock query_profit_data/query_growth_data，2026Q1；同比优先取 query_growth_data.YOYNI，缺失时用 2025Q1 净利润计算",
+      "primary_industry": "旧报告临时接入",
+      "concept_tags": [
+        "💎 有色金属与新材料",
+        "特种化工新材料",
+        "有机硅/氟化工",
+        "新材料化工"
+      ],
+      "required_actions": [
+        "补主营业务与分类标签证据"
+      ],
+      "legacy_report_path": "reports/永和股份.html",
+      "validation": {
+        "can_local_preview": true,
+        "can_public_release": false,
+        "blockers": [],
+        "warnings": [
+          "public_release_allowed_now 不是 true，仅允许本地抽样预览",
+          "风险层不是 low_risk_ready",
+          "分类证据仍需来源复核",
+          "formal_v2_path 仍像草稿或本地路径，不可公开发布"
+        ],
+        "resolved_formal_path": "C:\\Users\\LYDN\\a-stock-panorama\\reports_v2_formal_public_preview_local\\605020_永和股份_研究报告预览.html",
+        "formal_file_exists": true
+      }
+    },
+    {
+      "code": "601233",
+      "name": "桐昆股份",
+      "formal_v2_path": "reports_v2_formal_public_preview_local/601233_桐昆股份_研究报告预览.html",
+      "source_formal_v2_path": "E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\601233_桐昆股份_正式V2候选.html",
+      "local_preview_path": "reports_v2_formal_candidates_local/601233_桐昆股份_正式V2候选.html",
+      "public_preview_path": "reports_v2_formal_public_preview_local/601233_桐昆股份_研究报告预览.html",
+      "risk_layer": "medium_review",
+      "public_release_allowed_now": false,
+      "can_enter_sampling_release_candidate": true,
+      "financial_complete": true,
+      "classification_evidence_status": "structured_but_needs_source_check",
+      "relationship_claim_status": "no_named_relationship_claims",
+      "strong_claim_status": "neutralized",
+      "trading_wording_status": "cleared",
+      "field_completeness_status": "complete_for_sampling_review",
+      "evidence_summary": "分类证据仍需核验",
+      "report_period": "2026-03-31",
+      "net_profit": 19.044304228399998,
+      "net_profit_yoy": 210.67559999999997,
+      "improvement_status": "改善",
+      "financial_source": "BaoStock query_profit_data/query_growth_data，2026Q1；同比优先取 query_growth_data.YOYNI，缺失时用 2025Q1 净利润计算",
+      "primary_industry": "旧报告临时接入",
+      "concept_tags": [
+        "💎 有色金属与新材料",
+        "特种化工新材料",
+        "高分子材料",
+        "新材料化工"
+      ],
+      "required_actions": [
+        "补主营业务与分类标签证据"
+      ],
+      "legacy_report_path": "reports/桐昆股份.html",
+      "validation": {
+        "can_local_preview": true,
+        "can_public_release": false,
+        "blockers": [],
+        "warnings": [
+          "public_release_allowed_now 不是 true，仅允许本地抽样预览",
+          "风险层不是 low_risk_ready",
+          "分类证据仍需来源复核",
+          "formal_v2_path 仍像草稿或本地路径，不可公开发布"
+        ],
+        "resolved_formal_path": "C:\\Users\\LYDN\\a-stock-panorama\\reports_v2_formal_public_preview_local\\601233_桐昆股份_研究报告预览.html",
+        "formal_file_exists": true
+      }
+    },
+    {
+      "code": "002064",
+      "name": "华峰化学",
+      "formal_v2_path": "reports_v2_formal_public_preview_local/002064_华峰化学_研究报告预览.html",
+      "source_formal_v2_path": "E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\002064_华峰化学_正式V2候选.html",
+      "local_preview_path": "reports_v2_formal_candidates_local/002064_华峰化学_正式V2候选.html",
+      "public_preview_path": "reports_v2_formal_public_preview_local/002064_华峰化学_研究报告预览.html",
+      "risk_layer": "medium_review",
+      "public_release_allowed_now": false,
+      "can_enter_sampling_release_candidate": true,
+      "financial_complete": true,
+      "classification_evidence_status": "structured_but_needs_source_check",
+      "relationship_claim_status": "no_named_relationship_claims",
+      "strong_claim_status": "neutralized",
+      "trading_wording_status": "cleared",
+      "field_completeness_status": "complete_for_sampling_review",
+      "evidence_summary": "分类证据仍需核验",
+      "report_period": "2026-03-31",
+      "net_profit": 6.69451005,
+      "net_profit_yoy": 32.321600000000004,
+      "improvement_status": "改善",
+      "financial_source": "BaoStock query_profit_data/query_growth_data，2026Q1；同比优先取 query_growth_data.YOYNI，缺失时用 2025Q1 净利润计算",
+      "primary_industry": "旧报告临时接入",
+      "concept_tags": [
+        "💎 有色金属与新材料",
+        "特种化工新材料",
+        "高分子材料",
+        "新材料化工"
+      ],
+      "required_actions": [
+        "补主营业务与分类标签证据"
+      ],
+      "legacy_report_path": "reports/华峰化学.html",
+      "validation": {
+        "can_local_preview": true,
+        "can_public_release": false,
+        "blockers": [],
+        "warnings": [
+          "public_release_allowed_now 不是 true，仅允许本地抽样预览",
+          "风险层不是 low_risk_ready",
+          "分类证据仍需来源复核",
+          "formal_v2_path 仍像草稿或本地路径，不可公开发布"
+        ],
+        "resolved_formal_path": "C:\\Users\\LYDN\\a-stock-panorama\\reports_v2_formal_public_preview_local\\002064_华峰化学_研究报告预览.html",
+        "formal_file_exists": true
+      }
+    },
+    {
+      "code": "000423",
+      "name": "东阿阿胶",
+      "formal_v2_path": "reports_v2_formal_public_preview_local/000423_东阿阿胶_研究报告预览.html",
+      "source_formal_v2_path": "E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\000423_东阿阿胶_正式V2候选.html",
+      "local_preview_path": "reports_v2_formal_candidates_local/000423_东阿阿胶_正式V2候选.html",
+      "public_preview_path": "reports_v2_formal_public_preview_local/000423_东阿阿胶_研究报告预览.html",
+      "risk_layer": "medium_review",
+      "public_release_allowed_now": false,
+      "can_enter_sampling_release_candidate": true,
+      "financial_complete": true,
+      "classification_evidence_status": "structured_but_needs_source_check",
+      "relationship_claim_status": "no_named_relationship_claims",
+      "strong_claim_status": "neutralized",
+      "trading_wording_status": "cleared",
+      "field_completeness_status": "complete_for_sampling_review",
+      "evidence_summary": "分类证据仍需核验",
+      "report_period": "2026-03-31",
+      "net_profit": 4.5477359684,
+      "net_profit_yoy": 7.1182,
+      "improvement_status": "改善",
+      "financial_source": "BaoStock query_profit_data/query_growth_data，2026Q1；同比优先取 query_growth_data.YOYNI，缺失时用 2025Q1 净利润计算",
+      "primary_industry": "旧报告临时接入",
+      "concept_tags": [
+        "💊 医药健康",
+        "CXO/生命科学",
+        "CDMO/原料药",
+        "CXO/CRO/CDMO"
+      ],
+      "required_actions": [
+        "补主营业务与分类标签证据"
+      ],
+      "legacy_report_path": "reports/东阿阿胶.html",
+      "validation": {
+        "can_local_preview": true,
+        "can_public_release": false,
+        "blockers": [],
+        "warnings": [
+          "public_release_allowed_now 不是 true，仅允许本地抽样预览",
+          "风险层不是 low_risk_ready",
+          "分类证据仍需来源复核",
+          "formal_v2_path 仍像草稿或本地路径，不可公开发布"
+        ],
+        "resolved_formal_path": "C:\\Users\\LYDN\\a-stock-panorama\\reports_v2_formal_public_preview_local\\000423_东阿阿胶_研究报告预览.html",
+        "formal_file_exists": true
+      }
+    },
+    {
+      "code": "002020",
+      "name": "京新药业",
+      "formal_v2_path": "reports_v2_formal_public_preview_local/002020_京新药业_研究报告预览.html",
+      "source_formal_v2_path": "E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\002020_京新药业_正式V2候选.html",
+      "local_preview_path": "reports_v2_formal_candidates_local/002020_京新药业_正式V2候选.html",
+      "public_preview_path": "reports_v2_formal_public_preview_local/002020_京新药业_研究报告预览.html",
+      "risk_layer": "medium_review",
+      "public_release_allowed_now": false,
+      "can_enter_sampling_release_candidate": true,
+      "financial_complete": true,
+      "classification_evidence_status": "structured_but_needs_source_check",
+      "relationship_claim_status": "no_named_relationship_claims",
+      "strong_claim_status": "neutralized",
+      "trading_wording_status": "cleared",
+      "field_completeness_status": "complete_for_sampling_review",
+      "evidence_summary": "分类证据仍需核验",
+      "report_period": "2026-03-31",
+      "net_profit": 1.6615023550999999,
+      "net_profit_yoy": 0.46490000000000004,
+      "improvement_status": "基本稳定",
+      "financial_source": "BaoStock query_profit_data/query_growth_data，2026Q1；同比优先取 query_growth_data.YOYNI，缺失时用 2025Q1 净利润计算",
+      "primary_industry": "旧报告临时接入",
+      "concept_tags": [
+        "💊 医药健康",
+        "CXO/生命科学",
+        "CDMO/原料药",
+        "CXO/CRO/CDMO"
+      ],
+      "required_actions": [
+        "补主营业务与分类标签证据"
+      ],
+      "legacy_report_path": "reports/京新药业.html",
+      "validation": {
+        "can_local_preview": true,
+        "can_public_release": false,
+        "blockers": [],
+        "warnings": [
+          "public_release_allowed_now 不是 true，仅允许本地抽样预览",
+          "风险层不是 low_risk_ready",
+          "分类证据仍需来源复核",
+          "formal_v2_path 仍像草稿或本地路径，不可公开发布"
+        ],
+        "resolved_formal_path": "C:\\Users\\LYDN\\a-stock-panorama\\reports_v2_formal_public_preview_local\\002020_京新药业_研究报告预览.html",
+        "formal_file_exists": true
+      }
+    },
+    {
+      "code": "002404",
+      "name": "嘉欣丝绸",
+      "formal_v2_path": "reports_v2_formal_public_preview_local/002404_嘉欣丝绸_研究报告预览.html",
+      "source_formal_v2_path": "E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\002404_嘉欣丝绸_正式V2候选.html",
+      "local_preview_path": "reports_v2_formal_candidates_local/002404_嘉欣丝绸_正式V2候选.html",
+      "public_preview_path": "reports_v2_formal_public_preview_local/002404_嘉欣丝绸_研究报告预览.html",
+      "risk_layer": "medium_review",
+      "public_release_allowed_now": false,
+      "can_enter_sampling_release_candidate": true,
+      "financial_complete": true,
+      "classification_evidence_status": "structured_but_needs_source_check",
+      "relationship_claim_status": "no_named_relationship_claims",
+      "strong_claim_status": "neutralized",
+      "trading_wording_status": "cleared",
+      "field_completeness_status": "complete_for_sampling_review",
+      "evidence_summary": "分类证据仍需核验",
+      "report_period": "2026-03-31",
+      "net_profit": 0.5724717713,
+      "net_profit_yoy": 11.336300000000001,
+      "improvement_status": "改善",
+      "financial_source": "BaoStock query_profit_data/query_growth_data，2026Q1；同比优先取 query_growth_data.YOYNI，缺失时用 2025Q1 净利润计算",
+      "primary_industry": "旧报告临时接入",
+      "concept_tags": [
+        "🛒 消费与服务业",
+        "服装/纺织",
+        "丝绸/服装"
+      ],
+      "required_actions": [
+        "补主营业务与分类标签证据"
+      ],
+      "legacy_report_path": "reports/嘉欣丝绸.html",
+      "validation": {
+        "can_local_preview": true,
+        "can_public_release": false,
+        "blockers": [],
+        "warnings": [
+          "public_release_allowed_now 不是 true，仅允许本地抽样预览",
+          "风险层不是 low_risk_ready",
+          "分类证据仍需来源复核",
+          "formal_v2_path 仍像草稿或本地路径，不可公开发布"
+        ],
+        "resolved_formal_path": "C:\\Users\\LYDN\\a-stock-panorama\\reports_v2_formal_public_preview_local\\002404_嘉欣丝绸_研究报告预览.html",
+        "formal_file_exists": true
+      }
+    },
+    {
+      "code": "603387",
+      "name": "基蛋生物",
+      "formal_v2_path": "reports_v2_formal_public_preview_local/603387_基蛋生物_研究报告预览.html",
+      "source_formal_v2_path": "E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\603387_基蛋生物_正式V2候选.html",
+      "local_preview_path": "reports_v2_formal_candidates_local/603387_基蛋生物_正式V2候选.html",
+      "public_preview_path": "reports_v2_formal_public_preview_local/603387_基蛋生物_研究报告预览.html",
+      "risk_layer": "medium_review",
+      "public_release_allowed_now": false,
+      "can_enter_sampling_release_candidate": true,
+      "financial_complete": true,
+      "classification_evidence_status": "structured_but_needs_source_check",
+      "relationship_claim_status": "no_named_relationship_claims",
+      "strong_claim_status": "neutralized",
+      "trading_wording_status": "cleared",
+      "field_completeness_status": "complete_for_sampling_review",
+      "evidence_summary": "分类证据仍需核验",
+      "report_period": "2026-03-31",
+      "net_profit": 0.7324025885,
+      "net_profit_yoy": 17.5542,
+      "improvement_status": "改善",
+      "financial_source": "BaoStock query_profit_data/query_growth_data，2026Q1；同比优先取 query_growth_data.YOYNI，缺失时用 2025Q1 净利润计算",
+      "primary_industry": "旧报告临时接入",
+      "concept_tags": [
+        "💊 医药健康",
+        "CXO/生命科学",
+        "CDMO/原料药",
+        "CXO/CRO/CDMO"
+      ],
+      "required_actions": [
+        "补主营业务与分类标签证据"
+      ],
+      "legacy_report_path": "reports/基蛋生物.html",
+      "validation": {
+        "can_local_preview": true,
+        "can_public_release": false,
+        "blockers": [],
+        "warnings": [
+          "public_release_allowed_now 不是 true，仅允许本地抽样预览",
+          "风险层不是 low_risk_ready",
+          "分类证据仍需来源复核",
+          "formal_v2_path 仍像草稿或本地路径，不可公开发布"
+        ],
+        "resolved_formal_path": "C:\\Users\\LYDN\\a-stock-panorama\\reports_v2_formal_public_preview_local\\603387_基蛋生物_研究报告预览.html",
+        "formal_file_exists": true
+      }
+    }
+  ],
+  "decision_excerpt": "# 低风险正式 V2 样板返工放行决策\n\n生成时间：2026-06-29 22:12:15\n\n## 结果\n\n- 返工样板数：10\n- low_risk_ready：3\n- medium_review：7\n- high_manual_review：0\n- blocked_fix：0\n- 可进入抽样放行候选：10\n- 当前允许公开发布：0\n\n## 边界\n\n- 本轮输出是正式 V2 候选，不等于公开站正式发布。\n- 公开站仍按：正式 V2 > 旧版报告 > 暂未生成。\n- 禁止把 v2_batches 草稿路径接成公开报告链接。\n- 若主对话评估通过，应使用 formal_v2_path 对应候选另行纳入正式路径，而不是复用草稿路径。\n\n## 样板清单\n\n| 代码 | 公司 | 风险层 | 抽样候选 | 正式候选路径 |\n| --- | --- | --- | --- | --- |\n| 000791 | 甘肃能源 | low_risk_ready | 是 | E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\000791_甘肃能源_正式V2候选.html |\n| 600166 | 福田汽车 | low_risk_ready | 是 | E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\600166_福田汽车_正式V2候选.html |\n| 600388 | 龙净环保 | low_risk_ready | 是 | E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\600388_龙净环保_正式V2候选.html |\n| 605020 | 永和股份 | medium_review | 是 | E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\605020_永和股份_正式V2候选.html |\n| 601233 | 桐昆股份 | medium_review | 是 | E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\601233_桐昆股份_正式V2候选.html |\n| 002064 | 华峰化学 | medium_review | 是 | E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\002064_华峰化学_正式V2候选.html |\n| 000423 | 东阿阿胶 | medium_review | 是 | E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\000423_东阿阿胶_正式V2候选.html |\n| 002020 | 京新药业 | medium_review | 是 | E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\002020_京新药业_正式V2候选.html |\n| 002404 | 嘉欣丝绸 | medium_review | 是 | E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\002404_嘉欣丝绸_正式V2候选.html |\n| 603387 | 基蛋生物 | medium_review | 是 | E:\\CODEX  zhuanyi\\网站规划工作区\\company_master_1609\\formal_v2_rework_samples_10\\formal_v2_candidates\\603387_基蛋生物_正式V2候选.html |\n"
+}

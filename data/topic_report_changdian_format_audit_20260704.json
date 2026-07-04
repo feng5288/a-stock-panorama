@@ -1,0 +1,5622 @@
+{
+  "checkedAt": "2026-07-04T05:36:24.338Z",
+  "changdianTemplate": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600584.html",
+  "totalTopicReports": 210,
+  "byStatus": {
+    "changdian_like": 210
+  },
+  "byIssue": {},
+  "rows": [
+    {
+      "code": "002463",
+      "name": "沪电股份",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "AI服务器高多层板",
+        "高速交换机背板",
+        "高速高频覆铜板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002463.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22437,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600183",
+      "name": "生益科技",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "高速高频覆铜板",
+        "高速交换机背板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600183.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22416,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002916",
+      "name": "深南电路",
+      "topics": [
+        "PCB",
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "AI服务器高多层板",
+        "ABF/BT封装基板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002916.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22393,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "300476",
+      "name": "胜宏科技",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "AI服务器高多层板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300476.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13911,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "603228",
+      "name": "景旺电子",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "AI服务器高多层板",
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603228.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14014,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "002436",
+      "name": "兴森科技",
+      "topics": [
+        "PCB",
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "IC载板材料",
+        "ABF/BT封装基板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002436.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14039,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688519",
+      "name": "南亚新材",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "高速高频覆铜板",
+        "高速交换机背板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688519.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14020,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "002384",
+      "name": "东山精密",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "AI服务器高多层板",
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002384.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22404,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603186",
+      "name": "华正新材",
+      "topics": [
+        "PCB",
+        "半导体材料"
+      ],
+      "nodes": [
+        "高速高频覆铜板",
+        "高速交换机背板",
+        "封装材料"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603186.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22448,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002938",
+      "name": "鹏鼎控股",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "AI服务器高多层板",
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002938.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14014,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688630",
+      "name": "芯碁微装",
+      "topics": [
+        "PCB",
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "PCB设备",
+        "RDL/TSV/中介层",
+        "先进封装设备"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688630.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14117,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300936",
+      "name": "中英科技",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "高速高频覆铜板",
+        "高速交换机背板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300936.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14020,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "002913",
+      "name": "奥士康",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "AI服务器高多层板",
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002913.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14002,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "301200",
+      "name": "大族数控",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "PCB设备",
+        "检测与可靠性"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\301200.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13948,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "600601",
+      "name": "方正科技",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "AI服务器高多层板",
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600601.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22609,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002815",
+      "name": "崇达技术",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "HVLP/VLP铜箔"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002815.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13866,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "002741",
+      "name": "光华科技",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "电子化学品"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002741.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22593,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603920",
+      "name": "世运电路",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "AI服务器高多层板",
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603920.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14014,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "603936",
+      "name": "博敏电子",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "AI服务器高多层板",
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603936.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14014,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "002579",
+      "name": "中京电子",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002579.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13881,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "603328",
+      "name": "依顿电子",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "高速高频覆铜板",
+        "高速交换机背板",
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603328.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22368,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "300852",
+      "name": "四会富仕",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300852.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13881,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "002636",
+      "name": "金安国纪",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "高速高频覆铜板",
+        "通用覆铜板",
+        "高速交换机背板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002636.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22435,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "301282",
+      "name": "金禄电子",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\301282.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13881,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "301132",
+      "name": "满坤科技",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\301132.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13881,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300903",
+      "name": "科翔股份",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300903.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13881,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "000823",
+      "name": "超声电子",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "高速高频覆铜板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000823.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13901,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300739",
+      "name": "明阳电路",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "HVLP/VLP铜箔"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300739.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13866,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300657",
+      "name": "弘信电子",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300657.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13881,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300814",
+      "name": "中富电路",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "PCB设备"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300814.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13841,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688655",
+      "name": "迅捷兴",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "HVLP/VLP铜箔"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688655.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13854,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300576",
+      "name": "容大感光",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "电子化学品",
+        "HDI/FPC/汽车板"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300576.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22481,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603386",
+      "name": "骏亚科技",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "HVLP/VLP铜箔"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603386.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13866,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300537",
+      "name": "广信材料",
+      "topics": [
+        "PCB"
+      ],
+      "nodes": [
+        "电子化学品"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300537.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13871,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "002371",
+      "name": "北方华创",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "薄膜沉积设备",
+        "热处理与湿法",
+        "刻蚀设备",
+        "清洗设备"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002371.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22323,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "688012",
+      "name": "中微公司",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "薄膜沉积设备",
+        "刻蚀设备"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688012.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13989,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688072",
+      "name": "拓荆科技",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "薄膜沉积设备"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688072.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13906,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688037",
+      "name": "芯源微",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "涂胶显影与光刻配套",
+        "先进封装设备",
+        "清洗设备"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688037.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14129,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688082",
+      "name": "盛美上海",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "先进封装设备",
+        "清洗设备",
+        "热处理与湿法"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688082.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14096,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688120",
+      "name": "华海清科",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "CMP设备"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688120.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13861,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688361",
+      "name": "中科飞测",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "量测检测设备"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688361.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13906,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300604",
+      "name": "长川科技",
+      "topics": [
+        "半导体设备",
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "测试机/分选机",
+        "封测平台与检测"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300604.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14096,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300567",
+      "name": "精测电子",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "量测检测设备"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300567.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13906,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688200",
+      "name": "华峰测控",
+      "topics": [
+        "半导体设备",
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "测试机/分选机",
+        "先进封装设备",
+        "封测平台与检测"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688200.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14203,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688409",
+      "name": "富创精密",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "精密零部件"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688409.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13891,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "600641",
+      "name": "万业企业",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "离子注入"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600641.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13876,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "603690",
+      "name": "至纯科技",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "清洗设备",
+        "热处理与湿法"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603690.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13983,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688652",
+      "name": "京仪装备",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "精密零部件",
+        "厂务与尾气处理"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688652.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14010,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688596",
+      "name": "正帆科技",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "厂务与尾气处理"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688596.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13921,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300260",
+      "name": "新莱应材",
+      "topics": [
+        "半导体设备"
+      ],
+      "nodes": [
+        "精密零部件"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300260.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13891,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300666",
+      "name": "江丰电子",
+      "topics": [
+        "半导体设备",
+        "半导体材料"
+      ],
+      "nodes": [
+        "薄膜沉积设备",
+        "精密零部件",
+        "靶材/前驱体"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300666.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14154,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688019",
+      "name": "安集科技",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "CMP材料"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688019.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13861,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "603650",
+      "name": "彤程新材",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "光刻胶及配套试剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603650.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22711,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002409",
+      "name": "雅克科技",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "电子特气",
+        "靶材/前驱体"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002409.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22427,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "688126",
+      "name": "沪硅产业",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "硅片/SOI"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688126.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13803,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300346",
+      "name": "南大光电",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "光刻胶及配套试剂",
+        "电子特气",
+        "靶材/前驱体"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300346.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14055,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688268",
+      "name": "华特气体",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "电子特气"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688268.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13813,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300054",
+      "name": "鼎龙股份",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "CMP材料"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300054.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13861,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300655",
+      "name": "晶瑞电材",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "光刻胶及配套试剂",
+        "湿电子化学品"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300655.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13980,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300395",
+      "name": "菲利华",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "设备耗材",
+        "掩膜版"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300395.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13872,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300236",
+      "name": "上海新阳",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "光刻胶及配套试剂",
+        "硅片/SOI"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300236.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13948,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "603078",
+      "name": "江化微",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "湿电子化学品"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603078.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22360,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "688300",
+      "name": "联瑞新材",
+      "topics": [
+        "半导体材料",
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "硅片/SOI",
+        "Chiplet与先进封装设计"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688300.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14016,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688106",
+      "name": "金宏气体",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "电子特气"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688106.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13813,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "600378",
+      "name": "昊华科技",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "电子特气"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600378.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22428,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603931",
+      "name": "格林达",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "光刻胶及配套试剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603931.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13861,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "600206",
+      "name": "有研新材",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "靶材/前驱体"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600206.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22256,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "688138",
+      "name": "清溢光电",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "掩膜版"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688138.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13798,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688401",
+      "name": "路维光电",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "掩膜版"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688401.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13798,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "605358",
+      "name": "立昂微",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "硅片/SOI"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\605358.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22398,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002129",
+      "name": "TCL中环",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "硅片/SOI"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002129.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22343,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "688233",
+      "name": "神工股份",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "设备耗材"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688233.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13813,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688733",
+      "name": "壹石通",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "硅片/SOI"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688733.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13791,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300429",
+      "name": "强力新材",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "光刻胶及配套试剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300429.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13873,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300706",
+      "name": "阿石创",
+      "topics": [
+        "半导体材料"
+      ],
+      "nodes": [
+        "靶材/前驱体"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300706.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13821,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300408",
+      "name": "三环集团",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "MLCC",
+        "汽车电子"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300408.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13894,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "000636",
+      "name": "风华高科",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "MLCC"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000636.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22466,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "300285",
+      "name": "国瓷材料",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "陶瓷粉体",
+        "MLCC"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300285.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13902,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "603678",
+      "name": "火炬电子",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "AI服务器电源",
+        "MLCC",
+        "铝电解/薄膜/钽电容"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603678.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14094,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "002138",
+      "name": "顺络电子",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "AI服务器电源",
+        "MLCC",
+        "电感与磁性材料",
+        "汽车电子"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002138.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22363,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002859",
+      "name": "洁美科技",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "MLCC"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002859.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22429,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000733",
+      "name": "振华科技",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "MLCC",
+        "铝电解/薄膜/钽电容"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000733.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13978,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "603267",
+      "name": "鸿远电子",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "铝电解/薄膜/钽电容"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603267.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22431,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "300726",
+      "name": "宏达电子",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "铝电解/薄膜/钽电容",
+        "MLCC"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300726.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14000,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300319",
+      "name": "麦捷科技",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "电感与磁性材料"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300319.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13896,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300975",
+      "name": "商络电子",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "陶瓷粉体"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300975.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13851,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "301099",
+      "name": "雅创电子",
+      "topics": [
+        "MLCC被动元件"
+      ],
+      "nodes": [
+        "汽车电子"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\301099.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13851,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "600584",
+      "name": "长电科技",
+      "topics": [
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "Chiplet与先进封装设计"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600584.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22484,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002156",
+      "name": "通富微电",
+      "topics": [
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "Chiplet与先进封装设计",
+        "封测平台与检测"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002156.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22266,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "688535",
+      "name": "华海诚科",
+      "topics": [
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "塑封/底填/临时键合材料"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688535.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13892,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688035",
+      "name": "德邦科技",
+      "topics": [
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "Chiplet与先进封装设计"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688035.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13872,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "688661",
+      "name": "和林微纳",
+      "topics": [
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "封测平台与检测"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\688661.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13837,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "300398",
+      "name": "飞凯材料",
+      "topics": [
+        "先进封装Chiplet"
+      ],
+      "nodes": [
+        "塑封/底填/临时键合材料",
+        "凸点与混合键合"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300398.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 14011,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险提示",
+        "第九章 研究总结"
+      ]
+    },
+    {
+      "code": "601138",
+      "name": "工业富联",
+      "topics": [
+        "AI服务器链"
+      ],
+      "nodes": [
+        "AI服务器/整柜/ODM"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\601138.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22480,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000977",
+      "name": "浪潮信息",
+      "topics": [
+        "AI服务器链"
+      ],
+      "nodes": [
+        "AI服务器/整柜/ODM"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000977.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22335,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603019",
+      "name": "中科曙光",
+      "topics": [
+        "AI服务器链"
+      ],
+      "nodes": [
+        "AI服务器/整柜/ODM"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603019.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22367,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002837",
+      "name": "英维克",
+      "topics": [
+        "AI服务器链"
+      ],
+      "nodes": [
+        "冷板/CDU/快接头"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002837.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22342,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "300499",
+      "name": "高澜股份",
+      "topics": [
+        "AI服务器链"
+      ],
+      "nodes": [
+        "冷板/CDU/快接头"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300499.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13919,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务分析",
+        "第三章 上下游与产业链位置",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "300990",
+      "name": "同飞股份",
+      "topics": [
+        "AI服务器链"
+      ],
+      "nodes": [
+        "冷板/CDU/快接头",
+        "AI服务器/整柜/ODM"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300990.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13838,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务分析",
+        "第三章 上下游与产业链位置",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "300602",
+      "name": "飞荣达",
+      "topics": [
+        "AI服务器链"
+      ],
+      "nodes": [
+        "AI服务器/整柜/ODM",
+        "被动件与材料扩散"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300602.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13801,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务分析",
+        "第三章 上下游与产业链位置",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "300684",
+      "name": "中石科技",
+      "topics": [
+        "AI服务器链"
+      ],
+      "nodes": [
+        "被动件与材料扩散"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\300684.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 13805,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务分析",
+        "第三章 上下游与产业链位置",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002335",
+      "name": "科华数据",
+      "topics": [
+        "AI服务器链",
+        "电网特高压"
+      ],
+      "nodes": [
+        "电源/HVDC/UPS",
+        "BBU与储能备电",
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002335.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22349,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002518",
+      "name": "科士达",
+      "topics": [
+        "AI服务器链",
+        "电网特高压"
+      ],
+      "nodes": [
+        "电源/HVDC/UPS",
+        "BBU与储能备电",
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002518.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22301,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002851",
+      "name": "麦格米特",
+      "topics": [
+        "AI服务器链"
+      ],
+      "nodes": [
+        "AI服务器/整柜/ODM",
+        "电源/HVDC/UPS"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002851.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22416,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002179",
+      "name": "中航光电",
+      "topics": [
+        "AI服务器链"
+      ],
+      "nodes": [
+        "AI服务器/整柜/ODM",
+        "高速连接器"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002179.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 12052,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务分析",
+        "第三章 上下游与产业链位置",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002028",
+      "name": "思源电气",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "电气设备",
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002028.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22341,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002169",
+      "name": "智光电气",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002169.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22381,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002358",
+      "name": "森源电气",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002358.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22346,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002364",
+      "name": "中恒电气",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002364.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22374,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002452",
+      "name": "长高电气",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电",
+        "输变电设备"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002452.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22338,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002606",
+      "name": "大连电瓷",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002606.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22367,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600089",
+      "name": "特变电工",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "电气设备",
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600089.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22348,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600268",
+      "name": "国电南自",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600268.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22362,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600312",
+      "name": "平高电气",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600312.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22376,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600550",
+      "name": "保变电气",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600550.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22370,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "601126",
+      "name": "四方股份",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\601126.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22371,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "601179",
+      "name": "中国西电",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\601179.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22362,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "001208",
+      "name": "华菱线缆",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电",
+        "线缆导体与材料"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\001208.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22352,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603606",
+      "name": "东方电缆",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电",
+        "线缆导体与材料"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603606.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22381,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "605196",
+      "name": "华通线缆",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电",
+        "线缆导体与材料"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\605196.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22348,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "605222",
+      "name": "起帆电缆",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电",
+        "线缆导体与材料"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\605222.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22341,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002451",
+      "name": "摩恩电气",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "电气设备",
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002451.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22321,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002533",
+      "name": "金杯电工",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002533.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22341,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002090",
+      "name": "金智科技",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "电气设备",
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002090.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22305,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002112",
+      "name": "三变科技",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002112.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22374,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002184",
+      "name": "海得控制",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "电气设备",
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002184.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22331,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "601877",
+      "name": "正泰电器",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\601877.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22376,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603530",
+      "name": "神马电力",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603530.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22370,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002309",
+      "name": "中利集团",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002309.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22400,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002471",
+      "name": "中超控股",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002471.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22380,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002498",
+      "name": "汉缆股份",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002498.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22354,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002560",
+      "name": "通达股份",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002560.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22332,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600522",
+      "name": "中天科技",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "电气设备"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600522.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22315,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600577",
+      "name": "精达股份",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600577.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22331,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603618",
+      "name": "杭电股份",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "特高压/直流输电"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603618.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22375,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600405",
+      "name": "动力源",
+      "topics": [
+        "电网特高压"
+      ],
+      "nodes": [
+        "数据中心电源观察"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600405.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22331,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600276",
+      "name": "恒瑞医药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600276.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22127,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603259",
+      "name": "药明康德",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603259.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22032,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603127",
+      "name": "昭衍新药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603127.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22163,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603392",
+      "name": "万泰生物",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "疫苗/诊断",
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603392.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22233,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002262",
+      "name": "恩华药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002262.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22147,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002294",
+      "name": "信立泰",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002294.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22078,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002653",
+      "name": "海思科",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002653.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22112,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002675",
+      "name": "东诚药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002675.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22127,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002755",
+      "name": "奥赛康",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002755.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22099,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600196",
+      "name": "复星医药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600196.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22219,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000963",
+      "name": "华东医药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000963.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22170,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000739",
+      "name": "普洛药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000739.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22136,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000534",
+      "name": "万泽股份",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000534.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22134,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002020",
+      "name": "京新药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002020.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22133,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002099",
+      "name": "海翔药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002099.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22159,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002166",
+      "name": "莱茵生物",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002166.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22129,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002275",
+      "name": "桂林三金",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002275.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22138,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002287",
+      "name": "奇正藏药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002287.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22143,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002317",
+      "name": "众生药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002317.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22143,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002349",
+      "name": "精华制药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002349.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22128,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002399",
+      "name": "海普瑞",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002399.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22095,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002437",
+      "name": "誉衡药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002437.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22146,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002562",
+      "name": "兄弟科技",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002562.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22142,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002737",
+      "name": "葵花药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002737.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22158,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002950",
+      "name": "奥美医疗",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002950.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22131,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600201",
+      "name": "生物股份",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600201.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22136,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600211",
+      "name": "西藏药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600211.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22156,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600267",
+      "name": "海正药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600267.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22152,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600285",
+      "name": "羚锐制药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600285.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22152,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600329",
+      "name": "达仁堂",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600329.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22103,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600521",
+      "name": "华海药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600521.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22148,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600535",
+      "name": "天士力",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600535.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 21167,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600572",
+      "name": "康恩贝",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600572.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22080,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600771",
+      "name": "广誉远",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600771.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22094,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600867",
+      "name": "通化东宝",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600867.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22147,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600993",
+      "name": "马应龙",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600993.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22073,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "601515",
+      "name": "衢州东峰",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\601515.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22163,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603301",
+      "name": "振德医疗",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603301.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22122,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603387",
+      "name": "基蛋生物",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603387.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22141,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603439",
+      "name": "三力制药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603439.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22139,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603538",
+      "name": "美诺华",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603538.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22076,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603707",
+      "name": "健友股份",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603707.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22136,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603858",
+      "name": "步长制药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603858.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22156,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002742",
+      "name": "冀衡医药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002742.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22150,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000790",
+      "name": "华神科技",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000790.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22131,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000919",
+      "name": "金陵药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000919.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22116,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000952",
+      "name": "广济药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000952.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22158,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002107",
+      "name": "沃华医药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002107.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22122,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002365",
+      "name": "永安药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002365.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22129,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002370",
+      "name": "亚太药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002370.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22149,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002412",
+      "name": "汉森制药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002412.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22124,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002566",
+      "name": "益盛药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002566.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22108,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002688",
+      "name": "金河生物",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002688.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22122,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002793",
+      "name": "罗欣药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002793.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22158,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002826",
+      "name": "易明医药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002826.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22110,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002868",
+      "name": "绿康生化",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002868.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22143,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002900",
+      "name": "哈三联",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002900.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22090,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002923",
+      "name": "润都股份",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002923.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22136,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600351",
+      "name": "亚宝药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600351.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22113,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600671",
+      "name": "天目药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600671.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22148,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603139",
+      "name": "康惠股份",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603139.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22154,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603520",
+      "name": "司太立",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603520.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22092,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603590",
+      "name": "康辰药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603590.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22108,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603669",
+      "name": "灵康药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603669.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22150,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002022",
+      "name": "科华生物",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "疫苗/诊断"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002022.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22136,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "603739",
+      "name": "蔚蓝生物",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\603739.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22064,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000423",
+      "name": "东阿阿胶",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000423.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22150,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000623",
+      "name": "吉林敖东",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000623.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22142,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000989",
+      "name": "九芝堂",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000989.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22075,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600750",
+      "name": "华润江中",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "CDMO/CMO制造",
+        "CRO临床与临床前",
+        "原料药"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600750.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22142,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002603",
+      "name": "以岭药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "中药/医药商业"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002603.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22108,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "000590",
+      "name": "古汉医药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\000590.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22156,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "002644",
+      "name": "佛慈制药",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\002644.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22115,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    },
+    {
+      "code": "600479",
+      "name": "千金药业",
+      "topics": [
+        "创新药"
+      ],
+      "nodes": [
+        "创新药/小分子",
+        "生物药/抗体/细胞治疗",
+        "化学制剂"
+      ],
+      "report": "C:\\Users\\LYDN\\a-stock-panorama\\company_research_core_deep\\600479.html",
+      "status": "changdian_like",
+      "issues": [],
+      "bytes": 22107,
+      "headings": [
+        "第一章 公司概览",
+        "第二章 主营业务深度分析",
+        "第三章 上下游合作对象",
+        "第四章 经营质量分析",
+        "第五章 财务全景分析",
+        "第六章 行业竞争格局",
+        "第七章 估值分析",
+        "第八章 催化剂与风险因素",
+        "第九章 研究总结",
+        "风险提示"
+      ]
+    }
+  ]
+}

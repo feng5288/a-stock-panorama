@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-07-03T07:54:07.189Z",
+  "scanned": 970,
+  "updated": 3,
+  "missing": 0,
+  "changed": [
+    {
+      "code": "603991-old",
+      "name": "至正股份",
+      "mainline": "有色金属与新材料",
+      "theme": "有色金属与新材料产业链",
+      "position": "金属资源、冶炼加工、功能材料、化工新材料和下游制造配套环节",
+      "path": "company_research_core_deep/603991-old.html"
+    },
+    {
+      "code": "002452",
+      "name": "长高电新",
+      "mainline": "电力设备与电力运营",
+      "theme": "电力设备与电力运营产业链",
+      "position": "电网设备、特高压、配电、发电运营、电力自动化和能源基础设施环节",
+      "path": "company_research_core_deep/002452.html"
+    },
+    {
+      "code": "002452",
+      "name": "长高电气",
+      "mainline": "电力设备与电力运营",
+      "theme": "电力设备与电力运营产业链",
+      "position": "电网设备、特高压、配电、发电运营、电力自动化和能源基础设施环节",
+      "path": "company_research_core_deep/002452.html"
+    }
+  ]
+}

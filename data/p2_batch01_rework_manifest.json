@@ -1,0 +1,488 @@
+{
+  "generated_at": "2026-07-01",
+  "rows": [
+    {
+      "batch": "P2-01",
+      "code": "002474",
+      "name": "榕基软件",
+      "mainline": "AI算力与数字基础设施",
+      "tracks": [
+        "软件/IT",
+        "软件/信息技术",
+        "行业软件/应用软件"
+      ],
+      "path": "company_research_rework_p2_batch01/002474.html",
+      "bytes": 10897,
+      "finance": {
+        "code": "002474",
+        "bs_code": "sz.002474",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002474",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.005889",
+          "npMargin": "-0.092652",
+          "gpMargin": "0.254699",
+          "netProfit": "-9365134.850000",
+          "epsTTM": "-0.104920",
+          "MBRevenue": "",
+          "totalShare": "622200000.00",
+          "liqaShare": "528832157.00"
+        },
+        "growth": {
+          "code": "sz.002474",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.050306",
+          "YOYAsset": "-0.031372",
+          "YOYNI": "0.143535",
+          "YOYEPSBasic": "0.293785",
+          "YOYPNI": "0.291220"
+        },
+        "errors": [],
+        "net_profit_yi": -0.09,
+        "yoy_parent_net_income_pct": 29.12,
+        "gross_margin_pct": 25.47,
+        "net_margin_pct": -9.27
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-02",
+      "code": "002771",
+      "name": "真视通",
+      "mainline": "AI算力与数字基础设施",
+      "tracks": [
+        "软件/IT",
+        "软件/信息技术",
+        "行业软件/应用软件"
+      ],
+      "path": "company_research_rework_p2_batch01/002771.html",
+      "bytes": 10751,
+      "finance": {
+        "code": "002771",
+        "bs_code": "sz.002771",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002771",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.022112",
+          "npMargin": "-0.421707",
+          "gpMargin": "0.132144",
+          "netProfit": "-14898682.980000",
+          "epsTTM": "-0.290763",
+          "MBRevenue": "",
+          "totalShare": "209764100.00",
+          "liqaShare": "174514655.00"
+        },
+        "growth": {
+          "code": "sz.002771",
+          "pubDate": "2026-04-29",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.094905",
+          "YOYAsset": "-0.102085",
+          "YOYNI": "0.146266",
+          "YOYEPSBasic": "0.171053",
+          "YOYPNI": "0.165233"
+        },
+        "errors": [],
+        "net_profit_yi": -0.15,
+        "yoy_parent_net_income_pct": 16.52,
+        "gross_margin_pct": 13.21,
+        "net_margin_pct": -42.17
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-03",
+      "code": "603232",
+      "name": "格尔软件",
+      "mainline": "AI算力与数字基础设施",
+      "tracks": [
+        "软件/IT",
+        "软件/信息技术",
+        "行业软件/应用软件"
+      ],
+      "path": "company_research_rework_p2_batch01/603232.html",
+      "bytes": 10672,
+      "finance": {
+        "code": "603232",
+        "bs_code": "sh.603232",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603232",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.021720",
+          "npMargin": "-0.424561",
+          "gpMargin": "0.467225",
+          "netProfit": "-27989729.280000",
+          "epsTTM": "-0.269638",
+          "MBRevenue": "",
+          "totalShare": "234082195.00",
+          "liqaShare": "231299995.00"
+        },
+        "growth": {
+          "code": "sh.603232",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.050119",
+          "YOYAsset": "-0.004512",
+          "YOYNI": "0.442930",
+          "YOYEPSBasic": "0.454545",
+          "YOYPNI": "0.431218"
+        },
+        "errors": [],
+        "net_profit_yi": -0.28,
+        "yoy_parent_net_income_pct": 43.12,
+        "gross_margin_pct": 46.72,
+        "net_margin_pct": -42.46
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-04",
+      "code": "603602",
+      "name": "纵横通信",
+      "mainline": "AI算力与数字基础设施",
+      "tracks": [
+        "软件/IT",
+        "软件/信息技术",
+        "行业软件/应用软件"
+      ],
+      "path": "company_research_rework_p2_batch01/603602.html",
+      "bytes": 10523,
+      "finance": {
+        "code": "603602",
+        "bs_code": "sh.603602",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.603602",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.005590",
+          "npMargin": "0.026295",
+          "gpMargin": "0.160202",
+          "netProfit": "11800763.900000",
+          "epsTTM": "-0.698882",
+          "MBRevenue": "",
+          "totalShare": "231057494.00",
+          "liqaShare": "231057494.00"
+        },
+        "growth": {
+          "code": "sh.603602",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.147346",
+          "YOYAsset": "-0.056402",
+          "YOYNI": "1.999879",
+          "YOYEPSBasic": "0.000000",
+          "YOYPNI": "0.452169"
+        },
+        "errors": [],
+        "net_profit_yi": 0.12,
+        "yoy_parent_net_income_pct": 45.22,
+        "gross_margin_pct": 16.02,
+        "net_margin_pct": 2.63
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-05",
+      "code": "000889",
+      "name": "中嘉博创",
+      "mainline": "AI算力与数字基础设施",
+      "tracks": [
+        "软件/IT",
+        "软件/信息技术",
+        "行业软件/应用软件"
+      ],
+      "path": "company_research_rework_p2_batch01/000889.html",
+      "bytes": 10646,
+      "finance": {
+        "code": "000889",
+        "bs_code": "sz.000889",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.000889",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.061376",
+          "npMargin": "-0.011969",
+          "gpMargin": "0.087061",
+          "netProfit": "-4398057.920000",
+          "epsTTM": "-0.026937",
+          "MBRevenue": "",
+          "totalShare": "936291116.00",
+          "liqaShare": "869845146.00"
+        },
+        "growth": {
+          "code": "sz.000889",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.266404",
+          "YOYAsset": "0.110711",
+          "YOYNI": "0.221897",
+          "YOYEPSBasic": "0.216667",
+          "YOYPNI": "0.220622"
+        },
+        "errors": [],
+        "net_profit_yi": -0.04,
+        "yoy_parent_net_income_pct": 22.06,
+        "gross_margin_pct": 8.71,
+        "net_margin_pct": -1.2
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-06",
+      "code": "002197",
+      "name": "证通电子",
+      "mainline": "AI算力与数字基础设施",
+      "tracks": [
+        "软件/IT",
+        "软件/信息技术",
+        "行业软件/应用软件"
+      ],
+      "path": "company_research_rework_p2_batch01/002197.html",
+      "bytes": 10571,
+      "finance": {
+        "code": "002197",
+        "bs_code": "sz.002197",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002197",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.001016",
+          "npMargin": "0.027823",
+          "gpMargin": "0.321374",
+          "netProfit": "6822204.880000",
+          "epsTTM": "-0.602338",
+          "MBRevenue": "",
+          "totalShare": "614362928.00",
+          "liqaShare": "534000012.00"
+        },
+        "growth": {
+          "code": "sz.002197",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.177819",
+          "YOYAsset": "-0.067455",
+          "YOYNI": "2.166705",
+          "YOYEPSBasic": "",
+          "YOYPNI": "1.266173"
+        },
+        "errors": [],
+        "net_profit_yi": 0.07,
+        "yoy_parent_net_income_pct": 126.62,
+        "gross_margin_pct": 32.14,
+        "net_margin_pct": 2.78
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-07",
+      "code": "600756",
+      "name": "浪潮软件",
+      "mainline": "AI算力与数字基础设施",
+      "tracks": [
+        "软件/IT",
+        "软件/信息技术",
+        "行业软件/应用软件"
+      ],
+      "path": "company_research_rework_p2_batch01/600756.html",
+      "bytes": 10540,
+      "finance": {
+        "code": "600756",
+        "bs_code": "sh.600756",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600756",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "roeAvg": "-0.037883",
+          "npMargin": "-0.649591",
+          "gpMargin": "0.447230",
+          "netProfit": "-86679207.880000",
+          "epsTTM": "-0.756807",
+          "MBRevenue": "",
+          "totalShare": "349628753.00",
+          "liqaShare": "324098753.00"
+        },
+        "growth": {
+          "code": "sh.600756",
+          "pubDate": "2026-04-30",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.001312",
+          "YOYAsset": "-0.004428",
+          "YOYNI": "0.026501",
+          "YOYEPSBasic": "0.074074",
+          "YOYPNI": "0.024475"
+        },
+        "errors": [],
+        "net_profit_yi": -0.87,
+        "yoy_parent_net_income_pct": 2.45,
+        "gross_margin_pct": 44.72,
+        "net_margin_pct": -64.96
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-08",
+      "code": "002519",
+      "name": "银河电子",
+      "mainline": "高端装备与机器人",
+      "tracks": [
+        "光通信/CPO光互连",
+        "光纤光缆",
+        "光通信基础设施"
+      ],
+      "path": "company_research_rework_p2_batch01/002519.html",
+      "bytes": 10590,
+      "finance": {
+        "code": "002519",
+        "bs_code": "sz.002519",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002519",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.000723",
+          "npMargin": "0.006950",
+          "gpMargin": "0.155510",
+          "netProfit": "1559954.960000",
+          "epsTTM": "-0.058402",
+          "MBRevenue": "",
+          "totalShare": "1126430898.00",
+          "liqaShare": "1117604471.00"
+        },
+        "growth": {
+          "code": "sz.002519",
+          "pubDate": "2026-04-25",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.044672",
+          "YOYAsset": "-0.002598",
+          "YOYNI": "1.093869",
+          "YOYEPSBasic": "1.096552",
+          "YOYPNI": "1.098457"
+        },
+        "errors": [],
+        "net_profit_yi": 0.02,
+        "yoy_parent_net_income_pct": 109.85,
+        "gross_margin_pct": 15.55,
+        "net_margin_pct": 0.69
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-09",
+      "code": "600601",
+      "name": "方正科技",
+      "mainline": "PCB/被动元件/电子材料",
+      "tracks": [
+        "AI服务器/算力",
+        "服务器PCB/高速背板",
+        "PCB/高速PCB",
+        "PCB",
+        "高速PCB",
+        "电子电路"
+      ],
+      "path": "company_research_rework_p2_batch01/600601.html",
+      "bytes": 10538,
+      "finance": {
+        "code": "600601",
+        "bs_code": "sh.600601",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sh.600601",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.048751",
+          "npMargin": "0.148134",
+          "gpMargin": "0.305165",
+          "netProfit": "231633236.090000",
+          "epsTTM": "0.146325",
+          "MBRevenue": "",
+          "totalShare": "4273742887.00",
+          "liqaShare": "4170293287.00"
+        },
+        "growth": {
+          "code": "sh.600601",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "0.164116",
+          "YOYAsset": "0.424010",
+          "YOYNI": "1.951601",
+          "YOYEPSBasic": "1.500000",
+          "YOYPNI": "1.951601"
+        },
+        "errors": [],
+        "net_profit_yi": 2.32,
+        "yoy_parent_net_income_pct": 195.16,
+        "gross_margin_pct": 30.52,
+        "net_margin_pct": 14.81
+      },
+      "forbidden_hits": [],
+      "pass": true
+    },
+    {
+      "batch": "P2-10",
+      "code": "002388",
+      "name": "新亚制程",
+      "mainline": "PCB/被动元件/电子材料",
+      "tracks": [
+        "电子元器件",
+        "通信/电子元器件",
+        "电子材料"
+      ],
+      "path": "company_research_rework_p2_batch01/002388.html",
+      "bytes": 10525,
+      "finance": {
+        "code": "002388",
+        "bs_code": "sz.002388",
+        "period": "2026Q1",
+        "profit": {
+          "code": "sz.002388",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "roeAvg": "0.004801",
+          "npMargin": "0.037937",
+          "gpMargin": "0.190900",
+          "netProfit": "17093131.210000",
+          "epsTTM": "-0.060889",
+          "MBRevenue": "",
+          "totalShare": "510697600.00",
+          "liqaShare": "506128445.00"
+        },
+        "growth": {
+          "code": "sz.002388",
+          "pubDate": "2026-04-28",
+          "statDate": "2026-03-31",
+          "YOYEquity": "-0.031367",
+          "YOYAsset": "0.081947",
+          "YOYNI": "8.171104",
+          "YOYEPSBasic": "-0.655303",
+          "YOYPNI": "-0.657516"
+        },
+        "errors": [],
+        "net_profit_yi": 0.17,
+        "yoy_parent_net_income_pct": -65.75,
+        "gross_margin_pct": 19.09,
+        "net_margin_pct": 3.79
+      },
+      "forbidden_hits": [],
+      "pass": true
+    }
+  ]
+}

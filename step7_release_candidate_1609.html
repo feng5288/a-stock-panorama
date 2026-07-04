@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1609 家公司发布候选检查</title>
+  <style>
+    :root{color-scheme:dark;--bg:#090f1f;--panel:#111a2d;--panel2:#0d1527;--line:rgba(148,163,184,.22);--text:#edf4ff;--muted:#9fb0c7;--gold:#f7bf54;--green:#67e8a2;--red:#ff8f8f;--amber:#ffd27a}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0%,#1b2844 0,#090f1f 34%,#070b16 100%);color:var(--text);font-family:"Microsoft YaHei",Arial,sans-serif}.wrap{max-width:1200px;margin:0 auto;padding:28px 22px 64px}.top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.eyebrow{color:var(--gold);font-weight:800;font-size:13px}.title{font-size:32px;font-weight:900;margin:8px 0 8px}.muted{color:var(--muted)}.panel{background:linear-gradient(180deg,rgba(17,26,45,.96),rgba(13,21,39,.96));border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:18px}.decision{min-width:260px}.decision strong{display:block;font-size:20px;color:var(--green).stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.stat{background:rgba(15,23,42,.72);border:1px solid rgba(148,163,184,.18);border-radius:12px;padding:15px}.stat b{display:block;color:var(--muted);font-size:12px}.stat span{font-size:24px;font-weight:900}table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid rgba(148,163,184,.16);text-align:left;font-size:14px;vertical-align:top}th{color:var(--gold);font-size:13px}.badge{display:inline-flex;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:900}.pass{background:rgba(103,232,162,.14);color:var(--green)}.warn{background:rgba(255,210,122,.14);color:var(--amber)}.fail{background:rgba(255,143,143,.14);color:var(--red)}a{color:#ffe1a0}.sample{max-height:360px;overflow:auto}.note{line-height:1.8}@media(max-width:860px){.top{display:block}.stats{grid-template-columns:1fr 1fr}.decision{min-width:0}.title{font-size:26px}}
+  </style>
+
+</head>
+<body>
+  <main class="wrap">
+    <section class="top">
+      <div>
+        <div class="eyebrow">发布前综合检查</div>
+        <div class="title">1609 家公司网站候选包</div>
+        <div class="muted">覆盖范围、报告厚度、分类入口、公开表达和站内链接统一检查。当前只生成可检查版本，不执行公开发布。</div>
+      </div>
+      <div class="panel decision">
+        <div class="muted">当前结论</div>
+        <strong>候选包可进入发布前确认</strong>
+        <div class="muted">阻断 0 项，提醒 0 项</div>
+      </div>
+    </section>
+    <section class="stats panel">
+      <div class="stat"><b>公司入口</b><span>1609/1609</span></div>
+      <div class="stat"><b>报告缺失</b><span>0</span></div>
+      <div class="stat"><b>待加厚</b><span>0</span></div>
+      <div class="stat"><b>分类 ready</b><span>1609/1609</span></div>
+      <div class="stat"><b>摘要页通过</b><span>365/365</span></div>
+    </section>
+    <section class="panel">
+      <table>
+        <thead><tr><th>检查项</th><th>状态</th><th>说明</th></tr></thead>
+        <tbody><tr><td>1609 家公司入口覆盖</td><td><span class="badge pass">通过</span></td><td>1609/1609 可展示，缺失 0</td></tr><tr><td>报告厚度队列清零</td><td><span class="badge pass">通过</span></td><td>待扩写 0，过薄 0，摘要阻断 0</td></tr><tr><td>365 个摘要页加厚通过</td><td><span class="badge pass">通过</span></td><td>365/365 通过，最小体量 10.7KB</td></tr><tr><td>分类入口覆盖</td><td><span class="badge pass">通过</span></td><td>1609/1609 ready，人工处理项 0</td></tr><tr><td>第 5 步预检通过</td><td><span class="badge pass">通过</span></td><td>阻断项 0，提醒项 0</td></tr><tr><td>首页文件存在</td><td><span class="badge pass">通过</span></td><td>首页候选文件可读取</td></tr><tr><td>首页公开表述检查</td><td><span class="badge pass">通过</span></td><td>未发现内部词或交易化表达</td></tr><tr><td>首页相对链接检查</td><td><span class="badge pass">通过</span></td><td>1 个站内链接，缺失 0</td></tr><tr><td>抽样报告公开表述检查</td><td><span class="badge pass">通过</span></td><td>19 份跨主线样本，提醒 0</td></tr></tbody>
+      </table>
+    </section>
+    <section class="panel sample">
+      <table>
+        <thead><tr><th>抽样报告</th><th>体量</th><th>状态</th><th>入口</th></tr></thead>
+        <tbody><tr><td>S佳通<br><span class="muted">600182</span></td><td>14.5KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/600182.html" target="_blank">打开</a></td></tr><tr><td>TCL中环<br><span class="muted">002129</span></td><td>14.5KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/002129.html" target="_blank">打开</a></td></tr><tr><td>TCL科技<br><span class="muted">000100</span></td><td>14.3KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/000100.html" target="_blank">打开</a></td></tr><tr><td>一心堂<br><span class="muted">002727</span></td><td>10.9KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research/002727.html" target="_blank">打开</a></td></tr><tr><td>一拖股份<br><span class="muted">601038</span></td><td>14.7KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/601038.html" target="_blank">打开</a></td></tr><tr><td>一汽解放<br><span class="muted">000800</span></td><td>14.3KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/000800.html" target="_blank">打开</a></td></tr><tr><td>万泰生物<br><span class="muted">603392</span></td><td>18.6KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research/603392.html" target="_blank">打开</a></td></tr><tr><td>万科A<br><span class="muted">000002</span></td><td>14.2KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/000002.html" target="_blank">打开</a></td></tr><tr><td>三六零<br><span class="muted">601360</span></td><td>14.6KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/601360.html" target="_blank">打开</a></td></tr><tr><td>三峰环境<br><span class="muted">601827</span></td><td>10.9KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research/601827.html" target="_blank">打开</a></td></tr><tr><td>三羊马<br><span class="muted">001317</span></td><td>10.1KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research/001317.html" target="_blank">打开</a></td></tr><tr><td>东山精密<br><span class="muted">002384</span></td><td>14.4KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/002384.html" target="_blank">打开</a></td></tr><tr><td>中信海直<br><span class="muted">000099</span></td><td>11.0KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research/000099.html" target="_blank">打开</a></td></tr><tr><td>长电科技<br><span class="muted">600584</span></td><td>14.3KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/600584.html" target="_blank">打开</a></td></tr><tr><td>顺络电子<br><span class="muted">002138</span></td><td>14.3KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/002138.html" target="_blank">打开</a></td></tr><tr><td>晶方科技<br><span class="muted">603005</span></td><td>14.2KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/603005.html" target="_blank">打开</a></td></tr><tr><td>兆易创新<br><span class="muted">603986</span></td><td>14.4KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/603986.html" target="_blank">打开</a></td></tr><tr><td>三一重工<br><span class="muted">600031</span></td><td>14.3KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research_core_deep/600031.html" target="_blank">打开</a></td></tr><tr><td>贵州茅台<br><span class="muted">600519</span></td><td>18.2KB</td><td><span class="badge pass">通过</span></td><td><a href="company_research/600519.html" target="_blank">打开</a></td></tr></tbody>
+      </table>
+    </section>
+    <section class="panel note">
+      <h2>结论</h2>
+      <p>本地候选包已具备发布前确认条件；如要公开上线，需要单独执行推送前路径检查与发布动作。</p>
+      <p>基于公开资料整理，仅用于产业链研究交流，不构成投资建议、买卖依据或收益承诺。</p>
+    </section>
+  </main>
+</body>
+</html>
