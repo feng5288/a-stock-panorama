@@ -1,153 +1,129 @@
 {
-  "update_time": "2026-07-03T15:32:50.468460",
-  "trade_date": "2026-07-03",
+  "update_time": "2026-07-06T15:36:08.480320",
+  "trade_date": "2026-07-06",
   "market_summary": {
-    "sh_index": 0.37,
-    "sz_index": 0.64,
-    "cy_index": 0.07,
-    "kc50_index": 2.0,
-    "volume_trillion": 3.21
+    "sh_index": -0.06,
+    "sz_index": -1.16,
+    "cy_index": -1.77,
+    "kc50_index": 1.04,
+    "volume_trillion": 3.09
   },
-  "market_note": "三大指数集体收涨，沪指涨0.37%，深成指涨0.64%，创业板指涨0.07%。全市成交额3.21万亿，超3800只个股上涨。机器人概念掀涨停潮，黄金股全天爆发，商业航天/具身智能活跃。石油化工/半导体/光刻机等下跌。",
+  "market_note": "三大指数高开低走集体收跌，沪指跌0.06%，深成指跌1.16%，创业板指跌1.77%。科创50探底回升涨1.04%。全市成交额3.09万亿缩量913亿，超3500只个股下跌，71只涨停51只跌停。液冷服务器/交换机/医药逆市走强，培育钻石/猪肉/煤炭活跃，通信设备/航天军工/基本金属下跌。",
   "hot_concepts": [
     {
-      "name": "机器人",
-      "heat_pct": 6.7,
-      "source": "国证机器人产业指数涨6.7%二十余股涨停",
-      "note": "埃斯顿4天3板，日盈电子2连板，卧龙电驱/雷赛智能/中大力德/双环传动等涨停",
+      "name": "液冷服务器",
+      "heat_pct": 4.5,
+      "source": "板块拉升多股涨停",
+      "note": "大元泵业/宏盛股份/海鸥股份/联德股份/快克智能涨停，高澜股份涨超10%",
       "matched_stocks_count": 3
     },
     {
-      "name": "贵金属",
-      "heat_pct": 5.8,
-      "source": "黄金行业涨5.25%多股涨停",
-      "note": "招金黄金/赤峰黄金2连板，四川黄金/西部黄金/山金国际涨停",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "具身智能",
-      "heat_pct": 4.5,
-      "source": "与机器人联动活跃",
-      "note": "板块联动走强",
+      "name": "交换机",
+      "heat_pct": 4.2,
+      "source": "菲菱科思20CM涨停",
+      "note": "菲菱科思20CM涨停，紫光股份涨停，星网锐捷5天4板",
       "matched_stocks_count": 0
     },
     {
-      "name": "商业航天",
-      "heat_pct": 4.0,
-      "source": "早盘活跃涨幅居前",
-      "note": "板块概念活跃",
+      "name": "医药",
+      "heat_pct": 3.8,
+      "source": "板块逆市走强多股涨停",
+      "note": "罗欣药业/甘李药业涨停，首药控股触及20CM涨停，恒瑞医药涨超5%",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "培育钻石",
+      "heat_pct": 3.5,
+      "source": "板块异动拉升",
+      "note": "黄河旋风3天2板，早盘涨幅居前",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "中报预增",
+      "heat_pct": 3.2,
+      "source": "板块继续上扬",
+      "note": "东方盛虹/华海药业等多股涨停，最高预增1194%",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "煤炭",
+      "heat_pct": 3.0,
+      "source": "尾盘拉升逆市走强",
+      "note": "昊华能源直线涨停，板块尾盘强势拉升",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "猪肉",
+      "heat_pct": 2.8,
+      "source": "板块震荡上行",
+      "note": "巨星农牧涨停，养殖板块触底反弹",
       "matched_stocks_count": 0
     },
     {
       "name": "PCB概念",
-      "heat_pct": 3.5,
-      "source": "震荡反弹深南电路涨停",
-      "note": "深南电路涨停，板块反弹",
+      "heat_pct": 2.5,
+      "source": "贤丰控股14天8板",
+      "note": "贤丰控股14天8板，崇达技术涨超10%",
       "matched_stocks_count": 2
     },
     {
-      "name": "电网设备",
-      "heat_pct": 3.2,
-      "source": "走势向好多股涨停",
-      "note": "华明装备/金智科技/中元股份涨停",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "航天军工",
-      "heat_pct": 3.0,
-      "source": "板块上涨航母概念活跃",
-      "note": "航天军工板块走强",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "能源设备",
-      "heat_pct": 2.8,
-      "source": "板块上涨",
-      "note": "能源设备板块偏强",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "汽车零部件",
-      "heat_pct": 2.5,
-      "source": "板块上涨",
-      "note": "汽车板块走强",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "生物科技",
+      "name": "能源金属",
       "heat_pct": 2.2,
-      "source": "板块上涨",
-      "note": "生物科技板块偏强",
+      "source": "早盘涨幅居前",
+      "note": "板块早盘表现活跃，涨幅居前",
       "matched_stocks_count": 0
+    },
+    {
+      "name": "机器人",
+      "heat_pct": 2.0,
+      "source": "延续上周强势",
+      "note": "雷赛智能3连板，板块延续活跃但热度回落",
+      "matched_stocks_count": 3
     }
   ],
   "hot_stocks": [
     {
-      "code": "603283",
-      "name": "赛腾股份",
+      "code": "002837",
+      "name": "英维克",
       "rating": "B+",
-      "score": 17,
-      "heat_score": 6.7,
+      "score": 18,
+      "heat_score": 4.5,
       "matched_concepts": [
-        "机器人"
+        "液冷服务器"
       ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
+      "theme": "🔥 AI算力产业链",
+      "track": "液冷/温控"
     },
     {
-      "code": "002747",
-      "name": "埃斯顿",
-      "rating": "B",
-      "score": null,
-      "heat_score": 6.7,
+      "code": "603757",
+      "name": "大元泵业",
+      "rating": "C",
+      "score": 13,
+      "heat_score": 4.5,
       "matched_concepts": [
-        "机器人"
+        "液冷服务器"
       ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
+      "theme": "🔥 AI算力产业链",
+      "track": "液冷/温控"
     },
     {
-      "code": "002527",
-      "name": "新时达",
-      "rating": "?",
-      "score": null,
-      "heat_score": 6.7,
+      "code": "002272",
+      "name": "川润股份",
+      "rating": "C",
+      "score": 12,
+      "heat_score": 4.5,
       "matched_concepts": [
-        "机器人"
+        "液冷服务器"
       ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "603995",
-      "name": "甬金股份",
-      "rating": "B",
-      "score": 17,
-      "heat_score": 5.8,
-      "matched_concepts": [
-        "贵金属"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "工业金属"
-    },
-    {
-      "code": "601137",
-      "name": "博威合金",
-      "rating": "D+",
-      "score": 11,
-      "heat_score": 5.8,
-      "matched_concepts": [
-        "贵金属"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "工业金属"
+      "theme": "🔥 AI算力产业链",
+      "track": "液冷/温控"
     },
     {
       "code": "600601",
       "name": "方正科技",
       "rating": "B",
       "score": 16,
-      "heat_score": 3.5,
+      "heat_score": 2.5,
       "matched_concepts": [
         "PCB概念"
       ],
@@ -159,7 +135,7 @@
       "name": "依顿电子",
       "rating": "B+",
       "score": 17,
-      "heat_score": 3.5,
+      "heat_score": 2.5,
       "matched_concepts": [
         "PCB概念"
       ],
@@ -167,75 +143,99 @@
       "track": "AI服务器/算力"
     },
     {
-      "code": "600353",
-      "name": "旭光电子",
+      "code": "603283",
+      "name": "赛腾股份",
       "rating": "B+",
-      "score": 15,
-      "heat_score": 3.0,
+      "score": 17,
+      "heat_score": 2.0,
       "matched_concepts": [
-        "航天军工"
+        "机器人"
       ],
-      "theme": "🛡️ 国防军工与航空航天",
-      "track": "军工电子"
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
+    },
+    {
+      "code": "002747",
+      "name": "埃斯顿",
+      "rating": "B",
+      "score": null,
+      "heat_score": 2.0,
+      "matched_concepts": [
+        "机器人"
+      ],
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
+    },
+    {
+      "code": "002527",
+      "name": "新时达",
+      "rating": "?",
+      "score": null,
+      "heat_score": 2.0,
+      "matched_concepts": [
+        "机器人"
+      ],
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
     }
   ],
   "total_matched_stocks": 8,
-  "updated": "2026-07-03 15:32",
+  "updated": "2026-07-06 15:36",
   "stocks": {
-    "603283": {
-      "heat": "high",
-      "maxChg": 6.7,
+    "002837": {
+      "heat": "warm",
+      "maxChg": 4.5,
       "concepts": [
-        "机器人"
+        "液冷服务器"
       ]
     },
-    "002747": {
-      "heat": "high",
-      "maxChg": 6.7,
+    "603757": {
+      "heat": "warm",
+      "maxChg": 4.5,
       "concepts": [
-        "机器人"
+        "液冷服务器"
       ]
     },
-    "002527": {
-      "heat": "high",
-      "maxChg": 6.7,
+    "002272": {
+      "heat": "warm",
+      "maxChg": 4.5,
       "concepts": [
-        "机器人"
-      ]
-    },
-    "603995": {
-      "heat": "high",
-      "maxChg": 5.8,
-      "concepts": [
-        "贵金属"
-      ]
-    },
-    "601137": {
-      "heat": "high",
-      "maxChg": 5.8,
-      "concepts": [
-        "贵金属"
+        "液冷服务器"
       ]
     },
     "600601": {
-      "heat": "warm",
-      "maxChg": 3.5,
+      "heat": "cold",
+      "maxChg": 2.5,
       "concepts": [
         "PCB概念"
       ]
     },
     "603328": {
-      "heat": "warm",
-      "maxChg": 3.5,
+      "heat": "cold",
+      "maxChg": 2.5,
       "concepts": [
         "PCB概念"
       ]
     },
-    "600353": {
-      "heat": "warm",
-      "maxChg": 3.0,
+    "603283": {
+      "heat": "cold",
+      "maxChg": 2.0,
       "concepts": [
-        "航天军工"
+        "机器人"
+      ]
+    },
+    "002747": {
+      "heat": "cold",
+      "maxChg": 2.0,
+      "concepts": [
+        "机器人"
+      ]
+    },
+    "002527": {
+      "heat": "cold",
+      "maxChg": 2.0,
+      "concepts": [
+        "机器人"
       ]
     }
   }
