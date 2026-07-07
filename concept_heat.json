@@ -1,241 +1,191 @@
 {
-  "update_time": "2026-07-06T15:36:08.480320",
-  "trade_date": "2026-07-06",
+  "update_time": "2026-07-07T15:34:10.379853",
+  "trade_date": "2026-07-07",
   "market_summary": {
-    "sh_index": -0.06,
-    "sz_index": -1.16,
-    "cy_index": -1.77,
-    "kc50_index": 1.04,
-    "volume_trillion": 3.09
+    "sh_index": -1.26,
+    "sz_index": -1.24,
+    "cy_index": -0.94,
+    "kc50_index": 0.28,
+    "volume_trillion": 2.58
   },
-  "market_note": "三大指数高开低走集体收跌，沪指跌0.06%，深成指跌1.16%，创业板指跌1.77%。科创50探底回升涨1.04%。全市成交额3.09万亿缩量913亿，超3500只个股下跌，71只涨停51只跌停。液冷服务器/交换机/医药逆市走强，培育钻石/猪肉/煤炭活跃，通信设备/航天军工/基本金属下跌。",
+  "market_note": "三大指数低开低走集体收跌，沪指跌1.26%失守4000点报3990点，深成指跌1.24%，创业板指跌0.94%。科创50逆市涨0.28%。全市成交额2.58万亿缩量5099亿，近4800只个股下跌，34只涨停45只跌停。半导体/培育钻石/游戏逆市走强，贵金属/石油化工/风电/创新药/煤炭领跌。",
   "hot_concepts": [
     {
-      "name": "液冷服务器",
+      "name": "半导体",
       "heat_pct": 4.5,
-      "source": "板块拉升多股涨停",
-      "note": "大元泵业/宏盛股份/海鸥股份/联德股份/快克智能涨停，高澜股份涨超10%",
-      "matched_stocks_count": 3
-    },
-    {
-      "name": "交换机",
-      "heat_pct": 4.2,
-      "source": "菲菱科思20CM涨停",
-      "note": "菲菱科思20CM涨停，紫光股份涨停，星网锐捷5天4板",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "医药",
-      "heat_pct": 3.8,
-      "source": "板块逆市走强多股涨停",
-      "note": "罗欣药业/甘李药业涨停，首药控股触及20CM涨停，恒瑞医药涨超5%",
-      "matched_stocks_count": 0
+      "source": "板块逆市走强多股20CM涨停",
+      "note": "东微半导/有研硅20%涨停，瑞芯微/华天科技/有研新材涨停，盛科通信跟涨",
+      "matched_stocks_count": 4
     },
     {
       "name": "培育钻石",
-      "heat_pct": 3.5,
-      "source": "板块异动拉升",
-      "note": "黄河旋风3天2板，早盘涨幅居前",
+      "heat_pct": 4.2,
+      "source": "板块震荡拉升多股大涨",
+      "note": "夜光明涨超25%，惠丰钻石涨超10%，黄河旋风/沃尔德/四方达/力量钻石跟涨",
       "matched_stocks_count": 0
     },
     {
-      "name": "中报预增",
+      "name": "游戏",
+      "heat_pct": 3.8,
+      "source": "板块震荡拉升",
+      "note": "星辉娱乐涨超10%，游族网络/昆仑万维/巨人网络/恺英网络跟涨，6月版号发放171款创新高",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "稀土永磁",
       "heat_pct": 3.2,
-      "source": "板块继续上扬",
-      "note": "东方盛虹/华海药业等多股涨停，最高预增1194%",
-      "matched_stocks_count": 0
+      "source": "板块盘初上扬",
+      "note": "中科三环涨停，大地熊/宁波韵升/英洛华/正海磁材/争光股份跟涨",
+      "matched_stocks_count": 1
     },
     {
-      "name": "煤炭",
+      "name": "并购重组",
       "heat_pct": 3.0,
-      "source": "尾盘拉升逆市走强",
-      "note": "昊华能源直线涨停，板块尾盘强势拉升",
+      "source": "恒尚节能6连板",
+      "note": "恒尚节能6连板领涨，ST海王/宜宾纸业5连板，圣龙股份3天2板",
       "matched_stocks_count": 0
     },
     {
-      "name": "猪肉",
-      "heat_pct": 2.8,
-      "source": "板块震荡上行",
-      "note": "巨星农牧涨停，养殖板块触底反弹",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "PCB概念",
+      "name": "硅片",
       "heat_pct": 2.5,
-      "source": "贤丰控股14天8板",
-      "note": "贤丰控股14天8板，崇达技术涨超10%",
-      "matched_stocks_count": 2
+      "source": "半导体产业链细分逆市走强",
+      "note": "TCL中环涨停，半导体硅片细分逆市上涨",
+      "matched_stocks_count": 1
     },
     {
-      "name": "能源金属",
+      "name": "工程机械",
       "heat_pct": 2.2,
-      "source": "早盘涨幅居前",
-      "note": "板块早盘表现活跃，涨幅居前",
+      "source": "板块逆市小幅上涨",
+      "note": "板块早盘表现抗跌，逆市小幅走强",
       "matched_stocks_count": 0
     },
     {
-      "name": "机器人",
+      "name": "通信设备",
       "heat_pct": 2.0,
-      "source": "延续上周强势",
-      "note": "雷赛智能3连板，板块延续活跃但热度回落",
-      "matched_stocks_count": 3
+      "source": "板块微涨",
+      "note": "板块早盘小幅上涨，午后回落但仍收红",
+      "matched_stocks_count": 1
     }
   ],
   "hot_stocks": [
     {
-      "code": "002837",
-      "name": "英维克",
-      "rating": "B+",
-      "score": 18,
-      "heat_score": 4.5,
+      "code": "603738",
+      "name": "泰晶科技",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 6.5,
       "matched_concepts": [
-        "液冷服务器"
+        "半导体",
+        "通信设备"
       ],
-      "theme": "🔥 AI算力产业链",
-      "track": "液冷/温控"
+      "theme": "💡 半导体全产业链",
+      "track": "芯片设计"
     },
     {
-      "code": "603757",
-      "name": "大元泵业",
+      "code": "002213",
+      "name": "大为股份",
+      "rating": "D",
+      "score": 5,
+      "heat_score": 4.5,
+      "matched_concepts": [
+        "半导体"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "HBM存储产业链"
+    },
+    {
+      "code": "000962",
+      "name": "东方钽业",
       "rating": "C",
+      "score": null,
+      "heat_score": 4.5,
+      "matched_concepts": [
+        "半导体"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "半导体材料(卡脖子12大类)"
+    },
+    {
+      "code": "002023",
+      "name": "海特高新",
+      "rating": "C+",
       "score": 13,
       "heat_score": 4.5,
       "matched_concepts": [
-        "液冷服务器"
+        "半导体"
       ],
-      "theme": "🔥 AI算力产业链",
-      "track": "液冷/温控"
+      "theme": "💡 半导体全产业链",
+      "track": "功率半导体"
     },
     {
-      "code": "002272",
-      "name": "川润股份",
+      "code": "000970",
+      "name": "中科三环",
+      "rating": "C+",
+      "score": 14,
+      "heat_score": 3.2,
+      "matched_concepts": [
+        "稀土永磁"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "稀土永磁"
+    },
+    {
+      "code": "603688",
+      "name": "石英股份",
       "rating": "C",
-      "score": 12,
-      "heat_score": 4.5,
-      "matched_concepts": [
-        "液冷服务器"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "液冷/温控"
-    },
-    {
-      "code": "600601",
-      "name": "方正科技",
-      "rating": "B",
-      "score": 16,
+      "score": 10,
       "heat_score": 2.5,
       "matched_concepts": [
-        "PCB概念"
+        "硅片"
       ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
-    },
-    {
-      "code": "603328",
-      "name": "依顿电子",
-      "rating": "B+",
-      "score": 17,
-      "heat_score": 2.5,
-      "matched_concepts": [
-        "PCB概念"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
-    },
-    {
-      "code": "603283",
-      "name": "赛腾股份",
-      "rating": "B+",
-      "score": 17,
-      "heat_score": 2.0,
-      "matched_concepts": [
-        "机器人"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "002747",
-      "name": "埃斯顿",
-      "rating": "B",
-      "score": null,
-      "heat_score": 2.0,
-      "matched_concepts": [
-        "机器人"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "002527",
-      "name": "新时达",
-      "rating": "?",
-      "score": null,
-      "heat_score": 2.0,
-      "matched_concepts": [
-        "机器人"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
+      "theme": "💡 半导体全产业链",
+      "track": "半导体材料(卡脖子12大类)"
     }
   ],
-  "total_matched_stocks": 8,
-  "updated": "2026-07-06 15:36",
+  "total_matched_stocks": 6,
+  "updated": "2026-07-07 15:34",
   "stocks": {
-    "002837": {
+    "603738": {
+      "heat": "high",
+      "maxChg": 6.5,
+      "concepts": [
+        "半导体",
+        "通信设备"
+      ]
+    },
+    "002213": {
       "heat": "warm",
       "maxChg": 4.5,
       "concepts": [
-        "液冷服务器"
+        "半导体"
       ]
     },
-    "603757": {
+    "000962": {
       "heat": "warm",
       "maxChg": 4.5,
       "concepts": [
-        "液冷服务器"
+        "半导体"
       ]
     },
-    "002272": {
+    "002023": {
       "heat": "warm",
       "maxChg": 4.5,
       "concepts": [
-        "液冷服务器"
+        "半导体"
       ]
     },
-    "600601": {
+    "000970": {
+      "heat": "warm",
+      "maxChg": 3.2,
+      "concepts": [
+        "稀土永磁"
+      ]
+    },
+    "603688": {
       "heat": "cold",
       "maxChg": 2.5,
       "concepts": [
-        "PCB概念"
-      ]
-    },
-    "603328": {
-      "heat": "cold",
-      "maxChg": 2.5,
-      "concepts": [
-        "PCB概念"
-      ]
-    },
-    "603283": {
-      "heat": "cold",
-      "maxChg": 2.0,
-      "concepts": [
-        "机器人"
-      ]
-    },
-    "002747": {
-      "heat": "cold",
-      "maxChg": 2.0,
-      "concepts": [
-        "机器人"
-      ]
-    },
-    "002527": {
-      "heat": "cold",
-      "maxChg": 2.0,
-      "concepts": [
-        "机器人"
+        "硅片"
       ]
     }
   }
