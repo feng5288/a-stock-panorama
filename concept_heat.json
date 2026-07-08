@@ -1,191 +1,326 @@
 {
-  "update_time": "2026-07-07T15:34:10.379853",
-  "trade_date": "2026-07-07",
+  "update_time": "2026-07-08T15:33:34.557590",
+  "trade_date": "2026-07-08",
   "market_summary": {
-    "sh_index": -1.26,
-    "sz_index": -1.24,
-    "cy_index": -0.94,
-    "kc50_index": 0.28,
+    "sh_index": 3970.88,
+    "sz_index": 14939.73,
+    "cy_index": 3845.35,
+    "kc50_index": 2016.23,
     "volume_trillion": 2.58
   },
-  "market_note": "三大指数低开低走集体收跌，沪指跌1.26%失守4000点报3990点，深成指跌1.24%，创业板指跌0.94%。科创50逆市涨0.28%。全市成交额2.58万亿缩量5099亿，近4800只个股下跌，34只涨停45只跌停。半导体/培育钻石/游戏逆市走强，贵金属/石油化工/风电/创新药/煤炭领跌。",
+  "market_note": "三大指数高开低走触底反弹后再度走低，沪指跌0.49%，深成指跌1.87%，创业板指跌1.7%；科创50逆势涨0.73%。全市场超3700只个股下跌，成交额约2.58万亿缩量。算力产业链、网络安全、油气、贵金属逆势活跃；锂电池、超硬材料、机器人概念跌幅居前。",
   "hot_concepts": [
     {
-      "name": "半导体",
-      "heat_pct": 4.5,
-      "source": "板块逆市走强多股20CM涨停",
-      "note": "东微半导/有研硅20%涨停，瑞芯微/华天科技/有研新材涨停，盛科通信跟涨",
+      "name": "算力租赁",
+      "heat_pct": 8.0,
+      "source": "云赛智联、数据港、网宿科技、恒为科技、南兴股份、二六三涨停，算力租赁概念全天强势领涨",
+      "note": "涨停潮，板块核心驱动",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "网络安全",
+      "heat_pct": 7.5,
+      "source": "星网锐捷7天5板，深信服、网宿科技等涨停，板块内多只涨停",
+      "note": "最活跃概念，涨停梯队完整",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "VPN",
+      "heat_pct": 6.0,
+      "source": "二六三、南兴股份涨停，板块整体走强",
+      "note": "与网络安全、算力共振",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "国资云",
+      "heat_pct": 6.0,
+      "source": "浪潮信息、广电运通等涨停",
+      "note": "数字经济方向活跃",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "AI芯片",
+      "heat_pct": 5.5,
+      "source": "瑞芯微涨8.02%，云天励飞、复旦微电、翱捷科技、昆仑万维跟涨",
+      "note": "国产替代+半导体共振",
+      "matched_stocks_count": 3
+    },
+    {
+      "name": "半导体设备",
+      "heat_pct": 5.5,
+      "source": "中科飞测涨超14-16%，联动科技、华峰测控涨超12%",
+      "note": "科创50成分股领涨",
+      "matched_stocks_count": 2
+    },
+    {
+      "name": "AI服务器",
+      "heat_pct": 5.0,
+      "source": "浪潮信息一字涨停，AI服务器概念表现活跃",
+      "note": "算力基础设施延伸",
       "matched_stocks_count": 4
     },
     {
-      "name": "培育钻石",
-      "heat_pct": 4.2,
-      "source": "板块震荡拉升多股大涨",
-      "note": "夜光明涨超25%，惠丰钻石涨超10%，黄河旋风/沃尔德/四方达/力量钻石跟涨",
+      "name": "国产算力",
+      "heat_pct": 5.0,
+      "source": "半导体芯片产业链持续活跃，人工智能ETF逆市上涨2.05%",
+      "note": "与AI芯片、半导体设备共振",
       "matched_stocks_count": 0
     },
     {
-      "name": "游戏",
-      "heat_pct": 3.8,
-      "source": "板块震荡拉升",
-      "note": "星辉娱乐涨超10%，游族网络/昆仑万维/巨人网络/恺英网络跟涨，6月版号发放171款创新高",
+      "name": "油气",
+      "heat_pct": 4.5,
+      "source": "山东墨龙涨停，通源石油涨超12%，中海油服涨超4%，板块全线飘红",
+      "note": "防御性板块逆势走强",
       "matched_stocks_count": 0
     },
     {
-      "name": "稀土永磁",
-      "heat_pct": 3.2,
-      "source": "板块盘初上扬",
-      "note": "中科三环涨停，大地熊/宁波韵升/英洛华/正海磁材/争光股份跟涨",
-      "matched_stocks_count": 1
+      "name": "黄金",
+      "heat_pct": 4.5,
+      "source": "招金黄金反包涨停走出5天3板，晓程科技、西部黄金跟涨",
+      "note": "避险情绪升温",
+      "matched_stocks_count": 2
     },
     {
-      "name": "并购重组",
-      "heat_pct": 3.0,
-      "source": "恒尚节能6连板",
-      "note": "恒尚节能6连板领涨，ST海王/宜宾纸业5连板，圣龙股份3天2板",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "硅片",
-      "heat_pct": 2.5,
-      "source": "半导体产业链细分逆市走强",
-      "note": "TCL中环涨停，半导体硅片细分逆市上涨",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "工程机械",
-      "heat_pct": 2.2,
-      "source": "板块逆市小幅上涨",
-      "note": "板块早盘表现抗跌，逆市小幅走强",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "通信设备",
-      "heat_pct": 2.0,
-      "source": "板块微涨",
-      "note": "板块早盘小幅上涨，午后回落但仍收红",
-      "matched_stocks_count": 1
+      "name": "CPO",
+      "heat_pct": 4.0,
+      "source": "威尔高开涨超16%，紫光股份、锐捷网络、华丰科技高开",
+      "note": "早盘高开后有所回落",
+      "matched_stocks_count": 2
     }
   ],
   "hot_stocks": [
     {
-      "code": "603738",
-      "name": "泰晶科技",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 6.5,
+      "code": "002023",
+      "name": "海特高新",
+      "rating": "C+",
+      "score": 13,
+      "heat_score": 11.0,
       "matched_concepts": [
-        "半导体",
-        "通信设备"
+        "AI芯片",
+        "半导体设备"
       ],
-      "theme": "💡 半导体全产业链",
-      "track": "芯片设计"
+      "theme": "🛡️ 国防军工与航空航天",
+      "track": "军工电子"
     },
     {
       "code": "002213",
       "name": "大为股份",
       "rating": "D",
       "score": 5,
-      "heat_score": 4.5,
+      "heat_score": 5.5,
       "matched_concepts": [
-        "半导体"
+        "AI芯片"
       ],
       "theme": "🔥 AI算力产业链",
       "track": "HBM存储产业链"
+    },
+    {
+      "code": "603738",
+      "name": "泰晶科技",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 5.5,
+      "matched_concepts": [
+        "AI芯片"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "芯片设计"
     },
     {
       "code": "000962",
       "name": "东方钽业",
       "rating": "C",
       "score": null,
-      "heat_score": 4.5,
+      "heat_score": 5.5,
       "matched_concepts": [
-        "半导体"
+        "半导体设备"
       ],
       "theme": "💡 半导体全产业链",
       "track": "半导体材料(卡脖子12大类)"
     },
     {
-      "code": "002023",
-      "name": "海特高新",
-      "rating": "C+",
-      "score": 13,
-      "heat_score": 4.5,
+      "code": "600869",
+      "name": "远东股份",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 5.0,
       "matched_concepts": [
-        "半导体"
+        "AI服务器"
       ],
-      "theme": "💡 半导体全产业链",
-      "track": "功率半导体"
+      "theme": "🔥 AI算力产业链",
+      "track": "AI服务器/算力"
     },
     {
-      "code": "000970",
-      "name": "中科三环",
-      "rating": "C+",
-      "score": 14,
-      "heat_score": 3.2,
+      "code": "002851",
+      "name": "麦格米特",
+      "rating": "D",
+      "score": 6,
+      "heat_score": 5.0,
       "matched_concepts": [
-        "稀土永磁"
+        "AI服务器"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "AI服务器/算力"
+    },
+    {
+      "code": "600601",
+      "name": "方正科技",
+      "rating": "B",
+      "score": 16,
+      "heat_score": 5.0,
+      "matched_concepts": [
+        "AI服务器"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "AI服务器/算力"
+    },
+    {
+      "code": "603328",
+      "name": "依顿电子",
+      "rating": "B+",
+      "score": 17,
+      "heat_score": 5.0,
+      "matched_concepts": [
+        "AI服务器"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "AI服务器/算力"
+    },
+    {
+      "code": "603995",
+      "name": "甬金股份",
+      "rating": "B",
+      "score": 17,
+      "heat_score": 4.5,
+      "matched_concepts": [
+        "黄金"
       ],
       "theme": "💎 有色金属与新材料",
-      "track": "稀土永磁"
+      "track": "工业金属"
     },
     {
-      "code": "603688",
-      "name": "石英股份",
-      "rating": "C",
-      "score": 10,
-      "heat_score": 2.5,
+      "code": "601137",
+      "name": "博威合金",
+      "rating": "D+",
+      "score": 11,
+      "heat_score": 4.5,
       "matched_concepts": [
-        "硅片"
+        "黄金"
       ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
+      "theme": "💎 有色金属与新材料",
+      "track": "工业金属"
+    },
+    {
+      "code": "002902",
+      "name": "铭普光磁",
+      "rating": "D",
+      "score": 2,
+      "heat_score": 4.0,
+      "matched_concepts": [
+        "CPO"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "光通信/CPO光互连"
+    },
+    {
+      "code": "600487",
+      "name": "亨通光电",
+      "rating": "A-",
+      "score": 22,
+      "heat_score": 4.0,
+      "matched_concepts": [
+        "CPO"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "光通信/CPO光互连"
     }
   ],
-  "total_matched_stocks": 6,
-  "updated": "2026-07-07 15:34",
+  "total_matched_stocks": 12,
+  "updated": "2026-07-08 15:33",
   "stocks": {
-    "603738": {
+    "002023": {
       "heat": "high",
-      "maxChg": 6.5,
+      "maxChg": 11.0,
       "concepts": [
-        "半导体",
-        "通信设备"
+        "AI芯片",
+        "半导体设备"
       ]
     },
     "002213": {
-      "heat": "warm",
-      "maxChg": 4.5,
+      "heat": "high",
+      "maxChg": 5.5,
       "concepts": [
-        "半导体"
+        "AI芯片"
+      ]
+    },
+    "603738": {
+      "heat": "high",
+      "maxChg": 5.5,
+      "concepts": [
+        "AI芯片"
       ]
     },
     "000962": {
+      "heat": "high",
+      "maxChg": 5.5,
+      "concepts": [
+        "半导体设备"
+      ]
+    },
+    "600869": {
+      "heat": "high",
+      "maxChg": 5.0,
+      "concepts": [
+        "AI服务器"
+      ]
+    },
+    "002851": {
+      "heat": "high",
+      "maxChg": 5.0,
+      "concepts": [
+        "AI服务器"
+      ]
+    },
+    "600601": {
+      "heat": "high",
+      "maxChg": 5.0,
+      "concepts": [
+        "AI服务器"
+      ]
+    },
+    "603328": {
+      "heat": "high",
+      "maxChg": 5.0,
+      "concepts": [
+        "AI服务器"
+      ]
+    },
+    "603995": {
       "heat": "warm",
       "maxChg": 4.5,
       "concepts": [
-        "半导体"
+        "黄金"
       ]
     },
-    "002023": {
+    "601137": {
       "heat": "warm",
       "maxChg": 4.5,
       "concepts": [
-        "半导体"
+        "黄金"
       ]
     },
-    "000970": {
+    "002902": {
       "heat": "warm",
-      "maxChg": 3.2,
+      "maxChg": 4.0,
       "concepts": [
-        "稀土永磁"
+        "CPO"
       ]
     },
-    "603688": {
-      "heat": "cold",
-      "maxChg": 2.5,
+    "600487": {
+      "heat": "warm",
+      "maxChg": 4.0,
       "concepts": [
-        "硅片"
+        "CPO"
       ]
     }
   }
