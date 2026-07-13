@@ -1,222 +1,241 @@
 {
-  "update_time": "2026-07-10T15:33:58.951081",
-  "trade_date": "2026-07-10",
+  "update_time": "2026-07-13T15:33:49.500796",
+  "trade_date": "2026-07-13",
   "market_summary": {
-    "sh_index": 3996.22,
-    "sz_index": 15046.66,
-    "cy_index": 3842.77,
-    "kc50_index": 2087.42,
-    "volume_trillion": 3.39
+    "sh_index": -2.06,
+    "sz_index": -3.48,
+    "cy_index": -3.1,
+    "kc50_index": -3.42,
+    "volume_trillion": 2.82
   },
-  "market_note": "三大指数冲高回落收跌，沪指跌1.00%，深成指跌2.29%，创业板指跌4.37%，科创50跌4.5%。成交额3.39万亿放量4748亿。黄白线分化明显，权重走弱但全市场3772涨1678跌，94涨停5跌停。商业航天受长征十号乙首飞+全球首次网系回收催化掀起涨停潮；CRO/CMO、减肥药等医药方向逆势走强；影视院线、生物制品、国防军工涨幅居前。半导体、算力硬件、证券等方向回调。",
+  "market_note": "三大指数集体大跌，沪指跌2.06%深成指跌3.48%创业板指跌3.1%，全市场超4600只个股下跌，逾百股跌停。医药（中药、医药商业）、银行、电子特气、油气等防御板块逆势走强。存储芯片、PCB、培育钻石、军工电子、商业航天跌幅居前。成交额2.82万亿缩量约5700亿。",
   "hot_concepts": [
     {
-      "name": "商业航天",
-      "heat_pct": 8.0,
-      "source": "长征十号乙首飞+全球首次火箭网系回收，航天ETF逼近涨停，海兰信20cm涨停，航天环宇20cm涨停，中国卫星、航天发展涨停，板块掀涨停潮",
-      "note": "历史性突破催化，日内最强主线",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "CRO",
-      "heat_pct": 5.0,
-      "source": "昭衍新药、益诺思涨停，医疗服务板块涨幅居前",
-      "note": "医药外包方向活跃",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "国防军工",
+      "name": "中药",
       "heat_pct": 4.5,
-      "source": "航天系带动板块走强，高德红外2连板，金风科技涨停",
-      "note": "航天+军工联动",
+      "source": "财联社7月13日收评",
+      "note": "医药板块逆势走强，中药方向领涨，陇神戎发20%涨停、天目药业涨停",
+      "matched_stocks_count": 2
+    },
+    {
+      "name": "电子特气",
+      "heat_pct": 4.0,
+      "source": "每日经济新闻7月13日",
+      "note": "电子特气概念大幅高开，九丰能源一字涨停封单超24亿，华特气体、杭氧股份、凯美特气跟涨",
       "matched_stocks_count": 1
     },
     {
-      "name": "减肥药",
-      "heat_pct": 4.0,
-      "source": "众生药业、常山药业涨停，医药方向持续活跃",
-      "note": "医药细分龙头涨停",
+      "name": "医药商业",
+      "heat_pct": 3.5,
+      "source": "财联社7月13日收评",
+      "note": "医药商业、医药电商板块涨幅居前",
       "matched_stocks_count": 0
     },
     {
-      "name": "影视院线",
-      "heat_pct": 3.5,
-      "source": "欢瑞世纪7天4板，板块涨幅居前",
-      "note": "AI应用+影视联动",
+      "name": "银行",
+      "heat_pct": 3.0,
+      "source": "财联社7月13日收评",
+      "note": "银行板块震荡拉升，苏州银行涨超6%",
       "matched_stocks_count": 0
     },
     {
-      "name": "人形机器人",
-      "heat_pct": 3.5,
-      "source": "日盈电子、晋拓股份6天3板、中鼎股份2连板",
-      "note": "机器人方向维持活跃",
+      "name": "华为昇腾",
+      "heat_pct": 2.5,
+      "source": "财联社7月13日早盘",
+      "note": "华为昇腾概念异动拉升，四川长虹涨停，华丰科技、拓维信息冲高",
+      "matched_stocks_count": 4
+    },
+    {
+      "name": "交换机",
+      "heat_pct": 2.0,
+      "source": "财联社7月13日早盘",
+      "note": "交换机概念再度活跃，星网锐捷10天6板，菲菱科思、盛科通信跟涨",
       "matched_stocks_count": 3
     },
     {
-      "name": "生物制品",
-      "heat_pct": 3.0,
-      "source": "双鹭药业、联环药业、哈药股份涨停，立方制药2连板",
-      "note": "医药板块整体回暖",
+      "name": "油气开采",
+      "heat_pct": 1.5,
+      "source": "财联社7月13日收评",
+      "note": "油气股午后震荡拉升，科力股份领涨；燃气板块涨幅居前",
       "matched_stocks_count": 0
-    },
-    {
-      "name": "AI应用",
-      "heat_pct": 3.0,
-      "source": "利欧股份涨超10%、福石控股涨停，万兴科技跟涨",
-      "note": "数字营销AI方向异动",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "短视频",
-      "heat_pct": 2.5,
-      "source": "利欧股份涨10.11%，蓝色光标、浙文互联、芒果超媒跟涨",
-      "note": "AI+内容方向",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "PCB",
-      "heat_pct": 2.0,
-      "source": "平安电工涨停，鹏鼎控股、南亚新材、广合科技跟涨",
-      "note": "板块震荡拉升",
-      "matched_stocks_count": 2
     }
   ],
   "hot_stocks": [
     {
-      "code": "600353",
-      "name": "旭光电子",
-      "rating": "B+",
-      "score": 15,
+      "code": "603880",
+      "name": "南卫股份",
+      "rating": "D-",
+      "score": 3,
       "heat_score": 4.5,
       "matched_concepts": [
-        "国防军工"
+        "中药"
       ],
-      "theme": "🛡️ 国防军工与航空航天",
-      "track": "军工电子"
+      "theme": "💊 医药健康",
+      "track": "CXO/生命科学"
     },
     {
-      "code": "603283",
-      "name": "赛腾股份",
-      "rating": "B+",
-      "score": 17,
-      "heat_score": 3.5,
+      "code": "600227",
+      "name": "赤天化",
+      "rating": "D",
+      "score": 4,
+      "heat_score": 4.5,
       "matched_concepts": [
-        "人形机器人"
+        "中药"
       ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "002747",
-      "name": "埃斯顿",
-      "rating": "B",
-      "score": null,
-      "heat_score": 3.5,
-      "matched_concepts": [
-        "人形机器人"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "002527",
-      "name": "新时达",
-      "rating": "?",
-      "score": null,
-      "heat_score": 3.5,
-      "matched_concepts": [
-        "人形机器人"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "000810",
-      "name": "创维数字",
-      "rating": "C+",
-      "score": 12,
-      "heat_score": 3.0,
-      "matched_concepts": [
-        "AI应用"
-      ],
-      "theme": "📱 消费电子与终端",
-      "track": "AI PC/智能终端"
-    },
-    {
-      "code": "600601",
-      "name": "方正科技",
-      "rating": "B",
-      "score": 16,
-      "heat_score": 2.0,
-      "matched_concepts": [
-        "PCB"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
+      "theme": "💊 医药健康",
+      "track": "CXO/生命科学"
     },
     {
       "code": "603328",
       "name": "依顿电子",
       "rating": "B+",
       "score": 17,
-      "heat_score": 2.0,
+      "heat_score": 4.5,
       "matched_concepts": [
-        "PCB"
+        "华为昇腾",
+        "交换机"
       ],
       "theme": "🔥 AI算力产业链",
       "track": "AI服务器/算力"
+    },
+    {
+      "code": "600596",
+      "name": "新安股份",
+      "rating": "B",
+      "score": 16,
+      "heat_score": 4.0,
+      "matched_concepts": [
+        "电子特气"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "半导体材料(卡脖子12大类)"
+    },
+    {
+      "code": "600869",
+      "name": "远东股份",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 2.5,
+      "matched_concepts": [
+        "华为昇腾"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "AI服务器/算力"
+    },
+    {
+      "code": "002851",
+      "name": "麦格米特",
+      "rating": "D",
+      "score": 6,
+      "heat_score": 2.5,
+      "matched_concepts": [
+        "华为昇腾"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "AI服务器/算力"
+    },
+    {
+      "code": "600601",
+      "name": "方正科技",
+      "rating": "B",
+      "score": 16,
+      "heat_score": 2.5,
+      "matched_concepts": [
+        "华为昇腾"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "AI服务器/算力"
+    },
+    {
+      "code": "603738",
+      "name": "泰晶科技",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 2.0,
+      "matched_concepts": [
+        "交换机"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "芯片设计"
+    },
+    {
+      "code": "600353",
+      "name": "旭光电子",
+      "rating": "B+",
+      "score": 15,
+      "heat_score": 2.0,
+      "matched_concepts": [
+        "交换机"
+      ],
+      "theme": "🛡️ 国防军工与航空航天",
+      "track": "军工电子"
     }
   ],
-  "total_matched_stocks": 7,
-  "updated": "2026-07-10 15:33",
+  "total_matched_stocks": 9,
+  "updated": "2026-07-13 15:33",
   "stocks": {
-    "600353": {
+    "603880": {
       "heat": "warm",
       "maxChg": 4.5,
       "concepts": [
-        "国防军工"
+        "中药"
       ]
     },
-    "603283": {
+    "600227": {
       "heat": "warm",
-      "maxChg": 3.5,
+      "maxChg": 4.5,
       "concepts": [
-        "人形机器人"
+        "中药"
       ]
     },
-    "002747": {
+    "603328": {
       "heat": "warm",
-      "maxChg": 3.5,
+      "maxChg": 4.5,
       "concepts": [
-        "人形机器人"
+        "华为昇腾",
+        "交换机"
       ]
     },
-    "002527": {
+    "600596": {
       "heat": "warm",
-      "maxChg": 3.5,
+      "maxChg": 4.0,
       "concepts": [
-        "人形机器人"
+        "电子特气"
       ]
     },
-    "000810": {
-      "heat": "warm",
-      "maxChg": 3.0,
+    "600869": {
+      "heat": "cold",
+      "maxChg": 2.5,
       "concepts": [
-        "AI应用"
+        "华为昇腾"
+      ]
+    },
+    "002851": {
+      "heat": "cold",
+      "maxChg": 2.5,
+      "concepts": [
+        "华为昇腾"
       ]
     },
     "600601": {
       "heat": "cold",
-      "maxChg": 2.0,
+      "maxChg": 2.5,
       "concepts": [
-        "PCB"
+        "华为昇腾"
       ]
     },
-    "603328": {
+    "603738": {
       "heat": "cold",
       "maxChg": 2.0,
       "concepts": [
-        "PCB"
+        "交换机"
+      ]
+    },
+    "600353": {
+      "heat": "cold",
+      "maxChg": 2.0,
+      "concepts": [
+        "交换机"
       ]
     }
   }
