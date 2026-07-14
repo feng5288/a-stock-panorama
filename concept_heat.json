@@ -1,241 +1,359 @@
 {
-  "update_time": "2026-07-13T15:33:49.500796",
-  "trade_date": "2026-07-13",
+  "update_time": "2026-07-14T15:34:06.994232",
+  "trade_date": "2026-07-14",
   "market_summary": {
-    "sh_index": -2.06,
-    "sz_index": -3.48,
-    "cy_index": -3.1,
-    "kc50_index": -3.42,
-    "volume_trillion": 2.82
+    "sh_index": 3967.13,
+    "sz_index": 14924.87,
+    "cy_index": 3851.14,
+    "kc50_index": 1955.0,
+    "volume_trillion": 2.7
   },
-  "market_note": "三大指数集体大跌，沪指跌2.06%深成指跌3.48%创业板指跌3.1%，全市场超4600只个股下跌，逾百股跌停。医药（中药、医药商业）、银行、电子特气、油气等防御板块逆势走强。存储芯片、PCB、培育钻石、军工电子、商业航天跌幅居前。成交额2.82万亿缩量约5700亿。",
+  "market_note": "沪指+1.36%，深成指+2.77%，创业板+3.43%，北证50+2.25%。成交额2.70万亿。全市场4211股上涨，87只涨停。科创50盘中一度跌超4%午后翻红。PCB/油气/玻纤/CPO集体爆发，航天军工领跌。",
   "hot_concepts": [
     {
-      "name": "中药",
-      "heat_pct": 4.5,
-      "source": "财联社7月13日收评",
-      "note": "医药板块逆势走强，中药方向领涨，陇神戎发20%涨停、天目药业涨停",
+      "name": "PCB/铜箔/覆铜板",
+      "heat_pct": 5.5,
+      "source": "盘面数据",
+      "note": "则成电子/民爆光电/东材科技/中国巨石/沪电股份十余股涨停，金安国纪/华正新材涨停，建滔积层板涨18%",
+      "matched_stocks_count": 5
+    },
+    {
+      "name": "油气/石油",
+      "heat_pct": 4.8,
+      "source": "期货联动",
+      "note": "原油期货涨超9%，海南矿业/中曼石油涨停，油气开采板块领涨",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "玻纤",
+      "heat_pct": 4.0,
+      "source": "盘面数据",
+      "note": "中国巨石涨停，国际复材涨超10%，建材板块涨幅居前",
       "matched_stocks_count": 2
     },
     {
-      "name": "电子特气",
-      "heat_pct": 4.0,
-      "source": "每日经济新闻7月13日",
-      "note": "电子特气概念大幅高开，九丰能源一字涨停封单超24亿，华特气体、杭氧股份、凯美特气跟涨",
-      "matched_stocks_count": 1
+      "name": "CPO/光通信",
+      "heat_pct": 3.5,
+      "source": "盘面数据",
+      "note": "中际旭创成交462.5亿居首，新易盛成交354亿，算力硬件爆发",
+      "matched_stocks_count": 2
+    },
+    {
+      "name": "煤炭",
+      "heat_pct": 3.0,
+      "source": "盘面数据",
+      "note": "煤炭板块逆势走强，午后延续涨势",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "稀土",
+      "heat_pct": 2.8,
+      "source": "盘面数据",
+      "note": "稀土概念走强，与基本金属联动上涨",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "贵金属",
+      "heat_pct": 2.5,
+      "source": "盘面数据",
+      "note": "贵金属板块大涨，黄金概念走强",
+      "matched_stocks_count": 2
     },
     {
       "name": "医药商业",
-      "heat_pct": 3.5,
-      "source": "财联社7月13日收评",
-      "note": "医药商业、医药电商板块涨幅居前",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "银行",
-      "heat_pct": 3.0,
-      "source": "财联社7月13日收评",
-      "note": "银行板块震荡拉升，苏州银行涨超6%",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "华为昇腾",
       "heat_pct": 2.5,
-      "source": "财联社7月13日早盘",
-      "note": "华为昇腾概念异动拉升，四川长虹涨停，华丰科技、拓维信息冲高",
+      "source": "盘面数据",
+      "note": "哈药股份3连板（业绩超预期），医药生物板块涨幅居前",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "芯片/半导体",
+      "heat_pct": 2.3,
+      "source": "盘面数据",
+      "note": "华脉科技/淳中科技涨停，屹唐股份涨超10%，但科创板分化大",
       "matched_stocks_count": 4
     },
     {
-      "name": "交换机",
+      "name": "通信设备",
       "heat_pct": 2.0,
-      "source": "财联社7月13日早盘",
-      "note": "交换机概念再度活跃，星网锐捷10天6板，菲菱科思、盛科通信跟涨",
-      "matched_stocks_count": 3
-    },
-    {
-      "name": "油气开采",
-      "heat_pct": 1.5,
-      "source": "财联社7月13日收评",
-      "note": "油气股午后震荡拉升，科力股份领涨；燃气板块涨幅居前",
-      "matched_stocks_count": 0
+      "source": "盘面数据",
+      "note": "通信设备板块大涨，中际旭创/新易盛/兆易创新成交居前",
+      "matched_stocks_count": 1
     }
   ],
   "hot_stocks": [
     {
-      "code": "603880",
-      "name": "南卫股份",
-      "rating": "D-",
-      "score": 3,
-      "heat_score": 4.5,
-      "matched_concepts": [
-        "中药"
-      ],
-      "theme": "💊 医药健康",
-      "track": "CXO/生命科学"
-    },
-    {
-      "code": "600227",
-      "name": "赤天化",
-      "rating": "D",
-      "score": 4,
-      "heat_score": 4.5,
-      "matched_concepts": [
-        "中药"
-      ],
-      "theme": "💊 医药健康",
-      "track": "CXO/生命科学"
-    },
-    {
-      "code": "603328",
-      "name": "依顿电子",
-      "rating": "B+",
-      "score": 17,
-      "heat_score": 4.5,
-      "matched_concepts": [
-        "华为昇腾",
-        "交换机"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
-    },
-    {
-      "code": "600596",
-      "name": "新安股份",
-      "rating": "B",
-      "score": 16,
-      "heat_score": 4.0,
-      "matched_concepts": [
-        "电子特气"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
-    },
-    {
-      "code": "600869",
-      "name": "远东股份",
+      "code": "601137",
+      "name": "博威合金",
       "rating": "D+",
-      "score": 8,
-      "heat_score": 2.5,
+      "score": 11,
+      "heat_score": 8.0,
       "matched_concepts": [
-        "华为昇腾"
+        "PCB/铜箔/覆铜板",
+        "贵金属"
       ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
-    },
-    {
-      "code": "002851",
-      "name": "麦格米特",
-      "rating": "D",
-      "score": 6,
-      "heat_score": 2.5,
-      "matched_concepts": [
-        "华为昇腾"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
+      "theme": "📋 PCB电路板产业链",
+      "track": "覆铜板/CCL"
     },
     {
       "code": "600601",
       "name": "方正科技",
       "rating": "B",
       "score": 16,
-      "heat_score": 2.5,
+      "heat_score": 5.5,
       "matched_concepts": [
-        "华为昇腾"
+        "PCB/铜箔/覆铜板"
       ],
       "theme": "🔥 AI算力产业链",
       "track": "AI服务器/算力"
+    },
+    {
+      "code": "603328",
+      "name": "依顿电子",
+      "rating": "B+",
+      "score": 17,
+      "heat_score": 5.5,
+      "matched_concepts": [
+        "PCB/铜箔/覆铜板"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "AI服务器/算力"
+    },
+    {
+      "code": "600110",
+      "name": "诺德股份",
+      "rating": "C",
+      "score": 12,
+      "heat_score": 5.5,
+      "matched_concepts": [
+        "PCB/铜箔/覆铜板"
+      ],
+      "theme": "📋 PCB电路板产业链",
+      "track": "覆铜板/CCL"
+    },
+    {
+      "code": "002203",
+      "name": "海亮股份",
+      "rating": "D+",
+      "score": 9,
+      "heat_score": 5.5,
+      "matched_concepts": [
+        "PCB/铜箔/覆铜板"
+      ],
+      "theme": "📋 PCB电路板产业链",
+      "track": "覆铜板/CCL"
     },
     {
       "code": "603738",
       "name": "泰晶科技",
       "rating": "D+",
       "score": 8,
-      "heat_score": 2.0,
+      "heat_score": 4.3,
       "matched_concepts": [
-        "交换机"
+        "芯片/半导体",
+        "通信设备"
       ],
       "theme": "💡 半导体全产业链",
       "track": "芯片设计"
     },
     {
-      "code": "600353",
-      "name": "旭光电子",
-      "rating": "B+",
-      "score": 15,
-      "heat_score": 2.0,
+      "code": "605006",
+      "name": "山东玻纤",
+      "rating": "D",
+      "score": 10,
+      "heat_score": 4.0,
       "matched_concepts": [
-        "交换机"
+        "玻纤"
       ],
-      "theme": "🛡️ 国防军工与航空航天",
-      "track": "军工电子"
+      "theme": "📋 PCB电路板产业链",
+      "track": "覆铜板/CCL"
+    },
+    {
+      "code": "001359",
+      "name": "平安电工",
+      "rating": "B-",
+      "score": 17,
+      "heat_score": 4.0,
+      "matched_concepts": [
+        "玻纤"
+      ],
+      "theme": "📋 PCB电路板产业链",
+      "track": "覆铜板/CCL"
+    },
+    {
+      "code": "002902",
+      "name": "铭普光磁",
+      "rating": "D",
+      "score": 2,
+      "heat_score": 3.5,
+      "matched_concepts": [
+        "CPO/光通信"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "光通信/CPO光互连"
+    },
+    {
+      "code": "600487",
+      "name": "亨通光电",
+      "rating": "A-",
+      "score": 22,
+      "heat_score": 3.5,
+      "matched_concepts": [
+        "CPO/光通信"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "光通信/CPO光互连"
+    },
+    {
+      "code": "603995",
+      "name": "甬金股份",
+      "rating": "B",
+      "score": 17,
+      "heat_score": 2.5,
+      "matched_concepts": [
+        "贵金属"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "工业金属"
+    },
+    {
+      "code": "002213",
+      "name": "大为股份",
+      "rating": "D",
+      "score": 5,
+      "heat_score": 2.3,
+      "matched_concepts": [
+        "芯片/半导体"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "HBM存储产业链"
+    },
+    {
+      "code": "000962",
+      "name": "东方钽业",
+      "rating": "C",
+      "score": null,
+      "heat_score": 2.3,
+      "matched_concepts": [
+        "芯片/半导体"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "半导体材料(卡脖子12大类)"
+    },
+    {
+      "code": "002023",
+      "name": "海特高新",
+      "rating": "C+",
+      "score": 13,
+      "heat_score": 2.3,
+      "matched_concepts": [
+        "芯片/半导体"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "功率半导体"
     }
   ],
-  "total_matched_stocks": 9,
-  "updated": "2026-07-13 15:33",
+  "total_matched_stocks": 14,
+  "updated": "2026-07-14 15:34",
   "stocks": {
-    "603880": {
-      "heat": "warm",
-      "maxChg": 4.5,
+    "601137": {
+      "heat": "high",
+      "maxChg": 8.0,
       "concepts": [
-        "中药"
-      ]
-    },
-    "600227": {
-      "heat": "warm",
-      "maxChg": 4.5,
-      "concepts": [
-        "中药"
-      ]
-    },
-    "603328": {
-      "heat": "warm",
-      "maxChg": 4.5,
-      "concepts": [
-        "华为昇腾",
-        "交换机"
-      ]
-    },
-    "600596": {
-      "heat": "warm",
-      "maxChg": 4.0,
-      "concepts": [
-        "电子特气"
-      ]
-    },
-    "600869": {
-      "heat": "cold",
-      "maxChg": 2.5,
-      "concepts": [
-        "华为昇腾"
-      ]
-    },
-    "002851": {
-      "heat": "cold",
-      "maxChg": 2.5,
-      "concepts": [
-        "华为昇腾"
+        "PCB/铜箔/覆铜板",
+        "贵金属"
       ]
     },
     "600601": {
-      "heat": "cold",
-      "maxChg": 2.5,
+      "heat": "high",
+      "maxChg": 5.5,
       "concepts": [
-        "华为昇腾"
+        "PCB/铜箔/覆铜板"
+      ]
+    },
+    "603328": {
+      "heat": "high",
+      "maxChg": 5.5,
+      "concepts": [
+        "PCB/铜箔/覆铜板"
+      ]
+    },
+    "600110": {
+      "heat": "high",
+      "maxChg": 5.5,
+      "concepts": [
+        "PCB/铜箔/覆铜板"
+      ]
+    },
+    "002203": {
+      "heat": "high",
+      "maxChg": 5.5,
+      "concepts": [
+        "PCB/铜箔/覆铜板"
       ]
     },
     "603738": {
-      "heat": "cold",
-      "maxChg": 2.0,
+      "heat": "warm",
+      "maxChg": 4.3,
       "concepts": [
-        "交换机"
+        "芯片/半导体",
+        "通信设备"
       ]
     },
-    "600353": {
-      "heat": "cold",
-      "maxChg": 2.0,
+    "605006": {
+      "heat": "warm",
+      "maxChg": 4.0,
       "concepts": [
-        "交换机"
+        "玻纤"
+      ]
+    },
+    "001359": {
+      "heat": "warm",
+      "maxChg": 4.0,
+      "concepts": [
+        "玻纤"
+      ]
+    },
+    "002902": {
+      "heat": "warm",
+      "maxChg": 3.5,
+      "concepts": [
+        "CPO/光通信"
+      ]
+    },
+    "600487": {
+      "heat": "warm",
+      "maxChg": 3.5,
+      "concepts": [
+        "CPO/光通信"
+      ]
+    },
+    "603995": {
+      "heat": "cold",
+      "maxChg": 2.5,
+      "concepts": [
+        "贵金属"
+      ]
+    },
+    "002213": {
+      "heat": "cold",
+      "maxChg": 2.3,
+      "concepts": [
+        "芯片/半导体"
+      ]
+    },
+    "000962": {
+      "heat": "cold",
+      "maxChg": 2.3,
+      "concepts": [
+        "芯片/半导体"
+      ]
+    },
+    "002023": {
+      "heat": "cold",
+      "maxChg": 2.3,
+      "concepts": [
+        "芯片/半导体"
       ]
     }
   }
