@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-07-15T19:27:13.872142",
+  "update_time": "2026-07-15T19:28:00.926019",
   "trade_date": "2026-07-15",
   "market_summary": {
     "sh_index": 3955,
@@ -15,14 +15,14 @@
       "heat_pct": 7.2,
       "source": "医药板块整体爆发,创新药/CXO方向领涨",
       "note": "博瑞医药/迪哲医药/睿智医药20CM涨停,哈药股份4连板,药明康德涨6.05%",
-      "matched_stocks_count": 0
+      "matched_stocks_count": 2
     },
     {
       "name": "CXO",
       "heat_pct": 6.5,
       "source": "与创新药协同共振,CRO/CMO概念涨幅居前",
       "note": "凯莱英涨7.63%,百花医药涨停",
-      "matched_stocks_count": 0
+      "matched_stocks_count": 2
     },
     {
       "name": "白酒",
@@ -36,32 +36,289 @@
       "heat_pct": 4.3,
       "source": "高股息防御属性,央行动作背景下资金流入",
       "note": "重庆银行涨4%,青农商行涨超3%,十余只银行股涨超2%",
-      "matched_stocks_count": 0
+      "matched_stocks_count": 1
     },
     {
       "name": "游戏",
       "heat_pct": 3.8,
       "source": "午后爆发,传媒娱乐联动",
       "note": "巨人网络/恺英网络涨停",
-      "matched_stocks_count": 0
+      "matched_stocks_count": 2
     },
     {
       "name": "零售",
       "heat_pct": 3.2,
       "source": "消费复苏预期,烟酒零售数据双位数增长",
       "note": "新华百货/宁波中百涨停",
-      "matched_stocks_count": 0
+      "matched_stocks_count": 3
     },
     {
       "name": "医药商业",
       "heat_pct": 2.9,
       "source": "医药板块联动,交易活跃",
       "note": "海南海药/昂利康涨停",
-      "matched_stocks_count": 0
+      "matched_stocks_count": 7
     }
   ],
-  "hot_stocks": [],
-  "total_matched_stocks": 0,
-  "updated": "2026-07-15 19:27",
-  "stocks": {}
+  "hot_stocks": [
+    {
+      "code": "603880",
+      "name": "南卫股份",
+      "rating": "D-",
+      "score": 3,
+      "heat_score": 16.6,
+      "matched_concepts": [
+        "创新药",
+        "CXO",
+        "医药商业"
+      ],
+      "theme": "💊 医药健康",
+      "track": "CXO/生命科学"
+    },
+    {
+      "code": "600227",
+      "name": "赤天化",
+      "rating": "D",
+      "score": 4,
+      "heat_score": 16.6,
+      "matched_concepts": [
+        "创新药",
+        "CXO",
+        "医药商业"
+      ],
+      "theme": "💊 医药健康",
+      "track": "CXO/生命科学"
+    },
+    {
+      "code": "002141",
+      "name": "贤丰控股",
+      "rating": "D+",
+      "score": 7,
+      "heat_score": 4.3,
+      "matched_concepts": [
+        "银行"
+      ],
+      "theme": "🏦 金融与地产",
+      "track": "金融"
+    },
+    {
+      "code": "600226",
+      "name": "亨通股份",
+      "rating": "D+",
+      "score": 9,
+      "heat_score": 3.8,
+      "matched_concepts": [
+        "游戏"
+      ],
+      "theme": "🛒 消费与服务业",
+      "track": "游戏/传媒"
+    },
+    {
+      "code": "603466",
+      "name": "风语筑",
+      "rating": "?",
+      "score": null,
+      "heat_score": 3.8,
+      "matched_concepts": [
+        "游戏"
+      ],
+      "theme": "🛒 消费与服务业",
+      "track": "游戏/传媒"
+    },
+    {
+      "code": "603389",
+      "name": "法狮龙",
+      "rating": "D+",
+      "score": 9,
+      "heat_score": 3.2,
+      "matched_concepts": [
+        "零售"
+      ],
+      "theme": "🛒 消费与服务业",
+      "track": "家电/家居"
+    },
+    {
+      "code": "600605",
+      "name": "汇通能源",
+      "rating": "D+",
+      "score": null,
+      "heat_score": 3.2,
+      "matched_concepts": [
+        "零售"
+      ],
+      "theme": "🏦 金融与地产",
+      "track": "房地产"
+    },
+    {
+      "code": "600736",
+      "name": "苏州高新",
+      "rating": "D+",
+      "score": 9,
+      "heat_score": 3.2,
+      "matched_concepts": [
+        "零售"
+      ],
+      "theme": "🏦 金融与地产",
+      "track": "房地产"
+    },
+    {
+      "code": "603733",
+      "name": "仙鹤股份",
+      "rating": "B-",
+      "score": 16,
+      "heat_score": 2.9,
+      "matched_concepts": [
+        "医药商业"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "特种化工新材料"
+    },
+    {
+      "code": "002522",
+      "name": "浙江众成",
+      "rating": "D",
+      "score": 5,
+      "heat_score": 2.9,
+      "matched_concepts": [
+        "医药商业"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "特种化工新材料"
+    },
+    {
+      "code": "605566",
+      "name": "福莱蒽特",
+      "rating": "C+",
+      "score": 14,
+      "heat_score": 2.9,
+      "matched_concepts": [
+        "医药商业"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "特种化工新材料"
+    },
+    {
+      "code": "603681",
+      "name": "永冠新材",
+      "rating": "C",
+      "score": 11,
+      "heat_score": 2.9,
+      "matched_concepts": [
+        "医药商业"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "特种化工新材料"
+    },
+    {
+      "code": "603683",
+      "name": "晶华新材",
+      "rating": "?",
+      "score": null,
+      "heat_score": 2.9,
+      "matched_concepts": [
+        "医药商业"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "特种化工新材料"
+    }
+  ],
+  "total_matched_stocks": 13,
+  "updated": "2026-07-15 19:28",
+  "stocks": {
+    "603880": {
+      "heat": "high",
+      "maxChg": 16.6,
+      "concepts": [
+        "创新药",
+        "CXO",
+        "医药商业"
+      ]
+    },
+    "600227": {
+      "heat": "high",
+      "maxChg": 16.6,
+      "concepts": [
+        "创新药",
+        "CXO",
+        "医药商业"
+      ]
+    },
+    "002141": {
+      "heat": "warm",
+      "maxChg": 4.3,
+      "concepts": [
+        "银行"
+      ]
+    },
+    "600226": {
+      "heat": "warm",
+      "maxChg": 3.8,
+      "concepts": [
+        "游戏"
+      ]
+    },
+    "603466": {
+      "heat": "warm",
+      "maxChg": 3.8,
+      "concepts": [
+        "游戏"
+      ]
+    },
+    "603389": {
+      "heat": "warm",
+      "maxChg": 3.2,
+      "concepts": [
+        "零售"
+      ]
+    },
+    "600605": {
+      "heat": "warm",
+      "maxChg": 3.2,
+      "concepts": [
+        "零售"
+      ]
+    },
+    "600736": {
+      "heat": "warm",
+      "maxChg": 3.2,
+      "concepts": [
+        "零售"
+      ]
+    },
+    "603733": {
+      "heat": "cold",
+      "maxChg": 2.9,
+      "concepts": [
+        "医药商业"
+      ]
+    },
+    "002522": {
+      "heat": "cold",
+      "maxChg": 2.9,
+      "concepts": [
+        "医药商业"
+      ]
+    },
+    "605566": {
+      "heat": "cold",
+      "maxChg": 2.9,
+      "concepts": [
+        "医药商业"
+      ]
+    },
+    "603681": {
+      "heat": "cold",
+      "maxChg": 2.9,
+      "concepts": [
+        "医药商业"
+      ]
+    },
+    "603683": {
+      "heat": "cold",
+      "maxChg": 2.9,
+      "concepts": [
+        "医药商业"
+      ]
+    }
+  }
 }
