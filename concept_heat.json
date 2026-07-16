@@ -1,63 +1,63 @@
 {
-  "update_time": "2026-07-15T19:28:00.926019",
-  "trade_date": "2026-07-15",
+  "update_time": "2026-07-16T18:37:56.310849",
+  "trade_date": "2026-07-16",
   "market_summary": {
-    "sh_index": 3955,
-    "sz_index": 14780,
-    "cy_index": 3820,
-    "kc50_index": 1140,
-    "volume_trillion": 2.57
+    "sh_index": 3882,
+    "sz_index": 14489,
+    "cy_index": 3707,
+    "kc50_index": 1095,
+    "volume_trillion": 2.4
   },
-  "market_note": "三大指数集体收跌,沪指跌0.29%,深成指跌0.97%,创业板指跌1.21%,科创50跌4.25%。全市场成交额2.57万亿缩量1328亿。医药消费逆市领涨,半导体产业链回调明显,74只涨停33只跌停。",
+  "market_note": "三大指数集体大跌,沪指跌1.85%,深成指跌1.97%,创业板指跌2.95%,北证50跌2.65%。成交额2.40万亿缩量1676亿。2499涨2861跌,48涨停38跌停。影视/医药/中药/AI语料逆势走强,玻纤/先进封装/电子化学品/存储芯片等回调。",
   "hot_concepts": [
     {
-      "name": "创新药",
-      "heat_pct": 7.2,
-      "source": "医药板块整体爆发,创新药/CXO方向领涨",
-      "note": "博瑞医药/迪哲医药/睿智医药20CM涨停,哈药股份4连板,药明康德涨6.05%",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "CXO",
+      "name": "短剧/影视院线",
       "heat_pct": 6.5,
-      "source": "与创新药协同共振,CRO/CMO概念涨幅居前",
-      "note": "凯莱英涨7.63%,百花医药涨停",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "白酒",
-      "heat_pct": 5.8,
-      "source": "大消费防御板块,烟酒零售数据提振",
-      "note": "20支白酒股全线飘红,古井贡酒/金种子酒涨停,8支涨超5%",
+      "source": "暑期档票房超33亿,影视股连续回暖",
+      "note": "儒意电影2连板,欢瑞世纪6天3板,上海电影涨停,光线传媒涨超11%",
       "matched_stocks_count": 0
     },
     {
-      "name": "银行",
-      "heat_pct": 4.3,
-      "source": "高股息防御属性,央行动作背景下资金流入",
-      "note": "重庆银行涨4%,青农商行涨超3%,十余只银行股涨超2%",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "游戏",
-      "heat_pct": 3.8,
-      "source": "午后爆发,传媒娱乐联动",
-      "note": "巨人网络/恺英网络涨停",
+      "name": "医药",
+      "heat_pct": 5.8,
+      "source": "医药板块反复活跃,哈药股份5连板领涨",
+      "note": "南华生物/海南海药/永安药业2连板,片仔癀涨停,博瑞医药/普蕊斯/万邦医药涨超10%",
       "matched_stocks_count": 2
     },
     {
-      "name": "零售",
-      "heat_pct": 3.2,
-      "source": "消费复苏预期,烟酒零售数据双位数增长",
-      "note": "新华百货/宁波中百涨停",
-      "matched_stocks_count": 3
+      "name": "中药",
+      "heat_pct": 5.2,
+      "source": "中医药振兴十五五规划获批,新版基药目录中成药净增50种",
+      "note": "片仔癀涨停(141.15元/总市值851亿),珍宝岛涨停,大唐药业/康美药业涨幅居前",
+      "matched_stocks_count": 0
     },
     {
-      "name": "医药商业",
-      "heat_pct": 2.9,
-      "source": "医药板块联动,交易活跃",
-      "note": "海南海药/昂利康涨停",
-      "matched_stocks_count": 7
+      "name": "AI语料/豆包大模型",
+      "heat_pct": 4.5,
+      "source": "AI应用方向逆势走强",
+      "note": "AI语料概念、豆包大模型概念涨幅居前",
+      "matched_stocks_count": 1
+    },
+    {
+      "name": "医疗服务",
+      "heat_pct": 4.0,
+      "source": "医疗服务板块持续上行",
+      "note": "昭衍新药涨停,百奥赛图/普蕊斯/泓博医药涨超10%",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "PCB概念",
+      "heat_pct": 3.8,
+      "source": "PCB概念开盘后震荡回升",
+      "note": "逸豪新材20CM涨停,贤丰控股3连板",
+      "matched_stocks_count": 2
+    },
+    {
+      "name": "苹果产业链",
+      "heat_pct": 3.2,
+      "source": "苹果产业链逆势走强",
+      "note": "外围大跌背景下消费电子方向有资金关注",
+      "matched_stocks_count": 0
     }
   ],
   "hot_stocks": [
@@ -66,11 +66,9 @@
       "name": "南卫股份",
       "rating": "D-",
       "score": 3,
-      "heat_score": 16.6,
+      "heat_score": 5.8,
       "matched_concepts": [
-        "创新药",
-        "CXO",
-        "医药商业"
+        "医药"
       ],
       "theme": "💊 医药健康",
       "track": "CXO/生命科学"
@@ -80,244 +78,86 @@
       "name": "赤天化",
       "rating": "D",
       "score": 4,
-      "heat_score": 16.6,
+      "heat_score": 5.8,
       "matched_concepts": [
-        "创新药",
-        "CXO",
-        "医药商业"
+        "医药"
       ],
       "theme": "💊 医药健康",
       "track": "CXO/生命科学"
     },
     {
-      "code": "002141",
-      "name": "贤丰控股",
-      "rating": "D+",
-      "score": 7,
-      "heat_score": 4.3,
-      "matched_concepts": [
-        "银行"
-      ],
-      "theme": "🏦 金融与地产",
-      "track": "金融"
-    },
-    {
-      "code": "600226",
-      "name": "亨通股份",
-      "rating": "D+",
-      "score": 9,
-      "heat_score": 3.8,
-      "matched_concepts": [
-        "游戏"
-      ],
-      "theme": "🛒 消费与服务业",
-      "track": "游戏/传媒"
-    },
-    {
-      "code": "603466",
-      "name": "风语筑",
-      "rating": "?",
-      "score": null,
-      "heat_score": 3.8,
-      "matched_concepts": [
-        "游戏"
-      ],
-      "theme": "🛒 消费与服务业",
-      "track": "游戏/传媒"
-    },
-    {
-      "code": "603389",
-      "name": "法狮龙",
-      "rating": "D+",
-      "score": 9,
-      "heat_score": 3.2,
-      "matched_concepts": [
-        "零售"
-      ],
-      "theme": "🛒 消费与服务业",
-      "track": "家电/家居"
-    },
-    {
-      "code": "600605",
-      "name": "汇通能源",
-      "rating": "D+",
-      "score": null,
-      "heat_score": 3.2,
-      "matched_concepts": [
-        "零售"
-      ],
-      "theme": "🏦 金融与地产",
-      "track": "房地产"
-    },
-    {
-      "code": "600736",
-      "name": "苏州高新",
-      "rating": "D+",
-      "score": 9,
-      "heat_score": 3.2,
-      "matched_concepts": [
-        "零售"
-      ],
-      "theme": "🏦 金融与地产",
-      "track": "房地产"
-    },
-    {
-      "code": "603733",
-      "name": "仙鹤股份",
-      "rating": "B-",
-      "score": 16,
-      "heat_score": 2.9,
-      "matched_concepts": [
-        "医药商业"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "特种化工新材料"
-    },
-    {
-      "code": "002522",
-      "name": "浙江众成",
-      "rating": "D",
-      "score": 5,
-      "heat_score": 2.9,
-      "matched_concepts": [
-        "医药商业"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "特种化工新材料"
-    },
-    {
-      "code": "605566",
-      "name": "福莱蒽特",
+      "code": "000810",
+      "name": "创维数字",
       "rating": "C+",
-      "score": 14,
-      "heat_score": 2.9,
+      "score": 12,
+      "heat_score": 4.5,
       "matched_concepts": [
-        "医药商业"
+        "AI语料/豆包大模型"
       ],
-      "theme": "💎 有色金属与新材料",
-      "track": "特种化工新材料"
+      "theme": "📱 消费电子与终端",
+      "track": "AI PC/智能终端"
     },
     {
-      "code": "603681",
-      "name": "永冠新材",
-      "rating": "C",
-      "score": 11,
-      "heat_score": 2.9,
+      "code": "600601",
+      "name": "方正科技",
+      "rating": "B",
+      "score": 16,
+      "heat_score": 3.8,
       "matched_concepts": [
-        "医药商业"
+        "PCB概念"
       ],
-      "theme": "💎 有色金属与新材料",
-      "track": "特种化工新材料"
+      "theme": "🔥 AI算力产业链",
+      "track": "AI服务器/算力"
     },
     {
-      "code": "603683",
-      "name": "晶华新材",
-      "rating": "?",
-      "score": null,
-      "heat_score": 2.9,
+      "code": "603328",
+      "name": "依顿电子",
+      "rating": "B+",
+      "score": 17,
+      "heat_score": 3.8,
       "matched_concepts": [
-        "医药商业"
+        "PCB概念"
       ],
-      "theme": "💎 有色金属与新材料",
-      "track": "特种化工新材料"
+      "theme": "🔥 AI算力产业链",
+      "track": "AI服务器/算力"
     }
   ],
-  "total_matched_stocks": 13,
-  "updated": "2026-07-15 19:28",
+  "total_matched_stocks": 5,
+  "updated": "2026-07-16 18:37",
   "stocks": {
     "603880": {
       "heat": "high",
-      "maxChg": 16.6,
+      "maxChg": 5.8,
       "concepts": [
-        "创新药",
-        "CXO",
-        "医药商业"
+        "医药"
       ]
     },
     "600227": {
       "heat": "high",
-      "maxChg": 16.6,
+      "maxChg": 5.8,
       "concepts": [
-        "创新药",
-        "CXO",
-        "医药商业"
+        "医药"
       ]
     },
-    "002141": {
+    "000810": {
       "heat": "warm",
-      "maxChg": 4.3,
+      "maxChg": 4.5,
       "concepts": [
-        "银行"
+        "AI语料/豆包大模型"
       ]
     },
-    "600226": {
+    "600601": {
       "heat": "warm",
       "maxChg": 3.8,
       "concepts": [
-        "游戏"
+        "PCB概念"
       ]
     },
-    "603466": {
+    "603328": {
       "heat": "warm",
       "maxChg": 3.8,
       "concepts": [
-        "游戏"
-      ]
-    },
-    "603389": {
-      "heat": "warm",
-      "maxChg": 3.2,
-      "concepts": [
-        "零售"
-      ]
-    },
-    "600605": {
-      "heat": "warm",
-      "maxChg": 3.2,
-      "concepts": [
-        "零售"
-      ]
-    },
-    "600736": {
-      "heat": "warm",
-      "maxChg": 3.2,
-      "concepts": [
-        "零售"
-      ]
-    },
-    "603733": {
-      "heat": "cold",
-      "maxChg": 2.9,
-      "concepts": [
-        "医药商业"
-      ]
-    },
-    "002522": {
-      "heat": "cold",
-      "maxChg": 2.9,
-      "concepts": [
-        "医药商业"
-      ]
-    },
-    "605566": {
-      "heat": "cold",
-      "maxChg": 2.9,
-      "concepts": [
-        "医药商业"
-      ]
-    },
-    "603681": {
-      "heat": "cold",
-      "maxChg": 2.9,
-      "concepts": [
-        "医药商业"
-      ]
-    },
-    "603683": {
-      "heat": "cold",
-      "maxChg": 2.9,
-      "concepts": [
-        "医药商业"
+        "PCB概念"
       ]
     }
   }
