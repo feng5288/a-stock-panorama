@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-07-18T14:32:35.653541",
+  "update_time": "2026-07-18T14:33:31.778394",
   "trade_date": "2026-07-17",
   "market_summary": {
     "sh_index": 3763,
@@ -15,21 +15,21 @@
       "heat_pct": 8.5,
       "source": "电力板块一枝独秀,逆市领涨全市场",
       "note": "桂冠电力/华银电力/深南电A/乐山电力涨停,珈伟新能涨超16%,九洲集团涨超11%",
-      "matched_stocks_count": 0
+      "matched_stocks_count": 7
     },
     {
       "name": "水电",
       "heat_pct": 7.2,
       "source": "水电概念走强,多股涨停",
       "note": "湖南发展3天2板,宁波能源/乐山电力涨停,西昌电力/杭州热电跟涨",
-      "matched_stocks_count": 0
+      "matched_stocks_count": 1
     },
     {
       "name": "绿色电力",
       "heat_pct": 6.8,
       "source": "绿色电力概念逆势上涨",
       "note": "立新能源2连板,节能风电涨超8%,赣能股份/豫能控股/上海电力跟涨",
-      "matched_stocks_count": 0
+      "matched_stocks_count": 8
     },
     {
       "name": "医药",
@@ -43,7 +43,7 @@
       "heat_pct": 3.8,
       "source": "中医药振兴政策持续发酵",
       "note": "片仔癀维持人气,珍宝岛2连板,中医药十五五规划获批利好持续",
-      "matched_stocks_count": 0
+      "matched_stocks_count": 2
     },
     {
       "name": "股权转让/并购重组",
@@ -55,13 +55,104 @@
   ],
   "hot_stocks": [
     {
+      "code": "605580",
+      "name": "恒盛能源",
+      "rating": "D+",
+      "score": 9,
+      "heat_score": 15.7,
+      "matched_concepts": [
+        "电力改革",
+        "水电"
+      ],
+      "theme": "⚡ 电力电网",
+      "track": "火电"
+    },
+    {
+      "code": "002534",
+      "name": "西子洁能",
+      "rating": "A-",
+      "score": 20,
+      "heat_score": 15.3,
+      "matched_concepts": [
+        "电力改革",
+        "绿色电力"
+      ],
+      "theme": "☀️ 新能源发电",
+      "track": "储能"
+    },
+    {
+      "code": "600869",
+      "name": "远东股份",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 15.3,
+      "matched_concepts": [
+        "电力改革",
+        "绿色电力"
+      ],
+      "theme": "☀️ 新能源发电",
+      "track": "储能"
+    },
+    {
+      "code": "002733",
+      "name": "雄韬股份",
+      "rating": "?",
+      "score": null,
+      "heat_score": 15.3,
+      "matched_concepts": [
+        "电力改革",
+        "绿色电力"
+      ],
+      "theme": "☀️ 新能源发电",
+      "track": "储能"
+    },
+    {
+      "code": "603663",
+      "name": "三祥新材",
+      "rating": "A",
+      "score": 23,
+      "heat_score": 15.3,
+      "matched_concepts": [
+        "电力改革",
+        "绿色电力"
+      ],
+      "theme": "⚡ 电力电网",
+      "track": "核电"
+    },
+    {
+      "code": "002167",
+      "name": "东方锆业",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 15.3,
+      "matched_concepts": [
+        "电力改革",
+        "绿色电力"
+      ],
+      "theme": "⚡ 电力电网",
+      "track": "核电"
+    },
+    {
+      "code": "000922",
+      "name": "佳电股份",
+      "rating": "C+",
+      "score": null,
+      "heat_score": 8.5,
+      "matched_concepts": [
+        "电力改革"
+      ],
+      "theme": "⚡ 电力电网",
+      "track": "核电"
+    },
+    {
       "code": "603880",
       "name": "南卫股份",
       "rating": "D-",
       "score": 3,
-      "heat_score": 4.5,
+      "heat_score": 8.3,
       "matched_concepts": [
-        "医药"
+        "医药",
+        "中药"
       ],
       "theme": "💊 医药健康",
       "track": "CXO/生命科学"
@@ -71,29 +162,144 @@
       "name": "赤天化",
       "rating": "D",
       "score": 4,
-      "heat_score": 4.5,
+      "heat_score": 8.3,
       "matched_concepts": [
-        "医药"
+        "医药",
+        "中药"
       ],
       "theme": "💊 医药健康",
       "track": "CXO/生命科学"
+    },
+    {
+      "code": "603212",
+      "name": "赛伍技术",
+      "rating": "B+",
+      "score": 19,
+      "heat_score": 6.8,
+      "matched_concepts": [
+        "绿色电力"
+      ],
+      "theme": "🚗 新能源智能汽车",
+      "track": "动力电池"
+    },
+    {
+      "code": "002741",
+      "name": "光华科技",
+      "rating": "D+",
+      "score": 11,
+      "heat_score": 6.8,
+      "matched_concepts": [
+        "绿色电力"
+      ],
+      "theme": "🚗 新能源智能汽车",
+      "track": "动力电池"
+    },
+    {
+      "code": "601678",
+      "name": "滨化股份",
+      "rating": "D",
+      "score": 10,
+      "heat_score": 6.8,
+      "matched_concepts": [
+        "绿色电力"
+      ],
+      "theme": "☀️ 新能源发电",
+      "track": "氢能"
     }
   ],
-  "total_matched_stocks": 2,
-  "updated": "2026-07-18 14:32",
+  "total_matched_stocks": 12,
+  "updated": "2026-07-18 14:33",
   "stocks": {
-    "603880": {
-      "heat": "warm",
-      "maxChg": 4.5,
+    "605580": {
+      "heat": "high",
+      "maxChg": 15.7,
       "concepts": [
-        "医药"
+        "电力改革",
+        "水电"
+      ]
+    },
+    "002534": {
+      "heat": "high",
+      "maxChg": 15.3,
+      "concepts": [
+        "电力改革",
+        "绿色电力"
+      ]
+    },
+    "600869": {
+      "heat": "high",
+      "maxChg": 15.3,
+      "concepts": [
+        "电力改革",
+        "绿色电力"
+      ]
+    },
+    "002733": {
+      "heat": "high",
+      "maxChg": 15.3,
+      "concepts": [
+        "电力改革",
+        "绿色电力"
+      ]
+    },
+    "603663": {
+      "heat": "high",
+      "maxChg": 15.3,
+      "concepts": [
+        "电力改革",
+        "绿色电力"
+      ]
+    },
+    "002167": {
+      "heat": "high",
+      "maxChg": 15.3,
+      "concepts": [
+        "电力改革",
+        "绿色电力"
+      ]
+    },
+    "000922": {
+      "heat": "high",
+      "maxChg": 8.5,
+      "concepts": [
+        "电力改革"
+      ]
+    },
+    "603880": {
+      "heat": "high",
+      "maxChg": 8.3,
+      "concepts": [
+        "医药",
+        "中药"
       ]
     },
     "600227": {
-      "heat": "warm",
-      "maxChg": 4.5,
+      "heat": "high",
+      "maxChg": 8.3,
       "concepts": [
-        "医药"
+        "医药",
+        "中药"
+      ]
+    },
+    "603212": {
+      "heat": "high",
+      "maxChg": 6.8,
+      "concepts": [
+        "绿色电力"
+      ]
+    },
+    "002741": {
+      "heat": "high",
+      "maxChg": 6.8,
+      "concepts": [
+        "绿色电力"
+      ]
+    },
+    "601678": {
+      "heat": "high",
+      "maxChg": 6.8,
+      "concepts": [
+        "绿色电力"
       ]
     }
   }
