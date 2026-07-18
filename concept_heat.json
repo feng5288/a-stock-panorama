@@ -1,62 +1,55 @@
 {
-  "update_time": "2026-07-16T18:38:38.992432",
-  "trade_date": "2026-07-16",
+  "update_time": "2026-07-18T14:32:35.653541",
+  "trade_date": "2026-07-17",
   "market_summary": {
-    "sh_index": 3882,
-    "sz_index": 14489,
-    "cy_index": 3707,
-    "kc50_index": 1095,
-    "volume_trillion": 2.4
+    "sh_index": 3763,
+    "sz_index": 13707,
+    "cy_index": 3442,
+    "kc50_index": 1017,
+    "volume_trillion": 2.67
   },
-  "market_note": "三大指数集体大跌,沪指跌1.85%,深成指跌1.97%,创业板指跌2.95%,北证50跌2.65%。成交额2.40万亿缩量1676亿。2499涨2861跌,48涨停38跌停。影视/医药/中药/AI语料逆势走强,玻纤/先进封装/电子化学品/存储芯片等回调。",
+  "market_note": "三大指数集体暴跌,沪指跌3.05%,深成指跌5.40%,创业板指跌7.15%,科创50跌7.12%。成交额2.67万亿放量2527亿。超5000只个股下跌,198只跌停,仅35只涨停。电力板块一枝独秀逆势领涨,电力改革/水电/绿色电力多股涨停。医药/中药维持活跃。短线资金抱团连板股。",
   "hot_concepts": [
     {
-      "name": "短剧/影视院线",
-      "heat_pct": 6.5,
-      "source": "暑期档票房超33亿,影视股连续回暖",
-      "note": "儒意电影2连板,欢瑞世纪6天3板,上海电影涨停,光线传媒涨超11%",
+      "name": "电力改革",
+      "heat_pct": 8.5,
+      "source": "电力板块一枝独秀,逆市领涨全市场",
+      "note": "桂冠电力/华银电力/深南电A/乐山电力涨停,珈伟新能涨超16%,九洲集团涨超11%",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "水电",
+      "heat_pct": 7.2,
+      "source": "水电概念走强,多股涨停",
+      "note": "湖南发展3天2板,宁波能源/乐山电力涨停,西昌电力/杭州热电跟涨",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "绿色电力",
+      "heat_pct": 6.8,
+      "source": "绿色电力概念逆势上涨",
+      "note": "立新能源2连板,节能风电涨超8%,赣能股份/豫能控股/上海电力跟涨",
       "matched_stocks_count": 0
     },
     {
       "name": "医药",
-      "heat_pct": 5.8,
-      "source": "医药板块反复活跃,哈药股份5连板领涨",
-      "note": "南华生物/海南海药/永安药业2连板,片仔癀涨停,博瑞医药/普蕊斯/万邦医药涨超10%",
+      "heat_pct": 4.5,
+      "source": "哈药股份5连板领涨医药板块",
+      "note": "哈药股份5天5板,海南海药等个股维持活跃度,医药板块连续多日受资金关注",
       "matched_stocks_count": 2
     },
     {
       "name": "中药",
-      "heat_pct": 5.2,
-      "source": "中医药振兴十五五规划获批,新版基药目录中成药净增50种",
-      "note": "片仔癀涨停(141.15元/总市值851亿),珍宝岛涨停,大唐药业/康美药业涨幅居前",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "AI语料/豆包大模型",
-      "heat_pct": 4.5,
-      "source": "AI应用方向逆势走强",
-      "note": "AI语料概念、豆包大模型概念涨幅居前",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "医疗服务",
-      "heat_pct": 4.0,
-      "source": "医疗服务板块持续上行",
-      "note": "昭衍新药涨停,百奥赛图/普蕊斯/泓博医药涨超10%",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "PCB概念",
       "heat_pct": 3.8,
-      "source": "PCB概念开盘后震荡回升",
-      "note": "逸豪新材20CM涨停,贤丰控股3连板",
-      "matched_stocks_count": 2
+      "source": "中医药振兴政策持续发酵",
+      "note": "片仔癀维持人气,珍宝岛2连板,中医药十五五规划获批利好持续",
+      "matched_stocks_count": 0
     },
     {
-      "name": "苹果产业链",
-      "heat_pct": 3.2,
-      "source": "苹果产业链逆势走强",
-      "note": "外围大跌背景下消费电子方向有资金关注",
+      "name": "股权转让/并购重组",
+      "heat_pct": 3.5,
+      "source": "连板股抱团,资金聚焦股权转让方向",
+      "note": "艾艾精工9天7板,浙江美大6天4板,智度股份/香江控股3连板",
       "matched_stocks_count": 0
     }
   ],
@@ -66,7 +59,7 @@
       "name": "南卫股份",
       "rating": "D-",
       "score": 3,
-      "heat_score": 5.8,
+      "heat_score": 4.5,
       "matched_concepts": [
         "医药"
       ],
@@ -78,86 +71,29 @@
       "name": "赤天化",
       "rating": "D",
       "score": 4,
-      "heat_score": 5.8,
+      "heat_score": 4.5,
       "matched_concepts": [
         "医药"
       ],
       "theme": "💊 医药健康",
       "track": "CXO/生命科学"
-    },
-    {
-      "code": "000810",
-      "name": "创维数字",
-      "rating": "C+",
-      "score": 12,
-      "heat_score": 4.5,
-      "matched_concepts": [
-        "AI语料/豆包大模型"
-      ],
-      "theme": "📱 消费电子与终端",
-      "track": "AI PC/智能终端"
-    },
-    {
-      "code": "600601",
-      "name": "方正科技",
-      "rating": "B",
-      "score": 16,
-      "heat_score": 3.8,
-      "matched_concepts": [
-        "PCB概念"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
-    },
-    {
-      "code": "603328",
-      "name": "依顿电子",
-      "rating": "B+",
-      "score": 17,
-      "heat_score": 3.8,
-      "matched_concepts": [
-        "PCB概念"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
     }
   ],
-  "total_matched_stocks": 5,
-  "updated": "2026-07-16 18:38",
+  "total_matched_stocks": 2,
+  "updated": "2026-07-18 14:32",
   "stocks": {
     "603880": {
-      "heat": "high",
-      "maxChg": 5.8,
+      "heat": "warm",
+      "maxChg": 4.5,
       "concepts": [
         "医药"
       ]
     },
     "600227": {
-      "heat": "high",
-      "maxChg": 5.8,
-      "concepts": [
-        "医药"
-      ]
-    },
-    "000810": {
       "heat": "warm",
       "maxChg": 4.5,
       "concepts": [
-        "AI语料/豆包大模型"
-      ]
-    },
-    "600601": {
-      "heat": "warm",
-      "maxChg": 3.8,
-      "concepts": [
-        "PCB概念"
-      ]
-    },
-    "603328": {
-      "heat": "warm",
-      "maxChg": 3.8,
-      "concepts": [
-        "PCB概念"
+        "医药"
       ]
     }
   }
