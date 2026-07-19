@@ -1,10 +1,10 @@
 {
-  "update_time": "2026-07-18T14:33:31.778394",
+  "update_time": "2026-07-19T10:45:14.586225",
   "trade_date": "2026-07-17",
   "market_summary": {
-    "sh_index": 3763,
+    "sh_index": 3764,
     "sz_index": 13707,
-    "cy_index": 3442,
+    "cy_index": 3429,
     "kc50_index": 1017,
     "volume_trillion": 2.67
   },
@@ -208,7 +208,7 @@
     }
   ],
   "total_matched_stocks": 12,
-  "updated": "2026-07-18 14:33",
+  "updated": "2026-07-19 10:45",
   "stocks": {
     "605580": {
       "heat": "high",
