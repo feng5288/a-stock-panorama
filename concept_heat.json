@@ -1,56 +1,70 @@
 {
-  "update_time": "2026-07-19T10:45:14.586225",
-  "trade_date": "2026-07-17",
+  "update_time": "2026-07-20T18:53:00.291174",
+  "trade_date": "2026-07-20",
   "market_summary": {
-    "sh_index": 3764,
-    "sz_index": 13707,
-    "cy_index": 3429,
-    "kc50_index": 1017,
-    "volume_trillion": 2.67
+    "sh_index": 3378,
+    "sz_index": 10860,
+    "cy_index": 2260,
+    "kc50_index": 1005,
+    "volume_trillion": 1.85
   },
-  "market_note": "三大指数集体暴跌,沪指跌3.05%,深成指跌5.40%,创业板指跌7.15%,科创50跌7.12%。成交额2.67万亿放量2527亿。超5000只个股下跌,198只跌停,仅35只涨停。电力板块一枝独秀逆势领涨,电力改革/水电/绿色电力多股涨停。医药/中药维持活跃。短线资金抱团连板股。",
+  "market_note": "沪指涨0.85%,创业板指涨0.42%。油气开采板块领涨,电力/煤炭/白酒集体走强。电子元器件/建材领跌,半导体/工业机械/精细化工跌幅居前。超3700只个股下跌,权重股护盘指数。贵州茅台提价催化白酒板块。",
   "hot_concepts": [
     {
-      "name": "电力改革",
-      "heat_pct": 8.5,
-      "source": "电力板块一枝独秀,逆市领涨全市场",
-      "note": "桂冠电力/华银电力/深南电A/乐山电力涨停,珈伟新能涨超16%,九洲集团涨超11%",
-      "matched_stocks_count": 7
+      "name": "油气开采",
+      "heat_pct": 9.5,
+      "source": "油气开采板块领涨全市场",
+      "note": "科力股份涨超23%,中国海油涨停,中曼石油涨停,油气开采及服务板块涨幅居前",
+      "matched_stocks_count": 0
     },
     {
-      "name": "水电",
-      "heat_pct": 7.2,
-      "source": "水电概念走强,多股涨停",
-      "note": "湖南发展3天2板,宁波能源/乐山电力涨停,西昌电力/杭州热电跟涨",
+      "name": "电力",
+      "heat_pct": 9.0,
+      "source": "电力板块震荡走高,近15股涨停",
+      "note": "华银电力2连板,乐山电力2连板,涪陵电力/晋控电力/华电辽能/立新能源/金开新能涨停",
+      "matched_stocks_count": 2
+    },
+    {
+      "name": "煤炭",
+      "heat_pct": 8.5,
+      "source": "煤炭板块震荡反弹,多股涨停",
+      "note": "兖矿能源/淮北矿业/大有能源/郑州煤电/辽宁能源涨停,昊华能源/中煤能源跟涨",
       "matched_stocks_count": 1
     },
     {
-      "name": "绿色电力",
-      "heat_pct": 6.8,
-      "source": "绿色电力概念逆势上涨",
-      "note": "立新能源2连板,节能风电涨超8%,赣能股份/豫能控股/上海电力跟涨",
-      "matched_stocks_count": 8
+      "name": "白酒",
+      "heat_pct": 7.8,
+      "source": "白酒概念震荡反弹,茅台提价催化",
+      "note": "古井贡酒涨停4天2板,贵州茅台涨近6%,五粮液涨超4%,泸州老窖跟涨;飞天茅台i茅台零售价上调至1639元",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "红利",
+      "heat_pct": 5.5,
+      "source": "红利板块涨幅居前",
+      "note": "红利低波方向受资金追捧,银行/保险/煤炭等高股息板块联动走强",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "券商",
+      "heat_pct": 4.5,
+      "source": "券商板块活跃护盘",
+      "note": "券商股集体走强,板块涨幅居前",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "汽车整车",
+      "heat_pct": 3.8,
+      "source": "汽车整车板块上涨",
+      "note": "汽车整车概念回暖,板块整体上行",
+      "matched_stocks_count": 0
     },
     {
       "name": "医药",
-      "heat_pct": 4.5,
-      "source": "哈药股份5连板领涨医药板块",
-      "note": "哈药股份5天5板,海南海药等个股维持活跃度,医药板块连续多日受资金关注",
+      "heat_pct": 3.0,
+      "source": "医药板块震荡回暖",
+      "note": "陇神戎发触及20CM涨停,海正药业涨停,创新药概念维持活跃",
       "matched_stocks_count": 2
-    },
-    {
-      "name": "中药",
-      "heat_pct": 3.8,
-      "source": "中医药振兴政策持续发酵",
-      "note": "片仔癀维持人气,珍宝岛2连板,中医药十五五规划获批利好持续",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "股权转让/并购重组",
-      "heat_pct": 3.5,
-      "source": "连板股抱团,资金聚焦股权转让方向",
-      "note": "艾艾精工9天7板,浙江美大6天4板,智度股份/香江控股3连板",
-      "matched_stocks_count": 0
     }
   ],
   "hot_stocks": [
@@ -59,100 +73,34 @@
       "name": "恒盛能源",
       "rating": "D+",
       "score": 9,
-      "heat_score": 15.7,
+      "heat_score": 17.5,
       "matched_concepts": [
-        "电力改革",
-        "水电"
+        "电力",
+        "煤炭"
       ],
       "theme": "⚡ 电力电网",
       "track": "火电"
-    },
-    {
-      "code": "002534",
-      "name": "西子洁能",
-      "rating": "A-",
-      "score": 20,
-      "heat_score": 15.3,
-      "matched_concepts": [
-        "电力改革",
-        "绿色电力"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "储能"
     },
     {
       "code": "600869",
       "name": "远东股份",
       "rating": "D+",
       "score": 8,
-      "heat_score": 15.3,
+      "heat_score": 9.0,
       "matched_concepts": [
-        "电力改革",
-        "绿色电力"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "储能"
-    },
-    {
-      "code": "002733",
-      "name": "雄韬股份",
-      "rating": "?",
-      "score": null,
-      "heat_score": 15.3,
-      "matched_concepts": [
-        "电力改革",
-        "绿色电力"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "储能"
-    },
-    {
-      "code": "603663",
-      "name": "三祥新材",
-      "rating": "A",
-      "score": 23,
-      "heat_score": 15.3,
-      "matched_concepts": [
-        "电力改革",
-        "绿色电力"
+        "电力"
       ],
       "theme": "⚡ 电力电网",
-      "track": "核电"
-    },
-    {
-      "code": "002167",
-      "name": "东方锆业",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 15.3,
-      "matched_concepts": [
-        "电力改革",
-        "绿色电力"
-      ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
-    },
-    {
-      "code": "000922",
-      "name": "佳电股份",
-      "rating": "C+",
-      "score": null,
-      "heat_score": 8.5,
-      "matched_concepts": [
-        "电力改革"
-      ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
+      "track": "电网设备"
     },
     {
       "code": "603880",
       "name": "南卫股份",
       "rating": "D-",
       "score": 3,
-      "heat_score": 8.3,
+      "heat_score": 3.0,
       "matched_concepts": [
-        "医药",
-        "中药"
+        "医药"
       ],
       "theme": "💊 医药健康",
       "track": "CXO/生命科学"
@@ -162,144 +110,44 @@
       "name": "赤天化",
       "rating": "D",
       "score": 4,
-      "heat_score": 8.3,
+      "heat_score": 3.0,
       "matched_concepts": [
-        "医药",
-        "中药"
+        "医药"
       ],
       "theme": "💊 医药健康",
       "track": "CXO/生命科学"
-    },
-    {
-      "code": "603212",
-      "name": "赛伍技术",
-      "rating": "B+",
-      "score": 19,
-      "heat_score": 6.8,
-      "matched_concepts": [
-        "绿色电力"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "002741",
-      "name": "光华科技",
-      "rating": "D+",
-      "score": 11,
-      "heat_score": 6.8,
-      "matched_concepts": [
-        "绿色电力"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "601678",
-      "name": "滨化股份",
-      "rating": "D",
-      "score": 10,
-      "heat_score": 6.8,
-      "matched_concepts": [
-        "绿色电力"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "氢能"
     }
   ],
-  "total_matched_stocks": 12,
-  "updated": "2026-07-19 10:45",
+  "total_matched_stocks": 4,
+  "updated": "2026-07-20 18:53",
   "stocks": {
     "605580": {
       "heat": "high",
-      "maxChg": 15.7,
+      "maxChg": 17.5,
       "concepts": [
-        "电力改革",
-        "水电"
-      ]
-    },
-    "002534": {
-      "heat": "high",
-      "maxChg": 15.3,
-      "concepts": [
-        "电力改革",
-        "绿色电力"
+        "电力",
+        "煤炭"
       ]
     },
     "600869": {
       "heat": "high",
-      "maxChg": 15.3,
+      "maxChg": 9.0,
       "concepts": [
-        "电力改革",
-        "绿色电力"
-      ]
-    },
-    "002733": {
-      "heat": "high",
-      "maxChg": 15.3,
-      "concepts": [
-        "电力改革",
-        "绿色电力"
-      ]
-    },
-    "603663": {
-      "heat": "high",
-      "maxChg": 15.3,
-      "concepts": [
-        "电力改革",
-        "绿色电力"
-      ]
-    },
-    "002167": {
-      "heat": "high",
-      "maxChg": 15.3,
-      "concepts": [
-        "电力改革",
-        "绿色电力"
-      ]
-    },
-    "000922": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "电力改革"
+        "电力"
       ]
     },
     "603880": {
-      "heat": "high",
-      "maxChg": 8.3,
+      "heat": "warm",
+      "maxChg": 3.0,
       "concepts": [
-        "医药",
-        "中药"
+        "医药"
       ]
     },
     "600227": {
-      "heat": "high",
-      "maxChg": 8.3,
+      "heat": "warm",
+      "maxChg": 3.0,
       "concepts": [
-        "医药",
-        "中药"
-      ]
-    },
-    "603212": {
-      "heat": "high",
-      "maxChg": 6.8,
-      "concepts": [
-        "绿色电力"
-      ]
-    },
-    "002741": {
-      "heat": "high",
-      "maxChg": 6.8,
-      "concepts": [
-        "绿色电力"
-      ]
-    },
-    "601678": {
-      "heat": "high",
-      "maxChg": 6.8,
-      "concepts": [
-        "绿色电力"
+        "医药"
       ]
     }
   }
