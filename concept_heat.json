@@ -1,410 +1,99 @@
 {
-  "update_time": "2026-07-21T18:49:24.201014",
-  "trade_date": "2026-07-21",
+  "update_time": "2026-07-22T19:33:45.086885",
+  "trade_date": "2026-07-22",
   "market_summary": {
-    "sh_index": 3864,
-    "sz_index": 14264,
-    "cy_index": 3686,
-    "kc50_index": 1903,
-    "volume_trillion": 2.96
+    "sh_index": 3867,
+    "sz_index": 14062,
+    "cy_index": 3567,
+    "kc50_index": 1860,
+    "volume_trillion": 2.67
   },
-  "market_note": "沪指涨1.79%,深成指涨4.81%,创业板指涨7.05%,科创50飙涨10.73%。成交额2.96万亿放量。半导体产业链集体爆发,二十余股涨停。CPO/PCB/算力租赁/氧化锆集体走强。科技股大反攻,超3100只个股上涨。石油天然气/煤炭/银行等传统板块下跌。",
+  "market_note": "沪指涨0.07%报3867点,深成指跌1.42%,创业板指跌3.23%,科创综指跌2.25%。成交2.67万亿缩量。超3800只个股下跌。贵金属全天爆发领涨,煤炭/电力/油气等红利蓝筹逆市走强。算力租赁/超节点概念局部活跃。电池产业链明显下挫,通信设备/半导体/AI硬件等科技方向普跌。",
   "hot_concepts": [
     {
-      "name": "半导体/芯片",
-      "heat_pct": 10.0,
-      "source": "芯片产业链集体爆发,科创50飙涨10.73%",
-      "note": "东芯股份/华虹宏力/兆易创新等二十余股涨停,雅克科技上演地天板,北方华创/东微半导/臻宝科技/新洁能/金海通涨停",
-      "matched_stocks_count": 9
-    },
-    {
-      "name": "CPO/光通信",
-      "heat_pct": 9.0,
-      "source": "CPO概念震荡走高,多股涨停",
-      "note": "光迅科技上演地天板,中际旭创涨超13%,通富微电/生益科技涨停",
-      "matched_stocks_count": 3
-    },
-    {
-      "name": "PCB",
-      "heat_pct": 8.0,
-      "source": "PCB概念走势强劲",
-      "note": "宏和科技/金禄电子/广合科技涨停",
+      "name": "贵金属/黄金",
+      "heat_pct": 9.5,
+      "source": "贵金属板块全天爆发领涨两市",
+      "note": "山金国际涨停,兴业银锡/盛达资源双双2连板,招金黄金涨停",
       "matched_stocks_count": 2
     },
     {
-      "name": "算力租赁",
-      "heat_pct": 7.5,
-      "source": "算力租赁概念表现活跃",
-      "note": "中嘉博创5天3板,利通电子涨停",
+      "name": "电力",
+      "heat_pct": 9.0,
+      "source": "电力股反复活跃,多股涨停",
+      "note": "立新能源5连板,华银电力4连板,华电辽能/华电能源3天2板",
       "matched_stocks_count": 0
     },
     {
-      "name": "氧化锆",
+      "name": "算力租赁",
+      "heat_pct": 8.0,
+      "source": "算力租赁概念局部活跃",
+      "note": "美利云3连板,证通电子/利通电子2连板,创业黑马20CM涨停",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "超节点/算力网络",
+      "heat_pct": 7.5,
+      "source": "超节点概念冲高回落但仍有强势股",
+      "note": "共进股份4天3板,紫光股份一度2连板,星网锐捷2连板,锐捷网络/菲菱科思涨超10%",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "煤炭",
       "heat_pct": 7.0,
-      "source": "氧化锆概念震荡拉升",
-      "note": "东方锆业/国瓷材料/三祥新材涨停",
-      "matched_stocks_count": 2
+      "source": "煤炭板块再度拉升",
+      "note": "大有能源/华电能源涨停",
+      "matched_stocks_count": 0
     },
     {
-      "name": "电子元器件",
+      "name": "油气/石油天然气",
       "heat_pct": 6.5,
-      "source": "电子元器件板块大涨",
-      "note": "电脑硬件/通信设备/电子元器件板块集体大涨",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "存储芯片",
-      "heat_pct": 6.0,
-      "source": "存储芯片方向涨幅居前",
-      "note": "存储芯片/先进封装等方向涨幅居前,格科微/万通智控/波长光电涨停",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "先进封装",
-      "heat_pct": 5.5,
-      "source": "先进封装方向涨幅居前",
-      "note": "半导体产业链全面走强,先进封装方向领涨",
-      "matched_stocks_count": 4
+      "source": "油气股高开高走",
+      "note": "中曼石油涨停,科力股份涨超10%",
+      "matched_stocks_count": 0
     }
   ],
   "hot_stocks": [
     {
-      "code": "002213",
-      "name": "大为股份",
-      "rating": "D",
-      "score": 5,
-      "heat_score": 16.0,
-      "matched_concepts": [
-        "半导体/芯片",
-        "存储芯片"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "HBM存储产业链"
-    },
-    {
-      "code": "603688",
-      "name": "石英股份",
-      "rating": "C",
-      "score": 10,
-      "heat_score": 15.5,
-      "matched_concepts": [
-        "半导体/芯片",
-        "先进封装"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
-    },
-    {
-      "code": "300576",
-      "name": "容大感光",
-      "rating": "D+",
-      "score": null,
-      "heat_score": 15.5,
-      "matched_concepts": [
-        "半导体/芯片",
-        "先进封装"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
-    },
-    {
-      "code": "603650",
-      "name": "彤程新材",
-      "rating": "C+",
-      "score": 13,
-      "heat_score": 15.5,
-      "matched_concepts": [
-        "半导体/芯片",
-        "先进封装"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
-    },
-    {
-      "code": "603328",
-      "name": "依顿电子",
-      "rating": "B+",
-      "score": 17,
-      "heat_score": 14.5,
-      "matched_concepts": [
-        "PCB",
-        "电子元器件"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
-    },
-    {
-      "code": "600601",
-      "name": "方正科技",
+      "code": "603995",
+      "name": "甬金股份",
       "rating": "B",
-      "score": 16,
-      "heat_score": 13.5,
+      "score": 17,
+      "heat_score": 9.5,
       "matched_concepts": [
-        "PCB",
-        "先进封装"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
-    },
-    {
-      "code": "600703",
-      "name": "三安光电",
-      "rating": "B+",
-      "score": 19,
-      "heat_score": 10.0,
-      "matched_concepts": [
-        "半导体/芯片"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
-    },
-    {
-      "code": "600460",
-      "name": "士兰微",
-      "rating": "B+",
-      "score": 20,
-      "heat_score": 10.0,
-      "matched_concepts": [
-        "半导体/芯片"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
-    },
-    {
-      "code": "000962",
-      "name": "东方钽业",
-      "rating": "C",
-      "score": null,
-      "heat_score": 10.0,
-      "matched_concepts": [
-        "半导体/芯片"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
-    },
-    {
-      "code": "603738",
-      "name": "泰晶科技",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 10.0,
-      "matched_concepts": [
-        "半导体/芯片"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "芯片设计"
-    },
-    {
-      "code": "002023",
-      "name": "海特高新",
-      "rating": "C+",
-      "score": 13,
-      "heat_score": 10.0,
-      "matched_concepts": [
-        "半导体/芯片"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "功率半导体"
-    },
-    {
-      "code": "002902",
-      "name": "铭普光磁",
-      "rating": "D",
-      "score": 2,
-      "heat_score": 9.0,
-      "matched_concepts": [
-        "CPO/光通信"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "光通信/CPO光互连"
-    },
-    {
-      "code": "600487",
-      "name": "亨通光电",
-      "rating": "A-",
-      "score": 22,
-      "heat_score": 9.0,
-      "matched_concepts": [
-        "CPO/光通信"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "光通信/CPO光互连"
-    },
-    {
-      "code": "603042",
-      "name": "华脉科技",
-      "rating": "?",
-      "score": 3,
-      "heat_score": 9.0,
-      "matched_concepts": [
-        "CPO/光通信"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "光通信/CPO光互连"
-    },
-    {
-      "code": "603663",
-      "name": "三祥新材",
-      "rating": "A",
-      "score": 23,
-      "heat_score": 7.0,
-      "matched_concepts": [
-        "氧化锆"
+        "贵金属/黄金"
       ],
       "theme": "💎 有色金属与新材料",
-      "track": "稀有/战略金属"
+      "track": "工业金属"
     },
     {
-      "code": "002167",
-      "name": "东方锆业",
+      "code": "601137",
+      "name": "博威合金",
       "rating": "D+",
-      "score": 8,
-      "heat_score": 7.0,
+      "score": 11,
+      "heat_score": 9.5,
       "matched_concepts": [
-        "氧化锆"
+        "贵金属/黄金"
       ],
       "theme": "💎 有色金属与新材料",
-      "track": "稀有/战略金属"
-    },
-    {
-      "code": "600353",
-      "name": "旭光电子",
-      "rating": "B+",
-      "score": 15,
-      "heat_score": 6.5,
-      "matched_concepts": [
-        "电子元器件"
-      ],
-      "theme": "🛡️ 国防军工与航空航天",
-      "track": "军工电子"
+      "track": "工业金属"
     }
   ],
-  "total_matched_stocks": 17,
-  "updated": "2026-07-21 18:49",
+  "total_matched_stocks": 2,
+  "updated": "2026-07-22 19:33",
   "stocks": {
-    "002213": {
+    "603995": {
       "heat": "high",
-      "maxChg": 16.0,
+      "maxChg": 9.5,
       "concepts": [
-        "半导体/芯片",
-        "存储芯片"
+        "贵金属/黄金"
       ]
     },
-    "603688": {
+    "601137": {
       "heat": "high",
-      "maxChg": 15.5,
+      "maxChg": 9.5,
       "concepts": [
-        "半导体/芯片",
-        "先进封装"
-      ]
-    },
-    "300576": {
-      "heat": "high",
-      "maxChg": 15.5,
-      "concepts": [
-        "半导体/芯片",
-        "先进封装"
-      ]
-    },
-    "603650": {
-      "heat": "high",
-      "maxChg": 15.5,
-      "concepts": [
-        "半导体/芯片",
-        "先进封装"
-      ]
-    },
-    "603328": {
-      "heat": "high",
-      "maxChg": 14.5,
-      "concepts": [
-        "PCB",
-        "电子元器件"
-      ]
-    },
-    "600601": {
-      "heat": "high",
-      "maxChg": 13.5,
-      "concepts": [
-        "PCB",
-        "先进封装"
-      ]
-    },
-    "600703": {
-      "heat": "high",
-      "maxChg": 10.0,
-      "concepts": [
-        "半导体/芯片"
-      ]
-    },
-    "600460": {
-      "heat": "high",
-      "maxChg": 10.0,
-      "concepts": [
-        "半导体/芯片"
-      ]
-    },
-    "000962": {
-      "heat": "high",
-      "maxChg": 10.0,
-      "concepts": [
-        "半导体/芯片"
-      ]
-    },
-    "603738": {
-      "heat": "high",
-      "maxChg": 10.0,
-      "concepts": [
-        "半导体/芯片"
-      ]
-    },
-    "002023": {
-      "heat": "high",
-      "maxChg": 10.0,
-      "concepts": [
-        "半导体/芯片"
-      ]
-    },
-    "002902": {
-      "heat": "high",
-      "maxChg": 9.0,
-      "concepts": [
-        "CPO/光通信"
-      ]
-    },
-    "600487": {
-      "heat": "high",
-      "maxChg": 9.0,
-      "concepts": [
-        "CPO/光通信"
-      ]
-    },
-    "603042": {
-      "heat": "high",
-      "maxChg": 9.0,
-      "concepts": [
-        "CPO/光通信"
-      ]
-    },
-    "603663": {
-      "heat": "high",
-      "maxChg": 7.0,
-      "concepts": [
-        "氧化锆"
-      ]
-    },
-    "002167": {
-      "heat": "high",
-      "maxChg": 7.0,
-      "concepts": [
-        "氧化锆"
-      ]
-    },
-    "600353": {
-      "heat": "high",
-      "maxChg": 6.5,
-      "concepts": [
-        "电子元器件"
+        "贵金属/黄金"
       ]
     }
   }
