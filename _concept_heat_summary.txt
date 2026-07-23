@@ -1,23 +1,25 @@
 Generated: C:\Users\LYDN\a-stock-panorama\concept_heat.json
-Trade date: 2026-07-07
-Hot concepts: 8 | Matched stocks: 6
+Trade date: 2026-07-23
+Hot concepts: 6 | Matched stocks: 17
 
 TOP10 hot stocks:
-  603738 泰晶科技     H  6.5  D+    半导体 | 通信设备
-  002213 大为股份     H  4.5  D     半导体
-  000962 东方钽业     H  4.5  C     半导体
-  002023 海特高新     H  4.5  C+    半导体
-  000970 中科三环     H  3.2  C+    稀土永磁
-  603688 石英股份     H  2.5  C     硅片
+  600869 远东股份     H 18.8  D+    电网设备/特高压 | 电力
+  603663 三祥新材     H  9.0  A     电力
+  002534 西子洁能     H  9.0  A-    电力
+  002167 东方锆业     H  9.0  D+    电力
+  000922 佳电股份     H  9.0  C+    电力
+  605580 恒盛能源     H  9.0  D+    电力
+  600110 诺德股份     H  8.5  C     有色金属
+  002203 海亮股份     H  8.5  D+    有色金属
+  601137 博威合金     H  8.5  D+    有色金属
+  600458 时代新材     H  8.5  A-    有色金属
 
 By concept:
-  半导体: 4 stocks
-  培育钻石: 0 stocks
-  游戏: 0 stocks
-  稀土永磁: 1 stocks
-  并购重组: 0 stocks
-  硅片: 1 stocks
-  工程机械: 0 stocks
-  通信设备: 1 stocks
+  电网设备/特高压: 1 stocks
+  锂矿/能源金属: 0 stocks
+  电力: 6 stocks
+  有色金属: 10 stocks
+  油气/石油天然气: 0 stocks
+  航天军工: 1 stocks
 
 Git push: OK
