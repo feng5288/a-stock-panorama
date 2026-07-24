@@ -1,386 +1,206 @@
 {
-  "update_time": "2026-07-23T19:57:40.388811",
-  "trade_date": "2026-07-23",
+  "update_time": "2026-07-24T20:14:03.547629",
+  "trade_date": "2026-07-24",
   "market_summary": {
-    "sh_index": 3877,
-    "sz_index": 14123,
-    "cy_index": 3576,
-    "kc50_index": 1805,
-    "volume_trillion": 2.2
+    "sh_index": 3814,
+    "sz_index": 13775,
+    "cy_index": 3481,
+    "kc50_index": 1790,
+    "volume_trillion": 1.93
   },
-  "market_note": "沪指涨0.25%报3877点四连阳,深成指涨0.44%,创业板指涨0.25%,科创50跌超3%。成交2.20万亿缩量4580亿。超4200只个股上涨,128家涨停。电网/电力概念全线爆发,锂矿/有色/油气等资源股集体走强。半导体产业链集体下挫,科创50承压。",
+  "market_note": "沪指跌1.61%报3814点,深成指跌2.47%,创业板指跌2.65%,科创50跌约0.83%。成交1.93万亿缩量2642亿,创三个多月新低。全市场超4900只个股下跌,仅42家涨停。半导体设备/芯片逆市走强,军工板块偏强,电网设备反复活跃。贵金属、电力、煤炭、创新药等板块跌幅居前。",
   "hot_concepts": [
     {
-      "name": "电网设备/特高压",
-      "heat_pct": 9.8,
-      "source": "电网设备概念全线爆发多股涨停",
-      "note": "双杰电气/和顺电气/顺钠股份/汉缆股份/中能电气/中国西电涨停,特高压/直流输电/电缆全面走强",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "锂矿/能源金属",
+      "name": "半导体/芯片",
       "heat_pct": 9.2,
-      "source": "锂矿概念震荡上行多股涨停",
-      "note": "国城矿业/永杉锂业/盛新锂能涨停,能源金属板块整体强势",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "电力",
-      "heat_pct": 9.0,
-      "source": "电力板块持续活跃连板股频出",
-      "note": "立新能源6连板,华电辽能4天3板,电网+电源双轮驱动",
+      "source": "半导体设备概念逆市活跃多股涨停",
+      "note": "托伦斯20CM 4天3板,至纯科技涨停;华岭股份涨超15%,翱捷科技/泰和科技涨超10%,晶晨股份涨近9%,拓荆科技涨超7%",
       "matched_stocks_count": 6
     },
     {
-      "name": "有色金属",
+      "name": "军工/兵装重组",
       "heat_pct": 8.5,
-      "source": "有色金属板块盘中拉升",
-      "note": "盛达资源3连板,南山铝业涨停,基本金属/工业金属涨幅居前",
-      "matched_stocks_count": 10
+      "source": "军工板块逆市走强多股连板",
+      "note": "长城军工/湖南天雁2连板,建设工业/中光学涨停;中船系/兵装重组概念少数上涨板块之一",
+      "matched_stocks_count": 1
     },
     {
-      "name": "油气/石油天然气",
-      "heat_pct": 8.0,
-      "source": "油气概念延续强势表现",
-      "note": "中曼石油4天3板,能源设备大涨,燃气板块跟涨",
+      "name": "端侧AI",
+      "heat_pct": 7.5,
+      "source": "端侧AI概念震荡拉升",
+      "note": "博通集成涨停,晶晨股份涨近9%,AI芯片概念跟涨",
       "matched_stocks_count": 0
     },
     {
-      "name": "航天军工",
+      "name": "电网设备/特高压",
       "heat_pct": 7.0,
-      "source": "航天军工板块涨幅居前",
-      "note": "军工板块整体活跃,与电网/能源设备形成共振",
+      "source": "电网设备概念延续活跃但涨势趋弱",
+      "note": "长缆科技4连板,韶能股份2连板,中能电气涨超10%;整体板块受大盘拖累涨幅收窄",
       "matched_stocks_count": 1
+    },
+    {
+      "name": "中船系",
+      "heat_pct": 6.5,
+      "source": "中船系概念少数逆市上涨板块",
+      "note": "中船系/兵装重组概念为今日少数上涨板块,与军工共振",
+      "matched_stocks_count": 0
     }
   ],
   "hot_stocks": [
     {
-      "code": "600869",
-      "name": "远东股份",
+      "code": "002213",
+      "name": "大为股份",
+      "rating": "D",
+      "score": 5,
+      "heat_score": 9.2,
+      "matched_concepts": [
+        "半导体/芯片"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "HBM存储产业链"
+    },
+    {
+      "code": "300576",
+      "name": "容大感光",
       "rating": "D+",
-      "score": 8,
-      "heat_score": 18.8,
+      "score": null,
+      "heat_score": 9.2,
       "matched_concepts": [
-        "电网设备/特高压",
-        "电力"
+        "半导体/芯片"
       ],
-      "theme": "⚡ 电力电网",
-      "track": "电网设备"
+      "theme": "💡 半导体全产业链",
+      "track": "半导体材料(卡脖子12大类)"
     },
     {
-      "code": "603663",
-      "name": "三祥新材",
-      "rating": "A",
-      "score": 23,
-      "heat_score": 9.0,
-      "matched_concepts": [
-        "电力"
-      ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
-    },
-    {
-      "code": "002534",
-      "name": "西子洁能",
-      "rating": "A-",
-      "score": 20,
-      "heat_score": 9.0,
-      "matched_concepts": [
-        "电力"
-      ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
-    },
-    {
-      "code": "002167",
-      "name": "东方锆业",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 9.0,
-      "matched_concepts": [
-        "电力"
-      ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
-    },
-    {
-      "code": "000922",
-      "name": "佳电股份",
+      "code": "603650",
+      "name": "彤程新材",
       "rating": "C+",
-      "score": null,
-      "heat_score": 9.0,
+      "score": 13,
+      "heat_score": 9.2,
       "matched_concepts": [
-        "电力"
+        "半导体/芯片"
       ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
+      "theme": "💡 半导体全产业链",
+      "track": "半导体材料(卡脖子12大类)"
     },
     {
-      "code": "605580",
-      "name": "恒盛能源",
-      "rating": "D+",
-      "score": 9,
-      "heat_score": 9.0,
-      "matched_concepts": [
-        "电力"
-      ],
-      "theme": "⚡ 电力电网",
-      "track": "火电"
-    },
-    {
-      "code": "600110",
-      "name": "诺德股份",
+      "code": "000962",
+      "name": "东方钽业",
       "rating": "C",
-      "score": 12,
-      "heat_score": 8.5,
+      "score": null,
+      "heat_score": 9.2,
       "matched_concepts": [
-        "有色金属"
+        "半导体/芯片"
       ],
-      "theme": "📋 PCB电路板产业链",
-      "track": "覆铜板/CCL"
+      "theme": "💡 半导体全产业链",
+      "track": "半导体材料(卡脖子12大类)"
     },
     {
-      "code": "002203",
-      "name": "海亮股份",
+      "code": "603738",
+      "name": "泰晶科技",
       "rating": "D+",
-      "score": 9,
-      "heat_score": 8.5,
+      "score": 8,
+      "heat_score": 9.2,
       "matched_concepts": [
-        "有色金属"
+        "半导体/芯片"
       ],
-      "theme": "📋 PCB电路板产业链",
-      "track": "覆铜板/CCL"
+      "theme": "💡 半导体全产业链",
+      "track": "芯片设计"
     },
     {
-      "code": "601137",
-      "name": "博威合金",
-      "rating": "D+",
-      "score": 11,
-      "heat_score": 8.5,
+      "code": "002023",
+      "name": "海特高新",
+      "rating": "C+",
+      "score": 13,
+      "heat_score": 9.2,
       "matched_concepts": [
-        "有色金属"
+        "半导体/芯片"
       ],
-      "theme": "📋 PCB电路板产业链",
-      "track": "覆铜板/CCL"
-    },
-    {
-      "code": "600458",
-      "name": "时代新材",
-      "rating": "A-",
-      "score": 21,
-      "heat_score": 8.5,
-      "matched_concepts": [
-        "有色金属"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "轻量化/结构件"
-    },
-    {
-      "code": "605018",
-      "name": "长华集团",
-      "rating": "?",
-      "score": null,
-      "heat_score": 8.5,
-      "matched_concepts": [
-        "有色金属"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "轻量化/结构件"
-    },
-    {
-      "code": "600459",
-      "name": "贵研铂业",
-      "rating": "C-",
-      "score": null,
-      "heat_score": 8.5,
-      "matched_concepts": [
-        "有色金属"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "稀有/战略金属"
-    },
-    {
-      "code": "603045",
-      "name": "福达合金",
-      "rating": "?",
-      "score": null,
-      "heat_score": 8.5,
-      "matched_concepts": [
-        "有色金属"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "稀有/战略金属"
-    },
-    {
-      "code": "002171",
-      "name": "楚江新材",
-      "rating": "B",
-      "score": 17,
-      "heat_score": 8.5,
-      "matched_concepts": [
-        "有色金属"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "工业金属"
-    },
-    {
-      "code": "603995",
-      "name": "甬金股份",
-      "rating": "B",
-      "score": 17,
-      "heat_score": 8.5,
-      "matched_concepts": [
-        "有色金属"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "工业金属"
-    },
-    {
-      "code": "600888",
-      "name": "新疆众和",
-      "rating": "B",
-      "score": 16,
-      "heat_score": 8.5,
-      "matched_concepts": [
-        "有色金属"
-      ],
-      "theme": "💎 有色金属与新材料",
-      "track": "工业金属"
+      "theme": "💡 半导体全产业链",
+      "track": "功率半导体"
     },
     {
       "code": "600353",
       "name": "旭光电子",
       "rating": "B+",
       "score": 15,
-      "heat_score": 7.0,
+      "heat_score": 8.5,
       "matched_concepts": [
-        "航天军工"
+        "军工/兵装重组"
       ],
       "theme": "🛡️ 国防军工与航空航天",
       "track": "军工电子"
+    },
+    {
+      "code": "600869",
+      "name": "远东股份",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 7.0,
+      "matched_concepts": [
+        "电网设备/特高压"
+      ],
+      "theme": "⚡ 电力电网",
+      "track": "电网设备"
     }
   ],
-  "total_matched_stocks": 17,
-  "updated": "2026-07-23 19:57",
+  "total_matched_stocks": 8,
+  "updated": "2026-07-24 20:14",
   "stocks": {
-    "600869": {
+    "002213": {
       "heat": "high",
-      "maxChg": 18.8,
+      "maxChg": 9.2,
       "concepts": [
-        "电网设备/特高压",
-        "电力"
+        "半导体/芯片"
       ]
     },
-    "603663": {
+    "300576": {
       "heat": "high",
-      "maxChg": 9.0,
+      "maxChg": 9.2,
       "concepts": [
-        "电力"
+        "半导体/芯片"
       ]
     },
-    "002534": {
+    "603650": {
       "heat": "high",
-      "maxChg": 9.0,
+      "maxChg": 9.2,
       "concepts": [
-        "电力"
+        "半导体/芯片"
       ]
     },
-    "002167": {
+    "000962": {
       "heat": "high",
-      "maxChg": 9.0,
+      "maxChg": 9.2,
       "concepts": [
-        "电力"
+        "半导体/芯片"
       ]
     },
-    "000922": {
+    "603738": {
       "heat": "high",
-      "maxChg": 9.0,
+      "maxChg": 9.2,
       "concepts": [
-        "电力"
+        "半导体/芯片"
       ]
     },
-    "605580": {
+    "002023": {
       "heat": "high",
-      "maxChg": 9.0,
+      "maxChg": 9.2,
       "concepts": [
-        "电力"
-      ]
-    },
-    "600110": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "有色金属"
-      ]
-    },
-    "002203": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "有色金属"
-      ]
-    },
-    "601137": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "有色金属"
-      ]
-    },
-    "600458": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "有色金属"
-      ]
-    },
-    "605018": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "有色金属"
-      ]
-    },
-    "600459": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "有色金属"
-      ]
-    },
-    "603045": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "有色金属"
-      ]
-    },
-    "002171": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "有色金属"
-      ]
-    },
-    "603995": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "有色金属"
-      ]
-    },
-    "600888": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "有色金属"
+        "半导体/芯片"
       ]
     },
     "600353": {
       "heat": "high",
+      "maxChg": 8.5,
+      "concepts": [
+        "军工/兵装重组"
+      ]
+    },
+    "600869": {
+      "heat": "high",
       "maxChg": 7.0,
       "concepts": [
-        "航天军工"
+        "电网设备/特高压"
       ]
     }
   }
