@@ -1,100 +1,74 @@
 {
-  "update_time": "2026-07-27T20:41:07.471734",
-  "trade_date": "2026-07-27",
+  "update_time": "2026-07-28T19:47:32.889885",
+  "trade_date": "2026-07-28",
   "market_summary": {
-    "sh_index": 3858,
-    "sz_index": 14149,
-    "cy_index": 3580,
-    "kc50_index": 1820,
-    "volume_trillion": 2.15
+    "sh_index": 3813,
+    "sz_index": 13581,
+    "cy_index": 3355,
+    "kc50_index": 1705,
+    "volume_trillion": 2.04
   },
-  "market_note": "沪指涨1.15%报3858点，深成指涨2.72%，创业板指涨3.16%，超5100股飘红。长鑫科技上市首日涨465%成交破1400亿创A股纪录，点燃科技成长热情。半导体吸金652亿、PCB概念大面积涨停、脑机接口爆发、机器人掀涨停潮。保险、石油天然气、电信少数下跌。",
+  "market_note": "沪指跌1.16%报3813点险守3800，深成指跌4.52%，创业板指跌7.35%（创4月以来新低），科创50跌6.33%。成交额2.04万亿缩量495亿。CPO/算力/AI硬件全线暴跌（新易盛-17%、中际旭创-15%），长鑫科技跌4.08%。光刻机概念逆势爆发（ASML上调营收指引）、脑机接口延续强势、食品饮料/大消费领涨、银行护盘（建行历史新高）。超2600股上涨vs2769股下跌，68涨停50跌停。",
   "hot_concepts": [
     {
-      "name": "半导体/存储产业链",
-      "heat_pct": 9.8,
-      "source": "半导体板块半日吸金652亿，存储产业链全线爆发",
-      "note": "雅克科技、至纯科技涨停；长鑫科技上市首日涨465%补齐A股DRAM制造空白，带动上下游估值重构",
-      "matched_stocks_count": 6
-    },
-    {
-      "name": "PCB概念",
+      "name": "光刻机",
       "heat_pct": 9.5,
-      "source": "PCB概念股大面积涨停",
-      "note": "国际复材、矩子科技20%涨停，宏和科技、金安国纪、景旺电子、中国巨石涨停，深南电路涨超6%；高端PCB在AI算力需求下供不应求，价格涨幅超3-4倍",
+      "source": "ASML上调全年营收指引，光刻机概念逆势爆发霸屏涨幅榜",
+      "note": "波长光电20CM一字涨停、蓝英装备20CM涨停、捷众科技30CM涨停；张江高科、永新光学、海立股份、东方嘉盛一字涨停；茂莱光学、新莱应材等涨幅靠前",
       "matched_stocks_count": 2
     },
     {
       "name": "脑机接口",
       "heat_pct": 8.8,
-      "source": "脑机接口概念爆发",
-      "note": "创新医疗3天2板，爱朋医疗涨停",
+      "source": "脑机接口概念延续强势，涨势扩大",
+      "note": "创新医疗4天3板，塞力医疗、南京熊猫2连板，爱朋医疗20CM2连板，科蓝软件、海南海药涨停，翔宇医疗、倍益康涨超10%",
       "matched_stocks_count": 0
     },
     {
-      "name": "人形机器人",
-      "heat_pct": 8.5,
-      "source": "智元机器人冲刺港股 A股机器人掀涨停潮",
-      "note": "新亚制程、明新旭腾、华达科技等涨停",
-      "matched_stocks_count": 3
-    },
-    {
-      "name": "创新药",
+      "name": "食品饮料/大消费",
       "heat_pct": 8.0,
-      "source": "创新药概念走势走强",
-      "note": "珍宝岛8天4板，哈三联4天3板，海南海药、益佰制药4天2板，陇神戎发20CM涨停",
+      "source": "食品饮料板块领涨，大消费逆势活跃",
+      "note": "品渥食品涨15.89%，盐津子、一鸣食品涨停，金种子酒涨停，华天酒店、东百集团涨停，板块涨超2%",
       "matched_stocks_count": 0
     },
     {
-      "name": "电力",
-      "heat_pct": 7.5,
-      "source": "电力板块反复活跃",
-      "note": "立新能源8天7板，银星能源3天2板",
+      "name": "银行",
+      "heat_pct": 7.0,
+      "source": "银行板块强势拉升，建设银行创历史新高",
+      "note": "建设银行涨超3%创历史新高，上海银行、农业银行、邮储银行跟涨，银行ETF涨超1%，低估值+高股息防御价值凸显",
       "matched_stocks_count": 0
     },
     {
       "name": "AI应用",
-      "heat_pct": 7.0,
-      "source": "AI应用概念盘中异动拉升",
-      "note": "智度股份、米奥会展先后涨停",
+      "heat_pct": 6.5,
+      "source": "AI应用端逆势抗跌，与算力硬件走势分化",
+      "note": "用友网络涨2.58%，德赛西威、科沃斯、歌尔股份、金山办公逆势上涨；AI板块内部剧烈分化，应用端成少数亮点",
       "matched_stocks_count": 0
     },
     {
-      "name": "锂电池/电解液",
-      "heat_pct": 6.8,
-      "source": "锂电池板块盘中数度拉升，电解液概念领涨",
-      "note": "新亚制程2连板，日科化学20CM3天2板，宁德时代涨超4%（创纪录回购计划）",
-      "matched_stocks_count": 8
+      "name": "分散染料",
+      "heat_pct": 5.5,
+      "source": "分散染料概念局部异动",
+      "note": "吉华集团、安诺其封上涨停",
+      "matched_stocks_count": 0
     },
     {
-      "name": "建材/玻纤",
-      "heat_pct": 5.5,
-      "source": "玻纤概念走强",
-      "note": "建材、玻纤相关概念股走强，中国巨石等涨停",
-      "matched_stocks_count": 2
+      "name": "跨境支付",
+      "heat_pct": 5.0,
+      "source": "跨境支付概念涨幅居前",
+      "note": "板块内多股走强，受益于政策利好预期",
+      "matched_stocks_count": 1
     }
   ],
   "hot_stocks": [
-    {
-      "code": "002213",
-      "name": "大为股份",
-      "rating": "D",
-      "score": 5,
-      "heat_score": 9.8,
-      "matched_concepts": [
-        "半导体/存储产业链"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "HBM存储产业链"
-    },
     {
       "code": "300576",
       "name": "容大感光",
       "rating": "D+",
       "score": null,
-      "heat_score": 9.8,
+      "heat_score": 9.5,
       "matched_concepts": [
-        "半导体/存储产业链"
+        "光刻机"
       ],
       "theme": "💡 半导体全产业链",
       "track": "半导体材料(卡脖子12大类)"
@@ -104,378 +78,48 @@
       "name": "彤程新材",
       "rating": "C+",
       "score": 13,
-      "heat_score": 9.8,
+      "heat_score": 9.5,
       "matched_concepts": [
-        "半导体/存储产业链"
+        "光刻机"
       ],
       "theme": "💡 半导体全产业链",
       "track": "半导体材料(卡脖子12大类)"
     },
     {
-      "code": "000962",
-      "name": "东方钽业",
-      "rating": "C",
-      "score": null,
-      "heat_score": 9.8,
-      "matched_concepts": [
-        "半导体/存储产业链"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
-    },
-    {
-      "code": "603738",
-      "name": "泰晶科技",
+      "code": "002141",
+      "name": "贤丰控股",
       "rating": "D+",
-      "score": 8,
-      "heat_score": 9.8,
+      "score": 7,
+      "heat_score": 5.0,
       "matched_concepts": [
-        "半导体/存储产业链"
+        "跨境支付"
       ],
-      "theme": "💡 半导体全产业链",
-      "track": "芯片设计"
-    },
-    {
-      "code": "002023",
-      "name": "海特高新",
-      "rating": "C+",
-      "score": 13,
-      "heat_score": 9.8,
-      "matched_concepts": [
-        "半导体/存储产业链"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "功率半导体"
-    },
-    {
-      "code": "600601",
-      "name": "方正科技",
-      "rating": "B",
-      "score": 16,
-      "heat_score": 9.5,
-      "matched_concepts": [
-        "PCB概念"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
-    },
-    {
-      "code": "603328",
-      "name": "依顿电子",
-      "rating": "B+",
-      "score": 17,
-      "heat_score": 9.5,
-      "matched_concepts": [
-        "PCB概念"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
-    },
-    {
-      "code": "603283",
-      "name": "赛腾股份",
-      "rating": "B+",
-      "score": 17,
-      "heat_score": 8.5,
-      "matched_concepts": [
-        "人形机器人"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "002747",
-      "name": "埃斯顿",
-      "rating": "B",
-      "score": null,
-      "heat_score": 8.5,
-      "matched_concepts": [
-        "人形机器人"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "002527",
-      "name": "新时达",
-      "rating": "?",
-      "score": null,
-      "heat_score": 8.5,
-      "matched_concepts": [
-        "人形机器人"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "603663",
-      "name": "三祥新材",
-      "rating": "A",
-      "score": 23,
-      "heat_score": 6.8,
-      "matched_concepts": [
-        "锂电池/电解液"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "603212",
-      "name": "赛伍技术",
-      "rating": "B+",
-      "score": 19,
-      "heat_score": 6.8,
-      "matched_concepts": [
-        "锂电池/电解液"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "002741",
-      "name": "光华科技",
-      "rating": "D+",
-      "score": 11,
-      "heat_score": 6.8,
-      "matched_concepts": [
-        "锂电池/电解液"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "002167",
-      "name": "东方锆业",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 6.8,
-      "matched_concepts": [
-        "锂电池/电解液"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "002534",
-      "name": "西子洁能",
-      "rating": "A-",
-      "score": 20,
-      "heat_score": 6.8,
-      "matched_concepts": [
-        "锂电池/电解液"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "储能"
-    },
-    {
-      "code": "600869",
-      "name": "远东股份",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 6.8,
-      "matched_concepts": [
-        "锂电池/电解液"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "储能"
-    },
-    {
-      "code": "002733",
-      "name": "雄韬股份",
-      "rating": "?",
-      "score": null,
-      "heat_score": 6.8,
-      "matched_concepts": [
-        "锂电池/电解液"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "储能"
-    },
-    {
-      "code": "601678",
-      "name": "滨化股份",
-      "rating": "D",
-      "score": 10,
-      "heat_score": 6.8,
-      "matched_concepts": [
-        "锂电池/电解液"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "氢能"
-    },
-    {
-      "code": "605006",
-      "name": "山东玻纤",
-      "rating": "D",
-      "score": 10,
-      "heat_score": 5.5,
-      "matched_concepts": [
-        "建材/玻纤"
-      ],
-      "theme": "📋 PCB电路板产业链",
-      "track": "覆铜板/CCL"
-    },
-    {
-      "code": "001359",
-      "name": "平安电工",
-      "rating": "B-",
-      "score": 17,
-      "heat_score": 5.5,
-      "matched_concepts": [
-        "建材/玻纤"
-      ],
-      "theme": "📋 PCB电路板产业链",
-      "track": "覆铜板/CCL"
+      "theme": "🏦 金融与地产",
+      "track": "金融"
     }
   ],
-  "total_matched_stocks": 21,
-  "updated": "2026-07-27 20:41",
+  "total_matched_stocks": 3,
+  "updated": "2026-07-28 19:47",
   "stocks": {
-    "002213": {
-      "heat": "high",
-      "maxChg": 9.8,
-      "concepts": [
-        "半导体/存储产业链"
-      ]
-    },
     "300576": {
       "heat": "high",
-      "maxChg": 9.8,
+      "maxChg": 9.5,
       "concepts": [
-        "半导体/存储产业链"
+        "光刻机"
       ]
     },
     "603650": {
       "heat": "high",
-      "maxChg": 9.8,
-      "concepts": [
-        "半导体/存储产业链"
-      ]
-    },
-    "000962": {
-      "heat": "high",
-      "maxChg": 9.8,
-      "concepts": [
-        "半导体/存储产业链"
-      ]
-    },
-    "603738": {
-      "heat": "high",
-      "maxChg": 9.8,
-      "concepts": [
-        "半导体/存储产业链"
-      ]
-    },
-    "002023": {
-      "heat": "high",
-      "maxChg": 9.8,
-      "concepts": [
-        "半导体/存储产业链"
-      ]
-    },
-    "600601": {
-      "heat": "high",
       "maxChg": 9.5,
       "concepts": [
-        "PCB概念"
+        "光刻机"
       ]
     },
-    "603328": {
+    "002141": {
       "heat": "high",
-      "maxChg": 9.5,
+      "maxChg": 5.0,
       "concepts": [
-        "PCB概念"
-      ]
-    },
-    "603283": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "人形机器人"
-      ]
-    },
-    "002747": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "人形机器人"
-      ]
-    },
-    "002527": {
-      "heat": "high",
-      "maxChg": 8.5,
-      "concepts": [
-        "人形机器人"
-      ]
-    },
-    "603663": {
-      "heat": "high",
-      "maxChg": 6.8,
-      "concepts": [
-        "锂电池/电解液"
-      ]
-    },
-    "603212": {
-      "heat": "high",
-      "maxChg": 6.8,
-      "concepts": [
-        "锂电池/电解液"
-      ]
-    },
-    "002741": {
-      "heat": "high",
-      "maxChg": 6.8,
-      "concepts": [
-        "锂电池/电解液"
-      ]
-    },
-    "002167": {
-      "heat": "high",
-      "maxChg": 6.8,
-      "concepts": [
-        "锂电池/电解液"
-      ]
-    },
-    "002534": {
-      "heat": "high",
-      "maxChg": 6.8,
-      "concepts": [
-        "锂电池/电解液"
-      ]
-    },
-    "600869": {
-      "heat": "high",
-      "maxChg": 6.8,
-      "concepts": [
-        "锂电池/电解液"
-      ]
-    },
-    "002733": {
-      "heat": "high",
-      "maxChg": 6.8,
-      "concepts": [
-        "锂电池/电解液"
-      ]
-    },
-    "601678": {
-      "heat": "high",
-      "maxChg": 6.8,
-      "concepts": [
-        "锂电池/电解液"
-      ]
-    },
-    "605006": {
-      "heat": "high",
-      "maxChg": 5.5,
-      "concepts": [
-        "建材/玻纤"
-      ]
-    },
-    "001359": {
-      "heat": "high",
-      "maxChg": 5.5,
-      "concepts": [
-        "建材/玻纤"
+        "跨境支付"
       ]
     }
   }
