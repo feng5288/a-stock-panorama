@@ -1,125 +1,222 @@
 {
-  "update_time": "2026-07-28T19:47:32.889885",
-  "trade_date": "2026-07-28",
+  "update_time": "2026-07-29T18:35:57.360942",
+  "trade_date": "2026-07-29",
   "market_summary": {
-    "sh_index": 3813,
-    "sz_index": 13581,
-    "cy_index": 3355,
-    "kc50_index": 1705,
-    "volume_trillion": 2.04
+    "sh_index": 3828.47,
+    "sz_index": 0,
+    "cy_index": 0,
+    "kc50_index": 0,
+    "volume_trillion": 2.31
   },
-  "market_note": "沪指跌1.16%报3813点险守3800，深成指跌4.52%，创业板指跌7.35%（创4月以来新低），科创50跌6.33%。成交额2.04万亿缩量495亿。CPO/算力/AI硬件全线暴跌（新易盛-17%、中际旭创-15%），长鑫科技跌4.08%。光刻机概念逆势爆发（ASML上调营收指引）、脑机接口延续强势、食品饮料/大消费领涨、银行护盘（建行历史新高）。超2600股上涨vs2769股下跌，68涨停50跌停。",
+  "market_note": "创业板指探底回升涨1.55%，沪指涨0.4%，深成指涨1.1%；科创50跌0.87%。全市场超4200只个股飘红，成交额23117亿放量2725亿。大消费全面爆发，食品饮料/零售领涨；固态电池、端侧AI、电网设备活跃；半导体/算力硬件持续调整。",
   "hot_concepts": [
     {
-      "name": "光刻机",
-      "heat_pct": 9.5,
-      "source": "ASML上调全年营收指引，光刻机概念逆势爆发霸屏涨幅榜",
-      "note": "波长光电20CM一字涨停、蓝英装备20CM涨停、捷众科技30CM涨停；张江高科、永新光学、海立股份、东方嘉盛一字涨停；茂莱光学、新莱应材等涨幅靠前",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "脑机接口",
-      "heat_pct": 8.8,
-      "source": "脑机接口概念延续强势，涨势扩大",
-      "note": "创新医疗4天3板，塞力医疗、南京熊猫2连板，爱朋医疗20CM2连板，科蓝软件、海南海药涨停，翔宇医疗、倍益康涨超10%",
+      "name": "乳业",
+      "heat_pct": 5.2,
+      "source": "东方财富概念涨幅第一",
+      "note": "均瑶健康、李子园、一鸣食品、阳光乳业涨停；熊猫乳品、三元股份、西部牧业跟涨",
       "matched_stocks_count": 0
     },
     {
-      "name": "食品饮料/大消费",
-      "heat_pct": 8.0,
-      "source": "食品饮料板块领涨，大消费逆势活跃",
-      "note": "品渥食品涨15.89%，盐津子、一鸣食品涨停，金种子酒涨停，华天酒店、东百集团涨停，板块涨超2%",
+      "name": "食品饮料",
+      "heat_pct": 4.8,
+      "source": "大消费领涨核心方向",
+      "note": "一鸣食品2连板，良品铺子、欢乐家涨停",
       "matched_stocks_count": 0
     },
     {
-      "name": "银行",
-      "heat_pct": 7.0,
-      "source": "银行板块强势拉升，建设银行创历史新高",
-      "note": "建设银行涨超3%创历史新高，上海银行、农业银行、邮储银行跟涨，银行ETF涨超1%，低估值+高股息防御价值凸显",
+      "name": "零售",
+      "heat_pct": 3.5,
+      "source": "消费复苏逻辑",
+      "note": "东百集团2连板，国光连锁、国芳集团涨停",
       "matched_stocks_count": 0
     },
     {
-      "name": "AI应用",
-      "heat_pct": 6.5,
-      "source": "AI应用端逆势抗跌，与算力硬件走势分化",
-      "note": "用友网络涨2.58%，德赛西威、科沃斯、歌尔股份、金山办公逆势上涨；AI板块内部剧烈分化，应用端成少数亮点",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "分散染料",
-      "heat_pct": 5.5,
-      "source": "分散染料概念局部异动",
-      "note": "吉华集团、安诺其封上涨停",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "跨境支付",
-      "heat_pct": 5.0,
-      "source": "跨境支付概念涨幅居前",
-      "note": "板块内多股走强，受益于政策利好预期",
+      "name": "大金融",
+      "heat_pct": 2.8,
+      "source": "午后护盘拉升",
+      "note": "华林证券直线涨停",
       "matched_stocks_count": 1
+    },
+    {
+      "name": "固态电池",
+      "heat_pct": 3.2,
+      "source": "新能源新技术方向",
+      "note": "金龙羽、领湃科技涨停",
+      "matched_stocks_count": 4
+    },
+    {
+      "name": "端侧AI",
+      "heat_pct": 2.5,
+      "source": "AI应用端异动",
+      "note": "博通集成、国光电器直线封板",
+      "matched_stocks_count": 1
+    },
+    {
+      "name": "电网设备",
+      "heat_pct": 2.3,
+      "source": "电力设备回暖",
+      "note": "汉缆股份、三变科技、海兴电力涨停",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "能源金属",
+      "heat_pct": 1.8,
+      "source": "有色板块联动",
+      "note": "跟随大消费/新能源资金轮动",
+      "matched_stocks_count": 1
+    },
+    {
+      "name": "游戏",
+      "heat_pct": 1.5,
+      "source": "传媒反弹",
+      "note": "题材股回暖跟涨",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "休闲食品",
+      "heat_pct": 3.8,
+      "source": "大消费子方向",
+      "note": "与食品饮料共振，良品铺子涨停",
+      "matched_stocks_count": 0
     }
   ],
   "hot_stocks": [
     {
-      "code": "300576",
-      "name": "容大感光",
-      "rating": "D+",
-      "score": null,
-      "heat_score": 9.5,
+      "code": "603663",
+      "name": "三祥新材",
+      "rating": "A",
+      "score": 23,
+      "heat_score": 3.2,
       "matched_concepts": [
-        "光刻机"
+        "固态电池"
       ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
+      "theme": "🚗 新能源智能汽车",
+      "track": "动力电池"
     },
     {
-      "code": "603650",
-      "name": "彤程新材",
-      "rating": "C+",
-      "score": 13,
-      "heat_score": 9.5,
+      "code": "603212",
+      "name": "赛伍技术",
+      "rating": "B+",
+      "score": 19,
+      "heat_score": 3.2,
       "matched_concepts": [
-        "光刻机"
+        "固态电池"
       ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
+      "theme": "🚗 新能源智能汽车",
+      "track": "动力电池"
+    },
+    {
+      "code": "002741",
+      "name": "光华科技",
+      "rating": "D+",
+      "score": 11,
+      "heat_score": 3.2,
+      "matched_concepts": [
+        "固态电池"
+      ],
+      "theme": "🚗 新能源智能汽车",
+      "track": "动力电池"
+    },
+    {
+      "code": "002167",
+      "name": "东方锆业",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 3.2,
+      "matched_concepts": [
+        "固态电池"
+      ],
+      "theme": "🚗 新能源智能汽车",
+      "track": "动力电池"
     },
     {
       "code": "002141",
       "name": "贤丰控股",
       "rating": "D+",
       "score": 7,
-      "heat_score": 5.0,
+      "heat_score": 2.8,
       "matched_concepts": [
-        "跨境支付"
+        "大金融"
       ],
       "theme": "🏦 金融与地产",
       "track": "金融"
+    },
+    {
+      "code": "000810",
+      "name": "创维数字",
+      "rating": "C+",
+      "score": 12,
+      "heat_score": 2.5,
+      "matched_concepts": [
+        "端侧AI"
+      ],
+      "theme": "📱 消费电子与终端",
+      "track": "AI PC/智能终端"
+    },
+    {
+      "code": "603399",
+      "name": "永杉锂业",
+      "rating": "D-",
+      "score": null,
+      "heat_score": 1.8,
+      "matched_concepts": [
+        "能源金属"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "稀有/战略金属"
     }
   ],
-  "total_matched_stocks": 3,
-  "updated": "2026-07-28 19:47",
+  "total_matched_stocks": 7,
+  "updated": "2026-07-29 18:35",
   "stocks": {
-    "300576": {
-      "heat": "high",
-      "maxChg": 9.5,
+    "603663": {
+      "heat": "warm",
+      "maxChg": 3.2,
       "concepts": [
-        "光刻机"
+        "固态电池"
       ]
     },
-    "603650": {
-      "heat": "high",
-      "maxChg": 9.5,
+    "603212": {
+      "heat": "warm",
+      "maxChg": 3.2,
       "concepts": [
-        "光刻机"
+        "固态电池"
+      ]
+    },
+    "002741": {
+      "heat": "warm",
+      "maxChg": 3.2,
+      "concepts": [
+        "固态电池"
+      ]
+    },
+    "002167": {
+      "heat": "warm",
+      "maxChg": 3.2,
+      "concepts": [
+        "固态电池"
       ]
     },
     "002141": {
-      "heat": "high",
-      "maxChg": 5.0,
+      "heat": "cold",
+      "maxChg": 2.8,
       "concepts": [
-        "跨境支付"
+        "大金融"
+      ]
+    },
+    "000810": {
+      "heat": "cold",
+      "maxChg": 2.5,
+      "concepts": [
+        "端侧AI"
+      ]
+    },
+    "603399": {
+      "heat": "cold",
+      "maxChg": 1.8,
+      "concepts": [
+        "能源金属"
       ]
     }
   }
