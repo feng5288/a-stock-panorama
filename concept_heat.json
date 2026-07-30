@@ -1,222 +1,260 @@
 {
-  "update_time": "2026-07-29T18:35:57.360942",
-  "trade_date": "2026-07-29",
+  "update_time": "2026-07-30T19:45:02.127120",
+  "trade_date": "2026-07-30",
   "market_summary": {
-    "sh_index": 3828.47,
-    "sz_index": 0,
-    "cy_index": 0,
-    "kc50_index": 0,
-    "volume_trillion": 2.31
+    "sh_index": 3804.69,
+    "sz_index": 13285.8,
+    "cy_index": 3244.62,
+    "kc50_index": 1588.41,
+    "volume_trillion": 2.34
   },
-  "market_note": "创业板指探底回升涨1.55%，沪指涨0.4%，深成指涨1.1%；科创50跌0.87%。全市场超4200只个股飘红，成交额23117亿放量2725亿。大消费全面爆发，食品饮料/零售领涨；固态电池、端侧AI、电网设备活跃；半导体/算力硬件持续调整。",
+  "market_note": "三大指数震荡收跌，上证跌0.62%，深成指跌2.73%，创业板跌3.97%，科创50跌5.38%。两市成交2.34万亿放量467亿，超3600股下跌。白酒板块全线上涨涨幅第一，大消费延续强势；AI应用/MLCC/汽车整车逆势活跃；半导体/算力持续承压。",
   "hot_concepts": [
     {
-      "name": "乳业",
-      "heat_pct": 5.2,
-      "source": "东方财富概念涨幅第一",
-      "note": "均瑶健康、李子园、一鸣食品、阳光乳业涨停；熊猫乳品、三元股份、西部牧业跟涨",
+      "name": "白酒",
+      "heat_pct": 6.0,
+      "source": "板块涨幅第一，全线上涨",
+      "note": "舍得酒业、金徽酒、金种子酒涨停；皇台酒业、口子窖、酒鬼酒、迎驾贡酒涨超6%",
       "matched_stocks_count": 0
     },
     {
       "name": "食品饮料",
-      "heat_pct": 4.8,
+      "heat_pct": 5.5,
       "source": "大消费领涨核心方向",
-      "note": "一鸣食品2连板，良品铺子、欢乐家涨停",
+      "note": "一鸣食品3连板，海欣食品、均瑶健康、西安饮食涨停",
       "matched_stocks_count": 0
     },
     {
-      "name": "零售",
+      "name": "大消费",
+      "heat_pct": 4.8,
+      "source": "消费板块全面爆发",
+      "note": "金徽酒、舍得酒业涨停；火星人涨停，消费精选概念走强",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "AI应用",
+      "heat_pct": 4.2,
+      "source": "AI应用端反复异动",
+      "note": "传智教育4连板，普联软件20CM涨停",
+      "matched_stocks_count": 1
+    },
+    {
+      "name": "MLCC",
       "heat_pct": 3.5,
-      "source": "消费复苏逻辑",
-      "note": "东百集团2连板，国光连锁、国芳集团涨停",
+      "source": "MLCC概念震荡拉升",
+      "note": "双星新材涨停，昀冢科技盘中触及20CM涨停",
       "matched_stocks_count": 0
     },
     {
-      "name": "大金融",
+      "name": "汽车整车",
+      "heat_pct": 3.0,
+      "source": "汽车整车反复活跃",
+      "note": "江淮汽车涨停",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "存储芯片",
       "heat_pct": 2.8,
-      "source": "午后护盘拉升",
-      "note": "华林证券直线涨停",
-      "matched_stocks_count": 1
+      "source": "存储芯片率先反弹",
+      "note": "德明利反包涨停，2连板",
+      "matched_stocks_count": 3
     },
     {
-      "name": "固态电池",
-      "heat_pct": 3.2,
-      "source": "新能源新技术方向",
-      "note": "金龙羽、领湃科技涨停",
-      "matched_stocks_count": 4
-    },
-    {
-      "name": "端侧AI",
+      "name": "机器人",
       "heat_pct": 2.5,
-      "source": "AI应用端异动",
-      "note": "博通集成、国光电器直线封板",
-      "matched_stocks_count": 1
+      "source": "机器人概念异动",
+      "note": "明新旭腾4连板",
+      "matched_stocks_count": 3
     },
     {
-      "name": "电网设备",
-      "heat_pct": 2.3,
-      "source": "电力设备回暖",
-      "note": "汉缆股份、三变科技、海兴电力涨停",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "能源金属",
-      "heat_pct": 1.8,
-      "source": "有色板块联动",
-      "note": "跟随大消费/新能源资金轮动",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "游戏",
+      "name": "贵金属",
       "heat_pct": 1.5,
-      "source": "传媒反弹",
-      "note": "题材股回暖跟涨",
-      "matched_stocks_count": 0
+      "source": "早盘避险领涨",
+      "note": "油气开采、厨卫电器等板块跟涨",
+      "matched_stocks_count": 2
     },
     {
-      "name": "休闲食品",
-      "heat_pct": 3.8,
-      "source": "大消费子方向",
-      "note": "与食品饮料共振，良品铺子涨停",
+      "name": "并购重组",
+      "heat_pct": 1.2,
+      "source": "爱丽家居8连板带动",
+      "note": "爱丽家居8连板，海南海药7天4板",
       "matched_stocks_count": 0
     }
   ],
   "hot_stocks": [
     {
-      "code": "603663",
-      "name": "三祥新材",
-      "rating": "A",
-      "score": 23,
-      "heat_score": 3.2,
-      "matched_concepts": [
-        "固态电池"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "603212",
-      "name": "赛伍技术",
-      "rating": "B+",
-      "score": 19,
-      "heat_score": 3.2,
-      "matched_concepts": [
-        "固态电池"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "002741",
-      "name": "光华科技",
-      "rating": "D+",
-      "score": 11,
-      "heat_score": 3.2,
-      "matched_concepts": [
-        "固态电池"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "002167",
-      "name": "东方锆业",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 3.2,
-      "matched_concepts": [
-        "固态电池"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "002141",
-      "name": "贤丰控股",
-      "rating": "D+",
-      "score": 7,
-      "heat_score": 2.8,
-      "matched_concepts": [
-        "大金融"
-      ],
-      "theme": "🏦 金融与地产",
-      "track": "金融"
-    },
-    {
       "code": "000810",
       "name": "创维数字",
       "rating": "C+",
       "score": 12,
-      "heat_score": 2.5,
+      "heat_score": 4.2,
       "matched_concepts": [
-        "端侧AI"
+        "AI应用"
       ],
       "theme": "📱 消费电子与终端",
       "track": "AI PC/智能终端"
     },
     {
-      "code": "603399",
-      "name": "永杉锂业",
-      "rating": "D-",
-      "score": null,
-      "heat_score": 1.8,
+      "code": "002213",
+      "name": "大为股份",
+      "rating": "D",
+      "score": 5,
+      "heat_score": 2.8,
       "matched_concepts": [
-        "能源金属"
+        "存储芯片"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "HBM存储产业链"
+    },
+    {
+      "code": "603738",
+      "name": "泰晶科技",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 2.8,
+      "matched_concepts": [
+        "存储芯片"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "芯片设计"
+    },
+    {
+      "code": "002023",
+      "name": "海特高新",
+      "rating": "C+",
+      "score": 13,
+      "heat_score": 2.8,
+      "matched_concepts": [
+        "存储芯片"
+      ],
+      "theme": "🛡️ 国防军工与航空航天",
+      "track": "军工电子"
+    },
+    {
+      "code": "603283",
+      "name": "赛腾股份",
+      "rating": "B+",
+      "score": 17,
+      "heat_score": 2.5,
+      "matched_concepts": [
+        "机器人"
+      ],
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
+    },
+    {
+      "code": "002747",
+      "name": "埃斯顿",
+      "rating": "B",
+      "score": null,
+      "heat_score": 2.5,
+      "matched_concepts": [
+        "机器人"
+      ],
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
+    },
+    {
+      "code": "002527",
+      "name": "新时达",
+      "rating": "?",
+      "score": null,
+      "heat_score": 2.5,
+      "matched_concepts": [
+        "机器人"
+      ],
+      "theme": "🤖 人形机器人产业链",
+      "track": "机器人整机/系统集成"
+    },
+    {
+      "code": "603995",
+      "name": "甬金股份",
+      "rating": "B",
+      "score": 17,
+      "heat_score": 1.5,
+      "matched_concepts": [
+        "贵金属"
       ],
       "theme": "💎 有色金属与新材料",
-      "track": "稀有/战略金属"
+      "track": "工业金属"
+    },
+    {
+      "code": "601137",
+      "name": "博威合金",
+      "rating": "D+",
+      "score": 11,
+      "heat_score": 1.5,
+      "matched_concepts": [
+        "贵金属"
+      ],
+      "theme": "💎 有色金属与新材料",
+      "track": "工业金属"
     }
   ],
-  "total_matched_stocks": 7,
-  "updated": "2026-07-29 18:35",
+  "total_matched_stocks": 9,
+  "updated": "2026-07-30 19:45",
   "stocks": {
-    "603663": {
+    "000810": {
       "heat": "warm",
-      "maxChg": 3.2,
+      "maxChg": 4.2,
       "concepts": [
-        "固态电池"
+        "AI应用"
       ]
     },
-    "603212": {
-      "heat": "warm",
-      "maxChg": 3.2,
-      "concepts": [
-        "固态电池"
-      ]
-    },
-    "002741": {
-      "heat": "warm",
-      "maxChg": 3.2,
-      "concepts": [
-        "固态电池"
-      ]
-    },
-    "002167": {
-      "heat": "warm",
-      "maxChg": 3.2,
-      "concepts": [
-        "固态电池"
-      ]
-    },
-    "002141": {
+    "002213": {
       "heat": "cold",
       "maxChg": 2.8,
       "concepts": [
-        "大金融"
+        "存储芯片"
       ]
     },
-    "000810": {
+    "603738": {
+      "heat": "cold",
+      "maxChg": 2.8,
+      "concepts": [
+        "存储芯片"
+      ]
+    },
+    "002023": {
+      "heat": "cold",
+      "maxChg": 2.8,
+      "concepts": [
+        "存储芯片"
+      ]
+    },
+    "603283": {
       "heat": "cold",
       "maxChg": 2.5,
       "concepts": [
-        "端侧AI"
+        "机器人"
       ]
     },
-    "603399": {
+    "002747": {
       "heat": "cold",
-      "maxChg": 1.8,
+      "maxChg": 2.5,
       "concepts": [
-        "能源金属"
+        "机器人"
+      ]
+    },
+    "002527": {
+      "heat": "cold",
+      "maxChg": 2.5,
+      "concepts": [
+        "机器人"
+      ]
+    },
+    "603995": {
+      "heat": "cold",
+      "maxChg": 1.5,
+      "concepts": [
+        "贵金属"
+      ]
+    },
+    "601137": {
+      "heat": "cold",
+      "maxChg": 1.5,
+      "concepts": [
+        "贵金属"
       ]
     }
   }
