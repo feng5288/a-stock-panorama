@@ -1,143 +1,143 @@
 {
-  "update_time": "2026-07-30T19:45:02.127120",
-  "trade_date": "2026-07-30",
+  "update_time": "2026-08-01T10:49:09.424829",
+  "trade_date": "2026-07-31",
   "market_summary": {
-    "sh_index": 3804.69,
-    "sz_index": 13285.8,
-    "cy_index": 3244.62,
-    "kc50_index": 1588.41,
-    "volume_trillion": 2.34
+    "sh_index": 3832.26,
+    "sz_index": 13578.93,
+    "cy_index": 3343.96,
+    "kc50_index": 1099.2,
+    "volume_trillion": 2.56
   },
-  "market_note": "三大指数震荡收跌，上证跌0.62%，深成指跌2.73%，创业板跌3.97%，科创50跌5.38%。两市成交2.34万亿放量467亿，超3600股下跌。白酒板块全线上涨涨幅第一，大消费延续强势；AI应用/MLCC/汽车整车逆势活跃；半导体/算力持续承压。",
+  "market_note": "7月31日A股放量反弹，AI应用端全线爆发。沪指+0.72%报3832.26，深成指+2.21%，创业板指+3.06%。三市成交额2.56万亿，放量2014亿，近4700只个股上涨。政治局会议强调'人工智能+'与'十五五'算力网4万亿投资构成政策主线，OpenAI降价催化AI应用端暴力拉升。银行、煤炭、保险等传统板块逆势走弱。",
   "hot_concepts": [
     {
-      "name": "白酒",
-      "heat_pct": 6.0,
-      "source": "板块涨幅第一，全线上涨",
-      "note": "舍得酒业、金徽酒、金种子酒涨停；皇台酒业、口子窖、酒鬼酒、迎驾贡酒涨超6%",
+      "name": "词元/Tokens概念",
+      "heat_pct": 11.45,
+      "source": "财联社",
+      "note": "AI应用端爆发，国家发改委发布会推进算力网建设与AI立法",
       "matched_stocks_count": 0
     },
     {
-      "name": "食品饮料",
-      "heat_pct": 5.5,
-      "source": "大消费领涨核心方向",
-      "note": "一鸣食品3连板，海欣食品、均瑶健康、西安饮食涨停",
+      "name": "Kimi概念",
+      "heat_pct": 11.22,
+      "source": "东方财富",
+      "note": "多模态AI方向领涨，Kimi/ChatGPT/AIGC全线爆发",
       "matched_stocks_count": 0
     },
     {
-      "name": "大消费",
-      "heat_pct": 4.8,
-      "source": "消费板块全面爆发",
-      "note": "金徽酒、舍得酒业涨停；火星人涨停，消费精选概念走强",
+      "name": "物理AI概念",
+      "heat_pct": 9.26,
+      "source": "财联社",
+      "note": "AI应用+宇树科技IPO获批催化",
       "matched_stocks_count": 0
     },
     {
-      "name": "AI应用",
-      "heat_pct": 4.2,
-      "source": "AI应用端反复异动",
-      "note": "传智教育4连板，普联软件20CM涨停",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "MLCC",
-      "heat_pct": 3.5,
-      "source": "MLCC概念震荡拉升",
-      "note": "双星新材涨停，昀冢科技盘中触及20CM涨停",
+      "name": "AI营销概念",
+      "heat_pct": 8.67,
+      "source": "腾讯网",
+      "note": "蓝色光标、易点天下等20CM涨停",
       "matched_stocks_count": 0
     },
     {
-      "name": "汽车整车",
-      "heat_pct": 3.0,
-      "source": "汽车整车反复活跃",
-      "note": "江淮汽车涨停",
+      "name": "ChatGPT概念",
+      "heat_pct": 7.53,
+      "source": "东方财富",
+      "note": "OpenAI下调GPT-5.6价格80%催化",
       "matched_stocks_count": 0
+    },
+    {
+      "name": "腾讯云概念",
+      "heat_pct": 7.44,
+      "source": "东方财富",
+      "note": "算力基础设施受益政策利好",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "智谱AI概念",
+      "heat_pct": 7.39,
+      "source": "东方财富",
+      "note": "传智教育5连板，正和生态、蓝色光标等涨停",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "AI语料",
+      "heat_pct": 7.3,
+      "source": "东方财富",
+      "note": "中文在线、福昕软件、昆仑万维等20股涨停",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "人形机器人",
+      "heat_pct": 6.5,
+      "source": "腾讯网",
+      "note": "宇树科技IPO获批+中大力德/卧龙电驱等涨停",
+      "matched_stocks_count": 3
+    },
+    {
+      "name": "算力租赁",
+      "heat_pct": 6.2,
+      "source": "同花顺",
+      "note": "利通电子一字涨停，逾20股涨停或涨超10%",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "半导体",
+      "heat_pct": 5.8,
+      "source": "财联社",
+      "note": "全球半导体集体反弹，盛景微/盛剑科技等涨停",
+      "matched_stocks_count": 4
     },
     {
       "name": "存储芯片",
-      "heat_pct": 2.8,
-      "source": "存储芯片率先反弹",
-      "note": "德明利反包涨停，2连板",
-      "matched_stocks_count": 3
+      "heat_pct": 5.5,
+      "source": "腾讯网",
+      "note": "美股存储板块暴涨传导，利和兴/炬光科技等涨超10%",
+      "matched_stocks_count": 1
     },
     {
-      "name": "机器人",
-      "heat_pct": 2.5,
-      "source": "机器人概念异动",
-      "note": "明新旭腾4连板",
-      "matched_stocks_count": 3
-    },
-    {
-      "name": "贵金属",
-      "heat_pct": 1.5,
-      "source": "早盘避险领涨",
-      "note": "油气开采、厨卫电器等板块跟涨",
+      "name": "CPO光通信",
+      "heat_pct": 5.0,
+      "source": "东方财富",
+      "note": "算力硬件产业链联动反弹",
       "matched_stocks_count": 2
     },
     {
-      "name": "并购重组",
-      "heat_pct": 1.2,
-      "source": "爱丽家居8连板带动",
-      "note": "爱丽家居8连板，海南海药7天4板",
+      "name": "多模态AI",
+      "heat_pct": 8.9,
+      "source": "综合",
+      "note": "AI应用全线爆发的核心主线，传智教育5连板",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "财税数字化",
+      "heat_pct": 4.5,
+      "source": "财联社",
+      "note": "政策驱动数字政务方向，税友股份2连板",
       "matched_stocks_count": 0
     }
   ],
   "hot_stocks": [
     {
-      "code": "000810",
-      "name": "创维数字",
-      "rating": "C+",
-      "score": 12,
-      "heat_score": 4.2,
-      "matched_concepts": [
-        "AI应用"
-      ],
-      "theme": "📱 消费电子与终端",
-      "track": "AI PC/智能终端"
-    },
-    {
       "code": "002213",
       "name": "大为股份",
       "rating": "D",
       "score": 5,
-      "heat_score": 2.8,
+      "heat_score": 11.3,
       "matched_concepts": [
+        "半导体",
         "存储芯片"
       ],
       "theme": "🔥 AI算力产业链",
       "track": "HBM存储产业链"
     },
     {
-      "code": "603738",
-      "name": "泰晶科技",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 2.8,
-      "matched_concepts": [
-        "存储芯片"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "芯片设计"
-    },
-    {
-      "code": "002023",
-      "name": "海特高新",
-      "rating": "C+",
-      "score": 13,
-      "heat_score": 2.8,
-      "matched_concepts": [
-        "存储芯片"
-      ],
-      "theme": "🛡️ 国防军工与航空航天",
-      "track": "军工电子"
-    },
-    {
       "code": "603283",
       "name": "赛腾股份",
       "rating": "B+",
       "score": 17,
-      "heat_score": 2.5,
+      "heat_score": 6.5,
       "matched_concepts": [
-        "机器人"
+        "人形机器人"
       ],
       "theme": "🤖 人形机器人产业链",
       "track": "机器人整机/系统集成"
@@ -147,9 +147,9 @@
       "name": "埃斯顿",
       "rating": "B",
       "score": null,
-      "heat_score": 2.5,
+      "heat_score": 6.5,
       "matched_concepts": [
-        "机器人"
+        "人形机器人"
       ],
       "theme": "🤖 人形机器人产业链",
       "track": "机器人整机/系统集成"
@@ -159,102 +159,139 @@
       "name": "新时达",
       "rating": "?",
       "score": null,
-      "heat_score": 2.5,
+      "heat_score": 6.5,
       "matched_concepts": [
-        "机器人"
+        "人形机器人"
       ],
       "theme": "🤖 人形机器人产业链",
       "track": "机器人整机/系统集成"
     },
     {
-      "code": "603995",
-      "name": "甬金股份",
-      "rating": "B",
-      "score": 17,
-      "heat_score": 1.5,
+      "code": "000962",
+      "name": "东方钽业",
+      "rating": "C",
+      "score": null,
+      "heat_score": 5.8,
       "matched_concepts": [
-        "贵金属"
+        "半导体"
       ],
-      "theme": "💎 有色金属与新材料",
-      "track": "工业金属"
+      "theme": "💡 半导体全产业链",
+      "track": "半导体材料(卡脖子12大类)"
     },
     {
-      "code": "601137",
-      "name": "博威合金",
+      "code": "603738",
+      "name": "泰晶科技",
       "rating": "D+",
-      "score": 11,
-      "heat_score": 1.5,
+      "score": 8,
+      "heat_score": 5.8,
       "matched_concepts": [
-        "贵金属"
+        "半导体"
       ],
-      "theme": "💎 有色金属与新材料",
-      "track": "工业金属"
+      "theme": "💡 半导体全产业链",
+      "track": "芯片设计"
+    },
+    {
+      "code": "002023",
+      "name": "海特高新",
+      "rating": "C+",
+      "score": 13,
+      "heat_score": 5.8,
+      "matched_concepts": [
+        "半导体"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "功率半导体"
+    },
+    {
+      "code": "002902",
+      "name": "铭普光磁",
+      "rating": "D",
+      "score": 2,
+      "heat_score": 5.0,
+      "matched_concepts": [
+        "CPO光通信"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "光通信/CPO光互连"
+    },
+    {
+      "code": "600487",
+      "name": "亨通光电",
+      "rating": "A-",
+      "score": 22,
+      "heat_score": 5.0,
+      "matched_concepts": [
+        "CPO光通信"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "光通信/CPO光互连"
     }
   ],
   "total_matched_stocks": 9,
-  "updated": "2026-07-30 19:45",
+  "updated": "2026-08-01 10:49",
   "stocks": {
-    "000810": {
-      "heat": "warm",
-      "maxChg": 4.2,
-      "concepts": [
-        "AI应用"
-      ]
-    },
     "002213": {
-      "heat": "cold",
-      "maxChg": 2.8,
+      "heat": "high",
+      "maxChg": 11.3,
       "concepts": [
-        "存储芯片"
-      ]
-    },
-    "603738": {
-      "heat": "cold",
-      "maxChg": 2.8,
-      "concepts": [
-        "存储芯片"
-      ]
-    },
-    "002023": {
-      "heat": "cold",
-      "maxChg": 2.8,
-      "concepts": [
+        "半导体",
         "存储芯片"
       ]
     },
     "603283": {
-      "heat": "cold",
-      "maxChg": 2.5,
+      "heat": "high",
+      "maxChg": 6.5,
       "concepts": [
-        "机器人"
+        "人形机器人"
       ]
     },
     "002747": {
-      "heat": "cold",
-      "maxChg": 2.5,
+      "heat": "high",
+      "maxChg": 6.5,
       "concepts": [
-        "机器人"
+        "人形机器人"
       ]
     },
     "002527": {
-      "heat": "cold",
-      "maxChg": 2.5,
+      "heat": "high",
+      "maxChg": 6.5,
       "concepts": [
-        "机器人"
+        "人形机器人"
       ]
     },
-    "603995": {
-      "heat": "cold",
-      "maxChg": 1.5,
+    "000962": {
+      "heat": "high",
+      "maxChg": 5.8,
       "concepts": [
-        "贵金属"
+        "半导体"
       ]
     },
-    "601137": {
-      "heat": "cold",
-      "maxChg": 1.5,
+    "603738": {
+      "heat": "high",
+      "maxChg": 5.8,
       "concepts": [
-        "贵金属"
+        "半导体"
+      ]
+    },
+    "002023": {
+      "heat": "high",
+      "maxChg": 5.8,
+      "concepts": [
+        "半导体"
+      ]
+    },
+    "002902": {
+      "heat": "high",
+      "maxChg": 5.0,
+      "concepts": [
+        "CPO光通信"
+      ]
+    },
+    "600487": {
+      "heat": "high",
+      "maxChg": 5.0,
+      "concepts": [
+        "CPO光通信"
       ]
     }
   }
