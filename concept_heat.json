@@ -1,134 +1,260 @@
 {
-  "update_time": "2026-08-01T10:49:09.424829",
-  "trade_date": "2026-07-31",
+  "update_time": "2026-08-03T18:49:31.531317",
+  "trade_date": "2026-08-03",
   "market_summary": {
-    "sh_index": 3832.26,
-    "sz_index": 13578.93,
-    "cy_index": 3343.96,
-    "kc50_index": 1099.2,
-    "volume_trillion": 2.56
+    "sh_index": 3809.66,
+    "sz_index": 13448.29,
+    "cy_index": 3302.55,
+    "kc50_index": 1758.21,
+    "volume_trillion": 2.0
   },
-  "market_note": "7月31日A股放量反弹，AI应用端全线爆发。沪指+0.72%报3832.26，深成指+2.21%，创业板指+3.06%。三市成交额2.56万亿，放量2014亿，近4700只个股上涨。政治局会议强调'人工智能+'与'十五五'算力网4万亿投资构成政策主线，OpenAI降价催化AI应用端暴力拉升。银行、煤炭、保险等传统板块逆势走弱。",
+  "market_note": "8月3日A股三大指数集体收跌，沪指跌0.59%报3809.66，深成指跌0.96%，创业板指跌1.24%，科创综指跌3.39%。全市场4005只个股上涨、1466只下跌，83只涨停、9只跌停。成交额2万亿，较上日缩量5446亿。半导体、电子化学品、存储芯片等大跌；核电、光伏、电网设备、风电、AI应用端逆势走强。国常会核准8台核电机组（总投资超1700亿）成为核电主要催化。电机板块+4.63%领涨行业，风电设备+3.73%，航天装备+3.59%。",
   "hot_concepts": [
     {
-      "name": "词元/Tokens概念",
-      "heat_pct": 11.45,
-      "source": "财联社",
-      "note": "AI应用端爆发，国家发改委发布会推进算力网建设与AI立法",
-      "matched_stocks_count": 0
+      "name": "核电",
+      "heat_pct": 9.5,
+      "source": "腾讯网/财联社",
+      "note": "国常会核准8台核电机组，总投资超1700亿；久盛电气/合锻智能/融发核电/中国核建等十余股涨停",
+      "matched_stocks_count": 5
     },
     {
-      "name": "Kimi概念",
-      "heat_pct": 11.22,
-      "source": "东方财富",
-      "note": "多模态AI方向领涨，Kimi/ChatGPT/AIGC全线爆发",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "物理AI概念",
-      "heat_pct": 9.26,
-      "source": "财联社",
-      "note": "AI应用+宇树科技IPO获批催化",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "AI营销概念",
-      "heat_pct": 8.67,
+      "name": "AI应用",
+      "heat_pct": 8.0,
       "source": "腾讯网",
-      "note": "蓝色光标、易点天下等20CM涨停",
-      "matched_stocks_count": 0
+      "note": "传智教育6连板，天娱数科/恒银科技2连板；AI教育/AI营销等反复活跃",
+      "matched_stocks_count": 1
     },
     {
-      "name": "ChatGPT概念",
-      "heat_pct": 7.53,
-      "source": "东方财富",
-      "note": "OpenAI下调GPT-5.6价格80%催化",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "腾讯云概念",
-      "heat_pct": 7.44,
-      "source": "东方财富",
-      "note": "算力基础设施受益政策利好",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "智谱AI概念",
-      "heat_pct": 7.39,
-      "source": "东方财富",
-      "note": "传智教育5连板，正和生态、蓝色光标等涨停",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "AI语料",
-      "heat_pct": 7.3,
-      "source": "东方财富",
-      "note": "中文在线、福昕软件、昆仑万维等20股涨停",
-      "matched_stocks_count": 0
+      "name": "光伏",
+      "heat_pct": 7.5,
+      "source": "腾讯网/财联社",
+      "note": "光伏板块反弹，通威股份/国晟科技/福莱特涨停，大全能源涨超8%",
+      "matched_stocks_count": 11
     },
     {
       "name": "人形机器人",
       "heat_pct": 6.5,
       "source": "腾讯网",
-      "note": "宇树科技IPO获批+中大力德/卧龙电驱等涨停",
+      "note": "中大力德2连板，宇树科技IPO预期持续催化",
       "matched_stocks_count": 3
     },
     {
-      "name": "算力租赁",
-      "heat_pct": 6.2,
-      "source": "同花顺",
-      "note": "利通电子一字涨停，逾20股涨停或涨超10%",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "半导体",
-      "heat_pct": 5.8,
+      "name": "电网设备",
+      "heat_pct": 6.0,
       "source": "财联社",
-      "note": "全球半导体集体反弹，盛景微/盛剑科技等涨停",
-      "matched_stocks_count": 4
-    },
-    {
-      "name": "存储芯片",
-      "heat_pct": 5.5,
-      "source": "腾讯网",
-      "note": "美股存储板块暴涨传导，利和兴/炬光科技等涨超10%",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "CPO光通信",
-      "heat_pct": 5.0,
-      "source": "东方财富",
-      "note": "算力硬件产业链联动反弹",
+      "note": "十五五特高压规模翻倍催化，风范股份/汇金通/百利电气等涨停",
       "matched_stocks_count": 2
     },
     {
-      "name": "多模态AI",
-      "heat_pct": 8.9,
-      "source": "综合",
-      "note": "AI应用全线爆发的核心主线，传智教育5连板",
+      "name": "风电",
+      "heat_pct": 5.5,
+      "source": "企鹅号",
+      "note": "风电设备板块涨3.73%，工业绿色低碳十五五规划利好",
+      "matched_stocks_count": 3
+    },
+    {
+      "name": "可控核聚变",
+      "heat_pct": 5.0,
+      "source": "腾讯网",
+      "note": "立航科技2连板，融发核电/华菱线缆等涨停，核电概念联动",
       "matched_stocks_count": 0
     },
     {
-      "name": "财税数字化",
+      "name": "航天军工",
       "heat_pct": 4.5,
-      "source": "财联社",
-      "note": "政策驱动数字政务方向，税友股份2连板",
+      "source": "企鹅号",
+      "note": "航天装备板块涨3.59%，成飞概念等涨幅居前",
+      "matched_stocks_count": 2
+    },
+    {
+      "name": "电力",
+      "heat_pct": 4.0,
+      "source": "腾讯网",
+      "note": "电力板块震荡拉升，新能股份2连板，深南电A/华电辽能涨停",
+      "matched_stocks_count": 1
+    },
+    {
+      "name": "燃气",
+      "heat_pct": 3.0,
+      "source": "企鹅号",
+      "note": "燃气板块涨幅居前",
       "matched_stocks_count": 0
     }
   ],
   "hot_stocks": [
     {
-      "code": "002213",
-      "name": "大为股份",
-      "rating": "D",
-      "score": 5,
-      "heat_score": 11.3,
+      "code": "600869",
+      "name": "远东股份",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 23.0,
       "matched_concepts": [
-        "半导体",
-        "存储芯片"
+        "核电",
+        "光伏",
+        "电网设备"
+      ],
+      "theme": "⚡ 电力电网",
+      "track": "核电"
+    },
+    {
+      "code": "603663",
+      "name": "三祥新材",
+      "rating": "A",
+      "score": 23,
+      "heat_score": 17.0,
+      "matched_concepts": [
+        "核电",
+        "光伏"
+      ],
+      "theme": "⚡ 电力电网",
+      "track": "核电"
+    },
+    {
+      "code": "002534",
+      "name": "西子洁能",
+      "rating": "A-",
+      "score": 20,
+      "heat_score": 17.0,
+      "matched_concepts": [
+        "核电",
+        "光伏"
+      ],
+      "theme": "⚡ 电力电网",
+      "track": "核电"
+    },
+    {
+      "code": "002167",
+      "name": "东方锆业",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 17.0,
+      "matched_concepts": [
+        "核电",
+        "光伏"
+      ],
+      "theme": "⚡ 电力电网",
+      "track": "核电"
+    },
+    {
+      "code": "600353",
+      "name": "旭光电子",
+      "rating": "B+",
+      "score": 15,
+      "heat_score": 10.5,
+      "matched_concepts": [
+        "电网设备",
+        "航天军工"
+      ],
+      "theme": "🛡️ 国防军工与航空航天",
+      "track": "军工电子"
+    },
+    {
+      "code": "000922",
+      "name": "佳电股份",
+      "rating": "C+",
+      "score": null,
+      "heat_score": 9.5,
+      "matched_concepts": [
+        "核电"
+      ],
+      "theme": "⚡ 电力电网",
+      "track": "核电"
+    },
+    {
+      "code": "000810",
+      "name": "创维数字",
+      "rating": "C+",
+      "score": 12,
+      "heat_score": 8.0,
+      "matched_concepts": [
+        "AI应用"
+      ],
+      "theme": "📱 消费电子与终端",
+      "track": "AI PC/智能终端"
+    },
+    {
+      "code": "600601",
+      "name": "方正科技",
+      "rating": "B",
+      "score": 16,
+      "heat_score": 7.5,
+      "matched_concepts": [
+        "光伏"
       ],
       "theme": "🔥 AI算力产业链",
-      "track": "HBM存储产业链"
+      "track": "AI服务器/算力"
+    },
+    {
+      "code": "603328",
+      "name": "依顿电子",
+      "rating": "B+",
+      "score": 17,
+      "heat_score": 7.5,
+      "matched_concepts": [
+        "光伏"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "AI服务器/算力"
+    },
+    {
+      "code": "603688",
+      "name": "石英股份",
+      "rating": "C",
+      "score": 10,
+      "heat_score": 7.5,
+      "matched_concepts": [
+        "光伏"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "半导体材料(卡脖子12大类)"
+    },
+    {
+      "code": "603212",
+      "name": "赛伍技术",
+      "rating": "B+",
+      "score": 19,
+      "heat_score": 7.5,
+      "matched_concepts": [
+        "光伏"
+      ],
+      "theme": "🚗 新能源智能汽车",
+      "track": "动力电池"
+    },
+    {
+      "code": "002741",
+      "name": "光华科技",
+      "rating": "D+",
+      "score": 11,
+      "heat_score": 7.5,
+      "matched_concepts": [
+        "光伏"
+      ],
+      "theme": "🚗 新能源智能汽车",
+      "track": "动力电池"
+    },
+    {
+      "code": "002733",
+      "name": "雄韬股份",
+      "rating": "?",
+      "score": null,
+      "heat_score": 7.5,
+      "matched_concepts": [
+        "光伏"
+      ],
+      "theme": "☀️ 新能源发电",
+      "track": "储能"
+    },
+    {
+      "code": "601678",
+      "name": "滨化股份",
+      "rating": "D",
+      "score": 10,
+      "heat_score": 7.5,
+      "matched_concepts": [
+        "光伏"
+      ],
+      "theme": "☀️ 新能源发电",
+      "track": "氢能"
     },
     {
       "code": "603283",
@@ -167,75 +293,171 @@
       "track": "机器人整机/系统集成"
     },
     {
-      "code": "000962",
-      "name": "东方钽业",
-      "rating": "C",
-      "score": null,
-      "heat_score": 5.8,
+      "code": "600458",
+      "name": "时代新材",
+      "rating": "A-",
+      "score": 21,
+      "heat_score": 5.5,
       "matched_concepts": [
-        "半导体"
+        "风电"
       ],
-      "theme": "💡 半导体全产业链",
-      "track": "半导体材料(卡脖子12大类)"
+      "theme": "☀️ 新能源发电",
+      "track": "风电"
     },
     {
-      "code": "603738",
-      "name": "泰晶科技",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 5.8,
+      "code": "605006",
+      "name": "山东玻纤",
+      "rating": "D",
+      "score": 10,
+      "heat_score": 5.5,
       "matched_concepts": [
-        "半导体"
+        "风电"
       ],
-      "theme": "💡 半导体全产业链",
-      "track": "芯片设计"
+      "theme": "☀️ 新能源发电",
+      "track": "风电"
+    },
+    {
+      "code": "002669",
+      "name": "康达新材",
+      "rating": "?",
+      "score": null,
+      "heat_score": 5.5,
+      "matched_concepts": [
+        "风电"
+      ],
+      "theme": "☀️ 新能源发电",
+      "track": "风电"
     },
     {
       "code": "002023",
       "name": "海特高新",
       "rating": "C+",
       "score": 13,
-      "heat_score": 5.8,
+      "heat_score": 4.5,
       "matched_concepts": [
-        "半导体"
+        "航天军工"
       ],
-      "theme": "💡 半导体全产业链",
-      "track": "功率半导体"
+      "theme": "🛡️ 国防军工与航空航天",
+      "track": "航空装备"
     },
     {
-      "code": "002902",
-      "name": "铭普光磁",
-      "rating": "D",
-      "score": 2,
-      "heat_score": 5.0,
+      "code": "605580",
+      "name": "恒盛能源",
+      "rating": "D+",
+      "score": 9,
+      "heat_score": 4.0,
       "matched_concepts": [
-        "CPO光通信"
+        "电力"
       ],
-      "theme": "🔥 AI算力产业链",
-      "track": "光通信/CPO光互连"
-    },
-    {
-      "code": "600487",
-      "name": "亨通光电",
-      "rating": "A-",
-      "score": 22,
-      "heat_score": 5.0,
-      "matched_concepts": [
-        "CPO光通信"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "光通信/CPO光互连"
+      "theme": "⚡ 电力电网",
+      "track": "火电"
     }
   ],
-  "total_matched_stocks": 9,
-  "updated": "2026-08-01 10:49",
+  "total_matched_stocks": 22,
+  "updated": "2026-08-03 18:49",
   "stocks": {
-    "002213": {
+    "600869": {
       "heat": "high",
-      "maxChg": 11.3,
+      "maxChg": 23.0,
       "concepts": [
-        "半导体",
-        "存储芯片"
+        "核电",
+        "光伏",
+        "电网设备"
+      ]
+    },
+    "603663": {
+      "heat": "high",
+      "maxChg": 17.0,
+      "concepts": [
+        "核电",
+        "光伏"
+      ]
+    },
+    "002534": {
+      "heat": "high",
+      "maxChg": 17.0,
+      "concepts": [
+        "核电",
+        "光伏"
+      ]
+    },
+    "002167": {
+      "heat": "high",
+      "maxChg": 17.0,
+      "concepts": [
+        "核电",
+        "光伏"
+      ]
+    },
+    "600353": {
+      "heat": "high",
+      "maxChg": 10.5,
+      "concepts": [
+        "电网设备",
+        "航天军工"
+      ]
+    },
+    "000922": {
+      "heat": "high",
+      "maxChg": 9.5,
+      "concepts": [
+        "核电"
+      ]
+    },
+    "000810": {
+      "heat": "high",
+      "maxChg": 8.0,
+      "concepts": [
+        "AI应用"
+      ]
+    },
+    "600601": {
+      "heat": "high",
+      "maxChg": 7.5,
+      "concepts": [
+        "光伏"
+      ]
+    },
+    "603328": {
+      "heat": "high",
+      "maxChg": 7.5,
+      "concepts": [
+        "光伏"
+      ]
+    },
+    "603688": {
+      "heat": "high",
+      "maxChg": 7.5,
+      "concepts": [
+        "光伏"
+      ]
+    },
+    "603212": {
+      "heat": "high",
+      "maxChg": 7.5,
+      "concepts": [
+        "光伏"
+      ]
+    },
+    "002741": {
+      "heat": "high",
+      "maxChg": 7.5,
+      "concepts": [
+        "光伏"
+      ]
+    },
+    "002733": {
+      "heat": "high",
+      "maxChg": 7.5,
+      "concepts": [
+        "光伏"
+      ]
+    },
+    "601678": {
+      "heat": "high",
+      "maxChg": 7.5,
+      "concepts": [
+        "光伏"
       ]
     },
     "603283": {
@@ -259,39 +481,39 @@
         "人形机器人"
       ]
     },
-    "000962": {
+    "600458": {
       "heat": "high",
-      "maxChg": 5.8,
+      "maxChg": 5.5,
       "concepts": [
-        "半导体"
+        "风电"
       ]
     },
-    "603738": {
+    "605006": {
       "heat": "high",
-      "maxChg": 5.8,
+      "maxChg": 5.5,
       "concepts": [
-        "半导体"
+        "风电"
+      ]
+    },
+    "002669": {
+      "heat": "high",
+      "maxChg": 5.5,
+      "concepts": [
+        "风电"
       ]
     },
     "002023": {
-      "heat": "high",
-      "maxChg": 5.8,
+      "heat": "warm",
+      "maxChg": 4.5,
       "concepts": [
-        "半导体"
+        "航天军工"
       ]
     },
-    "002902": {
-      "heat": "high",
-      "maxChg": 5.0,
+    "605580": {
+      "heat": "warm",
+      "maxChg": 4.0,
       "concepts": [
-        "CPO光通信"
-      ]
-    },
-    "600487": {
-      "heat": "high",
-      "maxChg": 5.0,
-      "concepts": [
-        "CPO光通信"
+        "电力"
       ]
     }
   }
