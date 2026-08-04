@@ -1,164 +1,137 @@
 {
-  "update_time": "2026-08-03T18:49:31.531317",
-  "trade_date": "2026-08-03",
+  "update_time": "2026-08-04T18:12:03.244887",
+  "trade_date": "2026-08-04",
   "market_summary": {
-    "sh_index": 3809.66,
-    "sz_index": 13448.29,
-    "cy_index": 3302.55,
-    "kc50_index": 1758.21,
-    "volume_trillion": 2.0
+    "sh_index": 3822.28,
+    "sz_index": 13885.71,
+    "cy_index": 3488.97,
+    "kc50_index": 1616.36,
+    "volume_trillion": 2.21
   },
-  "market_note": "8月3日A股三大指数集体收跌，沪指跌0.59%报3809.66，深成指跌0.96%，创业板指跌1.24%，科创综指跌3.39%。全市场4005只个股上涨、1466只下跌，83只涨停、9只跌停。成交额2万亿，较上日缩量5446亿。半导体、电子化学品、存储芯片等大跌；核电、光伏、电网设备、风电、AI应用端逆势走强。国常会核准8台核电机组（总投资超1700亿）成为核电主要催化。电机板块+4.63%领涨行业，风电设备+3.73%，航天装备+3.59%。",
+  "market_note": "8月4日A股四大指数集体收涨，沪指涨0.33%报3822.28，深成指涨3.25%报13885.71，创业板指暴涨5.64%报3488.97，科创50涨4.09%报1616.36。全市场超3600只个股上涨，超百股涨停。成交额2.21万亿，较上日放量约2162亿。算力硬件（CPO/光模块/存储芯片）全天爆发，AI应用端持续走强，CRO/医药生物涨幅居前。工农中建四大行均跌超3%，银行股明显回调。英伟达CPO量产消息+美股AI应用股Palantir/Snap业绩超预期成为主要催化。",
   "hot_concepts": [
     {
-      "name": "核电",
-      "heat_pct": 9.5,
+      "name": "CPO",
+      "heat_pct": 9.8,
       "source": "腾讯网/财联社",
-      "note": "国常会核准8台核电机组，总投资超1700亿；久盛电气/合锻智能/融发核电/中国核建等十余股涨停",
-      "matched_stocks_count": 5
+      "note": "英伟达CPO交换机量产催化，光库科技20CM涨停，联讯仪器涨超17%，光迅科技/剑桥科技/永鼎股份等超10股涨停；「易中天」均涨超13%，天孚通信3日累计涨超30%",
+      "matched_stocks_count": 2
+    },
+    {
+      "name": "算力租赁",
+      "heat_pct": 8.5,
+      "source": "腾讯网/财联社",
+      "note": "美股云厂商（谷歌/微软/亚马逊/Meta）均涨超4%驱动；美利云3连板，利通电子/润建股份/宏景科技/东阳光3天2板，青云科技/行云科技/中青宝20CM涨停",
+      "matched_stocks_count": 0
     },
     {
       "name": "AI应用",
       "heat_pct": 8.0,
-      "source": "腾讯网",
-      "note": "传智教育6连板，天娱数科/恒银科技2连板；AI教育/AI营销等反复活跃",
+      "source": "企鹅号/腾讯网",
+      "note": "美股Palantir/Snap业绩超预期催化；传智教育7连板，恒银科技/天娱数科3连板，中国科传/欢瑞世纪/返利科技5天3板",
       "matched_stocks_count": 1
     },
     {
-      "name": "光伏",
-      "heat_pct": 7.5,
-      "source": "腾讯网/财联社",
-      "note": "光伏板块反弹，通威股份/国晟科技/福莱特涨停，大全能源涨超8%",
-      "matched_stocks_count": 11
+      "name": "先进封装",
+      "heat_pct": 7.0,
+      "source": "腾讯网",
+      "note": "先进封装概念走强，鹏鼎控股/天通股份等涨停，与CPO/AI算力联动",
+      "matched_stocks_count": 4
     },
     {
-      "name": "人形机器人",
+      "name": "覆铜板",
       "heat_pct": 6.5,
-      "source": "腾讯网",
-      "note": "中大力德2连板，宇树科技IPO预期持续催化",
-      "matched_stocks_count": 3
+      "source": "腾讯网/同花顺",
+      "note": "AI算力+PCB爆单驱动，华正新材/生益科技/宝鼎科技涨停，高端基材国产替代逻辑持续强化",
+      "matched_stocks_count": 5
     },
     {
-      "name": "电网设备",
+      "name": "存储芯片",
       "heat_pct": 6.0,
-      "source": "财联社",
-      "note": "十五五特高压规模翻倍催化，风范股份/汇金通/百利电气等涨停",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "风电",
-      "heat_pct": 5.5,
       "source": "企鹅号",
-      "note": "风电设备板块涨3.73%，工业绿色低碳十五五规划利好",
-      "matched_stocks_count": 3
+      "note": "存储芯片概念全天爆发，长鑫科技/兆易创新成交活跃，与算力硬件联动",
+      "matched_stocks_count": 1
     },
     {
-      "name": "可控核聚变",
+      "name": "CRO",
       "heat_pct": 5.0,
-      "source": "腾讯网",
-      "note": "立航科技2连板，融发核电/华菱线缆等涨停，核电概念联动",
+      "source": "企鹅号",
+      "note": "CRO概念全天爆发，医药生物方向涨幅居前，与AI制药概念联动",
       "matched_stocks_count": 0
     },
     {
-      "name": "航天军工",
+      "name": "半导体",
       "heat_pct": 4.5,
       "source": "企鹅号",
-      "note": "航天装备板块涨3.59%，成飞概念等涨幅居前",
+      "note": "半导体芯片板块涨幅居前，与算力硬件联动上涨",
+      "matched_stocks_count": 4
+    },
+    {
+      "name": "医药生物",
+      "heat_pct": 3.5,
+      "source": "企鹅号",
+      "note": "医药生物方向涨幅居前，CRO等细分活跃",
       "matched_stocks_count": 2
     },
     {
-      "name": "电力",
-      "heat_pct": 4.0,
-      "source": "腾讯网",
-      "note": "电力板块震荡拉升，新能股份2连板，深南电A/华电辽能涨停",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "燃气",
+      "name": "光模块",
       "heat_pct": 3.0,
-      "source": "企鹅号",
-      "note": "燃气板块涨幅居前",
-      "matched_stocks_count": 0
+      "source": "腾讯网",
+      "note": "光模块与CPO概念联动，东山精密涨停成交153亿，深南电路涨停",
+      "matched_stocks_count": 1
     }
   ],
   "hot_stocks": [
     {
-      "code": "600869",
-      "name": "远东股份",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 23.0,
+      "code": "600601",
+      "name": "方正科技",
+      "rating": "B",
+      "score": 16,
+      "heat_score": 13.5,
       "matched_concepts": [
-        "核电",
-        "光伏",
-        "电网设备"
+        "先进封装",
+        "覆铜板"
       ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
+      "theme": "🔥 AI算力产业链",
+      "track": "先进封装"
     },
     {
-      "code": "603663",
-      "name": "三祥新材",
-      "rating": "A",
-      "score": 23,
-      "heat_score": 17.0,
+      "code": "002902",
+      "name": "铭普光磁",
+      "rating": "D",
+      "score": 2,
+      "heat_score": 12.8,
       "matched_concepts": [
-        "核电",
-        "光伏"
+        "CPO",
+        "光模块"
       ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
+      "theme": "🔥 AI算力产业链",
+      "track": "光通信/CPO光互连"
     },
     {
-      "code": "002534",
-      "name": "西子洁能",
-      "rating": "A-",
-      "score": 20,
-      "heat_score": 17.0,
-      "matched_concepts": [
-        "核电",
-        "光伏"
-      ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
-    },
-    {
-      "code": "002167",
-      "name": "东方锆业",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 17.0,
-      "matched_concepts": [
-        "核电",
-        "光伏"
-      ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
-    },
-    {
-      "code": "600353",
-      "name": "旭光电子",
-      "rating": "B+",
-      "score": 15,
+      "code": "002213",
+      "name": "大为股份",
+      "rating": "D",
+      "score": 5,
       "heat_score": 10.5,
       "matched_concepts": [
-        "电网设备",
-        "航天军工"
+        "存储芯片",
+        "半导体"
       ],
-      "theme": "🛡️ 国防军工与航空航天",
-      "track": "军工电子"
+      "theme": "🔥 AI算力产业链",
+      "track": "HBM存储产业链"
     },
     {
-      "code": "000922",
-      "name": "佳电股份",
-      "rating": "C+",
-      "score": null,
-      "heat_score": 9.5,
+      "code": "600487",
+      "name": "亨通光电",
+      "rating": "A-",
+      "score": 22,
+      "heat_score": 9.8,
       "matched_concepts": [
-        "核电"
+        "CPO"
       ],
-      "theme": "⚡ 电力电网",
-      "track": "核电"
+      "theme": "🔥 AI算力产业链",
+      "track": "光通信/CPO光互连"
     },
     {
       "code": "000810",
@@ -173,160 +146,112 @@
       "track": "AI PC/智能终端"
     },
     {
-      "code": "600601",
-      "name": "方正科技",
-      "rating": "B",
-      "score": 16,
-      "heat_score": 7.5,
+      "code": "603688",
+      "name": "石英股份",
+      "rating": "C",
+      "score": 10,
+      "heat_score": 7.0,
       "matched_concepts": [
-        "光伏"
+        "先进封装"
       ],
       "theme": "🔥 AI算力产业链",
-      "track": "AI服务器/算力"
+      "track": "HBM存储产业链"
+    },
+    {
+      "code": "300576",
+      "name": "容大感光",
+      "rating": "D+",
+      "score": null,
+      "heat_score": 7.0,
+      "matched_concepts": [
+        "先进封装"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "先进封装"
+    },
+    {
+      "code": "603650",
+      "name": "彤程新材",
+      "rating": "C+",
+      "score": 13,
+      "heat_score": 7.0,
+      "matched_concepts": [
+        "先进封装"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "先进封装"
     },
     {
       "code": "603328",
       "name": "依顿电子",
       "rating": "B+",
       "score": 17,
-      "heat_score": 7.5,
+      "heat_score": 6.5,
       "matched_concepts": [
-        "光伏"
+        "覆铜板"
       ],
       "theme": "🔥 AI算力产业链",
       "track": "AI服务器/算力"
     },
     {
-      "code": "603688",
-      "name": "石英股份",
+      "code": "600110",
+      "name": "诺德股份",
       "rating": "C",
-      "score": 10,
-      "heat_score": 7.5,
+      "score": 12,
+      "heat_score": 6.5,
       "matched_concepts": [
-        "光伏"
+        "覆铜板"
+      ],
+      "theme": "📋 PCB电路板产业链",
+      "track": "覆铜板/CCL"
+    },
+    {
+      "code": "002203",
+      "name": "海亮股份",
+      "rating": "D+",
+      "score": 9,
+      "heat_score": 6.5,
+      "matched_concepts": [
+        "覆铜板"
+      ],
+      "theme": "📋 PCB电路板产业链",
+      "track": "覆铜板/CCL"
+    },
+    {
+      "code": "601137",
+      "name": "博威合金",
+      "rating": "D+",
+      "score": 11,
+      "heat_score": 6.5,
+      "matched_concepts": [
+        "覆铜板"
+      ],
+      "theme": "📋 PCB电路板产业链",
+      "track": "覆铜板/CCL"
+    },
+    {
+      "code": "000962",
+      "name": "东方钽业",
+      "rating": "C",
+      "score": null,
+      "heat_score": 4.5,
+      "matched_concepts": [
+        "半导体"
       ],
       "theme": "💡 半导体全产业链",
       "track": "半导体材料(卡脖子12大类)"
     },
     {
-      "code": "603212",
-      "name": "赛伍技术",
-      "rating": "B+",
-      "score": 19,
-      "heat_score": 7.5,
-      "matched_concepts": [
-        "光伏"
-      ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "002741",
-      "name": "光华科技",
+      "code": "603738",
+      "name": "泰晶科技",
       "rating": "D+",
-      "score": 11,
-      "heat_score": 7.5,
+      "score": 8,
+      "heat_score": 4.5,
       "matched_concepts": [
-        "光伏"
+        "半导体"
       ],
-      "theme": "🚗 新能源智能汽车",
-      "track": "动力电池"
-    },
-    {
-      "code": "002733",
-      "name": "雄韬股份",
-      "rating": "?",
-      "score": null,
-      "heat_score": 7.5,
-      "matched_concepts": [
-        "光伏"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "储能"
-    },
-    {
-      "code": "601678",
-      "name": "滨化股份",
-      "rating": "D",
-      "score": 10,
-      "heat_score": 7.5,
-      "matched_concepts": [
-        "光伏"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "氢能"
-    },
-    {
-      "code": "603283",
-      "name": "赛腾股份",
-      "rating": "B+",
-      "score": 17,
-      "heat_score": 6.5,
-      "matched_concepts": [
-        "人形机器人"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "002747",
-      "name": "埃斯顿",
-      "rating": "B",
-      "score": null,
-      "heat_score": 6.5,
-      "matched_concepts": [
-        "人形机器人"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "002527",
-      "name": "新时达",
-      "rating": "?",
-      "score": null,
-      "heat_score": 6.5,
-      "matched_concepts": [
-        "人形机器人"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "600458",
-      "name": "时代新材",
-      "rating": "A-",
-      "score": 21,
-      "heat_score": 5.5,
-      "matched_concepts": [
-        "风电"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "风电"
-    },
-    {
-      "code": "605006",
-      "name": "山东玻纤",
-      "rating": "D",
-      "score": 10,
-      "heat_score": 5.5,
-      "matched_concepts": [
-        "风电"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "风电"
-    },
-    {
-      "code": "002669",
-      "name": "康达新材",
-      "rating": "?",
-      "score": null,
-      "heat_score": 5.5,
-      "matched_concepts": [
-        "风电"
-      ],
-      "theme": "☀️ 新能源发电",
-      "track": "风电"
+      "theme": "💡 半导体全产业链",
+      "track": "芯片设计"
     },
     {
       "code": "002023",
@@ -335,73 +260,68 @@
       "score": 13,
       "heat_score": 4.5,
       "matched_concepts": [
-        "航天军工"
+        "半导体"
       ],
-      "theme": "🛡️ 国防军工与航空航天",
-      "track": "航空装备"
+      "theme": "💡 半导体全产业链",
+      "track": "功率半导体"
     },
     {
-      "code": "605580",
-      "name": "恒盛能源",
-      "rating": "D+",
-      "score": 9,
-      "heat_score": 4.0,
+      "code": "603880",
+      "name": "南卫股份",
+      "rating": "D-",
+      "score": 3,
+      "heat_score": 3.5,
       "matched_concepts": [
-        "电力"
+        "医药生物"
       ],
-      "theme": "⚡ 电力电网",
-      "track": "火电"
+      "theme": "💊 医药健康",
+      "track": "CXO/生命科学"
+    },
+    {
+      "code": "600227",
+      "name": "赤天化",
+      "rating": "D",
+      "score": 4,
+      "heat_score": 3.5,
+      "matched_concepts": [
+        "医药生物"
+      ],
+      "theme": "💊 医药健康",
+      "track": "CXO/生命科学"
     }
   ],
-  "total_matched_stocks": 22,
-  "updated": "2026-08-03 18:49",
+  "total_matched_stocks": 17,
+  "updated": "2026-08-04 18:12",
   "stocks": {
-    "600869": {
+    "600601": {
       "heat": "high",
-      "maxChg": 23.0,
+      "maxChg": 13.5,
       "concepts": [
-        "核电",
-        "光伏",
-        "电网设备"
+        "先进封装",
+        "覆铜板"
       ]
     },
-    "603663": {
+    "002902": {
       "heat": "high",
-      "maxChg": 17.0,
+      "maxChg": 12.8,
       "concepts": [
-        "核电",
-        "光伏"
+        "CPO",
+        "光模块"
       ]
     },
-    "002534": {
-      "heat": "high",
-      "maxChg": 17.0,
-      "concepts": [
-        "核电",
-        "光伏"
-      ]
-    },
-    "002167": {
-      "heat": "high",
-      "maxChg": 17.0,
-      "concepts": [
-        "核电",
-        "光伏"
-      ]
-    },
-    "600353": {
+    "002213": {
       "heat": "high",
       "maxChg": 10.5,
       "concepts": [
-        "电网设备",
-        "航天军工"
+        "存储芯片",
+        "半导体"
       ]
     },
-    "000922": {
+    "600487": {
       "heat": "high",
-      "maxChg": 9.5,
+      "maxChg": 9.8,
       "concepts": [
-        "核电"
+        "CPO"
       ]
     },
     "000810": {
@@ -411,109 +331,88 @@
         "AI应用"
       ]
     },
-    "600601": {
+    "603688": {
       "heat": "high",
-      "maxChg": 7.5,
+      "maxChg": 7.0,
       "concepts": [
-        "光伏"
+        "先进封装"
+      ]
+    },
+    "300576": {
+      "heat": "high",
+      "maxChg": 7.0,
+      "concepts": [
+        "先进封装"
+      ]
+    },
+    "603650": {
+      "heat": "high",
+      "maxChg": 7.0,
+      "concepts": [
+        "先进封装"
       ]
     },
     "603328": {
       "heat": "high",
-      "maxChg": 7.5,
+      "maxChg": 6.5,
       "concepts": [
-        "光伏"
+        "覆铜板"
       ]
     },
-    "603688": {
-      "heat": "high",
-      "maxChg": 7.5,
-      "concepts": [
-        "光伏"
-      ]
-    },
-    "603212": {
-      "heat": "high",
-      "maxChg": 7.5,
-      "concepts": [
-        "光伏"
-      ]
-    },
-    "002741": {
-      "heat": "high",
-      "maxChg": 7.5,
-      "concepts": [
-        "光伏"
-      ]
-    },
-    "002733": {
-      "heat": "high",
-      "maxChg": 7.5,
-      "concepts": [
-        "光伏"
-      ]
-    },
-    "601678": {
-      "heat": "high",
-      "maxChg": 7.5,
-      "concepts": [
-        "光伏"
-      ]
-    },
-    "603283": {
+    "600110": {
       "heat": "high",
       "maxChg": 6.5,
       "concepts": [
-        "人形机器人"
+        "覆铜板"
       ]
     },
-    "002747": {
+    "002203": {
       "heat": "high",
       "maxChg": 6.5,
       "concepts": [
-        "人形机器人"
+        "覆铜板"
       ]
     },
-    "002527": {
+    "601137": {
       "heat": "high",
       "maxChg": 6.5,
       "concepts": [
-        "人形机器人"
+        "覆铜板"
       ]
     },
-    "600458": {
-      "heat": "high",
-      "maxChg": 5.5,
+    "000962": {
+      "heat": "warm",
+      "maxChg": 4.5,
       "concepts": [
-        "风电"
+        "半导体"
       ]
     },
-    "605006": {
-      "heat": "high",
-      "maxChg": 5.5,
+    "603738": {
+      "heat": "warm",
+      "maxChg": 4.5,
       "concepts": [
-        "风电"
-      ]
-    },
-    "002669": {
-      "heat": "high",
-      "maxChg": 5.5,
-      "concepts": [
-        "风电"
+        "半导体"
       ]
     },
     "002023": {
       "heat": "warm",
       "maxChg": 4.5,
       "concepts": [
-        "航天军工"
+        "半导体"
       ]
     },
-    "605580": {
+    "603880": {
       "heat": "warm",
-      "maxChg": 4.0,
+      "maxChg": 3.5,
       "concepts": [
-        "电力"
+        "医药生物"
+      ]
+    },
+    "600227": {
+      "heat": "warm",
+      "maxChg": 3.5,
+      "concepts": [
+        "医药生物"
       ]
     }
   }
