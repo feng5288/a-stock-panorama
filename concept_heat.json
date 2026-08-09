@@ -1,194 +1,133 @@
 {
-  "update_time": "2026-08-04T18:12:03.244887",
-  "trade_date": "2026-08-04",
+  "update_time": "2026-08-09T11:49:58.244933",
+  "trade_date": "2026-08-07",
   "market_summary": {
-    "sh_index": 3822.28,
-    "sz_index": 13885.71,
-    "cy_index": 3488.97,
-    "kc50_index": 1616.36,
-    "volume_trillion": 2.21
+    "sh_index": 3940.04,
+    "sz_index": 14311.01,
+    "cy_index": 3563.12,
+    "kc50_index": 1744.02,
+    "volume_trillion": 2.68
   },
-  "market_note": "8月4日A股四大指数集体收涨，沪指涨0.33%报3822.28，深成指涨3.25%报13885.71，创业板指暴涨5.64%报3488.97，科创50涨4.09%报1616.36。全市场超3600只个股上涨，超百股涨停。成交额2.21万亿，较上日放量约2162亿。算力硬件（CPO/光模块/存储芯片）全天爆发，AI应用端持续走强，CRO/医药生物涨幅居前。工农中建四大行均跌超3%，银行股明显回调。英伟达CPO量产消息+美股AI应用股Palantir/Snap业绩超预期成为主要催化。",
+  "market_note": "8月7日A股四大指数集体收涨，沪指涨1.02%报3940.04，深成指涨1.42%报14311.01，创业板指涨1.35%报3563.12，科创50涨2.51%报1744.02。全市场超2800只个股上涨。成交额2.68万亿，较上日放量1359亿。CRO概念指数暴涨12.08%领涨两市，PCB/覆铜板/医疗服务等概念指数大涨超9%，创新药ETF涨超7%且34只个股涨停。6G概念延续强势，稀土永磁/黄金/半导体同步走强。",
   "hot_concepts": [
     {
-      "name": "CPO",
+      "name": "CRO",
       "heat_pct": 9.8,
-      "source": "腾讯网/财联社",
-      "note": "英伟达CPO交换机量产催化，光库科技20CM涨停，联讯仪器涨超17%，光迅科技/剑桥科技/永鼎股份等超10股涨停；「易中天」均涨超13%，天孚通信3日累计涨超30%",
-      "matched_stocks_count": 2
-    },
-    {
-      "name": "算力租赁",
-      "heat_pct": 8.5,
-      "source": "腾讯网/财联社",
-      "note": "美股云厂商（谷歌/微软/亚马逊/Meta）均涨超4%驱动；美利云3连板，利通电子/润建股份/宏景科技/东阳光3天2板，青云科技/行云科技/中青宝20CM涨停",
+      "source": "Wind/东方财富",
+      "note": "CRO概念指数暴涨12.08%，百花医药4连板，博腾股份/近岸蛋白/义翘神州/泓博医药20CM涨停，诺唯赞涨18.59%；减肥药/重组蛋白/细胞免疫治疗联动",
       "matched_stocks_count": 0
     },
     {
-      "name": "AI应用",
-      "heat_pct": 8.0,
-      "source": "企鹅号/腾讯网",
-      "note": "美股Palantir/Snap业绩超预期催化；传智教育7连板，恒银科技/天娱数科3连板，中国科传/欢瑞世纪/返利科技5天3板",
-      "matched_stocks_count": 1
+      "name": "PCB概念",
+      "heat_pct": 8.5,
+      "source": "财联社/腾讯网",
+      "note": "十余只PCB个股涨停，宝鼎科技6天5板，华正新材4天3板，景旺电子2连板；生益科技/红板科技/方正科技涨停，胜宏科技/铜冠铜箔/南亚新材涨超10%",
+      "matched_stocks_count": 2
     },
     {
-      "name": "先进封装",
-      "heat_pct": 7.0,
-      "source": "腾讯网",
-      "note": "先进封装概念走强，鹏鼎控股/天通股份等涨停，与CPO/AI算力联动",
-      "matched_stocks_count": 4
+      "name": "创新药",
+      "heat_pct": 8.0,
+      "source": "Wind/企鹅号",
+      "note": "创新药ETF涨超7%，34只个股涨停或涨超10%；百普赛斯20%涨停，百花医药/昭衍新药/凯莱英/哈三联涨停；2026H1中国创新药License-out出海近997亿美元",
+      "matched_stocks_count": 0
     },
     {
       "name": "覆铜板",
-      "heat_pct": 6.5,
-      "source": "腾讯网/同花顺",
-      "note": "AI算力+PCB爆单驱动，华正新材/生益科技/宝鼎科技涨停，高端基材国产替代逻辑持续强化",
-      "matched_stocks_count": 5
+      "heat_pct": 7.5,
+      "source": "Wind/同花顺",
+      "note": "覆铜板概念指数大涨超9%，与PCB概念联动；AI算力高端基材需求驱动，华正新材/生益科技等领涨",
+      "matched_stocks_count": 3
     },
     {
-      "name": "存储芯片",
-      "heat_pct": 6.0,
-      "source": "企鹅号",
-      "note": "存储芯片概念全天爆发，长鑫科技/兆易创新成交活跃，与算力硬件联动",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "CRO",
-      "heat_pct": 5.0,
-      "source": "企鹅号",
-      "note": "CRO概念全天爆发，医药生物方向涨幅居前，与AI制药概念联动",
+      "name": "医疗服务",
+      "heat_pct": 7.0,
+      "source": "Wind/东方财富",
+      "note": "医疗服务概念指数大涨超9%，与CRO/创新药联动上涨，博腾股份/药康生物等封板",
       "matched_stocks_count": 0
     },
     {
+      "name": "6G概念",
+      "heat_pct": 6.5,
+      "source": "腾讯网",
+      "note": "6G概念延续强势，武汉凡谷2连板，通宇通讯5天4板；《广东省信息通信业十五五规划》征求意见提振",
+      "matched_stocks_count": 1
+    },
+    {
+      "name": "稀土永磁",
+      "heat_pct": 5.5,
+      "source": "财联社",
+      "note": "稀土永磁概念表现活跃，中国稀土涨停，与有色金属板块联动",
+      "matched_stocks_count": 1
+    },
+    {
       "name": "半导体",
-      "heat_pct": 4.5,
+      "heat_pct": 5.0,
       "source": "企鹅号",
-      "note": "半导体芯片板块涨幅居前，与算力硬件联动上涨",
+      "note": "半导体板块涨幅居前，科创50涨2.51%领涨全市场，与AI硬件/PCB联动上涨",
       "matched_stocks_count": 4
     },
     {
-      "name": "医药生物",
-      "heat_pct": 3.5,
-      "source": "企鹅号",
-      "note": "医药生物方向涨幅居前，CRO等细分活跃",
+      "name": "黄金概念",
+      "heat_pct": 4.5,
+      "source": "东方财富",
+      "note": "黄金股集体走强，招金黄金涨停，株冶集团涨超9%；贵金属板块涨幅居前",
       "matched_stocks_count": 2
     },
     {
-      "name": "光模块",
-      "heat_pct": 3.0,
-      "source": "腾讯网",
-      "note": "光模块与CPO概念联动，东山精密涨停成交153亿，深南电路涨停",
-      "matched_stocks_count": 1
+      "name": "AI硬件",
+      "heat_pct": 4.0,
+      "source": "财联社/东方财富",
+      "note": "AI硬件板块再现涨停潮，元件/电子化学品/CPO方向活跃；科创50涨2.51%为硬科技反弹急先锋",
+      "matched_stocks_count": 2
     }
   ],
   "hot_stocks": [
+    {
+      "code": "601137",
+      "name": "博威合金",
+      "rating": "D+",
+      "score": 11,
+      "heat_score": 12.0,
+      "matched_concepts": [
+        "覆铜板",
+        "黄金概念"
+      ],
+      "theme": "📋 PCB电路板产业链",
+      "track": "覆铜板/CCL"
+    },
+    {
+      "code": "603738",
+      "name": "泰晶科技",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 11.5,
+      "matched_concepts": [
+        "6G概念",
+        "半导体"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "芯片设计"
+    },
     {
       "code": "600601",
       "name": "方正科技",
       "rating": "B",
       "score": 16,
-      "heat_score": 13.5,
+      "heat_score": 8.5,
       "matched_concepts": [
-        "先进封装",
-        "覆铜板"
+        "PCB概念"
       ],
       "theme": "🔥 AI算力产业链",
-      "track": "先进封装"
-    },
-    {
-      "code": "002902",
-      "name": "铭普光磁",
-      "rating": "D",
-      "score": 2,
-      "heat_score": 12.8,
-      "matched_concepts": [
-        "CPO",
-        "光模块"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "光通信/CPO光互连"
-    },
-    {
-      "code": "002213",
-      "name": "大为股份",
-      "rating": "D",
-      "score": 5,
-      "heat_score": 10.5,
-      "matched_concepts": [
-        "存储芯片",
-        "半导体"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "HBM存储产业链"
-    },
-    {
-      "code": "600487",
-      "name": "亨通光电",
-      "rating": "A-",
-      "score": 22,
-      "heat_score": 9.8,
-      "matched_concepts": [
-        "CPO"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "光通信/CPO光互连"
-    },
-    {
-      "code": "000810",
-      "name": "创维数字",
-      "rating": "C+",
-      "score": 12,
-      "heat_score": 8.0,
-      "matched_concepts": [
-        "AI应用"
-      ],
-      "theme": "📱 消费电子与终端",
-      "track": "AI PC/智能终端"
-    },
-    {
-      "code": "603688",
-      "name": "石英股份",
-      "rating": "C",
-      "score": 10,
-      "heat_score": 7.0,
-      "matched_concepts": [
-        "先进封装"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "HBM存储产业链"
-    },
-    {
-      "code": "300576",
-      "name": "容大感光",
-      "rating": "D+",
-      "score": null,
-      "heat_score": 7.0,
-      "matched_concepts": [
-        "先进封装"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "先进封装"
-    },
-    {
-      "code": "603650",
-      "name": "彤程新材",
-      "rating": "C+",
-      "score": 13,
-      "heat_score": 7.0,
-      "matched_concepts": [
-        "先进封装"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "先进封装"
+      "track": "AI服务器/算力"
     },
     {
       "code": "603328",
       "name": "依顿电子",
       "rating": "B+",
       "score": 17,
-      "heat_score": 6.5,
+      "heat_score": 8.5,
       "matched_concepts": [
-        "覆铜板"
+        "PCB概念"
       ],
       "theme": "🔥 AI算力产业链",
       "track": "AI服务器/算力"
@@ -198,7 +137,7 @@
       "name": "诺德股份",
       "rating": "C",
       "score": 12,
-      "heat_score": 6.5,
+      "heat_score": 7.5,
       "matched_concepts": [
         "覆铜板"
       ],
@@ -210,7 +149,7 @@
       "name": "海亮股份",
       "rating": "D+",
       "score": 9,
-      "heat_score": 6.5,
+      "heat_score": 7.5,
       "matched_concepts": [
         "覆铜板"
       ],
@@ -218,23 +157,35 @@
       "track": "覆铜板/CCL"
     },
     {
-      "code": "601137",
-      "name": "博威合金",
-      "rating": "D+",
-      "score": 11,
-      "heat_score": 6.5,
+      "code": "000970",
+      "name": "中科三环",
+      "rating": "C+",
+      "score": 14,
+      "heat_score": 5.5,
       "matched_concepts": [
-        "覆铜板"
+        "稀土永磁"
       ],
-      "theme": "📋 PCB电路板产业链",
-      "track": "覆铜板/CCL"
+      "theme": "💎 有色金属与新材料",
+      "track": "稀土永磁"
+    },
+    {
+      "code": "002213",
+      "name": "大为股份",
+      "rating": "D",
+      "score": 5,
+      "heat_score": 5.0,
+      "matched_concepts": [
+        "半导体"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "HBM存储产业链"
     },
     {
       "code": "000962",
       "name": "东方钽业",
       "rating": "C",
       "score": null,
-      "heat_score": 4.5,
+      "heat_score": 5.0,
       "matched_concepts": [
         "半导体"
       ],
@@ -242,23 +193,11 @@
       "track": "半导体材料(卡脖子12大类)"
     },
     {
-      "code": "603738",
-      "name": "泰晶科技",
-      "rating": "D+",
-      "score": 8,
-      "heat_score": 4.5,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "💡 半导体全产业链",
-      "track": "芯片设计"
-    },
-    {
       "code": "002023",
       "name": "海特高新",
       "rating": "C+",
       "score": 13,
-      "heat_score": 4.5,
+      "heat_score": 5.0,
       "matched_concepts": [
         "半导体"
       ],
@@ -266,153 +205,136 @@
       "track": "功率半导体"
     },
     {
-      "code": "603880",
-      "name": "南卫股份",
-      "rating": "D-",
-      "score": 3,
-      "heat_score": 3.5,
+      "code": "603995",
+      "name": "甬金股份",
+      "rating": "B",
+      "score": 17,
+      "heat_score": 4.5,
       "matched_concepts": [
-        "医药生物"
+        "黄金概念"
       ],
-      "theme": "💊 医药健康",
-      "track": "CXO/生命科学"
+      "theme": "💎 有色金属与新材料",
+      "track": "工业金属"
     },
     {
-      "code": "600227",
-      "name": "赤天化",
+      "code": "002902",
+      "name": "铭普光磁",
       "rating": "D",
-      "score": 4,
-      "heat_score": 3.5,
+      "score": 2,
+      "heat_score": 4.0,
       "matched_concepts": [
-        "医药生物"
+        "AI硬件"
       ],
-      "theme": "💊 医药健康",
-      "track": "CXO/生命科学"
+      "theme": "🔥 AI算力产业链",
+      "track": "光通信/CPO光互连"
+    },
+    {
+      "code": "600487",
+      "name": "亨通光电",
+      "rating": "A-",
+      "score": 22,
+      "heat_score": 4.0,
+      "matched_concepts": [
+        "AI硬件"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "光通信/CPO光互连"
     }
   ],
-  "total_matched_stocks": 17,
-  "updated": "2026-08-04 18:12",
+  "total_matched_stocks": 13,
+  "updated": "2026-08-09 11:49",
   "stocks": {
-    "600601": {
+    "601137": {
       "heat": "high",
-      "maxChg": 13.5,
+      "maxChg": 12.0,
       "concepts": [
-        "先进封装",
-        "覆铜板"
+        "覆铜板",
+        "黄金概念"
       ]
     },
-    "002902": {
+    "603738": {
       "heat": "high",
-      "maxChg": 12.8,
+      "maxChg": 11.5,
       "concepts": [
-        "CPO",
-        "光模块"
-      ]
-    },
-    "002213": {
-      "heat": "high",
-      "maxChg": 10.5,
-      "concepts": [
-        "存储芯片",
+        "6G概念",
         "半导体"
       ]
     },
-    "600487": {
+    "600601": {
       "heat": "high",
-      "maxChg": 9.8,
+      "maxChg": 8.5,
       "concepts": [
-        "CPO"
-      ]
-    },
-    "000810": {
-      "heat": "high",
-      "maxChg": 8.0,
-      "concepts": [
-        "AI应用"
-      ]
-    },
-    "603688": {
-      "heat": "high",
-      "maxChg": 7.0,
-      "concepts": [
-        "先进封装"
-      ]
-    },
-    "300576": {
-      "heat": "high",
-      "maxChg": 7.0,
-      "concepts": [
-        "先进封装"
-      ]
-    },
-    "603650": {
-      "heat": "high",
-      "maxChg": 7.0,
-      "concepts": [
-        "先进封装"
+        "PCB概念"
       ]
     },
     "603328": {
       "heat": "high",
-      "maxChg": 6.5,
+      "maxChg": 8.5,
       "concepts": [
-        "覆铜板"
+        "PCB概念"
       ]
     },
     "600110": {
       "heat": "high",
-      "maxChg": 6.5,
+      "maxChg": 7.5,
       "concepts": [
         "覆铜板"
       ]
     },
     "002203": {
       "heat": "high",
-      "maxChg": 6.5,
+      "maxChg": 7.5,
       "concepts": [
         "覆铜板"
       ]
     },
-    "601137": {
+    "000970": {
       "heat": "high",
-      "maxChg": 6.5,
+      "maxChg": 5.5,
       "concepts": [
-        "覆铜板"
+        "稀土永磁"
       ]
     },
-    "000962": {
-      "heat": "warm",
-      "maxChg": 4.5,
+    "002213": {
+      "heat": "high",
+      "maxChg": 5.0,
       "concepts": [
         "半导体"
       ]
     },
-    "603738": {
-      "heat": "warm",
-      "maxChg": 4.5,
+    "000962": {
+      "heat": "high",
+      "maxChg": 5.0,
       "concepts": [
         "半导体"
       ]
     },
     "002023": {
-      "heat": "warm",
-      "maxChg": 4.5,
+      "heat": "high",
+      "maxChg": 5.0,
       "concepts": [
         "半导体"
       ]
     },
-    "603880": {
+    "603995": {
       "heat": "warm",
-      "maxChg": 3.5,
+      "maxChg": 4.5,
       "concepts": [
-        "医药生物"
+        "黄金概念"
       ]
     },
-    "600227": {
+    "002902": {
       "heat": "warm",
-      "maxChg": 3.5,
+      "maxChg": 4.0,
       "concepts": [
-        "医药生物"
+        "AI硬件"
+      ]
+    },
+    "600487": {
+      "heat": "warm",
+      "maxChg": 4.0,
+      "concepts": [
+        "AI硬件"
       ]
     }
   }
