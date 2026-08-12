@@ -1,165 +1,238 @@
 {
-  "update_time": "2026-08-11T19:16:24.993540",
-  "trade_date": "2026-08-11",
+  "update_time": "2026-08-12T17:27:41.404549",
+  "trade_date": "2026-08-12",
   "market_summary": {
-    "sh_index": 3924.09,
-    "sz_index": 0,
-    "cy_index": 0,
-    "kc50_index": 0,
-    "volume_trillion": 2.32
+    "sh_index": 3946.68,
+    "sz_index": 14414.43,
+    "cy_index": 3602.08,
+    "kc50_index": 1737.04,
+    "volume_trillion": 2.15
   },
-  "market_note": "沪指跌0.82%终结5连阳，全市场约3700只个股下跌，创业板指微涨0.34%，成交缩量至2.32万亿。MLCC、机器人、创新药逆势强势，有色、航空、商业航天大幅下挫。",
+  "market_note": "三大指数低开高走集体收红,双创指数涨超1%。CPO/光通信全天爆发,房地产午后走强,白酒大消费异动拉升。全市场超4100股上涨,96只涨停,成交额2.15万亿缩量约1686亿。上涨4128家,下跌1280家。",
   "hot_concepts": [
     {
-      "name": "MLCC概念",
-      "heat_pct": 6.5,
-      "source": "同花顺/东方财富",
-      "note": "双星新材、洁美科技、国风新材涨停，昀冢科技涨超10%，AI算力升级驱动电容需求",
-      "matched_stocks_count": 0
+      "name": "CPO概念",
+      "heat_pct": 4.8,
+      "source": "美股Lumentum业绩超预期+集邦咨询上调AI服务器出货预期",
+      "note": "永鼎股份涨停,天孚通信涨超10%,腾景科技、长光华芯、源杰科技、太辰光、新易盛、中际旭创跟涨",
+      "matched_stocks_count": 2
     },
     {
-      "name": "创新药",
-      "heat_pct": 6.0,
-      "source": "同花顺/东方财富",
-      "note": "百花医药6连板，甘李药业、万邦医药涨停",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "医药商业",
-      "heat_pct": 5.0,
-      "source": "同花顺/东方财富",
-      "note": "开开实业4连板，老百姓、一心堂涨停",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "机器人概念",
-      "heat_pct": 4.5,
-      "source": "同花顺/东方财富",
-      "note": "午后涨幅扩大，巨轮智能、北特科技、斯菱智驱涨停，逆市走强",
-      "matched_stocks_count": 3
-    },
-    {
-      "name": "算力租赁",
-      "heat_pct": 4.0,
-      "source": "同花顺/东方财富",
-      "note": "盘中异动拉升，杭钢股份、鸿博股份直线涨停",
-      "matched_stocks_count": 0
-    },
-    {
-      "name": "光模块",
-      "heat_pct": 3.5,
-      "source": "同花顺/东方财富",
-      "note": "算力方向表现活跃，铜牛信息涨超6%，新易盛涨近4%",
+      "name": "光通信",
+      "heat_pct": 4.2,
+      "source": "1.6T光模块订单可见度拉长,全球CSP资本开支年增约90%",
+      "note": "光模块全天爆发,板块多股涨停",
       "matched_stocks_count": 1
     },
     {
-      "name": "国资云",
-      "heat_pct": 3.0,
-      "source": "同花顺/东方财富",
-      "note": "板块涨幅居前",
+      "name": "房地产",
+      "heat_pct": 3.5,
+      "source": "地产板块震荡走强,政策预期持续",
+      "note": "城建发展、新城控股涨停,房屋租赁概念跟涨",
+      "matched_stocks_count": 2
+    },
+    {
+      "name": "白酒",
+      "heat_pct": 3.2,
+      "source": "大消费板块异动拉升",
+      "note": "今世缘涨停,白酒板块集体走强",
       "matched_stocks_count": 0
     },
     {
-      "name": "被动元件",
-      "heat_pct": 2.5,
-      "source": "同花顺/东方财富",
-      "note": "与MLCC联动，达利凯普、风华高科等大涨",
+      "name": "光纤概念",
+      "heat_pct": 3.8,
+      "source": "光纤网络升级预期",
+      "note": "通鼎互联涨停,光纤概念盘中走高",
       "matched_stocks_count": 0
     },
     {
-      "name": "影视概念",
-      "heat_pct": 2.0,
-      "source": "同花顺/东方财富",
-      "note": "板块表现活跃",
+      "name": "AI应用",
+      "heat_pct": 3.6,
+      "source": "AI应用端震荡拉升",
+      "note": "传智教育、风语筑涨停,AI应用端震荡上行",
       "matched_stocks_count": 0
     },
     {
-      "name": "贵金属",
-      "heat_pct": 1.5,
-      "source": "同花顺/东方财富",
-      "note": "早盘涨幅居前，午后回落",
+      "name": "算力租赁",
+      "heat_pct": 3.9,
+      "source": "算力需求持续增长",
+      "note": "城地香江、鸿博股份2连板,云赛智联、湖北广电涨停",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "医药",
+      "heat_pct": 3.4,
+      "source": "医药板块反复活跃,脑机接口政策催化",
+      "note": "百花医药7连板,誉衡药业涨停,创新医疗10CM涨停",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "半导体",
+      "heat_pct": 3.7,
+      "source": "AI云服务需求爆发,半导体材料设备走强",
+      "note": "科创半导体ETF涨2.16%,欧莱新材涨9.67%,天岳先进涨8.11%",
+      "matched_stocks_count": 2
+    },
+    {
+      "name": "大消费",
+      "heat_pct": 3.1,
+      "source": "消费复苏预期,食品饮料走强",
+      "note": "中兴商业、安记食品、好想你涨停",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "通信",
+      "heat_pct": 3.3,
+      "source": "通信板块整体走强",
+      "note": "板块涨幅居前,通宇通讯涨停",
+      "matched_stocks_count": 1
+    },
+    {
+      "name": "脑机接口",
+      "heat_pct": 2.4,
+      "source": "省政府印发推进脑机接口产学研联动措施",
+      "note": "创新医疗涨停,爱朋医疗涨近11%,三博脑科、伟思医疗跟涨",
       "matched_stocks_count": 0
     }
   ],
   "hot_stocks": [
     {
-      "code": "603283",
-      "name": "赛腾股份",
-      "rating": "B+",
-      "score": 17,
-      "heat_score": 4.5,
-      "matched_concepts": [
-        "机器人概念"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "002747",
-      "name": "埃斯顿",
-      "rating": "B",
-      "score": null,
-      "heat_score": 4.5,
-      "matched_concepts": [
-        "机器人概念"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
-      "code": "002527",
-      "name": "新时达",
-      "rating": "?",
-      "score": null,
-      "heat_score": 4.5,
-      "matched_concepts": [
-        "机器人概念"
-      ],
-      "theme": "🤖 人形机器人产业链",
-      "track": "机器人整机/系统集成"
-    },
-    {
       "code": "002902",
       "name": "铭普光磁",
       "rating": "D",
       "score": 2,
-      "heat_score": 3.5,
+      "heat_score": 9.0,
       "matched_concepts": [
-        "光模块"
+        "CPO概念",
+        "光通信"
       ],
       "theme": "🔥 AI算力产业链",
       "track": "光通信/CPO光互连"
+    },
+    {
+      "code": "600487",
+      "name": "亨通光电",
+      "rating": "A-",
+      "score": 22,
+      "heat_score": 4.8,
+      "matched_concepts": [
+        "CPO概念"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "光通信/CPO光互连"
+    },
+    {
+      "code": "000962",
+      "name": "东方钽业",
+      "rating": "C",
+      "score": null,
+      "heat_score": 3.7,
+      "matched_concepts": [
+        "半导体"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "半导体材料(卡脖子12大类)"
+    },
+    {
+      "code": "002023",
+      "name": "海特高新",
+      "rating": "C+",
+      "score": 13,
+      "heat_score": 3.7,
+      "matched_concepts": [
+        "半导体"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "功率半导体"
+    },
+    {
+      "code": "600605",
+      "name": "汇通能源",
+      "rating": "D+",
+      "score": null,
+      "heat_score": 3.5,
+      "matched_concepts": [
+        "房地产"
+      ],
+      "theme": "🏦 金融与地产",
+      "track": "房地产"
+    },
+    {
+      "code": "600736",
+      "name": "苏州高新",
+      "rating": "D+",
+      "score": 9,
+      "heat_score": 3.5,
+      "matched_concepts": [
+        "房地产"
+      ],
+      "theme": "🏦 金融与地产",
+      "track": "房地产"
+    },
+    {
+      "code": "603738",
+      "name": "泰晶科技",
+      "rating": "D+",
+      "score": 8,
+      "heat_score": 3.3,
+      "matched_concepts": [
+        "通信"
+      ],
+      "theme": "💡 半导体全产业链",
+      "track": "芯片设计"
     }
   ],
-  "total_matched_stocks": 4,
-  "updated": "2026-08-11 19:16",
+  "total_matched_stocks": 7,
+  "updated": "2026-08-12 17:27",
   "stocks": {
-    "603283": {
-      "heat": "warm",
-      "maxChg": 4.5,
-      "concepts": [
-        "机器人概念"
-      ]
-    },
-    "002747": {
-      "heat": "warm",
-      "maxChg": 4.5,
-      "concepts": [
-        "机器人概念"
-      ]
-    },
-    "002527": {
-      "heat": "warm",
-      "maxChg": 4.5,
-      "concepts": [
-        "机器人概念"
-      ]
-    },
     "002902": {
+      "heat": "high",
+      "maxChg": 9.0,
+      "concepts": [
+        "CPO概念",
+        "光通信"
+      ]
+    },
+    "600487": {
+      "heat": "warm",
+      "maxChg": 4.8,
+      "concepts": [
+        "CPO概念"
+      ]
+    },
+    "000962": {
+      "heat": "warm",
+      "maxChg": 3.7,
+      "concepts": [
+        "半导体"
+      ]
+    },
+    "002023": {
+      "heat": "warm",
+      "maxChg": 3.7,
+      "concepts": [
+        "半导体"
+      ]
+    },
+    "600605": {
       "heat": "warm",
       "maxChg": 3.5,
       "concepts": [
-        "光模块"
+        "房地产"
+      ]
+    },
+    "600736": {
+      "heat": "warm",
+      "maxChg": 3.5,
+      "concepts": [
+        "房地产"
+      ]
+    },
+    "603738": {
+      "heat": "warm",
+      "maxChg": 3.3,
+      "concepts": [
+        "通信"
       ]
     }
   }
