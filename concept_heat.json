@@ -1,90 +1,90 @@
 {
-  "update_time": "2026-08-14T07:31:31.144828",
-  "trade_date": "2026-08-13",
+  "update_time": "2026-08-14T18:48:24.826097",
+  "trade_date": "2026-08-14",
   "market_summary": {
-    "sh_index": 3926.96,
-    "sz_index": 14289.44,
-    "cy_index": 3585.87,
+    "sh_index": 3927.18,
+    "sz_index": 14345.31,
+    "cy_index": 3626.3,
     "kc50_index": 1717.75,
-    "volume_trillion": 2.55
+    "volume_trillion": 2.14
   },
-  "market_note": "三大指数冲高回落全线收绿,沪指跌0.50%报3926.96点,深成指跌0.87%,创业板指跌0.45%,科创50跌1.11%。DeepSeek重磅更新引爆概念涨停潮(12只涨停),医药生物主力净流入29亿居首,CRO/创新药、算力租赁、超节点概念走强。成交额2.55万亿放量约3985亿,超4300只个股下跌。",
+  "market_note": "8月14日A股三大指数集体收涨,沪指微涨0.01%报3927.18点,深成指涨0.45%报14345.31点,创业板指涨1.12%报3626.30点,科创50基本持平。成交额2.14万亿缩量约4081亿。CPO概念领涨(剑桥科技、金戈新材涨停),存储芯片、稀土永磁(金田股份、中国稀土、华宏科技涨停)、光通信、算力租赁(网宿科技、数据港、利通电子涨停)走强。全市场约2400只个股上涨,超2900只下跌。",
   "hot_concepts": [
     {
-      "name": "DeepSeek概念",
-      "heat_pct": 4.6,
-      "source": "DeepSeek-V4-Pro-0813版本更新,API文档升级",
-      "note": "立昂技术、博济医药、万邦医药、药易购、威派格、游族网络、佳力图、风语筑、移远通信、群兴玩具等12只概念股涨停",
-      "matched_stocks_count": 0
-    },
-    {
       "name": "CPO概念",
-      "heat_pct": 4.0,
-      "source": "\"易中天\"大涨,光模块景气延续",
-      "note": "天孚通信涨超11%,新易盛涨超4.7%,中际旭创涨超3.65%",
+      "heat_pct": 4.8,
+      "source": "CPO概念强势领涨,剑桥科技、金戈新材涨停",
+      "note": "中际旭创拟17.47亿受让中石科技10%股权引爆CPO,亨通光电、剑桥科技涨停,37股涨超5%",
       "matched_stocks_count": 2
     },
     {
-      "name": "医药",
-      "heat_pct": 3.8,
-      "source": "医药生物主力净流入29亿居首",
-      "note": "博济医药、陇神戎发涨停,誉衡药业5天4板,亚泰集团3连板,万邦医药3天2板",
-      "matched_stocks_count": 2
+      "name": "存储芯片",
+      "heat_pct": 4.4,
+      "source": "闪迪预计AI数据中心存储需求大幅提升",
+      "note": "盈新发展涨停,长鑫科技成交额198.62亿居首,兆易创新成交额196.99亿",
+      "matched_stocks_count": 1
+    },
+    {
+      "name": "稀土永磁",
+      "heat_pct": 4.0,
+      "source": "稀土行业大涨5.82%,概念股普涨",
+      "note": "金田股份、中国稀土、华宏科技涨停",
+      "matched_stocks_count": 0
     },
     {
       "name": "算力租赁",
       "heat_pct": 3.8,
-      "source": "算力需求持续增长,算力硬件领涨",
-      "note": "城地香江3连板,群兴玩具、利通电子涨停",
+      "source": "算力租赁概念快速回暖",
+      "note": "网宿科技、数据港、利通电子涨停",
+      "matched_stocks_count": 0
+    },
+    {
+      "name": "光通信",
+      "heat_pct": 3.6,
+      "source": "光通信、光模块景气延续",
+      "note": "亨通光电涨停,长盈通涨3.29%",
       "matched_stocks_count": 0
     },
     {
       "name": "光模块",
-      "heat_pct": 3.6,
+      "heat_pct": 3.4,
       "source": "1.6T光模块订单可见度拉长",
-      "note": "天孚通信、新易盛、中际旭创等光模块龙头集体走强",
+      "note": "中际旭创成交额186.91亿,新易盛成交额171.52亿",
       "matched_stocks_count": 1
     },
     {
       "name": "通信",
-      "heat_pct": 3.4,
-      "source": "通信设备板块涨幅居前",
-      "note": "共进股份涨停,超节点概念震荡走高",
-      "matched_stocks_count": 1
-    },
-    {
-      "name": "创新药",
       "heat_pct": 3.2,
-      "source": "CRO、创新药概念走强",
-      "note": "药明康德获融资净买入3.42亿居首,康龙化成等跟涨",
-      "matched_stocks_count": 2
+      "source": "通信设备板块表现强势",
+      "note": "共进股份、亨通光电等多股涨停",
+      "matched_stocks_count": 1
     },
     {
       "name": "半导体",
       "heat_pct": 3.2,
-      "source": "算力硬件、半导体芯片板块涨幅居前",
-      "note": "存储芯片集体大涨,半导体材料设备活跃",
-      "matched_stocks_count": 3
+      "source": "半导体、先进封装、光刻机概念涨幅居前",
+      "note": "存储芯片集体活跃,半导体材料设备走强",
+      "matched_stocks_count": 2
     },
     {
-      "name": "超节点",
-      "heat_pct": 2.8,
-      "source": "超节点概念震荡走高",
-      "note": "共进股份涨停",
-      "matched_stocks_count": 0
+      "name": "医药",
+      "heat_pct": 3.0,
+      "source": "医药板块反复活跃",
+      "note": "神奇制药、博济医药双双2连板,华森制药、西点药业涨停",
+      "matched_stocks_count": 2
     },
     {
       "name": "食品饮料",
       "heat_pct": 2.8,
-      "source": "食品饮料板块活跃度回升",
-      "note": "皇氏集团、一鸣食品双双4连板",
+      "source": "食品饮料板块盘中局部异动",
+      "note": "桂发祥涨停",
       "matched_stocks_count": 0
     },
     {
-      "name": "电力",
+      "name": "铜缆高速连接",
       "heat_pct": 2.6,
-      "source": "电力板块午后拉升",
-      "note": "大唐发电、华电能源、惠天热电涨停",
+      "source": "铜缆高速连接概念涨幅居前",
+      "note": "金田股份领涨",
       "matched_stocks_count": 0
     }
   ],
@@ -94,7 +94,7 @@
       "name": "铭普光磁",
       "rating": "D",
       "score": 2,
-      "heat_score": 7.6,
+      "heat_score": 8.2,
       "matched_concepts": [
         "CPO概念",
         "光模块"
@@ -103,37 +103,11 @@
       "track": "光通信/CPO光互连"
     },
     {
-      "code": "603880",
-      "name": "南卫股份",
-      "rating": "D-",
-      "score": 3,
-      "heat_score": 7.0,
-      "matched_concepts": [
-        "医药",
-        "创新药"
-      ],
-      "theme": "💊 医药健康",
-      "track": "CXO/生命科学"
-    },
-    {
-      "code": "600227",
-      "name": "赤天化",
-      "rating": "D",
-      "score": 4,
-      "heat_score": 7.0,
-      "matched_concepts": [
-        "医药",
-        "创新药"
-      ],
-      "theme": "💊 医药健康",
-      "track": "CXO/生命科学"
-    },
-    {
       "code": "600487",
       "name": "亨通光电",
       "rating": "A-",
       "score": 22,
-      "heat_score": 4.0,
+      "heat_score": 4.8,
       "matched_concepts": [
         "CPO概念"
       ],
@@ -141,28 +115,28 @@
       "track": "光通信/CPO光互连"
     },
     {
+      "code": "002213",
+      "name": "大为股份",
+      "rating": "D",
+      "score": 5,
+      "heat_score": 4.4,
+      "matched_concepts": [
+        "存储芯片"
+      ],
+      "theme": "🔥 AI算力产业链",
+      "track": "HBM存储产业链"
+    },
+    {
       "code": "603738",
       "name": "泰晶科技",
       "rating": "D+",
       "score": 8,
-      "heat_score": 3.4,
+      "heat_score": 3.2,
       "matched_concepts": [
         "通信"
       ],
       "theme": "💡 半导体全产业链",
       "track": "芯片设计"
-    },
-    {
-      "code": "002213",
-      "name": "大为股份",
-      "rating": "D",
-      "score": 5,
-      "heat_score": 3.2,
-      "matched_concepts": [
-        "半导体"
-      ],
-      "theme": "🔥 AI算力产业链",
-      "track": "HBM存储产业链"
     },
     {
       "code": "000962",
@@ -187,54 +161,62 @@
       ],
       "theme": "💡 半导体全产业链",
       "track": "功率半导体"
+    },
+    {
+      "code": "603880",
+      "name": "南卫股份",
+      "rating": "D-",
+      "score": 3,
+      "heat_score": 3.0,
+      "matched_concepts": [
+        "医药"
+      ],
+      "theme": "💊 医药健康",
+      "track": "CXO/生命科学"
+    },
+    {
+      "code": "600227",
+      "name": "赤天化",
+      "rating": "D",
+      "score": 4,
+      "heat_score": 3.0,
+      "matched_concepts": [
+        "医药"
+      ],
+      "theme": "💊 医药健康",
+      "track": "CXO/生命科学"
     }
   ],
   "total_matched_stocks": 8,
-  "updated": "2026-08-14 07:31",
+  "updated": "2026-08-14 18:48",
   "stocks": {
     "002902": {
       "heat": "high",
-      "maxChg": 7.6,
+      "maxChg": 8.2,
       "concepts": [
         "CPO概念",
         "光模块"
       ]
     },
-    "603880": {
-      "heat": "high",
-      "maxChg": 7.0,
-      "concepts": [
-        "医药",
-        "创新药"
-      ]
-    },
-    "600227": {
-      "heat": "high",
-      "maxChg": 7.0,
-      "concepts": [
-        "医药",
-        "创新药"
-      ]
-    },
     "600487": {
       "heat": "warm",
-      "maxChg": 4.0,
+      "maxChg": 4.8,
       "concepts": [
         "CPO概念"
       ]
     },
-    "603738": {
+    "002213": {
       "heat": "warm",
-      "maxChg": 3.4,
+      "maxChg": 4.4,
       "concepts": [
-        "通信"
+        "存储芯片"
       ]
     },
-    "002213": {
+    "603738": {
       "heat": "warm",
       "maxChg": 3.2,
       "concepts": [
-        "半导体"
+        "通信"
       ]
     },
     "000962": {
@@ -249,6 +231,20 @@
       "maxChg": 3.2,
       "concepts": [
         "半导体"
+      ]
+    },
+    "603880": {
+      "heat": "warm",
+      "maxChg": 3.0,
+      "concepts": [
+        "医药"
+      ]
+    },
+    "600227": {
+      "heat": "warm",
+      "maxChg": 3.0,
+      "concepts": [
+        "医药"
       ]
     }
   }
